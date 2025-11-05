@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apps | RDroid Apps</title>
+  <meta name="description" content="Explore innovative Android apps by RDroid — Color Mixer, Golden Calc, Dialer, and BookShop." />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
+
+  <!-- Page-specific override to show apps vertically (one per line) -->
+  <style>
+    /* Make the list vertical only on this page */
+    .apps { display: block; }
+    .app { margin-bottom: 16px; }
+    .app:last-child { margin-bottom: 0; }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="logo">
+      <img src="assets/my_brand_icon.png" alt="RDroid Logo" />
+      <div>RDroid <span>Apps</span></div>
+    </div>
+    <button class="login-btn" onclick="toggleLogin()">Login</button>
+  </header>
+
+  <!-- Navigation Drawer -->
+  <nav id="drawer">
+    <a href="index.html">🏠 Home</a>
+    <a href="apps.html">📱 Apps</a>
+    <a href="about.html">ℹ️ About</a>
+    <a href="contact.html">✉️ Contact</a>
+    <a href="privacy-policy.html">🔒 Privacy Policy</a>
+  </nav>
+
+  <!-- Apps Section -->
+  <div class="wrap" id="apps">
+    <section class="section">
+      <h1>Our Featured Apps</h1>
+      <p>Each app is crafted for performance, privacy, and user delight. Explore what we’ve built 👇</p>
+
+      <div class="apps">
+        <div class="app">
+          <strong>🎨 Color Mixer</strong>
+          <small>Mix colors in both RYB & RGB modes, with image extraction and palette generator.</small>
+        </div>
+
+        <div class="app">
+          <strong>🧮 Golden Calc</strong>
+          <small>Smart calculator with built-in unit converter and golden ratio features.</small>
+        </div>
+
+        <div class="app">
+          <strong>📞 Dialer</strong>
+          <small>Clean, minimal phone + contacts + SMS app with intelligent navigation.</small>
+        </div>
+
+        <div class="app">
+          <strong>📚 BookShop (Beta)</strong>
+          <small>Multi-user book inventory manager with Firestore, GST billing, and sales dashboard.</small>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © <span id="year"></span> RDroid Apps — All rights reserved.
+  </footer>
+
+  <!-- Login Popup -->
+  <div class="login-box" id="loginBox">
+    <h2>Login to RDroid</h2>
+    <input type="email" placeholder="Email" id="email" required />
+    <input type="password" placeholder="Password" id="password" required />
+    <button onclick="alert('Login feature coming soon!')">Login</button>
+  </div>
+</body>
+</html>
