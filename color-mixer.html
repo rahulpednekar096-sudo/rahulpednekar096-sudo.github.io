@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Color Mixer | RDroid Apps</title>
+  <meta name="description" content="Color Mixer by RDroid Apps — Mix colors in RYB & RGB modes with palette generator." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Header (same as main site) -->
+  <header>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="logo">
+      <img src="assets/my_brand_icon.png" alt="RDroid Logo" />
+      <div>RDroid <span>Apps</span></div>
+    </div>
+    <button class="login-btn" onclick="toggleLogin()">Login</button>
+  </header>
+
+  <!-- Drawer -->
+  <nav id="drawer">
+    <a href="index.html">🏠 Home</a>
+    <a href="apps.html">📱 Apps</a>
+    <a href="about.html">ℹ️ About</a>
+    <a href="contact.html">✉️ Contact</a>
+    <a href="privacy-policy.html">🔒 Privacy Policy</a>
+  </nav>
+
+  <div class="wrap">
+    <section class="section">
+      <h1>🎨 Color Mixer</h1>
+      <p>
+        The ultimate color blending tool that supports both <b>RYB (Red-Yellow-Blue)</b> and 
+        <b>RGB (Red-Green-Blue)</b> color models. Create unique palettes, extract colors from images, 
+        and explore vivid combinations.
+      </p>
+
+      <ul class="about-points">
+        <li>🎛 Dual color-mixing modes (RYB / RGB)</li>
+        <li>📸 Image color extraction</li>
+        <li>🎨 Palette generator & history</li>
+        <li>🌗 Light & dark UI support</li>
+      </ul>
+
+      <div class="cta" style="margin-top:20px;">
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.rdroid.colormixer" target="_blank">
+          ▶️ View on Play Store
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    © <span id="year"></span> RDroid Apps — All rights reserved.
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
