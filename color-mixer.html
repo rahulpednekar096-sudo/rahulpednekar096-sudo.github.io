@@ -60,6 +60,7 @@
     <a href="apps.html">📱 Apps</a>
     <a href="about.html">ℹ️ About</a>
     <a href="contact.html">✉️ Contact</a>
+    <a href="privacy-policy.html">🔒 Privacy Policy</a>
   </nav>
 
   <div class="wrap">
@@ -151,10 +152,12 @@
 
       <!-- TAB CONTENT: PRIVACY -->
       <div id="privacyTab" class="tab-content">
-        <div id="policyLoader" class="app-details">
-          Loading privacy policy...
-        </div>
+       <iframe 
+        src="privacy-policy.html" 
+        style="width:100%; height:80vh; border:none; border-radius:12px; background:#111;">
+       </iframe>
       </div>
+
 
     </section>
   </div>
@@ -179,9 +182,9 @@
       }
     }
 
-    /* Load privacy-color-mixer.html inside the tab */
+    /* Load privacy-policy.html inside the tab */
     function loadPrivacy() {
-      fetch("privacy-color-mixer.html")
+      fetch("privacy-policy.html")
         .then(res => res.text())
         .then(html => {
           document.getElementById("policyLoader").innerHTML = html;
