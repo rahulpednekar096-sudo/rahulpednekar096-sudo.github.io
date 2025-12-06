@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH2NE5Y7W4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-LH2NE5Y7W4');
   </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Apps | RDroid Apps</title>
-  <meta name="description" content="Explore innovative Android apps by RDroid — Color Mixer, Golden Calc, Dialer, and BookShop." />
+  <meta name="description"
+    content="Explore innovative Android apps by RDroid — Color Mixer, Golden Calc, Dialer, and BookShop." />
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/script.js" defer></script>
 
-  <!-- Page-specific override to show apps vertically (one per line) -->
-  <style>
-    /* Make the list vertical only on this page */
-    .apps { display: block; }
-    .app { margin-bottom: 16px; }
-    .app:last-child { margin-bottom: 0; }
-  </style>
+
 </head>
 
 <body>
@@ -33,15 +29,18 @@
       <img src="assets/my_brand_icon.png" alt="RDroid Logo" />
       <div>RDroid <span>Apps</span></div>
     </div>
-    <button class="login-btn" onclick="toggleLogin()">Login</button>
+    <a href="/auth/login.html" class="login-btn">🔑 Login</a>
   </header>
 
   <!-- Navigation Drawer -->
   <nav id="drawer">
     <a href="index.html">🏠 Home</a>
     <a href="apps.html">📱 Apps</a>
+    <a href="favorites.html">⭐ Favorites</a>
+    <a href="profile.html">👤 Profile</a>
     <a href="about.html">ℹ️ About</a>
     <a href="contact.html">✉️ Contact</a>
+    <a href="privacy-policy.html">🔒 Privacy Policy</a>
   </nav>
 
   <!-- Apps Section -->
@@ -50,26 +49,141 @@
       <h1>Our Featured Apps</h1>
       <p>Each app is crafted for performance, privacy, and user delight. Explore what we’ve built 👇</p>
 
-      <div class="apps">
-        <a class="app" href="color-mixer.html">
-          <strong>🎨 Color Mixer</strong>
-          <small>Mix colors in both RYB & RGB modes, with image extraction and palette generator.</small>
-        </a>
+      <!-- ========== COLOR MIXER ========== -->
+      <div class="app">
+        <div class="app-content">
+          <h2 class="app-title">
+            <a href="color-mixer.html">🎨 Color Mixer</a>
+          </h2>
 
+          <small>
+            <p>
+              Color Mixer is a creative and intuitive color studio designed for artists, designers,
+              and anyone who loves working with shades. It brings true artistic blending to your
+              device through its unique RYB mixing engine, letting you experiment with natural
+              paint-style color combinations alongside precise RGB tones. You can explore over
+              900 curated shades, build personalized palettes, and capture colors from images with
+              pixel-perfect accuracy — all inside a clean and focused interface.
+            </p>
 
-        <a class="app" href="easy-music.html">
-          <strong>🎵 Easy Music</strong>
-          <small>Create your own music tracks with guitar notes and layered editing.</small>
-        </a>
+            <p>
+              Whether you're studying color theory, designing UI elements, planning artwork, or
+              simply exploring how colors interact, Color Mixer gives you a practical and enjoyable
+              workspace. It works fully offline, stores your palettes locally, and makes color
+              experimentation easy and inspiring — perfect for creativity, learning, and everyday design use.
+            </p>
 
-        <a class="app" href="golden-calc.html">
-          <strong>🧮 Golden Calc</strong>
-          <small>Smart calculator with built-in unit converter and golden ratio features.</small>
-        </a>
+            <p>
+              Key features include RYB and RGB mixing modes, a library of named colors, palette
+              creation, image color picking, and full offline support.
+            </p>
+          </small>
 
+          <a class="details-btn" href="color-mixer.html">Go to Details →</a>
+        </div>
+
+        <div class="app-images">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/webpage-ce86a.firebasestorage.app/o/Color%20Mixer%2FColorMixer.png?alt=media&token=33bd14b9-3878-4c5a-99e1-40808f68bf27"
+            onclick="openPreview(this.src)">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/webpage-ce86a.firebasestorage.app/o/Color%20Mixer%2FColorMixer.jpg?alt=media&token=78305a03-2983-4726-b25e-c13cf3b36f17"
+            onclick="openPreview(this.src)">
+        </div>
       </div>
-    </section>
+
+
+
+      <div class="app">
+        <div class="app-content">
+          <h2 class="app-title">
+            <a href="easy-music.html">🎵 Easy Music</a>
+          </h2>
+          <small>
+            <p>
+              Easy Music is a simple and intuitive music creation tool designed for beginners, hobbyists,
+              and anyone who enjoys experimenting with melodies. It lets you build your own tracks using
+              musical notes like C4, D#3, and A#4, adjust timing and duration, and visualize the flow of your
+              composition in a clean, structured layout. With real-time playback, you can instantly hear your
+              ideas and refine them as you go.
+            </p>
+            <p>
+              The app also includes features like track saving and loading, customizable sound modes,
+              volume controls, and an easy-to-read note board that helps you understand rhythm and structure
+              visually. Whether you're learning music basics, composing melodies for fun, or exploring creative
+              ideas, Easy Music provides a friendly, offline workspace that makes music creation enjoyable and
+              accessible.
+            </p>
+            <p>
+              Key features include note-based track creation, adjustable note durations and tempo, multi-track
+              layering, and audio export options (M4A/WAV). Easy Music respects your privacy by storing all data
+              locally and requiring no unnecessary permissions. Start composing your own tunes with Easy Music —
+              where making music is as easy as playing!
+            </p>
+            <p>
+              Unleash your musical creativity with Easy Music — your pocket music studio.
+            </p>
+          </small>
+          <a class="details-btn" href="easy-music.html">Go to Details →</a>
+        </div>
+
+        <div class="app-images">
+          <img src="img/placeholder1.jpg" onclick="openPreview(this.src)">
+          <img src="img/placeholder2.jpg" onclick="openPreview(this.src)">
+        </div>
+      </div>
+
+      <div class="app">
+        <div class="app-content">
+          <h2 class="app-title">
+            <a href="golden-calc.html">🧮 Golden Calc</a>
+          </h2>
+          <p>
+            Golden Calc is a sleek and efficient calculator app designed for everyday use. It combines
+            a clean, modern interface with essential calculation features, making it perfect for quick
+            math tasks. Whether you need to perform basic arithmetic, percentages, or memory functions,
+            Golden Calc has you covered with large, easy-to-read buttons and a responsive layout.
+          </p>
+          <p>
+            Beyond simple calculations, Golden Calc also includes a built-in unit converter that allows
+            you to quickly switch between various measurement units such as length, weight, volume, and
+            temperature. This makes it a handy tool for students, professionals, and anyone who needs a
+            reliable calculator on the go. With offline functionality and no unnecessary permissions,
+            Golden Calc respects your privacy while providing a smooth and efficient calculation experience.
+          </p>
+          <p>
+            Golden Calc is a smart and powerful calculator designed to make everyday and scientific calculations
+            effortless. It supports advanced operations like factorials, roots, percentages, powers, brackets,
+            implicit multiplication, and live-result preview, ensuring fast and accurate answers as you type.
+            Its clean display, intelligent input handling, and tap-to-select editing make working with
+            expressions smooth and reliable.
+          </p>
+          <p>
+            The app also includes a full-featured History viewer and a versatile Unit Converter with 14 categories
+            including Length, Temperature, Volume, Speed, Data, Energy, Pressure, and more. With golden
+            metallic styling, optimized layout, and a fluid user experience, Golden Calc becomes a dependable
+            companion for students, professionals, and anyone who needs precise and convenient calculations.
+          </p>
+          </small>
+          <a class="details-btn" href="golden-calc.html">Go to Details →</a>
+        </div>
+
+        <div class="app-images">
+          <img src="img/placeholder1.jpg" onclick="openPreview(this.src)">
+          <img src="img/placeholder2.jpg" onclick="openPreview(this.src)">
+        </div>
+      </div>
+
   </div>
+  </section>
+  </div>
+
+  <!-- 🔍 IMAGE PREVIEW POPUP -->
+  <div id="imgPreviewOverlay">
+    <span id="imgPreviewClose" onclick="closePreview()">✕</span>
+    <img id="imgPreviewBox" src="">
+  </div>
+
 
   <!-- Footer -->
   <footer>
@@ -77,13 +191,15 @@
   </footer>
 
   <!-- Login Popup -->
-  <div class="login-box" id="loginBox">
-    <h2>Login to RDroid</h2>
-    <input type="email" placeholder="Email" id="email" required />
-    <input type="password" placeholder="Password" id="password" required />
-    <button onclick="alert('Login feature coming soon!')">Login</button>
-  </div>
+
+
+  <!-- Firebase v12 Modular SDKs (ES Modules) -->
+  <script type="module" src="js/firebase-config.js"></script>
+  <script type="module" src="js/login.js"></script>
+
+  <!-- Main UI Script -->
+  <script src="js/script.js"></script>
+
 </body>
+
 </html>
-
-
