@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>PNG to WebP – Convert PNG Images to WebP</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .tool-section {
+      max-width: 700px;
+      margin: auto;
+      padding: 120px 20px 40px;
+      text-align: center;
+    }
+
+    .tool-section h1 {
+      margin-bottom: 10px;
+    }
+
+    .tool-section p {
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- RDroidApps Header -->
+  <header>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="logo">
+      <img src="../../assets/my_brand_icon.png" alt="RDroid Logo" />
+      <div>RDroid <span>Apps</span></div>
+    </div>
+    <a href="/auth/login.html" class="login-btn">🔑 Login</a>
+  </header>
+
+  <!-- Drawer Navigation -->
+  <nav id="drawer">
+    <a href="../../index.html">🏠 Home</a>
+    <a href="../../apps.html">📱 Apps</a>
+    <a href="../../favorites.html">⭐ Favorites</a>
+    <a href="../../profile.html">👤 Profile</a>
+    <a href="../../about.html">ℹ️ About</a>
+    <a href="../../contact.html">✉️ Contact</a>
+    <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
+  </nav>
+
+  <div class="section" style="padding-top:120px;">
+    <h1>PNG to WebP</h1>
+    <p>Convert your PNG images into lightweight WebP format.</p>
+
+    <input type="file" id="pngFiles" accept="image/png" multiple style="margin:15px 0;">
+    <button class="btn btn-primary" onclick="convertPNGtoWebP()">Convert Now</button>
+
+    <div id="output" style="margin-top:25px;"></div>
+  </div>
+
+  <footer>© 2025 RDroid Apps – PNG to WebP Tool</footer>
+
+  <script>
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+
+    async function convertPNGtoWebP() {
+      let files = document.getElementById("pngFiles").files;
+      if (!files.length) { alert("Please select at least one PNG image!"); return; }
+
+      let output = document.getElementById("output");
+      output.innerHTML = "<p>Processing… Please wait.</p>";
+
+      output.innerHTML = ""; // clear output
+
+      for (let file of files) {
+        const webpBlob = await pngToWebp(file);
+        const url = URL.createObjectURL(webpBlob);
+
+        // Download link
+        let link = document.createElement("a");
+        link.href = url;
+        link.download = file.name.replace(".png", ".webp");
+        link.innerText = "Download " + link.download;
+        link.className = "btn";
+        link.style = "display:block;width:240px;margin:10px 0;";
+
+        // Preview
+        let preview = document.createElement("img");
+        preview.src = url;
+        preview.style = "max-width:160px;display:block;margin:10px 0;border-radius:8px;";
+
+        output.appendChild(preview);
+        output.appendChild(link);
+      }
+    }
+
+    // PNG → WebP converter (Canvas)
+    function pngToWebp(file) {
+      return new Promise((resolve, reject) => {
+        let img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          canvas.width = img.width;
+          canvas.height = img.height;
+
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0);
+
+          canvas.toBlob(
+            (blob) => resolve(blob),
+            "image/webp",
+            0.85  // compression quality
+          );
+        };
+        img.onerror = reject;
+        img.src = URL.createObjectURL(file);
+      });
+    }
+  </script>
+
+</body>
+
+</html>

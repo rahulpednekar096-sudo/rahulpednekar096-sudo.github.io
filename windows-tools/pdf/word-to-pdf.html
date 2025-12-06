@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Word to PDF – Convert DOCX to PDF</title>
+<link rel="stylesheet" href="../../css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.2.0/docx.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+</head>
+
+<body>
+
+<!-- RDroidApps Header -->
+  <header>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="logo">
+      <img src="../../assets/my_brand_icon.png" alt="RDroid Logo" />
+      <div>RDroid <span>Apps</span></div>
+    </div>
+    <a href="/auth/login.html" class="login-btn">🔑 Login</a>
+  </header>
+
+<!-- Drawer Navigation -->
+  <nav id="drawer">
+    <a href="../../index.html">🏠 Home</a>
+    <a href="../../apps.html">📱 Apps</a>
+    <a href="../../favorites.html">⭐ Favorites</a>
+    <a href="../../profile.html">👤 Profile</a>
+    <a href="../../about.html">ℹ️ About</a>
+    <a href="../../contact.html">✉️ Contact</a>
+    <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
+  </nav>
+
+<div class="section" style="padding-top:120px;">
+  <h1>Word to PDF</h1>
+  <p>Convert your Word documents (DOCX) into PDF files easily.</p>
+
+  <input type="file" id="wordFile" accept=".docx" style="margin:15px 0;">
+  <button class="btn btn-primary" onclick="convertWordToPDF()">Convert Now</button>
+
+  <div id="output" style="margin-top:25px;"></div>
+</div>
+
+<footer>© 2025 RDroid Apps – PDF Tools</footer>
+
+<script>
+// Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+
+async function convertWordToPDF() {
+  const file = document.getElementById("wordFile").files[0];
+  if (!file) { alert("Please select a Word file!"); return; }
+
+  const output = document.getElementById("output");
+  output.innerHTML = "<p>Processing… Please wait.</p>";
+
+  const arrayBuffer = await file.arrayBuffer();
+
+  // Use docx.js to read content
+  const zip = new window.docx.Packer();
+  const doc = await window.docx.Document.load(arrayBuffer);
+
+  // Create simple PDF
+  const pdfDoc = await PDFLib.PDFDocument.create();
+  const page = pdfDoc.addPage();
+  const { width, height } = page.getSize();
+
+  const textLines = doc.getParagraphs().map(p => p.text);
+  const fontSize = 12;
+  let y = height - 50;
+
+  for (const line of textLines) {
+      page.drawText(line, { x: 50, y: y, size: fontSize });
+      y -= fontSize + 5;
+      if (y < 50) {
+          page = pdfDoc.addPage();
+          y = height - 50;
+      }
+  }
+
+  const pdfBytes = await pdfDoc.save();
+  const blob = new Blob([pdfBytes], { type: "application/pdf" });
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = file.name.replace(/\.[^/.]+$/, "") + ".pdf";
+  link.innerText = "Download PDF";
+  link.className = "btn";
+  link.style = "display:block;width:200px;margin:15px 0;";
+
+  output.innerHTML = "";
+  output.appendChild(link);
+}
+</script>
+
+</body>
+</html>

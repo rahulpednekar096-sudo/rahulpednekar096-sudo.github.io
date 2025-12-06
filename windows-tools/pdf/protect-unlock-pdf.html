@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Protect/Unlock PDF – Add or Remove Password</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+  <style>
+    .tool-section {
+      max-width: 700px;
+      margin: auto;
+      padding: 120px 20px 40px;
+      text-align: center;
+    }
+
+    .tool-section h1 {
+      margin-bottom: 10px;
+    }
+
+    .tool-section p {
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- RDroidApps Header -->
+  <header>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="logo">
+      <img src="../../assets/my_brand_icon.png" alt="RDroid Logo" />
+      <div>RDroid <span>Apps</span></div>
+    </div>
+    <a href="/auth/login.html" class="login-btn">🔑 Login</a>
+  </header>
+
+  <!-- Drawer Navigation -->
+  <nav id="drawer">
+    <a href="../../index.html">🏠 Home</a>
+    <a href="../../apps.html">📱 Apps</a>
+    <a href="../../favorites.html">⭐ Favorites</a>
+    <a href="../../profile.html">👤 Profile</a>
+    <a href="../../about.html">ℹ️ About</a>
+    <a href="../../contact.html">✉️ Contact</a>
+    <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
+  </nav>
+
+  <div class="section" style="padding-top:120px;">
+    <h1>Protect / Unlock PDF</h1>
+    <p>Add a password to protect your PDF or remove an existing password.</p>
+
+    <input type="file" id="pdfFile" accept="application/pdf" style="margin:15px 0;">
+    <input type="text" id="password" placeholder="Enter password" style="margin:10px 0;width:200px;">
+    <button class="btn btn-primary" onclick="processPDF('protect')">Protect PDF</button>
+    <button class="btn btn-secondary" onclick="processPDF('unlock')">Unlock PDF</button>
+
+    <div id="output" style="margin-top:25px;"></div>
+  </div>
+
+  <footer>© 2025 RDroid Apps – PDF Tools</footer>
+
+  <script>
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+
+    async function processPDF(action) {
+      const file = document.getElementById("pdfFile").files[0];
+      const password = document.getElementById("password").value;
+      if (!file) { alert("Please select a PDF file!"); return; }
+      if (!password) { alert("Please enter a password!"); return; }
+
+      const output = document.getElementById("output");
+      output.innerHTML = "<p>Processing… Please wait.</p>";
+
+      try {
+        const typedArray = new Uint8Array(await file.arrayBuffer());
+        const pdfDoc = await PDFLib.PDFDocument.load(typedArray, { ignoreEncryption: true });
+
+        // Note: PDF-Lib currently supports setting a password (encrypting) but not decrypting in-browser
+        if (action === 'protect') {
+          const pdfBytes = await pdfDoc.save({ passwords: { user: password, owner: password } });
+          const blob = new Blob([pdfBytes], { type: "application/pdf" });
+          const url = URL.createObjectURL(blob);
+
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = file.name.replace(/\.[^/.]+$/, "") + "_protected.pdf";
+          link.innerText = "Download Protected PDF";
+          link.className = "btn";
+          link.style = "display:block;width:200px;margin:15px 0;";
+
+          output.innerHTML = "";
+          output.appendChild(link);
+        } else {
+          alert("Unlocking PDF in-browser is limited. Use server-side tools for full unlock.");
+          output.innerHTML = "";
+        }
+      } catch (err) {
+        alert("Error processing PDF: " + err);
+        output.innerHTML = "";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

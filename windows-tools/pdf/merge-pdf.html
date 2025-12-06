@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Merge PDF – Combine Multiple PDFs</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+  <style>
+    .tool-section {
+      max-width: 700px;
+      margin: auto;
+      padding: 120px 20px 40px;
+      text-align: center;
+    }
+
+    .tool-section h1 {
+      margin-bottom: 10px;
+    }
+
+    .tool-section p {
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- RDroidApps Header -->
+  <header>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="logo">
+      <img src="../../assets/my_brand_icon.png" alt="RDroid Logo" />
+      <div>RDroid <span>Apps</span></div>
+    </div>
+    <a href="/auth/login.html" class="login-btn">🔑 Login</a>
+  </header>
+
+  <!-- Drawer Navigation -->
+  <nav id="drawer">
+    <a href="../../index.html">🏠 Home</a>
+    <a href="../../apps.html">📱 Apps</a>
+    <a href="../../favorites.html">⭐ Favorites</a>
+    <a href="../../profile.html">👤 Profile</a>
+    <a href="../../about.html">ℹ️ About</a>
+    <a href="../../contact.html">✉️ Contact</a>
+    <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
+  </nav>
+
+  <div class="section" style="padding-top:120px;">
+    <h1>Merge PDF</h1>
+    <p>Combine multiple PDF files into a single PDF.</p>
+
+    <input type="file" id="pdfFiles" accept="application/pdf" multiple style="margin:15px 0;">
+    <button class="btn btn-primary" onclick="mergePDFs()">Merge Now</button>
+
+    <div id="output" style="margin-top:25px;"></div>
+  </div>
+
+  <footer>© 2025 RDroid Apps – PDF Tools</footer>
+
+  <script>
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+
+    async function mergePDFs() {
+      const files = document.getElementById("pdfFiles").files;
+      if (!files.length) { alert("Please select PDF files!"); return; }
+
+      const output = document.getElementById("output");
+      output.innerHTML = "<p>Processing… Please wait.</p>";
+
+      const mergedPdf = await PDFLib.PDFDocument.create();
+
+      for (const file of files) {
+        const arrayBuffer = await file.arrayBuffer();
+        const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
+        const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+        copiedPages.forEach(page => mergedPdf.addPage(page));
+      }
+
+      const mergedPdfBytes = await mergedPdf.save();
+      const blob = new Blob([mergedPdfBytes], { type: "application/pdf" });
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "merged.pdf";
+      link.innerText = "Download Merged PDF";
+      link.className = "btn";
+      link.style = "display:block;width:200px;margin:15px 0;";
+
+      output.innerHTML = "";
+      output.appendChild(link);
+    }
+  </script>
+
+</body>
+
+</html>

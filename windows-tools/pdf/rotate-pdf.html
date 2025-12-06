@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rotate PDF – Rotate PDF Pages</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+  <style>
+    .tool-section {
+      max-width: 700px;
+      margin: auto;
+      padding: 120px 20px 40px;
+      text-align: center;
+    }
+
+    .tool-section h1 {
+      margin-bottom: 10px;
+    }
+
+    .tool-section p {
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- RDroidApps Header -->
+  <header>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="logo">
+      <img src="../../assets/my_brand_icon.png" alt="RDroid Logo" />
+      <div>RDroid <span>Apps</span></div>
+    </div>
+    <a href="/auth/login.html" class="login-btn">🔑 Login</a>
+  </header>
+
+  <!-- Drawer Navigation -->
+  <nav id="drawer">
+    <a href="../../index.html">🏠 Home</a>
+    <a href="../../apps.html">📱 Apps</a>
+    <a href="../../favorites.html">⭐ Favorites</a>
+    <a href="../../profile.html">👤 Profile</a>
+    <a href="../../about.html">ℹ️ About</a>
+    <a href="../../contact.html">✉️ Contact</a>
+    <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
+  </nav>
+
+  <div class="section" style="padding-top:120px;">
+    <h1>Rotate PDF</h1>
+    <p>Rotate all pages of your PDF by 90°, 180°, or 270°.</p>
+
+    <input type="file" id="pdfFile" accept="application/pdf" style="margin:15px 0;">
+    <select id="rotation" style="margin:10px 0;">
+      <option value="90">Rotate 90°</option>
+      <option value="180">Rotate 180°</option>
+      <option value="270">Rotate 270°</option>
+    </select>
+    <button class="btn btn-primary" onclick="rotatePDF()">Rotate Now</button>
+
+    <div id="output" style="margin-top:25px;"></div>
+  </div>
+
+  <footer>© 2025 RDroid Apps – PDF Tools</footer>
+
+  <script>
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+
+    async function rotatePDF() {
+      const file = document.getElementById("pdfFile").files[0];
+      if (!file) { alert("Please select a PDF file!"); return; }
+
+      const rotation = parseInt(document.getElementById("rotation").value);
+      const output = document.getElementById("output");
+      output.innerHTML = "<p>Processing… Please wait.</p>";
+
+      const typedArray = new Uint8Array(await file.arrayBuffer());
+      const pdfDoc = await PDFLib.PDFDocument.load(typedArray);
+
+      pdfDoc.getPages().forEach(page => {
+        const currentRotation = page.getRotation().angle;
+        page.setRotation(currentRotation + rotation);
+      });
+
+      const pdfBytes = await pdfDoc.save();
+      const blob = new Blob([pdfBytes], { type: "application/pdf" });
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = file.name.replace(/\.[^/.]+$/, "") + "_rotated.pdf";
+      link.innerText = "Download Rotated PDF";
+      link.className = "btn";
+      link.style = "display:block;width:200px;margin:15px 0;";
+
+      output.innerHTML = "";
+      output.appendChild(link);
+    }
+  </script>
+
+</body>
+
+</html>

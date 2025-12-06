@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Text to PDF – Convert Text into PDF</title>
+
+  <!-- Correct RDroidApps CSS -->
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <style>
+    .tool-section {
+      max-width: 700px;
+      margin: auto;
+      padding: 120px 20px 40px;
+      text-align: center;
+    }
+
+    .tool-section h1 {
+      margin-bottom: 10px;
+    }
+
+    .tool-section p {
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- RDroidApps Header -->
+  <header>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="logo">
+      <img src="../../assets/my_brand_icon.png" alt="RDroid Logo" />
+      <div>RDroid <span>Apps</span></div>
+    </div>
+    <a href="/auth/login.html" class="login-btn">🔑 Login</a>
+  </header>
+
+  <!-- Drawer Navigation -->
+  <nav id="drawer">
+    <a href="../../index.html">🏠 Home</a>
+    <a href="../../apps.html">📱 Apps</a>
+    <a href="../../favorites.html">⭐ Favorites</a>
+    <a href="../../profile.html">👤 Profile</a>
+    <a href="../../about.html">ℹ️ About</a>
+    <a href="../../contact.html">✉️ Contact</a>
+    <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
+  </nav>
+
+  <div class="section" style="padding-top:120px;max-width:900px;">
+    <h1>Text to PDF</h1>
+    <p>Type or paste any text and instantly convert it into a PDF file.</p>
+
+    <textarea id="textInput" placeholder="Enter your text here..."
+      style="width:100%;height:250px;padding:15px;border-radius:12px;border:1px solid #ccc;font-size:16px;">
+  </textarea>
+
+    <button class="btn btn-primary" onclick="convertTextToPDF()" style="margin-top:20px;">Convert Now</button>
+
+    <div id="output" style="margin-top:25px;"></div>
+  </div>
+
+  <footer>© 2025 RDroid Apps – PDF Tools</footer>
+
+  <script>
+
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+
+    function convertTextToPDF() {
+      const text = document.getElementById("textInput").value.trim();
+      if (!text) {
+        alert("Please enter some text first!");
+        return;
+      }
+
+      const output = document.getElementById("output");
+      output.innerHTML = "<p>Processing… Please wait.</p>";
+
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF();
+
+      const lines = pdf.splitTextToSize(text, 180);
+      pdf.text(lines, 15, 15);
+
+      pdf.save("text.pdf");
+
+      output.innerHTML = "<p>PDF Generated Successfully!</p>";
+    }
+
+  </script>
+
+</body>
+
+</html>

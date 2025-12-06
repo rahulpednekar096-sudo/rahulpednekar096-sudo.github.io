@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>PDF to PNG – Convert PDF Pages to PNG Images</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+  <style>
+    .tool-section {
+      max-width: 700px;
+      margin: auto;
+      padding: 120px 20px 40px;
+      text-align: center;
+    }
+
+    .tool-section h1 {
+      margin-bottom: 10px;
+    }
+
+    .tool-section p {
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- RDroidApps Header -->
+  <header>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="logo">
+      <img src="../../assets/my_brand_icon.png" alt="RDroid Logo" />
+      <div>RDroid <span>Apps</span></div>
+    </div>
+    <a href="/auth/login.html" class="login-btn">🔑 Login</a>
+  </header>
+
+  <!-- Drawer Navigation -->
+  <nav id="drawer">
+    <a href="../../index.html">🏠 Home</a>
+    <a href="../../apps.html">📱 Apps</a>
+    <a href="../../favorites.html">⭐ Favorites</a>
+    <a href="../../profile.html">👤 Profile</a>
+    <a href="../../about.html">ℹ️ About</a>
+    <a href="../../contact.html">✉️ Contact</a>
+    <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
+  </nav>
+
+  <div class="section" style="padding-top:120px;">
+    <h1>PDF to PNG</h1>
+    <p>Convert each page of your PDF into high-quality PNG images.</p>
+
+    <input type="file" id="pdfFile" accept="application/pdf" style="margin:15px 0;">
+    <button class="btn btn-primary" onclick="convertPDFToPNG()">Convert Now</button>
+
+    <div id="output" style="margin-top:25px;"></div>
+  </div>
+
+  <footer>© 2025 RDroid Apps – PDF Tools</footer>
+
+  <script>
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+
+    async function convertPDFToPNG() {
+      const file = document.getElementById("pdfFile").files[0];
+      if (!file) { alert("Please select a PDF file!"); return; }
+
+      const output = document.getElementById("output");
+      output.innerHTML = "<p>Processing… Please wait.</p>";
+
+      const fileReader = new FileReader();
+      fileReader.onload = async function () {
+        const typedarray = new Uint8Array(this.result);
+        const pdf = await pdfjsLib.getDocument(typedarray).promise;
+        output.innerHTML = "";
+
+        for (let i = 1; i <= pdf.numPages; i++) {
+          const page = await pdf.getPage(i);
+          const viewport = page.getViewport({ scale: 2 });
+
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+
+          await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+
+          const imgURL = canvas.toDataURL("image/png");
+
+          const img = document.createElement("img");
+          img.src = imgURL;
+          img.style = "width:300px;margin:12px;border-radius:12px;";
+
+          const link = document.createElement("a");
+          link.href = imgURL;
+          link.download = `page-${i}.png`;
+          link.innerText = `Download PNG (Page ${i})`;
+          link.className = "btn";
+          link.style = "display:block;width:200px;margin:10px 0;";
+
+          output.appendChild(img);
+          output.appendChild(link);
+        }
+      };
+      fileReader.readAsArrayBuffer(file);
+    }
+  </script>
+
+</body>
+
+</html>
