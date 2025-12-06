@@ -15,11 +15,12 @@
   <title>RDroid Apps — Official Website</title>
   <meta name="description" content="RDroid Apps builds innovative Android apps like Color Mixer, Golden Calc, Dialer, and BookShop." />
   <meta name="theme-color" content="#0aa37f" />
+
   <link rel="stylesheet" href="css/style.css" />
-  <script src="js/script.js" defer></script>
 </head>
 
 <body>
+
   <!-- Header -->
   <header>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -27,15 +28,18 @@
       <img src="assets/my_brand_icon.png" alt="RDroid Logo" />
       <div>RDroid <span>Apps</span></div>
     </div>
-    <button class="login-btn" onclick="toggleLogin()">Login</button>
+    <a href="/auth/login.html" class="login-btn">🔑 Login</a>
   </header>
 
   <!-- Navigation Drawer -->
   <nav id="drawer">
     <a href="index.html">🏠 Home</a>
     <a href="apps.html">📱 Apps</a>
+    <a href="favorites.html">⭐ Favorites</a>
+    <a href="profile.html">👤 Profile</a>
     <a href="about.html">ℹ️ About</a>
     <a href="contact.html">✉️ Contact</a>
+    <a href="privacy-policy.html">🔒 Privacy Policy</a>
   </nav>
 
   <!-- Hero Section -->
@@ -58,17 +62,115 @@
     </section>
   </div>
 
+  <!-- Windows Tools Section -->
+<section class="windows-tools" style="padding: 40px 20px; text-align: center;">
+
+  <h2 style="margin-bottom: 15px;">🪟 Windows Tools</h2>
+
+  <p style="max-width: 800px; margin: 0 auto 20px; font-size: 15px;">
+    Use our fast, secure, and lightweight Windows utilities built for everyday productivity.
+    Click below to explore the full collection of tools.
+  </p>
+
+  <a href="windows-tools.html"
+     style="
+      display: inline-block;
+      background: #0aa37f;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 17px;
+      text-decoration: none;
+      margin-bottom: 35px;
+    ">
+    🔧 Open Windows Tools
+  </a>
+
+  <!-- TWO COLUMN LAYOUT -->
+  <div style="
+    display: flex;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    align-items: flex-start;
+  ">
+
+    <!-- LEFT COLUMN - Tools -->
+    <div style="flex: 1;">
+
+      <h3>📄 PDF Tools</h3>
+      <p>
+        Merge, split, compress, convert, and secure PDFs with fast, one-click operations.
+        Built for accuracy, privacy, and professional productivity.
+      </p>
+
+      <h3>🖼️ Image Tools</h3>
+      <p>
+        Resize, crop, compress, convert formats, and remove backgrounds instantly.
+        Ideal for designers, students, and creators.
+      </p>
+
+      <h3>🎵 Audio Tools</h3>
+      <p>
+        Trim audio, extract MP3, reduce noise, and convert formats easily.
+        Perfect for editors, podcasters, and quick everyday needs.
+      </p>
+
+      <h3>⚙️ System Tools</h3>
+      <p>
+        File renamer, clipboard manager, system cleaner, and automation utilities —
+        built to save time and boost workflow efficiency.
+      </p>
+
+      <h3>📦 Utility Tools</h3>
+      <p>
+        Notes manager, to-do apps, password generators, QR tools, and more —
+        designed for simplicity and smooth user experience.
+      </p>
+
+    </div>
+
+    <!-- RIGHT COLUMN - Your Extra Website Info -->
+    <div style="flex: 1;">
+
+      <h3>ℹ️ About This Website</h3>
+      <p>
+        (इथे तू हवे ते लिहू शकतोस — RDroidApps बद्दल, future updates,
+        Windows tools roadmap, किंवा वेबसाइटच्या features बद्दल.)
+      </p>
+
+      <p style="color:#0aa37f;">
+        उदाहरण:  
+        "RDroid Apps Windows tools are completely offline-ready,
+        privacy-friendly, and built to help users work faster with clean UI."
+      </p>
+
+      <p>
+        तुला जितकी माहिती लिहायची असेल तितकी इथे add करता येईल.
+      </p>
+
+    </div>
+  </div>
+
+</section>
+
+
+
   <!-- Footer -->
   <footer>
     © <span id="year"></span> RDroid Apps — All rights reserved.
   </footer>
 
   <!-- Login Popup -->
-  <div class="login-box" id="loginBox">
-    <h2>Login to RDroid</h2>
-    <input type="email" placeholder="Email" id="email" required />
-    <input type="password" placeholder="Password" id="password" required />
-    <button onclick="alert('Login feature coming soon!')">Login</button>
-  </div>
+
+  <!-- Firebase v12 Modular SDKs (ES Modules) -->
+  <script type="module" src="js/firebase-config.js"></script>
+  <script type="module" src="js/login.js"></script>
+  
+  <!-- Main UI Script -->
+  <script src="js/script.js"></script>
+
+
 </body>
 </html>
