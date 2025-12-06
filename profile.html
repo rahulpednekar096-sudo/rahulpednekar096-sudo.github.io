@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile — RDroid Apps</title>
+  <meta name="description" content="View and manage your RDroid Apps profile." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .profile-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .profile-header h1 {
+      font-size: 32px;
+      margin: 0 0 8px;
+      background: linear-gradient(145deg, var(--brand), var(--brand2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .profile-card {
+      background: var(--card-bg, rgba(255, 255, 255, 0.05));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 500px;
+      margin: 0 auto 32px;
+      backdrop-filter: blur(10px);
+    }
+
+    .profile-item {
+      margin-bottom: 24px;
+    }
+
+    .profile-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .profile-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary, rgba(255, 255, 255, 0.6));
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .profile-value {
+      font-size: 16px;
+      color: var(--text);
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      word-break: break-all;
+    }
+
+    .edit-name-form {
+      display: flex;
+      gap: 12px;
+      align-items: flex-end;
+    }
+
+    .edit-name-form input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      font-size: 16px;
+      transition: 0.2s;
+    }
+
+    .edit-name-form input:focus {
+      outline: none;
+      border-color: var(--brand);
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 0 12px rgba(34, 211, 166, 0.2);
+    }
+
+    .btn-small {
+      padding: 10px 16px;
+      background: linear-gradient(145deg, var(--brand), var(--brand2));
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-small:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(34, 211, 166, 0.3);
+    }
+
+    .btn-small:active {
+      transform: translateY(0);
+    }
+
+    .btn-small.secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-small.secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-logout {
+      width: 100%;
+      padding: 12px 16px;
+      background: linear-gradient(145deg, #ef4444, #dc2626);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(239, 68, 68, 0.2);
+    }
+
+    .btn-logout:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);
+    }
+
+    .btn-logout:active {
+      transform: translateY(0);
+    }
+
+    .btn-logout:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .links-section {
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .links-section p {
+      margin: 0 0 16px;
+      font-size: 14px;
+      color: var(--text-secondary, rgba(255, 255, 255, 0.6));
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .link-btn {
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      color: var(--text);
+      text-decoration: none;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .link-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+
+    .message {
+      display: none;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      text-align: center;
+      animation: slideDown 0.3s ease;
+    }
+
+    .message.show {
+      display: block;
+    }
+
+    .message.success {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #4ade80;
+    }
+
+    .message.error {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #ff6b6b;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .profile-card {
+        padding: 24px;
+      }
+
+      .edit-name-form {
+        flex-direction: column;
+      }
+
+      .edit-name-form input {
+        width: 100%;
+      }
+
+      .btn-small {
+        width: 100%;
+      }
+
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="logo">
+      <img src="assets/my_brand_icon.png" alt="RDroid Logo" />
+      <div>RDroid <span>Apps</span></div>
+    </div>
+    <a href="/auth/login.html" class="login-btn">Login</a>
+  </header>
+
+  <!-- Navigation Drawer -->
+  <nav id="drawer">
+    <a href="index.html">🏠 Home</a>
+    <a href="apps.html">📱 Apps</a>
+    <a href="favorites.html">⭐ Favorites</a>
+    <a href="profile.html">👤 Profile</a>
+    <a href="about.html">ℹ️ About</a>
+    <a href="contact.html">✉️ Contact</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="wrap" id="profile">
+    <section class="section">
+      <div class="profile-header">
+        <h1>Your Profile</h1>
+        <p>Manage your account information</p>
+      </div>
+
+      <!-- Messages -->
+      <div class="message" id="successMessage"></div>
+      <div class="message" id="errorMessage"></div>
+
+      <!-- Profile Card -->
+      <div class="profile-card">
+        <!-- Name -->
+        <div class="profile-item">
+          <label class="profile-label">Full Name</label>
+          <div class="profile-value" id="profileNameDisplay"></div>
+          <div class="edit-name-form" id="editNameForm" style="display: none; margin-top: 8px;">
+            <input type="text" id="editNameInput" placeholder="Enter your name" />
+            <button class="btn-small" onclick="saveName()">Save</button>
+            <button class="btn-small secondary" onclick="cancelEditName()">Cancel</button>
+          </div>
+          <button class="btn-small" onclick="startEditName()" id="editNameBtn" style="margin-top: 8px;">
+            Edit Name
+          </button>
+        </div>
+
+        <!-- Email -->
+        <div class="profile-item">
+          <label class="profile-label">Email Address</label>
+          <div class="profile-value" id="profileEmailDisplay"></div>
+        </div>
+
+        <!-- Account Created -->
+        <div class="profile-item">
+          <label class="profile-label">Account Created</label>
+          <div class="profile-value" id="profileCreatedDisplay"></div>
+        </div>
+
+        <!-- Logout Button -->
+        <div class="profile-item" style="margin-top: 32px;">
+          <button class="btn-logout" onclick="handleLogout()" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <!-- Links Section -->
+      <div class="profile-card links-section">
+        <p>Quick Links:</p>
+        <div class="links-grid">
+          <a href="apps.html" class="link-btn">📱 Browse Apps</a>
+          <a href="favorites.html" class="link-btn">⭐ My Favorites</a>
+          <a href="about.html" class="link-btn">ℹ️ About Us</a>
+          <a href="contact.html" class="link-btn">✉️ Contact</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © <span id="year"></span> RDroid Apps — All rights reserved.
+  </footer>
+
+  <!-- Firebase v12 Modular Scripts -->
+  <script type="module" src="js/firebase-config.js"></script>
+  <script type="module" src="js/login.js"></script>
+
+  <!-- Auth Guard -->
+  <script type="module">
+    import { auth } from "./js/firebase-config.js";
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = "/auth/login.html";
+      } else {
+        // Load profile
+        loadProfileData(user);
+      }
+    });
+
+    async function loadProfileData(user) {
+      try {
+        const profile = await window.rdroidAuth.fetchProfile(user.uid);
+        
+        if (profile) {
+          document.getElementById('profileNameDisplay').textContent = profile.name || 'N/A';
+          document.getElementById('profileEmailDisplay').textContent = user.email;
+          
+          if (profile.createdAt) {
+            const date = new Date(profile.createdAt.seconds * 1000).toLocaleDateString();
+            document.getElementById('profileCreatedDisplay').textContent = date;
+          }
+        }
+      } catch (error) {
+        console.error("Error loading profile:", error);
+        showError("Failed to load profile");
+      }
+    }
+
+    window.profileLoadData = loadProfileData;
+  </script>
+
+  <!-- Main UI Script -->
+  <script src="js/script.js"></script>
+
+  <!-- Profile Page Script -->
+  <script>
+    function showSuccess(message) {
+      const successEl = document.getElementById('successMessage');
+      successEl.textContent = message;
+      successEl.classList.add('show', 'success');
+      document.getElementById('errorMessage').classList.remove('show');
+      setTimeout(() => {
+        successEl.classList.remove('show');
+      }, 3000);
+    }
+
+    function showError(message) {
+      const errorEl = document.getElementById('errorMessage');
+      errorEl.textContent = message;
+      errorEl.classList.add('show', 'error');
+      document.getElementById('successMessage').classList.remove('show');
+      setTimeout(() => {
+        errorEl.classList.remove('show');
+      }, 3000);
+    }
+
+    function startEditName() {
+      const currentName = document.getElementById('profileNameDisplay').textContent;
+      document.getElementById('editNameInput').value = currentName;
+      document.getElementById('editNameForm').style.display = 'flex';
+      document.getElementById('editNameBtn').style.display = 'none';
+    }
+
+    function cancelEditName() {
+      document.getElementById('editNameForm').style.display = 'none';
+      document.getElementById('editNameBtn').style.display = 'block';
+    }
+
+    async function saveName() {
+      const newName = document.getElementById('editNameInput').value.trim();
+      
+      if (!newName) {
+        showError('Name cannot be empty');
+        return;
+      }
+
+      try {
+        const user = window.rdroidAuth.getCurrentUser();
+        if (!user) {
+          showError('You are not logged in');
+          return;
+        }
+
+        await window.rdroidAuth.updateProfile(user.uid, newName);
+        document.getElementById('profileNameDisplay').textContent = newName;
+        cancelEditName();
+        showSuccess('Name updated successfully');
+      } catch (error) {
+        showError(error.message || 'Failed to update name');
+      }
+    }
+
+    async function handleLogout() {
+      const logoutBtn = document.getElementById('logoutBtn');
+      logoutBtn.disabled = true;
+      logoutBtn.textContent = 'Logging out...';
+
+      try {
+        await window.rdroidAuth.doLogout();
+        window.location.href = '/';
+      } catch (error) {
+        showError(error.message || 'Logout failed');
+        logoutBtn.disabled = false;
+        logoutBtn.textContent = 'Logout';
+      }
+    }
+  </script>
+</body>
+</html>

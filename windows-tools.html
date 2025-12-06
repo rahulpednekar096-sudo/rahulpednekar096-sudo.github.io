@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Windows Tools — RDroid Apps</title>
+
+  <!-- Main Theme CSS -->
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    .tools-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      display: flex;
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: #131619;
+      border-radius: 10px;
+      padding: 20px;
+      height: fit-content;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .sidebar h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .sidebar button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #1a1d21;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: left;
+      font-size: 15px;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sidebar button:hover {
+      background: #22262a;
+    }
+
+    .sidebar button.active {
+      background: #0aa37f;
+      color: #fff;
+      font-weight: bold;
+      padding-left: 15px;
+      box-shadow: 0 0 12px rgba(10, 163, 127, 0.4);
+    }
+
+    .tools-list {
+      flex: 1;
+      background: #131619;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .tools-list h2 {
+      margin-bottom: 15px;
+    }
+
+    .tool-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #2b2f33;
+    }
+
+    .tool-item a {
+      color: #0aa37f;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.2s;
+    }
+
+    .tool-item a:hover {
+      padding-left: 6px;
+      color: #0aa37f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header (Same as Index) -->
+  <header>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="logo">
+      <img src="../assets/my_brand_icon.png" alt="RDroid Logo" />
+      <div>RDroid <span>Apps</span></div>
+    </div>
+
+    <a href="/auth/login.html" class="login-btn">🔑 Login</a>
+  </header>
+
+  <!-- Drawer Navigation -->
+  <nav id="drawer">
+    <a href="../index.html">🏠 Home</a>
+    <a href="../apps.html">📱 Apps</a>
+    <a href="../favorites.html">⭐ Favorites</a>
+    <a href="../profile.html">👤 Profile</a>
+    <a href="../about.html">ℹ️ About</a>
+    <a href="../contact.html">✉️ Contact</a>
+    <a href="../privacy-policy.html">🔒 Privacy Policy</a>
+  </nav>
+
+  <!-- Header Title -->
+  <section style="text-align:center; padding: 120px 10px 40px;">
+    <h1>🪟 Windows Tools</h1>
+    <p style="max-width:700px; margin:auto;">
+      Use our fast, secure, and lightweight Windows utilities built for everyday productivity.
+    </p>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="tools-container">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebar">
+      <h3>Categories</h3>
+      <button class="active" onclick="showTools('pdf', this)">📄 PDF Tools</button>
+      <button onclick="showTools('image', this)">🖼️ Image Tools</button>
+      <button onclick="showTools('audio', this)">🎵 Audio Tools</button>
+      <button onclick="showTools('system', this)">⚙️ System Tools</button>
+      <button onclick="showTools('utility', this)">📦 Utility Tools</button>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="tools-list" id="tools-list">
+      <!-- Dynamic content will load here -->
+    </div>
+
+  </div>
+
+  <script>
+    // Dynamic tools data based on your folder structure
+    const toolsData = {
+      pdf: [
+        "compress-pdf.html",
+        "merge-pdf.html",
+        "excel-to-pdf.html",
+        "jpg-to-pdf.html",
+        "pdf-to-excel.html",
+        "pdf-to-jpg.html",
+        "pdf-to-png.html",
+        "pdf-to-text.html",
+        "pdf-to-word.html",
+        "png-to-pdf.html",
+        "ppt-to-pdf.html",
+        "protect-unlock-pdf.html",
+        "rotate-pdf.html",
+        "split-pdf.html",
+        "text-to-pdf.html",
+        "word-to-pdf.html"
+      ],
+
+      image: [
+        "resize-image.html",
+        "png-to-webp.html",
+        "crop-image.html",
+        "convert-image.html",
+        "compress-image.html",
+        "image-to-pdf.html"
+      ],
+
+      audio: [
+        "trim-audio.html",
+        "convert-audio.html",
+        "extract-mp3.html",
+        "noise-reduction.html"
+      ],
+
+      system: [
+        "file-renamer.html",
+        "clipboard-manager.html",
+        "system-cleaner.html",
+        "batch-automation.html"
+      ],
+
+      utility: [
+        "notes.html",
+        "todo.html",
+        "password-generator.html",
+        "qr-maker.html"
+      ]
+    };
+
+    // Load tools dynamically
+    function showTools(category, btn) {
+      document.querySelectorAll(".sidebar button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const list = document.getElementById("tools-list");
+      list.innerHTML = `<h2>${category.toUpperCase()} Tools</h2>`;
+
+      toolsData[category].forEach(tool => {
+        list.innerHTML += `
+      <div class="tool-item">
+        <a href="/windows-tools/${category}/${tool}" target="_blank">
+          ${tool.replace('.html', '').replace(/-/g, ' ')}
+        </a>
+      </div>
+    `;
+      });
+    }
+
+
+
+
+    // Load first category by default
+    showTools("pdf");
+  </script>
+
+  <!-- Main Script -->
+  <script src="../js/script.js"></script>
+
+</body>
+
+</html>
