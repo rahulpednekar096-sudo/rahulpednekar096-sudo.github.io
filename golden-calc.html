@@ -23,15 +23,18 @@
       <img src="assets/my_brand_icon.png" alt="RDroid Logo" />
       <div>RDroid <span>Apps</span></div>
     </div>
-    <button class="login-btn" onclick="toggleLogin()">Login</button>
+    <a href="/auth/login.html" class="login-btn">🔑 Login</a>
   </header>
 
   <!-- Drawer -->
   <nav id="drawer">
     <a href="index.html">🏠 Home</a>
     <a href="apps.html">📱 Apps</a>
+    <a href="favorites.html">⭐ Favorites</a>
+    <a href="profile.html">👤 Profile</a>
     <a href="about.html">ℹ️ About</a>
     <a href="contact.html">✉️ Contact</a>
+    <a href="privacy-policy.html">🔒 Privacy Policy</a>
   </nav>
 
   <div class="wrap">
@@ -60,8 +63,18 @@
     © <span id="year"></span> RDroid Apps — All rights reserved.
   </footer>
 
-  <script src="js/script.js" defer></script>
+  <!-- Login Popup -->
+  
+
+  <!-- Profile Popup -->
+  
+
+  <!-- Firebase v12 Modular SDKs (ES Modules) -->
+  <script type="module" src="js/firebase-config.js"></script>
+  <script type="module" src="js/login.js"></script>
+
+  <!-- Main UI Script -->
+  <script src="js/script.js"></script>
 </body>
 </html>
-
 
