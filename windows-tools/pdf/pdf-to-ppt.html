@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>PDF → PPTX — RDroid Apps (Upgraded)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <!-- PptxGenJS for creating PPTX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pptxgenjs/3.8.0/pptxgen.bundle.js"></script>
+    <!-- JSZip + FileSaver already bundled in PptxGenJS but keep FileSaver -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+    <style>
+        :root {
+            --card: #131619;
+            --muted: #9fbfb0;
+            --accent: #0aa37f
+        }
+
+        body {
+            margin: 100px
+        }
+
+        .menu-btn {
+            background: transparent;
+            border: none;
+            color: var(--accent);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .section {
+            max-width: 980px;
+            margin: 40px auto;
+            padding: 22px;
+            background: var(--card);
+            border-radius: 12px
+        }
+
+        h1 {
+            margin: 0 0 6px
+        }
+
+        p.lead {
+            color: var(--muted)
+        }
+
+        .drop {
+            border: 2px dashed #202426;
+            padding: 18px;
+            border-radius: 10px;
+            text-align: center;
+            color: var(--muted);
+            cursor: pointer
+        }
+
+        .controls {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 12px
+        }
+
+        .control {
+            background: #0f1315;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #222;
+            min-width: 180px
+        }
+
+        .thumbs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 14px
+        }
+
+        .thumb {
+            width: 140px;
+            padding: 8px;
+            border-radius: 8px;
+            background: #0b0c0d;
+            border: 1px solid #222;
+            text-align: center
+        }
+
+        .thumb img {
+            max-width: 120px;
+            border-radius: 6px
+        }
+
+        .btn {
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent)
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #000;
+            border: none
+        }
+
+        .progress {
+            width: 100%;
+            height: 12px;
+            border-radius: 8px;
+            background: #0b0c0d;
+            margin-top: 12px;
+            display: none
+        }
+
+        .bar {
+            height: 100%;
+            width: 0%;
+            background: var(--accent);
+            transition: width .2s
+        }
+
+        .log {
+            margin-top: 12px;
+            background: #0b0c0d;
+            padding: 12px;
+            border-radius: 8px;
+            color: var(--muted);
+            max-height: 180px;
+            overflow: auto;
+            font-size: 13px
+        }
+    </style>
+</head>
+
+<body>
+    <!-- RDroidApps Header -->
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="logo">
+            <img src="../../assets/my_brand_icon.png" alt="RDroid Logo" />
+            <div>RDroid <span>Apps</span></div>
+        </div>
+        <a href="/auth/login.html" class="login-btn">🔑 Login</a>
+    </header>
+
+    <!-- Drawer Navigation -->
+    <nav id="drawer">
+        <a href="../../index.html">🏠 Home</a>
+        <a href="../../apps.html">📱 Apps</a>
+        <a href="../../favorites.html">⭐ Favorites</a>
+        <a href="../../profile.html">👤 Profile</a>
+        <a href="../../about.html">ℹ️ About</a>
+        <a href="../../contact.html">✉️ Contact</a>
+        <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
+    </nav>
+    <section class="section">
+        <h1>PDF → PPTX (Upgraded)</h1>
+        <p class="lead">Convert PDF pages into a PPTX where each slide is an image of the PDF page (high-fidelity).</p>
+
+        <div class="drop" id="dropArea">Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
+            <input type="file" id="fileInput" accept="application/pdf" style="display:none" />
+        </div>
+
+        <div class="controls">
+            <div class="control">
+                <label>Slide size</label>
+                <select id="slideSize">
+                    <option value="16x9" selected>16:9 (wide)</option>
+                    <option value="4x3">4:3</option>
+                </select>
+                <label style="margin-top:8px">DPI (render resolution)</label>
+                <select id="dpi">
+                    <option>72</option>
+                    <option>150</option>
+                    <option selected>300</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label>Output name</label>
+                <input type="text" id="outName" value="slides.pptx"
+                    style="width:100%;padding:8px;border-radius:6px;background:#090b0c;color:#e6eef0;border:1px solid #222" />
+                <label style="margin-top:8px"><input type="checkbox" id="addNotes"> Add page number as notes</label>
+            </div>
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+            <button class="btn-primary" id="convertBtn">Convert to PPTX</button>
+            <button class="btn" id="clearBtn">Clear</button>
+            <div style="margin-left:auto;color:#9fbfb0" id="pageInfo"></div>
+        </div>
+
+        <div class="progress" id="progressWrap">
+            <div class="bar" id="progressBar"></div>
+        </div>
+
+        <div id="thumbs" class="thumbs"></div>
+
+        <pre id="log" class="log">Ready.</pre>
+
+        <div id="downloadArea" style="margin-top:12px"></div>
+    </section>
+    <footer style="margin-top:14px;color:#9fbfb0">© 2025 RDroid Apps — PPT Tools</footer>
+
+    <script>
+        // Drawer toggle
+        function toggleMenu() {
+            document.getElementById("drawer").classList.toggle("open");
+        }
+        const pickBtn = document.getElementById('pickBtn');
+        const fileInput = document.getElementById('fileInput');
+        const dropArea = document.getElementById('dropArea');
+        const thumbs = document.getElementById('thumbs');
+        const logEl = document.getElementById('log');
+        const pageInfo = document.getElementById('pageInfo');
+        const convertBtn = document.getElementById('convertBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const progressWrap = document.getElementById('progressWrap');
+        const progressBar = document.getElementById('progressBar');
+        const outName = document.getElementById('outName');
+        const slideSize = document.getElementById('slideSize');
+        const dpiSel = document.getElementById('dpi');
+        const addNotes = document.getElementById('addNotes');
+        const downloadArea = document.getElementById('downloadArea');
+
+        let pdfDoc = null;
+        let pageCount = 0;
+        let pages = []; // {pageNum, thumbDataUrl, imgDataUrl, selected}
+
+        function log(msg) { logEl.textContent += "\\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
+        function setProgress(p) { progressWrap.style.display = (p >= 0 ? 'block' : 'none'); progressBar.style.width = (p * 100).toFixed(1) + '%'; }
+
+        pickBtn.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', e => handleFile(e.target.files[0]));
+
+        dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.classList.add('dragover'); });
+        dropArea.addEventListener('dragleave', () => dropArea.classList.remove('dragover'));
+        dropArea.addEventListener('drop', e => { e.preventDefault(); dropArea.classList.remove('dragover'); if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]); });
+
+        async function handleFile(file) {
+            if (!file) return;
+            clearAll();
+            log('Loading PDF: ' + file.name);
+            const buf = await file.arrayBuffer();
+            pdfDoc = await pdfjsLib.getDocument({ data: buf }).promise;
+            pageCount = pdfDoc.numPages;
+            log('Pages: ' + pageCount);
+            pageInfo.textContent = pageCount + ' pages';
+            // render small thumbnails first
+            pages = [];
+            for (let i = 1; i <= pageCount; i++) {
+                const page = await pdfDoc.getPage(i);
+                const vp = page.getViewport({ scale: 0.2 });
+                const c = document.createElement('canvas');
+                c.width = vp.width; c.height = vp.height;
+                const ctx = c.getContext('2d');
+                await page.render({ canvasContext: ctx, viewport: vp }).promise;
+                pages.push({ pageNum: i, thumb: c.toDataURL('image/png'), img: null, selected: true });
+                renderThumbs();
+                await briefYield(20);
+            }
+            log('Thumbnails ready.');
+        }
+
+        function renderThumbs() {
+            thumbs.innerHTML = '';
+            pages.forEach((p, idx) => {
+                const d = document.createElement('div');
+                d.className = 'thumb';
+                d.innerHTML = `<img src="${p.thumb}"><div style="margin-top:6px;color:#9fbfb0">Page ${p.pageNum}</div>
+        <div style="margin-top:6px"><label><input type="checkbox" data-idx="${idx}" ${p.selected ? 'checked' : ''}> Select</label></div>
+        <div style="margin-top:8px"><button class="btn" data-idx="${idx}" data-act="up">↑</button><button class="btn" data-idx="${idx}" data-act="down">↓</button><button class="btn btn-danger" data-idx="${idx}" data-act="remove">✕</button></div>`;
+                thumbs.appendChild(d);
+            });
+            // bind
+            thumbs.querySelectorAll('input[type=checkbox]').forEach(cb => cb.addEventListener('change', e => pages[e.target.dataset.idx].selected = e.target.checked));
+            thumbs.querySelectorAll('button').forEach(b => b.addEventListener('click', e => {
+                const idx = parseInt(e.target.dataset.idx);
+                const act = e.target.dataset.act;
+                if (act === 'up' && idx > 0) movePage(idx, idx - 1);
+                if (act === 'down' && idx < pages.length - 1) movePage(idx, idx + 1);
+                if (act === 'remove') { pages.splice(idx, 1); renderThumbs(); }
+            }));
+        }
+
+        function movePage(from, to) { const tmp = pages.splice(from, 1)[0]; pages.splice(to, 0, tmp); renderThumbs(); }
+
+        convertBtn.addEventListener('click', async () => {
+            if (!pdfDoc) { alert('Load a PDF first'); return; }
+            const selected = pages.filter(p => p.selected);
+            if (!selected.length) { alert('Select pages to include'); return; }
+
+            convertBtn.disabled = true;
+            setProgress(0);
+            log('Rendering pages at selected DPI and adding to PPTX...');
+
+            const pptx = new PptxGenJS();
+            // slide size setup
+            if (slideSize.value === '16x9') {
+                pptx.defineLayout({ name: 'Widescreen', width: 13.33, height: 7.5 }); // inches
+                pptx.layout = 'Widescreen';
+            } else {
+                pptx.defineLayout({ name: 'Standard', width: 10, height: 7.5 });
+                pptx.layout = 'Standard';
+            }
+
+            const dpi = parseInt(dpiSel.value) || 150;
+            for (let i = 0; i < selected.length; i++) {
+                const p = selected[i];
+                log('Rendering page ' + p.pageNum + ' ...');
+                const page = await pdfDoc.getPage(p.pageNum);
+                const viewport = page.getViewport({ scale: dpi / 72 }); // scale relative to 72dpi
+                const canvas = document.createElement('canvas');
+                canvas.width = viewport.width; canvas.height = viewport.height;
+                const ctx = canvas.getContext('2d');
+                await page.render({ canvasContext: ctx, viewport }).promise;
+
+                // convert to dataURL JPEG to keep pptx size smaller
+                const dataURL = canvas.toDataURL('image/jpeg', 0.9);
+
+                // add slide and image as full-slide background or centered image
+                const slide = pptx.addSlide();
+                // use slide.addImage fits image inside slide; use x,y,w,h in inches
+                // convert px->inches (px / (dpi))
+                const widthIn = canvas.width / dpi;
+                const heightIn = canvas.height / dpi;
+                // get slide dims
+                const slideW = pptx.layout === 'Widescreen' ? 13.33 : 10;
+                const slideH = pptx.layout === 'Widescreen' ? 7.5 : 7.5;
+                // center image and scale to fit
+                const scale = Math.min(slideW / widthIn, slideH / heightIn);
+                const w = widthIn * scale;
+                const h = heightIn * scale;
+                const x = (slideW - w) / 2;
+                const y = (slideH - h) / 2;
+                slide.addImage({ data: dataURL, x, y, w, h, sizing: { type: 'contain', w, h } });
+
+                if (addNotes.checked) {
+                    slide.addNotes(`Page ${p.pageNum}`);
+                }
+
+                setProgress((i + 1) / selected.length);
+                await briefYield(60);
+            }
+
+            // generate
+            const filename = outName.value || 'slides.pptx';
+            pptx.writeFile({ fileName: filename }).then(() => {
+                log('PPTX ready: ' + filename);
+                setProgress(-1);
+                convertBtn.disabled = false;
+            }).catch(err => {
+                log('Failed to generate PPTX: ' + (err.message || err));
+                setProgress(-1);
+                convertBtn.disabled = false;
+            });
+        });
+
+        function briefYield(ms = 20) { return new Promise(r => setTimeout(r, ms)); }
+
+        clearBtn.addEventListener('click', () => { pdfDoc = null; pages = []; thumbs.innerHTML = ''; downloadArea.innerHTML = ''; logEl.textContent = 'Ready.'; pageInfo.textContent = ''; setProgress(-1); });
+
+    </script>
+</body>
+
+</html>
