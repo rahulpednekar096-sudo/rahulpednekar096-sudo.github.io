@@ -1,36 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Rotate PDF – Rotate PDF Pages</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rotate PDF — RDroid Apps</title>
   <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- pdf.js for preview -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <!-- pdf-lib for manipulation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <!-- FileSaver -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
   <style>
-    .tool-section {
-      max-width: 700px;
-      margin: auto;
-      padding: 120px 20px 40px;
+    :root {
+      --card: #131619;
+      --muted: #9fbfb0;
+      --accent: #0aa37f
+    }
+
+    body {
+      margin-top: 100px;
+    }
+
+    .menu-btn {
+      background: transparent;
+      border: none;
+      color: var(--accent);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 20px;
+      background: var(--card);
+      border-radius: 12px
+    }
+
+    h1 {
+      margin: 0 0 8px
+    }
+
+    p.lead {
+      color: var(--muted)
+    }
+
+    .drop {
+      border: 2px dashed #202426;
+      padding: 18px;
+      border-radius: 10px;
       text-align: center;
+      cursor: pointer;
+      color: var(--muted)
     }
 
-    .tool-section h1 {
-      margin-bottom: 10px;
+    .controls {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px
     }
 
-    .tool-section p {
-      margin-bottom: 20px;
+    .control {
+      background: #0f1315;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #222;
+      min-width: 200px
     }
 
-    input[type="file"] {
-      margin: 20px 0;
+    .btn {
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer
+    }
+
+    .btn-primary {
+      background: #0aa37f;
+      color: #fff;
+      border: none
+    }
+
+    .thumb {
+      width: 120px;
+      padding: 8px;
+      border-radius: 8px;
+      background: #0b0c0d;
+      border: 1px solid #222;
+      text-align: center;
+      margin: 8px;
+      display: inline-block
+    }
+
+    .thumb img {
+      max-width: 100px;
+      border-radius: 6px
+    }
+
+    .progress {
+      height: 12px;
+      background: #0b0c0d;
+      border-radius: 8px;
+      margin-top: 12px;
+      display: none
+    }
+
+    .bar {
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      transition: width .2s
+    }
+
+    .log {
+      margin-top: 12px;
+      background: #0b0c0d;
+      padding: 12px;
+      border-radius: 8px;
+      color: var(--muted);
+      max-height: 200px;
+      overflow: auto;
+      font-size: 13px
     }
   </style>
 </head>
 
 <body>
-
   <!-- RDroidApps Header -->
   <header>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -51,62 +150,150 @@
     <a href="../../contact.html">✉️ Contact</a>
     <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
   </nav>
-
-  <div class="section" style="padding-top:120px;">
+  <div class="container">
     <h1>Rotate PDF</h1>
-    <p>Rotate all pages of your PDF by 90°, 180°, or 270°.</p>
+    <p class="lead">Per-page or global rotation (0°, 90°, 180°, 270°). This uses pdf-lib to modify page rotation matrix
+      — lossless.</p>
 
-    <input type="file" id="pdfFile" accept="application/pdf" style="margin:15px 0;">
-    <select id="rotation" style="margin:10px 0;">
-      <option value="90">Rotate 90°</option>
-      <option value="180">Rotate 180°</option>
-      <option value="270">Rotate 270°</option>
-    </select>
-    <button class="btn btn-primary" onclick="rotatePDF()">Rotate Now</button>
+    <div class="drop" id="dropArea">Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
+      <input type="file" id="fileInput" accept="application/pdf" style="display:none">
+    </div>
 
-    <div id="output" style="margin-top:25px;"></div>
+    <div class="controls">
+      <div class="control">
+        <label>Action</label>
+        <select id="action">
+          <option value="rotate">Rotate page</option>
+          <option value="rotateAll">Rotate all pages</option>
+        </select>
+        <label style="margin-top:8px">Angle</label>
+        <select id="angle">
+          <option value="90">90°</option>
+          <option value="180">180°</option>
+          <option value="270">270°</option>
+          <option value="0">0° (reset)</option>
+        </select>
+        <div style="margin-top:8px"><button class="btn-primary" id="applyBtn">Apply</button></div>
+      </div>
+
+      <div class="control">
+        <label>Preview & per-page controls</label>
+        <div id="thumbsWrap"></div>
+      </div>
+
+      <div class="control">
+        <label>Output filename</label>
+        <input type="text" id="outName" value="rotated.pdf"
+          style="width:100%;padding:8px;background:#090b0c;border:1px solid #222;color:#e6eef0;border-radius:6px">
+        <div style="margin-top:8px"><button class="btn" id="downloadBtn" disabled>Download (after apply)</button></div>
+      </div>
+    </div>
+
+    <div class="progress" id="progressWrap">
+      <div class="bar" id="progressBar"></div>
+    </div>
+    <pre class="log" id="log">Ready.</pre>
   </div>
-
-  <footer>© 2025 RDroid Apps – PDF Tools</footer>
-
+  <footer>© 2025 RDroid Apps — PDF Tools</footer>
   <script>
     // Drawer toggle
     function toggleMenu() {
       document.getElementById("drawer").classList.toggle("open");
     }
+    const pickBtn = document.getElementById('pickBtn'), fileInput = document.getElementById('fileInput'), dropArea = document.getElementById('dropArea');
+    const thumbsWrap = document.getElementById('thumbsWrap'), applyBtn = document.getElementById('applyBtn'), angleSel = document.getElementById('angle');
+    const actionSel = document.getElementById('action'), logEl = document.getElementById('log'), progressWrap = document.getElementById('progressWrap'), progressBar = document.getElementById('progressBar');
+    const downloadBtn = document.getElementById('downloadBtn'), outName = document.getElementById('outName');
+    let srcBytes = null, pdfDocJS = null, pageCount = 0, perPageRotation = []; // rotation degrees 0/90/180/270
 
-    async function rotatePDF() {
-      const file = document.getElementById("pdfFile").files[0];
-      if (!file) { alert("Please select a PDF file!"); return; }
+    function log(msg) { logEl.textContent += '\\n' + msg; logEl.scrollTop = logEl.scrollHeight; }
+    function setProgress(p) { progressWrap.style.display = p >= 0 ? 'block' : 'none'; progressBar.style.width = ((p || 0) * 100).toFixed(1) + '%'; }
 
-      const rotation = parseInt(document.getElementById("rotation").value);
-      const output = document.getElementById("output");
-      output.innerHTML = "<p>Processing… Please wait.</p>";
+    pickBtn.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', e => loadFile(e.target.files[0]));
 
-      const typedArray = new Uint8Array(await file.arrayBuffer());
-      const pdfDoc = await PDFLib.PDFDocument.load(typedArray);
+    dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f'; });
+    dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = '#202426');
+    dropArea.addEventListener('drop', e => { e.preventDefault(); dropArea.style.borderColor = '#202426'; if (e.dataTransfer.files.length) loadFile(e.dataTransfer.files[0]); });
 
-      pdfDoc.getPages().forEach(page => {
-        const currentRotation = page.getRotation().angle;
-        page.setRotation(currentRotation + rotation);
-      });
-
-      const pdfBytes = await pdfDoc.save();
-      const blob = new Blob([pdfBytes], { type: "application/pdf" });
-      const url = URL.createObjectURL(blob);
-
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = file.name.replace(/\.[^/.]+$/, "") + "_rotated.pdf";
-      link.innerText = "Download Rotated PDF";
-      link.className = "btn";
-      link.style = "display:block;width:200px;margin:15px 0;";
-
-      output.innerHTML = "";
-      output.appendChild(link);
+    async function loadFile(file) {
+      if (!file) return;
+      if (file.type !== 'application/pdf') { alert('Select a PDF'); return; }
+      log('Loading ' + file.name);
+      srcBytes = await file.arrayBuffer();
+      // load pdf.js to render thumbnails
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+      pdfDocJS = await pdfjsLib.getDocument({ data: srcBytes }).promise;
+      pageCount = pdfDocJS.numPages;
+      perPageRotation = new Array(pageCount).fill(0);
+      renderThumbs();
+      log('Loaded pages: ' + pageCount);
     }
-  </script>
 
+    async function renderThumbs() {
+      thumbsWrap.innerHTML = '';
+      for (let i = 1; i <= pageCount; i++) {
+        const page = await pdfDocJS.getPage(i);
+        const vp = page.getViewport({ scale: 0.2 });
+        const canvas = document.createElement('canvas'); canvas.width = vp.width; canvas.height = vp.height;
+        await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+        const img = document.createElement('img'); img.src = canvas.toDataURL('image/png'); img.style.maxWidth = '100px';
+        const div = document.createElement('div'); div.className = 'thumb';
+        div.innerHTML = '';
+        div.appendChild(img);
+        const meta = document.createElement('div'); meta.style.color = '#9fbfb0'; meta.textContent = 'Page ' + i; div.appendChild(meta);
+        // per-page rotate buttons
+        const actions = document.createElement('div'); actions.style.marginTop = '8px';
+        ['0', '90', '180', '270'].forEach(a => {
+          const b = document.createElement('button'); b.className = 'btn'; b.textContent = a + '°'; b.style.marginRight = '6px';
+          b.addEventListener('click', () => { perPageRotation[i - 1] = parseInt(a); log('Page ' + i + ' rotation set to ' + a + '°'); });
+          actions.appendChild(b);
+        });
+        div.appendChild(actions);
+        thumbsWrap.appendChild(div);
+      }
+    }
+
+    applyBtn.addEventListener('click', async () => {
+      if (!srcBytes) { alert('Load a PDF first'); return; }
+      const chosenAngle = parseInt(angleSel.value);
+      const doAll = actionSel.value === 'rotateAll';
+      setProgress(0);
+      log('Applying rotation...');
+
+      try {
+        const pdfLibDoc = await PDFLib.PDFDocument.load(srcBytes);
+        const pages = pdfLibDoc.getPages();
+        if (doAll) {
+          for (let i = 0; i < pages.length; i++) {
+            const page = pages[i];
+            // compute new rotation
+            const currentRot = (perPageRotation[i] || 0);
+            const newRot = (currentRot + chosenAngle) % 360;
+            page.setRotation(PDFLib.degrees(newRot));
+          }
+        } else {
+          // apply per-page specified rotation degrees + chosenAngle to pages which have been set via perPageRotation (non-zero)
+          for (let i = 0; i < pages.length; i++) {
+            const specified = perPageRotation[i] || 0;
+            if (specified !== 0) {
+              const newRot = (specified + chosenAngle) % 360;
+              pages[i].setRotation(PDFLib.degrees(newRot));
+            }
+          }
+        }
+
+        const outBytes = await pdfLibDoc.save();
+        const blob = new Blob([outBytes], { type: 'application/pdf' });
+        downloadBtn.disabled = false;
+        downloadBtn.onclick = () => saveAs(blob, outName.value || 'rotated.pdf');
+        log('Rotation applied. Click Download to save.');
+      } catch (e) {
+        log('Rotation failed: ' + (e.message || e));
+        alert('Rotation failed: ' + (e.message || e));
+      } finally { setProgress(-1); }
+    });
+  </script>
 </body>
 
 </html>
