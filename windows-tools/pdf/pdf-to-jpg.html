@@ -2,34 +2,202 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>PDF to JPG – Convert PDF Pages to Images</title>
+  <meta charset="utf-8" />
+  <title>PDF → JPG — RDroid Apps (Upgraded)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="../../css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+
+  <!-- pdf.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+  <!-- ZIP + FileSaver -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
   <style>
-    .tool-section {
-      max-width: 700px;
-      margin: auto;
-      padding: 120px 20px 40px;
+    :root {
+      --bg: #0f1315;
+      --card: #131619;
+      --muted: #9fbfb0;
+      --accent: #0aa37f;
+    }
+    body {
+      margin-top: 100px;
+    }
+    .menu-btn {
+      background: transparent;
+      border: none;
+      color: var(--accent);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .section {
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 22px;
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+    }
+
+    p.lead {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .drop {
+      border: 2px dashed #202426;
+      padding: 20px;
+      border-radius: 10px;
       text-align: center;
+      cursor: pointer;
+      color: var(--muted);
     }
 
-    .tool-section h1 {
-      margin-bottom: 10px;
+    .drop.dragover {
+      border-color: var(--accent);
+      background: rgba(10, 163, 127, 0.04);
     }
 
-    .tool-section p {
-      margin-bottom: 20px;
+    input[type=file] {
+      display: none;
     }
 
-    input[type="file"] {
-      margin: 20px 0;
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .control {
+      background: #0f1315;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #222;
+      min-width: 180px;
+    }
+
+    .control label {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    select,
+    input[type=number] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      background: #090b0c;
+      color: #e6eef0;
+      border: 1px solid #222;
+    }
+
+    .thumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .thumb {
+      background: #0b0c0d;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #222;
+      width: 140px;
+      text-align: center;
+      position: relative;
+    }
+
+    .thumb img {
+      max-width: 120px;
+      max-height: 90px;
+      border-radius: 6px;
+    }
+
+    .thumb .meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .thumb .actions {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .thumb .sel {
+      margin-top: 6px;
+    }
+
+    .btn {
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 1px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+      border: none;
+    }
+
+    .btn-danger {
+      background: #c62828;
+      color: #fff;
+      border: none;
+    }
+
+    .progress {
+      width: 100%;
+      height: 12px;
+      border-radius: 8px;
+      background: #0b0c0d;
+      margin-top: 12px;
+      display: none;
+      overflow: hidden;
+    }
+
+    .bar {
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      transition: width .2s;
+    }
+
+    .log {
+      margin-top: 12px;
+      background: #0b0c0d;
+      padding: 12px;
+      border-radius: 8px;
+      color: var(--muted);
+      max-height: 180px;
+      overflow: auto;
+      font-size: 13px;
+    }
+
+    footer {
+      color: var(--muted);
+      margin-top: 20px;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
-
   <!-- RDroidApps Header -->
   <header>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -51,67 +219,418 @@
     <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
   </nav>
 
-  <div class="section" style="padding-top:120px;">
-    <h1>PDF to JPG</h1>
-    <p>Convert each page of your PDF into high-quality JPG images.</p>
+  <section class="section">
+    <h1>PDF → JPG (Upgraded)</h1>
+    <p class="lead">Convert PDF pages into high-quality JPG images. Select pages, adjust DPI, quality & scaling.</p>
 
-    <input type="file" id="pdfFile" accept="application/pdf" style="margin:15px 0;">
-    <button class="btn btn-primary" onclick="convertPDF()">Convert Now</button>
+    <!-- Drag & Drop -->
+    <div class="drop" id="dropArea">
+      Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
+      <input type="file" id="fileInput" accept="application/pdf" />
+    </div>
 
-    <div id="output" style="margin-top:25px;"></div>
-  </div>
+    <!-- Conversion Controls -->
+    <div class="controls">
 
-  <footer>© 2025 RDroid Apps – PDF Tools</footer>
+      <div class="control">
+        <label>DPI (resolution)</label>
+        <select id="dpi">
+          <option value="72">72 DPI</option>
+          <option value="100">100 DPI</option>
+          <option value="150">150 DPI</option>
+          <option value="200">200 DPI</option>
+          <option value="300" selected>300 DPI (high)</option>
+        </select>
+
+        <label style="margin-top:8px;">JPG Quality (%)</label>
+        <input type="number" id="jpgQ" min="10" max="100" value="90" />
+      </div>
+
+      <div class="control">
+        <label>Scale mode</label>
+        <select id="scaleMode">
+          <option value="original">Original size</option>
+          <option value="fitW">Fit width</option>
+          <option value="fitH">Fit height</option>
+          <option value="custom">Custom size (px)</option>
+        </select>
+
+        <div id="customFields" style="display:none; margin-top:10px;">
+          <input type="number" id="cw" placeholder="Width (px)" />
+          <input type="number" id="ch" placeholder="Height (px)" style="margin-top:6px;" />
+        </div>
+      </div>
+
+      <div class="control">
+        <label>Download format</label>
+        <select id="downloadType">
+          <option value="zip" selected>ZIP (recommended)</option>
+          <option value="files">Individual files</option>
+        </select>
+
+        <label style="margin-top:8px;">Output name</label>
+        <input type="text" id="outName" value="pdf_pages" />
+      </div>
+
+    </div>
+
+    <div style="margin-top:14px; display:flex; gap:10px;">
+      <button class="btn-primary" id="convertBtn">Convert to JPG</button>
+      <button class="btn" id="clearBtn">Clear</button>
+      <button class="btn" id="selectAllBtn">Select All</button>
+      <button class="btn" id="unselectAllBtn">Unselect All</button>
+      <div style="margin-left:auto; color:var(--muted)" id="pageInfo"></div>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress" id="progressWrap">
+      <div class="bar" id="progressBar"></div>
+    </div>
+
+    <!-- Thumbnails -->
+    <div id="thumbs" class="thumbs"></div>
+
+    <!-- Logs -->
+    <pre class="log" id="log">Ready.</pre>
+
+    <!-- Download -->
+    <div id="downloadArea" style="margin-top:14px;"></div>
+  </section>
+  <footer>© 2025 RDroid Apps — PDF Tools</footer>
 
   <script>
     // Drawer toggle
     function toggleMenu() {
       document.getElementById("drawer").classList.toggle("open");
     }
+    const fileInput = document.getElementById("fileInput");
+    const pickBtn = document.getElementById("pickBtn");
+    const dropArea = document.getElementById("dropArea");
 
-    async function convertPDF() {
-      let file = document.getElementById("pdfFile").files[0];
-      if (!file) { alert("Please select a PDF file!"); return; }
+    const thumbs = document.getElementById("thumbs");
+    const logEl = document.getElementById("log");
+    const progressWrap = document.getElementById("progressWrap");
+    const progressBar = document.getElementById("progressBar");
+    const pageInfo = document.getElementById("pageInfo");
 
-      let output = document.getElementById("output");
-      output.innerHTML = "<p>Processing… Please wait.</p>";
+    const dpiSel = document.getElementById("dpi");
+    const jpgQ = document.getElementById("jpgQ");
+    const scaleMode = document.getElementById("scaleMode");
+    const customFields = document.getElementById("customFields");
+    const cw = document.getElementById("cw");
+    const ch = document.getElementById("ch");
+    const downloadType = document.getElementById("downloadType");
+    const outName = document.getElementById("outName");
 
-      let fileReader = new FileReader();
-      fileReader.onload = async function () {
-        let typedarray = new Uint8Array(this.result);
+    const convertBtn = document.getElementById("convertBtn");
+    const clearBtn = document.getElementById("clearBtn");
+    const selectAllBtn = document.getElementById("selectAllBtn");
+    const unselectAllBtn = document.getElementById("unselectAllBtn");
+    const downloadArea = document.getElementById("downloadArea");
 
-        const pdf = await pdfjsLib.getDocument(typedarray).promise;
-        output.innerHTML = "";
+    let pdf = null;
+    let pages = []; // {id, thumb, rotate, selected}
 
-        for (let i = 1; i <= pdf.numPages; i++) {
-          let page = await pdf.getPage(i);
-          let viewport = page.getViewport({ scale: 2 });
+    /* LOG */
+    function log(msg) {
+      logEl.textContent += "\\n" + msg;
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+    function clearLog() {
+      logEl.textContent = "Ready.";
+    }
 
-          let canvas = document.createElement("canvas");
-          let ctx = canvas.getContext("2d");
-          canvas.width = viewport.width;
-          canvas.height = viewport.height;
+    /* FILE SELECT */
+    pickBtn.addEventListener("click", () => fileInput.click());
+    fileInput.addEventListener("change", e => handleFile(e.target.files[0]));
 
-          await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+    /* DRAG & DROP */
+    dropArea.addEventListener("dragover", e => {
+      e.preventDefault();
+      dropArea.classList.add("dragover");
+    });
+    dropArea.addEventListener("dragleave", () => dropArea.classList.remove("dragover"));
+    dropArea.addEventListener("drop", e => {
+      e.preventDefault();
+      dropArea.classList.remove("dragover");
+      if (e.dataTransfer.files.length) {
+        handleFile(e.dataTransfer.files[0]);
+      }
+    });
 
-          let imgURL = canvas.toDataURL("image/jpeg", 1.0);
+    /* LOAD PDF */
+    async function handleFile(file) {
+      if (!file || file.type !== "application/pdf") {
+        alert("Please select a valid PDF file.");
+        return;
+      }
 
-          let img = document.createElement("img");
-          img.src = imgURL;
-          img.style = "width:300px;margin:12px;border-radius:12px;";
+      clearAll();
+      clearLog();
+      log("Loading PDF: " + file.name);
 
-          let link = document.createElement("a");
-          link.href = imgURL;
-          link.download = `page-${i}.jpg`;
-          link.innerText = `Download JPG (Page ${i})`;
-          link.className = "btn";
-          link.style = "display:block;width:200px;margin:10px 0;";
+      const buffer = await file.arrayBuffer();
 
-          output.appendChild(img);
-          output.appendChild(link);
+      pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
+      log("Pages: " + pdf.numPages);
+
+      await loadThumbnails();
+    }
+
+    /* LOAD THUMBNAILS */
+    async function loadThumbnails() {
+      pages = [];
+      thumbs.innerHTML = "";
+      downloadArea.innerHTML = "";
+      pageInfo.textContent = "";
+
+      for (let i = 1; i <= pdf.numPages; i++) {
+        log("Rendering thumbnail " + i + "/" + pdf.numPages);
+
+        const page = await pdf.getPage(i);
+        const viewport = page.getViewport({ scale: 0.2 });
+        const canvas = document.createElement("canvas");
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        const ctx = canvas.getContext("2d");
+
+        await page.render({ canvasContext: ctx, viewport }).promise;
+        const dataURL = canvas.toDataURL("image/jpeg", 0.6);
+
+        pages.push({
+          id: i,
+          thumb: dataURL,
+          rotate: 0,
+          selected: true
+        });
+
+        renderThumbnails();
+        await briefYield(20);
+      }
+
+      pageInfo.textContent = pages.length + " pages";
+    }
+
+    /* RENDER THUMBNAILS */
+    function renderThumbnails() {
+      thumbs.innerHTML = "";
+
+      pages.forEach((pg, index) => {
+        const div = document.createElement("div");
+        div.className = "thumb";
+
+        div.innerHTML = `
+        <img src="${pg.thumb}" style="transform:rotate(${pg.rotate}deg)">
+        <div class="meta">Page ${pg.id}</div>
+
+        <div class="sel">
+          <label><input type="checkbox" ${pg.selected ? "checked" : ""} data-index="${index}" class="selBox"> Select</label>
+        </div>
+
+        <div class="actions">
+          <button class="btn" data-act="up" data-index="${index}">↑</button>
+          <button class="btn" data-act="down" data-index="${index}">↓</button>
+          <button class="btn" data-act="rotate" data-index="${index}">⟳</button>
+          <button class="btn btn-danger" data-act="remove" data-index="${index}">✕</button>
+        </div>
+      `;
+
+        thumbs.appendChild(div);
+      });
+
+      /* Selection toggles */
+      document.querySelectorAll(".selBox").forEach(el =>
+        el.addEventListener("change", e => {
+          const idx = e.target.dataset.index;
+          pages[idx].selected = e.target.checked;
+        })
+      );
+
+      /* Page actions */
+      document.querySelectorAll(".actions button").forEach(btn =>
+        btn.addEventListener("click", e => {
+          const idx = parseInt(e.target.dataset.index);
+          const act = e.target.dataset.act;
+
+          if (act === "up" && idx > 0) {
+            movePage(idx, idx - 1);
+          }
+          if (act === "down" && idx < pages.length - 1) {
+            movePage(idx, idx + 1);
+          }
+          if (act === "rotate") {
+            pages[idx].rotate = (pages[idx].rotate + 90) % 360;
+          }
+          if (act === "remove") {
+            pages.splice(idx, 1);
+          }
+          renderThumbnails();
+        })
+      );
+    }
+
+    function movePage(from, to) {
+      const x = pages.splice(from, 1)[0];
+      pages.splice(to, 0, x);
+    }
+
+    /* SCALE MODE */
+    scaleMode.addEventListener("change", () => {
+      customFields.style.display = scaleMode.value === "custom" ? "block" : "none";
+    });
+
+    /* CLEAR ALL */
+    function clearAll() {
+      pdf = null;
+      pages = [];
+      thumbs.innerHTML = "";
+      downloadArea.innerHTML = "";
+      pageInfo.textContent = "";
+      clearLog();
+      setProgress(-1);
+    }
+    clearBtn.addEventListener("click", clearAll);
+
+    /* SELECT ALL */
+    selectAllBtn.addEventListener("click", () => {
+      pages.forEach(p => p.selected = true);
+      renderThumbnails();
+    });
+    unselectAllBtn.addEventListener("click", () => {
+      pages.forEach(p => p.selected = false);
+      renderThumbnails();
+    });
+
+    /* PROGRESS */
+    function setProgress(p) {
+      if (p < 0) {
+        progressWrap.style.display = "none";
+        return;
+      }
+      progressWrap.style.display = "block";
+      progressBar.style.width = (p * 100).toFixed(1) + "%";
+    }
+
+    /* CONVERT TO JPG */
+    convertBtn.addEventListener("click", async () => {
+      if (!pdf || pages.length === 0) {
+        alert("Please load a PDF first.");
+        return;
+      }
+
+      const selectedPages = pages.filter(p => p.selected);
+      if (!selectedPages.length) {
+        alert("Please select at least one page.");
+        return;
+      }
+
+      const dpi = parseInt(dpiSel.value);
+      const quality = parseInt(jpgQ.value) / 100;
+      const scale = scaleMode.value;
+
+      log("Starting export...");
+
+      convertBtn.disabled = true;
+      setProgress(0);
+      downloadArea.innerHTML = "";
+
+      /* ZIP */
+      const zip = new JSZip();
+
+      for (let i = 0; i < selectedPages.length; i++) {
+        const pg = selectedPages[i];
+        log("Rendering page " + pg.id);
+
+        const page = await pdf.getPage(pg.id);
+
+        // DPI calculation
+        const viewport = page.getViewport({ scale: dpi / 72 });
+
+        // Canvas
+        const canvas = document.createElement("canvas");
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        const ctx = canvas.getContext("2d");
+
+        await page.render({ canvasContext: ctx, viewport }).promise;
+
+        // Rotate if needed
+        if (pg.rotate) {
+          const c2 = document.createElement("canvas");
+          const r = pg.rotate * Math.PI / 180;
+          const swap = pg.rotate === 90 || pg.rotate === 270;
+          c2.width = swap ? canvas.height : canvas.width;
+          c2.height = swap ? canvas.width : canvas.height;
+
+          const ctx2 = c2.getContext("2d");
+          ctx2.translate(c2.width / 2, c2.height / 2);
+          ctx2.rotate(r);
+          ctx2.drawImage(canvas, -canvas.width / 2, -canvas.height / 2);
+          canvas.width = c2.width;
+          canvas.height = c2.height;
+          ctx.drawImage(c2, 0, 0);
         }
-      };
-      fileReader.readAsArrayBuffer(file);
+
+        // Scaling (custom)
+        if (scale === "custom") {
+          const W = parseInt(cw.value);
+          const H = parseInt(ch.value);
+          if (W > 0 && H > 0) {
+            const c3 = document.createElement("canvas");
+            c3.width = W;
+            c3.height = H;
+            const ctx3 = c3.getContext("2d");
+            ctx3.drawImage(canvas, 0, 0, W, H);
+            canvas.width = W;
+            canvas.height = H;
+            ctx.drawImage(c3, 0, 0);
+          }
+        }
+
+        const dataURL = canvas.toDataURL("image/jpeg", quality);
+        const blob = dataURLToBlob(dataURL);
+        const fname = `page_${pg.id}.jpg`;
+
+        if (downloadType.value === "zip") {
+          zip.file(fname, blob);
+        } else {
+          // individual file link
+          const a = document.createElement("a");
+          a.href = dataURL;
+          a.download = fname;
+          a.textContent = "Download " + fname;
+          a.className = "btn";
+          a.style.display = "block";
+          downloadArea.appendChild(a);
+        }
+
+        setProgress((i + 1) / selectedPages.length);
+        await briefYield(40);
+      }
+
+      if (downloadType.value === "zip") {
+        const blob = await zip.generateAsync({ type: "blob" });
+        saveAs(blob, (outName.value || "pdf_pages") + ".zip");
+      }
+
+      log("Done.");
+      convertBtn.disabled = false;
+      setProgress(-1);
+    });
+
+    /* UTILITIES */
+    function dataURLToBlob(dataURL) {
+      const arr = dataURL.split(",");
+      const mime = arr[0].match(/:(.*?);/)[1];
+      const bstr = atob(arr[1]);
+      let n = bstr.length;
+      const u8 = new Uint8Array(n);
+      while (n--) u8[n] = bstr.charCodeAt(n);
+      return new Blob([u8], { type: mime });
+    }
+
+    function briefYield(ms = 10) {
+      return new Promise(r => setTimeout(r, ms));
     }
   </script>
 
