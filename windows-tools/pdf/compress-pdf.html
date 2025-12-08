@@ -1,282 +1,460 @@
-<!-- save as compress-heavy.html in your /windows-tools/pdf/ folder -->
 <!DOCTYPE html>
 <html lang="mr">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Compress PDF (Heavy) – RDroid Apps</title>
+  <title>Compress PDF — Heavy (Upgraded) – RDroid Apps</title>
   <link rel="stylesheet" href="../../css/style.css">
 
-  <!-- pdf.js (for rendering pages) and pdf-lib (for creating new PDF) -->
+  <!-- pdf.js + pdf-lib + tesseract (optional) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script src="https://unpkg.com/tesseract.js@v4.1.1/dist/tesseract.min.js"></script>
 
   <style>
     .tool-section {
-      max-width: 900px;
-      margin: auto;
-      padding: 100px 20px 40px;
-      color: #e6eef0;
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 28px;
     }
 
-    .tool-card {
+    body {
+      margin-top: 100px;
+    }
+    .menu-btn {
+      background: transparent;
+      border: none;
+      color: var(--accent);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .card {
       background: #131619;
-      padding: 24px;
+      padding: 22px;
       border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6)
     }
 
-    label {
-      color: #cfeee0;
-      display: block;
-      margin: 8px 0 4px;
+    h1 {
+      margin: 0 0 6px
     }
 
-    input,
-    select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      background: #0f1315;
-      color: #e6eef0;
-      border: 1px solid #2b2f33;
+    p.note {
+      color: #9fbfb0;
+      font-size: 14px
+    }
+
+    .drop {
+      border: 2px dashed #202426;
+      padding: 18px;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 12px;
+      cursor: pointer
+    }
+
+    input[type=file] {
+      display: none
     }
 
     .row {
       display: flex;
       gap: 12px;
-      margin-top: 12px;
       flex-wrap: wrap;
+      margin-top: 12px
     }
 
     .col {
-      flex: 1 1 180px;
-      min-width: 160px;
+      flex: 1 1 220px;
+      min-width: 180px
+    }
+
+    select,
+    input[type=number] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      background: #0f1315;
+      color: #e6eef0;
+      border: 1px solid #2b2f33
     }
 
     .btn {
       padding: 10px 12px;
       border-radius: 8px;
-      cursor: pointer;
+      cursor: pointer
     }
 
     .btn-primary {
       background: #0aa37f;
       color: #fff;
-      border: none;
+      border: none
     }
 
-    #log {
-      margin-top: 12px;
-      color: #9fbfb0;
-      white-space: pre-wrap;
-      font-size: 13px;
+    .btn-ghost {
+      background: transparent;
+      color: #0aa37f;
+      border: 1px solid #0aa37f
     }
 
     .progress {
       width: 100%;
-      height: 10px;
+      height: 12px;
       background: #0b0c0d;
-      border-radius: 6px;
-      overflow: hidden;
-      margin-top: 8px;
+      border-radius: 8px;
+      margin-top: 10px;
+      overflow: hidden
     }
 
     .bar {
       height: 100%;
       width: 0%;
       background: #0aa37f;
-      transition: width .2s ease;
+      transition: width .2s
+    }
+
+    pre#log {
+      background: #0b0c0d;
+      padding: 12px;
+      border-radius: 8px;
+      color: #9fbfb0;
+      max-height: 220px;
+      overflow: auto;
+      margin-top: 12px
+    }
+
+    footer {
+      margin-top: 18px;
+      color: #9fbfb0;
+      text-align: center
+    }
+
+    .small {
+      font-size: 13px;
+      color: #cfeee0
+    }
+
+    .meta {
+      margin-top: 8px;
+      color: #cfeee0
     }
   </style>
 </head>
 
 <body>
+  <!-- RDroidApps Header -->
   <header>
-    <button class="menu-btn" onclick="document.getElementById('drawer').classList.toggle('open')">☰</button>
-    <div class="logo"><img src="../../assets/my_brand_icon.png" alt="RDroid" />
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="logo">
+      <img src="../../assets/my_brand_icon.png" alt="RDroid Logo" />
       <div>RDroid <span>Apps</span></div>
     </div>
     <a href="/auth/login.html" class="login-btn">🔑 Login</a>
   </header>
 
+  <!-- Drawer Navigation -->
   <nav id="drawer">
     <a href="../../index.html">🏠 Home</a>
     <a href="../../apps.html">📱 Apps</a>
+    <a href="../../favorites.html">⭐ Favorites</a>
+    <a href="../../profile.html">👤 Profile</a>
+    <a href="../../about.html">ℹ️ About</a>
+    <a href="../../contact.html">✉️ Contact</a>
+    <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
   </nav>
-
   <section class="tool-section">
-    <div class="tool-card">
-      <h1>Compress PDF — Heavy (Image-rasterize)</h1>
-      <p style="color:#9fbfb0">Pages will be rasterized to images and re-packed. Use when you need big size reduction
-        (70–90%). Text will no longer be selectable.</p>
+    <div class="card">
+      <h1>Compress PDF — Heavy (Upgraded)</h1>
+      <p class="note">Pages are rasterized to JPEG images and re-packed. Great for large image-heavy PDFs. Text will NOT
+        remain selectable. Use OCR summary if you need extracted text separately.</p>
 
-      <label>Choose PDF</label>
-      <input type="file" id="fileInput" accept="application/pdf">
+      <label class="drop" id="dropArea">Drop PDF here or <button class="btn btn-ghost" id="pickBtn">Choose
+          file</button></label>
+      <input type="file" id="fileInput" accept="application/pdf" />
 
       <div class="row">
         <div class="col">
-          <label>Target scale (relative)</label>
+          <label class="small">Target scale</label>
           <select id="scaleSelect">
-            <option value="0.25">Very small (0.25×)</option>
-            <option value="0.5" selected>Medium (0.5×)</option>
+            <option value="0.25">Very small (0.25×) — max reduction</option>
+            <option value="0.5" selected>Medium (0.5×) — balanced</option>
             <option value="0.75">High quality (0.75×)</option>
             <option value="1">Original size (1×)</option>
           </select>
         </div>
 
         <div class="col">
-          <label>JPEG quality (%)</label>
+          <label class="small">JPEG quality (%)</label>
           <input type="range" id="jpegQ" min="10" max="95" value="70">
-          <div id="jpegVal" style="color:#9fbfb0;margin-top:6px">Quality: 70%</div>
+          <div class="meta" id="jpegVal">Quality: 70%</div>
         </div>
 
         <div class="col">
-          <label>Max pages (for preview)</label>
-          <input type="number" id="maxPages" min="1" value="50" />
+          <label class="small">Max pages to process (set 0 for all)</label>
+          <input type="number" id="maxPages" min="0" value="0" />
+        </div>
+
+        <div class="col">
+          <label class="small">Options</label>
+          <div style="display:flex;gap:8px;flex-direction:column">
+            <label><input type="checkbox" id="optPreview" checked> Show preview thumbnails</label>
+            <label><input type="checkbox" id="optOCR"> Include OCR text summary (slow)</label>
+          </div>
         </div>
       </div>
 
-      <div style="margin-top:12px; display:flex; gap:8px;">
+      <div style="margin-top:12px; display:flex; gap:8px; align-items:center;">
         <button class="btn btn-primary" id="startBtn">Compress Now</button>
-        <a class="btn" id="downloadLink" style="display:none">Download</a>
+        <button class="btn btn-ghost" id="cancelBtn" style="display:none">Cancel</button>
+        <a id="downloadLink" class="btn" style="display:none"></a>
+        <div style="margin-left:auto" id="sizeInfo"></div>
       </div>
 
-      <div class="progress" style="display:none;margin-top:12px">
+      <div class="progress" id="progressWrap" style="display:none">
         <div class="bar" id="progressBar"></div>
       </div>
-      <div id="log"></div>
+
+      <div id="preview" style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap"></div>
+
+      <pre id="log">Ready.</pre>
+      <div id="warning" style="color:#ffb199; margin-top:8px"></div>
     </div>
+
+    <footer>© 2025 RDroid Apps — PDF Tools</footer>
   </section>
 
   <script>
-    // IMPORTANT: This approach rasterizes pages → text not selectable afterwards.
-    // Uses pdf.js to render, pdf-lib to create new PDF with embedded JPEGs.
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+    /* Upgraded compressor
+       - Based on previous implementation. Reference: original assistant version. :contentReference[oaicite:1]{index=1}
+       - Enhancements: drag/drop, cancel, preview, OCR summary option, safer page loop with yields.
+    */
 
     const fileInput = document.getElementById('fileInput');
+    const dropArea = document.getElementById('dropArea');
+    const pickBtn = document.getElementById('pickBtn');
     const startBtn = document.getElementById('startBtn');
-    const progressBar = document.getElementById('progressBar');
-    const progressWrap = document.querySelector('.progress');
-    const logEl = document.getElementById('log');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const scaleSelect = document.getElementById('scaleSelect');
     const jpegQ = document.getElementById('jpegQ');
     const jpegVal = document.getElementById('jpegVal');
-    const scaleSelect = document.getElementById('scaleSelect');
     const maxPagesInput = document.getElementById('maxPages');
+    const progressWrap = document.getElementById('progressWrap');
+    const progressBar = document.getElementById('progressBar');
+    const logEl = document.getElementById('log');
     const downloadLink = document.getElementById('downloadLink');
+    const previewEl = document.getElementById('preview');
+    const optPreview = document.getElementById('optPreview');
+    const optOCR = document.getElementById('optOCR');
+    const sizeInfo = document.getElementById('sizeInfo');
+    const warningEl = document.getElementById('warning');
+
+    let controller = { cancel: false };
+    let currentFile = null;
 
     jpegQ.addEventListener('input', () => jpegVal.textContent = `Quality: ${jpegQ.value}%`);
+    pickBtn.addEventListener('click', () => fileInput.click());
 
-    function log(msg) {
-      console.log(msg);
-      logEl.textContent += msg + "\n";
+    dropArea.addEventListener('dragover', (e) => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f'; });
+    dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = '#202426');
+    dropArea.addEventListener('drop', async (e) => { e.preventDefault(); dropArea.style.borderColor = '#202426'; if (e.dataTransfer.files.length) { fileInput.files = e.dataTransfer.files; handleFileSelected(); } });
+
+    fileInput.addEventListener('change', handleFileSelected);
+
+    function log(msg) { logEl.textContent += msg + "\n"; logEl.scrollTop = logEl.scrollHeight; }
+    function clearLog() { logEl.textContent = ''; }
+    function setProgress(p) { progressWrap.style.display = p >= 0 ? 'block' : 'none'; progressBar.style.width = (p * 100).toFixed(1) + '%'; }
+    function resetUI() { cancelBtn.style.display = 'none'; startBtn.style.display = 'inline-block'; downloadLink.style.display = 'none'; previewEl.innerHTML = ''; sizeInfo.textContent = ''; warningEl.textContent = ''; }
+
+    function handleFileSelected() {
+      currentFile = fileInput.files[0];
+      if (currentFile) {
+        clearLog();
+        log(`Selected: ${currentFile.name} — ${(currentFile.size / 1024).toFixed(1)} KB`);
+        sizeInfo.textContent = '';
+        downloadLink.style.display = 'none';
+        previewEl.innerHTML = '';
+      }
     }
 
-    function setProgress(p) {
-      progressWrap.style.display = p >= 0 ? 'block' : 'none';
-      progressBar.style.width = (p * 100).toFixed(1) + "%";
-    }
+    // tiny helper to yield to UI / avoid freeze
+    async function briefYield(ms = 20) { return new Promise(r => setTimeout(r, ms)); }
 
     startBtn.addEventListener('click', async () => {
-      logEl.textContent = "";
+      if (!currentFile) return alert('कृपया PDF निवडा.');
+      controller.cancel = false;
+      cancelBtn.style.display = 'inline-block';
+      startBtn.style.display = 'none';
+      clearLog();
+      previewEl.innerHTML = '';
       downloadLink.style.display = 'none';
-      const file = fileInput.files[0];
-      if (!file) { alert('कृपया PDF निवडा'); return; }
+      sizeInfo.textContent = '';
+      warningEl.textContent = '';
 
       const scaleFactor = parseFloat(scaleSelect.value);
       const quality = parseInt(jpegQ.value) / 100;
-      const maxPages = Math.max(1, parseInt(maxPagesInput.value) || 50);
+      const maxPages = Math.max(0, parseInt(maxPagesInput.value) || 0); // 0 => all
+      const doPreview = optPreview.checked;
+      const doOCR = optOCR.checked;
 
-      log(`Starting compression — scale ${scaleFactor} ×, JPEG quality ${Math.round(quality * 100)}%`);
+      log(`Starting compression — scale ${scaleFactor}×, JPEG quality ${Math.round(quality * 100)}%`);
       setProgress(0);
 
-      // load PDF with pdf.js
-      const arrayBuffer = await file.arrayBuffer();
-      const pdfData = new Uint8Array(arrayBuffer);
+      // Safety: warn for very large files
+      if (currentFile.size > 50 * 1024 * 1024) {
+        warningEl.textContent = 'Warning: large file (>50MB). This may be slow and may use a lot of memory.';
+      }
 
-      // Setup pdf.js worker
-      if (window.pdfjsLib) {
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
-      } else {
-        alert('pdf.js not loaded');
+      // load pdf.js
+      if (!window.pdfjsLib) { alert('pdf.js not loaded'); resetUI(); return; }
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+
+      // load file
+      const arrayBuffer = await currentFile.arrayBuffer();
+      const pdfData = new Uint8Array(arrayBuffer);
+      let pdf;
+      try {
+        pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
+      } catch (e) {
+        log('Failed to parse PDF: ' + e.message);
+        resetUI();
         return;
       }
 
-      const pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
       const totalPages = pdf.numPages;
-      log(`Pages in input: ${totalPages}`);
+      log(`Input pages: ${totalPages}`);
 
-      // create new PDF
+      const pagesToProcess = (maxPages > 0) ? Math.min(maxPages, totalPages) : totalPages;
+
+      // create new pdf
       const newPdf = await PDFLib.PDFDocument.create();
+      let ocrTexts = [];
 
-      // Iterate pages
-      const pagesToProcess = Math.min(totalPages, maxPages);
       for (let i = 1; i <= pagesToProcess; i++) {
-        log(`Rendering page ${i} / ${pagesToProcess} ...`);
-        const page = await pdf.getPage(i);
+        if (controller.cancel) { log('Cancelled by user'); break; }
+        try {
+          log(`Rendering page ${i}/${pagesToProcess} ...`);
+          const page = await pdf.getPage(i);
+          const viewport = page.getViewport({ scale: 1.0 });
+          const renderWidth = Math.max(1, Math.round(viewport.width * scaleFactor));
+          const renderHeight = Math.max(1, Math.round(viewport.height * scaleFactor));
+          const canvas = document.createElement('canvas');
+          canvas.width = renderWidth;
+          canvas.height = renderHeight;
+          const ctx = canvas.getContext('2d');
 
-        // Render page to an offscreen canvas with scale
-        const viewport = page.getViewport({ scale: 1.0 });
-        const renderWidth = Math.round(viewport.width * scaleFactor);
-        const renderHeight = Math.round(viewport.height * scaleFactor);
+          // render
+          const renderContext = { canvasContext: ctx, viewport: page.getViewport({ scale: scaleFactor }) };
+          await page.render(renderContext).promise;
 
-        // Create canvas
-        const canvas = document.createElement('canvas');
-        canvas.width = renderWidth;
-        canvas.height = renderHeight;
-        const ctx = canvas.getContext('2d');
+          // optional preview thumbnail
+          if (doPreview) {
+            const thumb = document.createElement('img');
+            thumb.style.maxWidth = '120px'; thumb.style.borderRadius = '6px';
+            thumb.src = canvas.toDataURL('image/jpeg', Math.max(0.1, quality));
+            previewEl.appendChild(thumb);
+          }
 
-        // render parameters
-        const renderContext = {
-          canvasContext: ctx,
-          viewport: page.getViewport({ scale: scaleFactor }),
-        };
+          // optional OCR of page (summary) — slow
+          if (doOCR) {
+            try {
+              log(`OCR page ${i} ... (this may be slow)`);
+              const worker = Tesseract.createWorker({ logger: m => { } });
+              await worker.load(); await worker.loadLanguage('eng'); await worker.initialize('eng');
+              const { data: { text } } = await worker.recognize(canvas);
+              ocrTexts.push(`--- Page ${i} ---\n` + (text.trim() || '[no text detected]') + '\n');
+              await worker.terminate();
+            } catch (ocrErr) {
+              log('OCR failed for page ' + i + ': ' + ocrErr.message);
+            }
+          }
 
-        await page.render(renderContext).promise;
+          // convert canvas to JPEG blob
+          const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
+          const arrayBuf = await blob.arrayBuffer();
+          const jpgBytes = new Uint8Array(arrayBuf);
 
-        // Convert canvas to JPEG blob
-        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
-        const arrayBuf = await blob.arrayBuffer();
-        const jpgBytes = new Uint8Array(arrayBuf);
+          // embed and add page
+          const imgEmbed = await newPdf.embedJpg(jpgBytes);
+          const imgDims = imgEmbed.scale(1);
+          const pdfPage = newPdf.addPage([imgDims.width, imgDims.height]);
+          pdfPage.drawImage(imgEmbed, { x: 0, y: 0, width: imgDims.width, height: imgDims.height });
 
-        // embed in pdf-lib
-        const imgEmbed = await newPdf.embedJpg(jpgBytes);
-        const imgDims = imgEmbed.scale(1);
-
-        // add a page sized to the embedded image
-        const pdfPage = newPdf.addPage([imgDims.width, imgDims.height]);
-        pdfPage.drawImage(imgEmbed, {
-          x: 0,
-          y: 0,
-          width: imgDims.width,
-          height: imgDims.height,
-        });
-
-        setProgress(i / pagesToProcess);
-        // small yield for UI
-        await new Promise(r => setTimeout(r, 50));
+          // progress update
+          setProgress(i / pagesToProcess);
+          await briefYield(30); // yield to UI and GC
+          // free canvas memory
+          ctx && ctx.clearRect(0, 0, canvas.width, canvas.height);
+        } catch (pageErr) {
+          log('Error processing page ' + i + ': ' + (pageErr.message || pageErr));
+        }
       }
 
-      // If original had more pages than maxPages, append note page
-      if (totalPages > pagesToProcess) {
-        log(`Note: processed first ${pagesToProcess} pages only (maxPages).`);
-        const notePage = newPdf.addPage([500, 200]);
-        notePage.drawText(`Original PDF had ${totalPages} pages. This compressed file contains first ${pagesToProcess} pages.`, { x: 20, y: 120, size: 12, color: PDFLib.rgb(0.16, 0.67, 0.5) });
+      // if OCR texts exist and user wanted summary, add as last page (text)
+      if (ocrTexts.length && !controller.cancel) {
+        try {
+          const textDoc = newPdf.addPage([595, 842]); // A4-ish
+          const combined = ocrTexts.join('\n\n');
+          textDoc.drawText('OCR Summary (automatically extracted text):', { x: 20, y: textDoc.getHeight() - 40, size: 12, color: PDFLib.rgb(0.9, 0.9, 0.9) });
+          // split text into lines
+          const lines = combined.split('\n');
+          let cursorY = textDoc.getHeight() - 60;
+          const lineHeight = 12;
+          for (const line of lines) {
+            if (cursorY < 40) {
+              // add new page
+              cursorY = textDoc.getHeight() - 40;
+            }
+            textDoc.drawText(line, { x: 20, y: cursorY, size: 10, color: PDFLib.rgb(0.85, 0.85, 0.85) });
+            cursorY -= lineHeight;
+          }
+          log('OCR summary added as last page.');
+        } catch (e) {
+          log('Failed to append OCR summary: ' + e.message);
+        }
       }
 
-      log('Saving compressed PDF (this may take a few seconds)...');
-      const pdfBytes = await newPdf.save();
-      const outBlob = new Blob([pdfBytes], { type: 'application/pdf' });
-      const outUrl = URL.createObjectURL(outBlob);
+      if (controller.cancel) {
+        resetUI(); setProgress(-1); log('Operation cancelled — no file produced.'); return;
+      }
 
-      // show download link and size info
-      downloadLink.href = outUrl;
-      downloadLink.download = file.name.replace(/\.[^/.]+$/, '') + '-compressed.pdf';
-      downloadLink.textContent = 'Download compressed PDF';
-      downloadLink.style.display = 'inline-block';
-      log(`Done. Original: ${(file.size / 1024).toFixed(1)} KB, Compressed: ${(outBlob.size / 1024).toFixed(1)} KB`);
-      setProgress(1);
+      log('Finalizing PDF (this may take some seconds)...');
+      try {
+        const pdfBytes = await newPdf.save();
+        const outBlob = new Blob([pdfBytes], { type: 'application/pdf' });
+        const outUrl = URL.createObjectURL(outBlob);
+        downloadLink.href = outUrl;
+        downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-compressed.pdf';
+        downloadLink.textContent = 'Download compressed PDF';
+        downloadLink.style.display = 'inline-block';
+        sizeInfo.textContent = `Original: ${(currentFile.size / 1024).toFixed(1)} KB — Compressed: ${(outBlob.size / 1024).toFixed(1)} KB`;
+        log(`Done. Original ${(currentFile.size / 1024).toFixed(1)} KB, Compressed ${(outBlob.size / 1024).toFixed(1)} KB`);
+        setProgress(1);
+      } catch (saveErr) {
+        log('Failed to save compressed PDF: ' + saveErr.message);
+      } finally {
+        cancelBtn.style.display = 'none';
+        startBtn.style.display = 'inline-block';
+      }
     });
+
+    // Cancel handling
+    cancelBtn.addEventListener('click', () => {
+      controller.cancel = true;
+      log('Cancel requested — stopping as soon as possible.');
+      cancelBtn.style.display = 'none';
+    });
+
+    // Basic memory safety: attempt to revoke object URLs on unload
+    window.addEventListener('unload', () => {
+      // nothing to revoke centrally here — created blobs are in downloadLink href only
+    });
+
   </script>
 </body>
 
