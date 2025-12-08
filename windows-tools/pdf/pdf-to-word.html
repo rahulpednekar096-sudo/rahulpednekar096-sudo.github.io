@@ -2,35 +2,117 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>PDF to Word – Convert PDF to DOCX</title>
+  <meta charset="utf-8">
+  <title>PDF → Word (DOCX) — RDroid Apps</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="../../css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.2.0/docx.min.js"></script>
+
+  <!-- pdf.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+  <!-- docx library -->
+  <script src="https://cdn.jsdelivr.net/npm/docx@8.3.2/build/index.js"></script>
+
+  <!-- OCR (optional) -->
+  <script src="https://unpkg.com/tesseract.js@v4.1.1/dist/tesseract.min.js"></script>
 
   <style>
-    .tool-section {
-      max-width: 700px;
-      margin: auto;
-      padding: 120px 20px 40px;
+    :root {
+      --card: #131619;
+      --muted: #9fbfb0;
+      --accent: #0aa37f;
+    }
+
+    body {
+      margin-top: 100px;
+    }
+
+    .menu-btn {
+      background: transparent;
+      border: none;
+      color: var(--accent);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+
+    .section {
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 22px;
+      background: var(--card);
+      border-radius: 12px
+    }
+
+    h1 {
+      margin: 0 0 6px
+    }
+
+    p.lead {
+      color: var(--muted)
+    }
+
+    .drop {
+      border: 2px dashed #222;
+      padding: 18px;
+      border-radius: 10px;
       text-align: center;
+      color: var(--muted);
+      cursor: pointer
     }
 
-    .tool-section h1 {
-      margin-bottom: 10px;
+    .thumbs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px
     }
 
-    .tool-section p {
-      margin-bottom: 20px;
+    .thumb img {
+      width: 110px;
+      border-radius: 6px
     }
 
-    input[type="file"] {
-      margin: 20px 0;
+    .btn {
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer
+    }
+
+    .btn-primary {
+      background: #0aa37f;
+      color: #fff;
+      border: none
+    }
+
+    .progress {
+      height: 10px;
+      background: #0b0c0d;
+      border-radius: 8px;
+      margin-top: 12px;
+      display: none
+    }
+
+    .bar {
+      height: 100%;
+      width: 0;
+      background: var(--accent)
+    }
+
+    .log {
+      background: #0b0c0d;
+      padding: 10px;
+      border-radius: 8px;
+      color: var(--muted);
+      height: 150px;
+      overflow: auto;
+      margin-top: 12px;
+      font-size: 13px
     }
   </style>
+</head>
 
 <body>
-
   <!-- RDroidApps Header -->
   <header>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
@@ -51,61 +133,145 @@
     <a href="../../contact.html">✉️ Contact</a>
     <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
   </nav>
+  <section class="section">
+    <h1>PDF → Word (DOCX)</h1>
+    <p class="lead">Extract text from PDF and convert into a DOCX Word file. Supports OCR + page-wise formatting.</p>
 
-  <div class="section" style="padding-top:120px;">
-    <h1>PDF to Word</h1>
-    <p>Convert PDF files into editable Word documents (DOCX).</p>
+    <div class="drop" id="dropArea">
+      Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
+      <input type="file" id="fileInput" accept="application/pdf" style="display:none">
+    </div>
 
-    <input type="file" id="pdfFile" accept="application/pdf" style="margin:15px 0;">
-    <button class="btn btn-primary" onclick="convertPDFToWord()">Convert Now</button>
+    <label><input type="checkbox" id="enableOCR"> Enable OCR (slower, better accuracy)</label>
 
-    <div id="output" style="margin-top:25px;"></div>
-  </div>
+    <div style="margin-top:10px;display:flex;gap:10px">
+      <button class="btn-primary" id="convertBtn">Convert to Word</button>
+      <button class="btn" id="clearBtn">Clear</button>
+    </div>
 
-  <footer>© 2025 RDroid Apps – PDF Tools</footer>
+    <div class="progress" id="progressWrap">
+      <div class="bar" id="progressBar"></div>
+    </div>
+
+    <div id="thumbs" class="thumbs"></div>
+    <pre id="log" class="log">Ready.</pre>
+
+    <div id="download"></div>
+
+  </section>
+  <footer>© 2025 RDroid Apps — PDF Tools</footer>
 
   <script>
     // Drawer toggle
     function toggleMenu() {
       document.getElementById("drawer").classList.toggle("open");
     }
+    const pickBtn = document.getElementById("pickBtn");
+    const fileInput = document.getElementById("fileInput");
+    const dropArea = document.getElementById("dropArea");
+    const convertBtn = document.getElementById("convertBtn");
+    const logEl = document.getElementById("log");
+    const thumbs = document.getElementById("thumbs");
+    const progressWrap = document.getElementById("progressWrap");
+    const progressBar = document.getElementById("progressBar");
+    const download = document.getElementById("download");
+    const enableOCR = document.getElementById("enableOCR");
+    let currentPDF = null;
 
-    async function convertPDFToWord() {
-      const file = document.getElementById("pdfFile").files[0];
-      if (!file) { alert("Please select a PDF file!"); return; }
+    /* Utility */
+    function log(msg) { logEl.textContent += "\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
+    function clear() { logEl.textContent = "Ready."; thumbs.innerHTML = ""; download.innerHTML = ""; currentPDF = null; }
+    function setProgress(p) { progressWrap.style.display = p >= 0 ? "block" : "none"; progressBar.style.width = (p * 100) + "%"; }
 
-      const output = document.getElementById("output");
-      output.innerHTML = "<p>Processing… Please wait.</p>";
+    /* File select */
+    pickBtn.onclick = () => fileInput.click();
+    fileInput.onchange = e => loadPDF(e.target.files[0]);
 
-      const arrayBuffer = await file.arrayBuffer();
-      const pdf = await pdfjsLib.getDocument(new Uint8Array(arrayBuffer)).promise;
+    dropArea.ondragover = e => { e.preventDefault(); dropArea.style.borderColor = "#0aa37f"; }
+    dropArea.ondragleave = () => dropArea.style.borderColor = "#222";
+    dropArea.ondrop = e => {
+      e.preventDefault(); dropArea.style.borderColor = "#222";
+      loadPDF(e.dataTransfer.files[0]);
+    };
 
-      const doc = new docx.Document();
+    /* Load PDF */
+    async function loadPDF(file) {
+      if (!file) return;
+      clear();
+      log("Loading PDF...");
+      const buf = await file.arrayBuffer();
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
+      currentPDF = await pdfjsLib.getDocument({ data: buf }).promise;
+      log("Pages: " + currentPDF.numPages);
+      await renderThumbs();
+    }
 
-      for (let i = 1; i <= pdf.numPages; i++) {
-        const page = await pdf.getPage(i);
-        const textContent = await page.getTextContent();
-        const textItems = textContent.items.map(item => item.str).join(' ');
+    /* Render thumbnails */
+    async function renderThumbs() {
+      thumbs.innerHTML = "";
+      for (let i = 1; i <= currentPDF.numPages; i++) {
+        const page = await currentPDF.getPage(i);
+        const vp = page.getViewport({ scale: 0.25 });
+        const canvas = document.createElement("canvas");
+        canvas.width = vp.width; canvas.height = vp.height;
+        await page.render({ canvasContext: canvas.getContext("2d"), viewport: vp }).promise;
+        const img = canvas.toDataURL("image/png");
+        thumbs.innerHTML += `<div class="thumb"><img src="${img}"><div style="color:#9fbfb0">Page ${i}</div></div>`;
+      }
+    }
 
-        doc.addSection({
-          properties: {},
-          children: [new docx.Paragraph(textItems)]
+    /* Convert to DOCX */
+    convertBtn.onclick = async () => {
+      if (!currentPDF) { alert("Select a PDF first"); return; }
+      log("Extracting text...");
+      setProgress(0);
+
+      const { Document, Packer, Paragraph } = docx;
+      const doc = new Document({ sections: [{ properties: {}, children: [] }] });
+      const children = doc.sections[0].children;
+      const doOCR = enableOCR.checked;
+
+      for (let i = 1; i <= currentPDF.numPages; i++) {
+        const page = await currentPDF.getPage(i);
+        let text = "";
+
+        if (doOCR) {
+          log("OCR page " + i + "...");
+          const vp = page.getViewport({ scale: 1 });
+          const canvas = document.createElement("canvas");
+          canvas.width = vp.width; canvas.height = vp.height;
+          await page.render({ canvasContext: canvas.getContext("2d"), viewport: vp }).promise;
+          const ocr = await Tesseract.recognize(canvas, "eng");
+          text = ocr.data.text;
+        } else {
+          log("Extracting text from page " + i);
+          const content = await page.getTextContent();
+          text = content.items.map(item => item.str).join(" ");
+        }
+
+        children.push(new Paragraph({ text: "--- Page " + i + " ---" }));
+        text.split("\n").forEach(line => {
+          children.push(new Paragraph({ text: line }));
         });
+
+        setProgress(i / currentPDF.numPages);
+        await new Promise(r => setTimeout(r, 20));
       }
 
-      const blob = await docx.Packer.toBlob(doc);
-      const url = URL.createObjectURL(blob);
+      log("Building DOCX file...");
+      const blob = await Packer.toBlob(doc);
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "converted.docx";
+      a.textContent = "Download Word File";
+      a.className = "btn-primary";
+      download.appendChild(a);
 
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = file.name.replace(/\.[^/.]+$/, "") + ".docx";
-      link.innerText = "Download Word";
-      link.className = "btn";
-      link.style = "display:block;width:200px;margin:15px 0;";
+      log("Done.");
+      setProgress(-1);
+    };
 
-      output.innerHTML = "";
-      output.appendChild(link);
-    }
+    document.getElementById("clearBtn").onclick = clear;
   </script>
 
 </body>
