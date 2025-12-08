@@ -1,16 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Word to PDF – Convert DOCX to PDF</title>
-<link rel="stylesheet" href="../../css/style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.2.0/docx.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <meta charset="utf-8">
+  <title>Word (DOCX) → PDF — RDroid Apps</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- docx parser -->
+  <script src="https://cdn.jsdelivr.net/npm/docx-preview@1.4.0/dist/docx-preview.min.js"></script>
+
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <style>
+    :root {
+      --card: #131619;
+      --muted: #9fbfb0;
+      --accent: #0aa37f;
+    }
+
+    body {
+      margin-top: 100px;
+    }
+
+    .menu-btn {
+      background: transparent;
+      border: none;
+      color: var(--accent);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .section {
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 22px;
+      background: var(--card);
+      border-radius: 12px
+    }
+
+    h1 {
+      margin: 0 0 6px
+    }
+
+    p.lead {
+      color: var(--muted)
+    }
+
+    .drop {
+      border: 2px dashed #222;
+      padding: 18px;
+      border-radius: 10px;
+      text-align: center;
+      color: var(--muted);
+      cursor: pointer
+    }
+
+    .preview {
+      background: #0b0c0d;
+      border: 1px solid #222;
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 10px;
+      max-height: 350px;
+      overflow: auto
+    }
+
+    .btn {
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer
+    }
+
+    .btn-primary {
+      background: #0aa37f;
+      color: #fff;
+      border: none
+    }
+
+    .progress {
+      display: none;
+      height: 10px;
+      background: #000;
+      margin-top: 12px;
+      border-radius: 8px
+    }
+
+    .bar {
+      height: 100%;
+      width: 0;
+      background: var(--accent)
+    }
+
+    .log {
+      background: #0b0c0d;
+      padding: 12px;
+      border-radius: 8px;
+      color: var(--muted);
+      margin-top: 12px;
+      max-height: 200px;
+      overflow: auto
+    }
+  </style>
 </head>
 
 <body>
-
-<!-- RDroidApps Header -->
+  <!-- RDroidApps Header -->
   <header>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <div class="logo">
@@ -20,7 +116,7 @@
     <a href="/auth/login.html" class="login-btn">🔑 Login</a>
   </header>
 
-<!-- Drawer Navigation -->
+  <!-- Drawer Navigation -->
   <nav id="drawer">
     <a href="../../index.html">🏠 Home</a>
     <a href="../../apps.html">📱 Apps</a>
@@ -30,71 +126,133 @@
     <a href="../../contact.html">✉️ Contact</a>
     <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
   </nav>
+  <section class="section">
 
-<div class="section" style="padding-top:120px;">
-  <h1>Word to PDF</h1>
-  <p>Convert your Word documents (DOCX) into PDF files easily.</p>
+    <h1>Word (DOCX) → PDF</h1>
+    <p class="lead">Upload a Word DOCX file and convert it to PDF. Fully client-side, safe & fast.</p>
 
-  <input type="file" id="wordFile" accept=".docx" style="margin:15px 0;">
-  <button class="btn btn-primary" onclick="convertWordToPDF()">Convert Now</button>
+    <div class="drop" id="dropArea">
+      Drop DOCX here or <button class="btn" id="pickBtn">Choose file</button>
+      <input type="file" id="fileInput" accept=".docx" style="display:none">
+    </div>
 
-  <div id="output" style="margin-top:25px;"></div>
-</div>
+    <div class="controls" style="margin-top:10px">
+      <label>Page size</label>
+      <select id="pageSize">
+        <option value="A4">A4</option>
+        <option value="Letter">Letter</option>
+      </select>
 
-<footer>© 2025 RDroid Apps – PDF Tools</footer>
+      <label>Orientation</label>
+      <select id="orientation">
+        <option value="p">Portrait</option>
+        <option value="l">Landscape</option>
+      </select>
 
-<script>
-// Drawer toggle
+      <label>Margins (mm)</label>
+      <input type="number" id="margin" value="10">
+    </div>
+
+    <button class="btn-primary" id="convertBtn" style="margin-top:12px">Convert to PDF</button>
+
+    <div class="progress" id="progressWrap">
+      <div class="bar" id="progressBar"></div>
+    </div>
+
+    <h3 style="margin-top:20px">Preview</h3>
+    <div id="preview" class="preview"></div>
+
+    <pre id="log" class="log">Ready.</pre>
+
+    <div id="download"></div>
+
+  </section>
+  <footer>© 2025 RDroid Apps — PDF Tools</footer>
+  <script>
+    // Drawer toggle
     function toggleMenu() {
       document.getElementById("drawer").classList.toggle("open");
     }
+    const pickBtn = document.getElementById("pickBtn");
+    const fileInput = document.getElementById("fileInput");
+    const dropArea = document.getElementById("dropArea");
+    const preview = document.getElementById("preview");
+    const logEl = document.getElementById("log");
+    const progressWrap = document.getElementById("progressWrap");
+    const progressBar = document.getElementById("progressBar");
+    const download = document.getElementById("download");
+    let currentFile = null;
 
-async function convertWordToPDF() {
-  const file = document.getElementById("wordFile").files[0];
-  if (!file) { alert("Please select a Word file!"); return; }
+    function log(msg) { logEl.textContent += "\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
+    function clear() { preview.innerHTML = ""; download.innerHTML = ""; logEl.textContent = "Ready."; }
+    function setProgress(p) { progressWrap.style.display = p >= 0 ? "block" : "none"; progressBar.style.width = (p * 100) + "%"; }
 
-  const output = document.getElementById("output");
-  output.innerHTML = "<p>Processing… Please wait.</p>";
+    pickBtn.onclick = () => fileInput.click();
+    fileInput.onchange = e => loadDocx(e.target.files[0]);
 
-  const arrayBuffer = await file.arrayBuffer();
+    dropArea.ondragover = e => { e.preventDefault(); dropArea.style.borderColor = "#0aa37f"; }
+    dropArea.ondragleave = () => dropArea.style.borderColor = "#222";
+    dropArea.ondrop = e => {
+      e.preventDefault(); dropArea.style.borderColor = "#222";
+      loadDocx(e.dataTransfer.files[0]);
+    };
 
-  // Use docx.js to read content
-  const zip = new window.docx.Packer();
-  const doc = await window.docx.Document.load(arrayBuffer);
+    async function loadDocx(file) {
+      if (!file) return;
+      clear();
+      log("Loading DOCX...");
 
-  // Create simple PDF
-  const pdfDoc = await PDFLib.PDFDocument.create();
-  const page = pdfDoc.addPage();
-  const { width, height } = page.getSize();
+      currentFile = file;
+      preview.innerHTML = "Rendering preview...";
+      docx.renderAsync(file, preview);
+      log("Preview ready.");
+    }
 
-  const textLines = doc.getParagraphs().map(p => p.text);
-  const fontSize = 12;
-  let y = height - 50;
+    document.getElementById("convertBtn").onclick = async () => {
+      if (!currentFile) { alert("Select a DOCX file first"); return; }
 
-  for (const line of textLines) {
-      page.drawText(line, { x: 50, y: y, size: fontSize });
-      y -= fontSize + 5;
-      if (y < 50) {
-          page = pdfDoc.addPage();
-          y = height - 50;
+      log("Converting to PDF...");
+      setProgress(0);
+
+      const text = preview.innerText;
+      const lines = text.split("\n");
+
+      const { jsPDF } = window.jspdf;
+      const size = document.getElementById("pageSize").value === "A4" ? "a4" : "letter";
+      const orientation = document.getElementById("orientation").value === "p" ? "portrait" : "landscape";
+      const margin = parseFloat(document.getElementById("margin").value) || 10;
+      const pdf = new jsPDF({ unit: "mm", format: size, orientation });
+      let y = margin;
+
+      pdf.setFontSize(12);
+
+      for (let i = 0; i < lines.length; i++) {
+        const wrapped = pdf.splitTextToSize(lines[i], pdf.internal.pageSize.getWidth() - margin * 2);
+        wrapped.forEach(line => {
+          if (y > pdf.internal.pageSize.getHeight() - margin) {
+            pdf.addPage(); y = margin;
+          }
+          pdf.text(margin, y, line);
+          y += 6;
+        });
+        setProgress((i + 1) / lines.length);
+        await new Promise(r => setTimeout(r, 5));
       }
-  }
 
-  const pdfBytes = await pdfDoc.save();
-  const blob = new Blob([pdfBytes], { type: "application/pdf" });
-  const url = URL.createObjectURL(blob);
+      log("Building PDF...");
+      const blob = pdf.output("blob");
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "converted.pdf";
+      a.textContent = "Download PDF";
+      a.className = "btn-primary";
+      download.appendChild(a);
 
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = file.name.replace(/\.[^/.]+$/, "") + ".pdf";
-  link.innerText = "Download PDF";
-  link.className = "btn";
-  link.style = "display:block;width:200px;margin:15px 0;";
-
-  output.innerHTML = "";
-  output.appendChild(link);
-}
-</script>
+      log("Done.");
+      setProgress(-1);
+    };
+  </script>
 
 </body>
+
 </html>
