@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="mr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Image Metadata Remover — RDroid Apps</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- exif-js to read orientation if needed -->
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+</head>
+
+<body>
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="logo">
+            <img src="../../assets/my_brand_icon.png" alt="RDroid" />
+            <div>RDroid <span>Apps</span></div>
+        </div>
+        <div class="nav-links">
+            <a href="../../index.html" class="active">Home</a>
+            <a href="../../apps.html">Apps</a>
+            <a href="../../about.html">About</a>
+            <a href="../../contact.html">Contact</a>
+            <a href="../../windows-tools.html">Windows Tools</a>
+        </div>
+        <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
+    </header>
+
+    <!-- ===== DRAWER (UNCHANGED) ===== -->
+    <nav id="drawer">
+        <a href="../../index.html">🏠 Home</a>
+        <a href="../../apps.html">📱 Apps</a>
+        <a href="../../favorites.html">⭐ Favorites</a>
+        <a href="../../profile.html">👤 Profile</a>
+        <a href="../../about.html">ℹ️ About</a>
+        <a href="../../contact.html">✉️ Contact</a>
+        <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
+    </nav>
+
+    <section class="tool-section">
+        <div class="card">
+            <h1>Image Metadata Remover</h1>
+            <p class="note">Strip EXIF metadata by re-encoding the image in the browser. Output forced to PNG (no EXIF).
+            </p>
+
+            <label class="drop" id="dropArea">Drop image or <button class="btn btn-ghost" id="pickBtn">Choose
+                    file</button></label>
+            <input type="file" id="fileInput" accept="image/*" />
+            <div style="margin-top:12px;display:flex;gap:8px;">
+                <button class="btn btn-primary" id="stripBtn">Strip metadata</button>
+                <a id="downloadLink" class="btn" style="display:none"></a>
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
+
+            </div>
+            <div id="preview" style="margin-top:12px"></div>
+            <pre id="log">Ready.</pre>
+        </div>
+
+        <footer>© 2025 RDroid Apps — Image Tools</footer>
+    </section>
+
+    <script>
+        function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+
+        const pickBtn = document.getElementById('pickBtn');
+        const fileInput = document.getElementById('fileInput');
+        const dropArea = document.getElementById('dropArea');
+        const stripBtn = document.getElementById('stripBtn');
+        const downloadLink = document.getElementById('downloadLink');
+        const preview = document.getElementById('preview');
+        const logEl = document.getElementById('log');
+        const resetBtn = document.getElementById('resetBtn');
+
+        resetBtn.addEventListener('click', () => {
+            fileInput.value = "";
+            preview.innerHTML = "";
+            downloadLink.style.display = "none";
+            logEl.textContent = "Ready.";
+            dropArea.style.borderColor = "#202426";
+        });
+
+
+        pickBtn.addEventListener('click', () => fileInput.click());
+
+        dropArea.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#0aa37f';
+        });
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.style.borderColor = '#202426';
+        });
+        dropArea.addEventListener('drop', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#202426';
+            if (e.dataTransfer.files && e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                fileInput.dispatchEvent(new Event('change'));
+            }
+        });
+
+        fileInput.addEventListener('change', () => {
+            const f = fileInput.files[0];
+            if (!f) return;
+            preview.innerHTML = `<img src="${URL.createObjectURL(f)}" style="max-width:420px;border-radius:8px">`;
+            logEl.textContent = 'Loaded: ' + f.name + '\\n';
+        });
+
+        // helper: read EXIF orientation (returns Promise)
+        function readOrientation(file) {
+            return new Promise((resolve) => {
+                try {
+                    EXIF.getData(file, function () {
+                        const ori = EXIF.getTag(this, 'Orientation') || 1;
+                        resolve(ori);
+                    });
+                } catch (e) {
+                    resolve(1);
+                }
+            });
+        }
+
+        // helper: draw image into canvas with orientation handling
+        function drawImageWithOrientation(img, orientation) {
+            // based on common EXIF orientation values
+            let w = img.naturalWidth, h = img.naturalHeight;
+            let canvas = document.createElement('canvas'), ctx = canvas.getContext('2d');
+
+            // handle rotations that swap width/height
+            if ([5, 6, 7, 8].includes(orientation)) {
+                canvas.width = h;
+                canvas.height = w;
+            } else {
+                canvas.width = w;
+                canvas.height = h;
+            }
+
+            // apply transform
+            switch (orientation) {
+                case 2: // horizontal flip
+                    ctx.translate(canvas.width, 0); ctx.scale(-1, 1); break;
+                case 3: // 180°
+                    ctx.translate(canvas.width, canvas.height); ctx.rotate(Math.PI); break;
+                case 4: // vertical flip
+                    ctx.translate(0, canvas.height); ctx.scale(1, -1); break;
+                case 5: // vertical flip + 90 rotate
+                    ctx.rotate(0.5 * Math.PI); ctx.scale(1, -1); break;
+                case 6: // 90° CW
+                    ctx.rotate(0.5 * Math.PI); ctx.translate(0, -canvas.width); break;
+                case 7: // horizontal flip + 90 rotate
+                    ctx.rotate(0.5 * Math.PI); ctx.translate(0, -canvas.width); ctx.scale(-1, 1); break;
+                case 8: // 90° CCW
+                    ctx.rotate(-0.5 * Math.PI); ctx.translate(-canvas.height, 0); break;
+                default:
+                    // orientation 1 — no transform
+                    break;
+            }
+
+            // for rotated contexts, drawImage must consider transforms applied
+            ctx.drawImage(img, 0, 0);
+            return canvas;
+        }
+
+        stripBtn.addEventListener('click', async () => {
+            const f = fileInput.files[0];
+            if (!f) return alert('कृपया image निवडा');
+
+            logEl.textContent += 'Processing: ' + f.name + '\\n';
+
+            try {
+                // read orientation
+                const orientation = await readOrientation(f);
+
+                // load image
+                const dataUrl = await new Promise((res, rej) => {
+                    const r = new FileReader();
+                    r.onload = () => res(r.result);
+                    r.onerror = rej;
+                    r.readAsDataURL(f);
+                });
+
+                const img = new Image();
+                img.src = dataUrl;
+                await img.decode();
+
+                // draw into canvas with orientation fix
+                const canvas = drawImageWithOrientation(img, orientation);
+                // IMPORTANT: force output to PNG to ensure metadata is stripped
+                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+                const url = URL.createObjectURL(blob);
+
+                preview.innerHTML = `<img src="${url}" style="max-width:420px;border-radius:8px">`;
+                downloadLink.href = url;
+                downloadLink.download = f.name.replace(/\.[^/.]+$/, '') + '-nometa.png';
+                downloadLink.textContent = 'Download (no metadata)';
+                downloadLink.style.display = 'inline-block';
+
+                logEl.textContent += 'Metadata stripped and re-encoded (PNG).\\n';
+            } catch (err) {
+                logEl.textContent += 'Error: ' + (err && err.message ? err.message : err) + '\\n';
+                alert('Error processing image: ' + (err && err.message ? err.message : err));
+            }
+        });
+    </script>
+</body>
+
+</html>

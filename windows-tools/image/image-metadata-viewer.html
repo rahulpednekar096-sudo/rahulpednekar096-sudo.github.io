@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="mr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Image Metadata Viewer — RDroid Apps</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- exif-js for EXIF reading -->
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+</head>
+
+<body>
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="logo">
+            <img src="../../assets/my_brand_icon.png" alt="RDroid" />
+            <div>RDroid <span>Apps</span></div>
+        </div>
+        <div class="nav-links">
+            <a href="../../index.html" class="active">Home</a>
+            <a href="../../apps.html">Apps</a>
+            <a href="../../about.html">About</a>
+            <a href="../../contact.html">Contact</a>
+            <a href="../../windows-tools.html">Windows Tools</a>
+        </div>
+        <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
+    </header>
+
+    <!-- ===== DRAWER (UNCHANGED) ===== -->
+    <nav id="drawer">
+        <a href="../../index.html">🏠 Home</a>
+        <a href="../../apps.html">📱 Apps</a>
+        <a href="../../favorites.html">⭐ Favorites</a>
+        <a href="../../profile.html">👤 Profile</a>
+        <a href="../../about.html">ℹ️ About</a>
+        <a href="../../contact.html">✉️ Contact</a>
+        <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
+    </nav>
+
+    <section class="tool-section">
+        <div class="card">
+            <h1>Image Metadata Viewer</h1>
+            <p class="note">View EXIF metadata embedded in JPG/HEIC (where supported). Drag & drop supported.</p>
+
+            <label class="drop" id="dropArea">Drop image or <button class="btn btn-ghost" id="pickBtn">Choose
+                    file</button></label>
+            <input type="file" id="fileInput" accept="image/*" />
+
+            <div style="margin-top:12px;" id="preview"></div>
+            <div style="margin-top:12px; display:flex; gap:8px;">
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
+            </div>
+
+            <pre id="metaOut">No metadata loaded.</pre>
+        </div>
+
+        <footer>© 2025 RDroid Apps — Image Tools</footer>
+    </section>
+
+    <script>
+        function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+
+        const pickBtn = document.getElementById('pickBtn');
+        const fileInput = document.getElementById('fileInput');
+        const dropArea = document.getElementById('dropArea');
+        const preview = document.getElementById('preview');
+        const metaOut = document.getElementById('metaOut');
+        const resetBtn = document.getElementById('resetBtn');
+
+        resetBtn.addEventListener('click', () => {
+            fileInput.value = "";
+            preview.innerHTML = "";
+            metaOut.textContent = "No metadata loaded.";
+            dropArea.style.borderColor = "#202426";
+        });
+
+
+        // UI helpers
+        function showPreview(file) {
+            preview.innerHTML = `<img src="${URL.createObjectURL(file)}" style="max-width:420px;border-radius:8px">`;
+        }
+        function showMeta(obj) {
+            metaOut.textContent = JSON.stringify(obj, null, 2);
+        }
+        function clearMeta() {
+            metaOut.textContent = 'No metadata loaded.';
+        }
+
+        // drag & drop UI
+        pickBtn.addEventListener('click', () => fileInput.click());
+
+        dropArea.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#0aa37f';
+        });
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.style.borderColor = '#202426';
+        });
+        dropArea.addEventListener('drop', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#202426';
+            if (e.dataTransfer.files && e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                // trigger change so same handler runs
+                fileInput.dispatchEvent(new Event('change'));
+            }
+        });
+
+        // main handler
+        fileInput.addEventListener('change', async () => {
+            clearMeta();
+            const f = fileInput.files[0];
+            if (!f) return;
+            showPreview(f);
+
+            // exif-js works on File objects — wrap in try/catch
+            try {
+                EXIF.getData(f, function () {
+                    // EXIF.getAllTags may be large; only send a trimmed subset? we will show all.
+                    const all = EXIF.getAllTags(this) || {};
+                    showMeta(all);
+                });
+            } catch (err) {
+                metaOut.textContent = 'Failed to read metadata: ' + (err && err.message ? err.message : err);
+            }
+        });
+    </script>
+</body>
+
+</html>

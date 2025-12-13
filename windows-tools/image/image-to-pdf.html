@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="mr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Image → PDF — RDroid Apps</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="logo">
+            <img src="../../assets/my_brand_icon.png" alt="RDroid" />
+            <div>RDroid <span>Apps</span></div>
+        </div>
+        <div class="nav-links">
+            <a href="../../index.html" class="active">Home</a>
+            <a href="../../apps.html">Apps</a>
+            <a href="../../about.html">About</a>
+            <a href="../../contact.html">Contact</a>
+            <a href="../../windows-tools.html">Windows Tools</a>
+        </div>
+        <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
+    </header>
+
+    <!-- ===== DRAWER (UNCHANGED) ===== -->
+    <nav id="drawer">
+        <a href="../../index.html">🏠 Home</a>
+        <a href="../../apps.html">📱 Apps</a>
+        <a href="../../favorites.html">⭐ Favorites</a>
+        <a href="../../profile.html">👤 Profile</a>
+        <a href="../../about.html">ℹ️ About</a>
+        <a href="../../contact.html">✉️ Contact</a>
+        <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
+    </nav>
+
+    <section class="tool-section">
+        <div class="card">
+            <h1>Image → PDF</h1>
+            <p class="note">Select multiple images and create a single multi-page PDF. Images are fit to page (A4) by
+                default.</p>
+
+            <label class="drop" id="dropArea">Drop images or <button class="btn btn-ghost" id="pickBtn">Choose
+                    files</button></label>
+            <input type="file" id="fileInput" accept="image/*" multiple />
+            <div style="margin-top:12px;display:flex;gap:8px;"><button class="btn btn-primary" id="startBtn">Create
+                    PDF</button><a id="downloadLink" class="btn" style="display:none"></a></div>
+            <div id="preview" style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap"></div>
+            <pre id="log">Ready.</pre>
+        </div>
+        <footer>© 2025 RDroid Apps — Image Tools</footer>
+    </section>
+
+    <script>
+        function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+        const pickBtn = document.getElementById('pickBtn'), fileInput = document.getElementById('fileInput'), dropArea = document.getElementById('dropArea'),
+            startBtn = document.getElementById('startBtn'), downloadLink = document.getElementById('downloadLink'), preview = document.getElementById('preview'),
+            logEl = document.getElementById('log');
+
+        pickBtn.addEventListener('click', () => fileInput.click()); dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f' }); dropArea.addEventListener('drop', e => { e.preventDefault(); if (e.dataTransfer.files.length) fileInput.files = e.dataTransfer.files; previewFiles(); });
+
+        fileInput.addEventListener('change', previewFiles);
+
+        function previewFiles() { preview.innerHTML = ''; const files = Array.from(fileInput.files || []); for (const f of files) { const img = document.createElement('img'); img.src = URL.createObjectURL(f); img.style.maxWidth = '140px'; img.style.borderRadius = '6px'; preview.appendChild(img); } }
+
+        startBtn.addEventListener('click', async () => {
+            const files = Array.from(fileInput.files || []); if (!files.length) return alert('कृपया images निवडा');
+            logEl.textContent = 'Creating PDF...\\n';
+            const pdfDoc = await PDFLib.PDFDocument.create();
+            for (const f of files) {
+                try {
+                    const data = await f.arrayBuffer();
+                    const img = await pdfDoc.embedJpg ? await tryEmbed(pdfDoc, data, f) : null;
+                } catch (e) { logEl.textContent += 'Skipped file ' + f.name + ': ' + e.message + '\\n'; }
+            }
+            // helper to try embed as jpg then png
+            async function tryEmbed(pdfDoc, data, f) {
+                let imgEmbed;
+                try { imgEmbed = await pdfDoc.embedJpg(data); }
+                catch (err) {
+                    try { imgEmbed = await pdfDoc.embedPng(data); }
+                    catch (err2) { throw new Error('Unsupported image format'); }
+                }
+                const dims = imgEmbed.scale(1);
+                const page = pdfDoc.addPage([dims.width, dims.height]);
+                page.drawImage(imgEmbed, { x: 0, y: 0, width: dims.width, height: dims.height });
+                return imgEmbed;
+            }
+            const pdfBytes = await pdfDoc.save();
+            const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+            const url = URL.createObjectURL(blob);
+            downloadLink.href = url; downloadLink.download = 'images.pdf'; downloadLink.textContent = 'Download PDF'; downloadLink.style.display = 'inline-block';
+            logEl.textContent += 'Done.\\n';
+        });
+    </script>
+</body>
+
+</html>

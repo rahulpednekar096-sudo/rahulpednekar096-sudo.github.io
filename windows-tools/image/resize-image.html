@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="mr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Resize Image — RDroid Apps</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <!-- Header / Drawer (same template) -->
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="logo">
+            <img src="../../assets/my_brand_icon.png" alt="RDroid" />
+            <div>RDroid <span>Apps</span></div>
+        </div>
+        <div class="nav-links">
+            <a href="../../index.html" class="active">Home</a>
+            <a href="../../apps.html">Apps</a>
+            <a href="../../about.html">About</a>
+            <a href="../../contact.html">Contact</a>
+            <a href="../../windows-tools.html">Windows Tools</a>
+        </div>
+        <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
+    </header>
+
+    <!-- ===== DRAWER (UNCHANGED) ===== -->
+    <nav id="drawer">
+        <a href="../../index.html">🏠 Home</a>
+        <a href="../../apps.html">📱 Apps</a>
+        <a href="../../favorites.html">⭐ Favorites</a>
+        <a href="../../profile.html">👤 Profile</a>
+        <a href="../../about.html">ℹ️ About</a>
+        <a href="../../contact.html">✉️ Contact</a>
+        <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
+    </nav>
+
+    <section class="tool-section">
+        <div class="card">
+            <h1>Resize Image</h1>
+            <p class="note">Upload an image and resize by pixels or percent. Preserve aspect ratio option included.</p>
+
+            <label class="drop" id="dropArea">Drop image here or <button class="btn btn-ghost" id="pickBtn">Choose
+                    file</button></label>
+            <input type="file" id="fileInput" accept="image/*" />
+
+            <div class="row">
+                <div class="col">
+                    <label class="small">Mode</label>
+                    <select id="mode">
+                        <option value="pixels">Pixels</option>
+                        <option value="percent">Percent</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label class="small">Width</label>
+                    <input type="number" id="widthInput" min="1" placeholder="auto" />
+                </div>
+                <div class="col">
+                    <label class="small">Height</label>
+                    <input type="number" id="heightInput" min="1" placeholder="auto" />
+                </div>
+                <div class="col">
+                    <label><input type="checkbox" id="keepAspect" checked> Preserve aspect</label>
+                </div>
+            </div>
+
+            <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+                <button class="btn btn-primary" id="startBtn">Resize</button>
+                <a id="downloadLink" class="btn" style="display:none"></a>
+                <div style="margin-left:auto" id="info"></div>
+            </div>
+
+            <div id="preview" style="margin-top:12px"></div>
+            <pre id="log">Ready.</pre>
+        </div>
+
+        <footer>© 2025 RDroid Apps — Image Tools</footer>
+    </section>
+
+    <script>
+        function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+        const fileInput = document.getElementById('fileInput'), pickBtn = document.getElementById('pickBtn'),
+            dropArea = document.getElementById('dropArea'), startBtn = document.getElementById('startBtn'),
+            preview = document.getElementById('preview'), downloadLink = document.getElementById('downloadLink'),
+            logEl = document.getElementById('log'), mode = document.getElementById('mode'),
+            widthInput = document.getElementById('widthInput'), heightInput = document.getElementById('heightInput'),
+            keepAspect = document.getElementById('keepAspect'), info = document.getElementById('info');
+
+        pickBtn.addEventListener('click', () => fileInput.click());
+        dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f' });
+        dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = '');
+        dropArea.addEventListener('drop', e => { e.preventDefault(); if (e.dataTransfer.files.length) { fileInput.files = e.dataTransfer.files; handleFile(); } });
+        fileInput.addEventListener('change', handleFile);
+
+        let currentFile = null, imgEl = null;
+        function log(msg) { logEl.textContent += msg + '\\n'; logEl.scrollTop = logEl.scrollHeight; }
+        function clearLog() { logEl.textContent = ''; }
+
+        function handleFile() {
+            clearLog(); currentFile = fileInput.files[0]; if (!currentFile) return;
+            const url = URL.createObjectURL(currentFile);
+            preview.innerHTML = `<img id="loadedImg" src="${url}" style="max-width:420px;border-radius:8px">`;
+            imgEl = document.getElementById('loadedImg');
+            imgEl.onload = () => { info.textContent = `Original: ${imgEl.naturalWidth}×${imgEl.naturalHeight}`; log('Image loaded.'); }
+        }
+
+        startBtn.addEventListener('click', async () => {
+            if (!currentFile) return alert('कृपया image निवडा');
+            clearLog(); log('Resizing...');
+            const reader = new FileReader();
+            reader.onload = async e => {
+                const img = new Image(); img.src = e.target.result; await img.decode();
+                let targetW = parseInt(widthInput.value) || null;
+                let targetH = parseInt(heightInput.value) || null;
+                if (mode.value === 'percent') { if (targetW) targetW = Math.max(1, Math.round(img.naturalWidth * (targetW / 100))); if (targetH) targetH = Math.max(1, Math.round(img.naturalHeight * (targetH / 100))); }
+                if (!targetW && !targetH) { alert('किमान width किंवा height द्या'); return; }
+                if (keepAspect.checked) { if (!targetW) targetW = Math.round(img.naturalWidth * (targetH / img.naturalHeight)); if (!targetH) targetH = Math.round(img.naturalHeight * (targetW / img.naturalWidth)); }
+                const canvas = document.createElement('canvas'); canvas.width = targetW; canvas.height = targetH;
+                const ctx = canvas.getContext('2d'); ctx.drawImage(img, 0, 0, targetW, targetH);
+                canvas.toBlob(blob => {
+                    const url = URL.createObjectURL(blob);
+                    downloadLink.href = url; downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-resized.png';
+                    downloadLink.textContent = 'Download'; downloadLink.style.display = 'inline-block';
+                    preview.innerHTML = `<img src="${url}" style="max-width:420px;border-radius:8px">`;
+                    log('Done.');
+                }, 'image/png');
+            }
+            reader.readAsDataURL(currentFile);
+        });
+    </script>
+</body>
+
+</html>

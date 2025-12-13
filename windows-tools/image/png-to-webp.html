@@ -1,45 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="mr">
 
 <head>
-  <meta charset="UTF-8">
-  <title>PNG to WebP – Convert PNG Images to WebP</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PNG → WebP — RDroid Apps</title>
   <link rel="stylesheet" href="../../css/style.css">
-  <style>
-    .tool-section {
-      max-width: 700px;
-      margin: auto;
-      padding: 120px 20px 40px;
-      text-align: center;
-    }
-
-    .tool-section h1 {
-      margin-bottom: 10px;
-    }
-
-    .tool-section p {
-      margin-bottom: 20px;
-    }
-
-    input[type="file"] {
-      margin: 20px 0;
-    }
-  </style>
 </head>
 
 <body>
-
-  <!-- RDroidApps Header -->
   <header>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <div class="logo">
-      <img src="../../assets/my_brand_icon.png" alt="RDroid Logo" />
+      <img src="../../assets/my_brand_icon.png" alt="RDroid" />
       <div>RDroid <span>Apps</span></div>
     </div>
-    <a href="/auth/login.html" class="login-btn">🔑 Login</a>
+    <div class="nav-links">
+      <a href="../../index.html" class="active">Home</a>
+      <a href="../../apps.html">Apps</a>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+      <a href="../../windows-tools.html">Windows Tools</a>
+    </div>
+    <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
   </header>
 
-  <!-- Drawer Navigation -->
+  <!-- ===== DRAWER (UNCHANGED) ===== -->
   <nav id="drawer">
     <a href="../../index.html">🏠 Home</a>
     <a href="../../apps.html">📱 Apps</a>
@@ -50,79 +36,49 @@
     <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
   </nav>
 
-  <div class="section" style="padding-top:120px;">
-    <h1>PNG to WebP</h1>
-    <p>Convert your PNG images into lightweight WebP format.</p>
+  <section class="tool-section">
+    <div class="card">
+      <h1>PNG → WebP</h1>
+      <p class="note">Convert PNG to WebP. Transparency preserved when possible.</p>
 
-    <input type="file" id="pngFiles" accept="image/png" multiple style="margin:15px 0;">
-    <button class="btn btn-primary" onclick="convertPNGtoWebP()">Convert Now</button>
-
-    <div id="output" style="margin-top:25px;"></div>
-  </div>
-
-  <footer>© 2025 RDroid Apps – PNG to WebP Tool</footer>
+      <label class="drop" id="dropArea">Drop PNG or <button class="btn btn-ghost" id="pickBtn">Choose
+          file</button></label>
+      <input type="file" id="fileInput" accept="image/png" />
+      <div class="row">
+        <div class="col"><label class="small">Quality</label><input type="range" id="quality" min="10" max="95"
+            value="80">
+          <div id="qVal">80</div>
+        </div>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:8px;"><button class="btn btn-primary"
+          id="startBtn">Convert</button><a id="downloadLink" class="btn" style="display:none"></a></div>
+      <div id="preview" style="margin-top:12px"></div>
+      <pre id="log">Ready.</pre>
+    </div>
+    <footer>© 2025 RDroid Apps — Image Tools</footer>
+  </section>
 
   <script>
-    // Drawer toggle
-    function toggleMenu() {
-      document.getElementById("drawer").classList.toggle("open");
-    }
+    function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+    const pickBtn = document.getElementById('pickBtn'), fileInput = document.getElementById('fileInput'), dropArea = document.getElementById('dropArea'),
+      quality = document.getElementById('quality'), qVal = document.getElementById('qVal'), startBtn = document.getElementById('startBtn'),
+      downloadLink = document.getElementById('downloadLink'), preview = document.getElementById('preview'), logEl = document.getElementById('log');
 
-    async function convertPNGtoWebP() {
-      let files = document.getElementById("pngFiles").files;
-      if (!files.length) { alert("Please select at least one PNG image!"); return; }
+    pickBtn.addEventListener('click', () => fileInput.click()); dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f' }); dropArea.addEventListener('drop', e => { e.preventDefault(); if (e.dataTransfer.files.length) fileInput.files = e.dataTransfer.files; });
+    fileInput.addEventListener('change', () => preview.innerHTML = `<img src="${URL.createObjectURL(fileInput.files[0])}" style="max-width:420px;border-radius:8px">`);
+    quality.addEventListener('input', () => qVal.textContent = quality.value);
 
-      let output = document.getElementById("output");
-      output.innerHTML = "<p>Processing… Please wait.</p>";
-
-      output.innerHTML = ""; // clear output
-
-      for (let file of files) {
-        const webpBlob = await pngToWebp(file);
-        const url = URL.createObjectURL(webpBlob);
-
-        // Download link
-        let link = document.createElement("a");
-        link.href = url;
-        link.download = file.name.replace(".png", ".webp");
-        link.innerText = "Download " + link.download;
-        link.className = "btn";
-        link.style = "display:block;width:240px;margin:10px 0;";
-
-        // Preview
-        let preview = document.createElement("img");
-        preview.src = url;
-        preview.style = "max-width:160px;display:block;margin:10px 0;border-radius:8px;";
-
-        output.appendChild(preview);
-        output.appendChild(link);
+    startBtn.addEventListener('click', () => {
+      const f = fileInput.files[0]; if (!f) return alert('कृपया PNG निवडा');
+      const reader = new FileReader(); reader.onload = async e => {
+        const img = new Image(); img.src = e.target.result; await img.decode();
+        const canvas = document.createElement('canvas'); canvas.width = img.naturalWidth; canvas.height = img.naturalHeight;
+        canvas.getContext('2d').drawImage(img, 0, 0);
+        canvas.toBlob(b => { const url = URL.createObjectURL(b); preview.innerHTML = `<img src="${url}" style="max-width:420px;border-radius:8px">`; downloadLink.href = url; downloadLink.download = f.name.replace(/\.png$/i, '') + '.webp'; downloadLink.textContent = 'Download'; downloadLink.style.display = 'inline-block'; }, 'image/webp', parseInt(quality.value) / 100);
       }
-    }
-
-    // PNG → WebP converter (Canvas)
-    function pngToWebp(file) {
-      return new Promise((resolve, reject) => {
-        let img = new Image();
-        img.onload = () => {
-          const canvas = document.createElement("canvas");
-          canvas.width = img.width;
-          canvas.height = img.height;
-
-          const ctx = canvas.getContext("2d");
-          ctx.drawImage(img, 0, 0);
-
-          canvas.toBlob(
-            (blob) => resolve(blob),
-            "image/webp",
-            0.85  // compression quality
-          );
-        };
-        img.onerror = reject;
-        img.src = URL.createObjectURL(file);
-      });
-    }
+      reader.readAsDataURL(f);
+    });
   </script>
-
 </body>
 
 </html>

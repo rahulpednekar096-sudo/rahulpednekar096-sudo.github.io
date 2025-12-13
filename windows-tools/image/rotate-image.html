@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="mr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Rotate Image — RDroid Apps</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="logo">
+            <img src="../../assets/my_brand_icon.png" alt="RDroid" />
+            <div>RDroid <span>Apps</span></div>
+        </div>
+        <div class="nav-links">
+            <a href="../../index.html" class="active">Home</a>
+            <a href="../../apps.html">Apps</a>
+            <a href="../../about.html">About</a>
+            <a href="../../contact.html">Contact</a>
+            <a href="../../windows-tools.html">Windows Tools</a>
+        </div>
+        <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
+    </header>
+
+    <!-- ===== DRAWER (UNCHANGED) ===== -->
+    <nav id="drawer">
+        <a href="../../index.html">🏠 Home</a>
+        <a href="../../apps.html">📱 Apps</a>
+        <a href="../../favorites.html">⭐ Favorites</a>
+        <a href="../../profile.html">👤 Profile</a>
+        <a href="../../about.html">ℹ️ About</a>
+        <a href="../../contact.html">✉️ Contact</a>
+        <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
+    </nav>
+
+    <section class="tool-section">
+        <div class="card">
+            <h1>Rotate Image</h1>
+            <p class="note">Rotate by 90° increments or custom degrees.</p>
+
+            <label class="drop" id="dropArea">Drop image here or <button class="btn btn-ghost" id="pickBtn">Choose
+                    file</button></label>
+            <input type="file" id="fileInput" accept="image/*" />
+
+            <div class="row">
+                <div class="col"><label class="small">Rotate</label>
+                    <select id="preset">
+                        <option value="90">Rotate 90° CW</option>
+                        <option value="180">Rotate 180°</option>
+                        <option value="270">Rotate 90° CCW</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
+                <div class="col" id="customWrap" style="display:none"><label class="small">Degrees</label><input
+                        type="number" id="degInput" value="0"></div>
+                <div class="col"><label class="small">Flip</label><select id="flipSel">
+                        <option value="none">None</option>
+                        <option value="h">Flip Horizontal</option>
+                        <option value="v">Flip Vertical</option>
+                    </select></div>
+            </div>
+
+            <div style="margin-top:12px;display:flex;gap:8px;"><button class="btn btn-primary"
+                    id="applyBtn">Apply</button><a id="downloadLink" class="btn" style="display:none"></a></div>
+            <div id="preview" style="margin-top:12px"></div>
+            <pre id="log">Ready.</pre>
+        </div>
+        <footer>© 2025 RDroid Apps — Image Tools</footer>
+    </section>
+
+    <script>
+        function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+        const pickBtn = document.getElementById('pickBtn'), fileInput = document.getElementById('fileInput'), dropArea = document.getElementById('dropArea'),
+            preset = document.getElementById('preset'), degInput = document.getElementById('degInput'), customWrap = document.getElementById('customWrap'),
+            flipSel = document.getElementById('flipSel'), applyBtn = document.getElementById('applyBtn'), preview = document.getElementById('preview'),
+            downloadLink = document.getElementById('downloadLink'), logEl = document.getElementById('log');
+
+        pickBtn.addEventListener('click', () => fileInput.click());
+        dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f' });
+        dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = '');
+        dropArea.addEventListener('drop', e => { e.preventDefault(); if (e.dataTransfer.files.length) { fileInput.files = e.dataTransfer.files; handleFile(); } });
+
+        fileInput.addEventListener('change', handleFile);
+        preset.addEventListener('change', () => { customWrap.style.display = preset.value === 'custom' ? 'block' : 'none'; });
+
+        let currentFile = null, img = null;
+        function log(msg) { logEl.textContent += msg + '\\n'; logEl.scrollTop = logEl.scrollHeight; }
+
+        function handleFile() {
+            currentFile = fileInput.files[0]; if (!currentFile) return;
+            const url = URL.createObjectURL(currentFile); img = new Image(); img.src = url; img.onload = () => { preview.innerHTML = `<img id="loaded" src="${url}" style="max-width:420px;border-radius:8px">`; log('Image loaded'); }
+        }
+
+        applyBtn.addEventListener('click', async () => {
+            if (!currentFile) return alert('कृपया image निवडा');
+            const reader = new FileReader(); reader.onload = async e => {
+                const image = new Image(); image.src = e.target.result; await image.decode();
+                let degrees = preset.value === 'custom' ? parseFloat(degInput.value || 0) : parseFloat(preset.value);
+                const flip = flipSel.value;
+                const rad = degrees * Math.PI / 180;
+                // determine canvas size after rotation
+                const sin = Math.abs(Math.sin(rad)), cos = Math.abs(Math.cos(rad));
+                const w = Math.round(image.naturalWidth * cos + image.naturalHeight * sin);
+                const h = Math.round(image.naturalWidth * sin + image.naturalHeight * cos);
+                const canvas = document.createElement('canvas'); canvas.width = w; canvas.height = h;
+                const ctx = canvas.getContext('2d');
+                ctx.translate(w / 2, h / 2);
+                ctx.rotate(rad);
+                // flipping
+                let scaleX = (flip === 'h') ? -1 : 1, scaleY = (flip === 'v') ? -1 : 1;
+                ctx.scale(scaleX, scaleY);
+                ctx.drawImage(image, -image.naturalWidth / 2, -image.naturalHeight / 2);
+                canvas.toBlob(b => {
+                    const url = URL.createObjectURL(b); preview.innerHTML = `<img src="${url}" style="max-width:420px;border-radius:8px">`;
+                    downloadLink.href = url; downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-rotated.png'; downloadLink.textContent = 'Download'; downloadLink.style.display = 'inline-block';
+                    log('Done.');
+                }, 'image/png');
+            }
+            reader.readAsDataURL(currentFile);
+        });
+    </script>
+</body>
+
+</html>

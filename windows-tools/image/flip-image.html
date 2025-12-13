@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="mr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Flip Image — RDroid Apps</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="logo">
+            <img src="../../assets/my_brand_icon.png" alt="RDroid" />
+            <div>RDroid <span>Apps</span></div>
+        </div>
+        <div class="nav-links">
+            <a href="../../index.html" class="active">Home</a>
+            <a href="../../apps.html">Apps</a>
+            <a href="../../about.html">About</a>
+            <a href="../../contact.html">Contact</a>
+            <a href="../../windows-tools.html">Windows Tools</a>
+        </div>
+        <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
+    </header>
+
+    <!-- ===== DRAWER (UNCHANGED) ===== -->
+    <nav id="drawer">
+        <a href="../../index.html">🏠 Home</a>
+        <a href="../../apps.html">📱 Apps</a>
+        <a href="../../favorites.html">⭐ Favorites</a>
+        <a href="../../profile.html">👤 Profile</a>
+        <a href="../../about.html">ℹ️ About</a>
+        <a href="../../contact.html">✉️ Contact</a>
+        <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
+    </nav>
+
+    <section class="tool-section">
+        <div class="card">
+            <h1>Flip Image</h1>
+            <p class="note">Flip horizontally or vertically.</p>
+
+            <label class="drop" id="dropArea">Drop image or <button class="btn btn-ghost" id="pickBtn">Choose
+                    file</button></label>
+            <input type="file" id="fileInput" accept="image/*" />
+            <div class="row">
+                <div class="col"><label class="small">Flip Mode</label><select id="flipMode">
+                        <option value="h">Flip Horizontal</option>
+                        <option value="v">Flip Vertical</option>
+                    </select></div>
+            </div>
+
+            <div style="margin-top:12px;display:flex;gap:8px;"><button class="btn btn-primary"
+                    id="applyBtn">Flip</button><a id="downloadLink" class="btn" style="display:none"></a></div>
+            <div id="preview" style="margin-top:12px"></div>
+            <pre id="log">Ready.</pre>
+        </div>
+        <footer>© 2025 RDroid Apps — Image Tools</footer>
+    </section>
+
+    <script>
+        function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+        const pickBtn = document.getElementById('pickBtn'), fileInput = document.getElementById('fileInput'), dropArea = document.getElementById('dropArea'),
+            flipMode = document.getElementById('flipMode'), applyBtn = document.getElementById('applyBtn'), preview = document.getElementById('preview'),
+            downloadLink = document.getElementById('downloadLink'), logEl = document.getElementById('log');
+
+        pickBtn.addEventListener('click', () => fileInput.click());
+        dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f' }); dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = '');
+        dropArea.addEventListener('drop', e => { e.preventDefault(); if (e.dataTransfer.files.length) { fileInput.files = e.dataTransfer.files; } });
+
+        let currentFile = null;
+        fileInput.addEventListener('change', () => { currentFile = fileInput.files[0]; preview.innerHTML = `<img id="loaded" src="${URL.createObjectURL(currentFile)}" style="max-width:420px;border-radius:8px">`; });
+
+        applyBtn.addEventListener('click', async () => {
+            if (!currentFile) return alert('कृपया image निवडा');
+            const reader = new FileReader(); reader.onload = async e => {
+                const img = new Image(); img.src = e.target.result; await img.decode();
+                const canvas = document.createElement('canvas'); canvas.width = img.naturalWidth; canvas.height = img.naturalHeight;
+                const ctx = canvas.getContext('2d');
+                if (flipMode.value === 'h') { ctx.translate(canvas.width, 0); ctx.scale(-1, 1); }
+                else { ctx.translate(0, canvas.height); ctx.scale(1, -1); }
+                ctx.drawImage(img, 0, 0);
+                canvas.toBlob(b => { const url = URL.createObjectURL(b); preview.innerHTML = `<img src="${url}" style="max-width:420px;border-radius:8px">`; downloadLink.href = url; downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-flipped.png'; downloadLink.textContent = 'Download'; downloadLink.style.display = 'inline-block'; }, 'image/png');
+            }
+            reader.readAsDataURL(currentFile);
+        });
+    </script>
+</body>
+
+</html>

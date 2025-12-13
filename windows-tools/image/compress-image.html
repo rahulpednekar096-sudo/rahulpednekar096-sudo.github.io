@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="mr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Compress Image — RDroid Apps</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="logo">
+            <img src="../../assets/my_brand_icon.png" alt="RDroid" />
+            <div>RDroid <span>Apps</span></div>
+        </div>
+        <div class="nav-links">
+            <a href="../../index.html" class="active">Home</a>
+            <a href="../../apps.html">Apps</a>
+            <a href="../../about.html">About</a>
+            <a href="../../contact.html">Contact</a>
+            <a href="../../windows-tools.html">Windows Tools</a>
+        </div>
+        <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
+    </header>
+
+    <!-- ===== DRAWER (UNCHANGED) ===== -->
+    <nav id="drawer">
+        <a href="../../index.html">🏠 Home</a>
+        <a href="../../apps.html">📱 Apps</a>
+        <a href="../../favorites.html">⭐ Favorites</a>
+        <a href="../../profile.html">👤 Profile</a>
+        <a href="../../about.html">ℹ️ About</a>
+        <a href="../../contact.html">✉️ Contact</a>
+        <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
+    </nav>
+
+    <section class="tool-section">
+        <div class="card">
+            <h1>Compress Image</h1>
+            <p class="note">Reduce filesize. Works best for JPEG; PNG compressed by re-encoding to JPEG or WebP.</p>
+
+            <label class="drop" id="dropArea">Drop image or <button class="btn btn-ghost" id="pickBtn">Choose
+                    file</button></label>
+            <input type="file" id="fileInput" accept="image/*" />
+            <div class="row">
+                <div class="col"><label class="small">Format</label><select id="outFormat">
+                        <option value="jpeg">JPEG</option>
+                        <option value="webp">WebP</option>
+                        <option value="png">PNG (lossless)</option>
+                    </select></div>
+                <div class="col"><label class="small">Quality</label><input type="range" id="quality" min="10" max="95"
+                        value="75">
+                    <div id="qVal">75</div>
+                </div>
+            </div>
+
+            <div style="margin-top:12px;display:flex;gap:8px;"><button class="btn btn-primary"
+                    id="startBtn">Compress</button><a id="downloadLink" class="btn" style="display:none"></a>
+                <div id="sizeInfo" style="margin-left:auto"></div>
+            </div>
+
+            <div id="preview" style="margin-top:12px"></div>
+            <pre id="log">Ready.</pre>
+        </div>
+        <footer>© 2025 RDroid Apps — Image Tools</footer>
+    </section>
+
+    <script>
+        function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+        const pickBtn = document.getElementById('pickBtn'), fileInput = document.getElementById('fileInput'), dropArea = document.getElementById('dropArea'),
+            outFormat = document.getElementById('outFormat'), quality = document.getElementById('quality'), qVal = document.getElementById('qVal'),
+            startBtn = document.getElementById('startBtn'), downloadLink = document.getElementById('downloadLink'), preview = document.getElementById('preview'),
+            sizeInfo = document.getElementById('sizeInfo'), logEl = document.getElementById('log');
+
+        pickBtn.addEventListener('click', () => fileInput.click()); dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f' }); dropArea.addEventListener('drop', e => { e.preventDefault(); if (e.dataTransfer.files.length) fileInput.files = e.dataTransfer.files; });
+        fileInput.addEventListener('change', () => { preview.innerHTML = `<img src="${URL.createObjectURL(fileInput.files[0])}" style="max-width:420px;border-radius:8px">`; });
+
+        quality.addEventListener('input', () => qVal.textContent = quality.value);
+
+        startBtn.addEventListener('click', async () => {
+            const f = fileInput.files[0]; if (!f) return alert('कृपया image निवडा');
+            const reader = new FileReader(); reader.onload = async e => {
+                const img = new Image(); img.src = e.target.result; await img.decode();
+                const canvas = document.createElement('canvas'); canvas.width = img.naturalWidth; canvas.height = img.naturalHeight;
+                const ctx = canvas.getContext('2d'); ctx.drawImage(img, 0, 0);
+                const fmt = outFormat.value;
+                const q = parseInt(quality.value) / 100;
+                const mime = fmt === 'jpeg' ? 'image/jpeg' : (fmt === 'webp' ? 'image/webp' : 'image/png');
+                canvas.toBlob(b => {
+                    const url = URL.createObjectURL(b); preview.innerHTML = `<img src="${url}" style="max-width:420px;border-radius:8px">`;
+                    downloadLink.href = url; downloadLink.download = f.name.replace(/\.[^/.]+$/, '') + '-compressed.' + (fmt === 'jpeg' ? 'jpg' : fmt);
+                    downloadLink.textContent = 'Download'; downloadLink.style.display = 'inline-block';
+                    sizeInfo.textContent = `Output: ${(b.size / 1024).toFixed(1)} KB`;
+                    logEl.textContent += 'Compressed: ' + (b.size / 1024).toFixed(1) + ' KB\\n';
+                }, mime, fmt === 'png' ? undefined : q);
+            }
+            reader.readAsDataURL(f);
+        });
+    </script>
+</body>
+
+</html>
