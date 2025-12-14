@@ -15,128 +15,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
-  <style>
-    :root {
-      --card: #131619;
-      --muted: #9fbfb0;
-      --accent: #0aa37f
-    }
-
-    body {
-      margin-top: 100px;
-    }
-
-    .menu-btn {
-      background: transparent;
-      border: none;
-      color: var(--accent);
-      font-size: 20px;
-      cursor: pointer;
-    }
-
-    .container {
-      max-width: 980px;
-      margin: 40px auto;
-      padding: 20px;
-      background: var(--card);
-      border-radius: 12px
-    }
-
-    h1 {
-      margin: 0 0 8px
-    }
-
-    p.lead {
-      color: var(--muted)
-    }
-
-    .drop {
-      border: 2px dashed #202426;
-      padding: 18px;
-      border-radius: 10px;
-      text-align: center;
-      cursor: pointer;
-      color: var(--muted)
-    }
-
-    .controls {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 12px
-    }
-
-    .control {
-      background: #0f1315;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #222;
-      min-width: 220px
-    }
-
-    .btn {
-      padding: 10px 12px;
-      border-radius: 8px;
-      cursor: pointer
-    }
-
-    .btn-primary {
-      background: #0aa37f;
-      color: #fff;
-      border: none
-    }
-
-    .thumb {
-      width: 120px;
-      padding: 8px;
-      border-radius: 8px;
-      background: #0b0c0d;
-      border: 1px solid #222;
-      text-align: center;
-      margin: 8px;
-      display: inline-block
-    }
-
-    .thumb img {
-      max-width: 100px;
-      border-radius: 6px
-    }
-
-    .progress {
-      height: 12px;
-      background: #0b0c0d;
-      border-radius: 8px;
-      margin-top: 12px;
-      display: none
-    }
-
-    .bar {
-      height: 100%;
-      width: 0%;
-      background: var(--accent);
-      transition: width .2s
-    }
-
-    .log {
-      margin-top: 12px;
-      background: #0b0c0d;
-      padding: 12px;
-      border-radius: 8px;
-      color: var(--muted);
-      max-height: 200px;
-      overflow: auto;
-      font-size: 13px
-    }
-
-    .input-range {
-      width: 100%;
-      padding: 6px;
-      border-radius: 6px;
-      background: #090b0c;
-      border: 1px solid #222;
-      color: #e6eef0
-    }
-  </style>
 </head>
 
 <body>
@@ -144,13 +22,20 @@
   <header>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <div class="logo">
-      <img src="../../assets/my_brand_icon.png" alt="RDroid Logo" />
+      <img src="../../assets/my_brand_icon.png" alt="RDroid" />
       <div>RDroid <span>Apps</span></div>
     </div>
-    <a href="/auth/login.html" class="login-btn">🔑 Login</a>
+    <div class="nav-links">
+      <a href="../../index.html" class="active">Home</a>
+      <a href="../../apps.html">Apps</a>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+      <a href="../../windows-tools.html">Windows Tools</a>
+    </div>
+    <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
   </header>
 
-  <!-- Drawer Navigation -->
+  <!-- ===== DRAWER (UNCHANGED) ===== -->
   <nav id="drawer">
     <a href="../../index.html">🏠 Home</a>
     <a href="../../apps.html">📱 Apps</a>
