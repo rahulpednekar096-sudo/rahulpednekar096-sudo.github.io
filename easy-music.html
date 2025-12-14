@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH2NE5Y7W4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-LH2NE5Y7W4');
   </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Easy Music | RDroid Apps</title>
-  <meta name="description" content="Easy Music by RDroid Apps — Compose your own guitar-based tracks and export them easily." />
+  <meta name="description"
+    content="Easy Music by RDroid Apps — Compose your own guitar-based tracks and export them easily." />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <!-- Header -->
   <header>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <div class="logo">
-      <img src="assets/my_brand_icon.png" alt="RDroid Logo" />
+      <img src="../../assets/my_brand_icon.png" alt="RDroid" />
       <div>RDroid <span>Apps</span></div>
     </div>
-    <a href="/auth/login.html" class="login-btn">🔑 Login</a>
+    <div class="nav-links">
+      <a href="../../index.html" class="active">Home</a>
+      <a href="../../apps.html">Apps</a>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+      <a href="../../windows-tools.html">Windows Tools</a>
+    </div>
+    <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
   </header>
 
   <!-- Drawer -->
@@ -64,10 +74,10 @@
   </footer>
 
   <!-- Login Popup -->
-  
+
 
   <!-- Profile Popup -->
-  
+
 
   <!-- Firebase v12 Modular SDKs (ES Modules) -->
   <script type="module" src="js/firebase-config.js"></script>
@@ -76,5 +86,5 @@
   <!-- Main UI Script -->
   <script src="js/script.js"></script>
 </body>
-</html>
 
+</html>
