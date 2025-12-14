@@ -11,6 +11,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
   <script src="https://unpkg.com/tesseract.js@v4.1.1/dist/tesseract.min.js"></script>
+
+
 </head>
 
 <body>
@@ -18,13 +20,20 @@
   <header>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <div class="logo">
-      <img src="../../assets/my_brand_icon.png" alt="RDroid Logo" />
+      <img src="../../assets/my_brand_icon.png" alt="RDroid" />
       <div>RDroid <span>Apps</span></div>
     </div>
-    <a href="/auth/login.html" class="login-btn">🔑 Login</a>
+    <div class="nav-links">
+      <a href="../../index.html" class="active">Home</a>
+      <a href="../../apps.html">Apps</a>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
+      <a href="../../windows-tools.html">Windows Tools</a>
+    </div>
+    <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
   </header>
 
-  <!-- Drawer Navigation -->
+  <!-- ===== DRAWER (UNCHANGED) ===== -->
   <nav id="drawer">
     <a href="../../index.html">🏠 Home</a>
     <a href="../../apps.html">📱 Apps</a>
@@ -40,8 +49,8 @@
       <p class="note">Pages are rasterized to JPEG images and re-packed. Great for large image-heavy PDFs. Text will NOT
         remain selectable. Use OCR summary if you need extracted text separately.</p>
 
-      <label class="drop" id="dropArea">Drop PDF here or <button class="btn btn-ghost" id="pickBtn">Choose
-          file</button></label>
+      <div class="drop" id="dropArea">Drop PDF here or <button class="btn btn-ghost" id="pickBtn">Choose
+          file</button></div>
       <input type="file" id="fileInput" accept="application/pdf" />
 
       <div class="row">
@@ -321,8 +330,8 @@
     });
 
     // Basic memory safety: attempt to revoke object URLs on unload
-    window.addEventListener('unload', () => {
-      // nothing to revoke centrally here — created blobs are in downloadLink href only
+    window.addEventListener('beforeunload', () => {
+      // Empty function - no violations
     });
 
   </script>
