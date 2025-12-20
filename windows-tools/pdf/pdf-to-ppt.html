@@ -5,6 +5,12 @@
     <meta charset="utf-8" />
     <title>PDF → PPTX — RDroid Apps (Upgraded)</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Convert PDF pages into a PPTX where each slide is an image of the PDF page (high-fidelity)." />
+    <meta name="keywords"
+        content="pdf to ppt, pdf to pptx, convert pdf to powerpoint, pdf slides, pdf presentation, pdf converter, pdf tools, rdroid apps" />
+    <meta name="author" content="RDroid Apps" />
+
     <link rel="stylesheet" href="../../css/style.css">
 
     <!-- pdf.js -->
@@ -14,37 +20,29 @@
     <!-- JSZip + FileSaver already bundled in PptxGenJS but keep FileSaver -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
-
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-    <!-- RDroidApps Header -->
-    <header>
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
-        <div class="logo">
-            <img src="../../assets/my_brand_icon.png" alt="RDroid" />
-            <div>RDroid <span>Apps</span></div>
-        </div>
-        <div class="nav-links">
-            <a href="../../index.html" class="active">Home</a>
-            <a href="../../apps.html">Apps</a>
-            <a href="../../about.html">About</a>
-            <a href="../../contact.html">Contact</a>
-            <a href="../../windows-tools.html">Windows Tools</a>
-        </div>
-        <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
-    </header>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
 
-    <!-- ===== DRAWER (UNCHANGED) ===== -->
-    <nav id="drawer">
-        <a href="../../index.html">🏠 Home</a>
-        <a href="../../apps.html">📱 Apps</a>
-        <a href="../../favorites.html">⭐ Favorites</a>
-        <a href="../../profile.html">👤 Profile</a>
-        <a href="../../about.html">ℹ️ About</a>
-        <a href="../../contact.html">✉️ Contact</a>
-        <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
-    </nav>
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("../../components/header.html");
+            $("#menu-drawer-container").load("../../components/menu-drawer.html");
+            $("#tools-links-container").load("../../components/pdf-tools-quick-links.html");
+            $("#footer-container").load("../../components/footer.html");
+        });
+    </script>
     <section class="section">
         <h1>PDF → PPTX (Upgraded)</h1>
         <p class="lead">Convert PDF pages into a PPTX where each slide is an image of the PDF page (high-fidelity).</p>
@@ -77,7 +75,7 @@
         </div>
 
         <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
-            <button class="btn-primary" id="convertBtn">Convert to PPTX</button>
+            <button class="btn btn-primary" id="convertBtn">Convert PDF to PPTX</button>
             <button class="btn" id="clearBtn">Clear</button>
             <div style="margin-left:auto;color:#9fbfb0" id="pageInfo"></div>
         </div>
@@ -91,168 +89,226 @@
         <pre id="log" class="log">Ready.</pre>
 
         <div id="downloadArea" style="margin-top:12px"></div>
-    </section>
-    <footer style="margin-top:14px;color:#9fbfb0">© 2025 RDroid Apps — PPT Tools</footer>
+        <!-- SEO Content -->
+        <pre id="log">Ready.</pre>
+        <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+        <hr style="margin:32px 0">
 
-    <script>
-        // Drawer toggle
-        function toggleMenu() {
-            document.getElementById("drawer").classList.toggle("open");
-        }
-        const pickBtn = document.getElementById('pickBtn');
-        const fileInput = document.getElementById('fileInput');
-        const dropArea = document.getElementById('dropArea');
-        const thumbs = document.getElementById('thumbs');
-        const logEl = document.getElementById('log');
-        const pageInfo = document.getElementById('pageInfo');
-        const convertBtn = document.getElementById('convertBtn');
-        const clearBtn = document.getElementById('clearBtn');
-        const progressWrap = document.getElementById('progressWrap');
-        const progressBar = document.getElementById('progressBar');
-        const outName = document.getElementById('outName');
-        const slideSize = document.getElementById('slideSize');
-        const dpiSel = document.getElementById('dpi');
-        const addNotes = document.getElementById('addNotes');
-        const downloadArea = document.getElementById('downloadArea');
+        <section class="seo-content">
+            <h2>PDF To PPTX Converter — RDroidApps Pro</h2>
 
-        let pdfDoc = null;
-        let pageCount = 0;
-        let pages = []; // {pageNum, thumbDataUrl, imgDataUrl, selected}
+            <p>
+                The PDF to PPTX converter tool from RDroidApps Pro allows users to easily convert their PDF documents
+                into PowerPoint presentations. Each page of the PDF is transformed into a high-quality image slide in
+                the resulting PPTX file, ensuring that the original layout and design are preserved.
+            </p>
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>High-Fidelity Conversion:</strong> Each PDF page is rendered as an image slide, maintaining
+                    the original formatting and design.</li>
+                <li><strong>Customizable Slide Size:</strong> Users can choose between 16:9 widescreen or 4:3 standard
+                    slide dimensions to suit their presentation needs.</li>
+                <li><strong>DPI Selection:</strong> The tool offers adjustable DPI settings (72, 150, 300) for rendering
+                    quality, allowing users to balance file size and image clarity.</li>
+                <li><strong>Page Selection and Ordering:</strong> Users can select specific pages to include in the PPTX
+                    and rearrange their order before conversion.</li>
+                <li><strong>Add Notes Option:</strong> An option to add page numbers as notes in the slides for better
+                    organization.</li>
+            </ul>
+            <h3>How to Use the PDF to PPTX Converter</h3>
+            <ol>
+                <li><strong>Upload PDF:</strong> Drag and drop your PDF file into the designated area or use the "Choose
+                    file" button to select a file from your device.</li>
+                <li><strong>Configure Settings:</strong> Select your preferred slide size and DPI settings. Optionally,
+                    choose to add page numbers as notes.</li>
+                <li><strong>Select Pages:</strong> Review the generated thumbnails of your PDF pages, select the ones
+                    you want to include, and arrange them in your desired order.</li>
+                <li><strong>Convert:</strong> Click the "Convert PDF to PPTX" button to start the conversion process.
+                    The tool will render each selected page and compile them into a PPTX file.</li>
+                <li><strong>Download:</strong> Once the conversion is complete, download your new PPTX file containing
+                    the image slides of your PDF pages.</li>
+            </ol>
+            <h3>Benefits of Using RDroidApps Pro PDF to PPTX Converter</h 3>3>
+                <ul>
+                    <li><strong>User-Friendly Interface:</strong> The intuitive design makes it easy for users of all
+                        skill levels to convert PDFs to PPTX.</li>
+                    <li><strong>Time-Saving:</strong> Quickly convert documents without the need for complex software
+                        installations.</li>
+                    <li><strong>Preserves Original Design:</strong> Ensures that the visual integrity of the PDF is
+                        maintained in the PowerPoint format.</li>
+                    <li><strong>Versatile Use Cases:</strong> Ideal for educators, business professionals, and students
+                        who need to present PDF content in a slideshow format.</li>
+                </ul>
+                <p>
+                    The PDF to PPTX converter from RDroidApps Pro is a powerful tool for anyone looking to transform
+                    their PDF documents into engaging presentations. With its high-fidelity conversion and customizable
+                    options, it provides a seamless experience for creating professional-quality slideshows.
+                </p>
 
-        function log(msg) { logEl.textContent += "\\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
-        function setProgress(p) { progressWrap.style.display = (p >= 0 ? 'block' : 'none'); progressBar.style.width = (p * 100).toFixed(1) + '%'; }
-
-        pickBtn.addEventListener('click', () => fileInput.click());
-        fileInput.addEventListener('change', e => handleFile(e.target.files[0]));
-
-        dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.classList.add('dragover'); });
-        dropArea.addEventListener('dragleave', () => dropArea.classList.remove('dragover'));
-        dropArea.addEventListener('drop', e => { e.preventDefault(); dropArea.classList.remove('dragover'); if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]); });
-
-        async function handleFile(file) {
-            if (!file) return;
-            clearAll();
-            log('Loading PDF: ' + file.name);
-            const buf = await file.arrayBuffer();
-            pdfDoc = await pdfjsLib.getDocument({ data: buf }).promise;
-            pageCount = pdfDoc.numPages;
-            log('Pages: ' + pageCount);
-            pageInfo.textContent = pageCount + ' pages';
-            // render small thumbnails first
-            pages = [];
-            for (let i = 1; i <= pageCount; i++) {
-                const page = await pdfDoc.getPage(i);
-                const vp = page.getViewport({ scale: 0.2 });
-                const c = document.createElement('canvas');
-                c.width = vp.width; c.height = vp.height;
-                const ctx = c.getContext('2d');
-                await page.render({ canvasContext: ctx, viewport: vp }).promise;
-                pages.push({ pageNum: i, thumb: c.toDataURL('image/png'), img: null, selected: true });
-                renderThumbs();
-                await briefYield(20);
+        </section>
+        <!-- FOOTER (loaded from external file) -->
+        <div id="footer-container"></div>
+        <script>
+            // Drawer toggle
+            function toggleMenu() {
+                document.getElementById("drawer").classList.toggle("open");
             }
-            log('Thumbnails ready.');
-        }
+            const pickBtn = document.getElementById('pickBtn');
+            const fileInput = document.getElementById('fileInput');
+            const dropArea = document.getElementById('dropArea');
+            const thumbs = document.getElementById('thumbs');
+            const logEl = document.getElementById('log');
+            const pageInfo = document.getElementById('pageInfo');
+            const convertBtn = document.getElementById('convertBtn');
+            const clearBtn = document.getElementById('clearBtn');
+            const progressWrap = document.getElementById('progressWrap');
+            const progressBar = document.getElementById('progressBar');
+            const outName = document.getElementById('outName');
+            const slideSize = document.getElementById('slideSize');
+            const dpiSel = document.getElementById('dpi');
+            const addNotes = document.getElementById('addNotes');
+            const downloadArea = document.getElementById('downloadArea');
 
-        function renderThumbs() {
-            thumbs.innerHTML = '';
-            pages.forEach((p, idx) => {
-                const d = document.createElement('div');
-                d.className = 'thumb';
-                d.innerHTML = `<img src="${p.thumb}"><div style="margin-top:6px;color:#9fbfb0">Page ${p.pageNum}</div>
+            let pdfDoc = null;
+            let pageCount = 0;
+            let pages = []; // {pageNum, thumbDataUrl, imgDataUrl, selected}
+
+            function log(msg) { logEl.textContent += "\\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
+            function setProgress(p) { progressWrap.style.display = (p >= 0 ? 'block' : 'none'); progressBar.style.width = (p * 100).toFixed(1) + '%'; }
+
+            pickBtn.addEventListener('click', () => fileInput.click());
+            fileInput.addEventListener('change', e => handleFile(e.target.files[0]));
+
+            dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.classList.add('dragover'); });
+            dropArea.addEventListener('dragleave', () => dropArea.classList.remove('dragover'));
+            dropArea.addEventListener('drop', e => { e.preventDefault(); dropArea.classList.remove('dragover'); if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]); });
+
+            async function handleFile(file) {
+                if (!file) return;
+                clearAll();
+                log('Loading PDF: ' + file.name);
+                const buf = await file.arrayBuffer();
+                pdfDoc = await pdfjsLib.getDocument({ data: buf }).promise;
+                pageCount = pdfDoc.numPages;
+                log('Pages: ' + pageCount);
+                pageInfo.textContent = pageCount + ' pages';
+                // render small thumbnails first
+                pages = [];
+                for (let i = 1; i <= pageCount; i++) {
+                    const page = await pdfDoc.getPage(i);
+                    const vp = page.getViewport({ scale: 0.2 });
+                    const c = document.createElement('canvas');
+                    c.width = vp.width; c.height = vp.height;
+                    const ctx = c.getContext('2d');
+                    await page.render({ canvasContext: ctx, viewport: vp }).promise;
+                    pages.push({ pageNum: i, thumb: c.toDataURL('image/png'), img: null, selected: true });
+                    renderThumbs();
+                    await briefYield(20);
+                }
+                log('Thumbnails ready.');
+            }
+
+            function renderThumbs() {
+                thumbs.innerHTML = '';
+                pages.forEach((p, idx) => {
+                    const d = document.createElement('div');
+                    d.className = 'thumb';
+                    d.innerHTML = `<img src="${p.thumb}"><div style="margin-top:6px;color:#9fbfb0">Page ${p.pageNum}</div>
         <div style="margin-top:6px"><label><input type="checkbox" data-idx="${idx}" ${p.selected ? 'checked' : ''}> Select</label></div>
         <div style="margin-top:8px"><button class="btn" data-idx="${idx}" data-act="up">↑</button><button class="btn" data-idx="${idx}" data-act="down">↓</button><button class="btn btn-danger" data-idx="${idx}" data-act="remove">✕</button></div>`;
-                thumbs.appendChild(d);
-            });
-            // bind
-            thumbs.querySelectorAll('input[type=checkbox]').forEach(cb => cb.addEventListener('change', e => pages[e.target.dataset.idx].selected = e.target.checked));
-            thumbs.querySelectorAll('button').forEach(b => b.addEventListener('click', e => {
-                const idx = parseInt(e.target.dataset.idx);
-                const act = e.target.dataset.act;
-                if (act === 'up' && idx > 0) movePage(idx, idx - 1);
-                if (act === 'down' && idx < pages.length - 1) movePage(idx, idx + 1);
-                if (act === 'remove') { pages.splice(idx, 1); renderThumbs(); }
-            }));
-        }
-
-        function movePage(from, to) { const tmp = pages.splice(from, 1)[0]; pages.splice(to, 0, tmp); renderThumbs(); }
-
-        convertBtn.addEventListener('click', async () => {
-            if (!pdfDoc) { alert('Load a PDF first'); return; }
-            const selected = pages.filter(p => p.selected);
-            if (!selected.length) { alert('Select pages to include'); return; }
-
-            convertBtn.disabled = true;
-            setProgress(0);
-            log('Rendering pages at selected DPI and adding to PPTX...');
-
-            const pptx = new PptxGenJS();
-            // slide size setup
-            if (slideSize.value === '16x9') {
-                pptx.defineLayout({ name: 'Widescreen', width: 13.33, height: 7.5 }); // inches
-                pptx.layout = 'Widescreen';
-            } else {
-                pptx.defineLayout({ name: 'Standard', width: 10, height: 7.5 });
-                pptx.layout = 'Standard';
+                    thumbs.appendChild(d);
+                });
+                // bind
+                thumbs.querySelectorAll('input[type=checkbox]').forEach(cb => cb.addEventListener('change', e => pages[e.target.dataset.idx].selected = e.target.checked));
+                thumbs.querySelectorAll('button').forEach(b => b.addEventListener('click', e => {
+                    const idx = parseInt(e.target.dataset.idx);
+                    const act = e.target.dataset.act;
+                    if (act === 'up' && idx > 0) movePage(idx, idx - 1);
+                    if (act === 'down' && idx < pages.length - 1) movePage(idx, idx + 1);
+                    if (act === 'remove') { pages.splice(idx, 1); renderThumbs(); }
+                }));
             }
 
-            const dpi = parseInt(dpiSel.value) || 150;
-            for (let i = 0; i < selected.length; i++) {
-                const p = selected[i];
-                log('Rendering page ' + p.pageNum + ' ...');
-                const page = await pdfDoc.getPage(p.pageNum);
-                const viewport = page.getViewport({ scale: dpi / 72 }); // scale relative to 72dpi
-                const canvas = document.createElement('canvas');
-                canvas.width = viewport.width; canvas.height = viewport.height;
-                const ctx = canvas.getContext('2d');
-                await page.render({ canvasContext: ctx, viewport }).promise;
+            function movePage(from, to) { const tmp = pages.splice(from, 1)[0]; pages.splice(to, 0, tmp); renderThumbs(); }
 
-                // convert to dataURL JPEG to keep pptx size smaller
-                const dataURL = canvas.toDataURL('image/jpeg', 0.9);
+            convertBtn.addEventListener('click', async () => {
+                if (!pdfDoc) { alert('Load a PDF first'); return; }
+                const selected = pages.filter(p => p.selected);
+                if (!selected.length) { alert('Select pages to include'); return; }
 
-                // add slide and image as full-slide background or centered image
-                const slide = pptx.addSlide();
-                // use slide.addImage fits image inside slide; use x,y,w,h in inches
-                // convert px->inches (px / (dpi))
-                const widthIn = canvas.width / dpi;
-                const heightIn = canvas.height / dpi;
-                // get slide dims
-                const slideW = pptx.layout === 'Widescreen' ? 13.33 : 10;
-                const slideH = pptx.layout === 'Widescreen' ? 7.5 : 7.5;
-                // center image and scale to fit
-                const scale = Math.min(slideW / widthIn, slideH / heightIn);
-                const w = widthIn * scale;
-                const h = heightIn * scale;
-                const x = (slideW - w) / 2;
-                const y = (slideH - h) / 2;
-                slide.addImage({ data: dataURL, x, y, w, h, sizing: { type: 'contain', w, h } });
+                convertBtn.disabled = true;
+                setProgress(0);
+                log('Rendering pages at selected DPI and adding to PPTX...');
 
-                if (addNotes.checked) {
-                    slide.addNotes(`Page ${p.pageNum}`);
+                const pptx = new PptxGenJS();
+                // slide size setup
+                if (slideSize.value === '16x9') {
+                    pptx.defineLayout({ name: 'Widescreen', width: 13.33, height: 7.5 }); // inches
+                    pptx.layout = 'Widescreen';
+                } else {
+                    pptx.defineLayout({ name: 'Standard', width: 10, height: 7.5 });
+                    pptx.layout = 'Standard';
                 }
 
-                setProgress((i + 1) / selected.length);
-                await briefYield(60);
-            }
+                const dpi = parseInt(dpiSel.value) || 150;
+                for (let i = 0; i < selected.length; i++) {
+                    const p = selected[i];
+                    log('Rendering page ' + p.pageNum + ' ...');
+                    const page = await pdfDoc.getPage(p.pageNum);
+                    const viewport = page.getViewport({ scale: dpi / 72 }); // scale relative to 72dpi
+                    const canvas = document.createElement('canvas');
+                    canvas.width = viewport.width; canvas.height = viewport.height;
+                    const ctx = canvas.getContext('2d');
+                    await page.render({ canvasContext: ctx, viewport }).promise;
 
-            // generate
-            const filename = outName.value || 'slides.pptx';
-            pptx.writeFile({ fileName: filename }).then(() => {
-                log('PPTX ready: ' + filename);
-                setProgress(-1);
-                convertBtn.disabled = false;
-            }).catch(err => {
-                log('Failed to generate PPTX: ' + (err.message || err));
-                setProgress(-1);
-                convertBtn.disabled = false;
+                    // convert to dataURL JPEG to keep pptx size smaller
+                    const dataURL = canvas.toDataURL('image/jpeg', 0.9);
+
+                    // add slide and image as full-slide background or centered image
+                    const slide = pptx.addSlide();
+                    // use slide.addImage fits image inside slide; use x,y,w,h in inches
+                    // convert px->inches (px / (dpi))
+                    const widthIn = canvas.width / dpi;
+                    const heightIn = canvas.height / dpi;
+                    // get slide dims
+                    const slideW = pptx.layout === 'Widescreen' ? 13.33 : 10;
+                    const slideH = pptx.layout === 'Widescreen' ? 7.5 : 7.5;
+                    // center image and scale to fit
+                    const scale = Math.min(slideW / widthIn, slideH / heightIn);
+                    const w = widthIn * scale;
+                    const h = heightIn * scale;
+                    const x = (slideW - w) / 2;
+                    const y = (slideH - h) / 2;
+                    slide.addImage({ data: dataURL, x, y, w, h, sizing: { type: 'contain', w, h } });
+
+                    if (addNotes.checked) {
+                        slide.addNotes(`Page ${p.pageNum}`);
+                    }
+
+                    setProgress((i + 1) / selected.length);
+                    await briefYield(60);
+                }
+
+                // generate
+                const filename = outName.value || 'slides.pptx';
+                pptx.writeFile({ fileName: filename }).then(() => {
+                    log('PPTX ready: ' + filename);
+                    setProgress(-1);
+                    convertBtn.disabled = false;
+                }).catch(err => {
+                    log('Failed to generate PPTX: ' + (err.message || err));
+                    setProgress(-1);
+                    convertBtn.disabled = false;
+                });
             });
-        });
 
-        function briefYield(ms = 20) { return new Promise(r => setTimeout(r, ms)); }
+            function briefYield(ms = 20) { return new Promise(r => setTimeout(r, ms)); }
 
-        clearBtn.addEventListener('click', () => { pdfDoc = null; pages = []; thumbs.innerHTML = ''; downloadArea.innerHTML = ''; logEl.textContent = 'Ready.'; pageInfo.textContent = ''; setProgress(-1); });
+            clearBtn.addEventListener('click', () => { pdfDoc = null; pages = []; thumbs.innerHTML = ''; downloadArea.innerHTML = ''; logEl.textContent = 'Ready.'; pageInfo.textContent = ''; setProgress(-1); });
 
-    </script>
+        </script>
+
+
 </body>
 
 </html>
