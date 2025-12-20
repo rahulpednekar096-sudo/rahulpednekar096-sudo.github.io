@@ -6,42 +6,38 @@
   <title>JPG → PDF — RDroid Apps (Upgraded)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="../../css/style.css">
+  <meta name="description"
+    content="Convert multiple images into a single PDF. Reorder, rotate, pick page size & scale. Supports JPG/PNG/WEBP. All client-side in your browser." />
+  <meta name="keywords"
+    content="jpg to pdf, png to pdf, webp to pdf, image to pdf, convert images to pdf, online jpg to pdf, client-side pdf converter" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-  <style>
+  <!-- Include jQuery for load function -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  </style>
+
+
 </head>
 
 <body>
+  <!-- HEADER (loaded from external file) -->
+  <div id="header-container"></div>
 
-  <!-- RDroidApps Header -->
-  <header>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-    <div class="logo">
-      <img src="../../assets/my_brand_icon.png" alt="RDroid" />
-      <div>RDroid <span>Apps</span></div>
-    </div>
-    <div class="nav-links">
-      <a href="../../index.html" class="active">Home</a>
-      <a href="../../apps.html">Apps</a>
-      <a href="../../about.html">About</a>
-      <a href="../../contact.html">Contact</a>
-      <a href="../../windows-tools.html">Windows Tools</a>
-    </div>
-    <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
-  </header>
+  <!-- TOOLS QUICK LINKS (loaded from external file) -->
+  <div id="tools-links-container"></div>
 
-  <!-- ===== DRAWER (UNCHANGED) ===== -->
-  <nav id="drawer">
-    <a href="../../index.html">🏠 Home</a>
-    <a href="../../apps.html">📱 Apps</a>
-    <a href="../../favorites.html">⭐ Favorites</a>
-    <a href="../../profile.html">👤 Profile</a>
-    <a href="../../about.html">ℹ️ About</a>
-    <a href="../../contact.html">✉️ Contact</a>
-    <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
-  </nav>
+  <!-- MENU DRAWER (loaded from external file) -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load all components -->
+  <script>
+    $(function () {
+      $("#header-container").load("../../components/header.html");
+      $("#menu-drawer-container").load("../../components/menu-drawer.html");
+      $("#tools-links-container").load("../../components/pdf-tools-quick-links.html");
+      $("#footer-container").load("../../components/footer.html");
+    });
+  </script>
 
   <section class="section" role="main" aria-labelledby="title">
     <h1 id="title">JPG → PDF (Upgraded)</h1>
@@ -101,7 +97,7 @@
     </div>
 
     <div style="display:flex; gap:12px; align-items:center;">
-      <button class="btn-primary" id="convertBtn">Convert to PDF</button>
+      <button class="btn btn-primary" id="mergeBtn">Convert JPG to PDF</button>
       <button class="btn" id="clearBtn">Clear</button>
       <div style="margin-left:auto" id="sizeInfo" class="small"></div>
     </div>
@@ -114,80 +110,135 @@
     <div id="thumbs" class="thumbs" aria-live="polite"></div>
 
     <div id="downloadWrap" style="margin-top:14px;"></div>
-  </section>
-  <footer>© 2025 RDroid Apps — PDF Tools</footer>
+    <!-- SEO Content -->
+    <pre id="log">Ready.</pre>
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
 
-  <script>
-    // Drawer toggle
-    function toggleMenu() {
-      document.getElementById("drawer").classList.toggle("open");
-    }
+    <section class="seo-content">
+      <h2>About JPG to PDF Converter</h2>
+      <p>
+        The JPG to PDF Converter tool allows you to easily convert multiple images (JPG, PNG, WEBP) into a single PDF
+        document.
+        You can reorder images, rotate them, choose page size and orientation, set margins, and select scaling options.
+      </p>
 
-    // Elements
-    const fileInput = document.getElementById('fileInput');
-    const chooseBtn = document.getElementById('chooseBtn');
-    const dropArea = document.getElementById('dropArea');
-    const thumbs = document.getElementById('thumbs');
-    const convertBtn = document.getElementById('convertBtn');
-    const clearBtn = document.getElementById('clearBtn');
-    const logEl = document.getElementById('log');
-    const progressWrap = document.getElementById('progressWrap');
-    const progressBar = document.getElementById('progressBar');
-    const outNameInput = document.getElementById('outName');
-    const pageSizeSel = document.getElementById('pageSize');
-    const customSize = document.getElementById('customSize');
-    const customW = document.getElementById('customW');
-    const customH = document.getElementById('customH');
-    const orientationSel = document.getElementById('orientation');
-    const marginInput = document.getElementById('margin');
-    const scaleMode = document.getElementById('scaleMode');
-    const qualityInput = document.getElementById('quality');
-    const pageNumbers = document.getElementById('pageNumbers');
-    const downloadWrap = document.getElementById('downloadWrap');
-    const sizeInfo = document.getElementById('sizeInfo');
+      <h2>Key Features</h2>
+      <ul>
+        <li>Supports multiple image formats: JPG, PNG, WEBP.</li>
+        <li>Drag and drop or select files via file picker.</li>
+        <li>Reorder images by dragging thumbnails.</li>
+        <li>Rotate images as needed.</li>
+        <li>Choose standard page sizes (A4, Letter) or set custom dimensions.</li>
+        <li>Select page orientation: portrait or landscape.</li>
+        <li>Set margins around images.</li>
+        <li>Choose scaling mode: fit to page, fill page, or actual size.</li>
+        <li>Add optional page numbers in different styles.</li>
+        <li>Adjust output PDF quality for smaller file sizes.</li>
+        <li>All processing is done locally in your browser for privacy and speed.</li>
+      </ul>
 
-    let items = []; // {file, dataURL, rotate:0, id}
+      <h2>How to Use</h2>
+      <p>
+        To use the JPG to PDF Converter, simply drag and drop your image files into the designated area or click the
+        "Choose files" button to select them. Once the images are loaded, you can reorder and rotate them as needed.
+        Adjust the settings for page size, orientation, margins, scaling, and output filename. Finally, click the
+        "Convert to PDF" button to generate your PDF document.
+      </p>
+      <h2>Privacy and Security</h2>
+      <p>
+        Your images are processed entirely within your web browser, ensuring that your files remain private and secure.
+        No data is uploaded to any server.
+      </p>
+      <h2>FAQ</h2>
+      <p>
+        <strong>Is this tool free?</strong> Yes, it's completely free to use.
+      </p>
+      <p>
+        <strong>How is my data kept private?</strong> All processing happens in your browser. No files are uploaded to
+        any server.
+      </p>
+      <p>
+        <strong>What image formats are supported?</strong> JPG, PNG, and WEBP formats are supported.
+      </p>
 
-    // helpers
-    function log(msg) { logEl.textContent += "\\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
-    function clearLog() { logEl.textContent = 'Ready.'; }
-    function setProgress(p) { progressWrap.style.display = (p >= 0 ? 'block' : 'none'); progressBar.style.width = Math.round(p * 100) + '%'; }
 
-    // Choose files
-    chooseBtn.addEventListener('click', () => fileInput.click());
-    fileInput.addEventListener('change', async (e) => {
-      await handleFiles(e.target.files);
-      fileInput.value = '';
-    });
 
-    // Drag & drop
-    dropArea.addEventListener('dragover', (e) => { e.preventDefault(); dropArea.classList.add('dragover'); });
-    dropArea.addEventListener('dragleave', () => dropArea.classList.remove('dragover'));
-    dropArea.addEventListener('drop', async (e) => { e.preventDefault(); dropArea.classList.remove('dragover'); const f = e.dataTransfer.files; await handleFiles(f); });
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
 
-    async function handleFiles(fileList) {
-      const supported = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
-      for (const f of fileList) {
-        if (!supported.includes(f.type)) { log('Skipping unsupported: ' + f.name); continue; }
-        const dataURL = await readFileAsDataURL(f);
-        const id = crypto.randomUUID ? crypto.randomUUID() : Date.now() + Math.random();
-        items.push({ file: f, dataURL, rotate: 0, id });
+    <script>
+      // Drawer toggle
+      function toggleMenu() {
+        document.getElementById("drawer").classList.toggle("open");
       }
-      renderThumbs();
-      updateSizeInfo();
-    }
 
-    function readFileAsDataURL(file) { return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(file); }); }
+      // Elements
+      const fileInput = document.getElementById('fileInput');
+      const chooseBtn = document.getElementById('chooseBtn');
+      const dropArea = document.getElementById('dropArea');
+      const thumbs = document.getElementById('thumbs');
+      const convertBtn = document.getElementById('convertBtn');
+      const clearBtn = document.getElementById('clearBtn');
+      const logEl = document.getElementById('log');
+      const progressWrap = document.getElementById('progressWrap');
+      const progressBar = document.getElementById('progressBar');
+      const outNameInput = document.getElementById('outName');
+      const pageSizeSel = document.getElementById('pageSize');
+      const customSize = document.getElementById('customSize');
+      const customW = document.getElementById('customW');
+      const customH = document.getElementById('customH');
+      const orientationSel = document.getElementById('orientation');
+      const marginInput = document.getElementById('margin');
+      const scaleMode = document.getElementById('scaleMode');
+      const qualityInput = document.getElementById('quality');
+      const pageNumbers = document.getElementById('pageNumbers');
+      const downloadWrap = document.getElementById('downloadWrap');
+      const sizeInfo = document.getElementById('sizeInfo');
 
-    // Thumbnails + reorder
-    function renderThumbs() {
-      thumbs.innerHTML = '';
-      items.forEach((it, idx) => {
-        const div = document.createElement('div');
-        div.className = 'thumb';
-        div.draggable = true;
-        div.dataset.id = it.id;
-        div.innerHTML = `
+      let items = []; // {file, dataURL, rotate:0, id}
+
+      // helpers
+      function log(msg) { logEl.textContent += "\\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
+      function clearLog() { logEl.textContent = 'Ready.'; }
+      function setProgress(p) { progressWrap.style.display = (p >= 0 ? 'block' : 'none'); progressBar.style.width = Math.round(p * 100) + '%'; }
+
+      // Choose files
+      chooseBtn.addEventListener('click', () => fileInput.click());
+      fileInput.addEventListener('change', async (e) => {
+        await handleFiles(e.target.files);
+        fileInput.value = '';
+      });
+
+      // Drag & drop
+      dropArea.addEventListener('dragover', (e) => { e.preventDefault(); dropArea.classList.add('dragover'); });
+      dropArea.addEventListener('dragleave', () => dropArea.classList.remove('dragover'));
+      dropArea.addEventListener('drop', async (e) => { e.preventDefault(); dropArea.classList.remove('dragover'); const f = e.dataTransfer.files; await handleFiles(f); });
+
+      async function handleFiles(fileList) {
+        const supported = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+        for (const f of fileList) {
+          if (!supported.includes(f.type)) { log('Skipping unsupported: ' + f.name); continue; }
+          const dataURL = await readFileAsDataURL(f);
+          const id = crypto.randomUUID ? crypto.randomUUID() : Date.now() + Math.random();
+          items.push({ file: f, dataURL, rotate: 0, id });
+        }
+        renderThumbs();
+        updateSizeInfo();
+      }
+
+      function readFileAsDataURL(file) { return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(file); }); }
+
+      // Thumbnails + reorder
+      function renderThumbs() {
+        thumbs.innerHTML = '';
+        items.forEach((it, idx) => {
+          const div = document.createElement('div');
+          div.className = 'thumb';
+          div.draggable = true;
+          div.dataset.id = it.id;
+          div.innerHTML = `
         <img src="${it.dataURL}" alt="${escapeHtml(it.file.name)}" style="transform:rotate(${it.rotate}deg)"/>
         <div class="meta">${escapeHtml(it.file.name)}</div>
         <div class="actions">
@@ -197,257 +248,258 @@
           <button class="btn" data-action="remove">✕</button>
         </div>
       `;
-        thumbs.appendChild(div);
+          thumbs.appendChild(div);
 
-        // action handlers
-        div.querySelectorAll('button').forEach(b => {
-          b.addEventListener('click', () => {
-            const a = b.dataset.action;
-            if (a === 'up') moveItem(idx, Math.max(0, idx - 1));
-            if (a === 'down') moveItem(idx, Math.min(items.length - 1, idx + 1));
-            if (a === 'rotate') { items[idx].rotate = (items[idx].rotate + 90) % 360; renderThumbs(); }
-            if (a === 'remove') { items.splice(idx, 1); renderThumbs(); updateSizeInfo(); }
+          // action handlers
+          div.querySelectorAll('button').forEach(b => {
+            b.addEventListener('click', () => {
+              const a = b.dataset.action;
+              if (a === 'up') moveItem(idx, Math.max(0, idx - 1));
+              if (a === 'down') moveItem(idx, Math.min(items.length - 1, idx + 1));
+              if (a === 'rotate') { items[idx].rotate = (items[idx].rotate + 90) % 360; renderThumbs(); }
+              if (a === 'remove') { items.splice(idx, 1); renderThumbs(); updateSizeInfo(); }
+            });
           });
-        });
 
-        // drag events for reorder
-        div.addEventListener('dragstart', (ev) => {
-          div.classList.add('dragging');
-          ev.dataTransfer.setData('text/plain', it.id);
-        });
-        div.addEventListener('dragend', () => div.classList.remove('dragging'));
+          // drag events for reorder
+          div.addEventListener('dragstart', (ev) => {
+            div.classList.add('dragging');
+            ev.dataTransfer.setData('text/plain', it.id);
+          });
+          div.addEventListener('dragend', () => div.classList.remove('dragging'));
 
-        div.addEventListener('dragover', (ev) => {
-          ev.preventDefault();
-          const dragging = document.querySelector('.thumb.dragging');
-          if (!dragging || dragging === div) return;
-          const draggedId = dragging.dataset.id;
-          const overId = div.dataset.id;
-          // reorder in items
-          const from = items.findIndex(x => x.id === draggedId);
-          const to = items.findIndex(x => x.id === overId);
-          if (from >= 0 && to >= 0) {
-            // visual only: move item before 'to'
-            if (from < to) div.after(dragging);
-            else div.before(dragging);
-          }
-        });
-
-        div.addEventListener('drop', (ev) => {
-          ev.preventDefault();
-          const draggedId = ev.dataTransfer.getData('text/plain');
-          const overId = div.dataset.id;
-          const from = items.findIndex(x => x.id === draggedId);
-          const to = items.findIndex(x => x.id === overId);
-          if (from >= 0 && to >= 0 && from !== to) {
-            const [m] = items.splice(from, 1);
-            items.splice(to, 0, m);
-            renderThumbs();
-          }
-        });
-
-        // rotate the shown image to match state
-        const img = div.querySelector('img');
-        img.style.transform = `rotate(${it.rotate}deg)`;
-      });
-    }
-
-    function moveItem(from, to) { if (from === to) return; const [m] = items.splice(from, 1); items.splice(to, 0, m); renderThumbs(); updateSizeInfo(); }
-
-    function escapeHtml(s) { return s.replaceAll('<', '&lt;').replaceAll('>', '&gt;'); }
-
-    // Clear
-    clearBtn.addEventListener('click', () => { items = []; renderThumbs(); downloadWrap.innerHTML = ''; sizeInfo.textContent = ''; clearLog(); setProgress(-1); });
-
-    // Page size mapping (mm) -> jsPDF uses 'mm' if specified
-    function getPageDimensions(sz) {
-      if (sz === 'A4') return { w: 210, h: 297 }; // mm
-      if (sz === 'Letter') return { w: 215.9, h: 279.4 }; // 8.5 x 11 in -> mm
-      // custom
-      return { w: parseFloat(customW.value) || 210, h: parseFloat(customH.value) || 297 };
-    }
-
-    pageSizeSel.addEventListener('change', () => { customSize.style.display = pageSizeSel.value === 'Custom' ? 'block' : 'none'; });
-
-    // Update size info (approx)
-    function updateSizeInfo() {
-      const totalKB = items.reduce((s, it) => s + (it.file.size || 0), 0) / 1024;
-      sizeInfo.textContent = items.length ? `${items.length} images — ${(totalKB).toFixed(1)} KB` : '';
-    }
-
-    // Convert
-    convertBtn.addEventListener('click', async () => {
-      if (!items.length) { alert('Please add at least one image.'); return; }
-      convertBtn.disabled = true; convertBtn.textContent = 'Processing...';
-      clearLog(); setProgress(0);
-      downloadWrap.innerHTML = '';
-
-      try {
-        const { jsPDF } = window.jspdf;
-        const size = getPageDimensions(pageSizeSel.value);
-        const orient = orientationSel.value || 'portrait';
-        const unit = 'mm';
-        const pdf = new jsPDF({ orientation: orient, unit: unit, format: [size.w, size.h] }); // first page created automatically
-
-        const margin = Math.max(0, parseFloat(marginInput.value) || 0);
-        const q = Math.max(10, Math.min(100, parseInt(qualityInput.value) || 90));
-        const scale = scaleMode.value;
-        const addNums = pageNumbers.value;
-        log(`Starting conversion — ${items.length} images, page ${size.w}×${size.h} ${unit}, margin ${margin}mm, scale ${scale}, quality ${q}%`);
-
-        for (let i = 0; i < items.length; i++) {
-          const it = items[i];
-          log(`Rendering image ${i + 1}/${items.length}: ${it.file.name}`);
-          // create image element and optionally rotate on canvas
-          const img = await loadImage(it.dataURL, it.rotate);
-          // compute available area inside margins
-          const pageW = size.w - margin * 2;
-          const pageH = size.h - margin * 2;
-
-          // image dimensions in pixels
-          const imgW = img.width;
-          const imgH = img.height;
-          // convert px -> mm using 96 DPI approximation: 1px ≈ 0.264583 mm
-          const pxToMm = 0.264583; // approximate
-          const imgWmm = imgW * pxToMm;
-          const imgHmm = imgH * pxToMm;
-
-          let drawWmm = imgWmm;
-          let drawHmm = imgHmm;
-
-          if (scale === 'fit') {
-            const ratio = Math.min(pageW / imgWmm, pageH / imgHmm);
-            drawWmm = imgWmm * ratio;
-            drawHmm = imgHmm * ratio;
-          } else if (scale === 'fill') {
-            const ratio = Math.max(pageW / imgWmm, pageH / imgHmm);
-            drawWmm = imgWmm * ratio;
-            drawHmm = imgHmm * ratio;
-          } else if (scale === 'actual') {
-            // use actual mm size (but may overflow); we'll bound to page
-            if (drawWmm > pageW || drawHmm > pageH) {
-              const r = Math.min(pageW / drawWmm, pageH / drawHmm);
-              drawWmm *= r; drawHmm *= r;
+          div.addEventListener('dragover', (ev) => {
+            ev.preventDefault();
+            const dragging = document.querySelector('.thumb.dragging');
+            if (!dragging || dragging === div) return;
+            const draggedId = dragging.dataset.id;
+            const overId = div.dataset.id;
+            // reorder in items
+            const from = items.findIndex(x => x.id === draggedId);
+            const to = items.findIndex(x => x.id === overId);
+            if (from >= 0 && to >= 0) {
+              // visual only: move item before 'to'
+              if (from < to) div.after(dragging);
+              else div.before(dragging);
             }
-          }
+          });
 
-          // center
-          const x = margin + (pageW - drawWmm) / 2;
-          const y = margin + (pageH - drawHmm) / 2;
-
-          // convert HTMLImageElement to dataURL with compression if needed
-          const imgForPdf = await canvasFromImage(img, q / 100, Math.round(drawWmm / pxToMm), Math.round(drawHmm / pxToMm));
-
-          // add page except for first
-          if (i > 0) pdf.addPage([size.w, size.h], orient);
-
-          // add image at x,y with width/height in mm
-          pdf.addImage(imgForPdf, 'JPEG', x, y, drawWmm, drawHmm, undefined, 'FAST');
-
-          // optional page number
-          if (addNums !== 'no') {
-            pdf.setFontSize(10);
-            pdf.setTextColor(120);
-            const text = `${i + 1}`;
-            if (addNums === 'bottom-center') {
-              pdf.text(text, size.w / 2, size.h - 6, { align: 'center' });
-            } else {
-              // bottom-right
-              pdf.text(text, size.w - margin - 4, size.h - 6, { align: 'right' });
+          div.addEventListener('drop', (ev) => {
+            ev.preventDefault();
+            const draggedId = ev.dataTransfer.getData('text/plain');
+            const overId = div.dataset.id;
+            const from = items.findIndex(x => x.id === draggedId);
+            const to = items.findIndex(x => x.id === overId);
+            if (from >= 0 && to >= 0 && from !== to) {
+              const [m] = items.splice(from, 1);
+              items.splice(to, 0, m);
+              renderThumbs();
             }
-          }
+          });
 
-          setProgress((i + 1) / items.length);
-          await briefYield(80);
-        }
-
-        const outName = (outNameInput.value || 'images.pdf').trim();
-        const blob = pdf.output('blob');
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url; a.download = outName;
-        a.textContent = 'Download PDF';
-        a.className = 'btn btn-primary';
-        a.style.display = 'inline-block';
-        a.style.marginTop = '8px';
-        downloadWrap.appendChild(a);
-
-        // show stats
-        log('Conversion done.');
-        sizeInfo.textContent = `Output: ${(blob.size / 1024).toFixed(1)} KB`;
-      } catch (e) {
-        log('Error: ' + (e.message || e));
-        alert('Conversion failed: ' + (e.message || e));
-      } finally {
-        convertBtn.disabled = false;
-        convertBtn.textContent = 'Convert to PDF';
-        setProgress(-1);
+          // rotate the shown image to match state
+          const img = div.querySelector('img');
+          img.style.transform = `rotate(${it.rotate}deg)`;
+        });
       }
-    });
 
-    // small utilities
-    function loadImage(dataURL, rotate = 0) {
-      return new Promise((res, rej) => {
-        const img = new Image();
-        img.onload = () => {
-          // if rotation needed and not 0, draw to canvas rotated
-          if (rotate % 360 !== 0) {
-            const c = document.createElement('canvas');
-            const ctx = c.getContext('2d');
-            // swap dims for 90/270
-            const angle = rotate % 360;
-            const rad = angle * Math.PI / 180;
-            const swap = angle === 90 || angle === 270;
-            c.width = swap ? img.height : img.width;
-            c.height = swap ? img.width : img.height;
-            ctx.translate(c.width / 2, c.height / 2);
-            ctx.rotate(rad);
-            ctx.drawImage(img, -img.width / 2, -img.height / 2);
-            const out = new Image();
-            out.onload = () => res(out);
-            out.onerror = rej;
-            out.src = c.toDataURL('image/png');
-          } else {
-            res(img);
-          }
-        };
-        img.onerror = rej;
-        img.src = dataURL;
-      });
-    }
+      function moveItem(from, to) { if (from === to) return; const [m] = items.splice(from, 1); items.splice(to, 0, m); renderThumbs(); updateSizeInfo(); }
 
-    function canvasFromImage(img, quality = 0.9, targetPxW = null, targetPxH = null) {
-      return new Promise((res, rej) => {
-        const canvas = document.createElement('canvas');
-        const scaleX = targetPxW ? (targetPxW / img.width) : 1;
-        const scaleY = targetPxH ? (targetPxH / img.height) : 1;
-        const s = Math.min(scaleX || 1, scaleY || 1) || 1;
-        canvas.width = Math.round((targetPxW || img.width));
-        canvas.height = Math.round((targetPxH || img.height));
-        const ctx = canvas.getContext('2d');
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        // return JPEG data URL to keep PDF sizes small
+      function escapeHtml(s) { return s.replaceAll('<', '&lt;').replaceAll('>', '&gt;'); }
+
+      // Clear
+      clearBtn.addEventListener('click', () => { items = []; renderThumbs(); downloadWrap.innerHTML = ''; sizeInfo.textContent = ''; clearLog(); setProgress(-1); });
+
+      // Page size mapping (mm) -> jsPDF uses 'mm' if specified
+      function getPageDimensions(sz) {
+        if (sz === 'A4') return { w: 210, h: 297 }; // mm
+        if (sz === 'Letter') return { w: 215.9, h: 279.4 }; // 8.5 x 11 in -> mm
+        // custom
+        return { w: parseFloat(customW.value) || 210, h: parseFloat(customH.value) || 297 };
+      }
+
+      pageSizeSel.addEventListener('change', () => { customSize.style.display = pageSizeSel.value === 'Custom' ? 'block' : 'none'; });
+
+      // Update size info (approx)
+      function updateSizeInfo() {
+        const totalKB = items.reduce((s, it) => s + (it.file.size || 0), 0) / 1024;
+        sizeInfo.textContent = items.length ? `${items.length} images — ${(totalKB).toFixed(1)} KB` : '';
+      }
+
+      // Convert
+      convertBtn.addEventListener('click', async () => {
+        if (!items.length) { alert('Please add at least one image.'); return; }
+        convertBtn.disabled = true; convertBtn.textContent = 'Processing...';
+        clearLog(); setProgress(0);
+        downloadWrap.innerHTML = '';
+
         try {
-          const dataURL = canvas.toDataURL('image/jpeg', Math.max(0.1, quality));
-          res(dataURL);
-        } catch (e) { rej(e); }
+          const { jsPDF } = window.jspdf;
+          const size = getPageDimensions(pageSizeSel.value);
+          const orient = orientationSel.value || 'portrait';
+          const unit = 'mm';
+          const pdf = new jsPDF({ orientation: orient, unit: unit, format: [size.w, size.h] }); // first page created automatically
+
+          const margin = Math.max(0, parseFloat(marginInput.value) || 0);
+          const q = Math.max(10, Math.min(100, parseInt(qualityInput.value) || 90));
+          const scale = scaleMode.value;
+          const addNums = pageNumbers.value;
+          log(`Starting conversion — ${items.length} images, page ${size.w}×${size.h} ${unit}, margin ${margin}mm, scale ${scale}, quality ${q}%`);
+
+          for (let i = 0; i < items.length; i++) {
+            const it = items[i];
+            log(`Rendering image ${i + 1}/${items.length}: ${it.file.name}`);
+            // create image element and optionally rotate on canvas
+            const img = await loadImage(it.dataURL, it.rotate);
+            // compute available area inside margins
+            const pageW = size.w - margin * 2;
+            const pageH = size.h - margin * 2;
+
+            // image dimensions in pixels
+            const imgW = img.width;
+            const imgH = img.height;
+            // convert px -> mm using 96 DPI approximation: 1px ≈ 0.264583 mm
+            const pxToMm = 0.264583; // approximate
+            const imgWmm = imgW * pxToMm;
+            const imgHmm = imgH * pxToMm;
+
+            let drawWmm = imgWmm;
+            let drawHmm = imgHmm;
+
+            if (scale === 'fit') {
+              const ratio = Math.min(pageW / imgWmm, pageH / imgHmm);
+              drawWmm = imgWmm * ratio;
+              drawHmm = imgHmm * ratio;
+            } else if (scale === 'fill') {
+              const ratio = Math.max(pageW / imgWmm, pageH / imgHmm);
+              drawWmm = imgWmm * ratio;
+              drawHmm = imgHmm * ratio;
+            } else if (scale === 'actual') {
+              // use actual mm size (but may overflow); we'll bound to page
+              if (drawWmm > pageW || drawHmm > pageH) {
+                const r = Math.min(pageW / drawWmm, pageH / drawHmm);
+                drawWmm *= r; drawHmm *= r;
+              }
+            }
+
+            // center
+            const x = margin + (pageW - drawWmm) / 2;
+            const y = margin + (pageH - drawHmm) / 2;
+
+            // convert HTMLImageElement to dataURL with compression if needed
+            const imgForPdf = await canvasFromImage(img, q / 100, Math.round(drawWmm / pxToMm), Math.round(drawHmm / pxToMm));
+
+            // add page except for first
+            if (i > 0) pdf.addPage([size.w, size.h], orient);
+
+            // add image at x,y with width/height in mm
+            pdf.addImage(imgForPdf, 'JPEG', x, y, drawWmm, drawHmm, undefined, 'FAST');
+
+            // optional page number
+            if (addNums !== 'no') {
+              pdf.setFontSize(10);
+              pdf.setTextColor(120);
+              const text = `${i + 1}`;
+              if (addNums === 'bottom-center') {
+                pdf.text(text, size.w / 2, size.h - 6, { align: 'center' });
+              } else {
+                // bottom-right
+                pdf.text(text, size.w - margin - 4, size.h - 6, { align: 'right' });
+              }
+            }
+
+            setProgress((i + 1) / items.length);
+            await briefYield(80);
+          }
+
+          const outName = (outNameInput.value || 'images.pdf').trim();
+          const blob = pdf.output('blob');
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url; a.download = outName;
+          a.textContent = 'Download PDF';
+          a.className = 'btn btn-primary';
+          a.style.display = 'inline-block';
+          a.style.marginTop = '8px';
+          downloadWrap.appendChild(a);
+
+          // show stats
+          log('Conversion done.');
+          sizeInfo.textContent = `Output: ${(blob.size / 1024).toFixed(1)} KB`;
+        } catch (e) {
+          log('Error: ' + (e.message || e));
+          alert('Conversion failed: ' + (e.message || e));
+        } finally {
+          convertBtn.disabled = false;
+          convertBtn.textContent = 'Convert to PDF';
+          setProgress(-1);
+        }
       });
-    }
 
-    function briefYield(ms = 20) { return new Promise(r => setTimeout(r, ms)); }
+      // small utilities
+      function loadImage(dataURL, rotate = 0) {
+        return new Promise((res, rej) => {
+          const img = new Image();
+          img.onload = () => {
+            // if rotation needed and not 0, draw to canvas rotated
+            if (rotate % 360 !== 0) {
+              const c = document.createElement('canvas');
+              const ctx = c.getContext('2d');
+              // swap dims for 90/270
+              const angle = rotate % 360;
+              const rad = angle * Math.PI / 180;
+              const swap = angle === 90 || angle === 270;
+              c.width = swap ? img.height : img.width;
+              c.height = swap ? img.width : img.height;
+              ctx.translate(c.width / 2, c.height / 2);
+              ctx.rotate(rad);
+              ctx.drawImage(img, -img.width / 2, -img.height / 2);
+              const out = new Image();
+              out.onload = () => res(out);
+              out.onerror = rej;
+              out.src = c.toDataURL('image/png');
+            } else {
+              res(img);
+            }
+          };
+          img.onerror = rej;
+          img.src = dataURL;
+        });
+      }
 
-    // drag reorder helpers already implemented in renderThumbs
+      function canvasFromImage(img, quality = 0.9, targetPxW = null, targetPxH = null) {
+        return new Promise((res, rej) => {
+          const canvas = document.createElement('canvas');
+          const scaleX = targetPxW ? (targetPxW / img.width) : 1;
+          const scaleY = targetPxH ? (targetPxH / img.height) : 1;
+          const s = Math.min(scaleX || 1, scaleY || 1) || 1;
+          canvas.width = Math.round((targetPxW || img.width));
+          canvas.height = Math.round((targetPxH || img.height));
+          const ctx = canvas.getContext('2d');
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          // return JPEG data URL to keep PDF sizes small
+          try {
+            const dataURL = canvas.toDataURL('image/jpeg', Math.max(0.1, quality));
+            res(dataURL);
+          } catch (e) { rej(e); }
+        });
+      }
 
-    // small polyfill for crypto.randomUUID
-    if (!crypto.randomUUID) {
-      crypto.randomUUID = () => 'id-' + Math.random().toString(36).slice(2, 9);
-    }
+      function briefYield(ms = 20) { return new Promise(r => setTimeout(r, ms)); }
 
-    // Update size info initially
-    updateSizeInfo();
-  </script>
+      // drag reorder helpers already implemented in renderThumbs
+
+      // small polyfill for crypto.randomUUID
+      if (!crypto.randomUUID) {
+        crypto.randomUUID = () => 'id-' + Math.random().toString(36).slice(2, 9);
+      }
+
+      // Update size info initially
+      updateSizeInfo();
+    </script>
+
 </body>
 
 </html>
