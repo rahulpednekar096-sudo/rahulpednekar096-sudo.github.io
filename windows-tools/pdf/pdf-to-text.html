@@ -5,6 +5,11 @@
   <meta charset="utf-8">
   <title>PDF → Text — RDroid Apps</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Extract text from any PDF. Optional OCR for scanned PDFs.">
+  <meta name="keywords"
+    content="pdf to text, extract text from pdf, pdf text extractor, ocr pdf, scanned pdf to text, pdf conversion, pdf tools, rdroid apps">
+
+
   <link rel="stylesheet" href="../../css/style.css">
 
   <!-- pdf.js -->
@@ -13,38 +18,31 @@
   <!-- OCR -->
   <script src="https://unpkg.com/tesseract.js@v4.1.1/dist/tesseract.min.js"></script>
 
+  <!-- Include jQuery for load function -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
 <body>
+  <!-- HEADER (loaded from external file) -->
+  <div id="header-container"></div>
 
-  <!-- RDroidApps Header -->
-  <header>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-    <div class="logo">
-      <img src="../../assets/my_brand_icon.png" alt="RDroid" />
-      <div>RDroid <span>Apps</span></div>
-    </div>
-    <div class="nav-links">
-      <a href="../../index.html" class="active">Home</a>
-      <a href="../../apps.html">Apps</a>
-      <a href="../../about.html">About</a>
-      <a href="../../contact.html">Contact</a>
-      <a href="../../windows-tools.html">Windows Tools</a>
-    </div>
-    <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
-  </header>
+  <!-- TOOLS QUICK LINKS (loaded from external file) -->
+  <div id="tools-links-container"></div>
 
-  <!-- ===== DRAWER (UNCHANGED) ===== -->
-  <nav id="drawer">
-    <a href="../../index.html">🏠 Home</a>
-    <a href="../../apps.html">📱 Apps</a>
-    <a href="../../favorites.html">⭐ Favorites</a>
-    <a href="../../profile.html">👤 Profile</a>
-    <a href="../../about.html">ℹ️ About</a>
-    <a href="../../contact.html">✉️ Contact</a>
-    <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
-  </nav>
+  <!-- MENU DRAWER (loaded from external file) -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load all components -->
+  <script>
+    $(function () {
+      $("#header-container").load("../../components/header.html");
+      $("#menu-drawer-container").load("../../components/menu-drawer.html");
+      $("#tools-links-container").load("../../components/pdf-tools-quick-links.html");
+      $("#footer-container").load("../../components/footer.html");
+    });
+  </script>
+
   <section class="section">
     <h1>PDF → Text</h1>
     <p class="lead">Extract text from any PDF. Optional OCR for scanned PDFs.</p>
@@ -59,7 +57,7 @@
     </label>
 
     <div style="margin-top:12px;display:flex;gap:10px">
-      <button class="btn-primary" id="extractBtn">Extract Text</button>
+      <button class="btn btn-primary" id="extractBtn">Convert PDF to Text</button>
       <button class="btn" id="clearBtn">Clear</button>
     </div>
 
@@ -74,120 +72,167 @@
     <textarea id="output" placeholder="Extracted text will appear here..."></textarea>
 
     <div style="margin-top:10px;display:flex;gap:10px">
-      <button class="btn-primary" id="downloadBtn">Download .txt</button>
+      <button class="btn btn-primary" id="downloadBtn">Download .txt</button>
       <button class="btn" id="copyBtn">Copy</button>
     </div>
+    <!-- SEO Content -->
+    <pre id="log">Ready.</pre>
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
 
-  </section>
-  <footer>© 2025 RDroid Apps — PDF Tools</footer>
+    <section class="seo-content">
+      <h2>PDF To Text Converter — RDroidApps Pro</h2>
 
-  <script>
-    // Drawer toggle
-    function toggleMenu() {
-      document.getElementById("drawer").classList.toggle("open");
-    }
-    const pickBtn = document.getElementById("pickBtn");
-    const fileInput = document.getElementById("fileInput");
-    const dropArea = document.getElementById("dropArea");
-    const extractBtn = document.getElementById("extractBtn");
-    const thumbs = document.getElementById("thumbs");
-    const logEl = document.getElementById("log");
-    const output = document.getElementById("output");
-    const progressWrap = document.getElementById("progressWrap");
-    const progressBar = document.getElementById("progressBar");
-    const enableOCR = document.getElementById("enableOCR");
+      <p>
+        Welcome to RDroidApps Pro's PDF to Text Converter, your ultimate solution for extracting text from PDF documents
+        with ease and precision. Whether you're dealing with standard PDFs or scanned documents, our tool is designed to
+        handle it all, providing you with clean, editable text in no time.
+      </p>
+      <h3>Key Features:</h3>
+      <ul>
+        <li><strong>Accurate Text Extraction:</strong> Our converter utilizes advanced algorithms to ensure that text is
+          extracted accurately from your PDF files, preserving the original formatting as much as possible.</li>
+        <li><strong>OCR Technology:</strong> For scanned PDFs and images, our built-in Optical Character Recognition
+          (OCR) technology converts images of text into editable and searchable text, making it easy to work with any
+          document.</li>
+        <li><strong>User-Friendly Interface:</strong> The intuitive design of our tool makes it easy for users of all
+          skill levels to convert PDFs to text quickly and efficiently.</li>
+        <li><strong>Batch Processing:</strong> Save time by converting multiple PDF files at once. Our batch processing
+          feature allows you to handle large volumes of documents with ease.</li>
+        <li><strong>Secure and Private:</strong> We prioritize your privacy. All conversions are processed securely, and
+          we do not store your files or extracted text.</li>
+      </ul>
+      <h3>How to Use the PDF to Text Converter:</h3>
+      <ol>
+        <li><strong>Upload Your PDF:</strong> Click on the "Choose file" button or drag and drop your PDF document into
+          the designated area.</li>
+        <li><strong>Select OCR Option:</strong> If your PDF contains scanned images, make sure to check the "Enable OCR"
+          option for accurate text extraction.</li>
+        <li><strong>Convert:</strong> Click the "Convert PDF to Text" button to start the conversion process. The
+          extracted text will appear in the output area.</li>
+        <li><strong>Download or Copy:</strong> Once the conversion is complete, you can download the extracted text as a
+          .txt file or copy it directly to your clipboard for easy use.</li>
+      </ol>
+      <h3>Why Choose RDroidApps Pro?</h3>
+      <p>
+        RDroidApps Pro is committed to providing high-quality tools that enhance productivity and streamline workflows.
+        Our PDF to Text Converter is no exception, offering a reliable and efficient solution for all your text
+        extraction needs. Experience the convenience of converting PDFs to text with just a few clicks!
+      </p>
 
-    let pdf = null;
 
-    function log(msg) { logEl.textContent += "\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
-    function setProgress(v) { progressWrap.style.display = v >= 0 ? "block" : "none"; progressBar.style.width = (v * 100) + "%"; }
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
 
-    pickBtn.onclick = () => fileInput.click();
-    fileInput.onchange = e => loadPDF(e.target.files[0]);
+    <script>
+      // Drawer toggle
+      function toggleMenu() {
+        document.getElementById("drawer").classList.toggle("open");
+      }
+      const pickBtn = document.getElementById("pickBtn");
+      const fileInput = document.getElementById("fileInput");
+      const dropArea = document.getElementById("dropArea");
+      const extractBtn = document.getElementById("extractBtn");
+      const thumbs = document.getElementById("thumbs");
+      const logEl = document.getElementById("log");
+      const output = document.getElementById("output");
+      const progressWrap = document.getElementById("progressWrap");
+      const progressBar = document.getElementById("progressBar");
+      const enableOCR = document.getElementById("enableOCR");
 
-    dropArea.ondragover = e => { e.preventDefault(); dropArea.style.borderColor = "#0aa37f"; }
-    dropArea.ondragleave = () => dropArea.style.borderColor = "#222";
-    dropArea.ondrop = e => {
-      e.preventDefault(); dropArea.style.borderColor = "#222";
-      loadPDF(e.dataTransfer.files[0]);
-    };
+      let pdf = null;
 
-    async function loadPDF(file) {
-      if (!file) return;
-      logEl.textContent = "Loading PDF...";
-      pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
-      pdf = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
-      log("PDF loaded, pages: " + pdf.numPages);
-      await loadThumbnails();
-    }
+      function log(msg) { logEl.textContent += "\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
+      function setProgress(v) { progressWrap.style.display = v >= 0 ? "block" : "none"; progressBar.style.width = (v * 100) + "%"; }
 
-    async function loadThumbnails() {
-      thumbs.innerHTML = "";
-      for (let i = 1; i <= pdf.numPages; i++) {
-        const p = await pdf.getPage(i);
-        const vp = p.getViewport({ scale: .2 });
-        const c = document.createElement("canvas");
-        c.width = vp.width; c.height = vp.height;
-        await p.render({ canvasContext: c.getContext("2d"), viewport: vp }).promise;
-        const img = c.toDataURL();
-        thumbs.innerHTML += `<div class="thumb">
+      pickBtn.onclick = () => fileInput.click();
+      fileInput.onchange = e => loadPDF(e.target.files[0]);
+
+      dropArea.ondragover = e => { e.preventDefault(); dropArea.style.borderColor = "#0aa37f"; }
+      dropArea.ondragleave = () => dropArea.style.borderColor = "#222";
+      dropArea.ondrop = e => {
+        e.preventDefault(); dropArea.style.borderColor = "#222";
+        loadPDF(e.dataTransfer.files[0]);
+      };
+
+      async function loadPDF(file) {
+        if (!file) return;
+        logEl.textContent = "Loading PDF...";
+        pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
+        pdf = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
+        log("PDF loaded, pages: " + pdf.numPages);
+        await loadThumbnails();
+      }
+
+      async function loadThumbnails() {
+        thumbs.innerHTML = "";
+        for (let i = 1; i <= pdf.numPages; i++) {
+          const p = await pdf.getPage(i);
+          const vp = p.getViewport({ scale: .2 });
+          const c = document.createElement("canvas");
+          c.width = vp.width; c.height = vp.height;
+          await p.render({ canvasContext: c.getContext("2d"), viewport: vp }).promise;
+          const img = c.toDataURL();
+          thumbs.innerHTML += `<div class="thumb">
       <img src="${img}">
       <label><input type="checkbox" class="pageSel" data-id="${i}" checked> Page ${i}</label>
     </div>`;
-      }
-    }
-
-    extractBtn.onclick = async () => {
-      if (!pdf) { alert("Load PDF first"); return; }
-      output.value = ""; logEl.textContent = "Extracting...";
-      const selected = [...document.querySelectorAll(".pageSel:checked")].map(x => parseInt(x.dataset.id));
-      if (!selected.length) { alert("Select at least one page"); return; }
-
-      let finalText = "";
-
-      for (let pi = 0; pi < selected.length; pi++) {
-        const pageNum = selected[pi];
-        const page = await pdf.getPage(pageNum);
-
-        if (enableOCR.checked) {
-          log("OCR page " + pageNum + "...");
-          const vp = page.getViewport({ scale: 2 });
-          const c = document.createElement("canvas");
-          c.width = vp.width; c.height = vp.height;
-          await page.render({ canvasContext: c.getContext("2d"), viewport: vp }).promise;
-          const ocr = await Tesseract.recognize(c, "eng");
-          finalText += `\n\n--- Page ${pageNum} ---\n` + ocr.data.text;
-        } else {
-          log("Extracting text from page " + pageNum);
-          const content = await page.getTextContent();
-          const text = content.items.map(it => it.str).join(" ");
-          finalText += `\n\n--- Page ${pageNum} ---\n` + text;
         }
-        setProgress((pi + 1) / selected.length);
       }
 
-      output.value = finalText;
-      log("Done.");
-      setProgress(-1);
-    };
+      extractBtn.onclick = async () => {
+        if (!pdf) { alert("Load PDF first"); return; }
+        output.value = ""; logEl.textContent = "Extracting...";
+        const selected = [...document.querySelectorAll(".pageSel:checked")].map(x => parseInt(x.dataset.id));
+        if (!selected.length) { alert("Select at least one page"); return; }
 
-    document.getElementById("copyBtn").onclick = () => {
-      navigator.clipboard.writeText(output.value);
-      alert("Copied!");
-    };
+        let finalText = "";
 
-    document.getElementById("downloadBtn").onclick = () => {
-      const blob = new Blob([output.value], { type: "text/plain" });
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = "extracted.txt";
-      a.click();
-    };
+        for (let pi = 0; pi < selected.length; pi++) {
+          const pageNum = selected[pi];
+          const page = await pdf.getPage(pageNum);
 
-    document.getElementById("clearBtn").onclick = () => {
-      pdf = null; thumbs.innerHTML = ""; output.value = ""; logEl.textContent = "Ready.";
-    };
-  </script>
+          if (enableOCR.checked) {
+            log("OCR page " + pageNum + "...");
+            const vp = page.getViewport({ scale: 2 });
+            const c = document.createElement("canvas");
+            c.width = vp.width; c.height = vp.height;
+            await page.render({ canvasContext: c.getContext("2d"), viewport: vp }).promise;
+            const ocr = await Tesseract.recognize(c, "eng");
+            finalText += `\n\n--- Page ${pageNum} ---\n` + ocr.data.text;
+          } else {
+            log("Extracting text from page " + pageNum);
+            const content = await page.getTextContent();
+            const text = content.items.map(it => it.str).join(" ");
+            finalText += `\n\n--- Page ${pageNum} ---\n` + text;
+          }
+          setProgress((pi + 1) / selected.length);
+        }
+
+        output.value = finalText;
+        log("Done.");
+        setProgress(-1);
+      };
+
+      document.getElementById("copyBtn").onclick = () => {
+        navigator.clipboard.writeText(output.value);
+        alert("Copied!");
+      };
+
+      document.getElementById("downloadBtn").onclick = () => {
+        const blob = new Blob([output.value], { type: "text/plain" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "extracted.txt";
+        a.click();
+      };
+
+      document.getElementById("clearBtn").onclick = () => {
+        pdf = null; thumbs.innerHTML = ""; output.value = ""; logEl.textContent = "Ready.";
+      };
+    </script>
+
 </body>
 
 </html>
