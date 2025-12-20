@@ -43,24 +43,26 @@ header {
   left: 0;
   width: 100%;
   display: flex;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
   padding: 12px 22px;
   background: rgba(18, 23, 34, .7);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, .06);
   z-index: 99;
   box-shadow: 0 4px 20px rgba(0, 0, 0, .4);
-  display: flex;
-  gap: 12px
+  gap: 12px;
 }
 
 .logo {
   display: flex;
-  align-items: center;
   gap: 10px;
   font-weight: 800;
   letter-spacing: .3px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  /* This centers it in the grid cell */
 }
 
 .logo img {
@@ -113,6 +115,9 @@ header .logo img {
   color: #000;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(34, 211, 166, .4);
+  flex-shrink: 0;
+  /* Prevents button from shrinking */
+  margin-left: 10px;
 }
 
 .login-btn:hover {
@@ -203,17 +208,41 @@ nav a:hover {
 
 header .nav-links {
   display: flex;
-  gap: 18px;
+  gap: 16px;
+  white-space: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand) transparent;
 }
 
 header .nav-links a {
   color: var(--muted);
   font-weight: 500;
+  flex-shrink: 0;
+  /* Prevents links from shrinking */
 }
 
 header .nav-links a.active,
 header .nav-links a:hover {
   color: var(--brand);
+}
+
+/* Custom scrollbar for nav-links */
+header .nav-links::-webkit-scrollbar {
+  height: 4px;
+}
+
+header .nav-links::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+header .nav-links::-webkit-scrollbar-thumb {
+  background-color: var(--brand);
+  border-radius: 4px;
 }
 
 
@@ -337,29 +366,7 @@ header .nav-links a:hover {
   border: 1px solid rgba(34, 211, 166, .35);
 }
 
-/* Sections */
-.section {
-  padding: 40px 24px;
-  max-width: 1100px;
-  margin: auto;
-}
 
-.section h1,
-.section h2 {
-  font-size: 26px;
-  margin-bottom: 10px;
-  text-shadow: 0 0 10px rgba(34, 211, 166, .3);
-}
-
-.section p {
-  margin-bottom: 15px;
-  line-height: 1.6;
-  color: var(--muted);
-}
-
-.about-points li {
-  margin: 6px 0;
-}
 
 /* =========================================================
      🌟 UPDATED APPS SECTION — WITH IMAGES (FULL VERSION)
@@ -824,6 +831,23 @@ pre#log {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
 }
 
+.section h1,
+.section h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(34, 211, 166, .3);
+}
+
+.section p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.about-points li {
+  margin: 6px 0;
+}
+
 
 
 p.lead {
@@ -1100,7 +1124,67 @@ select {
 }
 
 @media (max-width: 768px) {
-  header .login-btn {
-    display: none;
+  header {
+    grid-template-columns: auto 1fr auto;
+    padding: 10px 15px;
+  }
+
+  /* Make logo smaller on mobile */
+  .logo img {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Nav links container - scrollable on mobile */
+  header .nav-links {
+    gap: 10px;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+
+  header .nav-links a {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+
+  /* Login button on mobile */
+  .login-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    margin-left: 5px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  header {
+    padding: 8px 12px;
+  }
+
+  .logo img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logo div {
+    font-size: 14px;
+  }
+
+  header .nav-links {
+    gap: 8px;
+  }
+
+  header .nav-links a {
+    font-size: 13px;
+    padding: 5px 6px;
+  }
+
+  .login-btn {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+
+  .menu-btn {
+    font-size: 22px;
   }
 }
