@@ -1,0 +1,36 @@
+<!-- tools-quick-links.html -->
+<section class="audio-tools-quick-links">
+    <div class="tools-scroll">
+        <!-- Audio Tools -->
+        <a href="trim-audio.html" class="tool-btn">Trim Audio</a>
+        <a href="convert-audio.html" class="tool-btn">Convert Audio</a>
+        <a href="extract-mp3.html" class="tool-btn">Extract MP3</a>
+        <a href="noise-reduction.html" class="tool-btn">Noise Reduction</a>
+        <a href="audio-volume-boost.html" class="tool-btn">Volume Boost</a>
+        <a href="merge-audio.html" class="tool-btn">Merge Audio</a>
+        <a href="audio-to-text.html" class="tool-btn">Audio to Text</a>
+        <a href="text-to-speech.html" class="tool-btn">Text to Speech</a>
+        <a href="change-audio-speed.html" class="tool-btn">Audio Speed</a>
+        <a href="change-audio-pitch.html" class="tool-btn">Audio Pitch</a>
+        <a href="remove-vocals.html" class="tool-btn">Remove Vocals</a>
+        <a href="audio-metadata-editor.html" class="tool-btn">Audio Metadata</a>
+    </div>
+</section>
+
+<script>
+    // Active tool button highlighting
+    (function () {
+        setTimeout(() => {
+            const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+            const toolButtons = document.querySelectorAll(".audio-tools-quick-links .tool-btn");
+
+            toolButtons.forEach(btn => {
+                btn.classList.remove("active");
+                const btnPage = btn.getAttribute("href").toLowerCase();
+                if (btnPage === currentPage) {
+                    btn.classList.add("active");
+                }
+            });
+        }, 100);
+    })();
+</script>

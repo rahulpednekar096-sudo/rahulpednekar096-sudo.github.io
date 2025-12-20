@@ -1,0 +1,41 @@
+<!-- tools-quick-links.html -->
+<section class="pdf-tools-quick-links">
+    <div class="tools-scroll">
+        <!-- PDF Tools -->
+        <a href="compress-pdf.html" class="tool-btn">Compress PDF</a>
+        <a href="excel-to-pdf.html" class="tool-btn">Excel to PDF</a>
+        <a href="jpg-to-pdf.html" class="tool-btn">JPG to PDF</a>
+        <a href="merge-pdf.html" class="tool-btn">Merge PDF</a>
+        <a href="pdf-to-excel.html" class="tool-btn">PDF to Excel</a>
+        <a href="pdf-to-jpg.html" class="tool-btn">PDF to JPG</a>
+        <a href="pdf-to-png.html" class="tool-btn">PDF to PNG</a>
+        <a href="pdf-to-ppt.html" class="tool-btn">PDF to PPT</a>
+        <a href="pdf-to-text.html" class="tool-btn">PDF to text</a>
+        <a href="pdf-to-word.html" class="tool-btn">PDF to Word</a>
+        <a href="png-to-pdf.html" class="tool-btn">Png to PDF</a>
+        <a href="ppt-to-pdf.html" class="tool-btn">PPT to PDF</a>
+        <a href="protect-unlock-pdf.html" class="tool-btn">Protect/Unlock PDF</a>
+        <a href="rotate-pdf.html" class="tool-btn">Rotate PDF</a>
+        <a href="split-pdf.html" class="tool-btn">Split PDF</a>
+        <a href="text-to-pdf.html" class="tool-btn">Text-to-PDF</a>
+        <a href="word-to-pdf.html" class="tool-btn">Word to PDF</a>
+    </div>
+</section>
+
+<script>
+    // Active tool button highlighting
+    (function () {
+        setTimeout(() => {
+            const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+            const toolButtons = document.querySelectorAll(".pdf-tools-quick-links .tool-btn");
+
+            toolButtons.forEach(btn => {
+                btn.classList.remove("active");
+                const btnPage = btn.getAttribute("href").toLowerCase();
+                if (btnPage === currentPage) {
+                    btn.classList.add("active");
+                }
+            });
+        }, 100);
+    })();
+</script>

@@ -1,0 +1,40 @@
+<!-- tools-quick-links.html -->
+<section class="image-tools-quick-links">
+    <div class="tools-scroll">
+        <!-- Image Tools -->
+        <a href="resize-image.html" class="tool-btn">Resize Image</a>
+        <a href="crop-image.html" class="tool-btn">Crop Image</a>
+        <a href="rotate-image.html" class="tool-btn">Rotate Image</a>
+        <a href="flip-image.html" class="tool-btn">Flip Image</a>
+        <a href="compress-image.html" class="tool-btn">Compress Image</a>
+        <a href="convert-image.html" class="tool-btn">Convert Image</a>
+        <a href="png-to-webp.html" class="tool-btn">PNG to WebP</a>
+        <a href="jpg-to-webp.html" class="tool-btn">JPG to WebP</a>
+        <a href="image-enhancer.html" class="tool-btn">Image Enhancer</a>
+        <a href="background-remover.html" class="tool-btn">Background Remover</a>
+        <a href="image-to-text-ocr.html" class="tool-btn">Image to Text (OCR)</a>
+        <a href="add-watermark.html" class="tool-btn">Add Watermark</a>
+        <a href="image-metadata-viewer.html" class="tool-btn">Image Metadata</a>
+        <a href="image-metadata-remover.html" class="tool-btn">Remove Metadata</a>
+        <a href="image-colorizer.html" class="tool-btn">Image Colorizer</a>
+        <a href="image-to-pdf.html" class="tool-btn">Image to PDF</a>
+    </div>
+</section>
+
+<script>
+    // Active tool button highlighting
+    (function () {
+        setTimeout(() => {
+            const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+            const toolButtons = document.querySelectorAll(".image-tools-quick-links .tool-btn");
+
+            toolButtons.forEach(btn => {
+                btn.classList.remove("active");
+                const btnPage = btn.getAttribute("href").toLowerCase();
+                if (btnPage === currentPage) {
+                    btn.classList.add("active");
+                }
+            });
+        }, 100);
+    })();
+</script>
