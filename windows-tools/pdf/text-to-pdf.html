@@ -5,39 +5,39 @@
   <meta charset="utf-8">
   <title>Text → PDF — RDroid Apps</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Convert plain text into a clean, formatted PDF using RDroidApps Pro. Offline, privacy-safe Text to PDF converter with page size, margins, header, footer, and font controls.">
+
+  <meta name="keywords"
+    content="Text to PDF, TXT to PDF, text file to PDF, offline text to PDF, free PDF tools, RDroidApps Pro, document converter, create PDF from text">
+
   <link rel="stylesheet" href="../../css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
+  <!-- Include jQuery for load function -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-  <!-- RDroidApps Header -->
-  <header>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-    <div class="logo">
-      <img src="../../assets/my_brand_icon.png" alt="RDroid" />
-      <div>RDroid <span>Apps</span></div>
-    </div>
-    <div class="nav-links">
-      <a href="../../index.html" class="active">Home</a>
-      <a href="../../apps.html">Apps</a>
-      <a href="../../about.html">About</a>
-      <a href="../../contact.html">Contact</a>
-      <a href="../../windows-tools.html">Windows Tools</a>
-    </div>
-    <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
-  </header>
+  <!-- HEADER (loaded from external file) -->
+  <div id="header-container"></div>
 
-  <!-- ===== DRAWER (UNCHANGED) ===== -->
-  <nav id="drawer">
-    <a href="../../index.html">🏠 Home</a>
-    <a href="../../apps.html">📱 Apps</a>
-    <a href="../../favorites.html">⭐ Favorites</a>
-    <a href="../../profile.html">👤 Profile</a>
-    <a href="../../about.html">ℹ️ About</a>
-    <a href="../../contact.html">✉️ Contact</a>
-    <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
-  </nav>
+  <!-- TOOLS QUICK LINKS (loaded from external file) -->
+  <div id="tools-links-container"></div>
+
+  <!-- MENU DRAWER (loaded from external file) -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load all components -->
+  <script>
+    $(function () {
+      $("#header-container").load("../../components/header.html");
+      $("#menu-drawer-container").load("../../components/menu-drawer.html");
+      $("#tools-links-container").load("../../components/pdf-tools-quick-links.html");
+      $("#footer-container").load("../../components/footer.html");
+    });
+  </script>
   <section class="section">
 
     <h1>Text → PDF</h1>
@@ -79,15 +79,49 @@
     </div>
 
     <div style="margin-top:12px">
-      <button class="btn-primary" id="convertBtn">Create PDF</button>
+      <button class="btn btn-primary" id="convertBtn">Convert Text to PDF</button>
     </div>
 
     <pre id="log" class="log">Ready.</pre>
 
     <div id="download"></div>
+    <!-- SEO Content -->
+    <hr style="margin:32px 0">
+
+    <section class="seo-content">
+      <h2>Text to PDF Converter — RDroidApps Pro</h2>
+
+      <p>
+        The Text to PDF Converter by RDroidApps Pro lets you easily convert plain text into
+        professionally formatted PDF documents directly in your browser. This tool works
+        fully offline and ensures complete privacy by processing everything on your device.
+      </p>
+
+      <h2>Key Features of Text to PDF Converter</h2>
+
+      <ul>
+        <li><strong>Instant Text Conversion:</strong> Paste or type text and convert it to PDF instantly.</li>
+        <li><strong>Custom Page Settings:</strong> Choose page size (A4 or Letter) and orientation.</li>
+        <li><strong>Font & Line Controls:</strong> Adjust font size and line spacing for clean output.</li>
+        <li><strong>Header & Footer Support:</strong> Add custom header and footer text to every page.</li>
+        <li><strong>Client-Side Processing:</strong> No uploads, no tracking — everything stays on your device.</li>
+        <li><strong>Free & Offline:</strong> Works without internet after page load.</li>
+      </ul>
+
+      <h2>How to Convert Text to PDF</h2>
+
+      <ol>
+        <li><strong>Enter Text:</strong> Type or paste your content into the text area.</li>
+        <li><strong>Adjust Settings:</strong> Select page size, orientation, margins, font size, and spacing.</li>
+        <li><strong>Add Header/Footer:</strong> Optionally include header and footer text.</li>
+        <li><strong>Convert:</strong> Click the “Convert Text to PDF” button.</li>
+        <li><strong>Download:</strong> Save your generated PDF instantly.</li>
+      </ol>
+    </section>
 
   </section>
-  <footer>© 2025 RDroid Apps — PDF Tools</footer>
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
   <script>
     // Drawer toggle
     function toggleMenu() {
