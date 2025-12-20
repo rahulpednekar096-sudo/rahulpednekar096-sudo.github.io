@@ -5,6 +5,11 @@
   <meta charset="utf-8">
   <title>PDF → Word (DOCX) — RDroid Apps</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description"
+    content="Extract text from PDF and convert into a DOCX Word file. Supports OCR + page-wise formatting.">
+  <meta name="keywords"
+    content="pdf to word, pdf to docx, convert pdf to word, pdf text extractor, ocr pdf, scanned pdf to word, pdf conversion, pdf tools, rdroid apps">
+
   <link rel="stylesheet" href="../../css/style.css">
 
   <!-- pdf.js -->
@@ -16,37 +21,29 @@
   <!-- OCR (optional) -->
   <script src="https://unpkg.com/tesseract.js@v4.1.1/dist/tesseract.min.js"></script>
 
-
+  <!-- Include jQuery for load function -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-  <!-- RDroidApps Header -->
-  <header>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-    <div class="logo">
-      <img src="../../assets/my_brand_icon.png" alt="RDroid" />
-      <div>RDroid <span>Apps</span></div>
-    </div>
-    <div class="nav-links">
-      <a href="../../index.html" class="active">Home</a>
-      <a href="../../apps.html">Apps</a>
-      <a href="../../about.html">About</a>
-      <a href="../../contact.html">Contact</a>
-      <a href="../../windows-tools.html">Windows Tools</a>
-    </div>
-    <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
-  </header>
+  <!-- HEADER (loaded from external file) -->
+  <div id="header-container"></div>
 
-  <!-- ===== DRAWER (UNCHANGED) ===== -->
-  <nav id="drawer">
-    <a href="../../index.html">🏠 Home</a>
-    <a href="../../apps.html">📱 Apps</a>
-    <a href="../../favorites.html">⭐ Favorites</a>
-    <a href="../../profile.html">👤 Profile</a>
-    <a href="../../about.html">ℹ️ About</a>
-    <a href="../../contact.html">✉️ Contact</a>
-    <a href="../../privacy-policy.html">🔒 Privacy Policy</a>
-  </nav>
+  <!-- TOOLS QUICK LINKS (loaded from external file) -->
+  <div id="tools-links-container"></div>
+
+  <!-- MENU DRAWER (loaded from external file) -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load all components -->
+  <script>
+    $(function () {
+      $("#header-container").load("../../components/header.html");
+      $("#menu-drawer-container").load("../../components/menu-drawer.html");
+      $("#tools-links-container").load("../../components/pdf-tools-quick-links.html");
+      $("#footer-container").load("../../components/footer.html");
+    });
+  </script>
   <section class="section">
     <h1>PDF → Word (DOCX)</h1>
     <p class="lead">Extract text from PDF and convert into a DOCX Word file. Supports OCR + page-wise formatting.</p>
@@ -59,7 +56,7 @@
     <label><input type="checkbox" id="enableOCR"> Enable OCR (slower, better accuracy)</label>
 
     <div style="margin-top:10px;display:flex;gap:10px">
-      <button class="btn-primary" id="convertBtn">Convert to Word</button>
+      <button class="btn btn-primary" id="convertBtn">Convert PDF to Word</button>
       <button class="btn" id="clearBtn">Clear</button>
     </div>
 
@@ -71,123 +68,163 @@
     <pre id="log" class="log">Ready.</pre>
 
     <div id="download"></div>
+    <!-- SEO Content -->
+    <pre id="log">Ready.</pre>
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
 
-  </section>
-  <footer>© 2025 RDroid Apps — PDF Tools</footer>
+    <section class="seo-content">
+      <h2>PDF to Word Converter — RDroidApps Pro</h2>
 
-  <script>
-    // Drawer toggle
-    function toggleMenu() {
-      document.getElementById("drawer").classList.toggle("open");
-    }
-    const pickBtn = document.getElementById("pickBtn");
-    const fileInput = document.getElementById("fileInput");
-    const dropArea = document.getElementById("dropArea");
-    const convertBtn = document.getElementById("convertBtn");
-    const logEl = document.getElementById("log");
-    const thumbs = document.getElementById("thumbs");
-    const progressWrap = document.getElementById("progressWrap");
-    const progressBar = document.getElementById("progressBar");
-    const download = document.getElementById("download");
-    const enableOCR = document.getElementById("enableOCR");
-    let currentPDF = null;
+      <p>
+        Looking to convert your PDF documents into editable Word files? Our PDF to Word converter makes it easy to
+        extract text from any PDF and save it as a DOCX file. Whether you have standard PDFs or scanned documents,
+        our tool supports optional OCR (Optical Character Recognition) to ensure accurate text extraction.
+      </p>
+      <h3>Key Features:</h3>
+      <ul>
+        <li><strong>Seamless Conversion:</strong> Convert your PDF files into Word documents with just a few clicks,
+          preserving the original layout and formatting.</li>
+        <li><strong>OCR Support:</strong> Enable OCR to extract text from scanned PDFs and images, ensuring you get
+          editable text even from non-digital sources.</li>
+        <li><strong>User-Friendly Interface:</strong> Our intuitive drag-and-drop interface makes it easy to upload your
+          PDFs and start the conversion process quickly.</li>
+        <li><strong>Privacy Focused:</strong> All conversions are done locally in your browser, ensuring your documents
+          remain private and secure.</li>
+      </ul>
+      <h3>How to Use the PDF to Word Converter:</h3>
+      <ol>
+        <li><strong>Upload Your PDF:</strong> Click on the "Choose file" button or drag and drop your PDF document into
+          the designated area.</li>
+        <li><strong>Select OCR Option:</strong> If your PDF contains scanned images, make sure to check the "Enable OCR"
+          option for accurate text extraction.</li>
+        <li><strong>Convert:</strong> Click the "Convert PDF to Word" button to start the conversion process. The
+          converted Word document will appear in the download area.</li>
+        <li><strong>Download:</strong> Once the conversion is complete, click the download button to save your Word
+          document.</li>
+      </ol>
+      <p>
+        Experience the convenience of converting PDFs to Word documents with our easy-to-use tool. Start converting
+        your PDFs today and enjoy hassle-free text extraction and editing!
+      </p>
 
-    /* Utility */
-    function log(msg) { logEl.textContent += "\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
-    function clear() { logEl.textContent = "Ready."; thumbs.innerHTML = ""; download.innerHTML = ""; currentPDF = null; }
-    function setProgress(p) { progressWrap.style.display = p >= 0 ? "block" : "none"; progressBar.style.width = (p * 100) + "%"; }
 
-    /* File select */
-    pickBtn.onclick = () => fileInput.click();
-    fileInput.onchange = e => loadPDF(e.target.files[0]);
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
 
-    dropArea.ondragover = e => { e.preventDefault(); dropArea.style.borderColor = "#0aa37f"; }
-    dropArea.ondragleave = () => dropArea.style.borderColor = "#222";
-    dropArea.ondrop = e => {
-      e.preventDefault(); dropArea.style.borderColor = "#222";
-      loadPDF(e.dataTransfer.files[0]);
-    };
-
-    /* Load PDF */
-    async function loadPDF(file) {
-      if (!file) return;
-      clear();
-      log("Loading PDF...");
-      const buf = await file.arrayBuffer();
-      pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
-      currentPDF = await pdfjsLib.getDocument({ data: buf }).promise;
-      log("Pages: " + currentPDF.numPages);
-      await renderThumbs();
-    }
-
-    /* Render thumbnails */
-    async function renderThumbs() {
-      thumbs.innerHTML = "";
-      for (let i = 1; i <= currentPDF.numPages; i++) {
-        const page = await currentPDF.getPage(i);
-        const vp = page.getViewport({ scale: 0.25 });
-        const canvas = document.createElement("canvas");
-        canvas.width = vp.width; canvas.height = vp.height;
-        await page.render({ canvasContext: canvas.getContext("2d"), viewport: vp }).promise;
-        const img = canvas.toDataURL("image/png");
-        thumbs.innerHTML += `<div class="thumb"><img src="${img}"><div style="color:#9fbfb0">Page ${i}</div></div>`;
+    <script>
+      // Drawer toggle
+      function toggleMenu() {
+        document.getElementById("drawer").classList.toggle("open");
       }
-    }
+      const pickBtn = document.getElementById("pickBtn");
+      const fileInput = document.getElementById("fileInput");
+      const dropArea = document.getElementById("dropArea");
+      const convertBtn = document.getElementById("convertBtn");
+      const logEl = document.getElementById("log");
+      const thumbs = document.getElementById("thumbs");
+      const progressWrap = document.getElementById("progressWrap");
+      const progressBar = document.getElementById("progressBar");
+      const download = document.getElementById("download");
+      const enableOCR = document.getElementById("enableOCR");
+      let currentPDF = null;
 
-    /* Convert to DOCX */
-    convertBtn.onclick = async () => {
-      if (!currentPDF) { alert("Select a PDF first"); return; }
-      log("Extracting text...");
-      setProgress(0);
+      /* Utility */
+      function log(msg) { logEl.textContent += "\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
+      function clear() { logEl.textContent = "Ready."; thumbs.innerHTML = ""; download.innerHTML = ""; currentPDF = null; }
+      function setProgress(p) { progressWrap.style.display = p >= 0 ? "block" : "none"; progressBar.style.width = (p * 100) + "%"; }
 
-      const { Document, Packer, Paragraph } = docx;
-      const doc = new Document({ sections: [{ properties: {}, children: [] }] });
-      const children = doc.sections[0].children;
-      const doOCR = enableOCR.checked;
+      /* File select */
+      pickBtn.onclick = () => fileInput.click();
+      fileInput.onchange = e => loadPDF(e.target.files[0]);
 
-      for (let i = 1; i <= currentPDF.numPages; i++) {
-        const page = await currentPDF.getPage(i);
-        let text = "";
+      dropArea.ondragover = e => { e.preventDefault(); dropArea.style.borderColor = "#0aa37f"; }
+      dropArea.ondragleave = () => dropArea.style.borderColor = "#222";
+      dropArea.ondrop = e => {
+        e.preventDefault(); dropArea.style.borderColor = "#222";
+        loadPDF(e.dataTransfer.files[0]);
+      };
 
-        if (doOCR) {
-          log("OCR page " + i + "...");
-          const vp = page.getViewport({ scale: 1 });
+      /* Load PDF */
+      async function loadPDF(file) {
+        if (!file) return;
+        clear();
+        log("Loading PDF...");
+        const buf = await file.arrayBuffer();
+        pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
+        currentPDF = await pdfjsLib.getDocument({ data: buf }).promise;
+        log("Pages: " + currentPDF.numPages);
+        await renderThumbs();
+      }
+
+      /* Render thumbnails */
+      async function renderThumbs() {
+        thumbs.innerHTML = "";
+        for (let i = 1; i <= currentPDF.numPages; i++) {
+          const page = await currentPDF.getPage(i);
+          const vp = page.getViewport({ scale: 0.25 });
           const canvas = document.createElement("canvas");
           canvas.width = vp.width; canvas.height = vp.height;
           await page.render({ canvasContext: canvas.getContext("2d"), viewport: vp }).promise;
-          const ocr = await Tesseract.recognize(canvas, "eng");
-          text = ocr.data.text;
-        } else {
-          log("Extracting text from page " + i);
-          const content = await page.getTextContent();
-          text = content.items.map(item => item.str).join(" ");
+          const img = canvas.toDataURL("image/png");
+          thumbs.innerHTML += `<div class="thumb"><img src="${img}"><div style="color:#9fbfb0">Page ${i}</div></div>`;
         }
-
-        children.push(new Paragraph({ text: "--- Page " + i + " ---" }));
-        text.split("\n").forEach(line => {
-          children.push(new Paragraph({ text: line }));
-        });
-
-        setProgress(i / currentPDF.numPages);
-        await new Promise(r => setTimeout(r, 20));
       }
 
-      log("Building DOCX file...");
-      const blob = await Packer.toBlob(doc);
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = "converted.docx";
-      a.textContent = "Download Word File";
-      a.className = "btn-primary";
-      download.appendChild(a);
+      /* Convert to DOCX */
+      convertBtn.onclick = async () => {
+        if (!currentPDF) { alert("Select a PDF first"); return; }
+        log("Extracting text...");
+        setProgress(0);
 
-      log("Done.");
-      setProgress(-1);
-    };
+        const { Document, Packer, Paragraph } = docx;
+        const doc = new Document({ sections: [{ properties: {}, children: [] }] });
+        const children = doc.sections[0].children;
+        const doOCR = enableOCR.checked;
 
-    document.getElementById("clearBtn").onclick = clear;
-  </script>
+        for (let i = 1; i <= currentPDF.numPages; i++) {
+          const page = await currentPDF.getPage(i);
+          let text = "";
 
+          if (doOCR) {
+            log("OCR page " + i + "...");
+            const vp = page.getViewport({ scale: 1 });
+            const canvas = document.createElement("canvas");
+            canvas.width = vp.width; canvas.height = vp.height;
+            await page.render({ canvasContext: canvas.getContext("2d"), viewport: vp }).promise;
+            const ocr = await Tesseract.recognize(canvas, "eng");
+            text = ocr.data.text;
+          } else {
+            log("Extracting text from page " + i);
+            const content = await page.getTextContent();
+            text = content.items.map(item => item.str).join(" ");
+          }
+
+          children.push(new Paragraph({ text: "--- Page " + i + " ---" }));
+          text.split("\n").forEach(line => {
+            children.push(new Paragraph({ text: line }));
+          });
+
+          setProgress(i / currentPDF.numPages);
+          await new Promise(r => setTimeout(r, 20));
+        }
+
+        log("Building DOCX file...");
+        const blob = await Packer.toBlob(doc);
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "converted.docx";
+        a.textContent = "Download Word File";
+        a.className = "btn-primary";
+        download.appendChild(a);
+
+        log("Done.");
+        setProgress(-1);
+      };
+
+      document.getElementById("clearBtn").onclick = clear;
+    </script>
 </body>
 
 </html>
