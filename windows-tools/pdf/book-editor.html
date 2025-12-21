@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Book Editor Pro — RDroid System Tools</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .editor-container {
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            gap: 25px;
+            margin: 25px 0;
+            min-height: 700px;
+        }
+
+        .sidebar {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            overflow-y: auto;
+        }
+
+        .editor-area {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .preview-panel {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            overflow-y: auto;
+        }
+
+        .page-item {
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .page-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(34, 211, 166, 0.2);
+        }
+
+        .page-item.active {
+            background: rgba(34, 211, 166, 0.1);
+            border-color: var(--brand);
+        }
+
+        .page-number {
+            font-size: 12px;
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .page-actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        .page-action-btn {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            border-radius: 4px;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .page-action-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text);
+        }
+
+        .editor-toolbar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            flex-wrap: wrap;
+        }
+
+        .format-btn {
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .format-btn.active {
+            background: rgba(34, 211, 166, 0.15);
+            border-color: var(--brand);
+        }
+
+        .editor-content {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 25px;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-y: auto;
+            outline: none;
+            min-height: 500px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            font-smooth: always;
+        }
+
+        .editor-content:focus {
+            border-color: var(--brand);
+            box-shadow: 0 0 0 2px rgba(34, 211, 166, 0.1);
+        }
+
+        .preview-page {
+            background: white;
+            color: black;
+            padding: 40px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            min-height: 400px;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            font-smooth: always;
+        }
+
+        .page-header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 40px;
+            width: calc(100% - 80px);
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .book-controls {
+            display: flex;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .book-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--brand);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 5px;
+        }
+
+        .page-size-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .size-option {
+            padding: 10px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .size-option:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .size-option.active {
+            background: rgba(34, 211, 166, 0.15);
+            border-color: var(--brand);
+        }
+
+        .size-label {
+            font-size: 14px;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+
+        .size-dimensions {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .chapter-item {
+            padding: 10px 15px;
+            margin: 5px 0;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 6px;
+            border-left: 3px solid transparent;
+            cursor: pointer;
+        }
+
+        .chapter-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .chapter-item.active {
+            background: rgba(34, 211, 166, 0.1);
+            border-left-color: var(--brand);
+        }
+
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
+        .word-count {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-size: 12px;
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 8px;
+            border-radius: 10px;
+        }
+
+        .export-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .export-option {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .export-option:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .export-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: var(--brand);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            border-radius: 12px;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--brand);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <script src="../../assets/fonts/noto-devanagari-base64.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("../../components/header.html");
+            $("#menu-drawer-container").load("../../components/menu-drawer.html");
+            $("#tools-links-container").load("../../components/system-tools-quick-links.html");
+            $("#footer-container").load("../../components/footer.html");
+        });
+    </script>
+
+    <section class="section" role="main" aria-labelledby="title">
+        <h1 id="title">Book Editor Pro</h1>
+        <p class="lead">Create and edit multi-page books with chapters. Customize page sizes, format text, and export to
+            professional PDF format.</p>
+
+        <div class="book-controls">
+            <button class="btn btn-primary" id="newBookBtn">New Book</button>
+            <button class="btn" id="addPageBtn">Add Page</button>
+            <button class="btn" id="addChapterBtn">Add Chapter</button>
+            <button class="btn" id="saveBookBtn">Save Book</button>
+            <button class="btn" id="loadBookBtn">Load Book</button>
+            <button class="btn" id="exportPdfBtn">Export PDF</button>
+        </div>
+
+        <div class="book-stats">
+            <div class="stat-card">
+                <div class="stat-value" id="pageCount">0</div>
+                <div class="stat-label">Total Pages</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="chapterCount">0</div>
+                <div class="stat-label">Chapters</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="wordCount">0</div>
+                <div class="stat-label">Words</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="charCount">0</div>
+                <div class="stat-label">Characters</div>
+            </div>
+        </div>
+
+        <div class="editor-container">
+            <!-- Left Sidebar - Pages & Chapters -->
+            <div class="sidebar" id="pagesSidebar">
+                <h3 style="margin-bottom: 15px;">📚 Chapters & Pages</h3>
+                <div id="chaptersList">
+                    <div class="empty-state" id="emptyChaptersState">
+                        <div class="empty-state-icon">📄</div>
+                        <div>No chapters yet</div>
+                    </div>
+                </div>
+                <div id="pagesList" style="margin-top: 20px;">
+                    <div class="empty-state" id="emptyPagesState">
+                        <div class="empty-state-icon">📖</div>
+                        <div>Add pages to your book</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center - Editor Area -->
+            <div class="editor-area">
+                <div class="editor-toolbar">
+                    <button class="format-btn" data-command="bold" title="Bold (Ctrl+B)">
+                        <strong>B</strong>
+                    </button>
+                    <button class="format-btn" data-command="italic" title="Italic (Ctrl+I)">
+                        <em>I</em>
+                    </button>
+                    <button class="format-btn" data-command="underline" title="Underline (Ctrl+U)">
+                        <u>U</u>
+                    </button>
+                    <div style="width: 1px; background: rgba(255,255,255,0.1); margin: 0 10px;"></div>
+                    <button class="format-btn" data-command="formatBlock" data-value="h1" title="Heading 1">
+                        H1
+                    </button>
+                    <button class="format-btn" data-command="formatBlock" data-value="h2" title="Heading 2">
+                        H2
+                    </button>
+                    <button class="format-btn" data-command="formatBlock" data-value="p" title="Paragraph">
+                        ¶
+                    </button>
+                    <div style="width: 1px; background: rgba(255,255,255,0.1); margin: 0 10px;"></div>
+                    <button class="format-btn" data-command="justifyLeft" title="Align Left">
+                        ⎌
+                    </button>
+                    <button class="format-btn" data-command="justifyCenter" title="Center">
+                        ⎈
+                    </button>
+                    <button class="format-btn" data-command="justifyRight" title="Align Right">
+                        ⎋
+                    </button>
+                    <button class="format-btn" data-command="justifyFull" title="Justify">
+                        ⇔
+                    </button>
+                    <div style="flex: 1;"></div>
+                    <select id="fontFamily"
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text); padding: 8px; border-radius: 6px;">
+                        <option value="Georgia">Georgia</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Courier New">Courier New</option>
+                    </select>
+                    <select id="fontSize"
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text); padding: 8px; border-radius: 6px; width: 80px;">
+                        <option value="12">12px</option>
+                        <option value="14">14px</option>
+                        <option value="16" selected>16px</option>
+                        <option value="18">18px</option>
+                        <option value="20">20px</option>
+                        <option value="24">24px</option>
+                    </select>
+                </div>
+
+                <div class="editor-content" id="editorContent" contenteditable="true">
+                    <h1>Welcome to Book Editor Pro</h1>
+                    <p>Start writing your book here. You can:</p>
+                    <ul>
+                        <li>Add multiple pages and chapters</li>
+                        <li>Format text using the toolbar above</li>
+                        <li>Rearrange pages using drag & drop</li>
+                        <li>Choose different page sizes</li>
+                        <li>Export to professional PDF</li>
+                    </ul>
+                    <p>Click "Add Page" to start creating your book!</p>
+                </div>
+
+                <div class="word-count" id="wordCounter">Words: 0 | Chars: 0</div>
+
+                <div class="loading-overlay" id="loadingOverlay">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar - Settings & Preview -->
+            <div class="preview-panel">
+                <h3 style="margin-bottom: 15px;">⚙️ Book Settings</h3>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px;">Book
+                        Title</label>
+                    <input type="text" id="bookTitle" value="My Book"
+                        style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--text);">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label
+                        style="display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px;">Author</label>
+                    <input type="text" id="bookAuthor" value="Author Name"
+                        style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--text);">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px;">Page
+                        Size</label>
+                    <div class="page-size-options">
+                        <div class="size-option active" data-size="A4">
+                            <div class="size-label">A4</div>
+                            <div class="size-dimensions">210 × 297 mm</div>
+                        </div>
+                        <div class="size-option" data-size="Letter">
+                            <div class="size-label">Letter</div>
+                            <div class="size-dimensions">216 × 279 mm</div>
+                        </div>
+                        <div class="size-option" data-size="A5">
+                            <div class="size-label">A5</div>
+                            <div class="size-dimensions">148 × 210 mm</div>
+                        </div>
+                        <div class="size-option" data-size="Legal">
+                            <div class="size-label">Legal</div>
+                            <div class="size-dimensions">216 × 356 mm</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label
+                        style="display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px;">Orientation</label>
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn" id="portraitBtn" style="flex: 1;">Portrait</button>
+                        <button class="btn" id="landscapeBtn" style="flex: 1;">Landscape</button>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px;">Margins
+                        (mm)</label>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                        <div>
+                            <label style="font-size: 11px;">Top</label>
+                            <input type="number" id="marginTop" value="20" min="10" max="50"
+                                style="width: 100%; padding: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--text);">
+                        </div>
+                        <div>
+                            <label style="font-size: 11px;">Bottom</label>
+                            <input type="number" id="marginBottom" value="20" min="10" max="50"
+                                style="width: 100%; padding: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--text);">
+                        </div>
+                        <div>
+                            <label style="font-size: 11px;">Left</label>
+                            <input type="number" id="marginLeft" value="25" min="10" max="50"
+                                style="width: 100%; padding: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--text);">
+                        </div>
+                        <div>
+                            <label style="font-size: 11px;">Right</label>
+                            <input type="number" id="marginRight" value="25" min="10" max="50"
+                                style="width: 100%; padding: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--text);">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h4>📊 Live Preview</h4>
+                    <div class="preview-page" id="pagePreview">
+                        <div class="page-header">
+                            <div style="font-size: 24px; font-weight: bold;" id="previewTitle">My Book</div>
+                            <div style="font-size: 14px; color: #666; margin-top: 5px;" id="previewAuthor">Author Name
+                            </div>
+                            <div style="font-size: 12px; color: #999; margin-top: 10px;">Page 1</div>
+                        </div>
+                        <div id="previewContent" style="font-size: 16px; line-height: 1.6;">
+                            <p>This is a preview of how your page will look in the exported PDF.</p>
+                        </div>
+                        <div class="page-footer">
+                            <div style="border-top: 1px solid #ccc; padding-top: 10px;">Page 1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="export-options" style="margin-top: 30px;">
+            <div class="export-option" id="exportPdfOption">
+                <div class="export-icon">📄</div>
+                <div style="font-weight: bold; color: var(--text);">Export to PDF</div>
+                <div style="font-size: 12px; color: var(--muted); margin-top: 5px;">Professional format for printing
+                </div>
+            </div>
+            <div class="export-option" id="exportDocxOption">
+                <div class="export-icon">📝</div>
+                <div style="font-weight: bold; color: var(--text);">Export to DOCX</div>
+                <div style="font-size: 12px; color: var(--muted); margin-top: 5px;">Microsoft Word compatible</div>
+            </div>
+            <div class="export-option" id="exportEpubOption">
+                <div class="export-icon">📚</div>
+                <div style="font-weight: bold; color: var(--text);">Export to EPUB</div>
+                <div style="font-size: 12px; color: var(--muted); margin-top: 5px;">E-book format for readers</div>
+            </div>
+            <div class="export-option" id="exportHtmlOption">
+                <div class="export-icon">🌐</div>
+                <div style="font-weight: bold; color: var(--text);">Export to HTML</div>
+                <div style="font-size: 12px; color: var(--muted); margin-top: 5px;">Web page format</div>
+            </div>
+        </div>
+
+        <div style="display:flex; gap:12px; align-items:center; margin-top:20px;">
+            <div id="status" class="small">Ready to create your book</div>
+            <div style="margin-left:auto" id="bookStats" class="small">0 pages, 0 words</div>
+        </div>
+
+        <pre id="log">Create a new book or add pages to get started.</pre>
+
+        <hr style="margin:32px 0">
+
+        <section class="seo-content">
+            <h2>About Book Editor Pro</h2>
+            <p>
+                Book Editor Pro is a comprehensive writing tool that allows you to create, edit, and format multi-page
+                books with chapters. Export your work to professional PDF format with customizable page sizes and
+                layouts.
+            </p>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li>Create books with unlimited pages and chapters</li>
+                <li>Rich text editor with formatting options (bold, italic, headings, alignment)</li>
+                <li>Multiple page sizes (A4, Letter, A5, Legal)</li>
+                <li>Portrait and landscape orientations</li>
+                <li>Customizable margins and page settings</li>
+                <li>Drag & drop page reordering</li>
+                <li>Live preview of pages</li>
+                <li>Word and character count statistics</li>
+                <li>Export to PDF, DOCX, EPUB, and HTML formats</li>
+                <li>Save and load book projects</li>
+                <li>All processing is done locally in your browser</li>
+            </ul>
+
+            <h2>Page Size Options</h2>
+            <ul>
+                <li><strong>A4 (210 × 297 mm):</strong> Standard paper size used worldwide</li>
+                <li><strong>Letter (216 × 279 mm):</strong> Standard US paper size</li>
+                <li><strong>A5 (148 × 210 mm):</strong> Half of A4, good for smaller books</li>
+                <li><strong>Legal (216 × 356 mm):</strong> Longer format for legal documents</li>
+            </ul>
+
+            <h2>Export Formats</h2>
+            <ul>
+                <li><strong>PDF:</strong> Professional format for printing and sharing</li>
+                <li><strong>DOCX:</strong> Microsoft Word compatible format</li>
+                <li><strong>EPUB:</strong> E-book format for e-readers</li>
+                <li><strong>HTML:</strong> Web page format for online publishing</li>
+            </ul>
+
+            <h2>Privacy & Security</h2>
+            <p>
+                All your book content is processed locally in your browser. No data is sent to external servers.
+                You can work offline and your content remains private on your device.
+            </p>
+        </section>
+    </section>
+
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+
+    <script>
+        // Drawer toggle
+        function toggleMenu() {
+            document.getElementById("drawer").classList.toggle("open");
+        }
+
+        // Elements
+        const newBookBtn = document.getElementById('newBookBtn');
+        const addPageBtn = document.getElementById('addPageBtn');
+        const addChapterBtn = document.getElementById('addChapterBtn');
+        const saveBookBtn = document.getElementById('saveBookBtn');
+        const loadBookBtn = document.getElementById('loadBookBtn');
+        const exportPdfBtn = document.getElementById('exportPdfBtn');
+        const logEl = document.getElementById('log');
+        const statusEl = document.getElementById('status');
+        const bookStatsEl = document.getElementById('bookStats');
+        const editorContent = document.getElementById('editorContent');
+        const pagesList = document.getElementById('pagesList');
+        const chaptersList = document.getElementById('chaptersList');
+        const emptyPagesState = document.getElementById('emptyPagesState');
+        const emptyChaptersState = document.getElementById('emptyChaptersState');
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        const wordCounter = document.getElementById('wordCounter');
+
+        // Export option elements
+        const exportPdfOption = document.getElementById('exportPdfOption');
+        const exportDocxOption = document.getElementById('exportDocxOption');
+        const exportEpubOption = document.getElementById('exportEpubOption');
+        const exportHtmlOption = document.getElementById('exportHtmlOption');
+
+        // Stats elements
+        const pageCountEl = document.getElementById('pageCount');
+        const chapterCountEl = document.getElementById('chapterCount');
+        const wordCountEl = document.getElementById('wordCount');
+        const charCountEl = document.getElementById('charCount');
+
+        // Settings elements
+        const bookTitleInput = document.getElementById('bookTitle');
+        const bookAuthorInput = document.getElementById('bookAuthor');
+        const pageSizeOptions = document.querySelectorAll('.size-option');
+        const portraitBtn = document.getElementById('portraitBtn');
+        const landscapeBtn = document.getElementById('landscapeBtn');
+        const marginTopInput = document.getElementById('marginTop');
+        const marginBottomInput = document.getElementById('marginBottom');
+        const marginLeftInput = document.getElementById('marginLeft');
+        const marginRightInput = document.getElementById('marginRight');
+
+        // Preview elements
+        const previewTitle = document.getElementById('previewTitle');
+        const previewAuthor = document.getElementById('previewAuthor');
+        const previewContent = document.getElementById('previewContent');
+
+        // Format toolbar elements
+        const formatBtns = document.querySelectorAll('.format-btn');
+        const fontFamilySelect = document.getElementById('fontFamily');
+        const fontSizeSelect = document.getElementById('fontSize');
+
+        // Book data structure
+        let bookData = {
+            title: "My Book",
+            author: "Author Name",
+            pages: [],
+            chapters: [],
+            settings: {
+                pageSize: "A4",
+                orientation: "portrait",
+                margins: {
+                    top: 20,
+                    bottom: 20,
+                    left: 25,
+                    right: 25
+                },
+                fontSize: 16,
+                fontFamily: "Georgia"
+            }
+        };
+
+        let currentPageIndex = -1;
+        let currentChapterIndex = -1;
+
+        // Helper functions
+        function log(msg) {
+            logEl.textContent += '\n' + msg;
+            logEl.scrollTop = logEl.scrollHeight;
+        }
+
+        function updateStatus(msg) {
+            statusEl.textContent = msg;
+        }
+
+        function showLoading(show) {
+            if (show) {
+                loadingOverlay.classList.add('active');
+            } else {
+                loadingOverlay.classList.remove('active');
+            }
+        }
+
+        // Word count function
+        function updateWordCount() {
+            const content = editorContent.textContent || "";
+            const words = content.trim().split(/\s+/).filter(word => word.length > 0);
+            const characters = content.length;
+
+            wordCountEl.textContent = words.length;
+            charCountEl.textContent = characters;
+            wordCounter.textContent = `Words: ${words.length} | Chars: ${characters}`;
+
+            // Update book stats
+            bookStatsEl.textContent = `${bookData.pages.length} pages, ${words.length} words`;
+
+            // Update preview
+            updatePreview();
+
+            return { words: words.length, characters };
+        }
+
+        // Update preview
+        function updatePreview() {
+            previewTitle.textContent = bookTitleInput.value;
+            previewAuthor.textContent = `By ${bookAuthorInput.value}`;
+            previewContent.innerHTML = editorContent.innerHTML;
+        }
+
+        // Create a new page
+        function createPage(title = "New Page", content = "", chapterId = null) {
+            return {
+                id: 'page-' + Date.now(),
+                title: title,
+                content: content,
+                chapterId: chapterId,
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString(),
+                pageNumber: bookData.pages.length + 1
+            };
+        }
+
+        // Create a new chapter
+        function createChapter(title = "New Chapter") {
+            return {
+                id: 'chapter-' + Date.now(),
+                title: title,
+                createdAt: new Date().toISOString(),
+                pageIds: []
+            };
+        }
+
+        // Render pages list
+        function renderPagesList() {
+            pagesList.innerHTML = '';
+
+            if (bookData.pages.length === 0) {
+                emptyPagesState.style.display = 'flex';
+                return;
+            }
+
+            emptyPagesState.style.display = 'none';
+
+            bookData.pages.forEach((page, index) => {
+                const pageItem = document.createElement('div');
+                pageItem.className = `page-item ${index === currentPageIndex ? 'active' : ''}`;
+                pageItem.draggable = true;
+                pageItem.dataset.index = index;
+                pageItem.dataset.id = page.id;
+
+                // Get chapter title if exists
+                const chapter = bookData.chapters.find(c => c.id === page.chapterId);
+                const chapterInfo = chapter ? `<div style="font-size: 10px; color: var(--brand);">${chapter.title}</div>` : '';
+
+                pageItem.innerHTML = `
+                    <div style="flex: 1;">
+                        <div style="font-size: 14px; color: var(--text);">${page.title}</div>
+                        ${chapterInfo}
+                        <div style="font-size: 11px; color: var(--muted); margin-top: 2px;">
+                            ${new Date(page.updatedAt).toLocaleDateString()}
+                        </div>
+                    </div>
+                    <div class="page-number">${index + 1}</div>
+                    <div class="page-actions">
+                        <button class="page-action-btn" onclick="editPage(${index})" title="Edit">✏️</button>
+                        <button class="page-action-btn" onclick="deletePage(${index})" title="Delete">🗑️</button>
+                    </div>
+                `;
+
+                pageItem.addEventListener('click', (e) => {
+                    if (!e.target.classList.contains('page-action-btn')) {
+                        selectPage(index);
+                    }
+                });
+
+                // Drag and drop events
+                pageItem.addEventListener('dragstart', handleDragStart);
+                pageItem.addEventListener('dragover', handleDragOver);
+                pageItem.addEventListener('drop', handleDrop);
+                pageItem.addEventListener('dragend', handleDragEnd);
+
+                pagesList.appendChild(pageItem);
+            });
+
+            // Update page count
+            pageCountEl.textContent = bookData.pages.length;
+        }
+
+        // Render chapters list
+        function renderChaptersList() {
+            chaptersList.innerHTML = '';
+
+            if (bookData.chapters.length === 0) {
+                emptyChaptersState.style.display = 'flex';
+                return;
+            }
+
+            emptyChaptersState.style.display = 'none';
+
+            bookData.chapters.forEach((chapter, index) => {
+                const chapterItem = document.createElement('div');
+                chapterItem.className = `chapter-item ${index === currentChapterIndex ? 'active' : ''}`;
+                chapterItem.dataset.index = index;
+                chapterItem.dataset.id = chapter.id;
+
+                // Count pages in this chapter
+                const pageCount = bookData.pages.filter(p => p.chapterId === chapter.id).length;
+
+                chapterItem.innerHTML = `
+            <div style="font-size: 14px; color: var(--text);">${chapter.title}</div>
+            <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                <div style="font-size: 11px; color: var(--muted);">
+                    ${pageCount} page${pageCount !== 1 ? 's' : ''}
+                </div>
+                <div style="display: flex; gap: 5px;">
+                    <button class="page-action-btn" onclick="editChapter(${index})" title="Edit">✏️</button>
+                    <button class="page-action-btn" onclick="deleteChapter(${index})" title="Delete">🗑️</button>
+                </div>
+            </div>
+        `;
+
+                chapterItem.addEventListener('click', (e) => {
+                    if (!e.target.classList.contains('page-action-btn')) {
+                        selectChapter(index);
+                    }
+                });
+
+                chaptersList.appendChild(chapterItem);
+            });
+
+            // Update chapter count
+            chapterCountEl.textContent = bookData.chapters.length;
+        }
+
+        // Select a page
+        function selectPage(index) {
+            if (index < 0 || index >= bookData.pages.length) return;
+
+            currentPageIndex = index;
+            const page = bookData.pages[index];
+
+            editorContent.innerHTML = page.content;
+            updateWordCount();
+            renderPagesList();
+
+            // Update editor font settings
+            fontFamilySelect.value = bookData.settings.fontFamily;
+            fontSizeSelect.value = bookData.settings.fontSize;
+
+            updateStatus(`Editing page: ${page.title}`);
+        }
+
+        // Select a chapter
+        function selectChapter(index) {
+            currentChapterIndex = index;
+            renderChaptersList();
+        }
+
+        // Edit page
+        function editPage(index) {
+            const newTitle = prompt('Enter new page title:', bookData.pages[index].title);
+            if (newTitle && newTitle.trim()) {
+                bookData.pages[index].title = newTitle.trim();
+                bookData.pages[index].updatedAt = new Date().toISOString();
+                renderPagesList();
+                updateStatus('Page title updated');
+            }
+        }
+
+        // Delete page
+        function deletePage(index) {
+            if (confirm('Are you sure you want to delete this page?')) {
+                const pageId = bookData.pages[index].id;
+
+                // Remove from chapters if assigned
+                bookData.chapters.forEach(chapter => {
+                    const pageIndex = chapter.pageIds.indexOf(pageId);
+                    if (pageIndex > -1) {
+                        chapter.pageIds.splice(pageIndex, 1);
+                    }
+                });
+
+                bookData.pages.splice(index, 1);
+
+                // Update page numbers
+                bookData.pages.forEach((page, idx) => {
+                    page.pageNumber = idx + 1;
+                });
+
+                // Adjust current page index
+                if (currentPageIndex >= index) {
+                    currentPageIndex = Math.max(-1, currentPageIndex - 1);
+                }
+
+                renderPagesList();
+                updateStatus('Page deleted');
+            }
+        }
+
+        // Edit chapter
+        function editChapter(index) {
+            const newTitle = prompt('Enter new chapter title:', bookData.chapters[index].title);
+            if (newTitle && newTitle.trim()) {
+                bookData.chapters[index].title = newTitle.trim();
+                renderChaptersList();
+                updateStatus('Chapter title updated');
+            }
+        }
+
+        // Delete chapter
+        function deleteChapter(index) {
+            if (confirm('Are you sure you want to delete this chapter? Pages will not be deleted.')) {
+                const chapterId = bookData.chapters[index].id;
+
+                // Remove chapter reference from pages
+                bookData.pages.forEach(page => {
+                    if (page.chapterId === chapterId) {
+                        page.chapterId = null;
+                    }
+                });
+
+                bookData.chapters.splice(index, 1);
+
+                // Adjust current chapter index
+                if (currentChapterIndex >= index) {
+                    currentChapterIndex = Math.max(-1, currentChapterIndex - 1);
+                }
+
+                renderChaptersList();
+                renderPagesList();
+                updateStatus('Chapter deleted');
+            }
+        }
+
+        // Drag and drop functionality
+        let draggedItem = null;
+
+        function handleDragStart(e) {
+            draggedItem = this;
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/html', this.innerHTML);
+            this.style.opacity = '0.4';
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+            return false;
+        }
+
+        function handleDrop(e) {
+            e.stopPropagation();
+            e.preventDefault();
+
+            if (draggedItem !== this) {
+                const fromIndex = parseInt(draggedItem.dataset.index);
+                const toIndex = parseInt(this.dataset.index);
+
+                // Reorder pages
+                const [movedPage] = bookData.pages.splice(fromIndex, 1);
+                bookData.pages.splice(toIndex, 0, movedPage);
+
+                // Update page numbers
+                bookData.pages.forEach((page, idx) => {
+                    page.pageNumber = idx + 1;
+                });
+
+                // Update current page index
+                if (currentPageIndex === fromIndex) {
+                    currentPageIndex = toIndex;
+                } else if (currentPageIndex === toIndex) {
+                    currentPageIndex = fromIndex;
+                }
+
+                renderPagesList();
+                updateStatus('Page order updated');
+            }
+
+            return false;
+        }
+
+        function handleDragEnd(e) {
+            this.style.opacity = '1';
+        }
+
+        // Save current page content
+        function saveCurrentPage() {
+            if (currentPageIndex >= 0 && currentPageIndex < bookData.pages.length) {
+                bookData.pages[currentPageIndex].content = editorContent.innerHTML;
+                bookData.pages[currentPageIndex].updatedAt = new Date().toISOString();
+                updateStatus('Page saved');
+            }
+        }
+
+        // Initialize book
+        function initializeBook() {
+            bookData = {
+                title: "My Book",
+                author: "Author Name",
+                pages: [],
+                chapters: [],
+                settings: {
+                    pageSize: "A4",
+                    orientation: "portrait",
+                    margins: {
+                        top: 20,
+                        bottom: 20,
+                        left: 25,
+                        right: 25
+                    },
+                    fontSize: 16,
+                    fontFamily: "Georgia"
+                }
+            };
+
+            // Add first page
+            const firstPage = createPage("Introduction", editorContent.innerHTML);
+            bookData.pages.push(firstPage);
+
+            currentPageIndex = 0;
+            currentChapterIndex = -1;
+
+            renderPagesList();
+            renderChaptersList();
+            updateWordCount();
+            updatePreview();
+            updateStatus('New book created');
+        }
+
+        // Add new page
+        function addNewPage() {
+            const pageCount = bookData.pages.length;
+            const newPage = createPage(`Page ${pageCount + 1}`, '<p>New page content...</p>',
+                currentChapterIndex >= 0 ? bookData.chapters[currentChapterIndex].id : null);
+
+            bookData.pages.push(newPage);
+            currentPageIndex = bookData.pages.length - 1;
+
+            // Add to chapter if selected
+            if (currentChapterIndex >= 0) {
+                const chapter = bookData.chapters[currentChapterIndex];
+                chapter.pageIds.push(newPage.id);
+            }
+
+            editorContent.innerHTML = newPage.content;
+            renderPagesList();
+            updateWordCount();
+            updateStatus('New page added');
+        }
+
+        // Add new chapter
+        function addNewChapter() {
+            const chapterCount = bookData.chapters.length;
+            const newChapter = createChapter(`Chapter ${chapterCount + 1}`);
+
+            bookData.chapters.push(newChapter);
+            currentChapterIndex = bookData.chapters.length - 1;
+
+            renderChaptersList();
+            updateStatus('New chapter added');
+        }
+
+        // Save book to local storage
+        function saveBook() {
+            saveCurrentPage();
+
+            const bookToSave = {
+                ...bookData,
+                savedAt: new Date().toISOString()
+            };
+
+            localStorage.setItem('bookEditor_projects', JSON.stringify({
+                currentBook: bookToSave,
+                timestamp: Date.now()
+            }));
+
+            // Create downloadable file
+            const dataStr = JSON.stringify(bookToSave, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+
+            const exportFileDefaultName = `${bookData.title.replace(/\s+/g, '_')}.book`;
+
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+
+            updateStatus('Book saved to local storage and downloaded');
+        }
+
+        // Load book from file
+        function loadBook() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.book,application/json';
+
+            input.onchange = e => {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function (event) {
+                    try {
+                        const loadedData = JSON.parse(event.target.result);
+
+                        // Validate book structure
+                        if (loadedData.pages && Array.isArray(loadedData.pages)) {
+                            bookData = loadedData;
+
+                            // Ensure all pages have required properties
+                            bookData.pages.forEach((page, index) => {
+                                page.pageNumber = index + 1;
+                                if (!page.id) page.id = 'page-' + Date.now() + '-' + index;
+                            });
+
+                            currentPageIndex = bookData.pages.length > 0 ? 0 : -1;
+                            currentChapterIndex = bookData.chapters.length > 0 ? 0 : -1;
+
+                            // Update UI
+                            bookTitleInput.value = bookData.title || "My Book";
+                            bookAuthorInput.value = bookData.author || "Author Name";
+
+                            // Update settings
+                            if (bookData.settings) {
+                                // Update page size
+                                document.querySelectorAll('.size-option').forEach(option => {
+                                    option.classList.remove('active');
+                                    if (option.dataset.size === bookData.settings.pageSize) {
+                                        option.classList.add('active');
+                                    }
+                                });
+
+                                // Update orientation
+                                if (bookData.settings.orientation === 'portrait') {
+                                    portraitBtn.classList.add('active');
+                                    landscapeBtn.classList.remove('active');
+                                } else {
+                                    landscapeBtn.classList.add('active');
+                                    portraitBtn.classList.remove('active');
+                                }
+
+                                // Update margins
+                                if (bookData.settings.margins) {
+                                    marginTopInput.value = bookData.settings.margins.top || 20;
+                                    marginBottomInput.value = bookData.settings.margins.bottom || 20;
+                                    marginLeftInput.value = bookData.settings.margins.left || 25;
+                                    marginRightInput.value = bookData.settings.margins.right || 25;
+                                }
+
+                                // Update font
+                                fontFamilySelect.value = bookData.settings.fontFamily || "Georgia";
+                                fontSizeSelect.value = bookData.settings.fontSize || 16;
+                            }
+
+                            if (bookData.pages.length > 0) {
+                                editorContent.innerHTML = bookData.pages[0].content;
+                            }
+
+                            renderPagesList();
+                            renderChaptersList();
+                            updateWordCount();
+                            updatePreview();
+
+                            updateStatus(`Book loaded: ${bookData.title}`);
+                        } else {
+                            alert('Invalid book file format');
+                        }
+                    } catch (error) {
+                        alert('Error loading book file: ' + error.message);
+                    }
+                };
+
+                reader.readAsText(file);
+            };
+
+            input.click();
+        }
+
+        // Export to PDF function - IMPROVED VERSION
+        function exportToPDF_REAL() {
+            saveCurrentPage();
+
+            setTimeout(() => {
+                try {
+                    const { jsPDF } = window.jspdf;
+
+                    // PDF settings
+                    const doc = new jsPDF({
+                        unit: "mm",
+                        format: bookData.settings.pageSize,
+                        orientation: bookData.settings.orientation,
+                        compress: false
+                    });
+
+                    // 1. प्रथम स्टँडर्ड फॉन्टने काम सुरू करा
+                    doc.setFont("helvetica");
+                    doc.setTextColor(0, 0, 0);
+                    doc.setFontSize(bookData.settings.fontSize || 14);
+
+                    // Page dimensions
+                    const pageWidth = doc.internal.pageSize.getWidth();
+                    const pageHeight = doc.internal.pageSize.getHeight();
+
+                    // Margins
+                    const margin = {
+                        top: bookData.settings.margins.top || 25,
+                        bottom: bookData.settings.margins.bottom || 25,
+                        left: bookData.settings.margins.left || 30,
+                        right: bookData.settings.margins.right || 30
+                    };
+
+                    // 2. फक्त जर मराठी टेक्स्ट असेल तरच फॉन्ट बदला
+                    function containsMarathi(text) {
+                        const marathiRegex = /[\u0900-\u097F]/;
+                        return marathiRegex.test(text);
+                    }
+
+                    // Create pages
+                    bookData.pages.forEach((page, index) => {
+                        if (index > 0) {
+                            doc.addPage(bookData.settings.pageSize, bookData.settings.orientation);
+                        }
+
+                        let y = margin.top;
+
+                        // First page - Title and Author
+                        if (index === 0) {
+                            // Book Title
+                            doc.setFontSize(24);
+                            doc.setFont("helvetica", 'bold');
+                            const title = bookData.title || "My Book";
+                            doc.text(title, pageWidth / 2, y, { align: "center" });
+                            y += 15;
+
+                            // Author
+                            doc.setFontSize(16);
+                            doc.setFont("helvetica", 'normal');
+                            const author = bookData.author ? `By ${bookData.author}` : "";
+                            if (author) {
+                                doc.text(author, pageWidth / 2, y, { align: "center" });
+                                y += 20;
+                            }
+
+                            // Separator line
+                            doc.setLineWidth(0.5);
+                            doc.line(margin.left, y, pageWidth - margin.right, y);
+                            y += 15;
+                        }
+
+                        // Page Title (if not default)
+                        if (page.title && page.title !== "New Page" && page.title !== "Page " + (index + 1)) {
+                            doc.setFontSize(18);
+                            doc.setFont("helvetica", 'bold');
+                            doc.text(page.title, margin.left, y);
+                            y += 10;
+                        }
+
+                        // Main Content
+                        doc.setFontSize(bookData.settings.fontSize || 14);
+                        doc.setFont("helvetica", 'normal');
+
+                        // Convert HTML to plain text
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = page.content;
+
+                        // Get plain text
+                        let plainText = tempDiv.textContent || tempDiv.innerText || "";
+
+                        // Check if text contains Marathi
+                        const hasMarathi = containsMarathi(plainText);
+
+                        if (hasMarathi && window.NOTO_DEVANAGARI_BASE64) {
+                            // Try to use Marathi font
+                            try {
+                                // Add font to VFS
+                                doc.addFileToVFS("NotoSansDevanagari.ttf", window.NOTO_DEVANAGARI_BASE64);
+                                doc.addFont("NotoSansDevanagari.ttf", "NotoSansDevanagari", "normal", "Identity-H");
+                                doc.setFont("NotoSansDevanagari");
+                                console.log("Using Marathi font for page", index + 1);
+                            } catch (fontError) {
+                                console.error("Marathi font error:", fontError);
+                                doc.setFont("helvetica");
+                            }
+                        } else {
+                            doc.setFont("helvetica");
+                        }
+
+                        // Split text into lines
+                        const lines = doc.splitTextToSize(
+                            plainText,
+                            pageWidth - margin.left - margin.right
+                        );
+
+                        // Add lines to PDF
+                        const lineHeight = 7;
+
+                        lines.forEach(line => {
+                            if (y > pageHeight - margin.bottom - 10) {
+                                doc.addPage(bookData.settings.pageSize, bookData.settings.orientation);
+                                y = margin.top;
+
+                                // Reset font for new page
+                                if (hasMarathi && window.NOTO_DEVANAGARI_BASE64) {
+                                    try {
+                                        doc.setFont("NotoSansDevanagari");
+                                    } catch (e) {
+                                        doc.setFont("helvetica");
+                                    }
+                                } else {
+                                    doc.setFont("helvetica");
+                                }
+                            }
+
+                            if (line.trim() !== "") {
+                                doc.text(line, margin.left, y);
+                            }
+                            y += lineHeight;
+                        });
+
+                        // Footer
+                        doc.setFontSize(10);
+                        doc.setFont("helvetica", "normal");
+                        const footerText = `Page ${index + 1} of ${bookData.pages.length}`;
+                        doc.text(
+                            footerText,
+                            pageWidth / 2,
+                            pageHeight - 10,
+                            { align: "center" }
+                        );
+
+                        // Reset to helvetica for next page
+                        doc.setFont("helvetica", "normal");
+                    });
+
+                    // Save PDF
+                    const fileName = `${bookData.title.replace(/[^\w\s]/gi, '_')}_${new Date().getTime()}.pdf`;
+                    doc.save(fileName);
+
+                    updateStatus('PDF successfully exported!');
+
+                } catch (error) {
+                    console.error('PDF export error:', error);
+                    alert('PDF export failed: ' + error.message);
+                    updateStatus('PDF export failed');
+                }
+            }, 100);
+        }
+
+        // Export book to different formats - FIXED VERSION
+        function exportBook(format) {
+            //saveCurrentPage();
+
+            switch (format) {
+                case 'pdf': // ⬅️ हा केस जोडा
+                    exportToPDF_REAL();
+                    break;
+
+                case 'docx':
+                    const htmlContent = `<!DOCTYPE html>
+<html>
+<head>
+    <title>${bookData.title}</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: ${bookData.settings.fontFamily}; font-size: ${bookData.settings.fontSize}pt; }
+        h1, h2, h3 { color: #333; }
+        .page-break { page-break-after: always; }
+    </style>
+</head>
+<body>
+    <h1>${bookData.title}</h1>
+    <h2>By ${bookData.author}</h2>
+    <hr>
+    ${bookData.pages.map(page => `
+        <div class="page">
+            <h3>${page.title}</h3>
+            ${page.content}
+            <div class="page-break"></div>
+        </div>
+    `).join('')}
+</body>
+</html>`;
+
+                    const blob = new Blob([htmlContent], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `${bookData.title.replace(/\s+/g, '_')}.docx`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                    updateStatus('DOCX file generated (HTML format)');
+                    break;
+
+                case 'epub':
+                    const epubContent = `<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0">
+    <metadata>
+        <dc:title>${bookData.title}</dc:title>
+        <dc:creator>${bookData.author}</dc:creator>
+        <dc:language>en</dc:language>
+        <meta property="dcterms:modified">${new Date().toISOString()}</meta>
+    </metadata>
+    <manifest>
+        <item id="toc" href="toc.xhtml" media-type="application/xhtml+xml"/>
+        ${bookData.pages.map((page, i) => `
+        <item id="page${i}" href="page${i}.xhtml" media-type="application/xhtml+xml"/>
+        `).join('')}
+    </manifest>
+    <spine>
+        ${bookData.pages.map((page, i) => `<itemref idref="page${i}"/>`).join('')}
+    </spine>
+</package>`;
+
+                    const epubBlob = new Blob([epubContent], { type: 'application/epub+zip' });
+                    const epubUrl = URL.createObjectURL(epubBlob);
+                    const epubA = document.createElement('a');
+                    epubA.href = epubUrl;
+                    epubA.download = `${bookData.title.replace(/\s+/g, '_')}.epub`;
+                    epubA.click();
+                    URL.revokeObjectURL(epubUrl);
+                    updateStatus('EPUB structure generated');
+                    break;
+
+                case 'html':
+                    let chaptersHtml = '';
+                    if (bookData.chapters.length > 0) {
+                        chaptersHtml = bookData.chapters.map(chapter => {
+                            const chapterPages = bookData.pages.filter(page => page.chapterId === chapter.id);
+                            const pagesHtml = chapterPages.map(page => `
+                        <div class="page">
+                            <h3>${page.title}</h3>
+                            <div>${page.content}</div>
+                        </div>
+                    `).join('');
+
+                            return `
+                        <div class="chapter">
+                            <h2>${chapter.title}</h2>
+                            ${pagesHtml}
+                        </div>
+                    `;
+                        }).join('');
+                    }
+
+                    const standalonePages = bookData.pages.filter(page => !page.chapterId);
+                    const standalonePagesHtml = standalonePages.map(page => `
+                <div class="page">
+                    <h3>${page.title}</h3>
+                    <div>${page.content}</div>
+                </div>
+            `).join('');
+
+                    const fullHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${bookData.title}</title>
+    <style>
+        body {
+            font-family: ${bookData.settings.fontFamily};
+            font-size: ${bookData.settings.fontSize}px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background: #fff;
+        }
+        h1 { color: #222; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 30px; }
+        .page { margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .chapter { background: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        footer { text-align: center; margin-top: 40px; color: #666; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>${bookData.title}</h1>
+        <p><em>By ${bookData.author}</em></p>
+        <hr>
+    </header>
+
+    <main>
+        ${chaptersHtml}
+        ${standalonePagesHtml}
+    </main>
+
+    <footer>
+        <p>Created with Book Editor Pro</p>
+        <p>${new Date().toLocaleDateString()}</p>
+    </footer>
+</body>
+</html>`;
+
+                    const htmlBlob = new Blob([fullHtml], { type: 'text/html' });
+                    const htmlUrl = URL.createObjectURL(htmlBlob);
+                    const htmlA = document.createElement('a');
+                    htmlA.href = htmlUrl;
+                    htmlA.download = `${bookData.title.replace(/\s+/g, '_')}.html`;
+                    htmlA.click();
+                    URL.revokeObjectURL(htmlUrl);
+                    updateStatus('HTML file exported');
+                    break;
+            }
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize book
+            initializeBook();
+
+            // Button events
+            newBookBtn.addEventListener('click', function () {
+                if (confirm('Create new book? Current unsaved changes will be lost.')) {
+                    initializeBook();
+                }
+            });
+
+            addPageBtn.addEventListener('click', addNewPage);
+            addChapterBtn.addEventListener('click', addNewChapter);
+            saveBookBtn.addEventListener('click', saveBook);
+            loadBookBtn.addEventListener('click', loadBook);
+            exportPdfBtn.addEventListener('click', () => exportBook('pdf'));
+
+
+            // Export option events
+            exportPdfOption.addEventListener('click', () => exportBook('pdf'));
+            exportDocxOption.addEventListener('click', () => exportBook('docx'));
+            exportEpubOption.addEventListener('click', () => exportBook('epub'));
+            exportHtmlOption.addEventListener('click', () => exportBook('html'));
+
+            // Format toolbar events
+            formatBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const command = this.dataset.command;
+                    const value = this.dataset.value;
+
+                    document.execCommand(command, false, value || null);
+
+                    // Update active state
+                    if (command === 'formatBlock') {
+                        formatBtns.forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+
+                    // Save changes
+                    saveCurrentPage();
+                    updateWordCount();
+                });
+            });
+
+            // Font family change
+            fontFamilySelect.addEventListener('change', function () {
+                document.execCommand('fontName', false, this.value);
+                bookData.settings.fontFamily = this.value;
+                saveCurrentPage();
+            });
+
+            // Font size change
+            fontSizeSelect.addEventListener('change', function () {
+                document.execCommand('fontSize', false, this.value);
+                bookData.settings.fontSize = this.value;
+                saveCurrentPage();
+            });
+
+            // Editor content change
+            editorContent.addEventListener('input', updateWordCount);
+
+            // Auto-save on blur
+            editorContent.addEventListener('blur', saveCurrentPage);
+
+            // Settings changes
+            bookTitleInput.addEventListener('input', updatePreview);
+            bookAuthorInput.addEventListener('input', updatePreview);
+
+            // Page size options
+            pageSizeOptions.forEach(option => {
+                option.addEventListener('click', function () {
+                    pageSizeOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    bookData.settings.pageSize = this.dataset.size;
+                    updateStatus(`Page size set to ${this.dataset.size}`);
+                });
+            });
+
+            // Orientation buttons
+            portraitBtn.addEventListener('click', function () {
+                portraitBtn.classList.add('active');
+                landscapeBtn.classList.remove('active');
+                bookData.settings.orientation = 'portrait';
+                updateStatus('Orientation set to portrait');
+            });
+
+            landscapeBtn.addEventListener('click', function () {
+                landscapeBtn.classList.add('active');
+                portraitBtn.classList.remove('active');
+                bookData.settings.orientation = 'landscape';
+                updateStatus('Orientation set to landscape');
+            });
+
+            // Margin inputs
+            [marginTopInput, marginBottomInput, marginLeftInput, marginRightInput].forEach(input => {
+                input.addEventListener('change', function () {
+                    const margin = this.id.replace('margin', '').toLowerCase();
+                    bookData.settings.margins[margin] = parseInt(this.value) || 20;
+                });
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function (e) {
+                // Save on Ctrl+S
+                if (e.ctrlKey && e.key === 's') {
+                    e.preventDefault();
+                    saveBook();
+                }
+
+                // Format shortcuts
+                if (e.ctrlKey) {
+                    switch (e.key) {
+                        case 'b':
+                            e.preventDefault();
+                            document.execCommand('bold');
+                            break;
+                        case 'i':
+                            e.preventDefault();
+                            document.execCommand('italic');
+                            break;
+                        case 'u':
+                            e.preventDefault();
+                            document.execCommand('underline');
+                            break;
+                    }
+                }
+            });
+
+            // Load from local storage on startup
+            try {
+                const saved = localStorage.getItem('bookEditor_projects');
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    if (data.currentBook && confirm('Load last saved book?')) {
+                        bookData = data.currentBook;
+                        currentPageIndex = bookData.pages.length > 0 ? 0 : -1;
+                        currentChapterIndex = bookData.chapters.length > 0 ? 0 : -1;
+
+                        bookTitleInput.value = bookData.title;
+                        bookAuthorInput.value = bookData.author;
+
+                        if (bookData.pages.length > 0) {
+                            editorContent.innerHTML = bookData.pages[0].content;
+                        }
+
+                        renderPagesList();
+                        renderChaptersList();
+                        updateWordCount();
+                        updatePreview();
+                        updateStatus('Last session restored');
+                    }
+                }
+            } catch (error) {
+                console.log('No previous session found or error loading:', error);
+            }
+        });
+
+        // Make functions globally available for onclick handlers
+        window.editPage = editPage;
+        window.deletePage = deletePage;
+        window.editChapter = editChapter;
+        window.deleteChapter = deleteChapter;
+        window.exportBook = exportBook;
+
+    </script>
+
+</body>
+
+</html>
