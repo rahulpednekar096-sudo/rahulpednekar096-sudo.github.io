@@ -21,7 +21,7 @@ body {
     linear-gradient(180deg,
       rgba(3, 23, 61, 0.92),
       rgba(2, 65, 138, 0.85)),
-    url("/assets/bg-blue-dots.png");
+    url("/assets/bg-blue-dots.jpg");
   /* तुझा image path */
 
   background-size: cover;
