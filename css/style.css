@@ -17,24 +17,21 @@
 }
 
 body {
-  background: linear-gradient(320deg,
-      rgb(1, 6, 15) 0%,
-      rgba(20, 94, 94, 0.95) 100%,
-      rgba(10, 34, 44, 0.03) 200%,
-      /* Blue glow */
-      rgba(143, 30, 10, 0.03) 200%
-      /* Purple glow */
-    );
+  background:
+    linear-gradient(180deg,
+      rgba(3, 23, 61, 0.92),
+      rgba(2, 65, 138, 0.85)),
+    url("/assets/bg-blue-dots.png");
+  /* तुझा image path */
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 
   color: var(--text);
   min-height: 100vh;
-  background-attachment: fixed;
   margin-top: 100px;
 }
-
-
-
-
 
 /* Header */
 header {
