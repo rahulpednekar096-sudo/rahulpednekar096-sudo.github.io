@@ -164,7 +164,7 @@
       </div>
     </div>
     <!-- SEO Content -->
-    <pre id="log">Ready.</pre>
+    <pre id="seo-log">Ready.</pre>
     <div id="warning" style="color:#ffb199; margin-top:8px"></div>
     <hr style="margin:32px 0">
 
@@ -251,7 +251,7 @@
     const autoFitCols = document.getElementById('autoFitCols'), repeatHeader = document.getElementById('repeatHeader');
     const scaleMode = document.getElementById('scaleMode'), headerText = document.getElementById('headerText'), footerText = document.getElementById('footerText');
 
-    const convertBtn = document.getElementById('convertBtn'), previewBtn = document.getElementById('previewBtn'), clearBtn = document.getElementById('clearBtn');
+    const convertBtn = document.getElementById('mergeBtn'), previewBtn = document.getElementById('previewBtn'), clearBtn = document.getElementById('clearBtn');
     const previewWrap = document.getElementById('previewWrap'), logEl = document.getElementById('log'), progressWrap = document.getElementById('progressWrap'), progressBar = document.getElementById('progressBar'), infoLabel = document.getElementById('infoLabel');
 
     let workbook = null;
@@ -288,23 +288,35 @@
       workbook = null; workbookRaw = null; sheets = []; sheetSelect.innerHTML = ''; sheetThumbs.innerHTML = ''; previewWrap.innerHTML = 'No preview yet.'; clearLog(); setProgress(-1); sheetDataCache = {}; infoLabel.textContent = '';
     });
 
-    async function handleFile(file) {
+    function handleFile(file) {
       if (!file) return;
+
       clearLog();
       log('Loading ' + file.name + ' ...');
       infoLabel.textContent = `${(file.size / 1024).toFixed(1)} KB`;
-      const arrayBuffer = await file.arrayBuffer();
-      workbookRaw = arrayBuffer;
-      try {
-        workbook = XLSX.read(arrayBuffer, { type: 'array', cellStyles: true }); // try to read styles
-        sheets = workbook.SheetNames.slice();
-        populateSheetList();
-        log('Workbook loaded — ' + sheets.length + ' sheets.');
-        await generateThumbs();
-      } catch (e) {
-        log('Error reading workbook: ' + (e.message || e));
+
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        try {
+          const arrayBuffer = e.target.result;
+          workbookRaw = arrayBuffer;
+          workbook = XLSX.read(arrayBuffer, { type: 'array', cellStyles: true });
+          sheets = workbook.SheetNames.slice();
+          populateSheetList();
+          log('Workbook loaded — ' + sheets.length + ' sheets.');
+          generateThumbs();
+        } catch (err) {
+          log('Error reading workbook: ' + err.message);
+          alert('Failed to read file.');
+        }
+      };
+
+      reader.onerror = () => {
         alert('Failed to read file.');
-      }
+      };
+
+      reader.readAsArrayBuffer(file);
     }
 
     function populateSheetList() {
