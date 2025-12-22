@@ -1,12 +1,28 @@
 :root {
-  --bg: #0b0e13;
+  --bg: #020617;
   --panel: #121722;
-  --muted: #a7b0c0;
-  --text: #e8eef9;
+  --text: #e6f1ff;
+  --muted: #9fb3c8;
   --brand: #22d3a6;
   --brand2: #0ea5e9;
-  --card: #131619;
-  --accent: #0aa37f;
+  --card: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --primary: #38bdf8;
+  /* sky blue */
+  --secondary: #22d3ee;
+  /* cyan */
+  --accent: #22d3a6;
+  /* greenish accent */
+
+  --fg-main: #e6f1ff;
+  --fg-muted: #9fb3c8;
+
+  --fg-primary: #38bdf8;
+  --fg-secondary: #22d3ee;
+  --fg-accent: #22d3a6;
+
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
 
 /* Reset + Basics */
