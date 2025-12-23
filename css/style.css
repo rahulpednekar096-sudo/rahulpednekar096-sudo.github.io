@@ -831,6 +831,7 @@ pre#log {
   text-decoration: none;
   font-size: 16px;
   transition: 0.2s;
+  padding: 10px;
 }
 
 .tool-item a:hover {
