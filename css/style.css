@@ -35,8 +35,8 @@
 body {
   background:
     linear-gradient(180deg,
-      rgba(3, 23, 61, 0.651),
-      rgba(2, 65, 138, 0.651)),
+      rgba(3, 23, 61, 0.630),
+      rgba(2, 65, 138, 0.630)),
     url("/assets/bg-blue-dots.jpg");
   /* तुझा image path */
 
@@ -46,7 +46,7 @@ body {
 
   color: var(--text);
   min-height: 100vh;
-  margin-top: 100px;
+  margin-top: 90px;
 }
 
 /* Header */
@@ -645,7 +645,7 @@ p.note {
 
 .drop {
   border: 2px dashed rgba(56, 189, 248, .35);
-  background: rgba(73, 4, 42, 0.932);
+  background: rgba(73, 4, 42, 0.720);
   padding: 18px;
   border-radius: 10px;
   text-align: center;
@@ -1114,7 +1114,7 @@ select {
   gap: 10px;
   overflow-x: auto;
   padding: 0 12px;
-  scrollbar-width: none;
+  scrollbar-width: 3px;
 }
 
 .tools-scroll::-webkit-scrollbar {
@@ -1123,9 +1123,9 @@ select {
 
 .tool-btn {
   white-space: nowrap;
-  padding: 8px 10px;
+  padding: 9px 6px;
   border-radius: 999px;
-  background: #004B87;
+  background: #3301a869;
   color: #e6e6e6;
   font-size: 12px;
   text-decoration: none;
