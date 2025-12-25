@@ -9,7 +9,6 @@
   <meta name="keywords"
     content="pdf to text, extract text from pdf, pdf text extractor, ocr pdf, scanned pdf to text, pdf conversion, pdf tools, rdroid apps">
 
-
   <link rel="stylesheet" href="../../css/style.css">
 
   <!-- pdf.js -->
@@ -61,7 +60,7 @@
       <button class="btn" id="clearBtn">Clear</button>
     </div>
 
-    <div class="progress" id="progressWrap">
+    <div class="progress" id="progressWrap" style="display:none;">
       <div class="bar" id="progressBar"></div>
     </div>
 
@@ -69,14 +68,43 @@
 
     <pre id="log" class="log">Ready.</pre>
 
-    <textarea id="output" placeholder="Extracted text will appear here..."></textarea>
+    <textarea id="output" placeholder="Extracted text will appear here..." style="display:none;"></textarea>
 
-    <div style="margin-top:10px;display:flex;gap:10px">
-      <button class="btn btn-primary" id="downloadBtn">Download .txt</button>
-      <button class="btn" id="copyBtn">Copy</button>
+    <!-- Download area (initially hidden) -->
+    <div id="downloadArea" style="margin-top:20px; display:none;">
+      <div style="background:#0a1a1a; padding:15px; border-radius:8px; border:1px solid #1a3a2e;">
+        <h3 style="margin-top:0; color:#0aa37f; font-size:18px; margin-bottom:15px;">Extraction Complete</h3>
+        <div style="background:#0a2a1e; color:#9fbfb0; padding:15px; border-radius:8px; margin-top:10px;">
+          <strong style="color:#0aa37f; display:block; margin-bottom:8px;">✓ Text Extracted Successfully!</strong>
+          <p>Your PDF text has been extracted. You can now download or copy the text.</p>
+          <div style="margin-top:15px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" id="downloadBtn">📥 Download .txt File</button>
+            <button class="btn" id="copyBtn" style="background:#2a4a3a; color:white;">📋 Copy to Clipboard</button>
+            <button class="btn" id="viewTextBtn" style="background:#3a5a4a; color:white;">👁️ View Extracted
+              Text</button>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Text preview modal (hidden by default) -->
+    <div id="textPreviewModal"
+      style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; padding:20px; overflow:auto;">
+      <div
+        style="background:#0a1a1a; max-width:800px; margin:40px auto; padding:20px; border-radius:8px; border:1px solid #1a3a2e;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+          <h3 style="margin:0; color:#0aa37f;">Extracted Text Preview</h3>
+          <button id="closePreviewBtn"
+            style="background:#ff4444; color:white; border:none; padding:8px 16px; border-radius:4px; cursor:pointer;">✕
+            Close</button>
+        </div>
+        <div style="background:#0a0a0a; padding:15px; border-radius:6px; max-height:400px; overflow:auto;">
+          <pre id="textPreview" style="color:#9fbfb0; white-space:pre-wrap; font-family:monospace; margin:0;"></pre>
+        </div>
+      </div>
+    </div>
+
     <!-- SEO Content -->
-    <pre id="log">Ready.</pre>
     <div id="warning" style="color:#ffb199; margin-top:8px"></div>
     <hr style="margin:32px 0">
 
@@ -119,9 +147,8 @@
         Our PDF to Text Converter is no exception, offering a reliable and efficient solution for all your text
         extraction needs. Experience the convenience of converting PDFs to text with just a few clicks!
       </p>
-
-
     </section>
+
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
 
@@ -130,6 +157,7 @@
       function toggleMenu() {
         document.getElementById("drawer").classList.toggle("open");
       }
+
       const pickBtn = document.getElementById("pickBtn");
       const fileInput = document.getElementById("fileInput");
       const dropArea = document.getElementById("dropArea");
@@ -140,29 +168,77 @@
       const progressWrap = document.getElementById("progressWrap");
       const progressBar = document.getElementById("progressBar");
       const enableOCR = document.getElementById("enableOCR");
+      const downloadArea = document.getElementById("downloadArea");
+      const textPreviewModal = document.getElementById("textPreviewModal");
+      const textPreview = document.getElementById("textPreview");
+      const closePreviewBtn = document.getElementById("closePreviewBtn");
+      const viewTextBtn = document.getElementById("viewTextBtn");
 
       let pdf = null;
+      let extractedText = "";
 
-      function log(msg) { logEl.textContent += "\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
-      function setProgress(v) { progressWrap.style.display = v >= 0 ? "block" : "none"; progressBar.style.width = (v * 100) + "%"; }
+      function log(msg) {
+        logEl.textContent += "\n" + msg;
+        logEl.scrollTop = logEl.scrollHeight;
+      }
+
+      function setProgress(v) {
+        if (v < 0) {
+          progressWrap.style.display = "none";
+        } else {
+          progressWrap.style.display = "block";
+          progressBar.style.width = (v * 100) + "%";
+        }
+      }
+
+      function showDownloadArea() {
+        downloadArea.style.display = "block";
+        // Scroll to download area
+        downloadArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      function hideDownloadArea() {
+        downloadArea.style.display = "none";
+      }
 
       pickBtn.onclick = () => fileInput.click();
       fileInput.onchange = e => loadPDF(e.target.files[0]);
 
-      dropArea.ondragover = e => { e.preventDefault(); dropArea.style.borderColor = "#0aa37f"; }
+      dropArea.ondragover = e => {
+        e.preventDefault();
+        dropArea.style.borderColor = "#0aa37f";
+      }
+
       dropArea.ondragleave = () => dropArea.style.borderColor = "#222";
+
       dropArea.ondrop = e => {
-        e.preventDefault(); dropArea.style.borderColor = "#222";
+        e.preventDefault();
+        dropArea.style.borderColor = "#222";
         loadPDF(e.dataTransfer.files[0]);
       };
 
       async function loadPDF(file) {
         if (!file) return;
         logEl.textContent = "Loading PDF...";
+        hideDownloadArea();
+        output.style.display = "none";
+
+        // Reset
+        pdf = null;
+        thumbs.innerHTML = "";
+        output.value = "";
+        extractedText = "";
+
         pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
-        pdf = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
-        log("PDF loaded, pages: " + pdf.numPages);
-        await loadThumbnails();
+
+        try {
+          pdf = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
+          log("PDF loaded successfully. Pages: " + pdf.numPages);
+          await loadThumbnails();
+        } catch (error) {
+          log("Error loading PDF: " + error.message);
+          alert("Failed to load PDF. Please try a different file.");
+        }
       }
 
       async function loadThumbnails() {
@@ -171,65 +247,144 @@
           const p = await pdf.getPage(i);
           const vp = p.getViewport({ scale: .2 });
           const c = document.createElement("canvas");
-          c.width = vp.width; c.height = vp.height;
+          c.width = vp.width;
+          c.height = vp.height;
           await p.render({ canvasContext: c.getContext("2d"), viewport: vp }).promise;
           const img = c.toDataURL();
           thumbs.innerHTML += `<div class="thumb">
-      <img src="${img}">
-      <label><input type="checkbox" class="pageSel" data-id="${i}" checked> Page ${i}</label>
-    </div>`;
+            <img src="${img}">
+            <label><input type="checkbox" class="pageSel" data-id="${i}" checked> Page ${i}</label>
+          </div>`;
         }
       }
 
       extractBtn.onclick = async () => {
-        if (!pdf) { alert("Load PDF first"); return; }
-        output.value = ""; logEl.textContent = "Extracting...";
-        const selected = [...document.querySelectorAll(".pageSel:checked")].map(x => parseInt(x.dataset.id));
-        if (!selected.length) { alert("Select at least one page"); return; }
+        if (!pdf) {
+          alert("Please load a PDF file first.");
+          return;
+        }
 
-        let finalText = "";
+        output.value = "";
+        logEl.textContent = "Starting extraction...";
+        setProgress(0);
+        hideDownloadArea();
+        output.style.display = "none";
+
+        const selected = [...document.querySelectorAll(".pageSel:checked")].map(x => parseInt(x.dataset.id));
+        if (!selected.length) {
+          alert("Please select at least one page to extract.");
+          setProgress(-1);
+          return;
+        }
+
+        extractedText = "";
+        log(`Extracting text from ${selected.length} pages...`);
 
         for (let pi = 0; pi < selected.length; pi++) {
           const pageNum = selected[pi];
           const page = await pdf.getPage(pageNum);
 
           if (enableOCR.checked) {
-            log("OCR page " + pageNum + "...");
+            log(`OCR processing page ${pageNum} (${pi + 1}/${selected.length})...`);
             const vp = page.getViewport({ scale: 2 });
             const c = document.createElement("canvas");
-            c.width = vp.width; c.height = vp.height;
+            c.width = vp.width;
+            c.height = vp.height;
             await page.render({ canvasContext: c.getContext("2d"), viewport: vp }).promise;
-            const ocr = await Tesseract.recognize(c, "eng");
-            finalText += `\n\n--- Page ${pageNum} ---\n` + ocr.data.text;
+
+            try {
+              const ocr = await Tesseract.recognize(c, "eng");
+              extractedText += `\n\n--- Page ${pageNum} ---\n` + ocr.data.text;
+              log(`✓ Page ${pageNum} OCR completed`);
+            } catch (ocrError) {
+              log(`✗ OCR failed for page ${pageNum}: ${ocrError.message}`);
+              // Fallback to regular text extraction
+              const content = await page.getTextContent();
+              const text = content.items.map(it => it.str).join(" ");
+              extractedText += `\n\n--- Page ${pageNum} ---\n` + text;
+            }
           } else {
-            log("Extracting text from page " + pageNum);
+            log(`Extracting text from page ${pageNum} (${pi + 1}/${selected.length})`);
             const content = await page.getTextContent();
             const text = content.items.map(it => it.str).join(" ");
-            finalText += `\n\n--- Page ${pageNum} ---\n` + text;
+            extractedText += `\n\n--- Page ${pageNum} ---\n` + text;
           }
+
           setProgress((pi + 1) / selected.length);
         }
 
-        output.value = finalText;
-        log("Done.");
+        output.value = extractedText;
+        log("✓ Text extraction completed!");
         setProgress(-1);
+
+        // Show download area
+        showDownloadArea();
       };
 
-      document.getElementById("copyBtn").onclick = () => {
-        navigator.clipboard.writeText(output.value);
-        alert("Copied!");
-      };
-
+      // Download button
       document.getElementById("downloadBtn").onclick = () => {
-        const blob = new Blob([output.value], { type: "text/plain" });
+        if (!extractedText.trim()) {
+          alert("No text to download. Please extract text first.");
+          return;
+        }
+
+        const blob = new Blob([extractedText], { type: "text/plain;charset=utf-8" });
         const a = document.createElement("a");
         a.href = URL.createObjectURL(blob);
-        a.download = "extracted.txt";
+        a.download = "extracted_text.txt";
+        document.body.appendChild(a);
         a.click();
+        document.body.removeChild(a);
+
+        log("✓ Text file downloaded");
       };
 
+      // Copy button
+      document.getElementById("copyBtn").onclick = () => {
+        if (!extractedText.trim()) {
+          alert("No text to copy. Please extract text first.");
+          return;
+        }
+
+        navigator.clipboard.writeText(extractedText).then(() => {
+          alert("✓ Text copied to clipboard!");
+          log("✓ Text copied to clipboard");
+        }).catch(err => {
+          alert("Failed to copy text. Please try again.");
+          console.error("Copy failed:", err);
+        });
+      };
+
+      // View text button
+      if (viewTextBtn) {
+        viewTextBtn.onclick = () => {
+          if (!extractedText.trim()) {
+            alert("No text to view. Please extract text first.");
+            return;
+          }
+
+          textPreview.textContent = extractedText;
+          textPreviewModal.style.display = "flex";
+        };
+      }
+
+      // Close preview button
+      if (closePreviewBtn) {
+        closePreviewBtn.onclick = () => {
+          textPreviewModal.style.display = "none";
+        };
+      }
+
+      // Clear button
       document.getElementById("clearBtn").onclick = () => {
-        pdf = null; thumbs.innerHTML = ""; output.value = ""; logEl.textContent = "Ready.";
+        pdf = null;
+        thumbs.innerHTML = "";
+        output.value = "";
+        logEl.textContent = "Ready.";
+        extractedText = "";
+        hideDownloadArea();
+        output.style.display = "none";
+        setProgress(-1);
       };
     </script>
 
