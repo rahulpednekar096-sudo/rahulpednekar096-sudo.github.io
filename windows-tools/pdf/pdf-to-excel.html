@@ -223,7 +223,9 @@
       clearLog(); log('Loading PDF: ' + file.name);
       pdfBytes = await file.arrayBuffer();
       try {
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+        if (!pdfjsLib.GlobalWorkerOptions.workerSrc) {
+          pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+        }
         pdfDoc = await pdfjsLib.getDocument({ data: pdfBytes }).promise;
         pageCount = pdfDoc.numPages;
         pageCountEl.textContent = pageCount;
@@ -602,13 +604,48 @@
           previewArea.appendChild(img);
         }
         // OCR
-        log('Running Tesseract OCR (this can take time)...');
+        log('Running Tesseract OCR (scanned PDF detected)...');
+        log('Note: OCR may take 30-60 seconds per page depending on image complexity.');
+
+        let ocrStartTime = Date.now();
+        let lastLoggedPercent = -1;
+
         const res = await Tesseract.recognize(canvas, 'eng', {
           logger: m => {
-            // progress updates: m.status, m.progress
-            if (m.status === 'recognizing text') setProgress(m.progress);
+            if (m.status === 'recognizing text') {
+              const progress = m.progress || 0;
+              setProgress(progress);
+
+              const percent = Math.round(progress * 100);
+
+              // फक्त नवीन टक्केवारी आली तर लॉग करा
+              if (percent !== lastLoggedPercent) {
+                const elapsedSeconds = Math.round((Date.now() - ocrStartTime) / 1000);
+
+                if (percent === 0) {
+                  log('Starting text recognition...');
+                } else if (percent === 100) {
+                  log('OCR completed successfully!');
+                } else {
+                  // प्रत्येक 25% वर किंवा प्रत्येक 5 सेकंदांनी लॉग
+                  if (percent % 25 === 0 || elapsedSeconds % 5 === 0) {
+                    log(`OCR: ${percent}% complete (${elapsedSeconds}s elapsed)`);
+                  }
+                }
+
+                lastLoggedPercent = percent;
+              }
+            }
+
+            // इतर status messages देखील लॉग करा
+            if (m.status && m.status !== 'recognizing text') {
+              log(`OCR: ${m.status}`);
+            }
           }
         });
+
+        const ocrTime = ((Date.now() - ocrStartTime) / 1000).toFixed(1);
+        log(`OCR finished in ${ocrTime} seconds. Found ${res.data.words?.length || 0} text segments.`);
         setProgress(-1);
         const words = res.data.words || [];
         const items = words.map(w => ({ str: w.text.trim(), x: w.bbox.x0, y: w.bbox.y0, w: w.bbox.x1 - w.bbox.x0, h: w.bbox.y1 - w.bbox.y0 }));
