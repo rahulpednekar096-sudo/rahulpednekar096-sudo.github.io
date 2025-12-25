@@ -97,6 +97,8 @@
       </div>
 
     </div>
+    <!-- Download -->
+    <div id="downloadArea" style="margin-top:14px;"></div>
 
     <div style="margin-top:14px; display:flex; gap:10px;">
       <button class="btn btn-primary" id="convertBtn">Convert PDF to JPG</button>
@@ -117,11 +119,8 @@
     <!-- Logs -->
     <pre class="log" id="log">Ready.</pre>
 
-    <!-- Download -->
-    <div id="downloadArea" style="margin-top:14px;"></div>
 
     <!-- SEO Content -->
-    <pre id="log">Ready.</pre>
     <div id="warning" style="color:#ffb199; margin-top:8px"></div>
     <hr style="margin:32px 0">
 
@@ -177,6 +176,12 @@
       function toggleMenu() {
         document.getElementById("drawer").classList.toggle("open");
       }
+
+      // PDF.js worker सेट करा
+      if (typeof pdfjsLib !== 'undefined') {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+      }
+
       const fileInput = document.getElementById("fileInput");
       const pickBtn = document.getElementById("pickBtn");
       const dropArea = document.getElementById("dropArea");
@@ -207,7 +212,7 @@
 
       /* LOG */
       function log(msg) {
-        logEl.textContent += "\\n" + msg;
+        logEl.textContent += "\n" + msg;
         logEl.scrollTop = logEl.scrollHeight;
       }
       function clearLog() {
@@ -243,16 +248,32 @@
         clearLog();
         log("Loading PDF: " + file.name);
 
-        const buffer = await file.arrayBuffer();
+        try {
+          const buffer = await file.arrayBuffer();
 
-        pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
-        log("Pages: " + pdf.numPages);
+          // Ensure worker is loaded
+          if (!pdfjsLib.GlobalWorkerOptions.workerSrc) {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+          }
 
-        await loadThumbnails();
+          pdf = await pdfjsLib.getDocument({
+            data: buffer,
+            maxImageSize: 1024 * 1024 // Reduce memory usage
+          }).promise;
+
+          log("PDF loaded successfully: " + pdf.numPages + " pages");
+
+          await loadThumbnails();
+        } catch (error) {
+          log("Error loading PDF: " + error.message);
+          alert("Failed to load PDF. Please try a different file.");
+        }
       }
 
       /* LOAD THUMBNAILS */
       async function loadThumbnails() {
+        if (!pdf) return;
+
         pages = [];
         thumbs.innerHTML = "";
         downloadArea.innerHTML = "";
@@ -261,25 +282,29 @@
         for (let i = 1; i <= pdf.numPages; i++) {
           log("Rendering thumbnail " + i + "/" + pdf.numPages);
 
-          const page = await pdf.getPage(i);
-          const viewport = page.getViewport({ scale: 0.2 });
-          const canvas = document.createElement("canvas");
-          canvas.width = viewport.width;
-          canvas.height = viewport.height;
-          const ctx = canvas.getContext("2d");
+          try {
+            const page = await pdf.getPage(i);
+            const viewport = page.getViewport({ scale: 0.2 });
+            const canvas = document.createElement("canvas");
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            const ctx = canvas.getContext("2d");
 
-          await page.render({ canvasContext: ctx, viewport }).promise;
-          const dataURL = canvas.toDataURL("image/jpeg", 0.6);
+            await page.render({ canvasContext: ctx, viewport }).promise;
+            const dataURL = canvas.toDataURL("image/jpeg", 0.6);
 
-          pages.push({
-            id: i,
-            thumb: dataURL,
-            rotate: 0,
-            selected: true
-          });
+            pages.push({
+              id: i,
+              thumb: dataURL,
+              rotate: 0,
+              selected: true
+            });
 
-          renderThumbnails();
-          await briefYield(20);
+            renderThumbnails();
+            await briefYield(20);
+          } catch (error) {
+            log("Error loading page " + i + ": " + error.message);
+          }
         }
 
         pageInfo.textContent = pages.length + " pages";
@@ -294,20 +319,20 @@
           div.className = "thumb";
 
           div.innerHTML = `
-        <img src="${pg.thumb}" style="transform:rotate(${pg.rotate}deg)">
-        <div class="meta">Page ${pg.id}</div>
+            <img src="${pg.thumb}" style="transform:rotate(${pg.rotate}deg)">
+            <div class="meta">Page ${pg.id}</div>
 
-        <div class="sel">
-          <label><input type="checkbox" ${pg.selected ? "checked" : ""} data-index="${index}" class="selBox"> Select</label>
-        </div>
+            <div class="sel">
+              <label><input type="checkbox" ${pg.selected ? "checked" : ""} data-index="${index}" class="selBox"> Select</label>
+            </div>
 
-        <div class="actions">
-          <button class="btn" data-act="up" data-index="${index}">↑</button>
-          <button class="btn" data-act="down" data-index="${index}">↓</button>
-          <button class="btn" data-act="rotate" data-index="${index}">⟳</button>
-          <button class="btn btn-danger" data-act="remove" data-index="${index}">✕</button>
-        </div>
-      `;
+            <div class="actions">
+              <button class="btn" data-act="up" data-index="${index}">↑</button>
+              <button class="btn" data-act="down" data-index="${index}">↓</button>
+              <button class="btn" data-act="rotate" data-index="${index}">⟳</button>
+              <button class="btn btn-danger" data-act="remove" data-index="${index}">✕</button>
+            </div>
+          `;
 
           thumbs.appendChild(div);
         });
@@ -385,7 +410,7 @@
         progressBar.style.width = (p * 100).toFixed(1) + "%";
       }
 
-      /* CONVERT TO JPG */
+      /* CONVERT TO JPG - FIXED */
       convertBtn.addEventListener("click", async () => {
         if (!pdf || pages.length === 0) {
           alert("Please load a PDF first.");
@@ -403,93 +428,281 @@
         const scale = scaleMode.value;
 
         log("Starting export...");
+        log(`Converting ${selectedPages.length} pages to JPG...`);
 
         convertBtn.disabled = true;
+        convertBtn.textContent = "Processing...";
         setProgress(0);
-        downloadArea.innerHTML = "";
 
-        /* ZIP */
-        const zip = new JSZip();
+        // Clear download area
+        downloadArea.innerHTML = "<h3 style='margin-top:0; color:#0aa37f;'>Download Links:</h3>";
 
-        for (let i = 0; i < selectedPages.length; i++) {
-          const pg = selectedPages[i];
-          log("Rendering page " + pg.id);
+        // Create container for individual download buttons
+        const individualDownloadsDiv = document.createElement('div');
+        individualDownloadsDiv.id = 'individualDownloads';
+        individualDownloadsDiv.style.marginTop = '10px';
+        individualDownloadsDiv.style.padding = '10px';
+        individualDownloadsDiv.style.backgroundColor = '#f5f5f5';
+        individualDownloadsDiv.style.borderRadius = '8px';
+        individualDownloadsDiv.style.display = downloadType.value === 'files' ? 'block' : 'none';
 
-          const page = await pdf.getPage(pg.id);
+        // Create container for zip download
+        const zipDownloadDiv = document.createElement('div');
+        zipDownloadDiv.id = 'zipDownload';
+        zipDownloadDiv.style.marginTop = '10px';
+        zipDownloadDiv.style.padding = '10px';
+        zipDownloadDiv.style.backgroundColor = '#0a2a1e';
+        zipDownloadDiv.style.borderRadius = '8px';
+        zipDownloadDiv.style.color = 'white';
+        zipDownloadDiv.style.display = downloadType.value === 'zip' ? 'block' : 'none';
 
-          // DPI calculation
-          const viewport = page.getViewport({ scale: dpi / 72 });
+        downloadArea.appendChild(individualDownloadsDiv);
+        downloadArea.appendChild(zipDownloadDiv);
 
-          // Canvas
-          const canvas = document.createElement("canvas");
-          canvas.width = viewport.width;
-          canvas.height = viewport.height;
-          const ctx = canvas.getContext("2d");
+        try {
+          /* ZIP */
+          const zip = new JSZip();
+          let zipBlob = null;
 
-          await page.render({ canvasContext: ctx, viewport }).promise;
+          for (let i = 0; i < selectedPages.length; i++) {
+            const pg = selectedPages[i];
+            log(`Converting page ${pg.id} (${i + 1}/${selectedPages.length})`);
 
-          // Rotate if needed
-          if (pg.rotate) {
-            const c2 = document.createElement("canvas");
-            const r = pg.rotate * Math.PI / 180;
-            const swap = pg.rotate === 90 || pg.rotate === 270;
-            c2.width = swap ? canvas.height : canvas.width;
-            c2.height = swap ? canvas.width : canvas.height;
+            const page = await pdf.getPage(pg.id);
 
-            const ctx2 = c2.getContext("2d");
-            ctx2.translate(c2.width / 2, c2.height / 2);
-            ctx2.rotate(r);
-            ctx2.drawImage(canvas, -canvas.width / 2, -canvas.height / 2);
-            canvas.width = c2.width;
-            canvas.height = c2.height;
-            ctx.drawImage(c2, 0, 0);
-          }
+            // DPI calculation
+            const viewport = page.getViewport({ scale: dpi / 72 });
 
-          // Scaling (custom)
-          if (scale === "custom") {
-            const W = parseInt(cw.value);
-            const H = parseInt(ch.value);
-            if (W > 0 && H > 0) {
-              const c3 = document.createElement("canvas");
-              c3.width = W;
-              c3.height = H;
-              const ctx3 = c3.getContext("2d");
-              ctx3.drawImage(canvas, 0, 0, W, H);
-              canvas.width = W;
-              canvas.height = H;
-              ctx.drawImage(c3, 0, 0);
+            // Canvas
+            const canvas = document.createElement("canvas");
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            const ctx = canvas.getContext("2d");
+
+            await page.render({ canvasContext: ctx, viewport }).promise;
+
+            // Rotate if needed
+            if (pg.rotate) {
+              const c2 = document.createElement("canvas");
+              const r = pg.rotate * Math.PI / 180;
+              const swap = pg.rotate === 90 || pg.rotate === 270;
+              c2.width = swap ? canvas.height : canvas.width;
+              c2.height = swap ? canvas.width : canvas.height;
+
+              const ctx2 = c2.getContext("2d");
+              ctx2.translate(c2.width / 2, c2.height / 2);
+              ctx2.rotate(r);
+              ctx2.drawImage(canvas, -canvas.width / 2, -canvas.height / 2);
+              canvas.width = c2.width;
+              canvas.height = c2.height;
+              ctx.drawImage(c2, 0, 0);
             }
-          }
 
-          const dataURL = canvas.toDataURL("image/jpeg", quality);
-          const blob = dataURLToBlob(dataURL);
-          const fname = `page_${pg.id}.jpg`;
+            // Scaling (custom)
+            if (scale === "custom") {
+              const W = parseInt(cw.value);
+              const H = parseInt(ch.value);
+              if (W > 0 && H > 0) {
+                const c3 = document.createElement("canvas");
+                c3.width = W;
+                c3.height = H;
+                const ctx3 = c3.getContext("2d");
+                ctx3.drawImage(canvas, 0, 0, W, H);
+                canvas.width = W;
+                canvas.height = H;
+                ctx.drawImage(c3, 0, 0);
+              }
+            }
+
+            const dataURL = canvas.toDataURL("image/jpeg", quality);
+            const blob = dataURLToBlob(dataURL);
+            const fname = `${outName.value || 'page'}_${pg.id}.jpg`;
+
+            // Create individual download link
+            if (downloadType.value === "files") {
+              const downloadRow = document.createElement('div');
+              downloadRow.style.display = 'flex';
+              downloadRow.style.alignItems = 'center';
+              downloadRow.style.justifyContent = 'space-between';
+              downloadRow.style.marginBottom = '8px';
+              downloadRow.style.padding = '8px';
+              downloadRow.style.backgroundColor = 'white';
+              downloadRow.style.borderRadius = '4px';
+              downloadRow.style.border = '1px solid #ddd';
+
+              const fileNameSpan = document.createElement('span');
+              fileNameSpan.textContent = fname;
+              fileNameSpan.style.fontFamily = 'monospace';
+              fileNameSpan.style.fontSize = '14px';
+
+              const downloadBtn = document.createElement('a');
+              downloadBtn.href = dataURL;
+              downloadBtn.download = fname;
+              downloadBtn.textContent = '📥 Download';
+              downloadBtn.className = 'btn';
+              downloadBtn.style.padding = '4px 12px';
+              downloadBtn.style.fontSize = '13px';
+
+              const previewBtn = document.createElement('a');
+              previewBtn.href = dataURL;
+              previewBtn.target = '_blank';
+              previewBtn.textContent = '👁️ Preview';
+              previewBtn.className = 'btn';
+              previewBtn.style.marginLeft = '8px';
+              previewBtn.style.padding = '4px 12px';
+              previewBtn.style.fontSize = '13px';
+              previewBtn.style.backgroundColor = '#2a3a4a';
+              previewBtn.style.color = 'white';
+
+              downloadRow.appendChild(fileNameSpan);
+              const btnContainer = document.createElement('div');
+              btnContainer.appendChild(downloadBtn);
+              btnContainer.appendChild(previewBtn);
+              downloadRow.appendChild(btnContainer);
+
+              individualDownloadsDiv.appendChild(downloadRow);
+            } else {
+              // Add to ZIP
+              zip.file(fname, blob);
+            }
+
+            setProgress((i + 1) / selectedPages.length);
+            await briefYield(40);
+          }
 
           if (downloadType.value === "zip") {
-            zip.file(fname, blob);
-          } else {
-            // individual file link
-            const a = document.createElement("a");
-            a.href = dataURL;
-            a.download = fname;
-            a.textContent = "Download " + fname;
-            a.className = "btn";
-            a.style.display = "block";
-            downloadArea.appendChild(a);
+            log("Creating ZIP file...");
+            zipBlob = await zip.generateAsync({ type: "blob" });
+
+            // Create ZIP download link
+            const zipFileName = (outName.value || "pdf_pages") + ".zip";
+            const zipFileSize = (zipBlob.size / (1024 * 1024)).toFixed(2);
+
+            const zipInfo = document.createElement('p');
+            zipInfo.innerHTML = `📦 <strong>${zipFileName}</strong><br>
+                          <small>${selectedPages.length} images | ${zipFileSize} MB</small>`;
+            zipInfo.style.marginBottom = '15px';
+            zipInfo.style.color = '#9fbfb0';
+
+            const zipDownloadBtn = document.createElement('a');
+            zipDownloadBtn.href = URL.createObjectURL(zipBlob);
+            zipDownloadBtn.download = zipFileName;
+            zipDownloadBtn.textContent = '📥 Download ZIP File';
+            zipDownloadBtn.className = 'btn btn-primary';
+            zipDownloadBtn.style.display = 'inline-block';
+            zipDownloadBtn.style.padding = '10px 20px';
+            zipDownloadBtn.style.fontSize = '14px';
+            zipDownloadBtn.style.marginRight = '10px';
+
+            const previewAllBtn = document.createElement('button');
+            previewAllBtn.textContent = '👁️ Preview All Images';
+            previewAllBtn.className = 'btn';
+            previewAllBtn.style.padding = '10px 20px';
+            previewAllBtn.style.fontSize = '14px';
+            previewAllBtn.style.backgroundColor = '#2a3a4a';
+            previewAllBtn.style.color = 'white';
+            previewAllBtn.style.border = 'none';
+            previewAllBtn.style.borderRadius = '4px';
+            previewAllBtn.style.cursor = 'pointer';
+
+            previewAllBtn.onclick = function () {
+              // Create a modal to preview all images
+              const modal = document.createElement('div');
+              modal.style.position = 'fixed';
+              modal.style.top = '0';
+              modal.style.left = '0';
+              modal.style.width = '100%';
+              modal.style.height = '100%';
+              modal.style.backgroundColor = 'rgba(0,0,0,0.8)';
+              modal.style.zIndex = '9999';
+              modal.style.display = 'flex';
+              modal.style.flexDirection = 'column';
+              modal.style.alignItems = 'center';
+              modal.style.justifyContent = 'center';
+
+              const closeBtn = document.createElement('button');
+              closeBtn.textContent = '✕ Close';
+              closeBtn.style.position = 'absolute';
+              closeBtn.style.top = '20px';
+              closeBtn.style.right = '20px';
+              closeBtn.style.padding = '10px 20px';
+              closeBtn.style.backgroundColor = '#ff4444';
+              closeBtn.style.color = 'white';
+              closeBtn.style.border = 'none';
+              closeBtn.style.borderRadius = '4px';
+              closeBtn.style.cursor = 'pointer';
+              closeBtn.style.zIndex = '10000';
+
+              const imageContainer = document.createElement('div');
+              imageContainer.style.maxWidth = '90%';
+              imageContainer.style.maxHeight = '80%';
+              imageContainer.style.overflow = 'auto';
+              imageContainer.style.display = 'flex';
+              imageContainer.style.flexWrap = 'wrap';
+              imageContainer.style.justifyContent = 'center';
+              imageContainer.style.gap = '10px';
+              imageContainer.style.padding = '20px';
+
+              // Extract images from ZIP for preview
+              zip.forEach(async (relativePath, zipEntry) => {
+                const blob = await zipEntry.async('blob');
+                const url = URL.createObjectURL(blob);
+
+                const imgDiv = document.createElement('div');
+                imgDiv.style.width = '200px';
+                imgDiv.style.textAlign = 'center';
+
+                const img = document.createElement('img');
+                img.src = url;
+                img.style.maxWidth = '100%';
+                img.style.maxHeight = '150px';
+                img.style.border = '2px solid #0aa37f';
+                img.style.borderRadius = '4px';
+
+                const imgLabel = document.createElement('div');
+                imgLabel.textContent = relativePath;
+                imgLabel.style.fontSize = '12px';
+                imgLabel.style.color = 'white';
+                imgLabel.style.marginTop = '5px';
+                imgLabel.style.wordBreak = 'break-all';
+
+                imgDiv.appendChild(img);
+                imgDiv.appendChild(imgLabel);
+                imageContainer.appendChild(imgDiv);
+              });
+
+              closeBtn.onclick = function () {
+                document.body.removeChild(modal);
+              };
+
+              modal.appendChild(closeBtn);
+              modal.appendChild(imageContainer);
+              document.body.appendChild(modal);
+            };
+
+            zipDownloadDiv.appendChild(zipInfo);
+            zipDownloadDiv.appendChild(zipDownloadBtn);
+            zipDownloadDiv.appendChild(previewAllBtn);
+
+            // Auto-download ZIP if user prefers
+            const autoDownload = confirm(`ZIP file created (${zipFileSize} MB). Click OK to download automatically.`);
+            if (autoDownload) {
+              saveAs(zipBlob, zipFileName);
+            }
+
+            log("ZIP file created successfully!");
           }
 
-          setProgress((i + 1) / selectedPages.length);
-          await briefYield(40);
-        }
+          log(`Conversion complete! ${selectedPages.length} pages converted.`);
 
-        if (downloadType.value === "zip") {
-          const blob = await zip.generateAsync({ type: "blob" });
-          saveAs(blob, (outName.value || "pdf_pages") + ".zip");
+        } catch (error) {
+          log("Error during conversion: " + error.message);
+          alert("Conversion failed. Please try again.");
+        } finally {
+          convertBtn.disabled = false;
+          convertBtn.textContent = "Convert PDF to JPG";
+          setProgress(-1);
         }
-
-        log("Done.");
-        convertBtn.disabled = false;
-        setProgress(-1);
       });
 
       /* UTILITIES */
@@ -505,6 +718,39 @@
 
       function briefYield(ms = 10) {
         return new Promise(r => setTimeout(r, ms));
+      }
+
+      /* DOWNLOAD TYPE CHANGE - Update UI when download type changes */
+      downloadType.addEventListener("change", function () {
+        const isZip = this.value === "zip";
+
+        // Update UI based on selection
+        const individualDownloads = document.getElementById('individualDownloads');
+        const zipDownload = document.getElementById('zipDownload');
+
+        if (individualDownloads) {
+          individualDownloads.style.display = isZip ? 'none' : 'block';
+        }
+        if (zipDownload) {
+          zipDownload.style.display = isZip ? 'block' : 'none';
+        }
+
+        // Update output name placeholder
+        outName.placeholder = isZip ? "pdf_images" : "page";
+
+        // Update output name value suggestion
+        const currentValue = outName.value.trim();
+        if (!currentValue || currentValue === "pdf_pages" || currentValue === "page" || currentValue === "pdf_images") {
+          outName.value = isZip ? "pdf_images" : "page";
+        }
+      });
+
+      /* INITIAL SETUP - Set initial placeholder */
+      // Set initial placeholder based on current selection
+      const isInitiallyZip = downloadType.value === "zip";
+      outName.placeholder = isInitiallyZip ? "pdf_images" : "page";
+      if (!outName.value.trim() || outName.value === "pdf_pages") {
+        outName.value = isInitiallyZip ? "pdf_images" : "page";
       }
     </script>
 
