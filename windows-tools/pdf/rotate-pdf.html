@@ -78,19 +78,25 @@
         <label>Output filename</label>
         <input type="text" id="outName" value="rotated.pdf"
           style="width:100%;padding:8px;background:#090b0c;border:1px solid #222;color:#e6eef0;border-radius:6px">
-        <div style="margin-top:8px"><button class="btn" id="downloadBtn" disabled>Download (after apply)</button></div>
+        <div style="margin-top:8px"><button class="btn btn-primary" id="downloadBtn" style="display:none">Your Download
+            is Ready</button></div>
       </div>
     </div>
 
-    <div class="progress" id="progressWrap">
+    <div class="progress" id="progressWrap" style="display:none">
       <div class="bar" id="progressBar"></div>
     </div>
+    <div id="processingStatus" style="display:none; text-align:center; margin:10px 0; color:#0aa37f; font-weight:bold;">
+      Processing... Please wait
+    </div>
+    <div id="successStatus" style="display:none; text-align:center; margin:10px 0; color:#0aa37f; font-weight:bold;">
+      ✓ Apply successful! PDF is ready for download.
+    </div>
     <pre class="log" id="log">Ready.</pre>
-    <!-- SEO Content -->
-    <pre id="log">Ready.</pre>
     <div id="warning" style="color:#ffb199; margin-top:8px"></div>
     <hr style="margin:32px 0">
 
+    <!-- SEO Content -->
     <section class="seo-content">
       <h2>Rotate PDF Converter — RDroidApps Pro</h2>
 
@@ -134,16 +140,59 @@
   <script>
     // Drawer toggle
     function toggleMenu() {
-      document.getElementById("drawer").classList.toggle("open");
+      // Menu drawer id depends on the content loaded from menu-drawer.html
+      // Let's check for common drawer ids
+      const drawer = document.getElementById("menu-drawer") ||
+        document.querySelector('[id*="drawer"]') ||
+        document.querySelector('.drawer, [class*="drawer"]');
+      if (drawer) {
+        drawer.classList.toggle("open");
+      }
     }
+
     const pickBtn = document.getElementById('pickBtn'), fileInput = document.getElementById('fileInput'), dropArea = document.getElementById('dropArea');
     const thumbsWrap = document.getElementById('thumbsWrap'), applyBtn = document.getElementById('applyBtn'), angleSel = document.getElementById('angle');
     const actionSel = document.getElementById('action'), logEl = document.getElementById('log'), progressWrap = document.getElementById('progressWrap'), progressBar = document.getElementById('progressBar');
     const downloadBtn = document.getElementById('downloadBtn'), outName = document.getElementById('outName');
-    let srcBytes = null, pdfDocJS = null, pageCount = 0, perPageRotation = []; // rotation degrees 0/90/180/270
+    const processingStatus = document.getElementById('processingStatus');
+    const successStatus = document.getElementById('successStatus');
 
-    function log(msg) { logEl.textContent += '\\n' + msg; logEl.scrollTop = logEl.scrollHeight; }
-    function setProgress(p) { progressWrap.style.display = p >= 0 ? 'block' : 'none'; progressBar.style.width = ((p || 0) * 100).toFixed(1) + '%'; }
+    let srcBytes = null, pdfDocJS = null, pageCount = 0, perPageRotation = []; // rotation degrees 0/90/180/270
+    let processedBlob = null;
+
+    function log(msg) { logEl.textContent += '\n' + msg; logEl.scrollTop = logEl.scrollHeight; }
+
+    function setProgress(p) {
+      if (p >= 0) {
+        progressWrap.style.display = 'block';
+        progressBar.style.width = ((p || 0) * 100).toFixed(1) + '%';
+      } else {
+        progressWrap.style.display = 'none';
+      }
+    }
+
+    function showProcessing() {
+      processingStatus.style.display = 'block';
+      successStatus.style.display = 'none';
+      setProgress(0.1);
+    }
+
+    function showSuccess() {
+      processingStatus.style.display = 'none';
+      successStatus.style.display = 'block';
+      setProgress(-1);
+    }
+
+    function hideAllStatus() {
+      processingStatus.style.display = 'none';
+      successStatus.style.display = 'none';
+      setProgress(-1);
+    }
+
+    // Initially hide download button and status
+    downloadBtn.style.display = 'none';
+    downloadBtn.disabled = true;
+    hideAllStatus();
 
     pickBtn.addEventListener('click', () => fileInput.click());
     fileInput.addEventListener('change', e => loadFile(e.target.files[0]));
@@ -156,7 +205,11 @@
       if (!file) return;
       if (file.type !== 'application/pdf') { alert('Select a PDF'); return; }
       log('Loading ' + file.name);
+      hideAllStatus();
       srcBytes = await file.arrayBuffer();
+      // Set output filename based on input
+      outName.value = file.name.replace(/\.pdf$/i, '_rotated.pdf');
+
       // load pdf.js to render thumbnails
       pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
       pdfDocJS = await pdfjsLib.getDocument({ data: srcBytes }).promise;
@@ -164,6 +217,10 @@
       perPageRotation = new Array(pageCount).fill(0);
       renderThumbs();
       log('Loaded pages: ' + pageCount);
+
+      // Hide download button when new file is loaded (until apply is clicked)
+      downloadBtn.style.display = 'none';
+      downloadBtn.disabled = true;
     }
 
     async function renderThumbs() {
@@ -194,12 +251,18 @@
       if (!srcBytes) { alert('Load a PDF first'); return; }
       const chosenAngle = parseInt(angleSel.value);
       const doAll = actionSel.value === 'rotateAll';
-      setProgress(0);
+
+      // Show processing status
+      showProcessing();
       log('Applying rotation...');
+      setProgress(0.3);
 
       try {
         const pdfLibDoc = await PDFLib.PDFDocument.load(srcBytes);
         const pages = pdfLibDoc.getPages();
+
+        setProgress(0.5);
+
         if (doAll) {
           for (let i = 0; i < pages.length; i++) {
             const page = pages[i];
@@ -219,15 +282,23 @@
           }
         }
 
+        setProgress(0.8);
         const outBytes = await pdfLibDoc.save();
-        const blob = new Blob([outBytes], { type: 'application/pdf' });
+        processedBlob = new Blob([outBytes], { type: 'application/pdf' });
+
+        // Show success status and download button
+        showSuccess();
+
+        // Show and enable download button after apply
+        downloadBtn.style.display = 'block';
         downloadBtn.disabled = false;
-        downloadBtn.onclick = () => saveAs(blob, outName.value || 'rotated.pdf');
+        downloadBtn.onclick = () => saveAs(processedBlob, outName.value || 'rotated.pdf');
         log('Rotation applied. Click Download to save.');
       } catch (e) {
+        hideAllStatus();
         log('Rotation failed: ' + (e.message || e));
         alert('Rotation failed: ' + (e.message || e));
-      } finally { setProgress(-1); }
+      }
     });
   </script>
 
