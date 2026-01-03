@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="View EXIF metadata embedded in JPG/HEIC (where supported). Drag & drop supported.">
+    <meta name="keywords"
+        content="Image Metadata Viewer, EXIF Viewer, JPG Metadata, HEIC Metadata, Photo Metadata, EXIF Data, Image Information, RDroid Apps">
     <title>Image Metadata Viewer — RDroid Apps</title>
     <link rel="stylesheet" href="../../css/style.css">
     <!-- exif-js for EXIF reading -->
@@ -37,8 +41,10 @@
             <h1>Image Metadata Viewer</h1>
             <p class="note">View EXIF metadata embedded in JPG/HEIC (where supported). Drag & drop supported.</p>
 
-            <label class="drop" id="dropArea">Drop image or <button class="btn btn-ghost" id="pickBtn">Choose
-                    file</button></label>
+            <label class="drop" id="dropArea"
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
+                <button class="btn btn-ghost" id="pickBtn">Choose file</button>
+            </label>
             <input type="file" id="fileInput" accept="image/*" />
 
             <div style="margin-top:12px;" id="preview"></div>
@@ -47,6 +53,53 @@
             </div>
 
             <pre id="metaOut">No metadata loaded.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+
+            <section class="seo-content">
+                <h2>Image Metadata Viewer Tool</h2>
+                <p>The Image Metadata Viewer is a powerful online tool that allows users to easily view and analyze
+                    metadata embedded within image files, particularly focusing on EXIF data commonly found in JPG and
+                    HEIC formats. This tool is designed for photographers, digital artists, and anyone interested in
+                    understanding the technical details of their images.</p>
+
+                <h3>Key Features</h3>
+                <ul>
+                    <li><strong>Drag & Drop Support:</strong> Users can simply drag and drop their image files into the
+                        designated area for quick access.</li>
+                    <li><strong>Wide Format Compatibility:</strong> Supports popular image formats such as JPG and HEIC,
+                        ensuring versatility for various user needs.</li>
+                    <li><strong>Detailed EXIF Data Display:</strong> Extracts and displays comprehensive EXIF metadata,
+                        including camera settings, date taken, GPS coordinates, and more.</li>
+                    <li><strong>User-Friendly Interface:</strong> The intuitive design makes it easy for users of all
+                        skill levels to navigate and utilize the tool effectively.</li>
+                </ul>
+
+                <h3>How to Use the Tool</h3>
+                <p>To use the Image Metadata Viewer, simply follow these steps:</p>
+                <ol>
+                    <li>Click on the "Choose file" button or drag and drop your image into the specified area.</li>
+                    <li>The tool will automatically process the image and extract the metadata.</li>
+                    <li>View the displayed EXIF data in a structured format for easy analysis.</li>
+                    <li>If needed, use the "Reset" button to clear the current data and upload a new image.</li>
+                </ol>
+
+                <h3>Benefits of Using Image Metadata Viewer</h3>
+                <p>This tool provides several benefits, including:</p>
+                <ul>
+                    <li><strong>Enhanced Understanding:</strong> Gain insights into how images were captured and
+                        processed.</li>
+                    <li><strong>Troubleshooting:</strong> Identify potential issues with camera settings or image
+                        quality.</li>
+                    <li><strong>Privacy Awareness:</strong> Understand what information is stored in your images before
+                        sharing them online.</li>
+                </ul>
+
+                <p>Overall, the Image Metadata Viewer is an essential tool for anyone looking to delve deeper into the
+                    technical aspects of their images and make informed decisions based on the metadata provided.</p>
+
+            </section>
         </div>
     </section>
     <!-- FOOTER (loaded from external file) -->
