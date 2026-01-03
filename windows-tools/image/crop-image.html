@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Crop images with a rectangle selection." />
+    <meta name="keywords" content="crop, image, selection, rectangle" />
     <title>Crop Image — RDroid Apps</title>
     <link rel="stylesheet" href="../../css/style.css">
 
@@ -36,19 +38,56 @@
             <h1>Crop Image</h1>
             <p class="note">Draw a rectangle on the image to crop. Works for large images.</p>
 
-            <label class="drop" id="dropArea">Drop image here or <button class="btn btn-ghost" id="pickBtn">Choose
-                    file</button></label>
+            <label class="drop" id="dropArea"
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
+                <button class="btn btn-ghost" id="pickBtn">Choose file</button>
+            </label>
             <input type="file" id="fileInput" accept="image/*" />
             <div style="margin-top:12px;"><canvas id="canvas"
-                    style="max-width:100%;border-radius:6px;background:#0b0c0d"></canvas></div>
+                    style="max-width:100%;border-radius:6px;background:#0b0c0d"></canvas>
+            </div>
 
             <div style="margin-top:12px;display:flex;gap:8px;">
                 <button class="btn btn-primary" id="cropBtn">Crop</button>
                 <a id="downloadLink" class="btn" style="display:none"></a>
-                <button class="btn btn-ghost" id="clearBtn">Clear</button>
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
             </div>
 
             <pre id="log">Ready.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+
+            <section class="seo-content">
+                <h2>Crop Image Tool</h2>
+                <p>The Crop Image tool on RDroid Apps allows you to easily crop images by drawing a rectangle over the
+                    desired area. Simply upload your image, select the area you want to keep, and click the Crop button.
+                    The cropped image can then be downloaded directly from the browser. This tool is perfect for quickly
+                    trimming photos or graphics without needing any advanced software.
+                </p>
+                <h3>How to Use the Crop Image Tool</h3>
+                <p>Using the Crop Image tool is straightforward:
+                <ol>
+                    <li>Upload your image by clicking the "Choose file" button or by dragging and dropping the file
+                        into the designated area.</li>
+                    <li>Draw a rectangle over the area you want to keep using your mouse.</li>
+                    <li>Click the "Crop" button to finalize the crop.</li>
+                    <li>Download your cropped image using the download link that appears.</li>
+                </ol>
+                </p>
+                <h3>Benefits of Using RDroidApps Pro</h3>
+                <p>Our Crop Image tool offers several benefits:
+                <ul>
+                    <li><strong>Ease of Use:</strong> The intuitive interface makes it easy for anyone to crop images
+                        without technical knowledge.</li>
+                    <li><strong>No Installation Required:</strong> As a web-based tool, there is no need to download or
+                        install any software.</li>
+                    <li><strong>Fast Processing:</strong> Our tool is optimized for speed, ensuring quick cropping even
+                        for larger files.</li>
+                </ul>
+                </p>
+            </section>
+
         </div>
         <!-- FOOTER (loaded from external file) -->
         <div id="footer-container"></div>
@@ -56,52 +95,200 @@
 
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
-        const fileInput = document.getElementById('fileInput'), pickBtn = document.getElementById('pickBtn'), dropArea = document.getElementById('dropArea'),
-            canvas = document.getElementById('canvas'), ctx = canvas.getContext('2d'), cropBtn = document.getElementById('cropBtn'),
-            downloadLink = document.getElementById('downloadLink'), clearBtn = document.getElementById('clearBtn'), logEl = document.getElementById('log');
 
+        // Variables declaration
+        const fileInput = document.getElementById('fileInput'),
+            pickBtn = document.getElementById('pickBtn'),
+            dropArea = document.getElementById('dropArea'),
+            canvas = document.getElementById('canvas'),
+            ctx = canvas.getContext('2d'),
+            cropBtn = document.getElementById('cropBtn'),
+            downloadLink = document.getElementById('downloadLink'),
+            resetBtn = document.getElementById('resetBtn'),
+            logEl = document.getElementById('log');
+
+        let img = null, isDown = false, start = null, rect = null;
+        let currentImageURL = null;
+        let croppedImageURL = null;
+
+        // Helper function to update log
+        function log(msg) {
+            logEl.textContent = msg;
+            logEl.scrollTop = logEl.scrollHeight;
+        }
+
+        // Event Listeners
         pickBtn.addEventListener('click', () => fileInput.click());
-        dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f' });
-        dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = '');
-        dropArea.addEventListener('drop', e => { e.preventDefault(); if (e.dataTransfer.files.length) { fileInput.files = e.dataTransfer.files; loadFile(); } });
+
+        dropArea.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#0aa37f';
+            dropArea.style.background = 'rgba(10, 163, 127, 0.03)';
+        });
+
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+        });
+
+        dropArea.addEventListener('drop', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                loadFile();
+            }
+        });
 
         fileInput.addEventListener('change', loadFile);
 
-        let img = null, isDown = false, start = null, rect = null;
-        function log(msg) { logEl.textContent += msg + '\\n'; logEl.scrollTop = logEl.scrollHeight; }
-
+        // Load image function
         async function loadFile() {
-            const f = fileInput.files[0]; if (!f) return;
-            const url = URL.createObjectURL(f); img = new Image(); img.src = url; await img.decode();
-            canvas.width = img.naturalWidth; canvas.height = img.naturalHeight;
+            const f = fileInput.files[0];
+            if (!f) return;
+
+            // Release previous image URL
+            if (currentImageURL) {
+                URL.revokeObjectURL(currentImageURL);
+            }
+
+            currentImageURL = URL.createObjectURL(f);
+            img = new Image();
+            img.src = currentImageURL;
+            await img.decode();
+
+            canvas.width = img.naturalWidth;
+            canvas.height = img.naturalHeight;
             canvas.style.width = '100%';
-            ctx.drawImage(img, 0, 0);
-            log('Image loaded: ' + f.name);
+
+            // Reset rectangle selection
+            rect = null;
+
+            // Draw the image
+            redraw();
+            log('Image loaded: ' + f.name + ' (' + img.naturalWidth + 'x' + img.naturalHeight + ')');
         }
 
+        // Canvas mouse events for cropping
         canvas.addEventListener('mousedown', e => {
             if (!img) return;
-            isDown = true; const r = canvas.getBoundingClientRect();
-            start = { x: Math.round((e.clientX - r.left) * (canvas.width / r.width)), y: Math.round((e.clientY - r.top) * (canvas.height / r.height)) };
+            isDown = true;
+            const r = canvas.getBoundingClientRect();
+            start = {
+                x: Math.round((e.clientX - r.left) * (canvas.width / r.width)),
+                y: Math.round((e.clientY - r.top) * (canvas.height / r.height))
+            };
         });
+
         canvas.addEventListener('mousemove', e => {
             if (!isDown || !img) return;
-            const r = canvas.getBoundingClientRect(); const x = Math.round((e.clientX - r.left) * (canvas.width / r.width)), y = Math.round((e.clientY - r.top) * (canvas.height / r.height));
-            rect = { x: Math.min(start.x, x), y: Math.min(start.y, y), w: Math.abs(x - start.x), h: Math.abs(y - start.y) }; redraw();
+            const r = canvas.getBoundingClientRect();
+            const x = Math.round((e.clientX - r.left) * (canvas.width / r.width)),
+                y = Math.round((e.clientY - r.top) * (canvas.height / r.height));
+
+            rect = {
+                x: Math.min(start.x, x),
+                y: Math.min(start.y, y),
+                w: Math.abs(x - start.x),
+                h: Math.abs(y - start.y)
+            };
+            redraw();
         });
-        canvas.addEventListener('mouseup', () => { isDown = false; });
 
-        function redraw() { ctx.clearRect(0, 0, canvas.width, canvas.height); ctx.drawImage(img, 0, 0); if (rect) { ctx.strokeStyle = '#0aa37f'; ctx.lineWidth = 3; ctx.strokeRect(rect.x, rect.y, rect.w, rect.h); ctx.fillStyle = 'rgba(10,163,127,0.12)'; ctx.fillRect(rect.x, rect.y, rect.w, rect.h); } }
+        canvas.addEventListener('mouseup', () => {
+            isDown = false;
+            if (rect && rect.w > 0 && rect.h > 0) {
+                log('Selected area: ' + rect.w + 'x' + rect.h + ' pixels');
+            }
+        });
 
+        // Redraw canvas with image and selection rectangle
+        function redraw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (img) {
+                ctx.drawImage(img, 0, 0);
+            }
+
+            if (rect) {
+                ctx.strokeStyle = '#0aa37f';
+                ctx.lineWidth = 3;
+                ctx.strokeRect(rect.x, rect.y, rect.w, rect.h);
+                ctx.fillStyle = 'rgba(10,163,127,0.12)';
+                ctx.fillRect(rect.x, rect.y, rect.w, rect.h);
+            }
+        }
+
+        // Crop button function
         cropBtn.addEventListener('click', () => {
-            if (!rect) return alert('Select area to crop');
-            const out = document.createElement('canvas'); out.width = rect.w; out.height = rect.h;
+            if (!rect || rect.w <= 0 || rect.h <= 0) return alert('Select area to crop');
+
+            const out = document.createElement('canvas');
+            out.width = rect.w;
+            out.height = rect.h;
             out.getContext('2d').drawImage(canvas, rect.x, rect.y, rect.w, rect.h, 0, 0, rect.w, rect.h);
+
             out.toBlob(b => {
-                const url = URL.createObjectURL(b); downloadLink.href = url; downloadLink.download = 'cropped.png'; downloadLink.textContent = 'Download cropped image'; downloadLink.style.display = 'inline-block';
+                // Release previous cropped image URL
+                if (croppedImageURL) {
+                    URL.revokeObjectURL(croppedImageURL);
+                }
+
+                if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+                    URL.revokeObjectURL(downloadLink.href);
+                }
+
+                croppedImageURL = URL.createObjectURL(b);
+                downloadLink.href = croppedImageURL;
+                downloadLink.download = 'cropped.png';
+                downloadLink.textContent = 'Download cropped image';
+                downloadLink.style.display = 'inline-block';
+
+                log('Image cropped: ' + rect.w + 'x' + rect.h + ' pixels');
             }, 'image/png');
         });
-        clearBtn.addEventListener('click', () => { rect = null; redraw(); downloadLink.style.display = 'none'; log('Cleared selection'); });
+
+        // Reset button function
+        resetBtn.addEventListener('click', () => {
+            // Reset file input
+            fileInput.value = '';
+
+            // Reset variables
+            img = null;
+            rect = null;
+            isDown = false;
+            start = null;
+
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            canvas.width = 400; // Reset to default width
+            canvas.height = 200; // Reset to default height
+
+            // Reset UI elements
+            downloadLink.style.display = 'none';
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+
+            // Release all Object URLs
+            if (currentImageURL) {
+                URL.revokeObjectURL(currentImageURL);
+                currentImageURL = null;
+            }
+
+            if (croppedImageURL) {
+                URL.revokeObjectURL(croppedImageURL);
+                croppedImageURL = null;
+            }
+
+            if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+                URL.revokeObjectURL(downloadLink.href);
+                downloadLink.href = '#';
+            }
+
+            // Reset log
+            log('Ready.');
+        });
     </script>
 </body>
 
