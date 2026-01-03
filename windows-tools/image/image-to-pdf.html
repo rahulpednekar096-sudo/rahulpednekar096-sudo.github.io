@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="keywords"
+        content="image to pdf, images to pdf, convert image to pdf, convert images to pdf, jpg to pdf, png to pdf, webp to pdf, multi-page pdf, a4 pdf, fit to page pdf" />
+    <meta name="description"
+        content="Convert images to PDF. Supports JPG, PNG, WebP, and more. Create multi-page PDFs with A4 fit to page." />
     <title>Image → PDF — RDroid Apps</title>
     <link rel="stylesheet" href="../../css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
@@ -38,57 +42,216 @@
             <p class="note">Select multiple images and create a single multi-page PDF. Images are fit to page (A4) by
                 default.</p>
 
-            <label class="drop" id="dropArea">Drop images or <button class="btn btn-ghost" id="pickBtn">Choose
-                    files</button></label>
+            <label class="drop" id="dropArea"
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
+                <button class="btn btn-ghost" id="pickBtn">Choose file</button>
+            </label>
             <input type="file" id="fileInput" accept="image/*" multiple />
-            <div style="margin-top:12px;display:flex;gap:8px;"><button class="btn btn-primary" id="startBtn">Create
-                    PDF</button><a id="downloadLink" class="btn" style="display:none"></a></div>
+            <div style="margin-top:12px;display:flex;gap:8px;">
+                <button class="btn btn-primary" id="startBtn">Create PDF</button>
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
+                <a id="downloadLink" class="btn" style="display:none"></a>
+            </div>
             <div id="preview" style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap"></div>
             <pre id="log">Ready.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+
+            <section class="seo-content">
+                <h2>Image to PDF Converter</h2>
+                <p>This tool allows you to convert images to PDF format easily. You can select multiple images, and the
+                    tool will create a single multi-page PDF document for you. The images are automatically resized to
+                    fit A4 pages, ensuring a clean and professional look.</p>
+
+                <h3>Supported Image Formats</h3>
+                <p>The converter supports a wide range of image formats including JPG, PNG, WebP, BMP, and more. This
+                    makes it versatile for various use cases.</p>
+
+                <h3>How to Use</h3>
+                <ol>
+                    <li>Click on the "Choose file" button or drag and drop your images into the designated area.</li>
+                    <li>Select multiple images if needed.</li>
+                    <li>Click on the "Create PDF" button to generate the PDF document.</li>
+                    <li>Once the PDF is created, click on the "Download PDF" link to save it to your device.</li>
+                </ol>
+
+                <h3>Benefits of Using This Tool</h3>
+                <ul>
+                    <li><strong>Convenience:</strong> Quickly convert images to PDF without needing any software
+                        installation.</li>
+                    <li><strong>Multi-Page Support:</strong> Combine multiple images into a single PDF file for easy
+                        sharing and storage.</li>
+                    <li><strong>Free to Use:</strong> This tool is completely free and accessible online.</li>
+                </ul>
+                <h3>Privacy and Security</h3>
+                <p>Your privacy is important to us. All image processing is done locally in your browser, ensuring that
+                    your files are not uploaded to any server.</p>
+
+            </section>
         </div>
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
-        const pickBtn = document.getElementById('pickBtn'), fileInput = document.getElementById('fileInput'), dropArea = document.getElementById('dropArea'),
-            startBtn = document.getElementById('startBtn'), downloadLink = document.getElementById('downloadLink'), preview = document.getElementById('preview'),
+
+        // Variables declaration
+        const pickBtn = document.getElementById('pickBtn'),
+            fileInput = document.getElementById('fileInput'),
+            dropArea = document.getElementById('dropArea'),
+            startBtn = document.getElementById('startBtn'),
+            resetBtn = document.getElementById('resetBtn'),
+            downloadLink = document.getElementById('downloadLink'),
+            preview = document.getElementById('preview'),
             logEl = document.getElementById('log');
 
-        pickBtn.addEventListener('click', () => fileInput.click()); dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f' }); dropArea.addEventListener('drop', e => { e.preventDefault(); if (e.dataTransfer.files.length) fileInput.files = e.dataTransfer.files; previewFiles(); });
+        let imageURLs = []; // Store all created object URLs for cleanup
+
+        // Event Listeners
+        pickBtn.addEventListener('click', () => fileInput.click());
+
+        dropArea.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#0aa37f';
+            dropArea.style.background = 'rgba(10, 163, 127, 0.03)';
+        });
+
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+        });
+
+        dropArea.addEventListener('drop', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                previewFiles();
+            }
+        });
 
         fileInput.addEventListener('change', previewFiles);
 
-        function previewFiles() { preview.innerHTML = ''; const files = Array.from(fileInput.files || []); for (const f of files) { const img = document.createElement('img'); img.src = URL.createObjectURL(f); img.style.maxWidth = '140px'; img.style.borderRadius = '6px'; preview.appendChild(img); } }
+        // Preview files function
+        function previewFiles() {
+            // Clear previous preview and URLs
+            clearPreview();
 
-        startBtn.addEventListener('click', async () => {
-            const files = Array.from(fileInput.files || []); if (!files.length) return alert('कृपया images निवडा');
-            logEl.textContent = 'Creating PDF...\\n';
-            const pdfDoc = await PDFLib.PDFDocument.create();
+            const files = Array.from(fileInput.files || []);
+            if (files.length === 0) return;
+
             for (const f of files) {
-                try {
-                    const data = await f.arrayBuffer();
-                    const img = await pdfDoc.embedJpg ? await tryEmbed(pdfDoc, data, f) : null;
-                } catch (e) { logEl.textContent += 'Skipped file ' + f.name + ': ' + e.message + '\\n'; }
+                const img = document.createElement('img');
+                const url = URL.createObjectURL(f);
+                imageURLs.push(url); // Store URL for cleanup
+                img.src = url;
+                img.style.maxWidth = '140px';
+                img.style.borderRadius = '6px';
+                img.style.margin = '4px';
+                preview.appendChild(img);
             }
-            // helper to try embed as jpg then png
-            async function tryEmbed(pdfDoc, data, f) {
-                let imgEmbed;
-                try { imgEmbed = await pdfDoc.embedJpg(data); }
-                catch (err) {
-                    try { imgEmbed = await pdfDoc.embedPng(data); }
-                    catch (err2) { throw new Error('Unsupported image format'); }
+
+            logEl.textContent = `Selected ${files.length} image(s)`;
+        }
+
+        // Clear preview and release URLs
+        function clearPreview() {
+            // Release all object URLs
+            imageURLs.forEach(url => URL.revokeObjectURL(url));
+            imageURLs = [];
+
+            // Clear preview container
+            preview.innerHTML = '';
+        }
+
+        // Create PDF function
+        startBtn.addEventListener('click', async () => {
+            const files = Array.from(fileInput.files || []);
+            if (!files.length) return alert('कृपया images निवडा');
+
+            logEl.textContent = 'Creating PDF...\n';
+
+            try {
+                const pdfDoc = await PDFLib.PDFDocument.create();
+
+                for (const f of files) {
+                    try {
+                        const data = await f.arrayBuffer();
+
+                        // Helper function to try embed as JPG then PNG
+                        async function tryEmbed(pdfDoc, data, f) {
+                            let imgEmbed;
+                            try {
+                                imgEmbed = await pdfDoc.embedJpg(data);
+                            } catch (err) {
+                                try {
+                                    imgEmbed = await pdfDoc.embedPng(data);
+                                } catch (err2) {
+                                    throw new Error('Unsupported image format');
+                                }
+                            }
+                            const dims = imgEmbed.scale(1);
+                            const page = pdfDoc.addPage([dims.width, dims.height]);
+                            page.drawImage(imgEmbed, {
+                                x: 0,
+                                y: 0,
+                                width: dims.width,
+                                height: dims.height
+                            });
+                            return imgEmbed;
+                        }
+
+                        await tryEmbed(pdfDoc, data, f);
+                        logEl.textContent += `Added: ${f.name}\n`;
+                    } catch (e) {
+                        logEl.textContent += 'Skipped file ' + f.name + ': ' + e.message + '\n';
+                    }
                 }
-                const dims = imgEmbed.scale(1);
-                const page = pdfDoc.addPage([dims.width, dims.height]);
-                page.drawImage(imgEmbed, { x: 0, y: 0, width: dims.width, height: dims.height });
-                return imgEmbed;
+
+                const pdfBytes = await pdfDoc.save();
+                const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+
+                // Release previous PDF URL if exists
+                if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+                    URL.revokeObjectURL(downloadLink.href);
+                }
+
+                const url = URL.createObjectURL(blob);
+                downloadLink.href = url;
+                downloadLink.download = 'images.pdf';
+                downloadLink.textContent = 'Download PDF';
+                downloadLink.style.display = 'inline-block';
+
+                logEl.textContent += `Done. PDF created with ${files.length} page(s).\n`;
+            } catch (error) {
+                logEl.textContent = 'Error: ' + error.message + '\n';
             }
-            const pdfBytes = await pdfDoc.save();
-            const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-            const url = URL.createObjectURL(blob);
-            downloadLink.href = url; downloadLink.download = 'images.pdf'; downloadLink.textContent = 'Download PDF'; downloadLink.style.display = 'inline-block';
-            logEl.textContent += 'Done.\\n';
+        });
+
+        // Reset Function
+        resetBtn.addEventListener('click', () => {
+            // Reset file input
+            fileInput.value = '';
+
+            // Clear preview and release URLs
+            clearPreview();
+
+            // Reset UI elements
+            downloadLink.style.display = 'none';
+            logEl.textContent = 'Ready.';
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+
+            // Release PDF URL if exists
+            if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+                URL.revokeObjectURL(downloadLink.href);
+                downloadLink.href = '#';
+            }
+
+            logEl.textContent = 'Reset complete.';
         });
     </script>
 </body>
