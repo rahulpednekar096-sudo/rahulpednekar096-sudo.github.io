@@ -4,6 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description"
+        content="Flip images horizontally or vertically using this free online tool. Drag & drop supported. No uploads, works in your browser." />
+    <meta name="keywords"
+        content="flip image, flip picture, mirror image, mirror picture, image tools, rdroid apps, offline image tools, free image tools" />
     <title>Flip Image — RDroid Apps</title>
     <link rel="stylesheet" href="../../css/style.css">
 
@@ -36,8 +41,10 @@
             <h1>Flip Image</h1>
             <p class="note">Flip horizontally or vertically.</p>
 
-            <label class="drop" id="dropArea">Drop image or <button class="btn btn-ghost" id="pickBtn">Choose
-                    file</button></label>
+            <label class="drop" id="dropArea"
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
+                <button class="btn btn-ghost" id="pickBtn">Choose file</button>
+            </label>
             <input type="file" id="fileInput" accept="image/*" />
             <div class="row">
                 <div class="col"><label class="small">Flip Mode</label><select id="flipMode">
@@ -46,39 +53,199 @@
                     </select></div>
             </div>
 
-            <div style="margin-top:12px;display:flex;gap:8px;"><button class="btn btn-primary"
-                    id="applyBtn">Flip</button><a id="downloadLink" class="btn" style="display:none"></a></div>
+            <div style="margin-top:12px;display:flex;gap:8px;">
+                <button class="btn btn-primary" id="applyBtn">Flip</button>
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
+                <a id="downloadLink" class="btn" style="display:none"></a>
+            </div>
             <div id="preview" style="margin-top:12px"></div>
             <pre id="log">Ready.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+
+            <section class="seo-content">
+                <h2>Flip Image Tool — RDroidApps Pro</h2>
+                <p>Flip Image Tool is a free online utility that allows you to flip images either horizontally or
+                    vertically. This tool is perfect for users who need to quickly mirror their images without the need
+                    for complex software installations. Whether you're looking to create a mirrored effect for artistic
+                    purposes or simply need to adjust the orientation of your photos, our Flip Image Tool has got you
+                    covered.</p>
+                <h3>How to Use the Flip Image Tool</h3>
+                <p>Using the Flip Image Tool is straightforward and user-friendly. Follow these simple steps to flip
+                    your
+                    images:</p>
+                <ol>
+                    <li><strong>Upload Your Image:</strong> Click on the "Choose file" button or drag and drop your
+                        image into the designated area.</li>
+                    <li><strong>Select Flip Mode:</strong> Choose whether you want to flip your image horizontally or
+                        vertically from the dropdown menu.</li>
+                    <li><strong>Apply the Flip:</strong> Click the "Flip" button to process your image.</li>
+                    <li><strong>Download the Result:</strong> Once the image is flipped, a download link will appear.
+                        Click on it to save your flipped image.</li>
+                </ol>
+                <h3>Features of the Flip Image Tool</h3>
+                <ul>
+                    <li><strong>Easy to Use:</strong> The intuitive interface makes it easy for anyone to flip images
+                        quickly.</li>
+                    <li><strong>No Software Installation:</strong> This is a web-based tool, so there's no need to
+                        download or install any software.</li>
+                    <li><strong>Supports Various Image Formats:</strong> The tool supports a wide range of image formats
+                        including JPEG, PNG, BMP, and more.</li>
+                    <li><strong>Privacy Focused:</strong> All image processing is done locally in your browser, ensuring
+                        your images remain private.</li>
+                </ul>
+                <h3>Why Use the Flip Image Tool?</h3>
+                <p>The Flip Image Tool is an essential utility for photographers, designers, and casual users alike. It
+                    provides a quick and efficient way to adjust image orientation without the hassle of complex
+                    software. Whether you're preparing images for social media, presentations, or personal projects,
+                    this tool simplifies the process and saves you time.</p>
+                <p>Try the Flip Image Tool today and experience the convenience of flipping your images with ease!</p>
+
+            </section>
         </div>
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
-        const pickBtn = document.getElementById('pickBtn'), fileInput = document.getElementById('fileInput'), dropArea = document.getElementById('dropArea'),
-            flipMode = document.getElementById('flipMode'), applyBtn = document.getElementById('applyBtn'), preview = document.getElementById('preview'),
-            downloadLink = document.getElementById('downloadLink'), logEl = document.getElementById('log');
 
-        pickBtn.addEventListener('click', () => fileInput.click());
-        dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f' }); dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = '');
-        dropArea.addEventListener('drop', e => { e.preventDefault(); if (e.dataTransfer.files.length) { fileInput.files = e.dataTransfer.files; } });
+        // Variables declaration
+        const pickBtn = document.getElementById('pickBtn'),
+            fileInput = document.getElementById('fileInput'),
+            dropArea = document.getElementById('dropArea'),
+            flipMode = document.getElementById('flipMode'),
+            applyBtn = document.getElementById('applyBtn'),
+            resetBtn = document.getElementById('resetBtn'),
+            preview = document.getElementById('preview'),
+            downloadLink = document.getElementById('downloadLink'),
+            logEl = document.getElementById('log');
 
         let currentFile = null;
-        fileInput.addEventListener('change', () => { currentFile = fileInput.files[0]; preview.innerHTML = `<img id="loaded" src="${URL.createObjectURL(currentFile)}" style="max-width:420px;border-radius:8px">`; });
+        let originalImageURL = null;
+        let flippedImageURL = null;
 
+        // Event Listeners
+        pickBtn.addEventListener('click', () => fileInput.click());
+
+        dropArea.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#0aa37f';
+            dropArea.style.background = 'rgba(10, 163, 127, 0.03)';
+        });
+
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+        });
+
+        dropArea.addEventListener('drop', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                fileInput.dispatchEvent(new Event('change'));
+            }
+        });
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length === 0) return;
+
+            currentFile = fileInput.files[0];
+
+            // Release previous image URL
+            if (originalImageURL) {
+                URL.revokeObjectURL(originalImageURL);
+            }
+
+            originalImageURL = URL.createObjectURL(currentFile);
+            preview.innerHTML = `<img id="loaded" src="${originalImageURL}" style="max-width:420px;border-radius:8px">`;
+            logEl.textContent = `Loaded: ${currentFile.name}`;
+        });
+
+        // Apply Flip Function
         applyBtn.addEventListener('click', async () => {
             if (!currentFile) return alert('कृपया image निवडा');
-            const reader = new FileReader(); reader.onload = async e => {
-                const img = new Image(); img.src = e.target.result; await img.decode();
-                const canvas = document.createElement('canvas'); canvas.width = img.naturalWidth; canvas.height = img.naturalHeight;
+
+            const reader = new FileReader();
+            reader.onload = async e => {
+                const img = new Image();
+                img.src = e.target.result;
+                await img.decode();
+
+                const canvas = document.createElement('canvas');
+                canvas.width = img.naturalWidth;
+                canvas.height = img.naturalHeight;
                 const ctx = canvas.getContext('2d');
-                if (flipMode.value === 'h') { ctx.translate(canvas.width, 0); ctx.scale(-1, 1); }
-                else { ctx.translate(0, canvas.height); ctx.scale(1, -1); }
+
+                // Apply flip transformation
+                if (flipMode.value === 'h') {
+                    ctx.translate(canvas.width, 0);
+                    ctx.scale(-1, 1);
+                } else {
+                    ctx.translate(0, canvas.height);
+                    ctx.scale(1, -1);
+                }
+
                 ctx.drawImage(img, 0, 0);
-                canvas.toBlob(b => { const url = URL.createObjectURL(b); preview.innerHTML = `<img src="${url}" style="max-width:420px;border-radius:8px">`; downloadLink.href = url; downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-flipped.png'; downloadLink.textContent = 'Download'; downloadLink.style.display = 'inline-block'; }, 'image/png');
+
+                canvas.toBlob(b => {
+                    // Release previous flipped image URL
+                    if (flippedImageURL) {
+                        URL.revokeObjectURL(flippedImageURL);
+                    }
+
+                    if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+                        URL.revokeObjectURL(downloadLink.href);
+                    }
+
+                    flippedImageURL = URL.createObjectURL(b);
+                    preview.innerHTML = `<img src="${flippedImageURL}" style="max-width:420px;border-radius:8px">`;
+                    downloadLink.href = flippedImageURL;
+                    downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-flipped.png';
+                    downloadLink.textContent = 'Download';
+                    downloadLink.style.display = 'inline-block';
+
+                    const flipType = flipMode.value === 'h' ? 'Horizontal' : 'Vertical';
+                    logEl.textContent = `Image flipped (${flipType})`;
+                }, 'image/png');
             }
             reader.readAsDataURL(currentFile);
+        });
+
+        // Reset Function
+        resetBtn.addEventListener('click', () => {
+            // Reset file input
+            currentFile = null;
+            fileInput.value = '';
+
+            // Reset flip mode
+            flipMode.value = 'h';
+
+            // Reset UI elements
+            downloadLink.style.display = 'none';
+            preview.innerHTML = '';
+            logEl.textContent = 'Ready.';
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+
+            // Release all Object URLs
+            if (originalImageURL) {
+                URL.revokeObjectURL(originalImageURL);
+                originalImageURL = null;
+            }
+
+            if (flippedImageURL) {
+                URL.revokeObjectURL(flippedImageURL);
+                flippedImageURL = null;
+            }
+
+            if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+                URL.revokeObjectURL(downloadLink.href);
+                downloadLink.href = '#';
+            }
         });
     </script>
     <script>
