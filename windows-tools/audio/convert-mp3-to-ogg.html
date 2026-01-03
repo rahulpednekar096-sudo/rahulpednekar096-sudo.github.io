@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Convert MP3 to OGG is a web-based tool that allows users to easily convert MP3 audio files to the OGG format. It supports various quality settings and provides an easy preview and download option." />
+    <meta name="keywords"
+        content="Convert MP3 to OGG, MP3 to OGG Converter, Audio File Conversion, Online MP3 to OGG Tool, RDroid Apps" />
     <title>Convert MP3 to OGG — RDroid Apps</title>
     <link rel="stylesheet" href="../../css/style.css">
     <!-- LOCAL ffmpeg files -->
@@ -49,23 +53,23 @@
             </div>
 
             <label class="drop" id="dropArea">
-                MP3 फाइल ड्रॉप करा किंवा
-                <button class="btn btn-ghost" id="pickBtn" disabled>फाइल निवडा</button>
-                <br><small>कमाल आकार: ५० MB</small>
+                Drop here mp3 file to convert to OGG or
+                <button class="btn btn-ghost" id="pickBtn" disabled>Choose file</button>
+                <br><small>Maximum size: 50 MB</small>
             </label>
             <input type="file" id="fileInput" accept="audio/mp3,audio/mpeg,.mp3" disabled />
 
             <div class="row">
                 <div class="col">
-                    <label class="small">गुणवत्ता</label>
+                    <label class="small">Quality</label>
                     <select id="quality" disabled>
-                        <option value="9">उच्च (९)</option>
-                        <option value="7" selected>मध्यम (७)</option>
-                        <option value="5">कमी (५)</option>
+                        <option value="9">High (9)</option>
+                        <option value="7" selected>Medium (7)</option>
+                        <option value="5">Low (5)</option>
                     </select>
                 </div>
                 <div class="col">
-                    <label class="small">बिटरेट</label>
+                    <label class="small">Bitrate</label>
                     <select id="bitrate" disabled>
                         <option value="192k">192 kbps</option>
                         <option value="128k" selected>128 kbps</option>
@@ -74,7 +78,7 @@
                     </select>
                 </div>
                 <div class="col">
-                    <label class="small">सॅम्पल रेट</label>
+                    <label class="small">Sample Rate</label>
                     <select id="samplerate" disabled>
                         <option value="44100">44.1 kHz</option>
                         <option value="22050">22.05 kHz</option>
@@ -85,7 +89,7 @@
 
             <div id="progress-container" style="display:none; margin-top:12px;">
                 <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
-                    <span>रूपांतरण प्रगती</span>
+                    <span>Conversion Progress</span>
                     <span id="progress-percent">0%</span>
                 </div>
                 <div style="width:100%; background:#e9ecef; border-radius:4px;">
@@ -97,14 +101,14 @@
             </div>
 
             <div style="margin-top:12px;display:flex;gap:8px;">
-                <button class="btn btn-primary" id="convertBtn" disabled>रूपांतरित करा</button>
-                <button class="btn btn-secondary" id="cancelBtn" style="display:none">रद्द करा</button>
-                <a id="downloadLink" class="btn btn-success" style="display:none">📥 OGG डाउनलोड करा</a>
+                <button class="btn btn-primary" id="convertBtn" disabled>Convert</button>
+                <button class="btn btn-secondary" id="cancelBtn" style="display:none">Cancel</button>
+                <a id="downloadLink" class="btn btn-success" style="display:none">📥 Download OGG</a>
                 <div id="fileInfo" style="margin-left:auto"></div>
             </div>
 
             <div id="preview" style="margin-top:12px"></div>
-            <pre id="log">FFmpeg लोड होत आहे...</pre>
+            <pre id="log">FFmpeg is loading...</pre>
         </div>
         <!-- FOOTER (loaded from external file) -->
         <div id="footer-container"></div>
@@ -162,7 +166,7 @@
                 progressText.textContent = text;
 
                 if (percent % 25 === 0 || percent === 100) {
-                    logEl.textContent += `\n📈 प्रगती: ${percent}% - ${text}`;
+                    logEl.textContent += `\n📈 Progress: ${percent}% - ${text}`;
                 }
             }
         }
@@ -172,7 +176,7 @@
 
             if (pickBtn) {
                 pickBtn.disabled = false;
-                pickBtn.textContent = 'फाइल निवडा';
+                pickBtn.textContent = 'Select File';
             }
 
             if (fileInput) fileInput.disabled = false;
@@ -199,20 +203,20 @@
 
             if (ffmpegLoading) ffmpegLoading.style.display = 'none';
 
-            logEl.textContent = '✅ FFmpeg लोड झाले! आता फाइल निवडा.';
+            logEl.textContent = '✅ FFmpeg loaded! Now select file.';
         }
 
         // FFmpeg लोड करा - LOCAL VERSION
         async function loadFFmpeg() {
             try {
                 console.log('loadFFmpeg started');
-                logEl.textContent = 'FFmpeg लोड होत आहे...';
+                logEl.textContent = 'FFmpeg is loading...';
 
                 if (ffmpegProgress) ffmpegProgress.style.width = '5%';
 
                 // Check if FFmpeg is available
                 if (typeof FFmpeg === 'undefined') {
-                    throw new Error('FFmpeg लायब्ररी उपलब्ध नाही. फाइल तपासा.');
+                    throw new Error('FFmpeg library is not available. Please check the file.');
                 }
 
                 const { createFFmpeg } = FFmpeg;
@@ -236,7 +240,7 @@
                         }
 
                         if (percent < 100) {
-                            logEl.textContent = `FFmpeg लोड होत आहे... ${percent}%`;
+                            logEl.textContent = `FFmpeg is loading... ${percent}%`;
                         }
 
                         if (percent === 100) {
@@ -247,7 +251,7 @@
                 });
 
                 if (ffmpegProgress) ffmpegProgress.style.width = '40%';
-                logEl.textContent += '\nFFmpeg instance तयार करीत आहे...';
+                logEl.textContent += '\nFFmpeg instance created...';
 
                 console.log('Calling ffmpeg.load()...');
                 await ffmpeg.load();
@@ -261,22 +265,22 @@
 
             } catch (error) {
                 console.error('FFmpeg load error:', error);
-                logEl.textContent = `❌ FFmpeg लोड करताना त्रुटी: ${error.message}`;
+                logEl.textContent = `❌ FFmpeg load error: ${error.message}`;
 
                 // Show detailed error
                 if (ffmpegLoading) {
                     ffmpegLoading.innerHTML = `
                         <div style="color: #721c24; background: #f8d7da; padding: 10px; border-radius: 5px;">
-                            <strong>त्रुटी:</strong> ${error.message}<br>
-                            <small>कृपया खालील गोष्टी तपासा:</small>
+                            <strong>Error:</strong> ${error.message}<br>
+                            <small>Please check the following:</small>
                             <ul style="margin: 5px 0; padding-left: 20px;">
-                                <li>../../js/ffmpeg/ffmpeg.min.js फाइल उपलब्ध आहे का?</li>
-                                <li>../../js/ffmpeg/ffmpeg-core.js फाइल उपलब्ध आहे का? (30MB)</li>
-                                <li>../../js/ffmpeg/ffmpeg-core.wasm फाइल उपलब्ध आहे का? (23MB)</li>
-                                <li>फाइल path बरोबर आहे का? (../../js/ffmpeg/)</li>
+                                <li>../../js/ffmpeg/ffmpeg.min.js file is available?</li>
+                                <li>../../js/ffmpeg/ffmpeg-core.js file is available? (30MB)</li>
+                                <li>../../js/ffmpeg/ffmpeg-core.wasm file is available? (23MB)</li>
+                                <li>File path is correct? (../../js/ffmpeg/)</li>
                             </ul>
-                            <button onclick="location.reload()" style="padding: 5px 10px; background: #0aa37f; color: white; border: none; border-radius: 3px; cursor: pointer; margin-top:5px;">पुन्हा प्रयत्न करा</button>
-                            <button onclick="enableControls()" style="padding: 5px 10px; background: #6c757d; color: white; border: none; border-radius: 3px; cursor: pointer; margin-top:5px; margin-left:5px;">फक्त कंट्रोल्स सक्षम करा</button>
+                            <button onclick="location.reload()" style="padding: 5px 10px; background: #0aa37f; color: white; border: none; border-radius: 3px; cursor: pointer; margin-top:5px;">Try Again</button>
+                            <button onclick="enableControls()" style="padding: 5px 10px; background: #6c757d; color: white; border: none; border-radius: 3px; cursor: pointer; margin-top:5px; margin-left:5px;">Enable Controls Only</button>
                         </div>
                     `;
                 }
@@ -330,13 +334,13 @@
 
             // Check file size (max 50MB)
             if (file.size > 50 * 1024 * 1024) {
-                alert('फाइल आकार खूप मोठा आहे! कमाल आकार: 50 MB');
+                alert('File size is too large! Max size: 50 MB');
                 fileInput.value = '';
                 return;
             }
 
             const fileSizeMB = (file.size / (1024 * 1024)).toFixed(2);
-            if (fileInfo) fileInfo.textContent = `फाइल: ${file.name} (${fileSizeMB} MB)`;
+            if (fileInfo) fileInfo.textContent = `File: ${file.name} (${fileSizeMB} MB)`;
 
             if (preview) {
                 const audioUrl = URL.createObjectURL(file);
@@ -354,13 +358,13 @@
                 `;
             }
 
-            logEl.textContent += `\n✅ फाइल निवडली: ${file.name}\n📊 आकार: ${fileSizeMB} MB`;
+            logEl.textContent += `\n✅ File selected: ${file.name}\n📊 Size: ${fileSizeMB} MB`;
         }
 
         function getAudioDuration(file) {
             const sizeInMB = file.size / (1024 * 1024);
             const approxMinutes = Math.round(sizeInMB * 0.5);
-            return approxMinutes > 0 ? `~${approxMinutes} मिनिट` : 'कालावधी अज्ञात';
+            return approxMinutes > 0 ? `~${approxMinutes} minutes` : 'Duration unknown';
         }
 
         // Conversion process
@@ -380,13 +384,13 @@
 
                 const file = fileInput.files[0];
                 if (!file) {
-                    alert('कृपया MP3 फाइल निवडा');
+                    alert('Please select MP3 file');
                     return;
                 }
 
                 // FIXED: Check if ffmpeg exists and is loaded
                 if (!ffmpeg) {
-                    alert('FFmpeg अद्याप लोड होत आहे. कृपया थोडा वेळ थांबा.');
+                    alert('FFmpeg is not loaded yet. Please wait a movement.');
                     return;
                 }
 
