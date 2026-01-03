@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Reduce image filesize by compressing it. Best results with JPEG images; PNG images are compressed by re-encoding to JPEG or WebP." />
+    <meta name="keywords"
+        content="Compress Image, Image Compression, JPEG Compression, PNG Compression, WebP Compression, RDroid Apps" />
     <title>Compress Image — RDroid Apps</title>
     <link rel="stylesheet" href="../../css/style.css">
 
@@ -51,13 +55,54 @@
                 </div>
             </div>
 
-            <div style="margin-top:12px;display:flex;gap:8px;"><button class="btn btn-primary"
-                    id="startBtn">Compress</button><a id="downloadLink" class="btn" style="display:none"></a>
+            <div style="margin-top:12px;display:flex;gap:8px;">
+                <button class="btn btn-primary" id="startBtn">Compress</button>
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
+                <a id="downloadLink" class="btn" style="display:none"></a>
                 <div id="sizeInfo" style="margin-left:auto"></div>
             </div>
 
             <div id="preview" style="margin-top:12px"></div>
             <pre id="log">Ready.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+
+            <section class="seo-content">
+                <h2>Image Compression Tool</h2>
+                <p>Welcome to the Compress Image tool by RDroid Apps, your go-to solution for reducing image file sizes
+                    without compromising quality. Whether you're a web developer looking to optimize website performance
+                    or a photographer aiming to save storage space, our tool is designed to meet your needs.</p>
+
+                <h3>How It Works</h3>
+                <p>Our image compression tool utilizes advanced algorithms to minimize file sizes while preserving
+                    visual fidelity. By selecting your desired output format (JPEG, WebP, or PNG) and quality level, you
+                    can tailor the compression process to suit your specific requirements.</p>
+
+                <h3>Supported Formats</h3>
+                <ul>
+                    <li><strong>JPEG:</strong> Ideal for photographs and images with gradients. Offers significant file
+                        size reduction with adjustable quality settings.</li>
+                    <li><strong>WebP:</strong> A modern format that provides superior compression rates while
+                        maintaining high quality. Perfect for web use.</li>
+                    <li><strong>PNG:</strong> Best for images requiring transparency or lossless compression. Suitable
+                        for graphics and logos.</li>
+                </ul>
+
+                <h3>Benefits of Using Our Tool</h3>
+                <ul>
+                    <li><strong>Faster Load Times:</strong> Compressed images lead to quicker website loading speeds,
+                        enhancing user experience.</li>
+                    <li><strong>Reduced Bandwidth Usage:</strong> Smaller file sizes mean less data consumption, which
+                        is especially beneficial for mobile users.</li>
+                    <li><strong>Storage Efficiency:</strong> Save valuable disk space by compressing images without
+                        sacrificing quality.</li>
+                </ul>
+
+                <h3>Get Started Today</h3>
+                <p>Ready to optimize your images? Simply upload your files, choose your preferred settings, and let our
+                    tool handle the rest. Experience the benefits of efficient image compression with RDroid Apps!</p>
+            </section>
         </div>
     </section>
     <!-- FOOTER (loaded from external file) -->
@@ -65,34 +110,145 @@
 
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
-        const pickBtn = document.getElementById('pickBtn'), fileInput = document.getElementById('fileInput'), dropArea = document.getElementById('dropArea'),
-            outFormat = document.getElementById('outFormat'), quality = document.getElementById('quality'), qVal = document.getElementById('qVal'),
-            startBtn = document.getElementById('startBtn'), downloadLink = document.getElementById('downloadLink'), preview = document.getElementById('preview'),
-            sizeInfo = document.getElementById('sizeInfo'), logEl = document.getElementById('log');
 
-        pickBtn.addEventListener('click', () => fileInput.click()); dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f' }); dropArea.addEventListener('drop', e => { e.preventDefault(); if (e.dataTransfer.files.length) fileInput.files = e.dataTransfer.files; });
-        fileInput.addEventListener('change', () => { preview.innerHTML = `<img src="${URL.createObjectURL(fileInput.files[0])}" style="max-width:420px;border-radius:8px">`; });
+        // Variables declaration
+        const pickBtn = document.getElementById('pickBtn'),
+            fileInput = document.getElementById('fileInput'),
+            dropArea = document.getElementById('dropArea'),
+            outFormat = document.getElementById('outFormat'),
+            quality = document.getElementById('quality'),
+            qVal = document.getElementById('qVal'),
+            startBtn = document.getElementById('startBtn'),
+            resetBtn = document.getElementById('resetBtn'),
+            downloadLink = document.getElementById('downloadLink'),
+            preview = document.getElementById('preview'),
+            sizeInfo = document.getElementById('sizeInfo'),
+            logEl = document.getElementById('log');
+
+        let currentFile = null;
+        let originalImageURL = null;
+        let compressedImageURL = null;
+
+        // Event Listeners
+        pickBtn.addEventListener('click', () => fileInput.click());
+
+        dropArea.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#0aa37f';
+        });
+
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.style.borderColor = '';
+        });
+
+        dropArea.addEventListener('drop', e => {
+            e.preventDefault();
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                fileInput.dispatchEvent(new Event('change'));
+            }
+        });
 
         quality.addEventListener('input', () => qVal.textContent = quality.value);
 
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length === 0) return;
+
+            currentFile = fileInput.files[0];
+
+            // Release previous image URL
+            if (originalImageURL) {
+                URL.revokeObjectURL(originalImageURL);
+            }
+
+            originalImageURL = URL.createObjectURL(currentFile);
+            preview.innerHTML = `<img src="${originalImageURL}" style="max-width:420px;border-radius:8px">`;
+            logEl.textContent = `Loaded: ${currentFile.name} (${(currentFile.size / 1024).toFixed(1)} KB)`;
+        });
+
+        // Reset Function
+        resetBtn.addEventListener('click', () => {
+            // Reset file input
+            currentFile = null;
+            fileInput.value = '';
+
+            // Reset format and quality
+            outFormat.value = 'jpeg';
+            quality.value = 75;
+            qVal.textContent = '75';
+
+            // Reset UI elements
+            downloadLink.style.display = 'none';
+            sizeInfo.textContent = '';
+            preview.innerHTML = '';
+            logEl.textContent = 'Ready.';
+            dropArea.style.borderColor = '';
+
+            // Release all Object URLs
+            if (originalImageURL) {
+                URL.revokeObjectURL(originalImageURL);
+                originalImageURL = null;
+            }
+
+            if (compressedImageURL) {
+                URL.revokeObjectURL(compressedImageURL);
+                compressedImageURL = null;
+            }
+
+            if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+                URL.revokeObjectURL(downloadLink.href);
+                downloadLink.href = '#';
+            }
+        });
+
+        // Compress Function
         startBtn.addEventListener('click', async () => {
-            const f = fileInput.files[0]; if (!f) return alert('कृपया image निवडा');
-            const reader = new FileReader(); reader.onload = async e => {
-                const img = new Image(); img.src = e.target.result; await img.decode();
-                const canvas = document.createElement('canvas'); canvas.width = img.naturalWidth; canvas.height = img.naturalHeight;
-                const ctx = canvas.getContext('2d'); ctx.drawImage(img, 0, 0);
+            if (!currentFile) return alert('कृपया image निवडा');
+
+            const reader = new FileReader();
+            reader.onload = async e => {
+                const img = new Image();
+                img.src = e.target.result;
+                await img.decode();
+
+                const canvas = document.createElement('canvas');
+                canvas.width = img.naturalWidth;
+                canvas.height = img.naturalHeight;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+
                 const fmt = outFormat.value;
                 const q = parseInt(quality.value) / 100;
                 const mime = fmt === 'jpeg' ? 'image/jpeg' : (fmt === 'webp' ? 'image/webp' : 'image/png');
+
                 canvas.toBlob(b => {
-                    const url = URL.createObjectURL(b); preview.innerHTML = `<img src="${url}" style="max-width:420px;border-radius:8px">`;
-                    downloadLink.href = url; downloadLink.download = f.name.replace(/\.[^/.]+$/, '') + '-compressed.' + (fmt === 'jpeg' ? 'jpg' : fmt);
-                    downloadLink.textContent = 'Download'; downloadLink.style.display = 'inline-block';
-                    sizeInfo.textContent = `Output: ${(b.size / 1024).toFixed(1)} KB`;
-                    logEl.textContent += 'Compressed: ' + (b.size / 1024).toFixed(1) + ' KB\\n';
+                    // Release previous compressed image URL
+                    if (compressedImageURL) {
+                        URL.revokeObjectURL(compressedImageURL);
+                    }
+
+                    compressedImageURL = URL.createObjectURL(b);
+                    preview.innerHTML = `<img src="${compressedImageURL}" style="max-width:420px;border-radius:8px">`;
+
+                    // Release previous download link URL
+                    if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+                        URL.revokeObjectURL(downloadLink.href);
+                    }
+
+                    downloadLink.href = compressedImageURL;
+                    downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-compressed.' + (fmt === 'jpeg' ? 'jpg' : fmt);
+                    downloadLink.textContent = 'Download';
+                    downloadLink.style.display = 'inline-block';
+
+                    const originalSize = currentFile.size / 1024;
+                    const compressedSize = b.size / 1024;
+                    const reduction = ((1 - (compressedSize / originalSize)) * 100).toFixed(1);
+
+                    sizeInfo.textContent = `Output: ${compressedSize.toFixed(1)} KB`;
+                    logEl.textContent = `Original: ${originalSize.toFixed(1)} KB\nCompressed: ${compressedSize.toFixed(1)} KB\nReduction: ${reduction}%`;
                 }, mime, fmt === 'png' ? undefined : q);
             }
-            reader.readAsDataURL(f);
+            reader.readAsDataURL(currentFile);
         });
     </script>
 </body>
