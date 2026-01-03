@@ -19,6 +19,125 @@
   <meta name="theme-color" content="#0aa37f" />
 
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ---------- Category popup (cards) ---------- */
+    .tool-popup {
+      position: fixed;
+      z-index: 9999;
+      min-width: 260px;
+      max-width: 380px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--fg-main);
+      box-shadow: 0 12px 34px rgba(2, 6, 23, 0.7);
+      border-radius: 12px;
+      padding: 12px;
+      backdrop-filter: blur(8px);
+      display: none;
+      /* shown by JS */
+      transition: transform 0.16s ease, opacity 0.12s ease;
+      transform-origin: top left;
+      opacity: 0;
+    }
+
+    /* small arrow */
+    .tool-popup::after {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: inherit;
+      left: 18px;
+      top: -6px;
+      transform: rotate(45deg);
+      border-left: 1px solid rgba(255, 255, 255, 0.04);
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      filter: blur(.2px);
+    }
+
+    /* header inside popup */
+    .tool-popup .tp-head {
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tool-popup .tp-head small {
+      color: var(--fg-muted);
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    /* list */
+    .tool-popup ul {
+      margin: 6px 0 0;
+      padding: 0;
+      list-style: none;
+      max-height: 300px;
+      overflow: auto;
+    }
+
+    .tool-popup ul li {
+      padding: 8px 8px;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: var(--fg-main);
+      transition: background .12s, padding-left .12s;
+    }
+
+    .tool-popup ul li:hover {
+      background: rgba(10, 163, 127, 0.06);
+      padding-left: 10px;
+    }
+
+    /* quick action link */
+    .tool-popup .open-all {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: linear-gradient(145deg, var(--brand), var(--brand2));
+      color: #000;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    /* show class */
+    .tool-popup.show {
+      display: block;
+      transform: translateY(6px);
+      opacity: 1;
+    }
+
+    .container {
+      background: #02da142f;
+    }
+
+    .card {
+      background: #41da055b;
+    }
+
+    /* Mobile: make popup full width bottom sheet on small screens */
+    @media (max-width: 680px) {
+      .tool-popup {
+        left: 12px !important;
+        right: 12px !important;
+        top: auto !important;
+        bottom: 18px !important;
+        transform-origin: bottom center;
+        max-width: calc(100% - 28px);
+      }
+
+      .tool-popup::after {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -31,11 +150,11 @@
       <div>RDroid <span>Apps</span></div>
     </div>
     <div class="nav-links">
-      <a href="../../index.html" class="active">Home</a>
+      <a href="../../windows-tools.html">Windows Tools</a>
       <a href="../../apps.html">Apps</a>
       <a href="../../about.html">About</a>
       <a href="../../contact.html">Contact</a>
-      <a href="../../windows-tools.html">Windows Tools</a>
+      <a href="../../index.html" class="active">Home</a>
     </div>
     <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
   </header>
@@ -105,40 +224,53 @@
     align-items: flex-start;
   ">
 
-      <!-- LEFT COLUMN - Tools -->
-      <div style="flex: 1;">
+      <section class="container">
 
-        <h3>📄 PDF Tools</h3>
-        <p>
-          Merge, split, compress, convert, and secure PDFs with fast, one-click operations.
-          Built for accuracy, privacy, and professional productivity.
+        <h2 style="text-align:center; margin-bottom:10px;">🧰 Windows Tool Categories</h2>
+        <p class="note" style="text-align:center; max-width:720px; margin:0 auto 30px;">
+          Clean, fast, offline-ready utilities for documents, images, audio, and productivity.
         </p>
 
-        <h3>🖼️ Image Tools</h3>
-        <p>
-          Resize, crop, compress, convert formats, and remove backgrounds instantly.
-          Ideal for designers, students, and creators.
-        </p>
+        <div style="
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+            gap:26px;
+          ">
 
-        <h3>🎵 Audio Tools</h3>
-        <p>
-          Trim audio, extract MP3, reduce noise, and convert formats easily.
-          Perfect for editors, podcasters, and quick everyday needs.
-        </p>
+          <a href="windows-tools.html#pdf" class="card" style="text-decoration:none; color:#ffffff;">
+            <h3>📄 PDF Tools</h3>
+            <p>
+              Merge, split, compress, convert, and secure PDFs with fast, one-click operations.
+              Built for accuracy, privacy, and professional productivity.
+            </p>
+          </a>
 
-        <h3>⚙️ System Tools</h3>
-        <p>
-          File renamer, clipboard manager, system cleaner, and automation utilities —
-          built to save time and boost workflow efficiency.
-        </p>
+          <a href="windows-tools.html#image" class="card" style="text-decoration:none; color:#ffffff;">
+            <h3>🖼️ Image Tools</h3>
+            <p>
+              Resize, crop, compress, convert formats, and remove backgrounds instantly.
+              Ideal for designers, students, and creators.
+            </p>
+          </a>
 
-        <h3>📦 Utility Tools</h3>
-        <p>
-          Notes manager, to-do apps, password generators, QR tools, and more —
-          designed for simplicity and smooth user experience.
-        </p>
+          <a href="windows-tools.html#audio" class="card" style="text-decoration:none; color:#ffffff;">
+            <h3>🎵 Audio Tools</h3>
+            <p>
+              Trim audio, extract MP3, reduce noise, and convert formats easily.
+              Perfect for editors, podcasters, and quick everyday needs.
+            </p>
+          </a>
 
-      </div>
+          <a href="windows-tools.html#system" class="card" style="text-decoration:none; color:#ffffff;">
+            <h3>⚙️ System Tools</h3>
+            <p>
+              File renamer, clipboard manager, system cleaner, and automation utilities —
+              built to save time and boost workflow efficiency.
+            </p>
+          </a>
+
+        </div>
+      </section>
 
       <!-- RIGHT COLUMN - Your Extra Website Info -->
       <div style="flex: 1;">
@@ -174,7 +306,20 @@
           represents the journey of a single developer with a high-quality vision — where every tool is crafted with the
           values of “Helpful, Simple, Fast.”
         </p>
+        <div style="
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+            gap:26px;
+          ">
 
+          <a href="windows-tools.html#utility" class="card" style="text-decoration:none; color:#ffffff;">
+            <h3>📦 Utility Tools</h3>
+            <p>
+              Notes manager, to-do apps, password generators, QR tools, and more —
+              designed for simplicity and smooth user experience.
+            </p>
+          </a>
+        </div>
 
       </div>
     </div>
@@ -188,7 +333,201 @@
     © <span id="year"></span> RDroid Apps — All rights reserved.
   </footer>
 
-  <!-- Login Popup -->
+  <script>
+    /* ---------- Category popup behavior for index.html cards ---------- */
+    (function () {
+      // category -> tools mapping (adjust items as needed)
+      const TOOL_MAP = {
+        pdf: [
+          { name: "Compress PDF", href: "windows-tools/pdf/compress-pdf.html" },
+          { name: "Merge PDF", href: "windows-tools/pdf/merge-pdf.html" },
+          { name: "Split PDF", href: "windows-tools/pdf/split-pdf.html" },
+          { name: "PDF to Word", href: "windows-tools/pdf/pdf-to-word.html" },
+          { name: "PDF to JPG", href: "windows-tools/pdf/pdf-to-jpg.html" },
+          { name: "Protect/Unlock PDF", href: "windows-tools/pdf/protect-unlock-pdf.html" },
+          { name: "Book Editor", href: "windows-tools/pdf/book-editor.html" },
+          { name: "Excel to PDF", href: "windows-tools/pdf/excel-to-pdf.html" },
+          { name: "JPG to PDF", href: "windows-tools/pdf/jpg-to-pdf.html" },
+          { name: "PDF to Excel", href: "windows-tools/pdf/pdf-to-excel.html" },
+          { name: "PDF to PNG", href: "windows-tools/pdf/pdf-to-png.html" },
+          { name: "PDF to PPT", href: "windows-tools/pdf/pdf-to-ppt.html" },
+          { name: "PDF to Text", href: "windows-tools/pdf/pdf-to-text.html" },
+          { name: "PNG to PDF", href: "windows-tools/pdf/png-to-pdf.html" },
+          { name: "PPT to PDF", href: "windows-tools/pdf/ppt-to-pdf.html" },
+          { name: "Rotate PDF", href: "windows-tools/pdf/rotate-pdf.html" },
+          { name: "Text to PDF", href: "windows-tools/pdf/text-to-pdf.html" },
+          { name: "Word to PDF", href: "windows-tools/pdf/word-to-pdf.html" }
+        ],
+        image: [
+          { name: "Resize Image", href: "windows-tools/image/resize-image.html" },
+          { name: "Crop Image", href: "windows-tools/image/crop-image.html" },
+          { name: "Background Remover", href: "windows-tools/image/background-remover.html" },
+          { name: "Image Enhancer", href: "windows-tools/image/image-enhancer.html" },
+          { name: "JPG to WebP", href: "windows-tools/image/jpg-to-webp.html" }
+        ],
+        audio: [
+          { name: "Trim Audio", href: "windows-tools/audio/trim-audio.html" },
+          { name: "Convert Audio", href: "windows-tools/audio/convert-audio.html" },
+          { name: "Noise Reduction", href: "windows-tools/audio/noise-reduction.html" },
+          { name: "Extract MP3", href: "windows-tools/audio/extract-mp3.html" }
+        ],
+        system: [
+          { name: "File Renamer", href: "windows-tools/system/file-renamer.html" },
+          { name: "Clipboard Manager", href: "windows-tools/system/clipboard-manager.html" },
+          { name: "System Cleaner", href: "windows-tools/system/system-cleaner.html" }
+        ],
+        utility: [
+          { name: "Notes Manager", href: "windows-tools/utility/notes-manager.html" },
+          { name: "QR Generator", href: "windows-tools/utility/qr-generator.html" }
+        ]
+      };
+
+      // create popup element and attach to body
+      const popup = document.createElement('div');
+      popup.className = 'tool-popup';
+      popup.innerHTML = `
+    <div class="tp-head">
+      <div class="tp-title">Tools</div>
+      <small class="tp-sub">Quick actions</small>
+    </div>
+    <ul class="tp-list"></ul>
+    <div style="margin-top:10px; text-align:right;">
+      <a class="open-all" href="#" target="_self">Open category</a>
+    </div>
+  `;
+      document.body.appendChild(popup);
+
+      const listEl = popup.querySelector('.tp-list');
+      const openAllEl = popup.querySelector('.open-all');
+      let hideTimer = null;
+
+      function buildList(cat) {
+        listEl.innerHTML = '';
+        const tools = TOOL_MAP[cat] || [];
+        tools.forEach(t => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.textContent = t.name;
+          a.href = t.href;
+          a.style.color = 'inherit';
+          a.style.textDecoration = 'none';
+          li.appendChild(a);
+          listEl.appendChild(li);
+        });
+        // update header and openAll
+        popup.querySelector('.tp-title').textContent = (cat || '').toUpperCase() + ' Tools';
+        openAllEl.href = `windows-tools.html#${cat}`;
+        openAllEl.textContent = 'Open all';
+      }
+
+      function showPopupFor(el, cat) {
+        buildList(cat);
+        popup.classList.add('show');
+
+        // position: prefer above-right of the element, if space, else below
+        const rect = el.getBoundingClientRect();
+        const popupW = Math.min(380, window.innerWidth - 24);
+        let left = rect.left + 12;
+        if (left + popupW > window.innerWidth - 12) left = window.innerWidth - popupW - 12;
+        let top = rect.top - 12 - popup.offsetHeight;
+        // if not enough space above, put below
+        if (rect.top < 160) {
+          top = rect.bottom + 12;
+        }
+        // Apply computed positions
+        popup.style.left = left + 'px';
+        // On mobile, we prefer bottom sheet; JS will let CSS media query handle it (we set bottom on small screens)
+        if (window.innerWidth <= 680) {
+          popup.style.bottom = '18px';
+          popup.style.top = 'auto';
+        } else {
+          popup.style.top = (top < 8 ? 8 : top) + 'px';
+          popup.style.bottom = 'auto';
+        }
+        // small transform for animation
+        popup.style.transform = 'translateY(0)';
+        // ensure visible
+        popup.style.display = 'block';
+        setTimeout(() => popup.style.opacity = '1', 10);
+      }
+
+      function hidePopup() {
+        popup.style.opacity = '0';
+        popup.classList.remove('show');
+        // small delay to allow fade
+        if (hideTimer) clearTimeout(hideTimer);
+        hideTimer = setTimeout(() => {
+          popup.style.display = 'none';
+        }, 160);
+      }
+
+      // attach to all .card elements on the page
+      function init() {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+          // determine category from data-cat or from href fragment
+          let cat = card.getAttribute('data-cat');
+          if (!cat) {
+            const href = card.getAttribute('href') || '';
+            const frag = href.split('#')[1] || '';
+            cat = frag || (card.querySelector('h3') ? card.querySelector('h3').textContent.toLowerCase().split(' ')[0] : '');
+          }
+          cat = cat && cat.toLowerCase();
+
+          // mouse interactions (desktop)
+          card.addEventListener('mouseenter', (e) => {
+            if (!cat) return;
+            showPopupFor(card, cat);
+          });
+          card.addEventListener('mouseleave', (e) => {
+            // hide after a short delay to allow pointer to move into popup
+            setTimeout(() => {
+              // if pointer inside popup, don't hide
+              // use document.elementFromPoint
+              const p = document.elementFromPoint(e.clientX, e.clientY);
+              if (p && popup.contains(p)) return;
+              hidePopup();
+            }, 140);
+          });
+
+          // also keep popup visible if user moves to popup
+          popup.addEventListener('mouseenter', () => {
+            if (hideTimer) clearTimeout(hideTimer);
+          });
+          popup.addEventListener('mouseleave', () => {
+            hidePopup();
+          });
+
+          // mobile / touch: toggle on click
+          card.addEventListener('click', (ev) => {
+            if (window.innerWidth <= 680) {
+              ev.preventDefault(); // prevent immediate navigation on small screens
+              if (popup.style.display === 'block') {
+                hidePopup();
+              } else {
+                showPopupFor(card, cat);
+              }
+            }
+          });
+        });
+
+        // Close on ESC
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') hidePopup();
+        });
+
+        // Close on resize (reposition next time)
+        window.addEventListener('resize', () => hidePopup());
+      }
+
+      // init when DOM ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
 
   <!-- Firebase v12 Modular SDKs (ES Modules) -->
   <script type="module" src="js/firebase-config.js"></script>
