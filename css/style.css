@@ -700,8 +700,8 @@ input[type=number] {
 }
 
 .btn-ghost {
-  background: transparent;
-  color: #0aa37f;
+  background: rgb(2, 59, 145);
+  color: #edf0ed;
   border: 1px solid #0aa37f
 }
 
@@ -1135,7 +1135,7 @@ select {
   white-space: nowrap;
   padding: 9px 6px;
   border-radius: 999px;
-  background: #3301a869;
+  background: #037012ab;
   color: #e6e6e6;
   font-size: 12px;
   text-decoration: none;
