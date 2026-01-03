@@ -4,6 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Resize images online with our free tool. Adjust dimensions in pixels or percent, and preserve aspect ratio." />
+    <meta name="keywords"
+        content="Image Resizer, Resize Image Online, Free Image Resizer, Online Image Tool, Resize by Pixels, Resize by Percent, Preserve Aspect Ratio" />
+    <meta name="author" content="RDroid Apps" />
     <title>Resize Image — RDroid Apps</title>
     <link rel="stylesheet" href="../../css/style.css">
 
@@ -36,8 +41,10 @@
             <h1>Resize Image</h1>
             <p class="note">Upload an image and resize by pixels or percent. Preserve aspect ratio option included.</p>
 
-            <label class="drop" id="dropArea">Drop image here or <button class="btn btn-ghost" id="pickBtn">Choose
-                    file</button></label>
+            <label class="drop" id="dropArea"
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
+                <button class="btn btn-ghost" id="pickBtn">Choose file</button>
+            </label>
             <input type="file" id="fileInput" accept="image/*" />
 
             <div class="row">
@@ -63,12 +70,58 @@
 
             <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
                 <button class="btn btn-primary" id="startBtn">Resize</button>
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
                 <a id="downloadLink" class="btn" style="display:none"></a>
                 <div style="margin-left:auto" id="info"></div>
             </div>
 
             <div id="preview" style="margin-top:12px"></div>
             <pre id="log">Ready.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+
+            <section class="seo-content">
+                <h2>Image Resizer Tool</h2>
+                <p>Welcome to our Image Resizer Tool, a simple and efficient way to resize your images directly in your
+                    browser. Whether you need to reduce the file size for web use or adjust dimensions for printing,
+                    our tool makes it easy to get the perfect size without any hassle.</p>
+
+                <h3>How to Use the Image Resizer Tool</h3>
+                <ol>
+                    <li><strong>Upload Your Image:</strong> Click on the "Choose file" button or drag and drop your
+                        image
+                        into the designated area.</li>
+                    <li><strong>Select Resize Mode:</strong> Choose between resizing by pixels or by percentage.</li>
+                    <li><strong>Enter Dimensions:</strong> Specify the desired width and/or height. You can leave one
+                        dimension blank to maintain the aspect ratio.</li>
+                    <li><strong>Preserve Aspect Ratio:</strong> Check the box if you want to keep the original aspect
+                        ratio of the image.</li>
+                    <li><strong>Resize:</strong> Click the "Resize" button to process your image.</li>
+                    <li><strong>Download:</strong> Once resized, click the "Download" link to save your new image.</li>
+                </ol>
+
+                <h3>Benefits of Using Our Tool</h3>
+                <ul>
+                    <li><strong>User-Friendly:</strong> Intuitive interface that makes resizing images quick and easy.
+                    </li>
+                    <li><strong>No Software Required:</strong> Resize images directly in your browser without needing
+                        any
+                        additional software.</li>
+                    <li><strong>Fast Processing:</strong> Efficiently resizes images while maintaining quality.</li>
+                    <li><strong>Privacy Focused:</strong> All processing is done locally in your browser, ensuring your
+                        images remain private.</li>
+                </ul>
+
+                <h3>Supported Image Formats</h3>
+                <p>Our Image Resizer Tool supports a variety of common image formats including JPEG, PNG, GIF, BMP, and
+                    TIFF. This ensures compatibility with most images you may need to resize.</p>
+
+                <h3>Conclusion</h3>
+                <p>Whether you're a photographer, designer, or just someone looking to optimize images for personal use,
+                    our Image Resizer Tool is here to help. Try it out today and experience the convenience of resizing
+                    images with ease!</p>
+            </section>
         </div>
 
         <!-- FOOTER (loaded from external file) -->
@@ -77,53 +130,193 @@
 
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
-        const fileInput = document.getElementById('fileInput'), pickBtn = document.getElementById('pickBtn'),
-            dropArea = document.getElementById('dropArea'), startBtn = document.getElementById('startBtn'),
-            preview = document.getElementById('preview'), downloadLink = document.getElementById('downloadLink'),
-            logEl = document.getElementById('log'), mode = document.getElementById('mode'),
-            widthInput = document.getElementById('widthInput'), heightInput = document.getElementById('heightInput'),
-            keepAspect = document.getElementById('keepAspect'), info = document.getElementById('info');
 
-        pickBtn.addEventListener('click', () => fileInput.click());
-        dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f' });
-        dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = '');
-        dropArea.addEventListener('drop', e => { e.preventDefault(); if (e.dataTransfer.files.length) { fileInput.files = e.dataTransfer.files; handleFile(); } });
-        fileInput.addEventListener('change', handleFile);
+        // Variables declaration
+        const fileInput = document.getElementById('fileInput'),
+            pickBtn = document.getElementById('pickBtn'),
+            dropArea = document.getElementById('dropArea'),
+            startBtn = document.getElementById('startBtn'),
+            resetBtn = document.getElementById('resetBtn'),
+            preview = document.getElementById('preview'),
+            downloadLink = document.getElementById('downloadLink'),
+            logEl = document.getElementById('log'),
+            mode = document.getElementById('mode'),
+            widthInput = document.getElementById('widthInput'),
+            heightInput = document.getElementById('heightInput'),
+            keepAspect = document.getElementById('keepAspect'),
+            info = document.getElementById('info');
 
         let currentFile = null, imgEl = null;
-        function log(msg) { logEl.textContent += msg + '\\n'; logEl.scrollTop = logEl.scrollHeight; }
-        function clearLog() { logEl.textContent = ''; }
+        let originalImageURL = null;
+        let resizedImageURL = null;
 
-        function handleFile() {
-            clearLog(); currentFile = fileInput.files[0]; if (!currentFile) return;
-            const url = URL.createObjectURL(currentFile);
-            preview.innerHTML = `<img id="loadedImg" src="${url}" style="max-width:420px;border-radius:8px">`;
-            imgEl = document.getElementById('loadedImg');
-            imgEl.onload = () => { info.textContent = `Original: ${imgEl.naturalWidth}×${imgEl.naturalHeight}`; log('Image loaded.'); }
+        // Helper functions
+        function log(msg) {
+            logEl.textContent += msg + '\n';
+            logEl.scrollTop = logEl.scrollHeight;
         }
 
+        function clearLog() {
+            logEl.textContent = '';
+        }
+
+        // Event Listeners
+        pickBtn.addEventListener('click', () => fileInput.click());
+
+        dropArea.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#0aa37f';
+            dropArea.style.background = 'rgba(10, 163, 127, 0.03)';
+        });
+
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+        });
+
+        dropArea.addEventListener('drop', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                handleFile();
+            }
+        });
+
+        fileInput.addEventListener('change', handleFile);
+
+        // Handle file function
+        function handleFile() {
+            clearLog();
+            currentFile = fileInput.files[0];
+            if (!currentFile) return;
+
+            // Release previous image URL
+            if (originalImageURL) {
+                URL.revokeObjectURL(originalImageURL);
+            }
+
+            originalImageURL = URL.createObjectURL(currentFile);
+            preview.innerHTML = `<img id="loadedImg" src="${originalImageURL}" style="max-width:420px;border-radius:8px">`;
+            imgEl = document.getElementById('loadedImg');
+
+            imgEl.onload = () => {
+                info.textContent = `Original: ${imgEl.naturalWidth}×${imgEl.naturalHeight}`;
+                log('Image loaded.');
+                // Auto-fill width and height with original dimensions
+                widthInput.placeholder = imgEl.naturalWidth;
+                heightInput.placeholder = imgEl.naturalHeight;
+            }
+        }
+
+        // Resize Function
         startBtn.addEventListener('click', async () => {
             if (!currentFile) return alert('कृपया image निवडा');
-            clearLog(); log('Resizing...');
+            clearLog();
+            log('Resizing...');
+
             const reader = new FileReader();
             reader.onload = async e => {
-                const img = new Image(); img.src = e.target.result; await img.decode();
+                const img = new Image();
+                img.src = e.target.result;
+                await img.decode();
+
                 let targetW = parseInt(widthInput.value) || null;
                 let targetH = parseInt(heightInput.value) || null;
-                if (mode.value === 'percent') { if (targetW) targetW = Math.max(1, Math.round(img.naturalWidth * (targetW / 100))); if (targetH) targetH = Math.max(1, Math.round(img.naturalHeight * (targetH / 100))); }
-                if (!targetW && !targetH) { alert('किमान width किंवा height द्या'); return; }
-                if (keepAspect.checked) { if (!targetW) targetW = Math.round(img.naturalWidth * (targetH / img.naturalHeight)); if (!targetH) targetH = Math.round(img.naturalHeight * (targetW / img.naturalWidth)); }
-                const canvas = document.createElement('canvas'); canvas.width = targetW; canvas.height = targetH;
-                const ctx = canvas.getContext('2d'); ctx.drawImage(img, 0, 0, targetW, targetH);
+
+                // Handle percent mode
+                if (mode.value === 'percent') {
+                    if (targetW) targetW = Math.max(1, Math.round(img.naturalWidth * (targetW / 100)));
+                    if (targetH) targetH = Math.max(1, Math.round(img.naturalHeight * (targetH / 100)));
+                }
+
+                if (!targetW && !targetH) {
+                    alert('किमान width किंवा height द्या');
+                    return;
+                }
+
+                // Preserve aspect ratio
+                if (keepAspect.checked) {
+                    if (!targetW) targetW = Math.round(img.naturalWidth * (targetH / img.naturalHeight));
+                    if (!targetH) targetH = Math.round(img.naturalHeight * (targetW / img.naturalWidth));
+                }
+
+                const canvas = document.createElement('canvas');
+                canvas.width = targetW;
+                canvas.height = targetH;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, targetW, targetH);
+
                 canvas.toBlob(blob => {
-                    const url = URL.createObjectURL(blob);
-                    downloadLink.href = url; downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-resized.png';
-                    downloadLink.textContent = 'Download'; downloadLink.style.display = 'inline-block';
-                    preview.innerHTML = `<img src="${url}" style="max-width:420px;border-radius:8px">`;
+                    // Release previous resized image URL
+                    if (resizedImageURL) {
+                        URL.revokeObjectURL(resizedImageURL);
+                    }
+
+                    if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+                        URL.revokeObjectURL(downloadLink.href);
+                    }
+
+                    resizedImageURL = URL.createObjectURL(blob);
+                    downloadLink.href = resizedImageURL;
+                    downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-resized.png';
+                    downloadLink.textContent = 'Download';
+                    downloadLink.style.display = 'inline-block';
+
+                    preview.innerHTML = `<img src="${resizedImageURL}" style="max-width:420px;border-radius:8px">`;
+
+                    // Update info with new dimensions
+                    info.textContent = `Resized: ${targetW}×${targetH}`;
+                    log(`Resized to: ${targetW}×${targetH}`);
                     log('Done.');
                 }, 'image/png');
             }
             reader.readAsDataURL(currentFile);
+        });
+
+        // Reset Function
+        resetBtn.addEventListener('click', () => {
+            // Reset file input
+            currentFile = null;
+            fileInput.value = '';
+
+            // Reset form inputs
+            mode.value = 'pixels';
+            widthInput.value = '';
+            widthInput.placeholder = 'auto';
+            heightInput.value = '';
+            heightInput.placeholder = 'auto';
+            keepAspect.checked = true;
+
+            // Reset UI elements
+            downloadLink.style.display = 'none';
+            info.textContent = '';
+            preview.innerHTML = '';
+            clearLog();
+            log('Ready.');
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+
+            // Release all Object URLs
+            if (originalImageURL) {
+                URL.revokeObjectURL(originalImageURL);
+                originalImageURL = null;
+            }
+
+            if (resizedImageURL) {
+                URL.revokeObjectURL(resizedImageURL);
+                resizedImageURL = null;
+            }
+
+            if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+                URL.revokeObjectURL(downloadLink.href);
+                downloadLink.href = '#';
+            }
+
+            // Reset variables
+            imgEl = null;
         });
     </script>
 </body>
