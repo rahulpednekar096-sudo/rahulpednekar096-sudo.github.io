@@ -4,6 +4,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description"
+    content="Convert PNG images to WebP format online for free. Preserve transparency and optimize image size with our easy-to-use tool." />
+  <meta name="keywords"
+    content="PNG to WebP Converter, Convert PNG to WebP, Online Image Converter, Free PNG to WebP, WebP Image Format, Image Optimization" />
+  <meta name="author" content="RDroid Apps" />
   <title>PNG → WebP — RDroid Apps</title>
   <link rel="stylesheet" href="../../css/style.css">
 
@@ -36,8 +41,10 @@
       <h1>PNG → WebP</h1>
       <p class="note">Convert PNG to WebP. Transparency preserved when possible.</p>
 
-      <label class="drop" id="dropArea">Drop PNG or <button class="btn btn-ghost" id="pickBtn">Choose
-          file</button></label>
+      <label class="drop" id="dropArea"
+        style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
+        <button class="btn btn-ghost" id="pickBtn">Choose file</button>
+      </label>
       <input type="file" id="fileInput" accept="image/png" />
       <div class="row">
         <div class="col"><label class="small">Quality</label><input type="range" id="quality" min="10" max="95"
@@ -45,10 +52,55 @@
           <div id="qVal">80</div>
         </div>
       </div>
-      <div style="margin-top:12px;display:flex;gap:8px;"><button class="btn btn-primary"
-          id="startBtn">Convert</button><a id="downloadLink" class="btn" style="display:none"></a></div>
+      <div style="margin-top:12px;display:flex;gap:8px;">
+        <button class="btn btn-primary" id="startBtn">Convert</button>
+        <button class="btn btn-ghost" id="resetBtn">Reset</button>
+        <a id="downloadLink" class="btn" style="display:none"></a>
+      </div>
       <div id="preview" style="margin-top:12px"></div>
       <pre id="log">Ready.</pre>
+      <!-- SEO Content -->
+      <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+      <hr style="margin:32px 0">
+
+      <section class="seo-content">
+        <h2>PNG to WebP Converter</h2>
+        <p>Welcome to our PNG to WebP converter tool! This free online utility allows you to easily convert your PNG
+          images into the efficient WebP format, which offers superior compression and quality for web use. Whether
+          you're a web developer looking to optimize your website's performance or simply want to reduce image file
+          sizes,
+          our tool makes the conversion process quick and hassle-free.</p>
+
+        <h3>Why Convert PNG to WebP?</h3>
+        <p>WebP is a modern image format developed by Google that provides both lossless and lossy compression. By
+          converting PNG images to WebP, you can significantly reduce file sizes without compromising on quality. This
+          leads to faster loading times for websites, improved user experience, and reduced bandwidth usage.</p>
+
+        <h3>How to Use Our PNG to WebP Converter</h3>
+        <ol>
+          <li><strong>Select Your PNG Image:</strong> Click the "Choose file" button or drag and drop your PNG image
+            into the designated area.</li>
+          <li><strong>Adjust Quality Settings:</strong> Use the quality slider to set your desired compression level.
+            Higher quality settings result in larger file sizes, while lower settings yield smaller files.</li>
+          <li><strong>Convert the Image:</strong> Click the "Convert" button to start the conversion process. Our tool
+            will quickly process your image and generate a WebP version.</li>
+          <li><strong>Download Your WebP Image:</strong> Once the conversion is complete, a download link will appear.
+            Click it to save your new WebP image to your device.</li>
+        </ol>
+
+        <h3>Benefits of Using Our Tool</h3>
+        <ul>
+          <li><strong>User-Friendly Interface:</strong> Our intuitive design makes it easy for anyone to convert images,
+            regardless of technical expertise.</li>
+          <li><strong>No Software Installation:</strong> As an online tool, there's no need to download or install any
+            software. Simply access it through your web browser.</li>
+          <li><strong>Privacy and Security:</strong> We prioritize your privacy. Uploaded images are processed securely
+            and not stored on our servers.</li>
+        </ul>
+
+        <p>Start converting your PNG images to WebP today and experience the benefits of faster, more efficient web
+          graphics!</p>
+      </section>
     </div>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
@@ -56,23 +108,147 @@
 
   <script>
     function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
-    const pickBtn = document.getElementById('pickBtn'), fileInput = document.getElementById('fileInput'), dropArea = document.getElementById('dropArea'),
-      quality = document.getElementById('quality'), qVal = document.getElementById('qVal'), startBtn = document.getElementById('startBtn'),
-      downloadLink = document.getElementById('downloadLink'), preview = document.getElementById('preview'), logEl = document.getElementById('log');
 
-    pickBtn.addEventListener('click', () => fileInput.click()); dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f' }); dropArea.addEventListener('drop', e => { e.preventDefault(); if (e.dataTransfer.files.length) fileInput.files = e.dataTransfer.files; });
-    fileInput.addEventListener('change', () => preview.innerHTML = `<img src="${URL.createObjectURL(fileInput.files[0])}" style="max-width:420px;border-radius:8px">`);
+    // Variables declaration
+    const pickBtn = document.getElementById('pickBtn'),
+      fileInput = document.getElementById('fileInput'),
+      dropArea = document.getElementById('dropArea'),
+      quality = document.getElementById('quality'),
+      qVal = document.getElementById('qVal'),
+      startBtn = document.getElementById('startBtn'),
+      resetBtn = document.getElementById('resetBtn'),
+      downloadLink = document.getElementById('downloadLink'),
+      preview = document.getElementById('preview'),
+      logEl = document.getElementById('log');
+
+    let currentFile = null;
+    let originalImageURL = null;
+    let webpImageURL = null;
+
+    // Event Listeners
+    pickBtn.addEventListener('click', () => fileInput.click());
+
+    dropArea.addEventListener('dragover', e => {
+      e.preventDefault();
+      dropArea.style.borderColor = '#0aa37f';
+      dropArea.style.background = 'rgba(10, 163, 127, 0.03)';
+    });
+
+    dropArea.addEventListener('dragleave', () => {
+      dropArea.style.borderColor = '';
+      dropArea.style.background = '';
+    });
+
+    dropArea.addEventListener('drop', e => {
+      e.preventDefault();
+      dropArea.style.borderColor = '';
+      dropArea.style.background = '';
+
+      if (e.dataTransfer.files.length) {
+        fileInput.files = e.dataTransfer.files;
+        fileInput.dispatchEvent(new Event('change'));
+      }
+    });
+
     quality.addEventListener('input', () => qVal.textContent = quality.value);
 
-    startBtn.addEventListener('click', () => {
-      const f = fileInput.files[0]; if (!f) return alert('कृपया PNG निवडा');
-      const reader = new FileReader(); reader.onload = async e => {
-        const img = new Image(); img.src = e.target.result; await img.decode();
-        const canvas = document.createElement('canvas'); canvas.width = img.naturalWidth; canvas.height = img.naturalHeight;
-        canvas.getContext('2d').drawImage(img, 0, 0);
-        canvas.toBlob(b => { const url = URL.createObjectURL(b); preview.innerHTML = `<img src="${url}" style="max-width:420px;border-radius:8px">`; downloadLink.href = url; downloadLink.download = f.name.replace(/\.png$/i, '') + '.webp'; downloadLink.textContent = 'Download'; downloadLink.style.display = 'inline-block'; }, 'image/webp', parseInt(quality.value) / 100);
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files.length === 0) return;
+
+      currentFile = fileInput.files[0];
+
+      // Check if file is PNG
+      if (!currentFile.type.match('image/png')) {
+        alert('कृपया फक्त PNG फाईल निवडा');
+        fileInput.value = '';
+        return;
       }
-      reader.readAsDataURL(f);
+
+      // Release previous image URL
+      if (originalImageURL) {
+        URL.revokeObjectURL(originalImageURL);
+      }
+
+      originalImageURL = URL.createObjectURL(currentFile);
+      preview.innerHTML = `<img src="${originalImageURL}" style="max-width:420px;border-radius:8px">`;
+      logEl.textContent = `Loaded: ${currentFile.name} (${(currentFile.size / 1024).toFixed(1)} KB)`;
+    });
+
+    // Convert Function
+    startBtn.addEventListener('click', () => {
+      if (!currentFile) return alert('कृपया PNG निवडा');
+
+      const reader = new FileReader();
+      reader.onload = async e => {
+        const img = new Image();
+        img.src = e.target.result;
+        await img.decode();
+
+        const canvas = document.createElement('canvas');
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        canvas.getContext('2d').drawImage(img, 0, 0);
+
+        canvas.toBlob(b => {
+          // Release previous WebP image URL
+          if (webpImageURL) {
+            URL.revokeObjectURL(webpImageURL);
+          }
+
+          if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+            URL.revokeObjectURL(downloadLink.href);
+          }
+
+          webpImageURL = URL.createObjectURL(b);
+          preview.innerHTML = `<img src="${webpImageURL}" style="max-width:420px;border-radius:8px">`;
+
+          downloadLink.href = webpImageURL;
+          downloadLink.download = currentFile.name.replace(/\.png$/i, '') + '.webp';
+          downloadLink.textContent = 'Download';
+          downloadLink.style.display = 'inline-block';
+
+          const originalSize = currentFile.size / 1024;
+          const webpSize = b.size / 1024;
+          const reduction = ((1 - (webpSize / originalSize)) * 100).toFixed(1);
+
+          logEl.textContent = `Original PNG: ${originalSize.toFixed(1)} KB\nConverted WebP: ${webpSize.toFixed(1)} KB\nSize Reduction: ${reduction}%`;
+        }, 'image/webp', parseInt(quality.value) / 100);
+      }
+      reader.readAsDataURL(currentFile);
+    });
+
+    // Reset Function
+    resetBtn.addEventListener('click', () => {
+      // Reset file input
+      currentFile = null;
+      fileInput.value = '';
+
+      // Reset quality slider
+      quality.value = 80;
+      qVal.textContent = '80';
+
+      // Reset UI elements
+      downloadLink.style.display = 'none';
+      preview.innerHTML = '';
+      logEl.textContent = 'Ready.';
+      dropArea.style.borderColor = '';
+      dropArea.style.background = '';
+
+      // Release all Object URLs
+      if (originalImageURL) {
+        URL.revokeObjectURL(originalImageURL);
+        originalImageURL = null;
+      }
+
+      if (webpImageURL) {
+        URL.revokeObjectURL(webpImageURL);
+        webpImageURL = null;
+      }
+
+      if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+        URL.revokeObjectURL(downloadLink.href);
+        downloadLink.href = '#';
+      }
     });
   </script>
 </body>
