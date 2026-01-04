@@ -201,6 +201,11 @@ nav {
   transition: transform .35s ease;
   z-index: 90;
   box-shadow: 6px 0 25px rgba(0, 0, 0, .45);
+  /* या तीन लाईन्स जोडल्यास scrollable होईल */
+  max-height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-color: var(--brand) rgba(255, 255, 255, 0.05);
 }
 
 nav.open {
@@ -522,7 +527,7 @@ footer {
   padding: 20px;
   text-align: center;
   color: var(--muted);
-  border-top: 1px solid rgba(255, 255, 255, .06);
+  border-top: 1px solid rgba(75, 231, 14, 0.719);
 }
 
 /* Theme Toggle Button */
