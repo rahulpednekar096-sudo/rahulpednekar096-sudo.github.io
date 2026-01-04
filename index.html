@@ -26,8 +26,8 @@
       z-index: 9999;
       min-width: 260px;
       max-width: 380px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.247), rgba(255, 255, 255, 0.26));
+      border: 1px solid rgba(255, 255, 255, 0.623);
       color: var(--fg-main);
       box-shadow: 0 12px 34px rgba(2, 6, 23, 0.7);
       border-radius: 12px;
@@ -86,7 +86,7 @@
       margin-bottom: 6px;
       font-size: 14px;
       color: var(--fg-main);
-      transition: background .12s, padding-left .12s;
+      transition: background .21s, padding-left .21s;
     }
 
     .tool-popup ul li:hover {
@@ -101,7 +101,7 @@
       padding: 6px 10px;
       border-radius: 8px;
       background: linear-gradient(145deg, var(--brand), var(--brand2));
-      color: #000;
+      color: #350202;
       font-weight: 700;
       text-decoration: none;
       font-size: 13px;
@@ -194,26 +194,6 @@
   <!-- Windows Tools Section -->
   <section class="windows-tools" style="padding: 40px 20px; text-align: center;">
 
-    <h2 style="margin-bottom: 15px;">🪟 Windows Tools</h2>
-
-    <p style="max-width: 800px; margin: 0 auto 20px; font-size: 15px;">
-      Use our fast, secure, and lightweight Windows utilities built for everyday productivity.
-      Click below to explore the full collection of tools.
-    </p>
-
-    <a href="windows-tools.html" style="
-      display: inline-block;
-      background: #0aa37f;
-      color: #fff;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-size: 17px;
-      text-decoration: none;
-      margin-bottom: 35px;
-    ">
-      🔧 Open Windows Tools
-    </a>
-
     <!-- TWO COLUMN LAYOUT -->
     <div style="
     display: flex;
@@ -229,6 +209,10 @@
         <h2 style="text-align:center; margin-bottom:10px;">🧰 Windows Tool Categories</h2>
         <p class="note" style="text-align:center; max-width:720px; margin:0 auto 30px;">
           Clean, fast, offline-ready utilities for documents, images, audio, and productivity.
+        </p>
+        <p style="max-width: 800px; margin: 0 auto 20px; font-size: 15px;">
+          Use our fast, secure, and lightweight Windows utilities built for everyday productivity.
+          Click below to explore the full collection of tools.
         </p>
 
         <div style="
@@ -361,20 +345,34 @@
         image: [
           { name: "Resize Image", href: "windows-tools/image/resize-image.html" },
           { name: "Crop Image", href: "windows-tools/image/crop-image.html" },
-          { name: "Background Remover", href: "windows-tools/image/background-remover.html" },
-          { name: "Image Enhancer", href: "windows-tools/image/image-enhancer.html" },
-          { name: "JPG to WebP", href: "windows-tools/image/jpg-to-webp.html" }
+          { name: "Rotate Image", href: "windows-tools/image/rotate-image.html" },
+          { name: "Flip Image", href: "windows-tools/image/flip-image.html" },
+          { name: "Image Compressor", href: "windows-tools/image/image-compressor.html" },
+          { name: "Image Converter", href: "windows-tools/image/image-converter.html" },
+          { name: "PNG to WebP", href: "windows-tools/image/png-to-webp.html" },
+          { name: "JPG to WebP", href: "windows-tools/image/jpg-to-webp.html" },
+          { name: "Add Watermark", href: "windows-tools/image/add-watermark.html" },
+          { name: "Image Metadata viewer", href: "windows-tools/image/image-metadata-viewer.html" },
+          { name: "Image Metadata Remover", href: "windows-tools/image/image-metadata-remover.html" },
+          { name: "Image to pdf", href: "windows-tools/image/image-to-pdf.html" }
         ],
         audio: [
           { name: "Trim Audio", href: "windows-tools/audio/trim-audio.html" },
           { name: "Convert Audio", href: "windows-tools/audio/convert-audio.html" },
-          { name: "Noise Reduction", href: "windows-tools/audio/noise-reduction.html" },
-          { name: "Extract MP3", href: "windows-tools/audio/extract-mp3.html" }
+          { name: "Extract MP3", href: "windows-tools/audio/extract-mp3.html" },
+          { name: "Volume Booster", href: "windows-tools/audio/volume-booster.html" },
+          { name: "Merge Audio", href: "windows-tools/audio/merge-audio.html" },
+          { name: "Change Audio Speed", href: "windows-tools/audio/change-audio-speed.html" },
+          { name: "Change Audio Pitch", href: "windows-tools/audio/change-audio-pitch.html" },
+          { name: "Audio Metadata Editor", href: "windows-tools/audio/audio-metadata-editor.html" }
         ],
         system: [
           { name: "File Renamer", href: "windows-tools/system/file-renamer.html" },
-          { name: "Clipboard Manager", href: "windows-tools/system/clipboard-manager.html" },
-          { name: "System Cleaner", href: "windows-tools/system/system-cleaner.html" }
+          { name: "Duplicate File Finder", href: "windows-tools/system/duplicate-file-finder.html" },
+          { name: "Folder Size Analyzer", href: "windows-tools/system/folder-size-analyzer.html" },
+          { name: "Startup Program Manager", href: "windows-tools/system/startup-program-manager.html" },
+          { name: "System Info Checker", href: "windows-tools/system/system-Info-Checker.html" },
+          { name: "Disk Usage Visualizer", href: "windows-tools/system/disk-usage-visualizer.html" }
         ],
         utility: [
           { name: "Notes Manager", href: "windows-tools/utility/notes-manager.html" },
