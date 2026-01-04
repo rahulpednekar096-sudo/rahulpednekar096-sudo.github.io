@@ -16,36 +16,29 @@
   <meta name="description"
     content="Easy Music by RDroid Apps — Compose your own guitar-based tracks and export them easily." />
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Include jQuery for load function -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-  <!-- Header -->
-  <header>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-    <div class="logo">
-      <img src="../../assets/my_brand_icon.png" alt="RDroid" />
-      <div>RDroid <span>Apps</span></div>
-    </div>
-    <div class="nav-links">
-      <a href="../../windows-tools.html">Windows Tools</a>
-      <a href="../../apps.html">Apps</a>
-      <a href="../../about.html">About</a>
-      <a href="../../contact.html">Contact</a>
-      <a href="../../index.html" class="active">Home</a>
-    </div>
-    <a href="../../auth/login.html" class="login-btn">🔑 Login</a>
-  </header>
+  <!-- HEADER (loaded from external file) -->
+  <div id="header-container"></div>
 
-  <!-- Drawer -->
-  <nav id="drawer">
-    <a href="index.html">🏠 Home</a>
-    <a href="apps.html">📱 Apps</a>
-    <a href="favorites.html">⭐ Favorites</a>
-    <a href="profile.html">👤 Profile</a>
-    <a href="about.html">ℹ️ About</a>
-    <a href="contact.html">✉️ Contact</a>
-    <a href="privacy-policy.html">🔒 Privacy Policy</a>
-  </nav>
+  <!-- TOOLS QUICK LINKS (loaded from external file) -->
+  <div id="tools-links-container"></div>
+
+  <!-- MENU DRAWER (loaded from external file) -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load all components -->
+  <script>
+    $(function () {
+      $("#header-container").load("../../components/header.html");
+      $("#menu-drawer-container").load("../../components/menu-drawer.html");
+      $("#tools-links-container").load("../../components/favorite-tools-quick-links.html");
+      $("#footer-container").load("../../components/footer.html");
+    });
+  </script>
 
   <div class="wrap">
     <section class="section">
@@ -68,15 +61,11 @@
       </div>
     </section>
   </div>
-
-  <footer>
-    © <span id="year"></span> RDroid Apps — All rights reserved.
-  </footer>
-
-  <!-- Login Popup -->
-
-
-  <!-- Profile Popup -->
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
+  <script>
+    function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+  </script>
 
 
   <!-- Firebase v12 Modular SDKs (ES Modules) -->
