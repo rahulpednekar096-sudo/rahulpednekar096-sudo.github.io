@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Folder Size Analyzer — RDroid Apps</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="description"
+        content="Analyze folder sizes and disk usage. Get detailed breakdown of file sizes by type, folder structure and storage distribution." />
+    <meta name="keywords"
+        content="folder size analyzer, disk usage analyzer, storage analyzer, file size calculator, directory size" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load components -->
+    <script>
+        $(function () {
+            $("#header-container").load("../../components/header.html");
+            $("#menu-drawer-container").load("../../components/menu-drawer.html");
+            $("#tools-links-container").load("../../components/system-tools-quick-links.html");
+            $("#footer-container").load("../../components/footer.html");
+        });
+    </script>
+
+    <section class="section" role="main" aria-labelledby="title">
+        <h1 id="title">Folder Size Analyzer</h1>
+        <p class="lead">Analyze folder sizes and disk usage. Get detailed breakdown of file sizes by type and folder
+            structure. All processing is done locally in your browser.</p>
+
+        <div class="card" style="margin-top: 24px;">
+            <div class="drop" id="dropArea">
+                <p>📁 Drop folders or files here</p>
+                <p class="small">or</p>
+                <button class="btn" id="chooseBtn">Choose Folders/Files</button>
+                <input type="file" id="fileInput" webkitdirectory multiple style="display:none" />
+                <p class="small" style="margin-top: 12px;">Note: For folder selection, use Chrome/Edge browsers. For
+                    other
+                    browsers, select multiple files.</p>
+            </div>
+
+            <div class="controls" style="margin-top: 20px;">
+                <div class="control">
+                    <label>Sort by</label>
+                    <select id="sortBy">
+                        <option value="sizeDesc">Size (Largest First)</option>
+                        <option value="sizeAsc">Size (Smallest First)</option>
+                        <option value="nameAsc">Name (A-Z)</option>
+                        <option value="nameDesc">Name (Z-A)</option>
+                        <option value="type">File Type</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label>View Mode</label>
+                    <select id="viewMode">
+                        <option value="tree">Tree View</option>
+                        <option value="list">List View</option>
+                        <option value="chart">Chart View</option>
+                    </select>
+                </div>
+                <div class="control">
+                    <label>Size Units</label>
+                    <select id="sizeUnit">
+                        <option value="auto">Auto (KB/MB/GB)</option>
+                        <option value="bytes">Bytes</option>
+                        <option value="kb">Kilobytes (KB)</option>
+                        <option value="mb">Megabytes (MB)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="display:flex; gap:12px; align-items:center; margin-top: 20px;">
+                <button class="btn btn-primary" id="analyzeBtn" disabled>🔍 Analyze Files</button>
+                <button class="btn" id="clearBtn">Clear</button>
+                <div style="margin-left:auto" id="summaryInfo" class="small"></div>
+            </div>
+
+            <div class="progress" id="progressWrap" style="display: none; margin-top: 15px;">
+                <div class="bar" id="progressBar"></div>
+            </div>
+
+            <div class="tabs" style="margin-top: 20px;">
+                <button class="tab-btn active" data-tab="results">Analysis Results</button>
+                <button class="tab-btn" data-tab="chart">Visual Chart</button>
+                <button class="tab-btn" data-tab="statistics">Statistics</button>
+            </div>
+
+            <!-- Results Tab -->
+            <div class="tab-content active" id="results">
+                <div id="resultsContainer" style="margin-top: 15px; min-height: 300px;">
+                    <div class="preview" style="text-align: center; padding: 40px 20px; color: var(--muted);">
+                        <p>No files selected yet.</p>
+                        <p class="small">Select folders or files to begin analysis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart Tab -->
+            <div class="tab-content" id="chart">
+                <div id="chartContainer" style="margin-top: 15px; min-height: 300px;">
+                    <canvas id="sizeChart" width="400" height="200" style="max-width: 100%;"></canvas>
+                </div>
+            </div>
+
+            <!-- Statistics Tab -->
+            <div class="tab-content" id="statistics">
+                <div id="statsContainer" style="margin-top: 15px;">
+                    <table class="table-preview">
+                        <tr>
+                            <td>Total Files</td>
+                            <td id="totalFiles">0</td>
+                        </tr>
+                        <tr>
+                            <td>Total Folders</td>
+                            <td id="totalFolders">0</td>
+                        </tr>
+                        <tr>
+                            <td>Total Size</td>
+                            <td id="totalSize">0 B</td>
+                        </tr>
+                        <tr>
+                            <td>Largest File</td>
+                            <td id="largestFile">-</td>
+                        </tr>
+                        <tr>
+                            <td>Average File Size</td>
+                            <td id="avgFileSize">0 B</td>
+                        </tr>
+                        <tr>
+                            <td>File Types Count</td>
+                            <td id="fileTypesCount">0</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 24px; background: rgba(255,255,255,0.02);">
+                <h3>File Type Breakdown</h3>
+                <div id="typeBreakdown" class="preview">
+                    <p class="small" style="text-align: center;">No data to display yet.</p>
+                </div>
+            </div>
+
+            <div style="display:flex; gap:12px; margin-top: 20px;">
+                <button class="btn" id="exportBtn" disabled>📊 Export Report</button>
+                <button class="btn" id="copyBtn" disabled>📋 Copy Summary</button>
+            </div>
+        </div>
+
+        <hr style="margin: 32px 0;">
+        <section class="seo-content">
+            <h2>About Folder Size Analyzer</h2>
+            <p>
+                The Folder Size Analyzer tool helps you understand how disk space is being used on your computer.
+                It analyzes folder structures, calculates total sizes, and provides visual breakdowns of file types.
+                All processing happens locally in your browser for privacy and security.
+            </p>
+
+            <h2>Features</h2>
+            <ul class="about-points">
+                <li><strong>Folder Size Calculation:</strong> Recursively calculates sizes of folders and subfolders
+                </li>
+                <li><strong>File Type Analysis:</strong> Breaks down storage by file extensions (images, documents,
+                    videos,
+                    etc.)</li>
+                <li><strong>Visual Charts:</strong> Interactive pie and bar charts showing storage distribution</li>
+                <li><strong>Multiple Views:</strong> Tree view for hierarchy, list view for flat structure, chart view
+                    for
+                    visualization</li>
+                <li><strong>Export Options:</strong> Export analysis results as JSON or CSV reports</li>
+                <li><strong>Sorting Options:</strong> Sort by size, name, or file type for easy analysis</li>
+            </ul>
+
+            <h2>How to Use</h2>
+            <ol class="about-points">
+                <li>Click "Choose Folders/Files" or drag and drop folders into the designated area</li>
+                <li>For folder selection, use Chrome or Edge browsers (supports directory upload)</li>
+                <li>For other browsers, select multiple files from the same folder</li>
+                <li>Click "Analyze Files" to process the selected items</li>
+                <li>Use tabs to switch between different views (Results, Chart, Statistics)</li>
+                <li>Export results or copy summary as needed</li>
+            </ol>
+
+            <h2>Privacy & Security</h2>
+            <p>
+                All file analysis is performed entirely within your browser. No files or folder information is
+                uploaded to any server. Your data remains completely private and secure on your local device.
+            </p>
+
+            <h2>Browser Compatibility</h2>
+            <p>
+                <strong>Chrome & Edge:</strong> Full folder upload support with directory structure<br>
+                <strong>Firefox & Safari:</strong> File upload only (select multiple files from a folder)<br>
+                <strong>Mobile Browsers:</strong> File selection available, folder upload may be limited
+            </p>
+        </section>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        function toggleMenu() {
+            document.getElementById("drawer").classList.toggle("open");
+        }
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Elements
+        const fileInput = document.getElementById('fileInput');
+        const chooseBtn = document.getElementById('chooseBtn');
+        const dropArea = document.getElementById('dropArea');
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const exportBtn = document.getElementById('exportBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const progressWrap = document.getElementById('progressWrap');
+        const progressBar = document.getElementById('progressBar');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const summaryInfo = document.getElementById('summaryInfo');
+        const sizeChartCanvas = document.getElementById('sizeChart');
+
+        let chartInstance = null;
+        let filesData = [];
+        let folderStructure = {};
+        let analysisResults = null;
+
+        // File selection
+        chooseBtn.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', handleFileSelection);
+
+        // Drag and drop
+        dropArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropArea.classList.add('dragover');
+        });
+        dropArea.addEventListener('dragleave', () => dropArea.classList.remove('dragover'));
+        dropArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropArea.classList.remove('dragover');
+            handleFileDrop(e.dataTransfer.items || e.dataTransfer.files);
+        });
+
+        // Handle file selection
+        function handleFileSelection(e) {
+            const fileList = e.target.files;
+            processFileList(fileList);
+        }
+
+        // Handle file drop
+        function handleFileDrop(items) {
+            const files = [];
+            if (items[0].webkitGetAsEntry) {
+                // Handle directory drops
+                processItems(items);
+            } else {
+                // Handle file drops
+                for (let i = 0; i < items.length; i++) {
+                    files.push(items[i].getAsFile());
+                }
+                processFileList(files);
+            }
+        }
+
+        // Process file list
+        function processFileList(fileList) {
+            filesData = [];
+            for (let i = 0; i < fileList.length; i++) {
+                const file = fileList[i];
+                filesData.push({
+                    file: file,
+                    path: file.webkitRelativePath || file.name,
+                    name: file.name,
+                    size: file.size,
+                    type: file.type,
+                    extension: file.name.split('.').pop().toLowerCase(),
+                    lastModified: file.lastModified
+                });
+            }
+            updateSummary();
+            analyzeBtn.disabled = false;
+        }
+
+        // Update summary info
+        function updateSummary() {
+            const totalSize = filesData.reduce((sum, item) => sum + item.size, 0);
+            const fileCount = filesData.length;
+
+            summaryInfo.textContent = `${fileCount} files selected • ${formatSize(totalSize)}`;
+        }
+
+        // Format size function
+        function formatSize(bytes) {
+            const unit = document.getElementById('sizeUnit').value;
+
+            if (unit === 'bytes') return bytes + ' B';
+            if (unit === 'kb') return (bytes / 1024).toFixed(2) + ' KB';
+            if (unit === 'mb') return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+
+            // Auto mode
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + ' KB';
+            if (bytes < 1024 * 1024 * 1024) return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+            return (bytes / (1024 * 1024 * 1024)).toFixed(2) + ' GB';
+        }
+
+        // Process directory items
+        function processItems(items) {
+            filesData = [];
+            const processEntry = (entry, path = '') => {
+                return new Promise((resolve) => {
+                    if (entry.isFile) {
+                        entry.file(file => {
+                            filesData.push({
+                                file: file,
+                                path: path + entry.name,
+                                name: entry.name,
+                                size: file.size,
+                                type: file.type,
+                                extension: entry.name.split('.').pop().toLowerCase(),
+                                lastModified: file.lastModified
+                            });
+                            resolve();
+                        });
+                    } else if (entry.isDirectory) {
+                        const reader = entry.createReader();
+                        reader.readEntries(entries => {
+                            const promises = entries.map(childEntry =>
+                                processEntry(childEntry, path + entry.name + '/')
+                            );
+                            Promise.all(promises).then(resolve);
+                        });
+                    }
+                });
+            };
+
+            const promises = [];
+            for (let i = 0; i < items.length; i++) {
+                const entry = items[i].webkitGetAsEntry();
+                if (entry) {
+                    promises.push(processEntry(entry));
+                }
+            }
+
+            Promise.all(promises).then(() => {
+                updateSummary();
+                analyzeBtn.disabled = false;
+            });
+        }
+
+        // Analyze files
+        analyzeBtn.addEventListener('click', () => {
+            if (filesData.length === 0) {
+                alert('Please select files or folders first.');
+                return;
+            }
+
+            analyzeBtn.disabled = true;
+            analyzeBtn.textContent = 'Analyzing...';
+            progressWrap.style.display = 'block';
+            progressBar.style.width = '0%';
+
+            // Simulate progress
+            let progress = 0;
+            const progressInterval = setInterval(() => {
+                progress += 5;
+                progressBar.style.width = progress + '%';
+                progressBar.textContent = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(progressInterval);
+                    performAnalysis();
+                }
+            }, 50);
+        });
+
+        // Perform analysis
+        function performAnalysis() {
+            // Build folder structure
+            folderStructure = {};
+            filesData.forEach(item => {
+                const pathParts = item.path.split('/');
+                let current = folderStructure;
+
+                for (let i = 0; i < pathParts.length - 1; i++) {
+                    const part = pathParts[i];
+                    if (!current[part]) {
+                        current[part] = { _type: 'folder', _size: 0, _children: {} };
+                    }
+                    current = current[part]._children;
+                }
+
+                // Add file to structure
+                const fileName = pathParts[pathParts.length - 1];
+                current[fileName] = {
+                    _type: 'file',
+                    _size: item.size,
+                    _data: item
+                };
+
+                // Update parent folder sizes
+                let parent = folderStructure;
+                for (let i = 0; i < pathParts.length - 1; i++) {
+                    const part = pathParts[i];
+                    if (parent[part]) {
+                        parent[part]._size += item.size;
+                    }
+                    parent = parent[part]._children;
+                }
+            });
+
+            // Calculate statistics
+            const totalSize = filesData.reduce((sum, item) => sum + item.size, 0);
+            const fileCount = filesData.length;
+            const folderCount = countFolders(folderStructure);
+
+            // Find largest file
+            let largestFile = { size: 0, name: '' };
+            filesData.forEach(item => {
+                if (item.size > largestFile.size) {
+                    largestFile = { size: item.size, name: item.name };
+                }
+            });
+
+            // Group by file type
+            const typeGroups = {};
+            filesData.forEach(item => {
+                const ext = item.extension || 'unknown';
+                if (!typeGroups[ext]) {
+                    typeGroups[ext] = { count: 0, size: 0, name: ext };
+                }
+                typeGroups[ext].count++;
+                typeGroups[ext].size += item.size;
+            });
+
+            // Prepare analysis results
+            analysisResults = {
+                totalFiles: fileCount,
+                totalFolders: folderCount,
+                totalSize: totalSize,
+                largestFile: largestFile,
+                averageFileSize: fileCount > 0 ? totalSize / fileCount : 0,
+                fileTypes: Object.keys(typeGroups).length,
+                typeBreakdown: Object.values(typeGroups).sort((a, b) => b.size - a.size),
+                folderStructure: folderStructure,
+                timestamp: new Date().toISOString()
+            };
+
+            // Update UI
+            updateResults();
+            updateStatistics();
+            updateTypeBreakdown();
+            createChart();
+
+            analyzeBtn.disabled = false;
+            analyzeBtn.textContent = '🔍 Analyze Files';
+            progressWrap.style.display = 'none';
+            exportBtn.disabled = false;
+            copyBtn.disabled = false;
+        }
+
+        // Count folders in structure
+        function countFolders(structure) {
+            let count = 0;
+            Object.values(structure).forEach(item => {
+                if (item._type === 'folder') {
+                    count += 1 + countFolders(item._children);
+                }
+            });
+            return count;
+        }
+
+        // Update results view
+        function updateResults() {
+            const viewMode = document.getElementById('viewMode').value;
+            const sortBy = document.getElementById('sortBy').value;
+
+            if (viewMode === 'tree') {
+                renderTreeView();
+            } else if (viewMode === 'list') {
+                renderListView();
+            }
+        }
+
+        // Render tree view
+        function renderTreeView() {
+            let html = '<div class="files-list">';
+
+            const renderItem = (name, item, depth = 0) => {
+                const indent = depth * 20;
+                const isFolder = item._type === 'folder';
+                const icon = isFolder ? '📁' : getFileIcon(name);
+
+                html += `
+          <div class="file-item" style="margin-left: ${indent}px;">
+            <div>${icon} ${name}</div>
+            <div class="file-meta">${formatSize(item._size)}</div>
+            <div class="file-actions">
+              ${isFolder ? `<span class="small">${Object.keys(item._children).length} items</span>` : ''}
+            </div>
+          </div>
+        `;
+
+                if (isFolder) {
+                    Object.entries(item._children).forEach(([childName, childItem]) => {
+                        renderItem(childName, childItem, depth + 1);
+                    });
+                }
+            };
+
+            Object.entries(folderStructure).forEach(([name, item]) => {
+                renderItem(name, item);
+            });
+
+            html += '</div>';
+            resultsContainer.innerHTML = html;
+        }
+
+        // Render list view
+        function renderListView() {
+            let html = '<table class="table-preview">';
+            html += '<tr><th>Name</th><th>Size</th><th>Type</th><th>Modified</th></tr>';
+
+            filesData.forEach(item => {
+                const date = new Date(item.lastModified).toLocaleDateString();
+                html += `
+          <tr>
+            <td>${getFileIcon(item.name)} ${item.name}</td>
+            <td>${formatSize(item.size)}</td>
+            <td>${item.extension || 'file'}</td>
+            <td>${date}</td>
+          </tr>
+        `;
+            });
+
+            html += '</table>';
+            resultsContainer.innerHTML = html;
+        }
+
+        // Get file icon
+        function getFileIcon(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            const icons = {
+                'jpg': '🖼️', 'jpeg': '🖼️', 'png': '🖼️', 'gif': '🖼️', 'bmp': '🖼️',
+                'pdf': '📄', 'doc': '📄', 'docx': '📄', 'txt': '📄', 'rtf': '📄',
+                'xls': '📊', 'xlsx': '📊', 'csv': '📊',
+                'mp3': '🎵', 'wav': '🎵', 'mp4': '🎬', 'avi': '🎬', 'mkv': '🎬',
+                'zip': '📦', 'rar': '📦', '7z': '📦',
+                'html': '🌐', 'htm': '🌐', 'css': '🎨', 'js': '⚡',
+                'exe': '⚙️', 'msi': '⚙️'
+            };
+            return icons[ext] || '📄';
+        }
+
+        // Update statistics
+        function updateStatistics() {
+            if (!analysisResults) return;
+
+            document.getElementById('totalFiles').textContent = analysisResults.totalFiles;
+            document.getElementById('totalFolders').textContent = analysisResults.totalFolders;
+            document.getElementById('totalSize').textContent = formatSize(analysisResults.totalSize);
+            document.getElementById('largestFile').textContent =
+                `${analysisResults.largestFile.name} (${formatSize(analysisResults.largestFile.size)})`;
+            document.getElementById('avgFileSize').textContent = formatSize(analysisResults.averageFileSize);
+            document.getElementById('fileTypesCount').textContent = analysisResults.fileTypes;
+        }
+
+        // Update type breakdown
+        function updateTypeBreakdown() {
+            if (!analysisResults || !analysisResults.typeBreakdown) return;
+
+            let html = '<table class="table-preview">';
+            html += '<tr><th>Type</th><th>Count</th><th>Size</th><th>%</th></tr>';
+
+            analysisResults.typeBreakdown.forEach(type => {
+                const percentage = ((type.size / analysisResults.totalSize) * 100).toFixed(1);
+                html += `
+          <tr>
+            <td>${type.name}</td>
+            <td>${type.count}</td>
+            <td>${formatSize(type.size)}</td>
+            <td>${percentage}%</td>
+          </tr>
+        `;
+            });
+
+            html += '</table>';
+            document.getElementById('typeBreakdown').innerHTML = html;
+        }
+
+        // Create chart
+        function createChart() {
+            if (!analysisResults || !analysisResults.typeBreakdown) return;
+
+            const ctx = sizeChartCanvas.getContext('2d');
+
+            // Destroy previous chart instance
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+
+            const topTypes = analysisResults.typeBreakdown.slice(0, 8);
+            const labels = topTypes.map(t => t.name);
+            const data = topTypes.map(t => t.size);
+            const colors = [
+                '#22d3a6', '#0ea5e9', '#3b82f6', '#8b5cf6',
+                '#ef4444', '#f59e0b', '#10b981', '#6366f1'
+            ];
+
+            chartInstance = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: colors,
+                        borderColor: 'rgba(255, 255, 255, 0.1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#e6f1ff'
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    const value = context.raw;
+                                    const percentage = ((value / analysisResults.totalSize) * 100).toFixed(1);
+                                    return `${context.label}: ${formatSize(value)} (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Clear button
+        clearBtn.addEventListener('click', () => {
+            filesData = [];
+            folderStructure = {};
+            analysisResults = null;
+            fileInput.value = '';
+
+            resultsContainer.innerHTML = `
+        <div class="preview" style="text-align: center; padding: 40px 20px; color: var(--muted);">
+          <p>No files selected yet.</p>
+          <p class="small">Select folders or files to begin analysis.</p>
+        </div>
+      `;
+
+            document.getElementById('typeBreakdown').innerHTML =
+                '<p class="small" style="text-align: center;">No data to display yet.</p>';
+
+            summaryInfo.textContent = '';
+            analyzeBtn.disabled = true;
+            exportBtn.disabled = true;
+            copyBtn.disabled = true;
+
+            if (chartInstance) {
+                chartInstance.destroy();
+                chartInstance = null;
+            }
+
+            // Reset statistics
+            document.getElementById('totalFiles').textContent = '0';
+            document.getElementById('totalFolders').textContent = '0';
+            document.getElementById('totalSize').textContent = '0 B';
+            document.getElementById('largestFile').textContent = '-';
+            document.getElementById('avgFileSize').textContent = '0 B';
+            document.getElementById('fileTypesCount').textContent = '0';
+        });
+
+        // Export button
+        exportBtn.addEventListener('click', () => {
+            if (!analysisResults) return;
+
+            const dataStr = JSON.stringify(analysisResults, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+            const exportFileDefaultName = `folder-analysis-${new Date().toISOString().slice(0, 10)}.json`;
+
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+        });
+
+        // Copy button
+        copyBtn.addEventListener('click', () => {
+            if (!analysisResults) return;
+
+            const summary = `
+Folder Analysis Summary:
+=======================
+Total Files: ${analysisResults.totalFiles}
+Total Folders: ${analysisResults.totalFolders}
+Total Size: ${formatSize(analysisResults.totalSize)}
+Largest File: ${analysisResults.largestFile.name} (${formatSize(analysisResults.largestFile.size)})
+Average File Size: ${formatSize(analysisResults.averageFileSize)}
+File Types: ${analysisResults.fileTypes}
+
+Generated on: ${new Date().toLocaleString()}
+      `.trim();
+
+            navigator.clipboard.writeText(summary).then(() => {
+                const originalText = copyBtn.textContent;
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(() => copyBtn.textContent = originalText, 2000);
+            });
+        });
+
+        // Event listeners for settings changes
+        document.getElementById('viewMode').addEventListener('change', updateResults);
+        document.getElementById('sortBy').addEventListener('change', updateResults);
+        document.getElementById('sizeUnit').addEventListener('change', () => {
+            if (analysisResults) {
+                updateResults();
+                updateStatistics();
+                updateTypeBreakdown();
+            }
+        });
+
+        // Initialize
+        updateResults();
+    </script>
+</body>
+
+</html>

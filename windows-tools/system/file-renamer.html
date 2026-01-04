@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>File Renamer — RDroid Apps</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="description"
+        content="Rename multiple files at once with advanced patterns. Support for sequential numbering, find/replace, case conversion, and metadata-based renaming." />
+    <meta name="keywords"
+        content="file renamer, batch rename, multiple file rename, rename files, file organizer, bulk rename" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load components -->
+    <script>
+        $(function () {
+            $("#header-container").load("../../components/header.html");
+            $("#menu-drawer-container").load("../../components/menu-drawer.html");
+            $("#tools-links-container").load("../../components/system-tools-quick-links.html");
+            $("#footer-container").load("../../components/footer.html");
+        });
+    </script>
+
+    <section class="section" role="main" aria-labelledby="title">
+        <h1 id="title">File Renamer</h1>
+        <p class="lead">Rename multiple files at once with advanced patterns. Supports sequential numbering,
+            find/replace,
+            case conversion, and more. All processing happens locally in your browser.</p>
+
+        <div class="card" style="margin-top: 24px;">
+            <div class="drop" id="dropArea">
+                <p>📁 Drop files here to rename</p>
+                <p class="small">or</p>
+                <button class="btn" id="chooseBtn">Choose Files</button>
+                <input type="file" id="fileInput" multiple style="display:none" />
+                <p class="small" style="margin-top: 12px;">Supports all file types. Files are processed locally.</p>
+            </div>
+
+            <div class="tabs" style="margin-top: 20px;">
+                <button class="tab-btn active" data-tab="basic">Basic Rename</button>
+                <button class="tab-btn" data-tab="advanced">Advanced Patterns</button>
+                <button class="tab-btn" data-tab="metadata">Metadata</button>
+                <button class="tab-btn" data-tab="preview">Preview & Edit</button>
+            </div>
+
+            <!-- Basic Rename Tab -->
+            <div class="tab-content active" id="basic">
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col">
+                        <div class="control">
+                            <label>Naming Pattern</label>
+                            <select id="namingPattern">
+                                <option value="sequential">Sequential Numbering</option>
+                                <option value="replace">Find & Replace</option>
+                                <option value="prefix">Add Prefix/Suffix</option>
+                                <option value="date">Add Date/Time</option>
+                                <option value="custom">Custom Pattern</option>
+                            </select>
+                        </div>
+
+                        <div id="sequentialOptions" class="pattern-options">
+                            <div class="optionRow">
+                                <label for="prefixText" class="small">Prefix:</label>
+                                <input type="text" id="prefixText" placeholder="Image_" value="File_">
+                            </div>
+                            <div class="optionRow">
+                                <label for="startNumber" class="small">Start Number:</label>
+                                <input type="number" id="startNumber" value="1" min="1">
+                            </div>
+                            <div class="optionRow">
+                                <label for="digits" class="small">Digits:</label>
+                                <input type="number" id="digits" value="3" min="1" max="6">
+                                <span class="small">(e.g., 001, 002)</span>
+                            </div>
+                            <div class="optionRow">
+                                <label for="suffixText" class="small">Suffix:</label>
+                                <input type="text" id="suffixText" placeholder="">
+                            </div>
+                        </div>
+
+                        <div id="replaceOptions" class="pattern-options" style="display: none;">
+                            <div class="optionRow">
+                                <label for="findText" class="small">Find:</label>
+                                <input type="text" id="findText" placeholder="Text to find">
+                            </div>
+                            <div class="optionRow">
+                                <label for="replaceWith" class="small">Replace With:</label>
+                                <input type="text" id="replaceWith" placeholder="Replacement text">
+                            </div>
+                            <div class="optionRow">
+                                <input type="checkbox" id="caseSensitive" checked>
+                                <label for="caseSensitive" class="small">Case sensitive</label>
+                            </div>
+                            <div class="optionRow">
+                                <input type="checkbox" id="regexMode">
+                                <label for="regexMode" class="small">Use regex</label>
+                            </div>
+                        </div>
+
+                        <div id="prefixOptions" class="pattern-options" style="display: none;">
+                            <div class="optionRow">
+                                <label for="addPrefix" class="small">Add Prefix:</label>
+                                <input type="text" id="addPrefix" placeholder="Prefix_">
+                            </div>
+                            <div class="optionRow">
+                                <label for="addSuffix" class="small">Add Suffix:</label>
+                                <input type="text" id="addSuffix" placeholder="_suffix">
+                            </div>
+                            <div class="optionRow">
+                                <input type="checkbox" id="keepOriginal">
+                                <label for="keepOriginal" class="small">Keep original filename</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="control">
+                            <label>Case Conversion</label>
+                            <select id="caseConversion">
+                                <option value="none">No change</option>
+                                <option value="lower">lowercase</option>
+                                <option value="upper">UPPERCASE</option>
+                                <option value="title">Title Case</option>
+                                <option value="sentence">Sentence case</option>
+                                <option value="camel">camelCase</option>
+                                <option value="pascal">PascalCase</option>
+                                <option value="snake">snake_case</option>
+                                <option value="kebab">kebab-case</option>
+                            </select>
+                        </div>
+
+                        <div class="control">
+                            <label>Space Handling</label>
+                            <select id="spaceHandling">
+                                <option value="keep">Keep spaces</option>
+                                <option value="underscore">Replace with _</option>
+                                <option value="dash">Replace with -</option>
+                                <option value="remove">Remove spaces</option>
+                                <option value="dot">Replace with .</option>
+                            </select>
+                        </div>
+
+                        <div class="control">
+                            <label>Extension Handling</label>
+                            <select id="extensionHandling">
+                                <option value="keep">Keep original</option>
+                                <option value="lower">Convert to lowercase</option>
+                                <option value="upper">Convert to UPPERCASE</option>
+                                <option value="remove">Remove extension</option>
+                                <option value="custom">Change to custom</option>
+                            </select>
+                            <input type="text" id="customExtension" placeholder=".txt"
+                                style="margin-top: 8px; display: none;">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="control">
+                            <label>Date/Time Format</label>
+                            <select id="dateFormat">
+                                <option value="none">No date</option>
+                                <option value="YYYY-MM-DD">2023-12-31</option>
+                                <option value="DD-MM-YYYY">31-12-2023</option>
+                                <option value="MM-DD-YYYY">12-31-2023</option>
+                                <option value="YYYYMMDD">20231231</option>
+                                <option value="timestamp">Timestamp</option>
+                                <option value="custom">Custom format</option>
+                            </select>
+                            <input type="text" id="customDateFormat" placeholder="YYYY_MM_DD"
+                                style="margin-top: 8px; display: none;">
+                        </div>
+
+                        <div class="control">
+                            <label>Preview Sample</label>
+                            <div id="previewSample" class="small"
+                                style="padding: 8px; background: rgba(255,255,255,0.05); border-radius: 4px; margin-top: 8px;">
+                                original_file.txt → new_file_001.txt
+                            </div>
+                        </div>
+
+                        <div class="control">
+                            <label>Apply to</label>
+                            <select id="applyTo">
+                                <option value="all">All files</option>
+                                <option value="selected">Selected files only</option>
+                                <option value="filtered">Files matching pattern</option>
+                            </select>
+                            <input type="text" id="filterPattern" placeholder="*.jpg, *.png"
+                                style="margin-top: 8px; display: none;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Patterns Tab -->
+            <div class="tab-content" id="advanced">
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col">
+                        <div class="control">
+                            <label>Custom Pattern</label>
+                            <input type="text" id="customPattern" placeholder="[prefix][counter][suffix].[ext]"
+                                style="width: 100%;">
+                            <div class="small" style="margin-top: 8px;">
+                                Available tokens: [name], [ext], [counter], [date], [time], [random], [uuid]
+                            </div>
+                        </div>
+
+                        <div class="control">
+                            <label>Counter Settings</label>
+                            <div class="optionRow">
+                                <label for="counterStart" class="small">Start:</label>
+                                <input type="number" id="counterStart" value="1" min="0" style="width: 80px;">
+                            </div>
+                            <div class="optionRow">
+                                <label for="counterStep" class="small">Step:</label>
+                                <input type="number" id="counterStep" value="1" min="1" style="width: 80px;">
+                            </div>
+                            <div class="optionRow">
+                                <label for="counterDigits" class="small">Digits:</label>
+                                <input type="number" id="counterDigits" value="3" min="1" max="10" style="width: 80px;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="control">
+                            <label>Text Transformations</label>
+                            <div class="optionRow">
+                                <input type="checkbox" id="truncateNames">
+                                <label for="truncateNames" class="small">Truncate names to</label>
+                                <input type="number" id="truncateLength" value="20" min="1" max="255"
+                                    style="width: 60px;" disabled>
+                                <span class="small">chars</span>
+                            </div>
+                            <div class="optionRow">
+                                <input type="checkbox" id="removeAccents">
+                                <label for="removeAccents" class="small">Remove accents/diacritics</label>
+                            </div>
+                            <div class="optionRow">
+                                <input type="checkbox" id="removeSpecial">
+                                <label for="removeSpecial" class="small">Remove special characters</label>
+                            </div>
+                            <div class="optionRow">
+                                <input type="checkbox" id="asciiOnly">
+                                <label for="asciiOnly" class="small">ASCII characters only</label>
+                            </div>
+                        </div>
+
+                        <div class="control">
+                            <label>Random String</label>
+                            <div class="optionRow">
+                                <label for="randomLength" class="small">Length:</label>
+                                <input type="number" id="randomLength" value="8" min="1" max="32" style="width: 80px;">
+                            </div>
+                            <div class="optionRow">
+                                <input type="checkbox" id="randomLetters" checked>
+                                <label for="randomLetters" class="small">Include letters</label>
+                            </div>
+                            <div class="optionRow">
+                                <input type="checkbox" id="randomNumbers" checked>
+                                <label for="randomNumbers" class="small">Include numbers</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="control">
+                            <label>File Sorting</label>
+                            <select id="sortOrder">
+                                <option value="original">Original order</option>
+                                <option value="nameAsc">Name A-Z</option>
+                                <option value="nameDesc">Name Z-A</option>
+                                <option value="sizeAsc">Size Small-Large</option>
+                                <option value="sizeDesc">Size Large-Small</option>
+                                <option value="dateAsc">Date Old-New</option>
+                                <option value="dateDesc">Date New-Old</option>
+                                <option value="type">File type</option>
+                            </select>
+                        </div>
+
+                        <div class="control">
+                            <label>Undo/Redo</label>
+                            <div class="optionRow" style="justify-content: space-between;">
+                                <button class="btn" id="undoBtn" disabled>↩️ Undo</button>
+                                <button class="btn" id="redoBtn" disabled>↪️ Redo</button>
+                                <button class="btn" id="resetBtn">🔄 Reset</button>
+                            </div>
+                        </div>
+
+                        <div class="control">
+                            <label>Batch Processing</label>
+                            <div class="optionRow">
+                                <input type="checkbox" id="skipExisting">
+                                <label for="skipExisting" class="small">Skip if name exists</label>
+                            </div>
+                            <div class="optionRow">
+                                <input type="checkbox" id="preserveOriginals">
+                                <label for="preserveOriginals" class="small">Keep original files</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metadata Tab -->
+            <div class="tab-content" id="metadata">
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col">
+                        <div class="control">
+                            <label>Image Metadata</label>
+                            <div class="optionRow">
+                                <input type="checkbox" id="useExif">
+                                <label for="useExif" class="small">Use EXIF data for naming</label>
+                            </div>
+                            <div class="optionRow">
+                                <label for="exifPattern" class="small">EXIF Pattern:</label>
+                                <input type="text" id="exifPattern" placeholder="[date]_[camera]" disabled>
+                            </div>
+                            <div class="small" style="margin-top: 8px;">
+                                Available: [date], [time], [camera], [width]x[height]
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="control">
+                            <label>Audio Metadata</label>
+                            <div class="optionRow">
+                                <input type="checkbox" id="useID3">
+                                <label for="useID3" class="small">Use ID3 tags for naming</label>
+                            </div>
+                            <div class="optionRow">
+                                <label for="id3Pattern" class="small">ID3 Pattern:</label>
+                                <input type="text" id="id3Pattern" placeholder="[artist] - [title]" disabled>
+                            </div>
+                            <div class="small" style="margin-top: 8px;">
+                                Available: [artist], [title], [album], [track], [year]
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="control">
+                            <label>Document Properties</label>
+                            <div class="optionRow">
+                                <input type="checkbox" id="useDocProps">
+                                <label for="useDocProps" class="small">Use document properties</label>
+                            </div>
+                            <div class="optionRow">
+                                <label for="docPattern" class="small">Document Pattern:</label>
+                                <input type="text" id="docPattern" placeholder="[title] - [author]" disabled>
+                            </div>
+                            <div class="small" style="margin-top: 8px;">
+                                Available: [title], [author], [subject], [keywords]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="margin-top: 15px; background: rgba(255,255,255,0.02);">
+                    <p class="small" style="text-align: center;">
+                        <strong>Note:</strong> Metadata extraction requires additional processing and may not work for
+                        all file types.
+                        For advanced metadata renaming, consider dedicated metadata tools.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Preview & Edit Tab -->
+            <div class="tab-content" id="preview">
+                <div style="margin-top: 15px;">
+                    <div class="advanced-controls">
+                        <input type="text" id="searchPreview" placeholder="Search in files..." style="flex: 1;">
+                        <button class="btn" id="selectAllBtn">Select All</button>
+                        <button class="btn" id="deselectAllBtn">Deselect All</button>
+                        <button class="btn" id="invertSelectionBtn">Invert Selection</button>
+                    </div>
+
+                    <div id="previewContainer" class="preview"
+                        style="margin-top: 10px; max-height: 400px; overflow: auto;">
+                        <div style="text-align: center; padding: 40px 20px; color: var(--muted);">
+                            <p>No files loaded yet</p>
+                            <p class="small">Add files to see preview of renamed files</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+                        <button class="btn" id="applyPreviewBtn" disabled>Apply Preview</button>
+                        <button class="btn" id="manualEditBtn" disabled>✏️ Manual Edit</button>
+                        <button class="btn" id="revertBtn" disabled>↩️ Revert Changes</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: center; margin-top: 20px;">
+                <button class="btn btn-primary" id="renameBtn" disabled>🚀 Rename Files</button>
+                <button class="btn" id="clearBtn">Clear All</button>
+                <div style="margin-left: auto" id="fileCountInfo" class="small"></div>
+            </div>
+
+            <div class="progress" id="progressWrap" style="display: none; margin-top: 15px;">
+                <div class="bar" id="progressBar"></div>
+            </div>
+
+            <div id="downloadSection" style="display: none; margin-top: 20px;">
+                <h3>📥 Download Renamed Files</h3>
+                <div id="downloadContainer">
+                    <!-- Download links will appear here -->
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 20px; background: rgba(255,255,255,0.02);">
+                <h3>💡 Renaming Tips</h3>
+                <ul class="about-points">
+                    <li><strong>Preview first:</strong> Always check the preview before applying changes</li>
+                    <li><strong>Use counters:</strong> Sequential numbering is great for organizing photos and documents
+                    </li>
+                    <li><strong>Remove spaces:</strong> Use underscores or dashes for better web compatibility</li>
+                    <li><strong>Case consistency:</strong> Stick to one case style (lowercase recommended)</li>
+                    <li><strong>Test with copies:</strong> Work on file copies until you're confident with the pattern
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr style="margin: 32px 0;">
+        <section class="seo-content">
+            <h2>About File Renamer</h2>
+            <p>
+                File Renamer is a powerful tool for batch renaming multiple files at once. It supports various renaming
+                patterns including sequential numbering, find and replace, case conversion, and custom patterns with
+                tokens.
+                All processing happens locally in your browser, ensuring your files remain private and secure.
+            </p>
+
+            <h2>Key Features</h2>
+            <ul class="about-points">
+                <li><strong>Multiple Renaming Methods:</strong> Sequential numbering, find/replace, prefix/suffix,
+                    date/time
+                    stamps</li>
+                <li><strong>Case Conversion:</strong> Convert filenames to lowercase, UPPERCASE, Title Case, camelCase,
+                    snake_case, and kebab-case</li>
+                <li><strong>Advanced Patterns:</strong> Custom patterns with tokens for counter, date, time, random
+                    strings</li>
+                <li><strong>Text Transformations:</strong> Remove accents, special characters, truncate long names</li>
+                <li><strong>File Sorting:</strong> Sort files by name, size, date, or type before renaming</li>
+                <li><strong>Undo/Redo:</strong> Multiple levels of undo and redo for safe experimentation</li>
+                <li><strong>Preview & Edit:</strong> Preview changes before applying, with manual editing option</li>
+                <li><strong>No File Limits:</strong> Process as many files as your browser can handle</li>
+                <li><strong>Privacy Guaranteed:</strong> All processing happens locally - no file upload to servers</li>
+            </ul>
+
+            <h2>Common Use Cases</h2>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 15px 0;">
+                <div class="card" style="background: rgba(10, 163, 127, 0.1);">
+                    <h4 style="color: #0aa37f;">📸 Photo Organization</h4>
+                    <p class="small">Rename vacation photos with dates and sequential numbers: "2023-12-25_001.jpg",
+                        "2023-12-25_002.jpg"</p>
+                </div>
+                <div class="card" style="background: rgba(14, 165, 233, 0.1);">
+                    <h4 style="color: #0ea5e9;">📄 Document Management</h4>
+                    <p class="small">Standardize document names: "Invoice_202312_vendor.pdf",
+                        "Contract_202401_client.docx"</p>
+                </div>
+                <div class="card" style="background: rgba(139, 92, 246, 0.1);">
+                    <h4 style="color: #8b5cf6;">🎵 Media Files</h4>
+                    <p class="small">Rename music files: "Artist - Song Title.mp3", "Album - Track Number.mp3"</p>
+                </div>
+                <div class="card" style="background: rgba(245, 158, 11, 0.1);">
+                    <h4 style="color: #f59e0b;">💾 Web Development</h4>
+                    <p class="small">Convert filenames to web-friendly format: "my-image-file.jpg" → "my-image-file.jpg"
+                    </p>
+                </div>
+            </div>
+
+            <h2>Pattern Examples</h2>
+            <table class="table-preview">
+                <tr>
+                    <th>Original</th>
+                    <th>Pattern</th>
+                    <th>Result</th>
+                </tr>
+                <tr>
+                    <td>IMG_1234.jpg</td>
+                    <td>[prefix][counter].[ext]</td>
+                    <td>photo_001.jpg</td>
+                </tr>
+                <tr>
+                    <td>my document.txt</td>
+                    <td>Remove spaces + Title Case</td>
+                    <td>MyDocument.txt</td>
+                </tr>
+                <tr>
+                    <td>file-(1).pdf</td>
+                    <td>Find "(" replace with "_"</td>
+                    <td>file_1).pdf</td>
+                </tr>
+                <tr>
+                    <td>image.png</td>
+                    <td>Add date prefix</td>
+                    <td>20231231_image.png</td>
+                </tr>
+            </table>
+
+            <h2>Safety Tips</h2>
+            <ul class="about-points">
+                <li><strong>Always preview:</strong> Use the preview tab to see changes before applying them</li>
+                <li><strong>Work with copies:</strong> Test renaming patterns on file copies first</li>
+                <li><strong>Use undo feature:</strong> The undo button can revert changes if you make a mistake</li>
+                <li><strong>Check extensions:</strong> Be careful when changing file extensions - it can make files
+                    unopenable</li>
+                <li><strong>Backup important files:</strong> Keep backups of critical files before batch renaming</li>
+            </ul>
+
+            <h2>Technical Details</h2>
+            <p>
+                File Renamer uses HTML5 File API and JavaScript to process files entirely in your browser. No files are
+                uploaded to any server. The tool can handle hundreds of files simultaneously, limited only by your
+                browser's
+                memory capacity. For very large batches, consider processing in smaller groups.
+            </p>
+        </section>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer-container"></div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("drawer").classList.toggle("open");
+        }
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Elements
+        const fileInput = document.getElementById('fileInput');
+        const chooseBtn = document.getElementById('chooseBtn');
+        const dropArea = document.getElementById('dropArea');
+        const renameBtn = document.getElementById('renameBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const progressWrap = document.getElementById('progressWrap');
+        const progressBar = document.getElementById('progressBar');
+        const fileCountInfo = document.getElementById('fileCountInfo');
+        const previewContainer = document.getElementById('previewContainer');
+        const downloadSection = document.getElementById('downloadSection');
+        const downloadContainer = document.getElementById('downloadContainer');
+        const previewSample = document.getElementById('previewSample');
+
+        // State
+        let filesData = [];
+        let renameHistory = [];
+        let historyIndex = -1;
+
+        // File selection
+        chooseBtn.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', handleFileSelection);
+
+        // Drag and drop
+        dropArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropArea.classList.add('dragover');
+        });
+        dropArea.addEventListener('dragleave', () => dropArea.classList.remove('dragover'));
+        dropArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropArea.classList.remove('dragover');
+            handleFileDrop(e.dataTransfer.files);
+        });
+
+        // Handle file selection
+        function handleFileSelection(e) {
+            const fileList = e.target.files;
+            processFileList(fileList);
+        }
+
+        // Handle file drop
+        function handleFileDrop(fileList) {
+            processFileList(fileList);
+        }
+
+        // Process file list
+        function processFileList(fileList) {
+            const newFiles = [];
+
+            for (let i = 0; i < fileList.length; i++) {
+                const file = fileList[i];
+                const extension = file.name.includes('.') ?
+                    file.name.split('.').pop().toLowerCase() : '';
+                const nameWithoutExt = file.name.includes('.') ?
+                    file.name.substring(0, file.name.lastIndexOf('.')) : file.name;
+
+                newFiles.push({
+                    originalFile: file,
+                    originalName: file.name,
+                    nameWithoutExt: nameWithoutExt,
+                    extension: extension,
+                    newName: file.name,
+                    size: file.size,
+                    type: file.type,
+                    lastModified: file.lastModified,
+                    selected: true,
+                    id: Date.now() + i
+                });
+            }
+
+            // Add to existing files
+            filesData = [...filesData, ...newFiles];
+
+            // Update UI
+            updateFileCount();
+            generatePreview();
+            renameBtn.disabled = filesData.length === 0;
+            saveToHistory();
+
+            // Clear file input
+            fileInput.value = '';
+        }
+
+        // Update file count display
+        function updateFileCount() {
+            const selectedCount = filesData.filter(f => f.selected).length;
+            const totalSize = filesData.reduce((sum, f) => sum + f.size, 0);
+            const sizeMB = (totalSize / (1024 * 1024)).toFixed(2);
+
+            fileCountInfo.textContent = `${filesData.length} files (${selectedCount} selected) • ${sizeMB} MB`;
+        }
+
+        // Generate preview
+        function generatePreview() {
+            if (filesData.length === 0) {
+                previewContainer.innerHTML = `
+          <div style="text-align: center; padding: 40px 20px; color: var(--muted);">
+            <p>No files loaded yet</p>
+            <p class="small">Add files to see preview of renamed files</p>
+          </div>
+        `;
+                return;
+            }
+
+            // Apply current renaming rules
+            applyRenamingRules();
+
+            // Build preview HTML
+            let html = '<div class="files-list">';
+
+            filesData.forEach((file, index) => {
+                const isChanged = file.originalName !== file.newName;
+                const changeIndicator = isChanged ? '🔄' : '➡️';
+                const changeClass = isChanged ? 'style="color: var(--brand);"' : '';
+
+                html += `
+          <div class="file-item" data-id="${file.id}">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <input type="checkbox" class="file-select" ${file.selected ? 'checked' : ''} data-id="${file.id}">
+              <div style="width: 24px; height: 24px; border-radius: 4px; background: ${getFileColor(file.extension)}; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                ${getFileIcon(file.extension)}
+              </div>
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${file.originalName}">
+                ${file.originalName}
+              </div>
+              <div class="small" style="color: var(--muted);">
+                ${formatSize(file.size)} • ${file.extension.toUpperCase()}
+              </div>
+            </div>
+            <div style="margin: 0 10px; ${isChanged ? 'color: var(--brand);' : ''}">
+              ${changeIndicator}
+            </div>
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${file.newName}" ${changeClass}>
+                ${file.newName}
+              </div>
+              ${isChanged ? `<div class="small" style="color: var(--brand);">Changed</div>` : ''}
+            </div>
+            <div class="file-actions">
+              <button class="btn" data-action="edit" data-id="${file.id}" style="padding: 4px 8px; font-size: 12px;">Edit</button>
+              <button class="btn" data-action="reset" data-id="${file.id}" style="padding: 4px 8px; font-size: 12px;">Reset</button>
+            </div>
+          </div>
+        `;
+            });
+
+            html += '</div>';
+            previewContainer.innerHTML = html;
+
+            // Attach event listeners
+            previewContainer.querySelectorAll('.file-select').forEach(checkbox => {
+                checkbox.addEventListener('change', (e) => {
+                    const id = parseInt(e.target.dataset.id);
+                    const file = filesData.find(f => f.id === id);
+                    if (file) {
+                        file.selected = e.target.checked;
+                        updateFileCount();
+                    }
+                });
+            });
+
+            previewContainer.querySelectorAll('button[data-action="edit"]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = parseInt(e.target.dataset.id);
+                    editFileName(id);
+                });
+            });
+
+            previewContainer.querySelectorAll('button[data-action="reset"]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = parseInt(e.target.dataset.id);
+                    resetFileName(id);
+                });
+            });
+        }
+
+        // Get file color based on extension
+        function getFileColor(ext) {
+            const colorMap = {
+                'jpg': '#ef4444', 'jpeg': '#ef4444', 'png': '#3b82f6', 'gif': '#8b5cf6',
+                'pdf': '#ef4444', 'doc': '#0ea5e9', 'docx': '#0ea5e9', 'txt': '#9ca3af',
+                'mp3': '#10b981', 'mp4': '#f59e0b', 'avi': '#f59e0b', 'zip': '#6366f1',
+                'html': '#f97316', 'css': '#0ea5e9', 'js': '#f59e0b', 'json': '#8b5cf6'
+            };
+            return colorMap[ext] || '#6b7280';
+        }
+
+        // Get file icon
+        function getFileIcon(ext) {
+            const icons = {
+                'jpg': '🖼️', 'jpeg': '🖼️', 'png': '🖼️', 'gif': '🖼️',
+                'pdf': '📄', 'doc': '📄', 'docx': '📄', 'txt': '📄',
+                'mp3': '🎵', 'mp4': '🎬', 'avi': '🎬', 'wav': '🎵',
+                'zip': '📦', 'rar': '📦', '7z': '📦',
+                'html': '🌐', 'css': '🎨', 'js': '⚡', 'json': '⚡',
+                'exe': '⚙️', 'msi': '⚙️'
+            };
+            return icons[ext] || '📁';
+        }
+
+        // Format size
+        function formatSize(bytes) {
+            if (bytes === 0) return '0 B';
+            const k = 1024;
+            const sizes = ['B', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+        }
+
+        // Apply renaming rules
+        function applyRenamingRules() {
+            const pattern = document.getElementById('namingPattern').value;
+            const caseConversion = document.getElementById('caseConversion').value;
+            const spaceHandling = document.getElementById('spaceHandling').value;
+            const extensionHandling = document.getElementById('extensionHandling').value;
+            const customExtension = document.getElementById('customExtension').value;
+
+            // Get selected files
+            const selectedFiles = filesData.filter(f => f.selected);
+
+            selectedFiles.forEach((file, index) => {
+                let newName = file.nameWithoutExt;
+                let extension = file.extension;
+
+                // Apply pattern
+                switch (pattern) {
+                    case 'sequential':
+                        const prefix = document.getElementById('prefixText').value;
+                        const suffix = document.getElementById('suffixText').value;
+                        const startNum = parseInt(document.getElementById('startNumber').value);
+                        const digits = parseInt(document.getElementById('digits').value);
+                        const counter = (startNum + index).toString().padStart(digits, '0');
+                        newName = prefix + counter + suffix;
+                        break;
+
+                    case 'replace':
+                        const findText = document.getElementById('findText').value;
+                        const replaceWith = document.getElementById('replaceWith').value;
+                        const caseSensitive = document.getElementById('caseSensitive').checked;
+                        const regexMode = document.getElementById('regexMode').checked;
+
+                        if (findText) {
+                            if (regexMode) {
+                                try {
+                                    const regex = new RegExp(findText, caseSensitive ? 'g' : 'gi');
+                                    newName = newName.replace(regex, replaceWith);
+                                } catch (e) {
+                                    console.error('Invalid regex:', e);
+                                }
+                            } else {
+                                if (caseSensitive) {
+                                    newName = newName.split(findText).join(replaceWith);
+                                } else {
+                                    const regex = new RegExp(findText, 'gi');
+                                    newName = newName.replace(regex, replaceWith);
+                                }
+                            }
+                        }
+                        break;
+
+                    case 'prefix':
+                        const addPrefix = document.getElementById('addPrefix').value;
+                        const addSuffix = document.getElementById('addSuffix').value;
+                        const keepOriginal = document.getElementById('keepOriginal').checked;
+
+                        if (keepOriginal) {
+                            newName = addPrefix + file.nameWithoutExt + addSuffix;
+                        } else {
+                            newName = addPrefix + addSuffix;
+                        }
+                        break;
+
+                    case 'date':
+                        const dateFormat = document.getElementById('dateFormat').value;
+                        const customDateFormat = document.getElementById('customDateFormat').value;
+                        const now = new Date();
+                        let dateStr = '';
+
+                        switch (dateFormat) {
+                            case 'YYYY-MM-DD':
+                                dateStr = now.toISOString().slice(0, 10);
+                                break;
+                            case 'DD-MM-YYYY':
+                                dateStr = `${String(now.getDate()).padStart(2, '0')}-${String(now.getMonth() + 1).padStart(2, '0')}-${now.getFullYear()}`;
+                                break;
+                            case 'MM-DD-YYYY':
+                                dateStr = `${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}-${now.getFullYear()}`;
+                                break;
+                            case 'YYYYMMDD':
+                                dateStr = now.toISOString().slice(0, 10).replace(/-/g, '');
+                                break;
+                            case 'timestamp':
+                                dateStr = now.getTime().toString();
+                                break;
+                            case 'custom':
+                                dateStr = formatCustomDate(now, customDateFormat);
+                                break;
+                        }
+
+                        if (dateStr) {
+                            newName = dateStr + '_' + newName;
+                        }
+                        break;
+
+                    case 'custom':
+                        const customPattern = document.getElementById('customPattern').value;
+                        if (customPattern) {
+                            newName = applyCustomPattern(customPattern, file, index);
+                        }
+                        break;
+                }
+
+                // Apply case conversion
+                newName = applyCaseConversion(newName, caseConversion);
+
+                // Apply space handling
+                newName = applySpaceHandling(newName, spaceHandling);
+
+                // Apply extension handling
+                extension = applyExtensionHandling(extension, extensionHandling, customExtension);
+
+                // Update file object
+                file.newName = newName + (extension ? '.' + extension : '');
+            });
+
+            // Update preview sample
+            updatePreviewSample();
+        }
+
+        // Apply case conversion
+        function applyCaseConversion(text, conversion) {
+            switch (conversion) {
+                case 'lower':
+                    return text.toLowerCase();
+                case 'upper':
+                    return text.toUpperCase();
+                case 'title':
+                    return text.replace(/\w\S*/g, (txt) =>
+                        txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+                    );
+                case 'sentence':
+                    return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+                case 'camel':
+                    return text.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) => {
+                        if (+match === 0) return '';
+                        return index === 0 ? match.toLowerCase() : match.toUpperCase();
+                    }).replace(/\s+/g, '');
+                case 'pascal':
+                    return text.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match) => {
+                        if (+match === 0) return '';
+                        return match.toUpperCase();
+                    }).replace(/\s+/g, '');
+                case 'snake':
+                    return text.toLowerCase().replace(/\s+/g, '_');
+                case 'kebab':
+                    return text.toLowerCase().replace(/\s+/g, '-');
+                default:
+                    return text;
+            }
+        }
+
+        // Apply space handling
+        function applySpaceHandling(text, handling) {
+            switch (handling) {
+                case 'underscore':
+                    return text.replace(/\s+/g, '_');
+                case 'dash':
+                    return text.replace(/\s+/g, '-');
+                case 'remove':
+                    return text.replace(/\s+/g, '');
+                case 'dot':
+                    return text.replace(/\s+/g, '.');
+                default:
+                    return text;
+            }
+        }
+
+        // Apply extension handling
+        function applyExtensionHandling(extension, handling, customExt) {
+            switch (handling) {
+                case 'lower':
+                    return extension.toLowerCase();
+                case 'upper':
+                    return extension.toUpperCase();
+                case 'remove':
+                    return '';
+                case 'custom':
+                    return customExt.replace(/^\./, '');
+                default:
+                    return extension;
+            }
+        }
+
+        // Format custom date
+        function formatCustomDate(date, format) {
+            const tokens = {
+                'YYYY': date.getFullYear(),
+                'MM': String(date.getMonth() + 1).padStart(2, '0'),
+                'DD': String(date.getDate()).padStart(2, '0'),
+                'HH': String(date.getHours()).padStart(2, '0'),
+                'mm': String(date.getMinutes()).padStart(2, '0'),
+                'ss': String(date.getSeconds()).padStart(2, '0')
+            };
+
+            let result = format;
+            for (const [token, value] of Object.entries(tokens)) {
+                result = result.replace(token, value);
+            }
+            return result;
+        }
+
+        // Apply custom pattern
+        function applyCustomPattern(pattern, file, index) {
+            const counterStart = parseInt(document.getElementById('counterStart').value) || 1;
+            const counterStep = parseInt(document.getElementById('counterStep').value) || 1;
+            const counterDigits = parseInt(document.getElementById('counterDigits').value) || 3;
+
+            const counter = (counterStart + (index * counterStep)).toString().padStart(counterDigits, '0');
+            const now = new Date();
+            const date = now.toISOString().slice(0, 10);
+            const time = now.toTimeString().slice(0, 8).replace(/:/g, '-');
+            const random = Math.random().toString(36).substring(2, 10);
+            const uuid = 'id-' + Math.random().toString(36).substring(2, 9);
+
+            return pattern
+                .replace(/\[name\]/g, file.nameWithoutExt)
+                .replace(/\[ext\]/g, file.extension)
+                .replace(/\[counter\]/g, counter)
+                .replace(/\[date\]/g, date)
+                .replace(/\[time\]/g, time)
+                .replace(/\[random\]/g, random)
+                .replace(/\[uuid\]/g, uuid);
+        }
+
+        // Update preview sample
+        function updatePreviewSample() {
+            if (filesData.length === 0) return;
+
+            const sampleFile = filesData[0];
+            const isChanged = sampleFile.originalName !== sampleFile.newName;
+            const arrow = isChanged ? '🔄' : '➡️';
+
+            previewSample.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="color: ${isChanged ? 'var(--brand)' : 'var(--muted)'};">${sampleFile.originalName}</span>
+          <span>${arrow}</span>
+          <span style="color: ${isChanged ? 'var(--brand)' : 'inherit'};">${sampleFile.newName}</span>
+        </div>
+      `;
+        }
+
+        // Edit file name manually
+        function editFileName(id) {
+            const file = filesData.find(f => f.id === id);
+            if (!file) return;
+
+            const newName = prompt('Enter new name (without extension):', file.nameWithoutExt);
+            if (newName !== null) {
+                const extension = file.extension ? '.' + file.extension : '';
+                file.newName = newName + extension;
+                generatePreview();
+                saveToHistory();
+            }
+        }
+
+        // Reset file name to original
+        function resetFileName(id) {
+            const file = filesData.find(f => f.id === id);
+            if (file) {
+                file.newName = file.originalName;
+                generatePreview();
+                saveToHistory();
+            }
+        }
+
+        // Save to history for undo/redo
+        function saveToHistory() {
+            // Remove any redo history
+            if (historyIndex < renameHistory.length - 1) {
+                renameHistory = renameHistory.slice(0, historyIndex + 1);
+            }
+
+            // Save current state
+            const state = filesData.map(f => ({
+                ...f,
+                originalFile: null // Don't store File objects
+            }));
+
+            renameHistory.push(JSON.parse(JSON.stringify(state)));
+            historyIndex++;
+
+            // Update undo/redo buttons
+            updateUndoRedoButtons();
+        }
+
+        // Update undo/redo buttons
+        function updateUndoRedoButtons() {
+            document.getElementById('undoBtn').disabled = historyIndex <= 0;
+            document.getElementById('redoBtn').disabled = historyIndex >= renameHistory.length - 1;
+        }
+
+        // Undo
+        document.getElementById('undoBtn').addEventListener('click', () => {
+            if (historyIndex > 0) {
+                historyIndex--;
+                const state = renameHistory[historyIndex];
+                // Restore state (without File objects)
+                filesData = state.map(item => {
+                    const originalFile = filesData.find(f => f.id === item.id)?.originalFile;
+                    return { ...item, originalFile };
+                });
+                generatePreview();
+                updateUndoRedoButtons();
+            }
+        });
+
+        // Redo
+        document.getElementById('redoBtn').addEventListener('click', () => {
+            if (historyIndex < renameHistory.length - 1) {
+                historyIndex++;
+                const state = renameHistory[historyIndex];
+                filesData = state.map(item => {
+                    const originalFile = filesData.find(f => f.id === item.id)?.originalFile;
+                    return { ...item, originalFile };
+                });
+                generatePreview();
+                updateUndoRedoButtons();
+            }
+        });
+
+        // Reset
+        document.getElementById('resetBtn').addEventListener('click', () => {
+            filesData.forEach(file => {
+                file.newName = file.originalName;
+            });
+            generatePreview();
+            saveToHistory();
+        });
+
+        // Clear all files
+        clearBtn.addEventListener('click', () => {
+            if (filesData.length === 0) return;
+
+            if (confirm(`Clear all ${filesData.length} files?`)) {
+                filesData = [];
+                renameHistory = [];
+                historyIndex = -1;
+
+                updateFileCount();
+                generatePreview();
+                renameBtn.disabled = true;
+                downloadSection.style.display = 'none';
+                updateUndoRedoButtons();
+            }
+        });
+
+        // Rename files
+        renameBtn.addEventListener('click', async () => {
+            const selectedFiles = filesData.filter(f => f.selected);
+
+            if (selectedFiles.length === 0) {
+                alert('Please select at least one file to rename.');
+                return;
+            }
+
+            // Check for duplicate names
+            const nameCounts = {};
+            selectedFiles.forEach(file => {
+                nameCounts[file.newName] = (nameCounts[file.newName] || 0) + 1;
+            });
+
+            const duplicates = Object.entries(nameCounts).filter(([name, count]) => count > 1);
+            if (duplicates.length > 0) {
+                if (!confirm(`Warning: ${duplicates.length} duplicate names detected. Continue anyway?`)) {
+                    return;
+                }
+            }
+
+            // Show progress
+            progressWrap.style.display = 'block';
+            progressBar.style.width = '0%';
+
+            // Process files
+            if (selectedFiles.length === 1) {
+                // Single file - direct download
+                const file = selectedFiles[0];
+                downloadFile(file.originalFile, file.newName);
+                progressBar.style.width = '100%';
+                showDownloadUI([{ file: file.originalFile, name: file.newName }]);
+            } else {
+                // Multiple files - create zip
+                await createZipDownload(selectedFiles);
+            }
+
+            progressWrap.style.display = 'none';
+        });
+
+        // Download single file
+        function downloadFile(file, newName) {
+            const url = URL.createObjectURL(file);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = newName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Create zip download for multiple files
+        async function createZipDownload(files) {
+            const zip = new JSZip();
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                zip.file(file.newName, file.originalFile);
+
+                // Update progress
+                const progress = ((i + 1) / files.length) * 100;
+                progressBar.style.width = `${progress}%`;
+                progressBar.textContent = `${Math.round(progress)}%`;
+
+                // Yield to UI
+                await new Promise(resolve => setTimeout(resolve, 10));
+            }
+
+            // Generate zip
+            const zipBlob = await zip.generateAsync({ type: 'blob' });
+
+            // Download zip
+            const url = URL.createObjectURL(zipBlob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `renamed_files_${Date.now()}.zip`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            // Show download UI
+            showDownloadUI(files.map(f => ({ file: f.originalFile, name: f.newName })));
+        }
+
+        // Show download UI
+        function showDownloadUI(downloadedFiles) {
+            downloadSection.style.display = 'block';
+
+            let html = '<div class="files-list">';
+            downloadedFiles.forEach(item => {
+                html += `
+          <div class="file-item">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="color: var(--brand);">✅</div>
+              <div>
+                <div style="font-weight: 500;">${item.name}</div>
+                <div class="small" style="color: var(--muted);">Downloaded</div>
+              </div>
+            </div>
+          </div>
+        `;
+            });
+            html += '</div>';
+
+            downloadContainer.innerHTML = html;
+        }
+
+        // Event listeners for pattern options
+        document.getElementById('namingPattern').addEventListener('change', (e) => {
+            // Hide all pattern options
+            document.querySelectorAll('.pattern-options').forEach(el => {
+                el.style.display = 'none';
+            });
+
+            // Show selected pattern options
+            const selected = e.target.value;
+            document.getElementById(`${selected}Options`).style.display = 'block';
+
+            // Generate preview
+            if (filesData.length > 0) {
+                applyRenamingRules();
+                generatePreview();
+                saveToHistory();
+            }
+        });
+
+        // Event listeners for other controls
+        const controlElements = [
+            'caseConversion', 'spaceHandling', 'extensionHandling', 'dateFormat',
+            'customPattern', 'findText', 'replaceWith', 'addPrefix', 'addSuffix',
+            'prefixText', 'suffixText', 'startNumber', 'digits'
+        ];
+
+        controlElements.forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.addEventListener('input', () => {
+                    if (filesData.length > 0) {
+                        applyRenamingRules();
+                        generatePreview();
+                        saveToHistory();
+                    }
+                });
+            }
+        });
+
+        // Extension handling change
+        document.getElementById('extensionHandling').addEventListener('change', (e) => {
+            document.getElementById('customExtension').style.display =
+                e.target.value === 'custom' ? 'block' : 'none';
+
+            if (filesData.length > 0) {
+                applyRenamingRules();
+                generatePreview();
+                saveToHistory();
+            }
+        });
+
+        // Date format change
+        document.getElementById('dateFormat').addEventListener('change', (e) => {
+            document.getElementById('customDateFormat').style.display =
+                e.target.value === 'custom' ? 'block' : 'none';
+
+            if (filesData.length > 0) {
+                applyRenamingRules();
+                generatePreview();
+                saveToHistory();
+            }
+        });
+
+        // Apply to change
+        document.getElementById('applyTo').addEventListener('change', (e) => {
+            document.getElementById('filterPattern').style.display =
+                e.target.value === 'filtered' ? 'block' : 'none';
+        });
+
+        // Initialize
+        updateUndoRedoButtons();
+
+        // Add CSS for file icons
+        const style = document.createElement('style');
+        style.textContent = `
+      .pattern-options {
+        margin-top: 10px;
+        padding: 10px;
+        background: rgba(255,255,255,0.02);
+        border-radius: 6px;
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+      .file-item:hover {
+        background: rgba(255,255,255,0.03);
+      }
+    `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>
