@@ -10,7 +10,29 @@
         <a href="/apps.html" class="btn btn-ghost">Apps</a>
         <a href="/about.html" class="btn btn-ghost">About</a>
         <a href="/contact.html" class="btn btn-ghost">Contact</a>
-        <a href="/index.html" class="active" class="btn btn-ghost">Home</a>
+        <a href="/index.html" class="btn btn-ghost">Home</a>
     </div>
     <a href="/auth/login.html" class="login-btn">🔑 Login</a>
 </header>
+<script>
+    // Active tool button highlighting
+    (function () {
+        setTimeout(() => {
+            const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+            const toolButtons = document.querySelectorAll(".nav-links .btn btn-ghost");
+
+            toolButtons.forEach(btn => {
+                btn.classList.remove("active");
+                const btnPage = btn.getAttribute("href").toLowerCase();
+                if (btnPage === currentPage) {
+                    btn.classList.add("active");
+                }
+            });
+        }, 100);
+    })();
+</script>
+<style>
+    .btn-ghost {
+        background: rgba(255, 123, 0, 0.336);
+    }
+</style>
