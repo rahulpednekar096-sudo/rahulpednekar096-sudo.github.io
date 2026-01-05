@@ -15,8 +15,9 @@
   <title>About | RDroid Apps</title>
   <meta name="description"
     content="Learn about RDroid Apps — a creative indie studio building smart, privacy-focused Android apps and Windows tools." />
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="js/script.js" defer></script>
+  <link rel="canonical" href="https://rdroidapps.com/about.html" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="/js/script.js" defer></script>
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -34,10 +35,10 @@
   <!-- Load all components -->
   <script>
     $(function () {
-      $("#header-container").load("../../components/header.html");
-      $("#menu-drawer-container").load("../../components/menu-drawer.html");
-      $("#tools-links-container").load("../../components/favorite-tools-quick-links.html");
-      $("#footer-container").load("../../components/footer.html");
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#tools-links-container").load("/components/favorite-tools-quick-links.html");
+      $("#footer-container").load("/components/footer.html");
     });
   </script>
 
@@ -192,11 +193,9 @@
     function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
   </script>
   <!-- Firebase v12 Modular SDKs (ES Modules) -->
-  <script type="module" src="js/firebase-config.js"></script>
-  <script type="module" src="js/login.js"></script>
+  <script type="module" src="/js/firebase-config.js"></script>
+  <script type="module" src="/js/login.js"></script>
 
-  <!-- Main UI Script -->
-  <script src="js/script.js"></script>
 
   <style>
     .platform-section {
