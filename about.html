@@ -58,28 +58,31 @@
 
       <h2>What We Offer</h2>
 
-      <div class="platform-section">
-        <div class="platform-card">
-          <h3>📱 Android Applications</h3>
-          <p>Our Android suite includes intuitive apps that combine design elegance with technical precision:</p>
-          <ul>
-            <li><strong>Color Mixer</strong> — Advanced color science and manipulation tools</li>
-            <li><strong>Golden Calc</strong> — Feature-rich calculator for daily use</li>
-            <li><strong>Dialer</strong> — Modern telephony interface with smart features</li>
-            <li>And many more productivity-focused utilities</li>
-          </ul>
-        </div>
+      <!-- Using existing card class instead of platform-section -->
+      <div class="card" style="margin: 30px 0;">
+        <div class="row" style="display: flex; flex-wrap: wrap; gap: 20px;">
+          <div class="col" style="flex: 1; min-width: 300px;">
+            <h3>📱 Android Applications</h3>
+            <p>Our Android suite includes intuitive apps that combine design elegance with technical precision:</p>
+            <ul>
+              <li><strong>Color Mixer</strong> — Advanced color science and manipulation tools</li>
+              <li><strong>Golden Calc</strong> — Feature-rich calculator for daily use</li>
+              <li><strong>Dialer</strong> — Modern telephony interface with smart features</li>
+              <li>And many more productivity-focused utilities</li>
+            </ul>
+          </div>
 
-        <div class="platform-card">
-          <h3>🪟 Windows Tools</h3>
-          <p>Our expanding Windows toolkit provides powerful, lightweight utilities for everyday productivity:</p>
-          <ul>
-            <li><strong>PDF Tools</strong> — Compression, conversion, merging, and editing</li>
-            <li><strong>Image Tools</strong> — Editing, optimization, and format conversion</li>
-            <li><strong>Audio Tools</strong> — Processing, conversion, and enhancement</li>
-            <li><strong>System Tools</strong> — Optimization, cleaning, and management</li>
-            <li><strong>Utility Tools</strong> — Everyday productivity and calculation tools</li>
-          </ul>
+          <div class="col" style="flex: 1; min-width: 300px;">
+            <h3>🪟 Windows Tools</h3>
+            <p>Our expanding Windows toolkit provides powerful, lightweight utilities for everyday productivity:</p>
+            <ul>
+              <li><strong>PDF Tools</strong> — Compression, conversion, merging, and editing</li>
+              <li><strong>Image Tools</strong> — Editing, optimization, and format conversion</li>
+              <li><strong>Audio Tools</strong> — Processing, conversion, and enhancement</li>
+              <li><strong>System Tools</strong> — Optimization, cleaning, and management</li>
+              <li><strong>Utility Tools</strong> — Everyday productivity and calculation tools</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -138,28 +141,31 @@
       </ul>
 
       <h2>Why Choose RDroid Apps?</h2>
-      <div class="features-grid">
-        <div class="feature-item">
+
+      <!-- Using existing grid structure from tools -->
+      <div class="row"
+        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin: 25px 0;">
+        <div class="card">
           <h3>Comprehensive Suite</h3>
           <p>One destination for all your productivity needs across platforms</p>
         </div>
-        <div class="feature-item">
+        <div class="card">
           <h3>No Hidden Costs</h3>
           <p>Most tools are completely free with transparent pricing</p>
         </div>
-        <div class="feature-item">
+        <div class="card">
           <h3>Regular Updates</h3>
           <p>Continuous improvements based on user feedback</p>
         </div>
-        <div class="feature-item">
+        <div class="card">
           <h3>Privacy Focused</h3>
           <p>Your data never leaves your device with local processing</p>
         </div>
-        <div class="feature-item">
+        <div class="card">
           <h3>Professional Results</h3>
           <p>Tools designed for both casual users and professionals</p>
         </div>
-        <div class="feature-item">
+        <div class="card">
           <h3>Lightweight</h3>
           <p>Small downloads with minimal system impact</p>
         </div>
@@ -174,15 +180,22 @@
         <li><b>Tutorial Resources</b> — Comprehensive guides and video tutorials</li>
       </ul>
 
-      <div class="mission-statement">
+      <!-- Using card class for mission statement -->
+      <div class="card" style="border-left: 5px solid var(--primary); margin: 40px 0;">
         <h2>Our Mission</h2>
         <p><em>"To simplify digital life across platforms by creating accessible, privacy-focused software solutions
             that empower individuals and professionals alike. We believe technology should work for you, not the other
             way around."</em></p>
       </div>
 
-      <p class="cta-text">Ready to experience RDroid Apps? <a href="apps.html">Browse our Android apps</a> or <a
-          href="windows-tools.html">explore our Windows tools</a> to get started today!</p>
+      <!-- Using existing button styles -->
+      <div style="text-align: center; margin-top: 40px; padding: 20px; background: var(--card); border-radius: 10px;">
+        <p style="font-size: 1.1em;">Ready to experience RDroid Apps?</p>
+        <div style="display: flex; gap: 20px; justify-content: center; margin-top: 15px; flex-wrap: wrap;">
+          <a href="apps.html" class="btn">Browse our Android apps</a>
+          <a href="windows-tools.html" class="btn btn-primary">Explore our Windows tools</a>
+        </div>
+      </div>
     </section>
   </div>
 
@@ -195,91 +208,6 @@
   <!-- Firebase v12 Modular SDKs (ES Modules) -->
   <script type="module" src="/js/firebase-config.js"></script>
   <script type="module" src="/js/login.js"></script>
-
-
-  <style>
-    .platform-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 30px 0;
-    }
-
-    .platform-card {
-      flex: 1;
-      min-width: 300px;
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 20px;
-      border: 1px solid var(--border-color);
-    }
-
-    .platform-card h3 {
-      margin-top: 0;
-      color: var(--primary);
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-      margin: 25px 0;
-    }
-
-    .feature-item {
-      background: var(--card-bg);
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid var(--border-color);
-    }
-
-    .feature-item h3 {
-      margin-top: 0;
-      font-size: 1.1em;
-      color: var(--primary);
-    }
-
-    .mission-statement {
-      background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
-      padding: 25px;
-      border-radius: 15px;
-      margin: 40px 0;
-      border-left: 5px solid var(--primary);
-    }
-
-    .mission-statement h2 {
-      margin-top: 0;
-    }
-
-    .cta-text {
-      text-align: center;
-      font-size: 1.1em;
-      margin-top: 40px;
-      padding: 20px;
-      background: var(--card-bg);
-      border-radius: 10px;
-    }
-
-    .cta-text a {
-      color: var(--primary);
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .cta-text a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      .platform-section {
-        flex-direction: column;
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </body>
 
 </html>
