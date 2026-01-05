@@ -206,52 +206,90 @@
     </url>
 
     <url>
-        <loc>https://rdroidapps.com/windows-tools/image/audio-metadata-editor.html</loc>
+        <loc>https://rdroidapps.com/windows-tools/audio/audio-metadata-editor.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://rdroidapps.com/windows-tools/image/audio-volume-boost.html</loc>
+        <loc>https://rdroidapps.com/windows-tools/audio/audio-volume-boost.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://rdroidapps.com/windows-tools/change-audio-pitch.html</loc>
+        <loc>https://rdroidapps.com/windows-tools/audio/change-audio-pitch.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://rdroidapps.com/windows-tools/image/change-audio-speed.html</loc>
+        <loc>https://rdroidapps.com/windows-tools/audio/change-audio-speed.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://rdroidapps.com/windows-tools/image/convert-audio.html</loc>
+        <loc>https://rdroidapps.com/windows-tools/audio/convert-audio.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://rdroidapps.com/windows-tools/image/extract-mp3.html</loc>
+        <loc>https://rdroidapps.com/windows-tools/audio/extract-mp3.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://rdroidapps.com/windows-tools/image/merge-audio.html</loc>
+        <loc>https://rdroidapps.com/windows-tools/audio/merge-audio.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://rdroidapps.com/windows-tools/image/trim-audio.html</loc>
+        <loc>https://rdroidapps.com/windows-tools/audio/trim-audio.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+
+    <!-- ================= SYSTEM TOOLS ================= -->
+    <url>
+        <loc>https://rdroidapps.com/windows-tools/system/duplicate-file-finder.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/windows-tools/system/disk-usage-visualizer.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/windows-tools/system/file-renamer.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/windows-tools/system/system-info-checker.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/windows-tools/system/startup-program-manager.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/windows-tools/system/folder-size-analyzer.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
 
 
 </urlset>
