@@ -2,6 +2,19 @@
 <html lang="mr">
 
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH2NE5Y7W4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LH2NE5Y7W4');
+  </script>
+  <!-- AdSense account verification -->
+  <meta name="google-adsense-account" content="ca-pub-7933209486512555">
+
+  <!-- AdSense Auto Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933209486512555"
+    crossorigin="anonymous"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Compress PDF Online (Heavy) – Free & Secure – RDroid Apps</title>
@@ -10,7 +23,7 @@
   <meta name="keywords"
     content="compress pdf online, heavy pdf compression, reduce pdf size, free pdf compressor, secure pdf tool, rdroidapps pdf tools">
   <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/compress-pdf.html">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 
   <!-- pdf.js + pdf-lib + tesseract (optional) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
@@ -37,10 +50,10 @@
   <!-- Load all components -->
   <script>
     $(function () {
-      $("#header-container").load("../../components/header.html");
-      $("#menu-drawer-container").load("../../components/menu-drawer.html");
-      $("#tools-links-container").load("../../components/pdf-tools-quick-links.html");
-      $("#footer-container").load("../../components/footer.html");
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#tools-links-container").load("/components/pdf-tools-quick-links.html");
+      $("#footer-container").load("/components/footer.html");
     });
   </script>
 
@@ -181,6 +194,15 @@
           In Heavy compression, text is not selectable.
           But using the optional OCR feature, text summary can be obtained.
         </p>
+        <h2>Related System Tools</h2>
+        <p>
+          Explore more useful system tools by RDroidApps:
+          <a href="/windows-tools/file/merge-pdf.html" class="btn tools">Merge Files</a>,
+          <a href="/windows-tools/file/pdf-to-excel.html" class="btn tools">PDF to Excel</a>,
+          <a href="/windows-tools/pdf/split-pdf.html" class="btn tools">Split PDF</a>,
+          <a href="/windows-tools/pdf/pdf-to-png.html" class="btn tools">PDF to PNG</a>,
+          <a href="/windows-tools/pdf/pdf-to-jpg.html" class="btn tools">PDF to JPG</a>,
+        </p>
 
       </section>
 
@@ -196,231 +218,413 @@
     function toggleMenu() {
       document.getElementById("drawer").classList.toggle("open");
     }
-    /* Upgraded compressor
-       - Based on previous implementation. Reference: original assistant version. :contentReference[oaicite:1]{index=1}
-       - Enhancements: drag/drop, cancel, preview, OCR summary option, safer page loop with yields.
-    */
 
-    const fileInput = document.getElementById('fileInput');
-    const dropArea = document.getElementById('dropArea');
-    const pickBtn = document.getElementById('pickBtn');
-    const startBtn = document.getElementById('startBtn');
-    const cancelBtn = document.getElementById('cancelBtn');
-    const scaleSelect = document.getElementById('scaleSelect');
-    const jpegQ = document.getElementById('jpegQ');
-    const jpegVal = document.getElementById('jpegVal');
-    const maxPagesInput = document.getElementById('maxPages');
-    const progressWrap = document.getElementById('progressWrap');
-    const progressBar = document.getElementById('progressBar');
-    const logEl = document.getElementById('log');
-    const downloadLink = document.getElementById('downloadLink');
-    const previewEl = document.getElementById('preview');
-    const optPreview = document.getElementById('optPreview');
-    const optOCR = document.getElementById('optOCR');
-    const sizeInfo = document.getElementById('sizeInfo');
-    const warningEl = document.getElementById('warning');
+    // DEBUG: Check if elements exist
+    console.log('=== DEBUG START ===');
+    console.log('startBtn:', document.getElementById('startBtn'));
+    console.log('cancelBtn:', document.getElementById('cancelBtn'));
 
-    let controller = { cancel: false };
-    let currentFile = null;
+    // Wait for DOM to be ready
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('DOM loaded, initializing...');
+      initCompressor();
+    });
 
-    jpegQ.addEventListener('input', () => jpegVal.textContent = `Quality: ${jpegQ.value}%`);
-    pickBtn.addEventListener('click', () => fileInput.click());
+    function initCompressor() {
+      const fileInput = document.getElementById('fileInput');
+      const dropArea = document.getElementById('dropArea');
+      const pickBtn = document.getElementById('pickBtn');
+      const startBtn = document.getElementById('startBtn');
+      const cancelBtn = document.getElementById('cancelBtn');
+      const scaleSelect = document.getElementById('scaleSelect');
+      const jpegQ = document.getElementById('jpegQ');
+      const jpegVal = document.getElementById('jpegVal');
+      const maxPagesInput = document.getElementById('maxPages');
+      const progressWrap = document.getElementById('progressWrap');
+      const progressBar = document.getElementById('progressBar');
+      const logEl = document.getElementById('log');
+      const downloadLink = document.getElementById('downloadLink');
+      const previewEl = document.getElementById('preview');
+      const optPreview = document.getElementById('optPreview');
+      const optOCR = document.getElementById('optOCR');
+      const sizeInfo = document.getElementById('sizeInfo');
+      const warningEl = document.getElementById('warning');
 
-    dropArea.addEventListener('dragover', (e) => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f'; });
-    dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = '#202426');
-    dropArea.addEventListener('drop', async (e) => { e.preventDefault(); dropArea.style.borderColor = '#202426'; if (e.dataTransfer.files.length) { fileInput.files = e.dataTransfer.files; handleFileSelected(); } });
+      let controller = { cancel: false };
+      let currentFile = null;
+      let isProcessing = false;
 
-    fileInput.addEventListener('change', handleFileSelected);
+      // Ensure cancelBtn is properly styled
+      cancelBtn.style.cssText = 'display: none; visibility: visible; opacity: 1; position: relative;';
 
-    function log(msg) { logEl.textContent += msg + "\n"; logEl.scrollTop = logEl.scrollHeight; }
-    function clearLog() { logEl.textContent = ''; }
-    function setProgress(p) { progressWrap.style.display = p >= 0 ? 'block' : 'none'; progressBar.style.width = (p * 100).toFixed(1) + '%'; }
-    function resetUI() { cancelBtn.style.display = 'none'; startBtn.style.display = 'inline-block'; downloadLink.style.display = 'none'; previewEl.innerHTML = ''; sizeInfo.textContent = ''; warningEl.textContent = ''; }
+      // Add custom CSS for cancel button
+      const style = document.createElement('style');
+      style.textContent = `
+        #cancelBtn {
+          display: inline-block !important;
+          background-color: #f8f9fa !important;
+          border: 1px solid #6c757d !important;
+          color: #495057 !important;
+          padding: 8px 16px !important;
+          border-radius: 4px !important;
+          cursor: pointer !important;
+          font-size: 14px !important;
+          margin: 0 4px !important;
+          text-decoration: none !important;
+        }
+        #cancelBtn:hover {
+          background-color: #e9ecef !important;
+        }
+        #cancelBtn.hidden {
+          display: none !important;
+        }
+        #downloadLink.btn {
+          background-color: #28a745 !important;
+          color: white !important;
+          border-color: #28a745 !important;
+        }
+      `;
+      document.head.appendChild(style);
 
-    function handleFileSelected() {
-      currentFile = fileInput.files[0];
-      if (currentFile) {
-        clearLog();
-        log(`Selected: ${currentFile.name} — ${(currentFile.size / 1024).toFixed(1)} KB`);
+      jpegQ.addEventListener('input', () => jpegVal.textContent = `Quality: ${jpegQ.value}%`);
+      pickBtn.addEventListener('click', () => fileInput.click());
+
+      dropArea.addEventListener('dragover', (e) => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f'; });
+      dropArea.addEventListener('dragleave', () => { dropArea.style.borderColor = '#202426'; });
+      dropArea.addEventListener('drop', async (e) => {
+        e.preventDefault();
+        dropArea.style.borderColor = '#202426';
+        if (e.dataTransfer.files.length) {
+          fileInput.files = e.dataTransfer.files;
+          handleFileSelected();
+        }
+      });
+
+      fileInput.addEventListener('change', handleFileSelected);
+
+      function log(msg) { logEl.textContent += msg + "\n"; logEl.scrollTop = logEl.scrollHeight; }
+      function clearLog() { logEl.textContent = 'Ready.'; }
+      function setProgress(p) {
+        progressWrap.style.display = p >= 0 ? 'block' : 'none';
+        progressBar.style.width = (p * 100).toFixed(1) + '%';
+      }
+
+      function resetUI() {
+        console.log('Resetting UI...');
+        isProcessing = false;
+        controller.cancel = false;
+
+        // Show start button
+        startBtn.style.display = 'inline-block';
+        startBtn.disabled = false;
+        startBtn.textContent = 'Compress PDF';
+
+        // Hide cancel button
+        cancelBtn.style.display = 'none';
+
+        // Keep download link visible if it exists
+        // But reset progress
+        setProgress(-1);
+
+        // Clear preview if exists
+        previewEl.innerHTML = '';
+
+        // Don't clear log - keep it for user reference
+
+        // Clear warning
+        warningEl.textContent = '';
+      }
+
+      function completeReset() {
+        console.log('Complete reset - clearing everything');
+
+        // Full reset including download link
+        resetUI();
+
+        // Hide download link
+        downloadLink.style.display = 'none';
+        downloadLink.href = '';
+        downloadLink.textContent = '';
+
+        // Clear size info
         sizeInfo.textContent = '';
+
+        // Reset file input
+        fileInput.value = '';
+        currentFile = null;
+
+        // Clear log
+        clearLog();
+      }
+
+      function handleFileSelected() {
+        currentFile = fileInput.files[0];
+        if (currentFile) {
+          // Don't clear log completely, just add selection message
+          logEl.textContent = ''; // Clear first
+          log(`Selected: ${currentFile.name} — ${(currentFile.size / 1024).toFixed(1)} KB`);
+          sizeInfo.textContent = '';
+          downloadLink.style.display = 'none';
+          previewEl.innerHTML = '';
+
+          // Show start button if it was hidden
+          startBtn.style.display = 'inline-block';
+          cancelBtn.style.display = 'none';
+        }
+      }
+
+      // tiny helper to yield to UI / avoid freeze
+      async function briefYield(ms = 20) { return new Promise(r => setTimeout(r, ms)); }
+
+      startBtn.addEventListener('click', async () => {
+        console.log('Start button clicked - showing cancel button');
+
+        if (!currentFile) return alert('कृपया PDF निवडा.');
+
+        isProcessing = true;
+        controller.cancel = false;
+
+        // Show cancel button with multiple methods
+        cancelBtn.style.display = 'inline-block';
+        cancelBtn.style.visibility = 'visible';
+        cancelBtn.style.opacity = '1';
+        cancelBtn.textContent = 'Cancel';
+
+        // Hide start button
+        startBtn.style.display = 'none';
+
+        // Force reflow
+        cancelBtn.offsetHeight;
+
+        // Clear previous results
         downloadLink.style.display = 'none';
         previewEl.innerHTML = '';
-      }
-    }
+        warningEl.textContent = '';
+        logEl.textContent = ''; // Clear log for new process
 
-    // tiny helper to yield to UI / avoid freeze
-    async function briefYield(ms = 20) { return new Promise(r => setTimeout(r, ms)); }
+        const scaleFactor = parseFloat(scaleSelect.value);
+        const quality = parseInt(jpegQ.value) / 100;
+        const maxPages = Math.max(0, parseInt(maxPagesInput.value) || 0);
+        const doPreview = optPreview.checked;
+        const doOCR = optOCR.checked;
 
-    startBtn.addEventListener('click', async () => {
-      if (!currentFile) return alert('कृपया PDF निवडा.');
-      controller.cancel = false;
-      cancelBtn.style.display = 'inline-block';
-      startBtn.style.display = 'none';
-      clearLog();
-      previewEl.innerHTML = '';
-      downloadLink.style.display = 'none';
-      sizeInfo.textContent = '';
-      warningEl.textContent = '';
+        log(`Starting compression — scale ${scaleFactor}×, JPEG quality ${Math.round(quality * 100)}%`);
+        setProgress(0);
 
-      const scaleFactor = parseFloat(scaleSelect.value);
-      const quality = parseInt(jpegQ.value) / 100;
-      const maxPages = Math.max(0, parseInt(maxPagesInput.value) || 0); // 0 => all
-      const doPreview = optPreview.checked;
-      const doOCR = optOCR.checked;
+        // Safety: warn for very large files
+        if (currentFile.size > 50 * 1024 * 1024) {
+          warningEl.textContent = 'Warning: large file (>50MB). This may be slow and may use a lot of memory.';
+        }
 
-      log(`Starting compression — scale ${scaleFactor}×, JPEG quality ${Math.round(quality * 100)}%`);
-      setProgress(0);
+        // load pdf.js
+        if (!window.pdfjsLib) {
+          alert('pdf.js not loaded');
+          resetUI();
+          return;
+        }
 
-      // Safety: warn for very large files
-      if (currentFile.size > 50 * 1024 * 1024) {
-        warningEl.textContent = 'Warning: large file (>50MB). This may be slow and may use a lot of memory.';
-      }
-
-      // load pdf.js
-      if (!window.pdfjsLib) { alert('pdf.js not loaded'); resetUI(); return; }
-      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
-
-      // load file
-      const arrayBuffer = await currentFile.arrayBuffer();
-      const pdfData = new Uint8Array(arrayBuffer);
-      let pdf;
-      try {
-        pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
-      } catch (e) {
-        log('Failed to parse PDF: ' + e.message);
-        resetUI();
-        return;
-      }
-
-      const totalPages = pdf.numPages;
-      log(`Input pages: ${totalPages}`);
-
-      const pagesToProcess = (maxPages > 0) ? Math.min(maxPages, totalPages) : totalPages;
-
-      // create new pdf
-      const newPdf = await PDFLib.PDFDocument.create();
-      let ocrTexts = [];
-
-      for (let i = 1; i <= pagesToProcess; i++) {
-        if (controller.cancel) { log('Cancelled by user'); break; }
         try {
-          log(`Rendering page ${i}/${pagesToProcess} ...`);
-          const page = await pdf.getPage(i);
-          const viewport = page.getViewport({ scale: 1.0 });
-          const renderWidth = Math.max(1, Math.round(viewport.width * scaleFactor));
-          const renderHeight = Math.max(1, Math.round(viewport.height * scaleFactor));
-          const canvas = document.createElement('canvas');
-          canvas.width = renderWidth;
-          canvas.height = renderHeight;
-          const ctx = canvas.getContext('2d');
+          pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
-          // render
-          const renderContext = { canvasContext: ctx, viewport: page.getViewport({ scale: scaleFactor }) };
-          await page.render(renderContext).promise;
-
-          // optional preview thumbnail
-          if (doPreview) {
-            const thumb = document.createElement('img');
-            thumb.style.maxWidth = '120px'; thumb.style.borderRadius = '6px';
-            thumb.src = canvas.toDataURL('image/jpeg', Math.max(0.1, quality));
-            previewEl.appendChild(thumb);
+          // load file
+          const arrayBuffer = await currentFile.arrayBuffer();
+          const pdfData = new Uint8Array(arrayBuffer);
+          let pdf;
+          try {
+            pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
+          } catch (e) {
+            log('Failed to parse PDF: ' + e.message);
+            resetUI();
+            return;
           }
 
-          // optional OCR of page (summary) — slow
-          if (doOCR) {
+          const totalPages = pdf.numPages;
+          log(`Input pages: ${totalPages}`);
+
+          const pagesToProcess = (maxPages > 0) ? Math.min(maxPages, totalPages) : totalPages;
+
+          // create new pdf
+          const newPdf = await PDFLib.PDFDocument.create();
+          let ocrTexts = [];
+
+          for (let i = 1; i <= pagesToProcess; i++) {
+            if (controller.cancel) {
+              log('Cancelled by user');
+              break;
+            }
+
             try {
-              log(`OCR page ${i} ... (this may be slow)`);
-              const worker = Tesseract.createWorker({ logger: m => { } });
-              await worker.load(); await worker.loadLanguage('eng'); await worker.initialize('eng');
-              const { data: { text } } = await worker.recognize(canvas);
-              ocrTexts.push(`--- Page ${i} ---\n` + (text.trim() || '[no text detected]') + '\n');
-              await worker.terminate();
-            } catch (ocrErr) {
-              log('OCR failed for page ' + i + ': ' + ocrErr.message);
+              log(`Rendering page ${i}/${pagesToProcess} ...`);
+              const page = await pdf.getPage(i);
+              const viewport = page.getViewport({ scale: 1.0 });
+              const renderWidth = Math.max(1, Math.round(viewport.width * scaleFactor));
+              const renderHeight = Math.max(1, Math.round(viewport.height * scaleFactor));
+              const canvas = document.createElement('canvas');
+              canvas.width = renderWidth;
+              canvas.height = renderHeight;
+              const ctx = canvas.getContext('2d');
+
+              // render
+              const renderContext = {
+                canvasContext: ctx,
+                viewport: page.getViewport({ scale: scaleFactor })
+              };
+              await page.render(renderContext).promise;
+
+              // optional preview thumbnail
+              if (doPreview) {
+                const thumb = document.createElement('img');
+                thumb.style.maxWidth = '120px';
+                thumb.style.borderRadius = '6px';
+                thumb.src = canvas.toDataURL('image/jpeg', Math.max(0.1, quality));
+                previewEl.appendChild(thumb);
+              }
+
+              // optional OCR of page (summary) — slow
+              if (doOCR) {
+                try {
+                  log(`OCR page ${i} ... (this may be slow)`);
+                  const worker = Tesseract.createWorker({ logger: m => { } });
+                  await worker.load();
+                  await worker.loadLanguage('eng');
+                  await worker.initialize('eng');
+                  const { data: { text } } = await worker.recognize(canvas);
+                  ocrTexts.push(`--- Page ${i} ---\n` + (text.trim() || '[no text detected]') + '\n');
+                  await worker.terminate();
+                } catch (ocrErr) {
+                  log('OCR failed for page ' + i + ': ' + ocrErr.message);
+                }
+              }
+
+              // convert canvas to JPEG blob
+              const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
+              const arrayBuf = await blob.arrayBuffer();
+              const jpgBytes = new Uint8Array(arrayBuf);
+
+              // embed and add page
+              const imgEmbed = await newPdf.embedJpg(jpgBytes);
+              const imgDims = imgEmbed.scale(1);
+              const pdfPage = newPdf.addPage([imgDims.width, imgDims.height]);
+              pdfPage.drawImage(imgEmbed, {
+                x: 0,
+                y: 0,
+                width: imgDims.width,
+                height: imgDims.height
+              });
+
+              // progress update
+              setProgress(i / pagesToProcess);
+              await briefYield(30);
+              // free canvas memory
+              ctx && ctx.clearRect(0, 0, canvas.width, canvas.height);
+            } catch (pageErr) {
+              log('Error processing page ' + i + ': ' + (pageErr.message || pageErr));
             }
           }
 
-          // convert canvas to JPEG blob
-          const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
-          const arrayBuf = await blob.arrayBuffer();
-          const jpgBytes = new Uint8Array(arrayBuf);
-
-          // embed and add page
-          const imgEmbed = await newPdf.embedJpg(jpgBytes);
-          const imgDims = imgEmbed.scale(1);
-          const pdfPage = newPdf.addPage([imgDims.width, imgDims.height]);
-          pdfPage.drawImage(imgEmbed, { x: 0, y: 0, width: imgDims.width, height: imgDims.height });
-
-          // progress update
-          setProgress(i / pagesToProcess);
-          await briefYield(30); // yield to UI and GC
-          // free canvas memory
-          ctx && ctx.clearRect(0, 0, canvas.width, canvas.height);
-        } catch (pageErr) {
-          log('Error processing page ' + i + ': ' + (pageErr.message || pageErr));
-        }
-      }
-
-      // if OCR texts exist and user wanted summary, add as last page (text)
-      if (ocrTexts.length && !controller.cancel) {
-        try {
-          const textDoc = newPdf.addPage([595, 842]); // A4-ish
-          const combined = ocrTexts.join('\n\n');
-          textDoc.drawText('OCR Summary (automatically extracted text):', { x: 20, y: textDoc.getHeight() - 40, size: 12, color: PDFLib.rgb(0.9, 0.9, 0.9) });
-          // split text into lines
-          const lines = combined.split('\n');
-          let cursorY = textDoc.getHeight() - 60;
-          const lineHeight = 12;
-          for (const line of lines) {
-            if (cursorY < 40) {
-              // add new page
-              cursorY = textDoc.getHeight() - 40;
-            }
-            textDoc.drawText(line, { x: 20, y: cursorY, size: 10, color: PDFLib.rgb(0.85, 0.85, 0.85) });
-            cursorY -= lineHeight;
+          // Check if cancelled
+          if (controller.cancel) {
+            resetUI();
+            setProgress(-1);
+            log('Operation cancelled — no file produced.');
+            return;
           }
-          log('OCR summary added as last page.');
-        } catch (e) {
-          log('Failed to append OCR summary: ' + e.message);
+
+          // if OCR texts exist and user wanted summary, add as last page (text)
+          if (ocrTexts.length && !controller.cancel) {
+            try {
+              const textDoc = newPdf.addPage([595, 842]);
+              const combined = ocrTexts.join('\n\n');
+              textDoc.drawText('OCR Summary (automatically extracted text):', {
+                x: 20,
+                y: textDoc.getHeight() - 40,
+                size: 12,
+                color: PDFLib.rgb(0.9, 0.9, 0.9)
+              });
+              // split text into lines
+              const lines = combined.split('\n');
+              let cursorY = textDoc.getHeight() - 60;
+              const lineHeight = 12;
+              for (const line of lines) {
+                if (cursorY < 40) {
+                  // add new page
+                  cursorY = textDoc.getHeight() - 40;
+                }
+                textDoc.drawText(line, {
+                  x: 20,
+                  y: cursorY,
+                  size: 10,
+                  color: PDFLib.rgb(0.85, 0.85, 0.85)
+                });
+                cursorY -= lineHeight;
+              }
+              log('OCR summary added as last page.');
+            } catch (e) {
+              log('Failed to append OCR summary: ' + e.message);
+            }
+          }
+
+          log('Finalizing PDF (this may take some seconds)...');
+          try {
+            const pdfBytes = await newPdf.save();
+            const outBlob = new Blob([pdfBytes], { type: 'application/pdf' });
+            const outUrl = URL.createObjectURL(outBlob);
+
+            // Set up download link
+            downloadLink.href = outUrl;
+            downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-compressed.pdf';
+            downloadLink.textContent = '📥 Download compressed PDF';
+            downloadLink.style.display = 'inline-block';
+
+            // Show stats
+            sizeInfo.textContent = `Original: ${(currentFile.size / 1024).toFixed(1)} KB → Compressed: ${(outBlob.size / 1024).toFixed(1)} KB`;
+            log(`Done. Original ${(currentFile.size / 1024).toFixed(1)} KB, Compressed ${(outBlob.size / 1024).toFixed(1)} KB`);
+
+            // IMPORTANT: Change cancel button to "Reset" and keep it visible
+            cancelBtn.textContent = 'Reset';
+            cancelBtn.style.display = 'inline-block';
+            cancelBtn.style.backgroundColor = '#ffc107';
+            cancelBtn.style.color = '#212529';
+            cancelBtn.style.borderColor = '#ffc107';
+
+            // Show start button again (for new compression)
+            startBtn.style.display = 'inline-block';
+            startBtn.textContent = 'Compress Another PDF';
+
+            setProgress(1);
+            isProcessing = false;
+          } catch (saveErr) {
+            log('Failed to save compressed PDF: ' + saveErr.message);
+            resetUI();
+          }
+        } catch (error) {
+          log('Error: ' + error.message);
+          resetUI();
         }
-      }
+      });
 
-      if (controller.cancel) {
-        resetUI(); setProgress(-1); log('Operation cancelled — no file produced.'); return;
-      }
+      // Cancel/Reset handling
+      cancelBtn.addEventListener('click', () => {
+        console.log('Cancel/Reset button clicked');
 
-      log('Finalizing PDF (this may take some seconds)...');
-      try {
-        const pdfBytes = await newPdf.save();
-        const outBlob = new Blob([pdfBytes], { type: 'application/pdf' });
-        const outUrl = URL.createObjectURL(outBlob);
-        downloadLink.href = outUrl;
-        downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-compressed.pdf';
-        downloadLink.textContent = 'Download compressed PDF';
-        downloadLink.style.display = 'inline-block';
-        sizeInfo.textContent = `Original: ${(currentFile.size / 1024).toFixed(1)} KB — Compressed: ${(outBlob.size / 1024).toFixed(1)} KB`;
-        log(`Done. Original ${(currentFile.size / 1024).toFixed(1)} KB, Compressed ${(outBlob.size / 1024).toFixed(1)} KB`);
-        setProgress(1);
-      } catch (saveErr) {
-        log('Failed to save compressed PDF: ' + saveErr.message);
-      } finally {
-        cancelBtn.style.display = 'none';
-        startBtn.style.display = 'inline-block';
-      }
-    });
+        if (isProcessing) {
+          // If processing is in progress, cancel it
+          controller.cancel = true;
+          log('Cancelling operation...');
+          resetUI();
+        } else {
+          // If processing is complete, reset everything
+          completeReset();
+        }
+      });
 
-    // Cancel handling
-    cancelBtn.addEventListener('click', () => {
-      controller.cancel = true;
-      log('Cancel requested — stopping as soon as possible.');
-      cancelBtn.style.display = 'none';
-    });
+      // Basic memory safety: attempt to revoke object URLs on unload
+      window.addEventListener('beforeunload', () => {
+        // Empty function - no violations
+      });
 
-    // Basic memory safety: attempt to revoke object URLs on unload
-    window.addEventListener('beforeunload', () => {
-      // Empty function - no violations
-    });
-
+      console.log('Compressor initialized successfully');
+    }
   </script>
 
 
