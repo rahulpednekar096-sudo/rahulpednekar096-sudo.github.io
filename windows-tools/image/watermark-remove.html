@@ -2,10 +2,29 @@
 <html lang="mr">
 
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH2NE5Y7W4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-LH2NE5Y7W4');
+    </script>
+    <!-- AdSense account verification -->
+    <meta name="google-adsense-account" content="ca-pub-7933209486512555">
+
+    <!-- AdSense Auto Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933209486512555"
+        crossorigin="anonymous"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Remove Watermark Tool - Effortlessly eliminate watermarks from your images using advanced auto-refine inpainting techniques. Free online tool." />
+    <meta name="keywords"
+        content="Remove Watermark, Watermark Remover, Image Inpainting, Auto-Refine, Online Image Tool, Free Image Editor" />
+    <meta name="author" content="RDroid Apps" />
     <title>Remove Watermark — RDroid Apps (Auto-Refine Inpainting)</title>
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/image/watermark-remove.html" />
+    <link rel="stylesheet" href="/css/style.css">
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -24,10 +43,10 @@
     <!-- Load all components -->
     <script>
         $(function () {
-            $("#header-container").load("../../components/header.html");
-            $("#menu-drawer-container").load("../../components/menu-drawer.html");
-            $("#tools-links-container").load("../../components/image-tools-quick-links.html");
-            $("#footer-container").load("../../components/footer.html");
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/image-tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
         });
     </script>
 
@@ -38,8 +57,10 @@
                 (auto-refine passes) to progressively remove watermark. Adjust patch size / samples / iterations &
                 refine passes for best results.</p>
 
-            <label class="drop" id="dropArea">Drop image or <button class="btn btn-ghost" id="pickBtn">Choose
-                    file</button></label>
+            <label class="drop" id="dropArea"
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
+                <button class="btn btn-ghost" id="pickBtn">Choose file</button>
+            </label>
             <input type="file" id="fileInput" accept="image/*" />
 
             <canvas id="canvas" style="margin-top:15px;max-width:100%;border-radius:8px;background:#111"></canvas>
@@ -83,6 +104,38 @@
             </div>
 
             <pre id="log">Ready.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+
+            <section class="seo-content">
+                <h2>Remove Watermark from Images Online</h2>
+                <p>Our Remove Watermark tool uses advanced auto-refine inpainting techniques to effectively eliminate
+                    watermarks from your images. Simply select the watermark area and let the tool do the rest,
+                    progressively
+                    refining the result for a clean finish.</p>
+
+                <h3>How It Works</h3>
+                <p>The tool employs exemplar-based inpainting, which fills in the selected watermark area by sampling
+                    surrounding pixels. By running multiple passes, it refines the image to ensure a natural look
+                    without
+                    visible artifacts.</p>
+
+                <h3>Customizable Settings</h3>
+                <p>Adjust parameters like patch size, sample attempts, inner iterations, and refine passes to optimize
+                    results based on your specific image and watermark characteristics.</p>
+
+                <h3>Why Choose Our Tool?</h3>
+                <ul>
+                    <li><strong>User-Friendly:</strong> Intuitive interface for easy watermark removal.</li>
+                    <li><strong>Advanced Technology:</strong> Utilizes state-of-the-art inpainting algorithms.</li>
+                    <li><strong>Free and Online:</strong> No downloads or installations required.</li>
+                </ul>
+
+                <h3>Get Started Now</h3>
+                <p>Upload your image, select the watermark area, and click "Start Auto-Refine" to see the magic happen.
+                    Download your watermark-free image once the process is complete!</p>
+            </section>
         </div>
 
         <!-- FOOTER (loaded from external file) -->
