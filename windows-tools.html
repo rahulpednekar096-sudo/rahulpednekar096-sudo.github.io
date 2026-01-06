@@ -2,12 +2,31 @@
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4T90FQG02K');
+  </script>
+  <!-- AdSense account verification -->
+  <meta name="google-adsense-account" content="ca-pub-7933209486512555">
+
+  <!-- AdSense Auto Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933209486512555"
+    crossorigin="anonymous"></script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Windows Tools — RDroid Apps</title>
+  <meta name="description"
+    content="Use our fast, secure, and lightweight Windows utilities built for everyday productivity." />
+  <meta name="keywords" content="Windows Tools, PDF Tools, Image Tools, Audio Tools, System Tools, Utility Tools" />
+  <link rel="canonical" href="https://rdroidapps.com/windows-tools.html" />
 
   <!-- Main Theme CSS -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="/css/style.css" />
 
   <!-- Tools page specific CSS -->
   <style>
@@ -65,10 +84,10 @@
   <!-- Load all components -->
   <script>
     $(function () {
-      $("#header-container").load("../../components/header.html");
-      $("#menu-drawer-container").load("../../components/menu-drawer.html");
-      $("#tools-links-container").load("../../components/favorite-tools-quick-links.html");
-      $("#footer-container").load("../../components/footer.html");
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#tools-links-container").load("/components/favorite-tools-quick-links.html");
+      $("#footer-container").load("/components/footer.html");
     });
   </script>
   <!-- Header Title -->
@@ -235,21 +254,6 @@
           desc: "Transform JPG images into efficient WebP format with excellent compression."
         },
         {
-          file: "image-enhancer.html",
-          name: "Image Enhancer",
-          desc: "Improve photo quality by adjusting brightness, contrast, sharpness, and color balance."
-        },
-        {
-          file: "background-remover.html",
-          name: "Background Remover",
-          desc: "Automatically remove backgrounds from images with AI-powered precision."
-        },
-        {
-          file: "image-to-text-ocr.html",
-          name: "Image to Text (OCR)",
-          desc: "Extract editable text from images and scanned documents using optical character recognition."
-        },
-        {
           file: "add-watermark.html",
           name: "Add Watermark",
           desc: "Protect your images by adding text or logo watermarks with customizable opacity and position."
@@ -263,11 +267,6 @@
           file: "image-metadata-remover.html",
           name: "Image Metadata Remover",
           desc: "Strip privacy-sensitive metadata from images before sharing them online."
-        },
-        {
-          file: "image-colorizer.html",
-          name: "Image Colorizer",
-          desc: "Add realistic colors to black and white photos using AI colorization technology."
         },
         {
           file: "image-to-pdf.html",
@@ -293,11 +292,6 @@
           desc: "Extract audio from video files and save as high-quality MP3 format."
         },
         {
-          file: "noise-reduction.html",
-          name: "Noise Reduction",
-          desc: "Remove background noise, hum, and hiss from audio recordings for clearer sound."
-        },
-        {
           file: "audio-volume-boost.html",
           name: "Audio Volume Boost",
           desc: "Increase volume levels of quiet audio files without causing distortion."
@@ -308,16 +302,6 @@
           desc: "Combine multiple audio tracks into a single seamless file with crossfade options."
         },
         {
-          file: "audio-to-text.html",
-          name: "Audio to Text",
-          desc: "Transcribe speech from audio files into editable text with timestamp support."
-        },
-        {
-          file: "text-to-speech.html",
-          name: "Text to Speech",
-          desc: "Convert written text into natural-sounding speech with multiple voice options."
-        },
-        {
           file: "change-audio-speed.html",
           name: "Change Audio Speed",
           desc: "Speed up or slow down audio playback without affecting pitch or quality."
@@ -326,11 +310,6 @@
           file: "change-audio-pitch.html",
           name: "Change Audio Pitch",
           desc: "Adjust pitch of audio files while maintaining original tempo and duration."
-        },
-        {
-          file: "remove-vocals.html",
-          name: "Remove Vocals",
-          desc: "Create karaoke tracks by isolating and removing vocal elements from songs."
         },
         {
           file: "audio-metadata-editor.html",
@@ -344,21 +323,6 @@
           file: "file-renamer.html",
           name: "File Renamer",
           desc: "Batch rename multiple files with flexible naming patterns and sequential numbering."
-        },
-        {
-          file: "clipboard-manager.html",
-          name: "Clipboard Manager",
-          desc: "Save and organize clipboard history with quick access to copied items."
-        },
-        {
-          file: "system-cleaner.html",
-          name: "System Cleaner",
-          desc: "Remove temporary files, cache, and junk data to free up disk space and improve performance."
-        },
-        {
-          file: "batch-automation.html",
-          name: "Batch Automation",
-          desc: "Automate repetitive file and folder tasks with custom scripts and scheduled actions."
         },
         {
           file: "duplicate-file-finder.html",
@@ -384,84 +348,6 @@
           file: "disk-usage-visualizer.html",
           name: "Disk Usage Visualizer",
           desc: "Create interactive tree maps showing how disk space is allocated across your system."
-        },
-        {
-          file: "wifi-password-viewer.html",
-          name: "WiFi Password Viewer",
-          desc: "Recover and view saved WiFi passwords from your Windows computer."
-        }
-      ],
-
-      utility: [
-        {
-          file: "notes.html",
-          name: "Notes",
-          desc: "Create and organize text notes with formatting options and cloud sync capabilities."
-        },
-        {
-          file: "todo.html",
-          name: "ToDo List",
-          desc: "Manage tasks with due dates, priorities, and completion tracking features."
-        },
-        {
-          file: "password-generator.html",
-          name: "Password Generator",
-          desc: "Create strong, random passwords with customizable length and character types."
-        },
-        {
-          file: "qr-maker.html",
-          name: "QR Maker",
-          desc: "Generate QR codes for URLs, contact info, text, and WiFi connections."
-        },
-        {
-          file: "unit-converter.html",
-          name: "Unit Converter",
-          desc: "Convert between measurement units including length, weight, temperature, and volume."
-        },
-        {
-          file: "currency-converter.html",
-          name: "Currency Converter",
-          desc: "Convert currencies using real-time exchange rates with offline support."
-        },
-        {
-          file: "age-calculator.html",
-          name: "Age Calculator",
-          desc: "Calculate exact age in years, months, and days from any birth date."
-        },
-        {
-          file: "bmi-calculator.html",
-          name: "BMI Calculator",
-          desc: "Calculate Body Mass Index with height and weight inputs and health category indicators."
-        },
-        {
-          file: "random-name-generator.html",
-          name: "Random Name Generator",
-          desc: "Generate random names for characters, projects, or businesses with multiple style options."
-        },
-        {
-          file: "text-case-converter.html",
-          name: "Text Case Converter",
-          desc: "Transform text between uppercase, lowercase, title case, and sentence case formats."
-        },
-        {
-          file: "json-formatter.html",
-          name: "JSON Formatter",
-          desc: "Format, validate, and beautify JSON data with syntax highlighting and error checking."
-        },
-        {
-          file: "html-formatter.html",
-          name: "HTML Formatter",
-          desc: "Clean and format HTML code with proper indentation and structure validation."
-        },
-        {
-          file: "word-counter.html",
-          name: "Word Counter",
-          desc: "Count words, characters, sentences, and paragraphs in any text document."
-        },
-        {
-          file: "color-picker.html",
-          name: "Color Picker",
-          desc: "Select and copy colors from any screen location with HEX, RGB, and HSL values."
         }
       ]
     };
