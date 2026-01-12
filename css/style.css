@@ -1271,3 +1271,71 @@ select {
   display: flex;
   gap: 8px;
 }
+
+/* SEARCH ABOVE TOOLS */
+.tools-search-section {
+  padding: 10px 12px 4px;
+  background: #0b0c0d62;
+
+  /* CENTER FIX */
+  display: flex;
+  justify-content: center;
+}
+
+.header-search {
+  width: 100%;
+  max-width: 520px;
+}
+
+.header-search input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 24px;
+  border: 1px solid #380374;
+  background: #01411bb4;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.header-search input::placeholder {
+  color: #9aa0a6;
+}
+
+/* Desktop enhancement */
+@media (min-width: 768px) {
+  .tools-search-section {
+    padding-top: 16px;
+  }
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #01411bee;
+  border: 1px solid #380374;
+  border-radius: 12px;
+  margin-top: 6px;
+  max-height: 510px;
+  overflow-y: auto;
+  display: none;
+  z-index: 999;
+}
+
+.search-results a {
+  display: block;
+  padding: 10px 14px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.search-results a:hover {
+  background: #1a1e22;
+}
+
+.header-search {
+  position: relative;
+}
