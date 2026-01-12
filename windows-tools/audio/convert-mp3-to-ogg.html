@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4T90FQG02K');
+    </script>
+    <!-- AdSense account verification -->
+    <meta name="google-adsense-account" content="ca-pub-7933209486512555">
+
+    <!-- AdSense Auto Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933209486512555"
+        crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Convert MP3 to OGG is a web-based tool that allows users to easily convert MP3 audio files to the OGG format. It supports various quality settings and provides an easy preview and download option." />
+    <meta name="keywords"
+        content="Convert MP3 to OGG, MP3 to OGG Converter, Audio File Conversion, Online MP3 to OGG Tool, RDroid Apps" />
+    <title>Convert MP3 to OGG — RDroid Apps</title>
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/audio/convert-mp3-to-ogg.html" />
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- LOCAL ffmpeg files -->
+    <script src="../../js/ffmpeg/ffmpeg.min.js"></script>
+
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/audio-tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <section class="tool-section">
+        <div class="card">
+            <h1>Convert MP3 to OGG</h1>
+            <p class="note">MP3 फाइल OGG फॉरमॅटमध्ये रूपांतरित करा. ब्राउझर-साठी अनुकूल आणि लहान आकार.</p>
+
+            <div id="ffmpeg-loading"
+                style="display:block; background:#fff3cd; padding:10px; border-radius:8px; margin-bottom:12px;">
+                FFmpeg लोड होत आहे... कृपया थांबा (पहिल्या वेळी १०-२० सेकंद लागू शकतात)
+                <div style="width:100%; background:#e9ecef; border-radius:4px; margin-top:8px;">
+                    <div id="ffmpeg-progress"
+                        style="width:0%; height:20px; background:#0aa37f; border-radius:4px; transition:width 0.3s;">
+                    </div>
+                </div>
+            </div>
+
+            <label class="drop" id="dropArea">
+                Drop here mp3 file to convert to OGG or
+                <button class="btn btn-ghost" id="pickBtn" disabled>Choose file</button>
+                <br><small>Maximum size: 50 MB</small>
+            </label>
+            <input type="file" id="fileInput" accept="audio/mp3,audio/mpeg,.mp3" disabled />
+
+            <div class="row">
+                <div class="col">
+                    <label class="small">Quality</label>
+                    <select id="quality" disabled>
+                        <option value="9">High (9)</option>
+                        <option value="7" selected>Medium (7)</option>
+                        <option value="5">Low (5)</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label class="small">Bitrate</label>
+                    <select id="bitrate" disabled>
+                        <option value="192k">192 kbps</option>
+                        <option value="128k" selected>128 kbps</option>
+                        <option value="96k">96 kbps</option>
+                        <option value="64k">64 kbps</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label class="small">Sample Rate</label>
+                    <select id="samplerate" disabled>
+                        <option value="44100">44.1 kHz</option>
+                        <option value="22050">22.05 kHz</option>
+                        <option value="16000">16 kHz</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="progress-container" style="display:none; margin-top:12px;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                    <span>Conversion Progress</span>
+                    <span id="progress-percent">0%</span>
+                </div>
+                <div style="width:100%; background:#e9ecef; border-radius:4px;">
+                    <div id="progress-bar"
+                        style="width:0%; height:20px; background:#0aa37f; border-radius:4px; transition:width 0.3s;">
+                    </div>
+                </div>
+                <div id="progress-text" style="text-align:center; margin-top:4px; font-size:12px;"></div>
+            </div>
+
+            <div style="margin-top:12px;display:flex;gap:8px;">
+                <button class="btn btn-primary" id="convertBtn" disabled>Convert</button>
+                <button class="btn btn-secondary" id="cancelBtn" style="display:none">Cancel</button>
+                <a id="downloadLink" class="btn btn-success" style="display:none">📥 Download OGG</a>
+                <div id="fileInfo" style="margin-left:auto"></div>
+            </div>
+
+            <div id="preview" style="margin-top:12px"></div>
+            <pre id="log">FFmpeg is loading...</pre>
+        </div>
+        <!-- FOOTER (loaded from external file) -->
+        <div id="footer-container"></div>
+    </section>
+
+    <script>
+        let ffmpeg = null;
+        let isConverting = false;
+        let cancelConversion = false;
+
+        function toggleMenu() {
+            const drawer = document.getElementById('drawer');
+            if (drawer) {
+                drawer.classList.toggle('open');
+            }
+        }
+
+        // DOM elements
+        const pickBtn = document.getElementById('pickBtn');
+        const fileInput = document.getElementById('fileInput');
+        const dropArea = document.getElementById('dropArea');
+        const qualitySelect = document.getElementById('quality');
+        const bitrateSelect = document.getElementById('bitrate');
+        const samplerateSelect = document.getElementById('samplerate');
+        const convertBtn = document.getElementById('convertBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const downloadLink = document.getElementById('downloadLink');
+        const preview = document.getElementById('preview');
+        const fileInfo = document.getElementById('fileInfo');
+        const logEl = document.getElementById('log');
+        const progressContainer = document.getElementById('progress-container');
+        const progressBar = document.getElementById('progress-bar');
+        const progressPercent = document.getElementById('progress-percent');
+        const progressText = document.getElementById('progress-text');
+        const ffmpegLoading = document.getElementById('ffmpeg-loading');
+        const ffmpegProgress = document.getElementById('ffmpeg-progress');
+
+        // Helper function to read file as Uint8Array
+        async function readFileAsUint8Array(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    resolve(new Uint8Array(reader.result));
+                };
+                reader.onerror = reject;
+                reader.readAsArrayBuffer(file);
+            });
+        }
+
+        // Progress update function
+        function updateProgress(percent, text) {
+            if (progressBar && progressPercent && progressText) {
+                progressBar.style.width = `${percent}%`;
+                progressPercent.textContent = `${percent}%`;
+                progressText.textContent = text;
+
+                if (percent % 25 === 0 || percent === 100) {
+                    logEl.textContent += `\n📈 Progress: ${percent}% - ${text}`;
+                }
+            }
+        }
+
+        function enableControls() {
+            console.log('enableControls called');
+
+            if (pickBtn) {
+                pickBtn.disabled = false;
+                pickBtn.textContent = 'Select File';
+            }
+
+            if (fileInput) fileInput.disabled = false;
+
+            if (qualitySelect) {
+                qualitySelect.disabled = false;
+                qualitySelect.style.cursor = 'pointer';
+            }
+
+            if (bitrateSelect) {
+                bitrateSelect.disabled = false;
+                bitrateSelect.style.cursor = 'pointer';
+            }
+
+            if (samplerateSelect) {
+                samplerateSelect.disabled = false;
+                samplerateSelect.style.cursor = 'pointer';
+            }
+
+            if (convertBtn) {
+                convertBtn.disabled = false;
+                convertBtn.style.cursor = 'pointer';
+            }
+
+            if (ffmpegLoading) ffmpegLoading.style.display = 'none';
+
+            logEl.textContent = '✅ FFmpeg loaded! Now select file.';
+        }
+
+        // FFmpeg लोड करा - LOCAL VERSION
+        async function loadFFmpeg() {
+            try {
+                console.log('loadFFmpeg started');
+                logEl.textContent = 'FFmpeg is loading...';
+
+                if (ffmpegProgress) ffmpegProgress.style.width = '5%';
+
+                // Check if FFmpeg is available
+                if (typeof FFmpeg === 'undefined') {
+                    throw new Error('FFmpeg library is not available. Please check the file.');
+                }
+
+                const { createFFmpeg } = FFmpeg;
+
+                if (ffmpegProgress) ffmpegProgress.style.width = '20%';
+
+                // CORRECT PATH: ../../js/ffmpeg/ffmpeg-core.js
+                const corePath = '../../js/ffmpeg/ffmpeg-core.js';
+                console.log('Loading FFmpeg from:', corePath);
+                logEl.textContent += `\nCore path: ${corePath}`;
+
+                ffmpeg = createFFmpeg({
+                    log: false, // Set to false to reduce console noise
+                    corePath: corePath,
+                    progress: ({ ratio }) => {
+                        const percent = Math.round(ratio * 100);
+                        console.log('FFmpeg load progress:', percent);
+
+                        if (ffmpegProgress) {
+                            ffmpegProgress.style.width = `${percent}%`;
+                        }
+
+                        if (percent < 100) {
+                            logEl.textContent = `FFmpeg is loading... ${percent}%`;
+                        }
+
+                        if (percent === 100) {
+                            console.log('FFmpeg load complete, enabling controls');
+                            setTimeout(enableControls, 300);
+                        }
+                    }
+                });
+
+                if (ffmpegProgress) ffmpegProgress.style.width = '40%';
+                logEl.textContent += '\nFFmpeg instance created...';
+
+                console.log('Calling ffmpeg.load()...');
+                await ffmpeg.load();
+                console.log('ffmpeg.load() completed');
+
+                // Backup: Ensure controls are enabled even if progress callback fails
+                if (pickBtn && pickBtn.disabled) {
+                    console.log('Manually enabling controls after load');
+                    enableControls();
+                }
+
+            } catch (error) {
+                console.error('FFmpeg load error:', error);
+                logEl.textContent = `❌ FFmpeg load error: ${error.message}`;
+
+                // Show detailed error
+                if (ffmpegLoading) {
+                    ffmpegLoading.innerHTML = `
+                        <div style="color: #721c24; background: #f8d7da; padding: 10px; border-radius: 5px;">
+                            <strong>Error:</strong> ${error.message}<br>
+                            <small>Please check the following:</small>
+                            <ul style="margin: 5px 0; padding-left: 20px;">
+                                <li>../../js/ffmpeg/ffmpeg.min.js file is available?</li>
+                                <li>../../js/ffmpeg/ffmpeg-core.js file is available? (30MB)</li>
+                                <li>../../js/ffmpeg/ffmpeg-core.wasm file is available? (23MB)</li>
+                                <li>File path is correct? (../../js/ffmpeg/)</li>
+                            </ul>
+                            <button onclick="location.reload()" style="padding: 5px 10px; background: #0aa37f; color: white; border: none; border-radius: 3px; cursor: pointer; margin-top:5px;">Try Again</button>
+                            <button onclick="enableControls()" style="padding: 5px 10px; background: #6c757d; color: white; border: none; border-radius: 3px; cursor: pointer; margin-top:5px; margin-left:5px;">Enable Controls Only</button>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // File selection
+        if (pickBtn) {
+            pickBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Pick button clicked');
+                if (fileInput) {
+                    fileInput.click();
+                }
+            });
+        }
+
+        // Drop area events
+        if (dropArea) {
+            dropArea.addEventListener('dragover', e => {
+                e.preventDefault();
+                dropArea.style.borderColor = '#0aa37f';
+            });
+
+            dropArea.addEventListener('drop', e => {
+                e.preventDefault();
+                dropArea.style.borderColor = '';
+                if (e.dataTransfer.files.length) {
+                    if (fileInput) {
+                        fileInput.files = e.dataTransfer.files;
+                        handleFileSelect();
+                    }
+                }
+            });
+
+            dropArea.addEventListener('dragleave', () => {
+                dropArea.style.borderColor = '';
+            });
+        }
+
+        // File input change
+        if (fileInput) {
+            fileInput.addEventListener('change', handleFileSelect);
+        }
+
+        function handleFileSelect() {
+            const file = fileInput.files[0];
+            if (!file) return;
+
+            console.log('File selected:', file.name);
+
+            // Check file size (max 50MB)
+            if (file.size > 50 * 1024 * 1024) {
+                alert('File size is too large! Max size: 50 MB');
+                fileInput.value = '';
+                return;
+            }
+
+            const fileSizeMB = (file.size / (1024 * 1024)).toFixed(2);
+            if (fileInfo) fileInfo.textContent = `File: ${file.name} (${fileSizeMB} MB)`;
+
+            if (preview) {
+                const audioUrl = URL.createObjectURL(file);
+                preview.innerHTML = `
+                    <div style="background:#f5f5f5; padding:12px; border-radius:8px;">
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <div style="font-size:24px;">🎵</div>
+                            <div>
+                                <strong>${file.name}</strong><br>
+                                <small>${fileSizeMB} MB • MP3 • ${getAudioDuration(file)}</small>
+                            </div>
+                        </div>
+                        <audio controls src="${audioUrl}" style="width:100%; margin-top:8px;"></audio>
+                    </div>
+                `;
+            }
+
+            logEl.textContent += `\n✅ File selected: ${file.name}\n📊 Size: ${fileSizeMB} MB`;
+        }
+
+        function getAudioDuration(file) {
+            const sizeInMB = file.size / (1024 * 1024);
+            const approxMinutes = Math.round(sizeInMB * 0.5);
+            return approxMinutes > 0 ? `~${approxMinutes} minutes` : 'Duration unknown';
+        }
+
+        // Conversion process
+        if (convertBtn) {
+            convertBtn.addEventListener('click', async () => {
+                console.log('Convert button clicked');
+                console.log('FFmpeg status:', {
+                    exists: !!ffmpeg,
+                    loaded: ffmpeg ? ffmpeg.loaded : false,
+                    isLoadedMethod: ffmpeg ? (typeof ffmpeg.isLoaded) : 'none'
+                });
+
+                if (isConverting) {
+                    console.log('Already converting, skipping');
+                    return;
+                }
+
+                const file = fileInput.files[0];
+                if (!file) {
+                    alert('Please select MP3 file');
+                    return;
+                }
+
+                // FIXED: Check if ffmpeg exists and is loaded
+                if (!ffmpeg) {
+                    alert('FFmpeg is not loaded yet. Please wait a movement.');
+                    return;
+                }
+
+                // Different FFmpeg versions have different ways to check loading
+                let isLoaded = false;
+                if (typeof ffmpeg.isLoaded === 'function') {
+                    isLoaded = ffmpeg.isLoaded();
+                } else if (typeof ffmpeg.loaded !== 'undefined') {
+                    isLoaded = ffmpeg.loaded;
+                } else {
+                    // If we can't determine, assume it's loaded if ffmpeg exists
+                    isLoaded = true;
+                }
+
+                if (!isLoaded) {
+                    alert('कृपया FFmpeg लोड होण्याची प्रतीक्षा करा (अद्याप लोड होत आहे)');
+                    return;
+                }
+
+                isConverting = true;
+                cancelConversion = false;
+                convertBtn.disabled = true;
+                convertBtn.textContent = 'रूपांतरित करीत आहे...';
+                if (cancelBtn) {
+                    cancelBtn.style.display = 'inline-block';
+                    cancelBtn.disabled = false;
+                }
+                if (progressContainer) progressContainer.style.display = 'block';
+                if (downloadLink) downloadLink.style.display = 'none';
+
+                // Reset progress
+                updateProgress(0, 'प्रारंभ करीत आहे...');
+
+                try {
+                    console.log('Starting conversion process');
+                    logEl.textContent += '\n\n=== रूपांतरण सुरू ===';
+                    logEl.textContent += `\nफाइल: ${file.name}`;
+                    logEl.textContent += `\nसेटिंग्ज: गुणवत्ता=${qualitySelect.value}, बिटरेट=${bitrateSelect.value}, सॅम्पल रेट=${samplerateSelect.value}Hz`;
+
+                    updateProgress(10, 'फाइल वाचत आहे...');
+
+                    // Load file to FFmpeg
+                    const inputFileName = 'input.mp3';
+                    const fileData = await readFileAsUint8Array(file);
+                    ffmpeg.FS('writeFile', inputFileName, fileData);
+                    console.log('File written to FFmpeg filesystem');
+
+                    updateProgress(30, 'MP3 डीकोड करीत आहे...');
+
+                    // Prepare FFmpeg command
+                    const outputFileName = 'output.ogg';
+                    const quality = qualitySelect.value;
+                    const bitrate = bitrateSelect.value;
+                    const samplerate = samplerateSelect.value;
+
+                    // OGG encoding command
+                    const command = [
+                        '-i', inputFileName,
+                        '-c:a', 'libvorbis',
+                        '-q:a', quality,
+                        '-b:a', bitrate,
+                        '-ar', samplerate,
+                        '-map_metadata', '0',
+                        '-y',
+                        outputFileName
+                    ];
+
+                    console.log('FFmpeg command:', command);
+                    logEl.textContent += `\nFFmpeg कमांड: ffmpeg ${command.join(' ')}`;
+
+                    updateProgress(50, 'OGG मध्ये एन्कोड करीत आहे...');
+
+                    // Run FFmpeg
+                    console.log('Running FFmpeg...');
+                    await ffmpeg.run(...command);
+                    console.log('FFmpeg completed successfully');
+
+                    if (cancelConversion) {
+                        throw new Error('रूपांतरण रद्द केले');
+                    }
+
+                    updateProgress(90, 'आउटपुट तयार करीत आहे...');
+
+                    // Read output file
+                    const data = ffmpeg.FS('readFile', outputFileName);
+                    console.log('Output file size:', data.length, 'bytes');
+
+                    updateProgress(95, 'ब्लॉब तयार करीत आहे...');
+
+                    // Create blob
+                    const blob = new Blob([data.buffer], { type: 'audio/ogg' });
+                    const url = URL.createObjectURL(blob);
+
+                    // Prepare filename
+                    const newFileName = file.name.replace(/\.mp3$/i, '') + '.ogg';
+                    const newSize = (blob.size / (1024 * 1024)).toFixed(2);
+                    const originalSize = (file.size / (1024 * 1024)).toFixed(2);
+
+                    updateProgress(100, 'रूपांतरण पूर्ण!');
+
+                    // Setup download link
+                    if (downloadLink) {
+                        downloadLink.href = url;
+                        downloadLink.download = newFileName;
+                        downloadLink.textContent = `📥 OGG डाउनलोड करा (${newSize} MB)`;
+                        downloadLink.style.display = 'inline-block';
+                    }
+
+                    // Show info
+                    if (fileInfo) {
+                        fileInfo.innerHTML = `
+                    <div style="text-align:right;">
+                        <div>मूळ: ${originalSize} MB</div>
+                        <div>नवीन: <strong>${newSize} MB</strong></div>
+                    </div>
+                `;
+                    }
+
+                    // Update preview
+                    if (preview) {
+                        preview.innerHTML += `
+                    <div style="margin-top:12px; background:#e8f5e9; padding:12px; border-radius:8px;">
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <div style="font-size:24px;">✅</div>
+                            <div>
+                                <strong>रूपांतरण पूर्ण!</strong><br>
+                                <small>${newFileName} • ${newSize} MB</small>
+                            </div>
+                        </div>
+                        <audio controls src="${url}" style="width:100%; margin-top:8px;"></audio>
+                        <div style="margin-top:8px; font-size:12px; color:#666;">
+                            संक्षेप: ${originalSize} MB → ${newSize} MB (${((1 - newSize / originalSize) * 100).toFixed(1)}% लहान)
+                        </div>
+                    </div>
+                `;
+                    }
+
+                    logEl.textContent += `\n✅ रूपांतरण पूर्ण!`;
+                    logEl.textContent += `\n📊 आकार: ${originalSize} MB → ${newSize} MB`;
+                    logEl.textContent += `\n📊 आकार कमी: ${((1 - newSize / originalSize) * 100).toFixed(1)}%`;
+                    logEl.textContent += '\n=== रूपांतरण समाप्त ===';
+
+                    // Cleanup
+                    setTimeout(() => {
+                        try {
+                            ffmpeg.FS('unlink', inputFileName);
+                            ffmpeg.FS('unlink', outputFileName);
+                            console.log('Cleaned up temporary files');
+                        } catch (cleanupError) {
+                            console.warn('Cleanup error:', cleanupError);
+                        }
+                    }, 1000);
+
+                } catch (error) {
+                    console.error('Conversion error:', error);
+                    logEl.textContent += `\n❌ त्रुटी: ${error.message}`;
+
+                    if (!cancelConversion) {
+                        alert(`रूपांतरणात त्रुटी: ${error.message}`);
+                    } else {
+                        logEl.textContent += '\n⚠️ रूपांतरण रद्द केले';
+                    }
+
+                    if (preview) {
+                        preview.innerHTML += `
+                    <div style="margin-top:12px; background:#f8d7da; padding:12px; border-radius:8px;">
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <div style="font-size:24px;">❌</div>
+                            <div>
+                                <strong>रूपांतरण अयशस्वी</strong><br>
+                                <small>${error.message}</small>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                    }
+                } finally {
+                    isConverting = false;
+                    convertBtn.disabled = false;
+                    convertBtn.textContent = 'रूपांतरित करा';
+                    if (cancelBtn) {
+                        cancelBtn.style.display = 'none';
+                        cancelBtn.disabled = false;
+                        cancelBtn.textContent = 'रद्द करा';
+                    }
+
+                    // Hide progress bar after 3 seconds
+                    setTimeout(() => {
+                        if (progressContainer) progressContainer.style.display = 'none';
+                    }, 3000);
+                }
+            });
+        }
+
+        // Cancel button
+        if (cancelBtn) {
+            cancelBtn.addEventListener('click', () => {
+                console.log('Cancel button clicked');
+                if (isConverting) {
+                    cancelConversion = true;
+                    cancelBtn.disabled = true;
+                    cancelBtn.textContent = 'रद्द करीत आहे...';
+                    logEl.textContent += '\n⚠️ रूपांतरण रद्द करण्याची विनंती...';
+                }
+            });
+        }
+
+        // Clear log on double click
+        if (logEl) {
+            logEl.addEventListener('dblclick', () => {
+                if (!isConverting) {
+                    logEl.textContent = 'तयार.';
+                }
+            });
+        }
+
+        // Load FFmpeg on page load
+        window.addEventListener('load', function () {
+            console.log('Page loaded, starting FFmpeg load');
+            // Start loading FFmpeg
+            loadFFmpeg();
+
+            // Fallback: If controls are still disabled after 8 seconds, enable them manually
+            setTimeout(function () {
+                if (pickBtn && pickBtn.disabled) {
+                    console.log('Fallback: Manually enabling controls');
+                    enableControls();
+                }
+            }, 8000);
+        });
+    </script>
+</body>
+
+</html>
