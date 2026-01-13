@@ -1336,26 +1336,7 @@ select {
   background: #1a1e22;
 }
 
-/* ==============================
-   ABOUT PAGE – MOBILE ONLY FIX
-   ============================== */
-@media (max-width: 768px) {
 
-  .page-about {
-    background-attachment: scroll;
-  }
-
-  .page-about .section {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
-
-  .page-about header,
-  .page-about nav {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
-}
 
 .header-search {
   position: relative;
