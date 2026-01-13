@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4T90FQG02K');
+    </script>
+    <!-- AdSense account verification -->
+    <meta name="google-adsense-account" content="ca-pub-7933209486512555">
+
+    <!-- AdSense Auto Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933209486512555"
+        crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <title>Notes Manager — RDroid Apps</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="canonical" href="https://rdroidapps.com/tools/notes-manager.html">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="description"
+        content="Create, manage and organize your notes. Save, edit and delete notes with easy-to-use interface. All data stored locally in your browser." />
+    <meta name="keywords"
+        content="notes manager, online notes, note taking, text editor, organize notes, browser notes" />
+
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/utility-tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <section class="section" role="main" aria-labelledby="title">
+        <h1 id="title">Notes Manager</h1>
+        <p class="lead">Create, manage and organize your notes. All data is stored locally in your browser.</p>
+
+        <div class="card" style="margin-bottom: 20px; padding: 20px;">
+            <div class="control">
+                <label style="display: block; margin-bottom: 8px; font-weight: bold; color: var(--text);">
+                    📝 Note Title
+                </label>
+                <input type="text" id="noteTitle" placeholder="Enter note title"
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2b2f33; background: #0f3547; color: #e6eef0;" />
+            </div>
+
+            <div class="control" style="margin-top: 16px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: bold; color: var(--text);">
+                    📄 Note Content
+                </label>
+                <textarea id="noteContent" rows="10" placeholder="Start typing your note here..."
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2b2f33; background: #0f3547; color: #e6eef0; font-family: Arial, sans-serif;"></textarea>
+            </div>
+
+            <div style="display:flex; gap:12px; align-items:center; margin-top: 20px;">
+                <button class="btn btn-primary" id="saveBtn" style="flex: 1;">💾 Save Note</button>
+                <button class="btn" id="newBtn" style="flex: 1;">🆕 New Note</button>
+                <button class="btn" id="deleteBtn" style="flex: 1;">🗑️ Delete Note</button>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 20px; padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <label style="font-weight: bold; color: var(--text); font-size: 18px;">
+                    📚 Saved Notes (Click to edit)
+                </label>
+                <div style="color: var(--muted); font-size: 14px;">
+                    Total: <span id="notesCount">0</span> notes
+                </div>
+            </div>
+
+            <div id="notesList"
+                style="max-height: 300px; overflow-y: auto; border: 1px solid #2b2f33; border-radius: 8px; padding: 10px; background: #0b2641;">
+                <!-- Notes will be loaded here -->
+            </div>
+        </div>
+
+        <div class="log" id="log"
+            style="margin-top: 20px; padding: 15px; background: #001221a1; border-radius: 8px; color: #9fbfb0;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span>💡</span>
+                <span id="logMessage">Ready. Create your first note!</span>
+            </div>
+            <div id="noteStats" style="margin-top: 10px; font-size: 14px; color: #cfeee0; display: none;">
+                Last saved: <span id="lastSaved">Never</span> |
+                Characters: <span id="charCount">0</span> |
+                Words: <span id="wordCount">0</span>
+            </div>
+        </div>
+
+        <hr style="margin:32px 0">
+
+        <section class="seo-content">
+            <h2>About Notes Manager</h2>
+            <p>
+                The Notes Manager tool allows you to create, edit, and organize notes directly in your browser.
+                All your notes are stored locally, ensuring complete privacy and security.
+            </p>
+
+            <h2>How to Use</h2>
+            <div style="background: #001221a1; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                <h3 style="margin-top: 0;">Quick Start Guide:</h3>
+                <ol style="margin-left: 20px;">
+                    <li><strong>Create New Note:</strong> Click "New Note" button</li>
+                    <li><strong>Add Title & Content:</strong> Enter title and note text</li>
+                    <li><strong>Save Note:</strong> Click "Save Note" button</li>
+                    <li><strong>Edit Note:</strong> Click on any note from Saved Notes list</li>
+                    <li><strong>Delete Note:</strong> Select note and click "Delete Note" button</li>
+                </ol>
+            </div>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li>Create unlimited notes with titles and content</li>
+                <li>Edit and update existing notes</li>
+                <li>Delete notes you no longer need</li>
+                <li>All data stored locally in your browser (no server upload)</li>
+                <li>Simple and clean interface</li>
+                <li>Works offline after initial load</li>
+                <li>Character and word count</li>
+                <li>Auto-save feature</li>
+            </ul>
+
+            <h2>Privacy and Security</h2>
+            <p>
+                All your notes are stored locally in your browser's storage. No data is sent to any server,
+                ensuring complete privacy and security.
+            </p>
+
+            <h2>FAQ</h2>
+            <p>
+                <strong>Is this tool free?</strong> Yes, it's completely free to use.
+            </p>
+            <p>
+                <strong>Where are my notes stored?</strong> Notes are stored in your browser's local storage.
+            </p>
+            <p>
+                <strong>Can I access my notes from another device?</strong> No, notes are stored locally on your current
+                device only.
+            </p>
+            <p>
+                <strong>How do I edit a saved note?</strong> Simply click on the note title in the "Saved Notes" list.
+            </p>
+        </section>
+
+        <!-- FOOTER (loaded from external file) -->
+        <div id="footer-container"></div>
+
+        <script>
+            // Elements
+            const noteTitle = document.getElementById('noteTitle');
+            const noteContent = document.getElementById('noteContent');
+            const notesList = document.getElementById('notesList');
+            const saveBtn = document.getElementById('saveBtn');
+            const newBtn = document.getElementById('newBtn');
+            const deleteBtn = document.getElementById('deleteBtn');
+            const logMessage = document.getElementById('logMessage');
+            const noteStats = document.getElementById('noteStats');
+            const lastSaved = document.getElementById('lastSaved');
+            const charCount = document.getElementById('charCount');
+            const wordCount = document.getElementById('wordCount');
+            const notesCount = document.getElementById('notesCount');
+
+            // Load notes from localStorage
+            function loadNotes() {
+                const notes = JSON.parse(localStorage.getItem('rdroidNotes')) || [];
+                notesList.innerHTML = '';
+
+                if (notes.length === 0) {
+                    notesList.innerHTML = `
+                        <div style="text-align: center; padding: 30px; color: var(--muted);">
+                            📭 No notes yet.<br>
+                            Create your first note above!
+                        </div>
+                    `;
+                    notesCount.textContent = '0';
+                    return notes;
+                }
+
+                notes.forEach((note, index) => {
+                    const noteDiv = document.createElement('div');
+                    noteDiv.className = 'note-item';
+                    noteDiv.dataset.index = index;
+                    noteDiv.style.cssText = `
+                        padding: 12px;
+                        margin-bottom: 8px;
+                        background: #003054e1;
+                        border-radius: 6px;
+                        border: 1px solid #2b2f33;
+                        cursor: pointer;
+                        transition: all 0.2s;
+                    `;
+
+                    // Calculate preview (first 50 chars)
+                    const preview = note.content.length > 50 ?
+                        note.content.substring(0, 50) + '...' : note.content;
+
+                    noteDiv.innerHTML = `
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div style="flex: 1;">
+                                <div style="font-weight: bold; color: var(--text); margin-bottom: 4px; font-size: 16px;">
+                                    ${note.title || 'Untitled Note'}
+                                </div>
+                                <div style="color: var(--muted); font-size: 14px;">
+                                    ${preview}
+                                </div>
+                                <div style="font-size: 12px; color: #9fbfb0; margin-top: 6px;">
+                                    📝 ${note.content.length} chars • 📅 ${formatDate(note.updated || Date.now())}
+                                </div>
+                            </div>
+                            <div style="color: var(--muted); font-size: 20px; margin-left: 10px;">
+                                →
+                            </div>
+                        </div>
+                    `;
+
+                    // Click to load note
+                    noteDiv.addEventListener('click', () => {
+                        // Remove active class from all notes
+                        document.querySelectorAll('.note-item').forEach(item => {
+                            item.style.border = '1px solid #2b2f33';
+                            item.style.background = '#003054e1';
+                        });
+
+                        // Add active class to clicked note
+                        noteDiv.style.border = '2px solid #0aa37f';
+                        noteDiv.style.background = '#004B87';
+
+                        // Load note
+                        noteTitle.value = note.title || '';
+                        noteContent.value = note.content || '';
+                        currentIndex = index;
+
+                        // Update stats
+                        updateStats();
+                        logMessage.innerHTML = `📖 <strong>Loaded:</strong> "${note.title || 'Untitled Note'}"`;
+                        noteStats.style.display = 'block';
+                    });
+
+                    notesList.appendChild(noteDiv);
+                });
+
+                notesCount.textContent = notes.length;
+                return notes;
+            }
+
+            function formatDate(timestamp) {
+                const date = new Date(timestamp);
+                return date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            }
+
+            // Save notes to localStorage
+            function saveNotes(notes) {
+                localStorage.setItem('rdroidNotes', JSON.stringify(notes));
+            }
+
+            // Update character and word count
+            function updateStats() {
+                const content = noteContent.value;
+                charCount.textContent = content.length;
+                wordCount.textContent = content.split(/\s+/).filter(word => word.length > 0).length;
+            }
+
+            // Initialize
+            let notes = loadNotes();
+            let currentIndex = -1;
+
+            // Update stats when typing
+            noteContent.addEventListener('input', updateStats);
+
+            // Event Listeners
+            saveBtn.addEventListener('click', () => {
+                const title = noteTitle.value.trim();
+                const content = noteContent.value.trim();
+
+                if (!title) {
+                    logMessage.innerHTML = '⚠️ <strong>Error:</strong> Please enter a note title';
+                    noteTitle.focus();
+                    return;
+                }
+
+                if (!content) {
+                    logMessage.innerHTML = '⚠️ <strong>Error:</strong> Please enter note content';
+                    noteContent.focus();
+                    return;
+                }
+
+                const noteData = {
+                    title,
+                    content,
+                    updated: Date.now(),
+                    created: Date.now()
+                };
+
+                if (currentIndex === -1) {
+                    // New note
+                    noteData.created = Date.now();
+                    notes.push(noteData);
+                    logMessage.innerHTML = '✅ <strong>Success:</strong> Note saved successfully!';
+                } else {
+                    // Update existing note
+                    noteData.created = notes[currentIndex].created || Date.now();
+                    notes[currentIndex] = noteData;
+                    logMessage.innerHTML = '✅ <strong>Success:</strong> Note updated successfully!';
+                }
+
+                saveNotes(notes);
+                notes = loadNotes();
+                noteStats.style.display = 'block';
+                lastSaved.textContent = formatDate(Date.now());
+
+                // Select the newly saved/updated note
+                if (currentIndex === -1) {
+                    currentIndex = notes.length - 1;
+                }
+
+                // Highlight the saved note
+                setTimeout(() => {
+                    const noteItems = document.querySelectorAll('.note-item');
+                    if (noteItems[currentIndex]) {
+                        noteItems[currentIndex].click();
+                    }
+                }, 100);
+            });
+
+            newBtn.addEventListener('click', () => {
+                noteTitle.value = '';
+                noteContent.value = '';
+                currentIndex = -1;
+
+                // Remove active class from all notes
+                document.querySelectorAll('.note-item').forEach(item => {
+                    item.style.border = '1px solid #2b2f33';
+                    item.style.background = '#003054e1';
+                });
+
+                logMessage.innerHTML = '📝 <strong>Ready:</strong> Create a new note';
+                noteStats.style.display = 'block';
+                updateStats();
+                noteTitle.focus();
+            });
+
+            deleteBtn.addEventListener('click', () => {
+                if (currentIndex === -1) {
+                    logMessage.innerHTML = '⚠️ <strong>Error:</strong> Please select a note to delete';
+                    return;
+                }
+
+                if (confirm('Are you sure you want to delete this note?\n\n"' + (notes[currentIndex].title || 'Untitled Note') + '"')) {
+                    const deletedTitle = notes[currentIndex].title || 'Untitled Note';
+                    notes.splice(currentIndex, 1);
+                    saveNotes(notes);
+                    notes = loadNotes();
+                    noteTitle.value = '';
+                    noteContent.value = '';
+                    currentIndex = -1;
+
+                    logMessage.innerHTML = `🗑️ <strong>Deleted:</strong> "${deletedTitle}"`;
+                    noteStats.style.display = 'block';
+                    updateStats();
+                }
+            });
+
+            // Auto-save every 60 seconds
+            setInterval(() => {
+                if (noteTitle.value.trim() && noteContent.value.trim()) {
+                    const title = noteTitle.value.trim();
+                    const content = noteContent.value.trim();
+
+                    if (currentIndex === -1) {
+                        // Don't auto-save new notes, just show reminder
+                        logMessage.innerHTML = '💡 <strong>Reminder:</strong> Click "Save Note" to save your work';
+                    } else {
+                        // Auto-save existing notes
+                        notes[currentIndex] = {
+                            title,
+                            content,
+                            updated: Date.now(),
+                            created: notes[currentIndex].created || Date.now()
+                        };
+                        saveNotes(notes);
+                        notes = loadNotes();
+                        lastSaved.textContent = formatDate(Date.now());
+                        console.log('Auto-saved note');
+                    }
+                }
+            }, 60000);
+
+            // Show keyboard shortcuts help
+            document.addEventListener('keydown', (e) => {
+                // Ctrl/Cmd + S to save
+                if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+                    e.preventDefault();
+                    saveBtn.click();
+                }
+
+                // Ctrl/Cmd + N for new note
+                if ((e.ctrlKey || e.metaKey) && e.key === 'n') {
+                    e.preventDefault();
+                    newBtn.click();
+                }
+
+                // Delete key with confirmation
+                if (e.key === 'Delete' && currentIndex !== -1) {
+                    e.preventDefault();
+                    deleteBtn.click();
+                }
+            });
+
+            // Initialize stats
+            updateStats();
+            noteStats.style.display = 'block';
+
+            // Add some helpful instructions
+            setTimeout(() => {
+                if (notes.length === 0) {
+                    logMessage.innerHTML = '💡 <strong>Tip:</strong> Type your note above and click "Save Note" to get started';
+                }
+            }, 2000);
+        </script>
+
+        <style>
+            .note-item:hover {
+                background: #004B87 !important;
+                border-color: #0aa37f !important;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            #notesList::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            #notesList::-webkit-scrollbar-track {
+                background: #0b2641;
+                border-radius: 4px;
+            }
+
+            #notesList::-webkit-scrollbar-thumb {
+                background: #004B87;
+                border-radius: 4px;
+            }
+
+            #notesList::-webkit-scrollbar-thumb:hover {
+                background: #0aa37f;
+            }
+
+            .btn {
+                padding: 12px 20px;
+                border-radius: 8px;
+                background: #002F54;
+                color: #e6eef0;
+                border: 1px solid #2b2f33;
+                cursor: pointer;
+                font-weight: bold;
+                transition: all 0.2s;
+            }
+
+            .btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .btn-primary {
+                background: #0aa37f;
+                color: #fff;
+                border: none;
+            }
+
+            .btn-primary:hover {
+                background: #088f6e;
+            }
+        </style>
+    </section>
+</body>
+
+</html>
