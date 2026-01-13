@@ -1,0 +1,34 @@
+<!-- SEARCH BAR (Body - Above Tools) -->
+<section class="tools-search-section">
+    <div class="header-search" style="position: relative;">
+        <input type="search" id="siteSearch" placeholder="Search tools, apps…" aria-label="Search RDroid Apps"
+            autocomplete="off" />
+        <div class="search-results" id="searchResults"></div>
+    </div>
+</section>
+<!-- tools-quick-links.html -->
+<section class="utility-tools-quick-links">
+    <div class="tools-scroll">
+        <!-- Utility Tools -->
+        <a href="/windows-tools/utility/qr-generator.html" class="tool-btn">QR Maker</a>
+        <a href="/windows-tools/utility/notes-manager.html" class="tool-btn">Notes</a>
+    </div>
+</section>
+
+<script>
+    // Active tool button highlighting
+    (function () {
+        setTimeout(() => {
+            const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+            const toolButtons = document.querySelectorAll(".utility-tools-quick-links .tool-btn");
+
+            toolButtons.forEach(btn => {
+                btn.classList.remove("active");
+                const btnPage = btn.getAttribute("href").toLowerCase();
+                if (btnPage === currentPage) {
+                    btn.classList.add("active");
+                }
+            });
+        }, 100);
+    })();
+</script>
