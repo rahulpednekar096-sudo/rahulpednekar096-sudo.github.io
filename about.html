@@ -1,16 +1,10 @@
+[file name]: about.html
+[file content begin]
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <script src="/js/script.js" defer></script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-4T90FQG02K');
-  </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | RDroid Apps</title>
@@ -18,7 +12,6 @@
     content="Learn about RDroid Apps — a creative indie studio building smart, privacy-focused Android apps and Windows tools." />
   <link rel="canonical" href="https://rdroidapps.com/about.html" />
   <link rel="stylesheet" href="/css/style.css" />
-  <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -32,7 +25,7 @@
   <!-- MENU DRAWER (loaded from external file) -->
   <div id="menu-drawer-container"></div>
 
-  <!-- Load all components -->
+  <!-- Simple load script -->
   <script>
     $(function () {
       $("#header-container").load("/components/header.html");
@@ -56,53 +49,37 @@
         Android roots to create a comprehensive suite of Windows tools that complement our mobile applications. Whether
         you're on your phone or desktop, RDroid Apps provides consistent, high-quality solutions.</p>
 
-      <h2>What We Offer</h2>
+      <h2>Android Applications</h2>
+      <p>Our Android suite includes intuitive apps that combine design elegance with technical precision:</p>
+      <ul>
+        <li><strong>Color Mixer</strong> — Advanced color science and manipulation tools</li>
+        <li><strong>Golden Calc</strong> — Feature-rich calculator for daily use</li>
+        <li><strong>Dialer</strong> — Modern telephony interface with smart features</li>
+        <li>And many more productivity-focused utilities</li>
+      </ul>
 
-      <!-- Using existing card class instead of platform-section -->
-      <div class="card" style="margin: 30px 0;">
-        <div class="row" style="display: flex; flex-wrap: wrap; gap: 20px;">
-          <div class="col" style="flex: 1; min-width: 300px;">
-            <h3>📱 Android Applications</h3>
-            <p>Our Android suite includes intuitive apps that combine design elegance with technical precision:</p>
-            <ul>
-              <li><strong>Color Mixer</strong> — Advanced color science and manipulation tools</li>
-              <li><strong>Golden Calc</strong> — Feature-rich calculator for daily use</li>
-              <li><strong>Dialer</strong> — Modern telephony interface with smart features</li>
-              <li>And many more productivity-focused utilities</li>
-            </ul>
-          </div>
-
-          <div class="col" style="flex: 1; min-width: 300px;">
-            <h3>🪟 Windows Tools</h3>
-            <p>Our expanding Windows toolkit provides powerful, lightweight utilities for everyday productivity:</p>
-            <ul>
-              <li><strong>PDF Tools</strong> — Compression, conversion, merging, and editing</li>
-              <li><strong>Image Tools</strong> — Editing, optimization, and format conversion</li>
-              <li><strong>Audio Tools</strong> — Processing, conversion, and enhancement</li>
-              <li><strong>System Tools</strong> — Optimization, cleaning, and management</li>
-              <li><strong>Utility Tools</strong> — Everyday productivity and calculation tools</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <h2>Windows Tools</h2>
+      <p>Our expanding Windows toolkit provides powerful, lightweight utilities for everyday productivity:</p>
+      <ul>
+        <li><strong>PDF Tools</strong> — Compression, conversion, merging, and editing</li>
+        <li><strong>Image Tools</strong> — Editing, optimization, and format conversion</li>
+        <li><strong>Audio Tools</strong> — Processing, conversion, and enhancement</li>
+        <li><strong>System Tools</strong> — Optimization, cleaning, and management</li>
+        <li><strong>Utility Tools</strong> — Everyday productivity and calculation tools</li>
+      </ul>
 
       <h2>Our Core Values</h2>
-      <ul class="about-points">
-        <li>🎨 <b>Design Elegance</b> — Modern, intuitive interfaces with glass & gradient elements that prioritize user
-          experience across all platforms.</li>
-        <li>⚙️ <b>Technical Precision</b> — Optimized performance, efficient algorithms, and smooth user experiences
-          whether on mobile or desktop.</li>
-        <li>🔒 <b>Privacy Respect</b> — Local processing with no unnecessary data collection. Your files and data stay
-          on your device.</li>
-        <li>🔄 <b>Cross-Platform Consistency</b> — Unified design language and user experience principles across Android
-          and Windows applications.</li>
-        <li>🚀 <b>Performance Focus</b> — Lightweight applications that deliver powerful results without consuming
-          excessive system resources.</li>
+      <ul>
+        <li>🎨 <b>Design Elegance</b> — Modern, intuitive interfaces with glass & gradient elements</li>
+        <li>⚙️ <b>Technical Precision</b> — Optimized performance, efficient algorithms</li>
+        <li>🔒 <b>Privacy Respect</b> — Local processing with no unnecessary data collection</li>
+        <li>🔄 <b>Cross-Platform Consistency</b> — Unified design language across Android and Windows</li>
+        <li>🚀 <b>Performance Focus</b> — Lightweight applications without excessive resource use</li>
       </ul>
 
       <h2>Our Development Philosophy</h2>
       <p>We create software that is:</p>
-      <ul class="about-points">
+      <ul>
         <li><b>Intuitive</b> — No steep learning curves, just natural workflows</li>
         <li><b>Efficient</b> — Optimized performance without resource bloat</li>
         <li><b>Secure</b> — Privacy-first approach with local processing</li>
@@ -113,18 +90,16 @@
       <h2>Technical Foundation</h2>
       <p>Our applications are built using modern technologies tailored to each platform:</p>
       <ul>
-        <li><b>Android Apps</b> — Native development with Kotlin and modern Android architecture components</li>
-        <li><b>Windows Tools</b> — Web technologies (HTML5, CSS3, JavaScript) with Electron framework for native
-          integration</li>
-        <li><b>Cloud Services</b> — Optional synchronization powered by Firebase for seamless cross-device experiences
-        </li>
+        <li><b>Android Apps</b> — Native development with Kotlin</li>
+        <li><b>Windows Tools</b> — Web technologies with Electron framework</li>
+        <li><b>Cloud Services</b> — Optional synchronization powered by Firebase</li>
       </ul>
 
       <h2>Privacy Commitment</h2>
       <p>We take user privacy seriously across all our products. Our tools:</p>
       <ul>
         <li>Never collect personal data without explicit consent</li>
-        <li>Process all files locally on your device (no server uploads for Windows tools)</li>
+        <li>Process all files locally on your device</li>
         <li>Don't require internet connectivity for core functionality</li>
         <li>Include clear, transparent privacy policies</li>
         <li>Provide options to remove metadata from files before sharing</li>
@@ -141,35 +116,14 @@
       </ul>
 
       <h2>Why Choose RDroid Apps?</h2>
-
-      <!-- Using existing grid structure from tools -->
-      <div class="row"
-        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin: 25px 0;">
-        <div class="card">
-          <h3>Comprehensive Suite</h3>
-          <p>One destination for all your productivity needs across platforms</p>
-        </div>
-        <div class="card">
-          <h3>No Hidden Costs</h3>
-          <p>Most tools are completely free with transparent pricing</p>
-        </div>
-        <div class="card">
-          <h3>Regular Updates</h3>
-          <p>Continuous improvements based on user feedback</p>
-        </div>
-        <div class="card">
-          <h3>Privacy Focused</h3>
-          <p>Your data never leaves your device with local processing</p>
-        </div>
-        <div class="card">
-          <h3>Professional Results</h3>
-          <p>Tools designed for both casual users and professionals</p>
-        </div>
-        <div class="card">
-          <h3>Lightweight</h3>
-          <p>Small downloads with minimal system impact</p>
-        </div>
-      </div>
+      <ul>
+        <li><b>Comprehensive Suite</b> — One destination for all your productivity needs across platforms</li>
+        <li><b>No Hidden Costs</b> — Most tools are completely free with transparent pricing</li>
+        <li><b>Regular Updates</b> — Continuous improvements based on user feedback</li>
+        <li><b>Privacy Focused</b> — Your data never leaves your device with local processing</li>
+        <li><b>Professional Results</b> — Tools designed for both casual users and professionals</li>
+        <li><b>Lightweight</b> — Small downloads with minimal system impact</li>
+      </ul>
 
       <h2>Join Our Community</h2>
       <p>Become part of our growing community that helps shape the future of RDroid Apps:</p>
@@ -180,18 +134,17 @@
         <li><b>Tutorial Resources</b> — Comprehensive guides and video tutorials</li>
       </ul>
 
-      <!-- Using card class for mission statement -->
-      <div class="card" style="border-left: 5px solid var(--primary); margin: 40px 0;">
+      <div
+        style="background: var(--card-bg); padding: 20px; border-radius: 8px; border-left: 5px solid var(--primary);">
         <h2>Our Mission</h2>
         <p><em>"To simplify digital life across platforms by creating accessible, privacy-focused software solutions
             that empower individuals and professionals alike. We believe technology should work for you, not the other
             way around."</em></p>
       </div>
 
-      <!-- Using existing button styles -->
-      <div style="text-align: center; margin-top: 40px; padding: 20px; background: var(--card); border-radius: 10px;">
-        <p style="font-size: 1.1em;">Ready to experience RDroid Apps?</p>
-        <div style="display: flex; gap: 20px; justify-content: center; margin-top: 15px; flex-wrap: wrap;">
+      <div style="text-align: center; margin-top: 40px;">
+        <p>Ready to experience RDroid Apps?</p>
+        <div style="margin-top: 15px;">
           <a href="apps.html" class="btn">Browse our Android apps</a>
           <a href="windows-tools.html" class="btn btn-primary">Explore our Windows tools</a>
         </div>
@@ -201,14 +154,9 @@
 
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
-
   <script>
     function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
   </script>
-  <!-- Firebase v12 Modular SDKs (ES Modules) -->
-  <script type="module" src="/js/firebase-config.js"></script>
-  <script type="module" src="/js/login.js"></script>
 </body>
 
 </html>
-
