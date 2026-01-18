@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Profile — RDroid Apps</title>
   <meta name="description" content="View and manage your RDroid Apps profile." />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="canonical" href="https://rdroidapps.com/profile.html" />
   <style>
     .profile-header {
       text-align: center;
@@ -245,6 +246,7 @@
   </style>
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
@@ -261,10 +263,10 @@
   <!-- Load all components -->
   <script>
     $(function () {
-      $("#header-container").load("../../components/header.html");
-      $("#menu-drawer-container").load("../../components/menu-drawer.html");
-      $("#tools-links-container").load("../../components/favorite-tools-quick-links.html");
-      $("#footer-container").load("../../components/footer.html");
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#tools-links-container").load("/components/favorite-tools-quick-links.html");
+      $("#footer-container").load("/components/footer.html");
     });
   </script>
 
@@ -372,7 +374,7 @@
   </script>
 
   <!-- Main UI Script -->
-  <script src="js/script.js"></script>
+
 
   <!-- Profile Page Script -->
   <script>
@@ -450,4 +452,3 @@
 </body>
 
 </html>
-

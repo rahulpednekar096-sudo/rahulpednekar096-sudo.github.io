@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
+  <script src="/js/script.js" defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Favorites — RDroid Apps</title>
   <meta name="description" content="View your favorite RDroid Apps." />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="canonical" href="https://rdroidapps.com/favorites.html" />
+  <link rel="stylesheet" href="/css/style.css" />
   <style>
     .favorites-section {
       min-height: 60vh;
@@ -180,6 +182,7 @@
   </style>
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
@@ -195,10 +198,10 @@
   <!-- Load all components -->
   <script>
     $(function () {
-      $("#header-container").load("../../components/header.html");
-      $("#menu-drawer-container").load("../../components/menu-drawer.html");
-      $("#tools-links-container").load("../../components/favorite-tools-quick-links.html");
-      $("#footer-container").load("../../components/footer.html");
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#tools-links-container").load("/components/favorite-tools-quick-links.html");
+      $("#footer-container").load("/components/footer.html");
     });
   </script>
 
@@ -357,7 +360,7 @@
   </script>
 
   <!-- Main UI Script -->
-  <script src="js/script.js"></script>
+
 </body>
 
 </html>

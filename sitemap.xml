@@ -269,7 +269,7 @@
     <url>
         <loc>https://rdroidapps.com/windows-tools/system/file-renamer.html</loc>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
 
     <url>
@@ -290,6 +290,29 @@
         <priority>0.6</priority>
     </url>
 
+    <!-- ================= SYSTEM TOOLS ================= -->
+    <url>
+        <loc>https://rdroidapps.com/windows-tools/utility/age-calculator.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 
+    <url>
+        <loc>https://rdroidapps.com/windows-tools/utility/notes-manager.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/windows-tools/utility/unit-converter.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/windows-tools/utility/qr-code-generator.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 
 </urlset>

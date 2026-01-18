@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <script src="/js/script.js" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
   <script>
@@ -38,10 +39,10 @@
     .tool-name {
       display: inline-block;
       padding: 2px 8px;
-      background: #6e0560;
+      background: linear-gradient(135deg, #eb0163d0, #6d170177);
+      color: #ffffff;
       font-size: 30px;
       font-weight: 600;
-      color: #2c3e50ab;
       margin-bottom: 8px;
       text-decoration: none;
     }
@@ -60,12 +61,13 @@
       display: block;
       color: #2980b9;
       border-radius: 4px;
-      font-size: 12px;
+      font-size: 21px;
       margin-bottom: 10px;
     }
   </style>
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </head>
 
@@ -92,7 +94,10 @@
   </script>
   <!-- Header Title -->
   <section style="text-align:center; padding: 120px 10px 40px;">
-    <h1>🪟 Windows Tools</h1>
+    <h1 class="rdroid-blogs-title">
+      <span class="rdroid">🪟 Windows</span>
+      <span class="blogs">Tools</span>
+    </h1>
     <p style="max-width:700px; margin:auto;">
       Use our fast, secure, and lightweight Windows utilities built for everyday productivity.
     </p>
@@ -102,17 +107,19 @@
   <div class="tools-container">
 
     <!-- LEFT SIDEBAR -->
-    <div class="sidebar">
+    <div class="sidebar" style="position: sticky; top: 80px;">
       <h3>Categories</h3>
-      <button class="active" onclick="showTools('pdf', this)">📄 PDF Tools</button>
-      <button onclick="showTools('image', this)">🖼️ Image Tools</button>
-      <button onclick="showTools('audio', this)">🎵 Audio Tools</button>
-      <button onclick="showTools('system', this)">⚙️ System Tools</button>
-      <button onclick="showTools('utility', this)">📦 Utility Tools</button>
+      <ul>
+        <li><a class="active" onclick="showTools('pdf', this)">📄 PDF Tools</a></li>
+        <li><a onclick="showTools('image', this)">🖼️ Image Tools</a></li>
+        <li><a onclick="showTools('audio', this)">🎵 Audio Tools</a></li>
+        <li><a onclick="showTools('system', this)">⚙️ System Tools</a></li>
+        <li><a onclick="showTools('utility', this)">⚙️ Utility Tools</a></li>
+      </ul>
     </div>
 
     <!-- RIGHT PANEL -->
-    <div class="tools-list" id="tools-list">
+    <div class="card" id="tools-list" style="padding: 20px; display: flex; flex-direction: column;">
       <!-- Dynamic content will load here -->
     </div>
 
@@ -349,12 +356,35 @@
           name: "Disk Usage Visualizer",
           desc: "Create interactive tree maps showing how disk space is allocated across your system."
         }
+      ],
+
+      utility: [
+        {
+          file: "age-calculator.html",
+          name: "Age Calculator",
+          desc: "Calculate your exact age in years, months, and days based on your birthdate."
+        },
+        {
+          file: "notes-manager.html",
+          name: "Notes Manager",
+          desc: "Manage and organize your notes efficiently."
+        },
+        {
+          file: "qr-generator.html",
+          name: "QR Generator",
+          desc: "Generate QR codes from text, URLs, or other data."
+        },
+        {
+          file: "unit-converter.html",
+          name: "Unit Converter",
+          desc: "Convert between various units of measurement including length, weight, volume, and temperature."
+        }
       ]
     };
 
     // Load tools dynamically
     function showTools(category, btn) {
-      document.querySelectorAll(".sidebar button").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".sidebar a").forEach(b => b.classList.remove("active"));
       if (btn) btn.classList.add("active");
 
       const list = document.getElementById("tools-list");
@@ -378,10 +408,8 @@
   </script>
 
   <!-- Main Script -->
-  <script src="js/script.js"></script>
+
 
 </body>
 
 </html>
-
-

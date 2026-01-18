@@ -122,12 +122,8 @@
       opacity: 1;
     }
 
-    .container {
-      background: #02da142f;
-    }
-
     .card {
-      background: #41da055b;
+      width: auto;
     }
 
     /* Mobile: make popup full width bottom sheet on small screens */
@@ -181,7 +177,10 @@
         <img src="assets/my_brand_icon.png" alt="RDroid Logo Large" />
       </div>
       <div class="hero-right">
-       <h1>Smart Apps & Powerful Windows Tools</h1>
+        <h1 class="rdroid-blogs-title">
+          <span class="rdroid">Smart Apps And</span>
+          <span class="blogs">Powerfull Windoes Tools</span>
+        </h1>
         <p>
           Privacy-focused Android apps and powerful Windows tools for documents,
           images, audio, and everyday productivity — built by <strong>RDroid Apps</strong>.
@@ -256,12 +255,20 @@
               built to save time and boost workflow efficiency.
             </p>
           </a>
+          <a href="windows-tools.html#utility" class="card" style="text-decoration:none; color:#ffffff;">
+            <h3>📦 Utility Tools</h3>
+            <p>
+              Notes manager, to-do apps, password generators, QR tools, and more —
+              designed for simplicity and smooth user experience.
+            </p>
+          </a>
 
         </div>
       </section>
 
       <!-- RIGHT COLUMN - Your Extra Website Info -->
-      <div style="flex: 1;">
+      <div style="flex:1; max-width:380px;">
+
 
         <h3>ℹ️ About This Website</h3>
 
@@ -277,9 +284,8 @@
           brings everything together in one easy-to-use platform.
         </p>
 
-        <p style="color:#0aa37f;">
-          Core Objectives:
-        </p>
+        <h3>Core Objectives:</h3>
+
 
         <ul>
           <li>✔ Provide a safe, privacy-focused user experience</li>
@@ -296,15 +302,16 @@
         </p>
         <div style="
             display:grid;
-            grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns:repeat(auto-fit, minmax(360px, 1fr));
             gap:26px;
           ">
 
-          <a href="windows-tools.html#utility" class="card" style="text-decoration:none; color:#ffffff;">
-            <h3>📦 Utility Tools</h3>
+          <a href="/blog/index.html" class="card" style="text-decoration:none; color:#ffffff;">
+            <h3>📦 Blogs Section</h3>
             <p>
-              Notes manager, to-do apps, password generators, QR tools, and more —
-              designed for simplicity and smooth user experience.
+              Explore tutorials, tips, and guides on Important topics like PDF management, image editing,
+              audio processing, and productivity hacks, And many more.
+              Stay informed with the latest guides from RDroid Apps.
             </p>
           </a>
         </div>
@@ -319,22 +326,23 @@
 
     <div
       style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
-      <a href="blog/how-to-compress-pdf.html" class="card"
+      <a href="blog/the-slow-pc-fix-handbook.html" class="card"
         style="text-decoration:none; color:#ffffff; text-align: left;">
-        <h3>How to Compress PDF without losing quality</h3>
-        <p>Learn the best ways to reduce PDF size for faster sharing...</p>
-        <span style="color: #0aa37f; font-weight: bold;">Read More →</span>
+        <h3>The Slow PC Fix Handbook: Your Ultimate Guide to Speeding Up Your Computer</h3>
+        <p>Is Your PC Crawling? The Ultimate Step Guide to Revive a Slow Computer</p>
+        <span style="color: #f89514; font-weight: bold;">Read More →</span>
       </a>
 
-      <a href="blog/top-android-tools.html" class="card" style="text-decoration:none; color:#ffffff; text-align: left;">
-        <h3>Top 5 Essential Android Tools for 2026</h3>
-        <p>Discover apps that can boost your daily productivity...</p>
-        <span style="color: #0aa37f; font-weight: bold;">Read More →</span>
+      <a href="blog/advanced-optimization.html" class="card"
+        style="text-decoration:none; color:#ffffff; text-align: left;">
+        <h3>Advanced Optimization – The Expert's Guide to Maximum Performance</h3>
+        <p>Introduction: Pushing Beyond Standard Optimization</p>
+        <span style="color: #f89514; font-weight: bold;">Read More →</span>
       </a>
     </div>
 
     <div style="margin-top: 30px;">
-      <a class="btn btn-primary" href="blog.html">View All Articles</a>
+      <a class="btn btn-primary" href="/blog/index.html">View All Articles</a>
     </div>
   </section>
   <!-- FOOTER (loaded from external file) -->
@@ -562,4 +570,3 @@
 </body>
 
 </html>
-
