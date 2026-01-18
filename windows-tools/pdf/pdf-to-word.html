@@ -96,7 +96,7 @@
         extract text from any PDF and save it as a DOCX file. Whether you have standard PDFs or scanned documents,
         our tool supports optional OCR (Optical Character Recognition) to ensure accurate text extraction.
       </p>
-      <h3>Key Features:</h3>
+      <h2>Key Features:</h2>
       <ul>
         <li><strong>Seamless Conversion:</strong> Convert your PDF files into Word documents with just a few clicks,
           preserving the original layout and formatting.</li>
@@ -107,7 +107,7 @@
         <li><strong>Privacy Focused:</strong> All conversions are done locally in your browser, ensuring your documents
           remain private and secure.</li>
       </ul>
-      <h3>How to Use the PDF to Word Converter:</h3>
+      <h2>How to Use the PDF to Word Converter:</h2>
       <ol>
         <li><strong>Upload Your PDF:</strong> Click on the "Choose file" button or drag and drop your PDF document into
           the designated area.</li>
@@ -123,122 +123,123 @@
         your PDFs today and enjoy hassle-free text extraction and editing!
       </p>
 
+    </section><br>
+    <a href="/windows-tools/pdf/index.html" class="nav-button home">🏠 Back to PDF Home</a>
+  </section>
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
 
-    </section>
-    <!-- FOOTER (loaded from external file) -->
-    <div id="footer-container"></div>
+  <script>
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+    const pickBtn = document.getElementById("pickBtn");
+    const fileInput = document.getElementById("fileInput");
+    const dropArea = document.getElementById("dropArea");
+    const convertBtn = document.getElementById("convertBtn");
+    const logEl = document.getElementById("log");
+    const thumbs = document.getElementById("thumbs");
+    const progressWrap = document.getElementById("progressWrap");
+    const progressBar = document.getElementById("progressBar");
+    const download = document.getElementById("download");
+    const enableOCR = document.getElementById("enableOCR");
+    let currentPDF = null;
+    let docxLib = null; // We'll store the docx library here
 
-    <script>
-      // Drawer toggle
-      function toggleMenu() {
-        document.getElementById("drawer").classList.toggle("open");
+    /* Utility */
+    function log(msg) { logEl.textContent += "\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
+    function clear() { logEl.textContent = "Ready."; thumbs.innerHTML = ""; download.innerHTML = ""; currentPDF = null; }
+    function setProgress(p) { progressWrap.style.display = p >= 0 ? "block" : "none"; progressBar.style.width = (p * 100) + "%"; }
+
+    /* File select */
+    pickBtn.onclick = () => fileInput.click();
+    fileInput.onchange = e => loadPDF(e.target.files[0]);
+
+    dropArea.ondragover = e => { e.preventDefault(); dropArea.style.borderColor = "#0aa37f"; }
+    dropArea.ondragleave = () => dropArea.style.borderColor = "#222";
+    dropArea.ondrop = e => {
+      e.preventDefault(); dropArea.style.borderColor = "#222";
+      loadPDF(e.dataTransfer.files[0]);
+    };
+
+    /* Load PDF */
+    async function loadPDF(file) {
+      if (!file) return;
+      clear();
+      log("Loading PDF...");
+      const buf = await file.arrayBuffer();
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
+      currentPDF = await pdfjsLib.getDocument({ data: buf }).promise;
+      log("Pages: " + currentPDF.numPages);
+      await renderThumbs();
+    }
+
+    /* Render thumbnails */
+    async function renderThumbs() {
+      thumbs.innerHTML = "";
+      for (let i = 1; i <= currentPDF.numPages; i++) {
+        const page = await currentPDF.getPage(i);
+        const vp = page.getViewport({ scale: 0.25 });
+        const canvas = document.createElement("canvas");
+        canvas.width = vp.width; canvas.height = vp.height;
+        await page.render({ canvasContext: canvas.getContext("2d"), viewport: vp }).promise;
+        const img = canvas.toDataURL("image/png");
+        thumbs.innerHTML += `<div class="thumb"><img src="${img}"><div style="color:#9fbfb0">Page ${i}</div></div>`;
       }
-      const pickBtn = document.getElementById("pickBtn");
-      const fileInput = document.getElementById("fileInput");
-      const dropArea = document.getElementById("dropArea");
-      const convertBtn = document.getElementById("convertBtn");
-      const logEl = document.getElementById("log");
-      const thumbs = document.getElementById("thumbs");
-      const progressWrap = document.getElementById("progressWrap");
-      const progressBar = document.getElementById("progressBar");
-      const download = document.getElementById("download");
-      const enableOCR = document.getElementById("enableOCR");
-      let currentPDF = null;
-      let docxLib = null; // We'll store the docx library here
+    }
 
-      /* Utility */
-      function log(msg) { logEl.textContent += "\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
-      function clear() { logEl.textContent = "Ready."; thumbs.innerHTML = ""; download.innerHTML = ""; currentPDF = null; }
-      function setProgress(p) { progressWrap.style.display = p >= 0 ? "block" : "none"; progressBar.style.width = (p * 100) + "%"; }
-
-      /* File select */
-      pickBtn.onclick = () => fileInput.click();
-      fileInput.onchange = e => loadPDF(e.target.files[0]);
-
-      dropArea.ondragover = e => { e.preventDefault(); dropArea.style.borderColor = "#0aa37f"; }
-      dropArea.ondragleave = () => dropArea.style.borderColor = "#222";
-      dropArea.ondrop = e => {
-        e.preventDefault(); dropArea.style.borderColor = "#222";
-        loadPDF(e.dataTransfer.files[0]);
-      };
-
-      /* Load PDF */
-      async function loadPDF(file) {
-        if (!file) return;
-        clear();
-        log("Loading PDF...");
-        const buf = await file.arrayBuffer();
-        pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
-        currentPDF = await pdfjsLib.getDocument({ data: buf }).promise;
-        log("Pages: " + currentPDF.numPages);
-        await renderThumbs();
+    /* Load docx library dynamically */
+    async function loadDocxLibrary() {
+      if (!docxLib) {
+        try {
+          // Try to import the docx library
+          docxLib = await import('https://cdn.jsdelivr.net/npm/docx@8.2.0/+esm');
+          log("docx library loaded successfully");
+        } catch (error) {
+          log("Error loading docx library: " + error.message);
+          throw error;
+        }
       }
+      return docxLib;
+    }
 
-      /* Render thumbnails */
-      async function renderThumbs() {
-        thumbs.innerHTML = "";
-        for (let i = 1; i <= currentPDF.numPages; i++) {
-          const page = await currentPDF.getPage(i);
-          const vp = page.getViewport({ scale: 0.25 });
+    /* Convert to DOCX - Beautiful download button */
+    convertBtn.onclick = async () => {
+      if (!currentPDF) { alert("Select a PDF first"); return; }
+      log("Extracting text...");
+      setProgress(0);
+
+      let wordContent = "";
+      const doOCR = enableOCR.checked;
+
+      for (let i = 1; i <= currentPDF.numPages; i++) {
+        const page = await currentPDF.getPage(i);
+        let text = "";
+
+        if (doOCR) {
+          log("OCR page " + i + "...");
+          const vp = page.getViewport({ scale: 1 });
           const canvas = document.createElement("canvas");
           canvas.width = vp.width; canvas.height = vp.height;
           await page.render({ canvasContext: canvas.getContext("2d"), viewport: vp }).promise;
-          const img = canvas.toDataURL("image/png");
-          thumbs.innerHTML += `<div class="thumb"><img src="${img}"><div style="color:#9fbfb0">Page ${i}</div></div>`;
+          const ocr = await Tesseract.recognize(canvas, "eng");
+          text = ocr.data.text;
+        } else {
+          log("Extracting text from page " + i);
+          const content = await page.getTextContent();
+          text = content.items.map(item => item.str).join(" ");
         }
+
+        wordContent += `--- Page ${i} ---\n${text}\n\n`;
+        setProgress(i / currentPDF.numPages);
+        await new Promise(r => setTimeout(r, 20));
       }
 
-      /* Load docx library dynamically */
-      async function loadDocxLibrary() {
-        if (!docxLib) {
-          try {
-            // Try to import the docx library
-            docxLib = await import('https://cdn.jsdelivr.net/npm/docx@8.2.0/+esm');
-            log("docx library loaded successfully");
-          } catch (error) {
-            log("Error loading docx library: " + error.message);
-            throw error;
-          }
-        }
-        return docxLib;
-      }
+      log("Building DOCX file...");
 
-      /* Convert to DOCX - Beautiful download button */
-      convertBtn.onclick = async () => {
-        if (!currentPDF) { alert("Select a PDF first"); return; }
-        log("Extracting text...");
-        setProgress(0);
-
-        let wordContent = "";
-        const doOCR = enableOCR.checked;
-
-        for (let i = 1; i <= currentPDF.numPages; i++) {
-          const page = await currentPDF.getPage(i);
-          let text = "";
-
-          if (doOCR) {
-            log("OCR page " + i + "...");
-            const vp = page.getViewport({ scale: 1 });
-            const canvas = document.createElement("canvas");
-            canvas.width = vp.width; canvas.height = vp.height;
-            await page.render({ canvasContext: canvas.getContext("2d"), viewport: vp }).promise;
-            const ocr = await Tesseract.recognize(canvas, "eng");
-            text = ocr.data.text;
-          } else {
-            log("Extracting text from page " + i);
-            const content = await page.getTextContent();
-            text = content.items.map(item => item.str).join(" ");
-          }
-
-          wordContent += `--- Page ${i} ---\n${text}\n\n`;
-          setProgress(i / currentPDF.numPages);
-          await new Promise(r => setTimeout(r, 20));
-        }
-
-        log("Building DOCX file...");
-
-        // Create a simple Word document (XML format)
-        const xmlContent = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+      // Create a simple Word document (XML format)
+      const xmlContent = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <?mso-application progid="Word.Document"?>
 <w:wordDocument xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml">
   <w:body>
@@ -250,11 +251,11 @@
   </w:body>
 </w:wordDocument>`;
 
-        const blob = new Blob([xmlContent], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
-        const url = URL.createObjectURL(blob);
+      const blob = new Blob([xmlContent], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
+      const url = URL.createObjectURL(blob);
 
-        // Create nice download box with button
-        download.innerHTML = `
+      // Create nice download box with button
+      download.innerHTML = `
         <div class="download-box" style="
             margin-top: 20px;
             padding: 20px;
@@ -320,17 +321,17 @@
         </div>
     `;
 
-        log("Done. Your file is ready for download.");
-        setProgress(-1);
+      log("Done. Your file is ready for download.");
+      setProgress(-1);
 
-        // Clean up URL object when page is unloaded
-        window.addEventListener('beforeunload', () => {
-          URL.revokeObjectURL(url);
-        });
-      };
+      // Clean up URL object when page is unloaded
+      window.addEventListener('beforeunload', () => {
+        URL.revokeObjectURL(url);
+      });
+    };
 
-      document.getElementById("clearBtn").onclick = clear;
-    </script>
+    document.getElementById("clearBtn").onclick = clear;
+  </script>
 </body>
 
 </html>

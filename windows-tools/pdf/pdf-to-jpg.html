@@ -149,7 +149,7 @@
         high-quality JPG images. Whether you need to extract images from a PDF or convert entire pages for easier
         sharing and viewing, our tool offers a seamless experience with advanced features.
       </p>
-      <h3>Key Features:</h3>
+      <h2>Key Features:</h2>
       <ul>
         <li><strong>High-Quality Conversion:</strong> Convert PDF pages into crisp JPG images with adjustable quality
           settings to suit your needs.</li>
@@ -162,7 +162,7 @@
         <li><strong>Batch Download:</strong> Download all converted images in a single ZIP file or as individual files
           for convenience.</li>
       </ul>
-      <h3>How to Use the PDF to JPG Converter:</h3>
+      <h2>How to Use the PDF to JPG Converter:</h2>
       <ol>
         <li><strong>Upload Your PDF:</strong> Drag and drop your PDF file into the designated area or use the file
           picker to select your document.</li>
@@ -172,7 +172,7 @@
         <li><strong>Convert and Download:</strong> Click the "Convert PDF to JPG" button to start the conversion
           process. Once complete, download your images.</li>
       </ol>
-      <h3>Why Choose RDroidApps Pro?</h3>
+      <h2>Why Choose RDroidApps Pro?</h2>
       <p>
         RDroidApps Pro is dedicated to providing high-quality, user-friendly tools for all your document conversion
         needs. Our PDF to JPG converter is designed with efficiency and ease of use in mind, ensuring that you can
@@ -182,160 +182,159 @@
         Experience the convenience of RDroidApps Pro's PDF to JPG converter today and transform your PDF documents into
         stunning JPG images with just a few clicks!
       </p>
+    </section><br>
+    <a href="/windows-tools/pdf/index.html" class="nav-button home">🏠 Back to PDF Home</a>
+  </section>
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
+  <script>
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
 
+    // PDF.js worker सेट करा
+    if (typeof pdfjsLib !== 'undefined') {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+    }
 
-    </section>
+    const fileInput = document.getElementById("fileInput");
+    const pickBtn = document.getElementById("pickBtn");
+    const dropArea = document.getElementById("dropArea");
 
-    <!-- FOOTER (loaded from external file) -->
-    <div id="footer-container"></div>
-    <script>
-      // Drawer toggle
-      function toggleMenu() {
-        document.getElementById("drawer").classList.toggle("open");
+    const thumbs = document.getElementById("thumbs");
+    const logEl = document.getElementById("log");
+    const progressWrap = document.getElementById("progressWrap");
+    const progressBar = document.getElementById("progressBar");
+    const pageInfo = document.getElementById("pageInfo");
+
+    const dpiSel = document.getElementById("dpi");
+    const jpgQ = document.getElementById("jpgQ");
+    const scaleMode = document.getElementById("scaleMode");
+    const customFields = document.getElementById("customFields");
+    const cw = document.getElementById("cw");
+    const ch = document.getElementById("ch");
+    const downloadType = document.getElementById("downloadType");
+    const outName = document.getElementById("outName");
+
+    const convertBtn = document.getElementById("convertBtn");
+    const clearBtn = document.getElementById("clearBtn");
+    const selectAllBtn = document.getElementById("selectAllBtn");
+    const unselectAllBtn = document.getElementById("unselectAllBtn");
+    const downloadArea = document.getElementById("downloadArea");
+
+    let pdf = null;
+    let pages = []; // {id, thumb, rotate, selected}
+
+    /* LOG */
+    function log(msg) {
+      logEl.textContent += "\n" + msg;
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+    function clearLog() {
+      logEl.textContent = "Ready.";
+    }
+
+    /* FILE SELECT */
+    pickBtn.addEventListener("click", () => fileInput.click());
+    fileInput.addEventListener("change", e => handleFile(e.target.files[0]));
+
+    /* DRAG & DROP */
+    dropArea.addEventListener("dragover", e => {
+      e.preventDefault();
+      dropArea.classList.add("dragover");
+    });
+    dropArea.addEventListener("dragleave", () => dropArea.classList.remove("dragover"));
+    dropArea.addEventListener("drop", e => {
+      e.preventDefault();
+      dropArea.classList.remove("dragover");
+      if (e.dataTransfer.files.length) {
+        handleFile(e.dataTransfer.files[0]);
+      }
+    });
+
+    /* LOAD PDF */
+    async function handleFile(file) {
+      if (!file || file.type !== "application/pdf") {
+        alert("Please select a valid PDF file.");
+        return;
       }
 
-      // PDF.js worker सेट करा
-      if (typeof pdfjsLib !== 'undefined') {
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
-      }
+      clearAll();
+      clearLog();
+      log("Loading PDF: " + file.name);
 
-      const fileInput = document.getElementById("fileInput");
-      const pickBtn = document.getElementById("pickBtn");
-      const dropArea = document.getElementById("dropArea");
+      try {
+        const buffer = await file.arrayBuffer();
 
-      const thumbs = document.getElementById("thumbs");
-      const logEl = document.getElementById("log");
-      const progressWrap = document.getElementById("progressWrap");
-      const progressBar = document.getElementById("progressBar");
-      const pageInfo = document.getElementById("pageInfo");
-
-      const dpiSel = document.getElementById("dpi");
-      const jpgQ = document.getElementById("jpgQ");
-      const scaleMode = document.getElementById("scaleMode");
-      const customFields = document.getElementById("customFields");
-      const cw = document.getElementById("cw");
-      const ch = document.getElementById("ch");
-      const downloadType = document.getElementById("downloadType");
-      const outName = document.getElementById("outName");
-
-      const convertBtn = document.getElementById("convertBtn");
-      const clearBtn = document.getElementById("clearBtn");
-      const selectAllBtn = document.getElementById("selectAllBtn");
-      const unselectAllBtn = document.getElementById("unselectAllBtn");
-      const downloadArea = document.getElementById("downloadArea");
-
-      let pdf = null;
-      let pages = []; // {id, thumb, rotate, selected}
-
-      /* LOG */
-      function log(msg) {
-        logEl.textContent += "\n" + msg;
-        logEl.scrollTop = logEl.scrollHeight;
-      }
-      function clearLog() {
-        logEl.textContent = "Ready.";
-      }
-
-      /* FILE SELECT */
-      pickBtn.addEventListener("click", () => fileInput.click());
-      fileInput.addEventListener("change", e => handleFile(e.target.files[0]));
-
-      /* DRAG & DROP */
-      dropArea.addEventListener("dragover", e => {
-        e.preventDefault();
-        dropArea.classList.add("dragover");
-      });
-      dropArea.addEventListener("dragleave", () => dropArea.classList.remove("dragover"));
-      dropArea.addEventListener("drop", e => {
-        e.preventDefault();
-        dropArea.classList.remove("dragover");
-        if (e.dataTransfer.files.length) {
-          handleFile(e.dataTransfer.files[0]);
+        // Ensure worker is loaded
+        if (!pdfjsLib.GlobalWorkerOptions.workerSrc) {
+          pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
         }
-      });
 
-      /* LOAD PDF */
-      async function handleFile(file) {
-        if (!file || file.type !== "application/pdf") {
-          alert("Please select a valid PDF file.");
-          return;
-        }
+        pdf = await pdfjsLib.getDocument({
+          data: buffer,
+          maxImageSize: 1024 * 1024 // Reduce memory usage
+        }).promise;
 
-        clearAll();
-        clearLog();
-        log("Loading PDF: " + file.name);
+        log("PDF loaded successfully: " + pdf.numPages + " pages");
+
+        await loadThumbnails();
+      } catch (error) {
+        log("Error loading PDF: " + error.message);
+        alert("Failed to load PDF. Please try a different file.");
+      }
+    }
+
+    /* LOAD THUMBNAILS */
+    async function loadThumbnails() {
+      if (!pdf) return;
+
+      pages = [];
+      thumbs.innerHTML = "";
+      downloadArea.innerHTML = "";
+      pageInfo.textContent = "";
+
+      for (let i = 1; i <= pdf.numPages; i++) {
+        log("Rendering thumbnail " + i + "/" + pdf.numPages);
 
         try {
-          const buffer = await file.arrayBuffer();
+          const page = await pdf.getPage(i);
+          const viewport = page.getViewport({ scale: 0.2 });
+          const canvas = document.createElement("canvas");
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          const ctx = canvas.getContext("2d");
 
-          // Ensure worker is loaded
-          if (!pdfjsLib.GlobalWorkerOptions.workerSrc) {
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
-          }
+          await page.render({ canvasContext: ctx, viewport }).promise;
+          const dataURL = canvas.toDataURL("image/jpeg", 0.6);
 
-          pdf = await pdfjsLib.getDocument({
-            data: buffer,
-            maxImageSize: 1024 * 1024 // Reduce memory usage
-          }).promise;
+          pages.push({
+            id: i,
+            thumb: dataURL,
+            rotate: 0,
+            selected: true
+          });
 
-          log("PDF loaded successfully: " + pdf.numPages + " pages");
-
-          await loadThumbnails();
+          renderThumbnails();
+          await briefYield(20);
         } catch (error) {
-          log("Error loading PDF: " + error.message);
-          alert("Failed to load PDF. Please try a different file.");
+          log("Error loading page " + i + ": " + error.message);
         }
       }
 
-      /* LOAD THUMBNAILS */
-      async function loadThumbnails() {
-        if (!pdf) return;
+      pageInfo.textContent = pages.length + " pages";
+    }
 
-        pages = [];
-        thumbs.innerHTML = "";
-        downloadArea.innerHTML = "";
-        pageInfo.textContent = "";
+    /* RENDER THUMBNAILS */
+    function renderThumbnails() {
+      thumbs.innerHTML = "";
 
-        for (let i = 1; i <= pdf.numPages; i++) {
-          log("Rendering thumbnail " + i + "/" + pdf.numPages);
+      pages.forEach((pg, index) => {
+        const div = document.createElement("div");
+        div.className = "thumb";
 
-          try {
-            const page = await pdf.getPage(i);
-            const viewport = page.getViewport({ scale: 0.2 });
-            const canvas = document.createElement("canvas");
-            canvas.width = viewport.width;
-            canvas.height = viewport.height;
-            const ctx = canvas.getContext("2d");
-
-            await page.render({ canvasContext: ctx, viewport }).promise;
-            const dataURL = canvas.toDataURL("image/jpeg", 0.6);
-
-            pages.push({
-              id: i,
-              thumb: dataURL,
-              rotate: 0,
-              selected: true
-            });
-
-            renderThumbnails();
-            await briefYield(20);
-          } catch (error) {
-            log("Error loading page " + i + ": " + error.message);
-          }
-        }
-
-        pageInfo.textContent = pages.length + " pages";
-      }
-
-      /* RENDER THUMBNAILS */
-      function renderThumbnails() {
-        thumbs.innerHTML = "";
-
-        pages.forEach((pg, index) => {
-          const div = document.createElement("div");
-          div.className = "thumb";
-
-          div.innerHTML = `
+        div.innerHTML = `
             <img src="${pg.thumb}" style="transform:rotate(${pg.rotate}deg)">
             <div class="meta">Page ${pg.id}</div>
 
@@ -351,425 +350,425 @@
             </div>
           `;
 
-          thumbs.appendChild(div);
-        });
-
-        /* Selection toggles */
-        document.querySelectorAll(".selBox").forEach(el =>
-          el.addEventListener("change", e => {
-            const idx = e.target.dataset.index;
-            pages[idx].selected = e.target.checked;
-          })
-        );
-
-        /* Page actions */
-        document.querySelectorAll(".actions button").forEach(btn =>
-          btn.addEventListener("click", e => {
-            const idx = parseInt(e.target.dataset.index);
-            const act = e.target.dataset.act;
-
-            if (act === "up" && idx > 0) {
-              movePage(idx, idx - 1);
-            }
-            if (act === "down" && idx < pages.length - 1) {
-              movePage(idx, idx + 1);
-            }
-            if (act === "rotate") {
-              pages[idx].rotate = (pages[idx].rotate + 90) % 360;
-            }
-            if (act === "remove") {
-              pages.splice(idx, 1);
-            }
-            renderThumbnails();
-          })
-        );
-      }
-
-      function movePage(from, to) {
-        const x = pages.splice(from, 1)[0];
-        pages.splice(to, 0, x);
-      }
-
-      /* SCALE MODE */
-      scaleMode.addEventListener("change", () => {
-        customFields.style.display = scaleMode.value === "custom" ? "block" : "none";
+        thumbs.appendChild(div);
       });
 
-      /* CLEAR ALL */
-      function clearAll() {
-        pdf = null;
-        pages = [];
-        thumbs.innerHTML = "";
-        downloadArea.innerHTML = "";
-        pageInfo.textContent = "";
-        clearLog();
-        setProgress(-1);
+      /* Selection toggles */
+      document.querySelectorAll(".selBox").forEach(el =>
+        el.addEventListener("change", e => {
+          const idx = e.target.dataset.index;
+          pages[idx].selected = e.target.checked;
+        })
+      );
+
+      /* Page actions */
+      document.querySelectorAll(".actions button").forEach(btn =>
+        btn.addEventListener("click", e => {
+          const idx = parseInt(e.target.dataset.index);
+          const act = e.target.dataset.act;
+
+          if (act === "up" && idx > 0) {
+            movePage(idx, idx - 1);
+          }
+          if (act === "down" && idx < pages.length - 1) {
+            movePage(idx, idx + 1);
+          }
+          if (act === "rotate") {
+            pages[idx].rotate = (pages[idx].rotate + 90) % 360;
+          }
+          if (act === "remove") {
+            pages.splice(idx, 1);
+          }
+          renderThumbnails();
+        })
+      );
+    }
+
+    function movePage(from, to) {
+      const x = pages.splice(from, 1)[0];
+      pages.splice(to, 0, x);
+    }
+
+    /* SCALE MODE */
+    scaleMode.addEventListener("change", () => {
+      customFields.style.display = scaleMode.value === "custom" ? "block" : "none";
+    });
+
+    /* CLEAR ALL */
+    function clearAll() {
+      pdf = null;
+      pages = [];
+      thumbs.innerHTML = "";
+      downloadArea.innerHTML = "";
+      pageInfo.textContent = "";
+      clearLog();
+      setProgress(-1);
+    }
+    clearBtn.addEventListener("click", clearAll);
+
+    /* SELECT ALL */
+    selectAllBtn.addEventListener("click", () => {
+      pages.forEach(p => p.selected = true);
+      renderThumbnails();
+    });
+    unselectAllBtn.addEventListener("click", () => {
+      pages.forEach(p => p.selected = false);
+      renderThumbnails();
+    });
+
+    /* PROGRESS */
+    function setProgress(p) {
+      if (p < 0) {
+        progressWrap.style.display = "none";
+        return;
       }
-      clearBtn.addEventListener("click", clearAll);
+      progressWrap.style.display = "block";
+      progressBar.style.width = (p * 100).toFixed(1) + "%";
+    }
 
-      /* SELECT ALL */
-      selectAllBtn.addEventListener("click", () => {
-        pages.forEach(p => p.selected = true);
-        renderThumbnails();
-      });
-      unselectAllBtn.addEventListener("click", () => {
-        pages.forEach(p => p.selected = false);
-        renderThumbnails();
-      });
-
-      /* PROGRESS */
-      function setProgress(p) {
-        if (p < 0) {
-          progressWrap.style.display = "none";
-          return;
-        }
-        progressWrap.style.display = "block";
-        progressBar.style.width = (p * 100).toFixed(1) + "%";
+    /* CONVERT TO JPG - FIXED */
+    convertBtn.addEventListener("click", async () => {
+      if (!pdf || pages.length === 0) {
+        alert("Please load a PDF first.");
+        return;
       }
 
-      /* CONVERT TO JPG - FIXED */
-      convertBtn.addEventListener("click", async () => {
-        if (!pdf || pages.length === 0) {
-          alert("Please load a PDF first.");
-          return;
-        }
+      const selectedPages = pages.filter(p => p.selected);
+      if (!selectedPages.length) {
+        alert("Please select at least one page.");
+        return;
+      }
 
-        const selectedPages = pages.filter(p => p.selected);
-        if (!selectedPages.length) {
-          alert("Please select at least one page.");
-          return;
-        }
+      const dpi = parseInt(dpiSel.value);
+      const quality = parseInt(jpgQ.value) / 100;
+      const scale = scaleMode.value;
 
-        const dpi = parseInt(dpiSel.value);
-        const quality = parseInt(jpgQ.value) / 100;
-        const scale = scaleMode.value;
+      log("Starting export...");
+      log(`Converting ${selectedPages.length} pages to JPG...`);
 
-        log("Starting export...");
-        log(`Converting ${selectedPages.length} pages to JPG...`);
+      convertBtn.disabled = true;
+      convertBtn.textContent = "Processing...";
+      setProgress(0);
 
-        convertBtn.disabled = true;
-        convertBtn.textContent = "Processing...";
-        setProgress(0);
+      // Clear download area
+      downloadArea.innerHTML = "<h3 style='margin-top:0; color:#0aa37f;'>Download Links:</h3>";
 
-        // Clear download area
-        downloadArea.innerHTML = "<h3 style='margin-top:0; color:#0aa37f;'>Download Links:</h3>";
+      // Create container for individual download buttons
+      const individualDownloadsDiv = document.createElement('div');
+      individualDownloadsDiv.id = 'individualDownloads';
+      individualDownloadsDiv.style.marginTop = '10px';
+      individualDownloadsDiv.style.padding = '10px';
+      individualDownloadsDiv.style.backgroundColor = '#f5f5f5';
+      individualDownloadsDiv.style.borderRadius = '8px';
+      individualDownloadsDiv.style.display = downloadType.value === 'files' ? 'block' : 'none';
 
-        // Create container for individual download buttons
-        const individualDownloadsDiv = document.createElement('div');
-        individualDownloadsDiv.id = 'individualDownloads';
-        individualDownloadsDiv.style.marginTop = '10px';
-        individualDownloadsDiv.style.padding = '10px';
-        individualDownloadsDiv.style.backgroundColor = '#f5f5f5';
-        individualDownloadsDiv.style.borderRadius = '8px';
-        individualDownloadsDiv.style.display = downloadType.value === 'files' ? 'block' : 'none';
+      // Create container for zip download
+      const zipDownloadDiv = document.createElement('div');
+      zipDownloadDiv.id = 'zipDownload';
+      zipDownloadDiv.style.marginTop = '10px';
+      zipDownloadDiv.style.padding = '10px';
+      zipDownloadDiv.style.backgroundColor = '#0a2a1e';
+      zipDownloadDiv.style.borderRadius = '8px';
+      zipDownloadDiv.style.color = 'white';
+      zipDownloadDiv.style.display = downloadType.value === 'zip' ? 'block' : 'none';
 
-        // Create container for zip download
-        const zipDownloadDiv = document.createElement('div');
-        zipDownloadDiv.id = 'zipDownload';
-        zipDownloadDiv.style.marginTop = '10px';
-        zipDownloadDiv.style.padding = '10px';
-        zipDownloadDiv.style.backgroundColor = '#0a2a1e';
-        zipDownloadDiv.style.borderRadius = '8px';
-        zipDownloadDiv.style.color = 'white';
-        zipDownloadDiv.style.display = downloadType.value === 'zip' ? 'block' : 'none';
+      downloadArea.appendChild(individualDownloadsDiv);
+      downloadArea.appendChild(zipDownloadDiv);
 
-        downloadArea.appendChild(individualDownloadsDiv);
-        downloadArea.appendChild(zipDownloadDiv);
+      try {
+        /* ZIP */
+        const zip = new JSZip();
+        let zipBlob = null;
 
-        try {
-          /* ZIP */
-          const zip = new JSZip();
-          let zipBlob = null;
+        for (let i = 0; i < selectedPages.length; i++) {
+          const pg = selectedPages[i];
+          log(`Converting page ${pg.id} (${i + 1}/${selectedPages.length})`);
 
-          for (let i = 0; i < selectedPages.length; i++) {
-            const pg = selectedPages[i];
-            log(`Converting page ${pg.id} (${i + 1}/${selectedPages.length})`);
+          const page = await pdf.getPage(pg.id);
 
-            const page = await pdf.getPage(pg.id);
+          // DPI calculation
+          const viewport = page.getViewport({ scale: dpi / 72 });
 
-            // DPI calculation
-            const viewport = page.getViewport({ scale: dpi / 72 });
+          // Canvas
+          const canvas = document.createElement("canvas");
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          const ctx = canvas.getContext("2d");
 
-            // Canvas
-            const canvas = document.createElement("canvas");
-            canvas.width = viewport.width;
-            canvas.height = viewport.height;
-            const ctx = canvas.getContext("2d");
+          await page.render({ canvasContext: ctx, viewport }).promise;
 
-            await page.render({ canvasContext: ctx, viewport }).promise;
+          // Rotate if needed
+          if (pg.rotate) {
+            const c2 = document.createElement("canvas");
+            const r = pg.rotate * Math.PI / 180;
+            const swap = pg.rotate === 90 || pg.rotate === 270;
+            c2.width = swap ? canvas.height : canvas.width;
+            c2.height = swap ? canvas.width : canvas.height;
 
-            // Rotate if needed
-            if (pg.rotate) {
-              const c2 = document.createElement("canvas");
-              const r = pg.rotate * Math.PI / 180;
-              const swap = pg.rotate === 90 || pg.rotate === 270;
-              c2.width = swap ? canvas.height : canvas.width;
-              c2.height = swap ? canvas.width : canvas.height;
-
-              const ctx2 = c2.getContext("2d");
-              ctx2.translate(c2.width / 2, c2.height / 2);
-              ctx2.rotate(r);
-              ctx2.drawImage(canvas, -canvas.width / 2, -canvas.height / 2);
-              canvas.width = c2.width;
-              canvas.height = c2.height;
-              ctx.drawImage(c2, 0, 0);
-            }
-
-            // Scaling (custom)
-            if (scale === "custom") {
-              const W = parseInt(cw.value);
-              const H = parseInt(ch.value);
-              if (W > 0 && H > 0) {
-                const c3 = document.createElement("canvas");
-                c3.width = W;
-                c3.height = H;
-                const ctx3 = c3.getContext("2d");
-                ctx3.drawImage(canvas, 0, 0, W, H);
-                canvas.width = W;
-                canvas.height = H;
-                ctx.drawImage(c3, 0, 0);
-              }
-            }
-
-            const dataURL = canvas.toDataURL("image/jpeg", quality);
-            const blob = dataURLToBlob(dataURL);
-            const fname = `${outName.value || 'page'}_${pg.id}.jpg`;
-
-            // Create individual download link
-            if (downloadType.value === "files") {
-              const downloadRow = document.createElement('div');
-              downloadRow.style.display = 'flex';
-              downloadRow.style.alignItems = 'center';
-              downloadRow.style.justifyContent = 'space-between';
-              downloadRow.style.marginBottom = '8px';
-              downloadRow.style.padding = '8px';
-              downloadRow.style.backgroundColor = 'white';
-              downloadRow.style.borderRadius = '4px';
-              downloadRow.style.border = '1px solid #ddd';
-
-              const fileNameSpan = document.createElement('span');
-              fileNameSpan.textContent = fname;
-              fileNameSpan.style.fontFamily = 'monospace';
-              fileNameSpan.style.fontSize = '14px';
-
-              const downloadBtn = document.createElement('a');
-              downloadBtn.href = dataURL;
-              downloadBtn.download = fname;
-              downloadBtn.textContent = '📥 Download';
-              downloadBtn.className = 'btn';
-              downloadBtn.style.padding = '4px 12px';
-              downloadBtn.style.fontSize = '13px';
-
-              const previewBtn = document.createElement('a');
-              previewBtn.href = dataURL;
-              previewBtn.target = '_blank';
-              previewBtn.textContent = '👁️ Preview';
-              previewBtn.className = 'btn';
-              previewBtn.style.marginLeft = '8px';
-              previewBtn.style.padding = '4px 12px';
-              previewBtn.style.fontSize = '13px';
-              previewBtn.style.backgroundColor = '#2a3a4a';
-              previewBtn.style.color = 'white';
-
-              downloadRow.appendChild(fileNameSpan);
-              const btnContainer = document.createElement('div');
-              btnContainer.appendChild(downloadBtn);
-              btnContainer.appendChild(previewBtn);
-              downloadRow.appendChild(btnContainer);
-
-              individualDownloadsDiv.appendChild(downloadRow);
-            } else {
-              // Add to ZIP
-              zip.file(fname, blob);
-            }
-
-            setProgress((i + 1) / selectedPages.length);
-            await briefYield(40);
+            const ctx2 = c2.getContext("2d");
+            ctx2.translate(c2.width / 2, c2.height / 2);
+            ctx2.rotate(r);
+            ctx2.drawImage(canvas, -canvas.width / 2, -canvas.height / 2);
+            canvas.width = c2.width;
+            canvas.height = c2.height;
+            ctx.drawImage(c2, 0, 0);
           }
 
-          if (downloadType.value === "zip") {
-            log("Creating ZIP file...");
-            zipBlob = await zip.generateAsync({ type: "blob" });
+          // Scaling (custom)
+          if (scale === "custom") {
+            const W = parseInt(cw.value);
+            const H = parseInt(ch.value);
+            if (W > 0 && H > 0) {
+              const c3 = document.createElement("canvas");
+              c3.width = W;
+              c3.height = H;
+              const ctx3 = c3.getContext("2d");
+              ctx3.drawImage(canvas, 0, 0, W, H);
+              canvas.width = W;
+              canvas.height = H;
+              ctx.drawImage(c3, 0, 0);
+            }
+          }
 
-            // Create ZIP download link
-            const zipFileName = (outName.value || "pdf_pages") + ".zip";
-            const zipFileSize = (zipBlob.size / (1024 * 1024)).toFixed(2);
+          const dataURL = canvas.toDataURL("image/jpeg", quality);
+          const blob = dataURLToBlob(dataURL);
+          const fname = `${outName.value || 'page'}_${pg.id}.jpg`;
 
-            const zipInfo = document.createElement('p');
-            zipInfo.innerHTML = `📦 <strong>${zipFileName}</strong><br>
+          // Create individual download link
+          if (downloadType.value === "files") {
+            const downloadRow = document.createElement('div');
+            downloadRow.style.display = 'flex';
+            downloadRow.style.alignItems = 'center';
+            downloadRow.style.justifyContent = 'space-between';
+            downloadRow.style.marginBottom = '8px';
+            downloadRow.style.padding = '8px';
+            downloadRow.style.backgroundColor = 'white';
+            downloadRow.style.borderRadius = '4px';
+            downloadRow.style.border = '1px solid #ddd';
+
+            const fileNameSpan = document.createElement('span');
+            fileNameSpan.textContent = fname;
+            fileNameSpan.style.fontFamily = 'monospace';
+            fileNameSpan.style.fontSize = '14px';
+
+            const downloadBtn = document.createElement('a');
+            downloadBtn.href = dataURL;
+            downloadBtn.download = fname;
+            downloadBtn.textContent = '📥 Download';
+            downloadBtn.className = 'btn';
+            downloadBtn.style.padding = '4px 12px';
+            downloadBtn.style.fontSize = '13px';
+
+            const previewBtn = document.createElement('a');
+            previewBtn.href = dataURL;
+            previewBtn.target = '_blank';
+            previewBtn.textContent = '👁️ Preview';
+            previewBtn.className = 'btn';
+            previewBtn.style.marginLeft = '8px';
+            previewBtn.style.padding = '4px 12px';
+            previewBtn.style.fontSize = '13px';
+            previewBtn.style.backgroundColor = '#2a3a4a';
+            previewBtn.style.color = 'white';
+
+            downloadRow.appendChild(fileNameSpan);
+            const btnContainer = document.createElement('div');
+            btnContainer.appendChild(downloadBtn);
+            btnContainer.appendChild(previewBtn);
+            downloadRow.appendChild(btnContainer);
+
+            individualDownloadsDiv.appendChild(downloadRow);
+          } else {
+            // Add to ZIP
+            zip.file(fname, blob);
+          }
+
+          setProgress((i + 1) / selectedPages.length);
+          await briefYield(40);
+        }
+
+        if (downloadType.value === "zip") {
+          log("Creating ZIP file...");
+          zipBlob = await zip.generateAsync({ type: "blob" });
+
+          // Create ZIP download link
+          const zipFileName = (outName.value || "pdf_pages") + ".zip";
+          const zipFileSize = (zipBlob.size / (1024 * 1024)).toFixed(2);
+
+          const zipInfo = document.createElement('p');
+          zipInfo.innerHTML = `📦 <strong>${zipFileName}</strong><br>
                           <small>${selectedPages.length} images | ${zipFileSize} MB</small>`;
-            zipInfo.style.marginBottom = '15px';
-            zipInfo.style.color = '#9fbfb0';
+          zipInfo.style.marginBottom = '15px';
+          zipInfo.style.color = '#9fbfb0';
 
-            const zipDownloadBtn = document.createElement('a');
-            zipDownloadBtn.href = URL.createObjectURL(zipBlob);
-            zipDownloadBtn.download = zipFileName;
-            zipDownloadBtn.textContent = '📥 Download ZIP File';
-            zipDownloadBtn.className = 'btn btn-primary';
-            zipDownloadBtn.style.display = 'inline-block';
-            zipDownloadBtn.style.padding = '10px 20px';
-            zipDownloadBtn.style.fontSize = '14px';
-            zipDownloadBtn.style.marginRight = '10px';
+          const zipDownloadBtn = document.createElement('a');
+          zipDownloadBtn.href = URL.createObjectURL(zipBlob);
+          zipDownloadBtn.download = zipFileName;
+          zipDownloadBtn.textContent = '📥 Download ZIP File';
+          zipDownloadBtn.className = 'btn btn-primary';
+          zipDownloadBtn.style.display = 'inline-block';
+          zipDownloadBtn.style.padding = '10px 20px';
+          zipDownloadBtn.style.fontSize = '14px';
+          zipDownloadBtn.style.marginRight = '10px';
 
-            const previewAllBtn = document.createElement('button');
-            previewAllBtn.textContent = '👁️ Preview All Images';
-            previewAllBtn.className = 'btn';
-            previewAllBtn.style.padding = '10px 20px';
-            previewAllBtn.style.fontSize = '14px';
-            previewAllBtn.style.backgroundColor = '#2a3a4a';
-            previewAllBtn.style.color = 'white';
-            previewAllBtn.style.border = 'none';
-            previewAllBtn.style.borderRadius = '4px';
-            previewAllBtn.style.cursor = 'pointer';
+          const previewAllBtn = document.createElement('button');
+          previewAllBtn.textContent = '👁️ Preview All Images';
+          previewAllBtn.className = 'btn';
+          previewAllBtn.style.padding = '10px 20px';
+          previewAllBtn.style.fontSize = '14px';
+          previewAllBtn.style.backgroundColor = '#2a3a4a';
+          previewAllBtn.style.color = 'white';
+          previewAllBtn.style.border = 'none';
+          previewAllBtn.style.borderRadius = '4px';
+          previewAllBtn.style.cursor = 'pointer';
 
-            previewAllBtn.onclick = function () {
-              // Create a modal to preview all images
-              const modal = document.createElement('div');
-              modal.style.position = 'fixed';
-              modal.style.top = '0';
-              modal.style.left = '0';
-              modal.style.width = '100%';
-              modal.style.height = '100%';
-              modal.style.backgroundColor = 'rgba(0,0,0,0.8)';
-              modal.style.zIndex = '9999';
-              modal.style.display = 'flex';
-              modal.style.flexDirection = 'column';
-              modal.style.alignItems = 'center';
-              modal.style.justifyContent = 'center';
+          previewAllBtn.onclick = function () {
+            // Create a modal to preview all images
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0,0,0,0.8)';
+            modal.style.zIndex = '9999';
+            modal.style.display = 'flex';
+            modal.style.flexDirection = 'column';
+            modal.style.alignItems = 'center';
+            modal.style.justifyContent = 'center';
 
-              const closeBtn = document.createElement('button');
-              closeBtn.textContent = '✕ Close';
-              closeBtn.style.position = 'absolute';
-              closeBtn.style.top = '20px';
-              closeBtn.style.right = '20px';
-              closeBtn.style.padding = '10px 20px';
-              closeBtn.style.backgroundColor = '#ff4444';
-              closeBtn.style.color = 'white';
-              closeBtn.style.border = 'none';
-              closeBtn.style.borderRadius = '4px';
-              closeBtn.style.cursor = 'pointer';
-              closeBtn.style.zIndex = '10000';
+            const closeBtn = document.createElement('button');
+            closeBtn.textContent = '✕ Close';
+            closeBtn.style.position = 'absolute';
+            closeBtn.style.top = '20px';
+            closeBtn.style.right = '20px';
+            closeBtn.style.padding = '10px 20px';
+            closeBtn.style.backgroundColor = '#ff4444';
+            closeBtn.style.color = 'white';
+            closeBtn.style.border = 'none';
+            closeBtn.style.borderRadius = '4px';
+            closeBtn.style.cursor = 'pointer';
+            closeBtn.style.zIndex = '10000';
 
-              const imageContainer = document.createElement('div');
-              imageContainer.style.maxWidth = '90%';
-              imageContainer.style.maxHeight = '80%';
-              imageContainer.style.overflow = 'auto';
-              imageContainer.style.display = 'flex';
-              imageContainer.style.flexWrap = 'wrap';
-              imageContainer.style.justifyContent = 'center';
-              imageContainer.style.gap = '10px';
-              imageContainer.style.padding = '20px';
+            const imageContainer = document.createElement('div');
+            imageContainer.style.maxWidth = '90%';
+            imageContainer.style.maxHeight = '80%';
+            imageContainer.style.overflow = 'auto';
+            imageContainer.style.display = 'flex';
+            imageContainer.style.flexWrap = 'wrap';
+            imageContainer.style.justifyContent = 'center';
+            imageContainer.style.gap = '10px';
+            imageContainer.style.padding = '20px';
 
-              // Extract images from ZIP for preview
-              zip.forEach(async (relativePath, zipEntry) => {
-                const blob = await zipEntry.async('blob');
-                const url = URL.createObjectURL(blob);
+            // Extract images from ZIP for preview
+            zip.forEach(async (relativePath, zipEntry) => {
+              const blob = await zipEntry.async('blob');
+              const url = URL.createObjectURL(blob);
 
-                const imgDiv = document.createElement('div');
-                imgDiv.style.width = '200px';
-                imgDiv.style.textAlign = 'center';
+              const imgDiv = document.createElement('div');
+              imgDiv.style.width = '200px';
+              imgDiv.style.textAlign = 'center';
 
-                const img = document.createElement('img');
-                img.src = url;
-                img.style.maxWidth = '100%';
-                img.style.maxHeight = '150px';
-                img.style.border = '2px solid #0aa37f';
-                img.style.borderRadius = '4px';
+              const img = document.createElement('img');
+              img.src = url;
+              img.style.maxWidth = '100%';
+              img.style.maxHeight = '150px';
+              img.style.border = '2px solid #0aa37f';
+              img.style.borderRadius = '4px';
 
-                const imgLabel = document.createElement('div');
-                imgLabel.textContent = relativePath;
-                imgLabel.style.fontSize = '12px';
-                imgLabel.style.color = 'white';
-                imgLabel.style.marginTop = '5px';
-                imgLabel.style.wordBreak = 'break-all';
+              const imgLabel = document.createElement('div');
+              imgLabel.textContent = relativePath;
+              imgLabel.style.fontSize = '12px';
+              imgLabel.style.color = 'white';
+              imgLabel.style.marginTop = '5px';
+              imgLabel.style.wordBreak = 'break-all';
 
-                imgDiv.appendChild(img);
-                imgDiv.appendChild(imgLabel);
-                imageContainer.appendChild(imgDiv);
-              });
+              imgDiv.appendChild(img);
+              imgDiv.appendChild(imgLabel);
+              imageContainer.appendChild(imgDiv);
+            });
 
-              closeBtn.onclick = function () {
-                document.body.removeChild(modal);
-              };
-
-              modal.appendChild(closeBtn);
-              modal.appendChild(imageContainer);
-              document.body.appendChild(modal);
+            closeBtn.onclick = function () {
+              document.body.removeChild(modal);
             };
 
-            zipDownloadDiv.appendChild(zipInfo);
-            zipDownloadDiv.appendChild(zipDownloadBtn);
-            zipDownloadDiv.appendChild(previewAllBtn);
+            modal.appendChild(closeBtn);
+            modal.appendChild(imageContainer);
+            document.body.appendChild(modal);
+          };
 
-            // Auto-download ZIP if user prefers
-            const autoDownload = confirm(`ZIP file created (${zipFileSize} MB). Click OK to download automatically.`);
-            if (autoDownload) {
-              saveAs(zipBlob, zipFileName);
-            }
+          zipDownloadDiv.appendChild(zipInfo);
+          zipDownloadDiv.appendChild(zipDownloadBtn);
+          zipDownloadDiv.appendChild(previewAllBtn);
 
-            log("ZIP file created successfully!");
+          // Auto-download ZIP if user prefers
+          const autoDownload = confirm(`ZIP file created (${zipFileSize} MB). Click OK to download automatically.`);
+          if (autoDownload) {
+            saveAs(zipBlob, zipFileName);
           }
 
-          log(`Conversion complete! ${selectedPages.length} pages converted.`);
-
-        } catch (error) {
-          log("Error during conversion: " + error.message);
-          alert("Conversion failed. Please try again.");
-        } finally {
-          convertBtn.disabled = false;
-          convertBtn.textContent = "Convert PDF to JPG";
-          setProgress(-1);
+          log("ZIP file created successfully!");
         }
-      });
 
-      /* UTILITIES */
-      function dataURLToBlob(dataURL) {
-        const arr = dataURL.split(",");
-        const mime = arr[0].match(/:(.*?);/)[1];
-        const bstr = atob(arr[1]);
-        let n = bstr.length;
-        const u8 = new Uint8Array(n);
-        while (n--) u8[n] = bstr.charCodeAt(n);
-        return new Blob([u8], { type: mime });
+        log(`Conversion complete! ${selectedPages.length} pages converted.`);
+
+      } catch (error) {
+        log("Error during conversion: " + error.message);
+        alert("Conversion failed. Please try again.");
+      } finally {
+        convertBtn.disabled = false;
+        convertBtn.textContent = "Convert PDF to JPG";
+        setProgress(-1);
+      }
+    });
+
+    /* UTILITIES */
+    function dataURLToBlob(dataURL) {
+      const arr = dataURL.split(",");
+      const mime = arr[0].match(/:(.*?);/)[1];
+      const bstr = atob(arr[1]);
+      let n = bstr.length;
+      const u8 = new Uint8Array(n);
+      while (n--) u8[n] = bstr.charCodeAt(n);
+      return new Blob([u8], { type: mime });
+    }
+
+    function briefYield(ms = 10) {
+      return new Promise(r => setTimeout(r, ms));
+    }
+
+    /* DOWNLOAD TYPE CHANGE - Update UI when download type changes */
+    downloadType.addEventListener("change", function () {
+      const isZip = this.value === "zip";
+
+      // Update UI based on selection
+      const individualDownloads = document.getElementById('individualDownloads');
+      const zipDownload = document.getElementById('zipDownload');
+
+      if (individualDownloads) {
+        individualDownloads.style.display = isZip ? 'none' : 'block';
+      }
+      if (zipDownload) {
+        zipDownload.style.display = isZip ? 'block' : 'none';
       }
 
-      function briefYield(ms = 10) {
-        return new Promise(r => setTimeout(r, ms));
+      // Update output name placeholder
+      outName.placeholder = isZip ? "pdf_images" : "page";
+
+      // Update output name value suggestion
+      const currentValue = outName.value.trim();
+      if (!currentValue || currentValue === "pdf_pages" || currentValue === "page" || currentValue === "pdf_images") {
+        outName.value = isZip ? "pdf_images" : "page";
       }
+    });
 
-      /* DOWNLOAD TYPE CHANGE - Update UI when download type changes */
-      downloadType.addEventListener("change", function () {
-        const isZip = this.value === "zip";
-
-        // Update UI based on selection
-        const individualDownloads = document.getElementById('individualDownloads');
-        const zipDownload = document.getElementById('zipDownload');
-
-        if (individualDownloads) {
-          individualDownloads.style.display = isZip ? 'none' : 'block';
-        }
-        if (zipDownload) {
-          zipDownload.style.display = isZip ? 'block' : 'none';
-        }
-
-        // Update output name placeholder
-        outName.placeholder = isZip ? "pdf_images" : "page";
-
-        // Update output name value suggestion
-        const currentValue = outName.value.trim();
-        if (!currentValue || currentValue === "pdf_pages" || currentValue === "page" || currentValue === "pdf_images") {
-          outName.value = isZip ? "pdf_images" : "page";
-        }
-      });
-
-      /* INITIAL SETUP - Set initial placeholder */
-      // Set initial placeholder based on current selection
-      const isInitiallyZip = downloadType.value === "zip";
-      outName.placeholder = isInitiallyZip ? "pdf_images" : "page";
-      if (!outName.value.trim() || outName.value === "pdf_pages") {
-        outName.value = isInitiallyZip ? "pdf_images" : "page";
-      }
-    </script>
+    /* INITIAL SETUP - Set initial placeholder */
+    // Set initial placeholder based on current selection
+    const isInitiallyZip = downloadType.value === "zip";
+    outName.placeholder = isInitiallyZip ? "pdf_images" : "page";
+    if (!outName.value.trim() || outName.value === "pdf_pages") {
+      outName.value = isInitiallyZip ? "pdf_images" : "page";
+    }
+  </script>
 
 
 </body>

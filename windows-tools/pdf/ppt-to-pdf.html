@@ -124,7 +124,7 @@
         them, this tool provides a fast and reliable solution.
       </p>
 
-      <h3>Key Features:</h3>
+      <h2>Key Features:</h2>
       <ul>
         <li><strong>Slide Image Extraction:</strong> If your presentation contains embedded images, they will be
           extracted and included in the PDF for high-quality output.</li>
@@ -135,7 +135,7 @@
         <li><strong>User-Friendly Interface:</strong> Our intuitive design makes it easy for users of all skill levels
           to convert PPTX files to PDF quickly and efficiently.</li>
       </ul>
-      <h3>How to Use the PPTX to PDF Converter:</h3>
+      <h2>How to Use the PPTX to PDF Converter:</h2>
       <ol>
         <li><strong>Upload Your PPTX:</strong> Click on the "Choose file" button or drag and drop your PPTX document
           into the designated area.</li>
@@ -157,195 +157,196 @@
         Try our PPTX to PDF converter today and experience the convenience of turning your presentations into
         professional PDF documents in just a few clicks!
       </p>
-    </section>
+    </section><br>
+    <a href="/windows-tools/pdf/index.html" class="nav-button home">🏠 Back to PDF Home</a>
+  </section>
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
 
-    <!-- FOOTER (loaded from external file) -->
-    <div id="footer-container"></div>
+  <script>
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
 
-    <script>
-      // Drawer toggle
-      function toggleMenu() {
-        document.getElementById("drawer").classList.toggle("open");
+    const fileInput = document.getElementById('fileInput');
+    const pickBtn = document.getElementById('pickBtn');
+    const dropArea = document.getElementById('dropArea');
+    const convertBtn = document.getElementById('convertBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const thumbs = document.getElementById('thumbs');
+    const logEl = document.getElementById('log');
+    const progressWrap = document.getElementById('progressWrap');
+    const progressBar = document.getElementById('progressBar');
+    const extractImagesCheckbox = document.getElementById('extractImages');
+    const includeTextCheckbox = document.getElementById('includeText');
+    const outName = document.getElementById('outName');
+    const pageSizeSel = document.getElementById('pageSize');
+    const orientationSel = document.getElementById('orientation');
+    const downloadArea = document.getElementById('downloadArea');
+
+    let zipFile = null;
+    let slides = []; // {id, imageBlob (optional), text (optional), thumbDataUrl, selected}
+
+    function log(msg) {
+      logEl.textContent += "\n" + msg;
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+
+    function setProgress(p) {
+      if (p < 0) {
+        progressWrap.style.display = 'none';
+      } else {
+        progressWrap.style.display = 'block';
+        progressBar.style.width = (p * 100).toFixed(1) + '%';
       }
+    }
 
-      const fileInput = document.getElementById('fileInput');
-      const pickBtn = document.getElementById('pickBtn');
-      const dropArea = document.getElementById('dropArea');
-      const convertBtn = document.getElementById('convertBtn');
-      const clearBtn = document.getElementById('clearBtn');
-      const thumbs = document.getElementById('thumbs');
-      const logEl = document.getElementById('log');
-      const progressWrap = document.getElementById('progressWrap');
-      const progressBar = document.getElementById('progressBar');
-      const extractImagesCheckbox = document.getElementById('extractImages');
-      const includeTextCheckbox = document.getElementById('includeText');
-      const outName = document.getElementById('outName');
-      const pageSizeSel = document.getElementById('pageSize');
-      const orientationSel = document.getElementById('orientation');
-      const downloadArea = document.getElementById('downloadArea');
+    function showDownloadArea() {
+      downloadArea.style.display = "block";
+      // Scroll to download area
+      downloadArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
 
-      let zipFile = null;
-      let slides = []; // {id, imageBlob (optional), text (optional), thumbDataUrl, selected}
+    function hideDownloadArea() {
+      downloadArea.style.display = "none";
+    }
 
-      function log(msg) {
-        logEl.textContent += "\n" + msg;
-        logEl.scrollTop = logEl.scrollHeight;
-      }
+    pickBtn.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', e => handleFile(e.target.files[0]));
 
-      function setProgress(p) {
-        if (p < 0) {
-          progressWrap.style.display = 'none';
-        } else {
-          progressWrap.style.display = 'block';
-          progressBar.style.width = (p * 100).toFixed(1) + '%';
-        }
-      }
+    dropArea.addEventListener('dragover', e => {
+      e.preventDefault();
+      dropArea.classList.add('dragover');
+    });
 
-      function showDownloadArea() {
-        downloadArea.style.display = "block";
-        // Scroll to download area
-        downloadArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
+    dropArea.addEventListener('dragleave', () => dropArea.classList.remove('dragover'));
 
-      function hideDownloadArea() {
-        downloadArea.style.display = "none";
-      }
+    dropArea.addEventListener('drop', e => {
+      e.preventDefault();
+      dropArea.classList.remove('dragover');
+      if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+    });
 
-      pickBtn.addEventListener('click', () => fileInput.click());
-      fileInput.addEventListener('change', e => handleFile(e.target.files[0]));
+    async function handleFile(file) {
+      if (!file) return;
 
-      dropArea.addEventListener('dragover', e => {
-        e.preventDefault();
-        dropArea.classList.add('dragover');
-      });
+      clearAll();
+      log('Loading PPTX: ' + file.name);
 
-      dropArea.addEventListener('dragleave', () => dropArea.classList.remove('dragover'));
+      try {
+        const arrayBuffer = await file.arrayBuffer();
+        const zip = await JSZip.loadAsync(arrayBuffer);
+        zipFile = zip;
 
-      dropArea.addEventListener('drop', e => {
-        e.preventDefault();
-        dropArea.classList.remove('dragover');
-        if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
-      });
+        // try to extract embedded media (images)
+        // slides usually have /ppt/slides/slide1.xml ... and images in /ppt/media
+        const mediaFiles = Object.keys(zip.files).filter(p => p.startsWith('ppt/media/'));
+        const slideFiles = Object.keys(zip.files).filter(p => p.startsWith('ppt/slides/slide') && p.endsWith('.xml')).sort();
 
-      async function handleFile(file) {
-        if (!file) return;
+        log('Found ' + slideFiles.length + ' slides, ' + mediaFiles.length + ' media files.');
 
-        clearAll();
-        log('Loading PPTX: ' + file.name);
+        // basic mapping: if media names contain slide numbers or are referenced in slide xml, attempt to map
+        slides = [];
 
-        try {
-          const arrayBuffer = await file.arrayBuffer();
-          const zip = await JSZip.loadAsync(arrayBuffer);
-          zipFile = zip;
+        for (let i = 0; i < slideFiles.length; i++) {
+          const slidePath = slideFiles[i];
+          const slideXml = await zip.files[slidePath].async('string');
 
-          // try to extract embedded media (images)
-          // slides usually have /ppt/slides/slide1.xml ... and images in /ppt/media
-          const mediaFiles = Object.keys(zip.files).filter(p => p.startsWith('ppt/media/'));
-          const slideFiles = Object.keys(zip.files).filter(p => p.startsWith('ppt/slides/slide') && p.endsWith('.xml')).sort();
+          // try to find image references inside slide xml: r:embed="rIdX" then find relationships in /ppt/slides/_rels/slideN.xml.rels
+          let imageBlob = null;
+          let thumbData = null;
 
-          log('Found ' + slideFiles.length + ' slides, ' + mediaFiles.length + ' media files.');
-
-          // basic mapping: if media names contain slide numbers or are referenced in slide xml, attempt to map
-          slides = [];
-
-          for (let i = 0; i < slideFiles.length; i++) {
-            const slidePath = slideFiles[i];
-            const slideXml = await zip.files[slidePath].async('string');
-
-            // try to find image references inside slide xml: r:embed="rIdX" then find relationships in /ppt/slides/_rels/slideN.xml.rels
-            let imageBlob = null;
-            let thumbData = null;
-
-            try {
-              const relPath = slidePath.replace('ppt/slides/', 'ppt/slides/_rels/') + '.rels';
-              if (zip.files[relPath]) {
-                const relXml = await zip.files[relPath].async('string');
-                // find target like ../media/image1.png
-                const m = relXml.match(/Target="(.*?)"/g);
-                if (m) {
-                  for (const t of m) {
-                    const tgt = t.replace(/Target="|"$/g, '');
-                    // normalize path
-                    const p = tgt.replace('../', 'ppt/');
-                    if (zip.files[p]) {
-                      const b = await zip.files[p].async('blob');
-                      imageBlob = b;
-                      break;
-                    }
+          try {
+            const relPath = slidePath.replace('ppt/slides/', 'ppt/slides/_rels/') + '.rels';
+            if (zip.files[relPath]) {
+              const relXml = await zip.files[relPath].async('string');
+              // find target like ../media/image1.png
+              const m = relXml.match(/Target="(.*?)"/g);
+              if (m) {
+                for (const t of m) {
+                  const tgt = t.replace(/Target="|"$/g, '');
+                  // normalize path
+                  const p = tgt.replace('../', 'ppt/');
+                  if (zip.files[p]) {
+                    const b = await zip.files[p].async('blob');
+                    imageBlob = b;
+                    break;
                   }
                 }
               }
-            } catch (err) {
-              log(`No embedded image found for slide ${i + 1}: ${err.message}`);
             }
-
-            // If no embedded image found, attempt to create a text-based thumbnail by extracting text nodes
-            let textContent = '';
-            if (includeTextCheckbox.checked) {
-              try {
-                // crude text extraction: find text between <a:t>...</a:t>
-                const matches = slideXml.match(/<a:t[^>]*>([\s\S]*?)<\/a:t>/g);
-                if (matches) {
-                  textContent = matches.map(x => x.replace(/<.*?>/g, '').trim()).join(' ').replace(/\s+/g, ' ');
-                } else {
-                  // fallback to nodes with <p:txBody> content
-                  const m2 = slideXml.replace(/<.*?>/g, ' ').replace(/\s+/g, ' ').trim();
-                  textContent = m2.slice(0, 800); // limit
-                }
-              } catch (e) {
-                textContent = `Slide ${i + 1}`;
-              }
-            }
-
-            // create thumbnail: if image exists, use it; else create canvas with text
-            if (imageBlob) {
-              thumbData = await blobToDataURL(imageBlob);
-            } else {
-              // generate simple canvas
-              const c = document.createElement('canvas');
-              c.width = 320;
-              c.height = 180;
-              const ctx = c.getContext('2d');
-              ctx.fillStyle = '#ffffff';
-              ctx.fillRect(0, 0, c.width, c.height);
-              ctx.fillStyle = '#111';
-              ctx.font = '14px sans-serif';
-              const txt = textContent || `Slide ${i + 1}`;
-              wrapText(ctx, txt, 10, 30, c.width - 20, 16);
-              thumbData = c.toDataURL('image/png', 0.8);
-              // also prepare image blob
-              const blob = await new Promise(r => c.toBlob(r, 'image/png', 0.9));
-              imageBlob = blob;
-            }
-
-            slides.push({
-              index: i + 1,
-              slidePath,
-              imageBlob,
-              text: textContent,
-              thumb: thumbData,
-              selected: true
-            });
-
-            renderThumbs();
-            await briefYield(20);
+          } catch (err) {
+            log(`No embedded image found for slide ${i + 1}: ${err.message}`);
           }
 
-          log('✓ Prepared ' + slides.length + ' slides for export.');
-          hideDownloadArea();
+          // If no embedded image found, attempt to create a text-based thumbnail by extracting text nodes
+          let textContent = '';
+          if (includeTextCheckbox.checked) {
+            try {
+              // crude text extraction: find text between <a:t>...</a:t>
+              const matches = slideXml.match(/<a:t[^>]*>([\s\S]*?)<\/a:t>/g);
+              if (matches) {
+                textContent = matches.map(x => x.replace(/<.*?>/g, '').trim()).join(' ').replace(/\s+/g, ' ');
+              } else {
+                // fallback to nodes with <p:txBody> content
+                const m2 = slideXml.replace(/<.*?>/g, ' ').replace(/\s+/g, ' ').trim();
+                textContent = m2.slice(0, 800); // limit
+              }
+            } catch (e) {
+              textContent = `Slide ${i + 1}`;
+            }
+          }
 
-        } catch (error) {
-          log('✗ Error loading PPTX: ' + error.message);
-          alert('Failed to load PPTX file. Please make sure it\'s a valid .pptx file.');
+          // create thumbnail: if image exists, use it; else create canvas with text
+          if (imageBlob) {
+            thumbData = await blobToDataURL(imageBlob);
+          } else {
+            // generate simple canvas
+            const c = document.createElement('canvas');
+            c.width = 320;
+            c.height = 180;
+            const ctx = c.getContext('2d');
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, c.width, c.height);
+            ctx.fillStyle = '#111';
+            ctx.font = '14px sans-serif';
+            const txt = textContent || `Slide ${i + 1}`;
+            wrapText(ctx, txt, 10, 30, c.width - 20, 16);
+            thumbData = c.toDataURL('image/png', 0.8);
+            // also prepare image blob
+            const blob = await new Promise(r => c.toBlob(r, 'image/png', 0.9));
+            imageBlob = blob;
+          }
+
+          slides.push({
+            index: i + 1,
+            slidePath,
+            imageBlob,
+            text: textContent,
+            thumb: thumbData,
+            selected: true
+          });
+
+          renderThumbs();
+          await briefYield(20);
         }
-      }
 
-      function renderThumbs() {
-        thumbs.innerHTML = '';
-        slides.forEach((s, idx) => {
-          const d = document.createElement('div');
-          d.className = 'thumb';
-          d.innerHTML = `
+        log('✓ Prepared ' + slides.length + ' slides for export.');
+        hideDownloadArea();
+
+      } catch (error) {
+        log('✗ Error loading PPTX: ' + error.message);
+        alert('Failed to load PPTX file. Please make sure it\'s a valid .pptx file.');
+      }
+    }
+
+    function renderThumbs() {
+      thumbs.innerHTML = '';
+      slides.forEach((s, idx) => {
+        const d = document.createElement('div');
+        d.className = 'thumb';
+        d.innerHTML = `
             <img src="${s.thumb}" style="width:100%; border-radius:4px; max-height:120px; object-fit:contain;">
             <div style="margin-top:6px;color:#9fbfb0; font-size:12px;">Slide ${s.index}</div>
             <div style="margin-top:6px">
@@ -356,150 +357,150 @@
               <button class="btn" data-idx="${idx}" data-act="down">↓</button>
               <button class="btn btn-danger" data-idx="${idx}" data-act="remove">✕</button>
             </div>`;
-          thumbs.appendChild(d);
-        });
+        thumbs.appendChild(d);
+      });
 
-        // bind events
-        thumbs.querySelectorAll('input[type=checkbox]').forEach(cb => {
-          cb.addEventListener('change', e => {
-            slides[e.target.dataset.idx].selected = e.target.checked;
-          });
+      // bind events
+      thumbs.querySelectorAll('input[type=checkbox]').forEach(cb => {
+        cb.addEventListener('change', e => {
+          slides[e.target.dataset.idx].selected = e.target.checked;
         });
+      });
 
-        thumbs.querySelectorAll('button').forEach(b => {
-          b.addEventListener('click', e => {
-            const idx = parseInt(e.target.dataset.idx);
-            const act = e.target.dataset.act;
-            if (act === 'up' && idx > 0) {
-              moveSlide(idx, idx - 1);
-            }
-            if (act === 'down' && idx < slides.length - 1) {
-              moveSlide(idx, idx + 1);
-            }
-            if (act === 'remove') {
-              slides.splice(idx, 1);
-              renderThumbs();
-            }
-          });
+      thumbs.querySelectorAll('button').forEach(b => {
+        b.addEventListener('click', e => {
+          const idx = parseInt(e.target.dataset.idx);
+          const act = e.target.dataset.act;
+          if (act === 'up' && idx > 0) {
+            moveSlide(idx, idx - 1);
+          }
+          if (act === 'down' && idx < slides.length - 1) {
+            moveSlide(idx, idx + 1);
+          }
+          if (act === 'remove') {
+            slides.splice(idx, 1);
+            renderThumbs();
+          }
         });
+      });
+    }
+
+    function moveSlide(from, to) {
+      const tmp = slides.splice(from, 1)[0];
+      slides.splice(to, 0, tmp);
+      renderThumbs();
+    }
+
+    async function blobToDataURL(b) {
+      return new Promise(r => {
+        const fr = new FileReader();
+        fr.onload = () => r(fr.result);
+        fr.readAsDataURL(b);
+      });
+    }
+
+    function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+      const words = text.split(' ');
+      let line = '';
+      for (let n = 0; n < words.length; n++) {
+        const testLine = line + words[n] + ' ';
+        const metrics = ctx.measureText(testLine);
+        const testWidth = metrics.width;
+        if (testWidth > maxWidth && n > 0) {
+          ctx.fillText(line, x, y);
+          line = words[n] + ' ';
+          y += lineHeight;
+        } else {
+          line = testLine;
+        }
+      }
+      ctx.fillText(line, x, y);
+    }
+
+    convertBtn.addEventListener('click', async () => {
+      if (!slides.length) {
+        alert('Please load a PPTX file first.');
+        return;
       }
 
-      function moveSlide(from, to) {
-        const tmp = slides.splice(from, 1)[0];
-        slides.splice(to, 0, tmp);
-        renderThumbs();
+      const selectedSlides = slides.filter(s => s.selected);
+      if (!selectedSlides.length) {
+        alert('Please select at least one slide to convert.');
+        return;
       }
 
-      async function blobToDataURL(b) {
-        return new Promise(r => {
-          const fr = new FileReader();
-          fr.onload = () => r(fr.result);
-          fr.readAsDataURL(b);
+      convertBtn.disabled = true;
+      setProgress(0);
+      log('Creating PDF...');
+      hideDownloadArea();
+
+      try {
+        const { jsPDF } = window.jspdf;
+        // determine page size
+        let pdf;
+        const pageSize = pageSizeSel.value;
+        const orient = orientationSel.value;
+        const unit = 'mm';
+        const pageFormats = {
+          a4: { w: 210, h: 297 },
+          letter: { w: 216, h: 279 }
+        };
+
+        const dims = pageFormats[pageSize] || pageFormats.a4;
+        const pw = orient === 'landscape' ? dims.h : dims.w;
+        const ph = orient === 'landscape' ? dims.w : dims.h;
+
+        pdf = new jsPDF({
+          unit,
+          format: [pw, ph],
+          orientation: orient
         });
-      }
 
-      function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
-        const words = text.split(' ');
-        let line = '';
-        for (let n = 0; n < words.length; n++) {
-          const testLine = line + words[n] + ' ';
-          const metrics = ctx.measureText(testLine);
-          const testWidth = metrics.width;
-          if (testWidth > maxWidth && n > 0) {
-            ctx.fillText(line, x, y);
-            line = words[n] + ' ';
-            y += lineHeight;
+        for (let i = 0; i < selectedSlides.length; i++) {
+          const s = selectedSlides[i];
+          log(`Processing slide ${s.index} (${i + 1}/${selectedSlides.length})...`);
+
+          // imageBlob -> DataURL
+          let dataURL;
+          if (s.imageBlob) {
+            dataURL = await blobToDataURL(s.imageBlob);
           } else {
-            line = testLine;
-          }
-        }
-        ctx.fillText(line, x, y);
-      }
-
-      convertBtn.addEventListener('click', async () => {
-        if (!slides.length) {
-          alert('Please load a PPTX file first.');
-          return;
-        }
-
-        const selectedSlides = slides.filter(s => s.selected);
-        if (!selectedSlides.length) {
-          alert('Please select at least one slide to convert.');
-          return;
-        }
-
-        convertBtn.disabled = true;
-        setProgress(0);
-        log('Creating PDF...');
-        hideDownloadArea();
-
-        try {
-          const { jsPDF } = window.jspdf;
-          // determine page size
-          let pdf;
-          const pageSize = pageSizeSel.value;
-          const orient = orientationSel.value;
-          const unit = 'mm';
-          const pageFormats = {
-            a4: { w: 210, h: 297 },
-            letter: { w: 216, h: 279 }
-          };
-
-          const dims = pageFormats[pageSize] || pageFormats.a4;
-          const pw = orient === 'landscape' ? dims.h : dims.w;
-          const ph = orient === 'landscape' ? dims.w : dims.h;
-
-          pdf = new jsPDF({
-            unit,
-            format: [pw, ph],
-            orientation: orient
-          });
-
-          for (let i = 0; i < selectedSlides.length; i++) {
-            const s = selectedSlides[i];
-            log(`Processing slide ${s.index} (${i + 1}/${selectedSlides.length})...`);
-
-            // imageBlob -> DataURL
-            let dataURL;
-            if (s.imageBlob) {
-              dataURL = await blobToDataURL(s.imageBlob);
-            } else {
-              // should not happen; fallback to blank
-              const c = document.createElement('canvas');
-              c.width = 1280;
-              c.height = 720;
-              const ctx = c.getContext('2d');
-              ctx.fillStyle = '#fff';
-              ctx.fillRect(0, 0, c.width, c.height);
-              dataURL = c.toDataURL('image/png');
-            }
-
-            // Add image filling page while maintaining aspect
-            const img = await loadImage(dataURL);
-            const pxToMm = 0.264583;
-            const imgWmm = img.width * pxToMm;
-            const imgHmm = img.height * pxToMm;
-            const maxW = pw, maxH = ph;
-            const ratio = Math.min(maxW / imgWmm, maxH / imgHmm);
-            const drawW = imgWmm * ratio;
-            const drawH = imgHmm * ratio;
-            const x = (pw - drawW) / 2;
-            const y = (ph - drawH) / 2;
-
-            if (i > 0) pdf.addPage([pw, ph], orient);
-            pdf.addImage(dataURL, 'PNG', x, y, drawW, drawH, undefined, 'FAST');
-
-            setProgress((i + 1) / selectedSlides.length);
-            await briefYield(50);
+            // should not happen; fallback to blank
+            const c = document.createElement('canvas');
+            c.width = 1280;
+            c.height = 720;
+            const ctx = c.getContext('2d');
+            ctx.fillStyle = '#fff';
+            ctx.fillRect(0, 0, c.width, c.height);
+            dataURL = c.toDataURL('image/png');
           }
 
-          // Generate PDF blob
-          const pdfBlob = pdf.output('blob');
-          const pdfSize = (pdfBlob.size / (1024 * 1024)).toFixed(2);
-          const filename = outName.value.trim() || 'presentation.pdf';
+          // Add image filling page while maintaining aspect
+          const img = await loadImage(dataURL);
+          const pxToMm = 0.264583;
+          const imgWmm = img.width * pxToMm;
+          const imgHmm = img.height * pxToMm;
+          const maxW = pw, maxH = ph;
+          const ratio = Math.min(maxW / imgWmm, maxH / imgHmm);
+          const drawW = imgWmm * ratio;
+          const drawH = imgHmm * ratio;
+          const x = (pw - drawW) / 2;
+          const y = (ph - drawH) / 2;
 
-          // Show download area with nice UI
-          const successHTML = `
+          if (i > 0) pdf.addPage([pw, ph], orient);
+          pdf.addImage(dataURL, 'PNG', x, y, drawW, drawH, undefined, 'FAST');
+
+          setProgress((i + 1) / selectedSlides.length);
+          await briefYield(50);
+        }
+
+        // Generate PDF blob
+        const pdfBlob = pdf.output('blob');
+        const pdfSize = (pdfBlob.size / (1024 * 1024)).toFixed(2);
+        const filename = outName.value.trim() || 'presentation.pdf';
+
+        // Show download area with nice UI
+        const successHTML = `
             <div style="background:#0a1a1a; padding:15px; border-radius:8px; border:1px solid #1a3a2e;">
               <h3 style="margin-top:0; color:#0aa37f; font-size:18px; margin-bottom:15px;">Conversion Complete</h3>
               <div style="background:#0a2a1e; color:#9fbfb0; padding:15px; border-radius:8px; margin-top:10px;">
@@ -527,60 +528,60 @@
             </div>
           `;
 
-          downloadArea.innerHTML = successHTML;
-          showDownloadArea();
+        downloadArea.innerHTML = successHTML;
+        showDownloadArea();
 
-          // Add event listener to the download button
-          document.getElementById('downloadPdfBtn').addEventListener('click', () => {
-            const url = URL.createObjectURL(pdfBlob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            setTimeout(() => URL.revokeObjectURL(url), 100);
+        // Add event listener to the download button
+        document.getElementById('downloadPdfBtn').addEventListener('click', () => {
+          const url = URL.createObjectURL(pdfBlob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setTimeout(() => URL.revokeObjectURL(url), 100);
 
-            log('✓ PDF file downloaded');
-          });
-
-          log(`✓ PDF created successfully! ${selectedSlides.length} slides, ${pdfSize} MB`);
-          setProgress(-1);
-
-        } catch (error) {
-          log('✗ Error creating PDF: ' + error.message);
-          alert('Failed to create PDF. Please try again with a different file or settings.');
-        } finally {
-          convertBtn.disabled = false;
-          setProgress(-1);
-        }
-      });
-
-      function loadImage(src) {
-        return new Promise((res, rej) => {
-          const img = new Image();
-          img.onload = () => res(img);
-          img.onerror = rej;
-          img.src = src;
+          log('✓ PDF file downloaded');
         });
-      }
 
-      function briefYield(ms = 20) {
-        return new Promise(r => setTimeout(r, ms));
-      }
+        log(`✓ PDF created successfully! ${selectedSlides.length} slides, ${pdfSize} MB`);
+        setProgress(-1);
 
-      function clearAll() {
-        slides = [];
-        zipFile = null;
-        thumbs.innerHTML = '';
-        downloadArea.innerHTML = '';
-        logEl.textContent = 'Ready.';
-        hideDownloadArea();
+      } catch (error) {
+        log('✗ Error creating PDF: ' + error.message);
+        alert('Failed to create PDF. Please try again with a different file or settings.');
+      } finally {
+        convertBtn.disabled = false;
         setProgress(-1);
       }
+    });
 
-      clearBtn.addEventListener('click', clearAll);
-    </script>
+    function loadImage(src) {
+      return new Promise((res, rej) => {
+        const img = new Image();
+        img.onload = () => res(img);
+        img.onerror = rej;
+        img.src = src;
+      });
+    }
+
+    function briefYield(ms = 20) {
+      return new Promise(r => setTimeout(r, ms));
+    }
+
+    function clearAll() {
+      slides = [];
+      zipFile = null;
+      thumbs.innerHTML = '';
+      downloadArea.innerHTML = '';
+      logEl.textContent = 'Ready.';
+      hideDownloadArea();
+      setProgress(-1);
+    }
+
+    clearBtn.addEventListener('click', clearAll);
+  </script>
 
 </body>
 

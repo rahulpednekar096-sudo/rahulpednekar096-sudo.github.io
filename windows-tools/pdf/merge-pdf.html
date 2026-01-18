@@ -91,307 +91,313 @@
 
       <div class="help">Page ranges format: <span class="small">1-3,5,7-9</span> (leave empty to include all pages of
         that PDF)</div>
-    </div>
-    <!-- SEO Content -->
-    <pre id="log">Ready.</pre>
-    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
-    <hr style="margin:32px 0">
 
-    <section class="seo-content">
-      <h2>Merge-PDF — RDroidApps Pro</h2>
+      <!-- SEO Content -->
+      <pre id="log">Ready.</pre>
+      <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+      <hr style="margin:32px 0">
 
-      <p>
-        Welcome to the enhanced Merge PDF tool by RDroidApps, now featuring an auto-rename functionality for your
-        convenience. This upgraded tool allows you to effortlessly combine multiple PDF files into a single document
-        while
-        automatically generating a meaningful filename based on the input files.
-      </p>
-      <h3>Key Features:</h3>
-      <ul>
-        <li><strong>Auto-Rename Functionality:</strong> The tool intelligently creates a filename for the merged PDF by
-          combining the names of the input files. If there are more than three files, it uses the first file's name
-          along
-          with a count of the total files merged.</li>
-        <li><strong>Drag-and-Drop Interface:</strong> Easily add your PDF files by dragging and dropping them into the
-          designated area or by using the file picker.</li>
-        <li><strong>Reorder Files:</strong> Customize the order of your PDFs before merging by simply dragging them into
-          your desired sequence.</li>
-        <li><strong>Page Selection:</strong> Specify which pages to include from each PDF using a simple range format,
-          giving you full control over the content of your final document.</li>
-        <li><strong>Object Streams Option:</strong> Choose to use object streams for a smaller output file size,
-          optimizing
-          storage and sharing.</li>
-      </ul>
-      <h3>How to Use:</h3>
-      <ol>
-        <li>Drag and drop your PDF files into the designated area or click "Choose files" to select them manually.</li>
-        <li>Reorder the files by dragging them into your preferred sequence.</li>
-        <li>Optionally, specify page ranges for each file in the provided input fields.</li>
-        <li>Select whether to use object streams for a smaller file size.</li>
-        <li>Click the "Merge PDF" button to combine your files. The tool will automatically generate a filename for the
-          merged document.</li>
-        <li>Download your merged PDF using the provided link.</li>
-      </ol>
-      <h3>Benefits of Using Merge PDF with Auto-Rename:</h3>
-      <ul>
-        <li><strong>Time-Saving:</strong> The auto-rename feature eliminates the need to manually name your merged
-          files,
-          streamlining your workflow.</li>
-        <li><strong>Organized Files:</strong> Meaningful filenames help keep your documents organized and easily
-          identifiable.</li>
-        <li><strong>User-Friendly:</strong> The intuitive interface makes it easy for users of all skill levels to merge
-          PDFs
-          efficiently.</li>
-      </ul>
-      <p>
-        Experience the convenience and efficiency of the Merge PDF tool with auto-rename by RDroidApps Pro. Simplify
-        your
-        document management today!
-      </p>
-      <p>Ready to merge your PDFs with ease? Start using the upgraded Merge PDF tool now!</p>
+      <section class="seo-content">
+        <h2>Merge-PDF — RDroidApps Pro</h2>
 
+        <p>
+          Welcome to the enhanced Merge PDF tool by RDroidApps, now featuring an auto-rename functionality for your
+          convenience. This upgraded tool allows you to effortlessly combine multiple PDF files into a single document
+          while
+          automatically generating a meaningful filename based on the input files.
+        </p>
+        <h2>Key Features:</h2>
+        <ul>
+          <li><strong>Auto-Rename Functionality:</strong> The tool intelligently creates a filename for the merged PDF
+            by
+            combining the names of the input files. If there are more than three files, it uses the first file's name
+            along
+            with a count of the total files merged.</li>
+          <li><strong>Drag-and-Drop Interface:</strong> Easily add your PDF files by dragging and dropping them into the
+            designated area or by using the file picker.</li>
+          <li><strong>Reorder Files:</strong> Customize the order of your PDFs before merging by simply dragging them
+            into
+            your desired sequence.</li>
+          <li><strong>Page Selection:</strong> Specify which pages to include from each PDF using a simple range format,
+            giving you full control over the content of your final document.</li>
+          <li><strong>Object Streams Option:</strong> Choose to use object streams for a smaller output file size,
+            optimizing
+            storage and sharing.</li>
+        </ul>
+        <h2>How to Use:</h2>
+        <ol>
+          <li>Drag and drop your PDF files into the designated area or click "Choose files" to select them manually.
+          </li>
+          <li>Reorder the files by dragging them into your preferred sequence.</li>
+          <li>Optionally, specify page ranges for each file in the provided input fields.</li>
+          <li>Select whether to use object streams for a smaller file size.</li>
+          <li>Click the "Merge PDF" button to combine your files. The tool will automatically generate a filename for
+            the
+            merged document.</li>
+          <li>Download your merged PDF using the provided link.</li>
+        </ol>
+        <h2>Benefits of Using Merge PDF with Auto-Rename:</h2>
+        <ul>
+          <li><strong>Time-Saving:</strong> The auto-rename feature eliminates the need to manually name your merged
+            files,
+            streamlining your workflow.</li>
+          <li><strong>Organized Files:</strong> Meaningful filenames help keep your documents organized and easily
+            identifiable.</li>
+          <li><strong>User-Friendly:</strong> The intuitive interface makes it easy for users of all skill levels to
+            merge
+            PDFs
+            efficiently.</li>
+        </ul>
+        <p>
+          Experience the convenience and efficiency of the Merge PDF tool with auto-rename by RDroidApps Pro. Simplify
+          your
+          document management today!
+        </p>
+        <p>Ready to merge your PDFs with ease? Start using the upgraded Merge PDF tool now!</p>
+      </section>
+    </div><br>
+    <a href="/windows-tools/pdf/index.html" class="nav-button home">🏠 Back to PDF Home</a>
+  </section>
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
 
-    </section>
-    <!-- FOOTER (loaded from external file) -->
-    <div id="footer-container"></div>
+  <script>
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+    /* Merge PDF with auto-rename feature */
 
-    <script>
-      // Drawer toggle
-      function toggleMenu() {
-        document.getElementById("drawer").classList.toggle("open");
-      }
-      /* Merge PDF with auto-rename feature */
+    const fileInput = document.getElementById('fileInput');
+    const pickBtn = document.getElementById('pickBtn');
+    const dropArea = document.getElementById('dropArea');
+    const filesList = document.getElementById('filesList');
+    const mergeBtn = document.getElementById('mergeBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const downloadLink = document.getElementById('downloadLink');
+    const progressWrap = document.getElementById('progressWrap');
+    const progressBar = document.getElementById('progressBar');
+    const logEl = document.getElementById('log');
+    const optObjectStreams = document.getElementById('optObjectStreams');
+    const statusText = document.getElementById('statusText');
 
-      const fileInput = document.getElementById('fileInput');
-      const pickBtn = document.getElementById('pickBtn');
-      const dropArea = document.getElementById('dropArea');
-      const filesList = document.getElementById('filesList');
-      const mergeBtn = document.getElementById('mergeBtn');
-      const clearBtn = document.getElementById('clearBtn');
-      const downloadLink = document.getElementById('downloadLink');
-      const progressWrap = document.getElementById('progressWrap');
-      const progressBar = document.getElementById('progressBar');
-      const logEl = document.getElementById('log');
-      const optObjectStreams = document.getElementById('optObjectStreams');
-      const statusText = document.getElementById('statusText');
+    let filesState = []; // { file, id, name, pageCount, thumbDataUrl, rangesInput }
 
-      let filesState = []; // { file, id, name, pageCount, thumbDataUrl, rangesInput }
+    pickBtn.addEventListener('click', () => fileInput.click());
+    dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f'; });
+    dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = '#202426');
+    dropArea.addEventListener('drop', e => { e.preventDefault(); dropArea.style.borderColor = '#202426'; if (e.dataTransfer.files.length) addFiles(e.dataTransfer.files); });
 
-      pickBtn.addEventListener('click', () => fileInput.click());
-      dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f'; });
-      dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = '#202426');
-      dropArea.addEventListener('drop', e => { e.preventDefault(); dropArea.style.borderColor = '#202426'; if (e.dataTransfer.files.length) addFiles(e.dataTransfer.files); });
+    fileInput.addEventListener('change', () => addFiles(fileInput.files));
+    clearBtn.addEventListener('click', () => { filesState = []; renderList(); downloadLink.style.display = 'none'; log('Cleared'); });
 
-      fileInput.addEventListener('change', () => addFiles(fileInput.files));
-      clearBtn.addEventListener('click', () => { filesState = []; renderList(); downloadLink.style.display = 'none'; log('Cleared'); });
+    function log(msg) { logEl.textContent += msg + '\n'; logEl.scrollTop = logEl.scrollHeight; }
+    function clearLog() { logEl.textContent = ''; }
 
-      function log(msg) { logEl.textContent += msg + '\n'; logEl.scrollTop = logEl.scrollHeight; }
-      function clearLog() { logEl.textContent = ''; }
+    function uid() { return Math.random().toString(36).slice(2, 9); }
 
-      function uid() { return Math.random().toString(36).slice(2, 9); }
-
-      async function addFiles(fileList) {
-        clearLog();
-        for (const f of fileList) {
-          if (f.type !== 'application/pdf') { log('Skipped non-PDF: ' + f.name); continue; }
-          const id = uid();
-          const entry = { file: f, id, name: f.name, pageCount: null, thumbDataUrl: null, rangesInput: '' };
-          filesState.push(entry);
-          renderList();
-          await loadPdfInfo(entry);
-        }
+    async function addFiles(fileList) {
+      clearLog();
+      for (const f of fileList) {
+        if (f.type !== 'application/pdf') { log('Skipped non-PDF: ' + f.name); continue; }
+        const id = uid();
+        const entry = { file: f, id, name: f.name, pageCount: null, thumbDataUrl: null, rangesInput: '' };
+        filesState.push(entry);
         renderList();
-        log('Files added.');
+        await loadPdfInfo(entry);
       }
+      renderList();
+      log('Files added.');
+    }
 
-      async function loadPdfInfo(entry) {
+    async function loadPdfInfo(entry) {
+      try {
+        const arrayBuffer = await entry.file.arrayBuffer();
+        const pdfData = new Uint8Array(arrayBuffer);
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+        const pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
+        entry.pageCount = pdf.numPages;
         try {
-          const arrayBuffer = await entry.file.arrayBuffer();
-          const pdfData = new Uint8Array(arrayBuffer);
-          pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
-          const pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
-          entry.pageCount = pdf.numPages;
-          try {
-            const page = await pdf.getPage(1);
-            const viewport = page.getViewport({ scale: Math.min(150 / page.getViewport({ scale: 1 }).width, 1) });
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            const vp = page.getViewport({ scale: viewport.scale });
-            canvas.width = vp.width; canvas.height = vp.height;
-            await page.render({ canvasContext: ctx, viewport: vp }).promise;
-            entry.thumbDataUrl = canvas.toDataURL('image/jpeg', 0.7);
-          } catch (e) { console.warn('Thumb render failed', e); }
-          renderList();
-        } catch (err) {
-          log('Failed to read ' + entry.name + ': ' + (err.message || err));
-          entry.pageCount = 0;
-          renderList();
-        }
-      }
-
-      function renderList() {
-        filesList.innerHTML = '';
-        filesState.forEach((e, idx) => {
-          const div = document.createElement('div');
-          div.className = 'file-item';
-          div.draggable = true;
-          div.dataset.id = e.id;
-
-          div.addEventListener('dragstart', (ev) => {
-            ev.dataTransfer.setData('text/plain', e.id);
-            ev.currentTarget.style.opacity = '0.6';
-          });
-          div.addEventListener('dragend', (ev) => ev.currentTarget.style.opacity = '1');
-          div.addEventListener('dragover', ev => { ev.preventDefault(); });
-          div.addEventListener('drop', ev => {
-            ev.preventDefault();
-            const fromId = ev.dataTransfer.getData('text/plain');
-            const toId = e.id;
-            reorder(fromId, toId);
-          });
-
-          const thumb = document.createElement('img');
-          thumb.className = 'thumb';
-          thumb.src = e.thumbDataUrl || 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAABx3b5LAAAAH0lEQVR4nO3BMQEAAADCIPunNscwAAAAAAAAAAAAAAwO4GAAEAbc3c4gAAAABJRU5ErkJggg==';
-          div.appendChild(thumb);
-
-          const meta = document.createElement('div');
-          meta.className = 'file-meta';
-          const title = document.createElement('div'); title.innerHTML = `<strong>${e.name}</strong>`;
-          const pages = document.createElement('div'); pages.className = 'muted small'; pages.textContent = e.pageCount ? (e.pageCount + ' pages') : 'loading...';
-          const rangesLabel = document.createElement('div'); rangesLabel.style.marginTop = '6px';
-          rangesLabel.innerHTML = `<input class="pages-input" placeholder="pages (eg. 1-3,5)" value="${e.rangesInput || ''}" data-id="${e.id}" />`;
-          meta.appendChild(title); meta.appendChild(pages); meta.appendChild(rangesLabel);
-
-          const actions = document.createElement('div');
-          actions.className = 'file-actions';
-          const dragHandle = document.createElement('div'); dragHandle.className = 'drag-handle muted'; dragHandle.textContent = '☰';
-          const removeBtn = document.createElement('button'); removeBtn.className = 'btn btn-ghost'; removeBtn.textContent = 'Remove';
-          removeBtn.addEventListener('click', () => { filesState = filesState.filter(x => x.id !== e.id); renderList(); });
-          actions.appendChild(dragHandle);
-          actions.appendChild(removeBtn);
-
-          div.appendChild(meta);
-          div.appendChild(actions);
-
-          filesList.appendChild(div);
-        });
-
-        document.querySelectorAll('.pages-input').forEach(inp => {
-          inp.addEventListener('input', (ev) => {
-            const id = ev.target.dataset.id;
-            const entry = filesState.find(x => x.id === id);
-            if (entry) entry.rangesInput = ev.target.value.trim();
-          });
-        });
-      }
-
-      function reorder(fromId, toId) {
-        const fromIndex = filesState.findIndex(x => x.id === fromId);
-        const toIndex = filesState.findIndex(x => x.id === toId);
-        if (fromIndex < 0 || toIndex < 0) return;
-        const [item] = filesState.splice(fromIndex, 1);
-        filesState.splice(toIndex, 0, item);
+          const page = await pdf.getPage(1);
+          const viewport = page.getViewport({ scale: Math.min(150 / page.getViewport({ scale: 1 }).width, 1) });
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          const vp = page.getViewport({ scale: viewport.scale });
+          canvas.width = vp.width; canvas.height = vp.height;
+          await page.render({ canvasContext: ctx, viewport: vp }).promise;
+          entry.thumbDataUrl = canvas.toDataURL('image/jpeg', 0.7);
+        } catch (e) { console.warn('Thumb render failed', e); }
+        renderList();
+      } catch (err) {
+        log('Failed to read ' + entry.name + ': ' + (err.message || err));
+        entry.pageCount = 0;
         renderList();
       }
+    }
 
-      function parseRanges(str, pageCount) {
-        if (!str) return Array.from({ length: pageCount }, (_, i) => i);
-        const parts = str.split(',').map(s => s.trim()).filter(Boolean);
-        const indices = new Set();
-        for (const p of parts) {
-          if (p.includes('-')) {
-            const [a, b] = p.split('-').map(x => parseInt(x));
-            if (isNaN(a) || isNaN(b)) continue;
-            for (let k = Math.max(1, a); k <= Math.min(b, pageCount); k++) indices.add(k - 1);
-          } else {
-            const n = parseInt(p);
-            if (!isNaN(n) && n >= 1 && n <= pageCount) indices.add(n - 1);
-          }
-        }
-        return Array.from(indices).sort((a, b) => a - b);
-      }
+    function renderList() {
+      filesList.innerHTML = '';
+      filesState.forEach((e, idx) => {
+        const div = document.createElement('div');
+        div.className = 'file-item';
+        div.draggable = true;
+        div.dataset.id = e.id;
 
-      mergeBtn.addEventListener('click', async () => {
-        if (!filesState.length) { alert('Add PDF files first'); return; }
-        clearLog();
-        progressWrap.style.display = 'block'; setProgress(0);
-        downloadLink.style.display = 'none';
-        statusText.textContent = 'Starting merge...';
+        div.addEventListener('dragstart', (ev) => {
+          ev.dataTransfer.setData('text/plain', e.id);
+          ev.currentTarget.style.opacity = '0.6';
+        });
+        div.addEventListener('dragend', (ev) => ev.currentTarget.style.opacity = '1');
+        div.addEventListener('dragover', ev => { ev.preventDefault(); });
+        div.addEventListener('drop', ev => {
+          ev.preventDefault();
+          const fromId = ev.dataTransfer.getData('text/plain');
+          const toId = e.id;
+          reorder(fromId, toId);
+        });
 
-        try {
-          const mergedPdf = await PDFLib.PDFDocument.create();
-          const useObjectStreams = optObjectStreams.checked;
-          const totalSteps = filesState.reduce((s, e) => s + (e.pageCount || 0), 0) || 1;
-          let step = 0;
+        const thumb = document.createElement('img');
+        thumb.className = 'thumb';
+        thumb.src = e.thumbDataUrl || 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAABx3b5LAAAAH0lEQVR4nO3BMQEAAADCIPunNscwAAAAAAAAAAAAAAwO4GAAEAbc3c4gAAAABJRU5ErkJggg==';
+        div.appendChild(thumb);
 
-          for (const entry of filesState) {
-            if (!entry.pageCount) { log('Skipping unreadable: ' + entry.name); continue; }
-            log('Processing ' + entry.name + ' (' + entry.pageCount + ' pages)');
-            const arrayBuffer = await entry.file.arrayBuffer();
-            const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
-            const allIndices = parseRanges(entry.rangesInput, entry.pageCount);
-            if (allIndices.length === 0) { log(`No pages selected for ${entry.name}, skipping.`); continue; }
+        const meta = document.createElement('div');
+        meta.className = 'file-meta';
+        const title = document.createElement('div'); title.innerHTML = `<strong>${e.name}</strong>`;
+        const pages = document.createElement('div'); pages.className = 'muted small'; pages.textContent = e.pageCount ? (e.pageCount + ' pages') : 'loading...';
+        const rangesLabel = document.createElement('div'); rangesLabel.style.marginTop = '6px';
+        rangesLabel.innerHTML = `<input class="pages-input" placeholder="pages (eg. 1-3,5)" value="${e.rangesInput || ''}" data-id="${e.id}" />`;
+        meta.appendChild(title); meta.appendChild(pages); meta.appendChild(rangesLabel);
 
-            const copied = await mergedPdf.copyPages(pdf, allIndices);
-            for (const p of copied) {
-              mergedPdf.addPage(p);
-              step++;
-              setProgress(step / totalSteps);
-              await new Promise(r => setTimeout(r, 20));
-            }
-          }
+        const actions = document.createElement('div');
+        actions.className = 'file-actions';
+        const dragHandle = document.createElement('div'); dragHandle.className = 'drag-handle muted'; dragHandle.textContent = '☰';
+        const removeBtn = document.createElement('button'); removeBtn.className = 'btn btn-ghost'; removeBtn.textContent = 'Remove';
+        removeBtn.addEventListener('click', () => { filesState = filesState.filter(x => x.id !== e.id); renderList(); });
+        actions.appendChild(dragHandle);
+        actions.appendChild(removeBtn);
 
-          statusText.textContent = 'Finalizing...';
-          const saveOpts = useObjectStreams ? { useObjectStreams: true } : {};
-          const mergedBytes = await mergedPdf.save(saveOpts);
-          const blob = new Blob([mergedBytes], { type: 'application/pdf' });
-          const url = URL.createObjectURL(blob);
+        div.appendChild(meta);
+        div.appendChild(actions);
 
-          // ---------- AUTO-RENAME LOGIC ----------
-          const safeName = (name) => {
-            // remove extension, illegal chars, collapse spaces, limit length
-            let s = name.replace(/\.pdf$/i, '');
-            s = s.replace(/[\/\\?%*:|"<>]/g, ''); // remove illegal filename chars
-            s = s.replace(/\s+/g, '_'); // spaces to underscore
-            s = s.replace(/[^a-zA-Z0-9_\-\.]/g, ''); // keep safe chars
-            if (s.length > 60) s = s.slice(0, 60);
-            return s || 'file';
-          };
-
-          let downloadBase = '';
-          if (filesState.length <= 3) {
-            // join sanitized base names
-            const parts = filesState.map(f => safeName(f.name));
-            downloadBase = parts.join('_');
-          } else {
-            const first = safeName(filesState[0].name);
-            downloadBase = `${first}_${filesState.length}files`;
-          }
-          // final filename
-          let finalName = `${downloadBase}_merged.pdf`;
-          // ensure length limit
-          if (finalName.length > 100) finalName = finalName.slice(0, 100).replace(/\s+/g, '_');
-
-          downloadLink.href = url;
-          downloadLink.download = finalName;
-          downloadLink.textContent = `Download: ${finalName}`;
-          downloadLink.style.display = 'inline-block';
-          statusText.textContent = `Done — merged ${(blob.size / 1024).toFixed(1)} KB`;
-          log('Merge completed. Final size: ' + (blob.size / 1024).toFixed(1) + ' KB');
-          setProgress(1);
-        } catch (err) {
-          log('Merge failed: ' + (err.message || err));
-          statusText.textContent = 'Error during merge.';
-          setProgress(0);
-        } finally {
-          progressWrap.style.display = 'none';
-        }
+        filesList.appendChild(div);
       });
 
-      function setProgress(p) { progressBar.style.width = Math.min(1, Math.max(0, p)) * 100 + '%'; }
+      document.querySelectorAll('.pages-input').forEach(inp => {
+        inp.addEventListener('input', (ev) => {
+          const id = ev.target.dataset.id;
+          const entry = filesState.find(x => x.id === id);
+          if (entry) entry.rangesInput = ev.target.value.trim();
+        });
+      });
+    }
 
-    </script>
+    function reorder(fromId, toId) {
+      const fromIndex = filesState.findIndex(x => x.id === fromId);
+      const toIndex = filesState.findIndex(x => x.id === toId);
+      if (fromIndex < 0 || toIndex < 0) return;
+      const [item] = filesState.splice(fromIndex, 1);
+      filesState.splice(toIndex, 0, item);
+      renderList();
+    }
+
+    function parseRanges(str, pageCount) {
+      if (!str) return Array.from({ length: pageCount }, (_, i) => i);
+      const parts = str.split(',').map(s => s.trim()).filter(Boolean);
+      const indices = new Set();
+      for (const p of parts) {
+        if (p.includes('-')) {
+          const [a, b] = p.split('-').map(x => parseInt(x));
+          if (isNaN(a) || isNaN(b)) continue;
+          for (let k = Math.max(1, a); k <= Math.min(b, pageCount); k++) indices.add(k - 1);
+        } else {
+          const n = parseInt(p);
+          if (!isNaN(n) && n >= 1 && n <= pageCount) indices.add(n - 1);
+        }
+      }
+      return Array.from(indices).sort((a, b) => a - b);
+    }
+
+    mergeBtn.addEventListener('click', async () => {
+      if (!filesState.length) { alert('Add PDF files first'); return; }
+      clearLog();
+      progressWrap.style.display = 'block'; setProgress(0);
+      downloadLink.style.display = 'none';
+      statusText.textContent = 'Starting merge...';
+
+      try {
+        const mergedPdf = await PDFLib.PDFDocument.create();
+        const useObjectStreams = optObjectStreams.checked;
+        const totalSteps = filesState.reduce((s, e) => s + (e.pageCount || 0), 0) || 1;
+        let step = 0;
+
+        for (const entry of filesState) {
+          if (!entry.pageCount) { log('Skipping unreadable: ' + entry.name); continue; }
+          log('Processing ' + entry.name + ' (' + entry.pageCount + ' pages)');
+          const arrayBuffer = await entry.file.arrayBuffer();
+          const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
+          const allIndices = parseRanges(entry.rangesInput, entry.pageCount);
+          if (allIndices.length === 0) { log(`No pages selected for ${entry.name}, skipping.`); continue; }
+
+          const copied = await mergedPdf.copyPages(pdf, allIndices);
+          for (const p of copied) {
+            mergedPdf.addPage(p);
+            step++;
+            setProgress(step / totalSteps);
+            await new Promise(r => setTimeout(r, 20));
+          }
+        }
+
+        statusText.textContent = 'Finalizing...';
+        const saveOpts = useObjectStreams ? { useObjectStreams: true } : {};
+        const mergedBytes = await mergedPdf.save(saveOpts);
+        const blob = new Blob([mergedBytes], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+
+        // ---------- AUTO-RENAME LOGIC ----------
+        const safeName = (name) => {
+          // remove extension, illegal chars, collapse spaces, limit length
+          let s = name.replace(/\.pdf$/i, '');
+          s = s.replace(/[\/\\?%*:|"<>]/g, ''); // remove illegal filename chars
+          s = s.replace(/\s+/g, '_'); // spaces to underscore
+          s = s.replace(/[^a-zA-Z0-9_\-\.]/g, ''); // keep safe chars
+          if (s.length > 60) s = s.slice(0, 60);
+          return s || 'file';
+        };
+
+        let downloadBase = '';
+        if (filesState.length <= 3) {
+          // join sanitized base names
+          const parts = filesState.map(f => safeName(f.name));
+          downloadBase = parts.join('_');
+        } else {
+          const first = safeName(filesState[0].name);
+          downloadBase = `${first}_${filesState.length}files`;
+        }
+        // final filename
+        let finalName = `${downloadBase}_merged.pdf`;
+        // ensure length limit
+        if (finalName.length > 100) finalName = finalName.slice(0, 100).replace(/\s+/g, '_');
+
+        downloadLink.href = url;
+        downloadLink.download = finalName;
+        downloadLink.textContent = `Download: ${finalName}`;
+        downloadLink.style.display = 'inline-block';
+        statusText.textContent = `Done — merged ${(blob.size / 1024).toFixed(1)} KB`;
+        log('Merge completed. Final size: ' + (blob.size / 1024).toFixed(1) + ' KB');
+        setProgress(1);
+      } catch (err) {
+        log('Merge failed: ' + (err.message || err));
+        statusText.textContent = 'Error during merge.';
+        setProgress(0);
+      } finally {
+        progressWrap.style.display = 'none';
+      }
+    });
+
+    function setProgress(p) { progressBar.style.width = Math.min(1, Math.max(0, p)) * 100 + '%'; }
+
+  </script>
 
 
 </body>

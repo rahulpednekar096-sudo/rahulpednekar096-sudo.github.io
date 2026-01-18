@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4T90FQG02K');
+    </script>
+    <!-- AdSense account verification -->
+    <meta name="google-adsense-account" content="ca-pub-7933209486512555">
+
+    <!-- AdSense Auto Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933209486512555"
+        crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <title>QR Code Generator — RDroid Apps</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="canonical" href="https://rdroidapps.com/tools/qr-generator.html">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="description"
+        content="Generate QR codes for URLs, text, contact info, WiFi credentials and more. Customize colors and download as PNG." />
+    <meta name="keywords"
+        content="qr code generator, create qr code, qr code maker, url qr code, text to qr, wifi qr code" />
+
+    <!-- Include QR Code library - Using qrious library which is more reliable -->
+    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/utility-tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <section class="section" role="main" aria-labelledby="title">
+        <h1 id="title">QR Code Generator</h1>
+        <p class="lead">Generate QR codes for URLs, text, contact info, WiFi credentials and more.</p>
+
+        <div class="controls">
+            <div class="control">
+                <label>Content Type</label>
+                <select id="contentType">
+                    <option value="text">Plain Text</option>
+                    <option value="url" selected>Website URL</option>
+                    <option value="wifi">WiFi Network</option>
+                    <option value="email">Email</option>
+                    <option value="phone">Phone Number</option>
+                </select>
+            </div>
+
+            <div class="control" id="urlControl">
+                <label>Website URL</label>
+                <input type="text" id="urlInput" placeholder="https://example.com" />
+            </div>
+
+            <div class="control" id="textControl" style="display:none;">
+                <label>Text Content</label>
+                <textarea id="textInput" rows="4" placeholder="Enter text to encode..."></textarea>
+            </div>
+
+            <div class="control" id="wifiControl" style="display:none;">
+                <label>WiFi Network SSID</label>
+                <input type="text" id="wifiSsid" placeholder="Your WiFi name" />
+                <label style="margin-top:8px;">Password</label>
+                <input type="text" id="wifiPassword" placeholder="WiFi password" />
+                <label style="margin-top:8px;">Security Type</label>
+                <select id="wifiSecurity">
+                    <option value="WPA">WPA/WPA2</option>
+                    <option value="WEP">WEP</option>
+                    <option value="nopass">No Password</option>
+                </select>
+            </div>
+
+            <div class="control" id="emailControl" style="display:none;">
+                <label>Email Address</label>
+                <input type="email" id="emailInput" placeholder="user@example.com" />
+                <label style="margin-top:8px;">Subject</label>
+                <input type="text" id="emailSubject" placeholder="Email subject" />
+                <label style="margin-top:8px;">Body</label>
+                <textarea id="emailBody" rows="3" placeholder="Email body text"></textarea>
+            </div>
+
+            <div class="control" id="phoneControl" style="display:none;">
+                <label>Phone Number</label>
+                <input type="tel" id="phoneInput" placeholder="+1234567890" />
+            </div>
+        </div>
+
+        <div class="controls" style="margin-top: 20px;">
+            <div class="control">
+                <label>QR Code Size</label>
+                <select id="qrSize">
+                    <option value="128">128x128 (Small)</option>
+                    <option value="256" selected>256x256 (Medium)</option>
+                    <option value="512">512x512 (Large)</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label>QR Code Color</label>
+                <input type="color" id="qrColor" value="#000000" />
+                <label style="margin-top:8px;">Background Color</label>
+                <input type="color" id="bgColor" value="#ffffff" />
+            </div>
+
+            <div class="control">
+                <label>Error Correction</label>
+                <select id="errorCorrection">
+                    <option value="L">Low (7%)</option>
+                    <option value="M" selected>Medium (15%)</option>
+                    <option value="Q">Quartile (25%)</option>
+                    <option value="H">High (30%)</option>
+                </select>
+            </div>
+        </div>
+
+        <div style="display:flex; gap:12px; align-items:center; margin-top: 20px;">
+            <button class="btn btn-primary" id="generateBtn">Generate QR Code</button>
+            <button class="btn" id="downloadBtn" disabled>Download PNG</button>
+            <button class="btn" id="clearBtn">Clear</button>
+        </div>
+
+        <div class="log" id="log" style="margin-top: 20px;">Ready. Enter content and generate QR code.</div>
+
+        <div id="qrContainer" style="margin-top: 30px; text-align: center;">
+            <div id="qrPreview"></div>
+        </div>
+
+        <hr style="margin:32px 0">
+
+        <section class="seo-content">
+            <h2>About QR Code Generator</h2>
+            <p>
+                The QR Code Generator tool allows you to create customized QR codes for various types of content.
+                Generate QR codes for websites, text messages, WiFi networks, contact information, and more.
+            </p>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li>Generate QR codes for URLs, text, WiFi, email, and phone numbers</li>
+                <li>Customize QR code size and colors</li>
+                <li>Adjust error correction level for better scanning</li>
+                <li>Download QR code as PNG image</li>
+                <li>All processing done locally in your browser</li>
+                <li>No data uploaded to servers</li>
+            </ul>
+
+            <h2>How to Use</h2>
+            <p>
+                Select the type of content you want to encode, enter the required information,
+                customize the appearance, and click "Generate QR Code". Once generated, you can
+                download the QR code as a PNG image.
+            </p>
+
+            <h2>Privacy and Security</h2>
+            <p>
+                All QR code generation happens locally in your browser. No data is sent to any server,
+                ensuring complete privacy and security.
+            </p>
+
+            <h2>FAQ</h2>
+            <p>
+                <strong>Is this tool free?</strong> Yes, it's completely free to use.
+            </p>
+            <p>
+                <strong>Can I print the QR codes?</strong> Yes, download the PNG and print it at any size.
+            </p>
+            <p>
+                <strong>What is error correction?</strong> Higher error correction makes the QR code more readable
+                even if partially damaged, but increases its complexity.
+            </p>
+        </section><br>
+        <a href="/windows-tools/utility/index.html" class="nav-button home">🏠 Back to Utility Home</a>
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+
+    <script>
+        // Elements
+        const contentType = document.getElementById('contentType');
+        const urlControl = document.getElementById('urlControl');
+        const textControl = document.getElementById('textControl');
+        const wifiControl = document.getElementById('wifiControl');
+        const emailControl = document.getElementById('emailControl');
+        const phoneControl = document.getElementById('phoneControl');
+
+        const urlInput = document.getElementById('urlInput');
+        const textInput = document.getElementById('textInput');
+        const wifiSsid = document.getElementById('wifiSsid');
+        const wifiPassword = document.getElementById('wifiPassword');
+        const wifiSecurity = document.getElementById('wifiSecurity');
+        const emailInput = document.getElementById('emailInput');
+        const emailSubject = document.getElementById('emailSubject');
+        const emailBody = document.getElementById('emailBody');
+        const phoneInput = document.getElementById('phoneInput');
+
+        const qrSize = document.getElementById('qrSize');
+        const qrColor = document.getElementById('qrColor');
+        const bgColor = document.getElementById('bgColor');
+        const errorCorrection = document.getElementById('errorCorrection');
+
+        const generateBtn = document.getElementById('generateBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const logEl = document.getElementById('log');
+        const qrPreview = document.getElementById('qrPreview');
+
+        // Store current QR code data URL
+        let currentQRDataURL = null;
+
+        // Show/hide controls based on content type
+        contentType.addEventListener('change', () => {
+            const type = contentType.value;
+
+            // Hide all controls
+            urlControl.style.display = 'none';
+            textControl.style.display = 'none';
+            wifiControl.style.display = 'none';
+            emailControl.style.display = 'none';
+            phoneControl.style.display = 'none';
+
+            // Show selected control
+            if (type === 'url') urlControl.style.display = 'block';
+            else if (type === 'text') textControl.style.display = 'block';
+            else if (type === 'wifi') wifiControl.style.display = 'block';
+            else if (type === 'email') emailControl.style.display = 'block';
+            else if (type === 'phone') phoneControl.style.display = 'block';
+        });
+
+        // Generate QR code
+        generateBtn.addEventListener('click', () => {
+            const type = contentType.value;
+            let content = '';
+
+            // Build content based on type
+            switch (type) {
+                case 'url':
+                    content = urlInput.value.trim();
+                    if (!content) {
+                        log('Please enter a URL');
+                        return;
+                    }
+                    if (!content.startsWith('http://') && !content.startsWith('https://')) {
+                        content = 'https://' + content;
+                    }
+                    break;
+
+                case 'text':
+                    content = textInput.value.trim();
+                    if (!content) {
+                        log('Please enter text content');
+                        return;
+                    }
+                    break;
+
+                case 'wifi':
+                    const ssid = wifiSsid.value.trim();
+                    if (!ssid) {
+                        log('Please enter WiFi SSID');
+                        return;
+                    }
+                    const password = wifiPassword.value.trim();
+                    const security = wifiSecurity.value;
+                    content = `WIFI:S:${ssid};T:${security};P:${password};;`;
+                    break;
+
+                case 'email':
+                    const email = emailInput.value.trim();
+                    if (!email) {
+                        log('Please enter email address');
+                        return;
+                    }
+                    const subject = emailSubject.value.trim();
+                    const body = emailBody.value.trim();
+                    content = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    break;
+
+                case 'phone':
+                    const phone = phoneInput.value.trim();
+                    if (!phone) {
+                        log('Please enter phone number');
+                        return;
+                    }
+                    content = `tel:${phone}`;
+                    break;
+            }
+
+            // QR code options
+            const size = parseInt(qrSize.value);
+            const color = qrColor.value;
+            const bg = bgColor.value;
+            const correction = errorCorrection.value;
+
+            // Clear previous QR code
+            qrPreview.innerHTML = '';
+            log('Generating QR code...');
+
+            try {
+                // Check if QRious library is loaded
+                if (typeof QRious === 'undefined') {
+                    log('Error: QR code library not loaded. Please refresh the page.');
+                    return;
+                }
+
+                // Create QR code using QRious
+                const qr = new QRious({
+                    value: content,
+                    size: size,
+                    foreground: color,
+                    background: bg,
+                    level: correction,
+                    padding: 10
+                });
+
+                // Get the canvas element
+                const canvas = qr.canvas;
+
+                // Convert canvas to data URL
+                currentQRDataURL = canvas.toDataURL('image/png');
+
+                // Display QR code
+                const img = document.createElement('img');
+                img.src = currentQRDataURL;
+                img.alt = 'Generated QR Code';
+                img.style.border = '1px solid #ddd';
+                img.style.padding = '10px';
+                img.style.background = 'white';
+                img.style.borderRadius = '8px';
+                img.style.maxWidth = '300px';
+                img.style.height = 'auto';
+
+                qrPreview.appendChild(img);
+                downloadBtn.disabled = false;
+
+                log(`QR code generated successfully! Size: ${size}x${size}`);
+            } catch (error) {
+                log('Error generating QR code: ' + error.message);
+                console.error('QR Code Error:', error);
+            }
+        });
+
+        // Download QR code
+        downloadBtn.addEventListener('click', () => {
+            if (!currentQRDataURL) {
+                log('No QR code to download');
+                return;
+            }
+
+            const link = document.createElement('a');
+            link.download = 'qr-code.png';
+            link.href = currentQRDataURL;
+            link.click();
+            log('QR code downloaded as qr-code.png');
+        });
+
+        // Clear all inputs
+        clearBtn.addEventListener('click', () => {
+            urlInput.value = '';
+            textInput.value = '';
+            wifiSsid.value = '';
+            wifiPassword.value = '';
+            emailInput.value = '';
+            emailSubject.value = '';
+            emailBody.value = '';
+            phoneInput.value = '';
+            qrPreview.innerHTML = '';
+            downloadBtn.disabled = true;
+            currentQRDataURL = null;
+            log('Cleared all inputs. Ready to generate new QR code.');
+        });
+
+        // Log message
+        function log(msg) {
+            logEl.textContent = msg;
+        }
+
+        // Set default values
+        urlInput.value = 'https://rdroidapps.com';
+        textInput.value = 'Hello, welcome to RDroid Apps!';
+        wifiSsid.value = 'MyWiFiNetwork';
+        wifiPassword.value = 'SecurePassword123';
+        emailInput.value = 'contact@rdroidapps.com';
+        emailSubject.value = 'Hello from QR Code';
+        emailBody.value = 'This email was generated using RDroid QR Code Generator.';
+        phoneInput.value = '+1234567890';
+
+        // Generate QR code on page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (typeof QRious !== 'undefined') {
+                    generateBtn.click();
+                }
+            }, 1000);
+        });
+    </script>
+    </section>
+</body>
+
+</html>

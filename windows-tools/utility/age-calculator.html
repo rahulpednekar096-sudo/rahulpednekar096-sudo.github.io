@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4T90FQG02K');
+    </script>
+    <!-- AdSense account verification -->
+    <meta name="google-adsense-account" content="ca-pub-7933209486512555">
+
+    <!-- AdSense Auto Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933209486512555"
+        crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <title>Age Calculator — RDroid Apps</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/utility/age-calculator.html">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="description"
+        content="Calculate your exact age in years, months, days, weeks, hours, minutes and seconds. Find out how old you are or calculate time between two dates." />
+    <meta name="keywords"
+        content="age calculator, birthday calculator, date calculator, how old am I, calculate age, time between dates, zodiac sign calculator, rashi calculator" />
+
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .card {
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/utility-tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <section class="section" role="main" aria-labelledby="title">
+        <h1 id="title">Age Calculator & Rashi Finder</h1>
+        <p class="lead">Calculate your exact age and find your accurate zodiac sign (Rashi) based on Indian astrology.
+        </p>
+
+        <div class="controls">
+            <div class="control">
+                <label>Birth Date</label>
+                <input type="date" id="birthDate" class="pages-input" max="" />
+                <label>Birth Time (24-hour format)</label>
+                <input type="time" id="birthTime" class="pages-input" value="02:15" />
+            </div>
+
+            <div class="control">
+                <label>Birth Place (City, Country)</label>
+                <input type="text" id="birthPlace" class="pages-input" placeholder="e.g., Mumbai, India"
+                    value="Mumbai, India" />
+                <label>Age at Date</label>
+                <input type="date" id="ageAtDate" class="pages-input" />
+                <div class="small">
+                    <input type="checkbox" id="useToday" checked />
+                    <label for="useToday">Use today's date</label>
+                </div>
+            </div>
+
+            <div class="control">
+                <label>Calculate</label>
+                <div class="row">
+                    <button class="btn btn-primary" id="calculateBtn">Calculate Age & Rashi</button>
+                    <button class="btn" id="clearBtn">Clear</button>
+                </div>
+                <div class="small" style="margin-top: 10px;">
+                    <input type="checkbox" id="indianZodiac" checked />
+                    <label for="indianZodiac">Use Indian (Vedic/Sidereal) Zodiac</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="log" id="log">
+            <div id="logMessage">Enter your birth details to calculate age and rashi. For Indian zodiac, birth time and
+                place are important.</div>
+            <div id="ageDetails" class="small" style="display: none;"></div>
+        </div>
+
+        <div id="results" style="display: none;">
+            <div class="controls">
+                <div class="control">
+                    <h3>Age Results</h3>
+                    <div class="card">
+                        <div id="ageResults" class="small"></div>
+                    </div>
+                </div>
+
+                <div class="control">
+                    <h3>Zodiac / Rashi Details</h3>
+                    <div class="card">
+                        <div id="zodiacDetails" class="small"></div>
+                    </div>
+                </div>
+
+                <div class="control">
+                    <h3>Next Birthday</h3>
+                    <div class="card">
+                        <div id="nextBirthday" class="small"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls" style="margin-top: 20px;">
+                <div class="control">
+                    <h3>Detailed Age Breakdown</h3>
+                    <div class="card">
+                        <div id="detailedResults" class="small"></div>
+                    </div>
+                </div>
+
+                <div class="control">
+                    <h3>Birth Details</h3>
+                    <div class="card">
+                        <div id="birthInfo" class="small"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <section class="seo-content">
+            <h2>About Age Calculator & Rashi Finder</h2>
+            <p>
+                This tool calculates your exact age and provides accurate zodiac sign (Rashi) based on Indian Vedic
+                astrology.
+                Unlike Western astrology which uses tropical zodiac, Indian astrology uses sidereal zodiac which
+                accounts for
+                the precession of equinoxes, giving more accurate results for Indian users.
+            </p>
+
+            <h2>Key Differences: Western vs Indian Zodiac</h2>
+            <div class="controls">
+                <div class="control">
+                    <h4>Western Zodiac (Tropical)</h4>
+                    <ul>
+                        <li>Based on seasons</li>
+                        <li>Fixed to March equinox</li>
+                        <li>Doesn't account for Earth's precession</li>
+                        <li>Dates are fixed each year</li>
+                    </ul>
+                </div>
+
+                <div class="control">
+                    <h4>Indian Zodiac (Sidereal)</h4>
+                    <ul>
+                        <li>Based on fixed stars</li>
+                        <li>Accounts for Earth's precession</li>
+                        <li>More accurate for astrology</li>
+                        <li>Uses actual star positions</li>
+                    </ul>
+                </div>
+
+                <div class="control">
+                    <h4>Example Difference</h4>
+                    <ul>
+                        <li>Sept 2, 1978, 02:15 AM, Mumbai</li>
+                        <li>Western: Virgo (Kanya)</li>
+                        <li>Indian: Leo (Sinh)</li>
+                        <li>Difference: ~23-24 days shift</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Indian Rashis (Zodiac Signs) with Dates</h2>
+            <div class="card">
+                <div class="controls">
+                    <div class="control">
+                        <h4>Mesha (Aries) ♈</h4>
+                        <ul>
+                            <li>April 14 - May 14</li>
+                            <li>Element: Fire</li>
+                            <li>Ruling Planet: Mars</li>
+                        </ul>
+                    </div>
+                    <div class="control">
+                        <h4>Vrishabha (Taurus) ♉</h4>
+                        <ul>
+                            <li>May 15 - June 14</li>
+                            <li>Element: Earth</li>
+                            <li>Ruling Planet: Venus</li>
+                        </ul>
+                    </div>
+                    <div class="control">
+                        <h4>Mithuna (Gemini) ♊</h4>
+                        <ul>
+                            <li>June 15 - July 14</li>
+                            <li>Element: Air</li>
+                            <li>Ruling Planet: Mercury</li>
+                        </ul>
+                    </div>
+                    <div class="control">
+                        <h4>Karka (Cancer) ♋</h4>
+                        <ul>
+                            <li>July 15 - August 14</li>
+                            <li>Element: Water</li>
+                            <li>Ruling Planet: Moon</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="controls">
+                    <div class="control">
+                        <h4>Simha (Leo) ♌</h4>
+                        <ul>
+                            <li>August 15 - September 14</li>
+                            <li>Element: Fire</li>
+                            <li>Ruling Planet: Sun</li>
+                        </ul>
+                    </div>
+                    <div class="control">
+                        <h4>Kanya (Virgo) ♍</h4>
+                        <ul>
+                            <li>September 15 - October 14</li>
+                            <li>Element: Earth</li>
+                            <li>Ruling Planet: Mercury</li>
+                        </ul>
+                    </div>
+                    <div class="control">
+                        <h4>Tula (Libra) ♎</h4>
+                        <ul>
+                            <li>October 15 - November 14</li>
+                            <li>Element: Air</li>
+                            <li>Ruling Planet: Venus</li>
+                        </ul>
+                    </div>
+                    <div class="control">
+                        <h4>Vrishchika (Scorpio) ♏</h4>
+                        <ul>
+                            <li>November 15 - December 14</li>
+                            <li>Element: Water</li>
+                            <li>Ruling Planet: Mars</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="controls">
+                    <div class="control">
+                        <h4>Dhanu (Sagittarius) ♐</h4>
+                        <ul>
+                            <li>December 15 - January 13</li>
+                            <li>Element: Fire</li>
+                            <li>Ruling Planet: Jupiter</li>
+                        </ul>
+                    </div>
+                    <div class="control">
+                        <h4>Makara (Capricorn) ♑</h4>
+                        <ul>
+                            <li>January 14 - February 12</li>
+                            <li>Element: Earth</li>
+                            <li>Ruling Planet: Saturn</li>
+                        </ul>
+                    </div>
+                    <div class="control">
+                        <h4>Kumbha (Aquarius) ♒</h4>
+                        <ul>
+                            <li>February 13 - March 13</li>
+                            <li>Element: Air</li>
+                            <li>Ruling Planet: Saturn</li>
+                        </ul>
+                    </div>
+                    <div class="control">
+                        <h4>Meena (Pisces) ♓</h4>
+                        <ul>
+                            <li>March 14 - April 13</li>
+                            <li>Element: Water</li>
+                            <li>Ruling Planet: Jupiter</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2>How to Use</h2>
+            <ol>
+                <li>Enter your birth date, time (24-hour format), and place</li>
+                <li>Select "Use Indian (Vedic/Sidereal) Zodiac" for accurate rashi</li>
+                <li>Click "Calculate Age & Rashi" to see results</li>
+                <li>View your accurate rashi based on Indian astrology</li>
+                <li>Compare with Western zodiac if interested</li>
+            </ol>
+
+            <h2>Why Birth Time & Place Matter</h2>
+            <p>
+                In Indian astrology, the exact birth time and place are crucial for:
+            </p>
+            <ul>
+                <li><strong>Accurate Rashi:</strong> Moon sign calculation needs exact time</li>
+                <li><strong>Nakshatra:</strong> Birth star depends on time and location</li>
+                <li><strong>Lagna:</strong> Ascendant sign changes every 2 hours</li>
+                <li><strong>Planetary Positions:</strong> Exact positions at birth moment</li>
+            </ul>
+
+            <h2>Privacy and Security</h2>
+            <p>
+                All calculations are done locally in your browser. No data is sent to any server,
+                ensuring complete privacy and security of your personal information.
+            </p>
+
+            <h2>FAQ</h2>
+            <p>
+                <strong>Why is my Indian rashi different from Western zodiac?</strong>
+                Western zodiac is based on seasons (tropical) while Indian zodiac is based on fixed stars (sidereal).
+                There's about 23-24 days difference due to Earth's precession.
+            </p>
+            <p>
+                <strong>Which one is more accurate for astrology?</strong>
+                For Indian/Vedic astrology, the sidereal (Indian) zodiac is more accurate as it uses actual star
+                positions.
+            </p>
+            <p>
+                <strong>What if I don't know my exact birth time?</strong>
+                Use approximate time. For rashi calculation, time within 1-2 hours is usually sufficient unless born
+                near sign change.
+            </p>
+            <p>
+                <strong>Can I get my nakshatra (birth star) from this tool?</strong>
+                This tool focuses on rashi. For nakshatra and detailed horoscope, consult an astrologer with exact birth
+                details.
+            </p>
+        </section><br>
+        <a href="/windows-tools/utility/index.html" class="nav-button home">🏠 Back to Utility Home</a>
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+
+    <script>
+        // Elements
+        const birthDate = document.getElementById('birthDate');
+        const birthTime = document.getElementById('birthTime');
+        const birthPlace = document.getElementById('birthPlace');
+        const ageAtDate = document.getElementById('ageAtDate');
+        const useToday = document.getElementById('useToday');
+        const indianZodiac = document.getElementById('indianZodiac');
+        const calculateBtn = document.getElementById('calculateBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const logMessage = document.getElementById('logMessage');
+        const ageDetails = document.getElementById('ageDetails');
+        const results = document.getElementById('results');
+        const ageResults = document.getElementById('ageResults');
+        const zodiacDetails = document.getElementById('zodiacDetails');
+        const detailedResults = document.getElementById('detailedResults');
+        const nextBirthday = document.getElementById('nextBirthday');
+        const birthInfo = document.getElementById('birthInfo');
+
+        // Set max date to today for birth date
+        const today = new Date();
+        const todayStr = today.toISOString().split('T')[0];
+        birthDate.max = todayStr;
+        ageAtDate.value = todayStr;
+
+        // Western Zodiac signs
+        const westernZodiacSigns = [
+            { name: "Aries", element: "Fire", symbol: "♈", start: [3, 21], end: [4, 19] },
+            { name: "Taurus", element: "Earth", symbol: "♉", start: [4, 20], end: [5, 20] },
+            { name: "Gemini", element: "Air", symbol: "♊", start: [5, 21], end: [6, 20] },
+            { name: "Cancer", element: "Water", symbol: "♋", start: [6, 21], end: [7, 22] },
+            { name: "Leo", element: "Fire", symbol: "♌", start: [7, 23], end: [8, 22] },
+            { name: "Virgo", element: "Earth", symbol: "♍", start: [8, 23], end: [9, 22] },
+            { name: "Libra", element: "Air", symbol: "♎", start: [9, 23], end: [10, 22] },
+            { name: "Scorpio", element: "Water", symbol: "♏", start: [10, 23], end: [11, 21] },
+            { name: "Sagittarius", element: "Fire", symbol: "♐", start: [11, 22], end: [12, 21] },
+            { name: "Capricorn", element: "Earth", symbol: "♑", start: [12, 22], end: [1, 19] },
+            { name: "Aquarius", element: "Air", symbol: "♒", start: [1, 20], end: [2, 18] },
+            { name: "Pisces", element: "Water", symbol: "♓", start: [2, 19], end: [3, 20] }
+        ];
+
+        // Indian Zodiac signs (Sidereal) - Approximate dates
+        const indianZodiacSigns = [
+            { name: "Mesha (Aries)", element: "Fire", symbol: "♈", start: [4, 14], end: [5, 14], ruler: "Mars" },
+            { name: "Vrishabha (Taurus)", element: "Earth", symbol: "♉", start: [5, 15], end: [6, 14], ruler: "Venus" },
+            { name: "Mithuna (Gemini)", element: "Air", symbol: "♊", start: [6, 15], end: [7, 14], ruler: "Mercury" },
+            { name: "Karka (Cancer)", element: "Water", symbol: "♋", start: [7, 15], end: [8, 14], ruler: "Moon" },
+            { name: "Simha (Leo)", element: "Fire", symbol: "♌", start: [8, 15], end: [9, 14], ruler: "Sun" },
+            { name: "Kanya (Virgo)", element: "Earth", symbol: "♍", start: [9, 15], end: [10, 14], ruler: "Mercury" },
+            { name: "Tula (Libra)", element: "Air", symbol: "♎", start: [10, 15], end: [11, 14], ruler: "Venus" },
+            { name: "Vrishchika (Scorpio)", element: "Water", symbol: "♏", start: [11, 15], end: [12, 14], ruler: "Mars" },
+            { name: "Dhanu (Sagittarius)", element: "Fire", symbol: "♐", start: [12, 15], end: [1, 13], ruler: "Jupiter" },
+            { name: "Makara (Capricorn)", element: "Earth", symbol: "♑", start: [1, 14], end: [2, 12], ruler: "Saturn" },
+            { name: "Kumbha (Aquarius)", element: "Air", symbol: "♒", start: [2, 13], end: [3, 13], ruler: "Saturn" },
+            { name: "Meena (Pisces)", element: "Water", symbol: "♓", start: [3, 14], end: [4, 13], ruler: "Jupiter" }
+        ];
+
+        // Birthstones
+        const birthstones = {
+            1: { name: "Garnet", color: "Deep Red" },
+            2: { name: "Amethyst", color: "Purple" },
+            3: { name: "Aquamarine", color: "Blue" },
+            4: { name: "Diamond", color: "Clear" },
+            5: { name: "Emerald", color: "Green" },
+            6: { name: "Pearl", color: "White" },
+            7: { name: "Ruby", color: "Red" },
+            8: { name: "Peridot", color: "Green" },
+            9: { name: "Sapphire", color: "Blue" },
+            10: { name: "Opal", color: "Multi-color" },
+            11: { name: "Topaz", color: "Golden" },
+            12: { name: "Turquoise", color: "Blue-green" }
+        };
+
+        // Days of week and months
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const monthsOfYear = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        // Get Western zodiac sign
+        function getWesternZodiacSign(month, day) {
+            for (const sign of westernZodiacSigns) {
+                const [startMonth, startDay] = sign.start;
+                const [endMonth, endDay] = sign.end;
+
+                const startMonthIndex = startMonth - 1;
+                const endMonthIndex = endMonth - 1;
+
+                // Handle December-January transition
+                if (startMonth === 12 && endMonth === 1) {
+                    if ((month === 11 && day >= startDay) || (month === 0 && day <= endDay)) {
+                        return sign;
+                    }
+                }
+                // Normal case
+                else if ((month === startMonthIndex && day >= startDay) ||
+                    (month === endMonthIndex && day <= endDay)) {
+                    return sign;
+                }
+            }
+            return westernZodiacSigns[0];
+        }
+
+        // Get Indian zodiac sign (Sidereal)
+        function getIndianZodiacSign(month, day) {
+            // For accurate Indian zodiac, we need to account for ayanamsa (precession)
+            // This is a simplified version - in reality, it varies by year
+            for (const sign of indianZodiacSigns) {
+                const [startMonth, startDay] = sign.start;
+                const [endMonth, endDay] = sign.end;
+
+                const startMonthIndex = startMonth - 1;
+                const endMonthIndex = endMonth - 1;
+
+                // Handle December-January transition
+                if (startMonth === 12 && endMonth === 1) {
+                    if ((month === 11 && day >= startDay) || (month === 0 && day <= endDay)) {
+                        return sign;
+                    }
+                }
+                // Normal case
+                else if ((month === startMonthIndex && day >= startDay) ||
+                    (month === endMonthIndex && day <= endDay)) {
+                    return sign;
+                }
+            }
+            return indianZodiacSigns[0];
+        }
+
+        // Calculate age
+        function calculateAge() {
+            const birthDateValue = birthDate.value;
+            const birthTimeValue = birthTime.value;
+            let ageAtDateValue = ageAtDate.value;
+
+            if (!birthDateValue) {
+                logMessage.textContent = "Please enter your birth date.";
+                return;
+            }
+
+            if (useToday.checked) {
+                ageAtDateValue = todayStr;
+                ageAtDate.value = todayStr;
+            }
+
+            if (!ageAtDateValue) {
+                logMessage.textContent = "Please enter the date to calculate age at.";
+                return;
+            }
+
+            // Create birth datetime
+            const birthDateTimeStr = `${birthDateValue}T${birthTimeValue}`;
+            const birth = new Date(birthDateTimeStr);
+            const target = new Date(ageAtDateValue + "T12:00");
+
+            if (birth > target) {
+                logMessage.textContent = "Birth date cannot be in the future of the target date.";
+                return;
+            }
+
+            // Calculate years, months, days
+            let years = target.getFullYear() - birth.getFullYear();
+            let months = target.getMonth() - birth.getMonth();
+            let days = target.getDate() - birth.getDate();
+
+            if (days < 0) {
+                months--;
+                const prevMonth = new Date(target.getFullYear(), target.getMonth(), 0);
+                days += prevMonth.getDate();
+            }
+
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            // Calculate total days
+            const diffTime = Math.abs(target - birth);
+            const totalDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            const totalWeeks = Math.floor(totalDays / 7);
+            const remainingDays = totalDays % 7;
+
+            // Calculate total hours, minutes, seconds
+            const totalHours = totalDays * 24;
+            const totalMinutes = totalHours * 60;
+            const totalSeconds = totalMinutes * 60;
+
+            // Calculate next birthday
+            const now = useToday.checked ? new Date() : new Date(ageAtDateValue);
+            const nextBirthdayDate = new Date(now.getFullYear(), birth.getMonth(), birth.getDate());
+            if (nextBirthdayDate < now) {
+                nextBirthdayDate.setFullYear(nextBirthdayDate.getFullYear() + 1);
+            }
+            const daysUntilNextBirthday = Math.ceil((nextBirthdayDate - now) / (1000 * 60 * 60 * 24));
+
+            // Get birth details
+            const birthDayOfWeek = daysOfWeek[birth.getDay()];
+            const birthMonthName = monthsOfYear[birth.getMonth()];
+            const birthYear = birth.getFullYear();
+
+            // Get zodiac signs
+            const westernSign = getWesternZodiacSign(birth.getMonth(), birth.getDate());
+            const indianSign = getIndianZodiacSign(birth.getMonth(), birth.getDate());
+
+            const birthstone = birthstones[birth.getMonth() + 1];
+
+            // Update results
+            ageResults.innerHTML = `
+          <div style="text-align: center; font-size: 24px; font-weight: bold; color: var(--brand); margin-bottom: 15px;">
+            ${years} years, ${months} months, ${days} days
+          </div>
+          <div style="text-align: center; font-size: 18px; color: var(--text); margin-bottom: 10px;">
+            Born ${totalDays.toLocaleString()} days ago
+          </div>
+          <div style="text-align: center; color: var(--muted);">
+            ${totalWeeks} weeks and ${remainingDays} days
+          </div>
+        `;
+
+            // Show zodiac details based on selection
+            if (indianZodiac.checked) {
+                zodiacDetails.innerHTML = `
+            <div style="text-align: center; margin-bottom: 15px;">
+              <div style="font-size: 32px;">${indianSign.symbol}</div>
+              <div style="font-size: 20px; font-weight: bold; color: var(--brand);">${indianSign.name}</div>
+              <div style="color: var(--muted);">${indianSign.element} Element | Ruler: ${indianSign.ruler}</div>
+            </div>
+            <div style="text-align: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--card-border);">
+              <div style="font-size: 14px; color: var(--muted);">Western Equivalent:</div>
+              <div style="font-size: 16px;">${westernSign.name} ${westernSign.symbol}</div>
+            </div>
+            <div style="color: var(--muted); font-size: 12px; margin-top: 10px;">
+              ✓ Using Indian (Sidereal) Zodiac System
+            </div>
+          `;
+            } else {
+                zodiacDetails.innerHTML = `
+            <div style="text-align: center; margin-bottom: 15px;">
+              <div style="font-size: 32px;">${westernSign.symbol}</div>
+              <div style="font-size: 20px; font-weight: bold; color: var(--brand);">${westernSign.name}</div>
+              <div style="color: var(--muted);">${westernSign.element} Element</div>
+            </div>
+            <div style="text-align: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--card-border);">
+              <div style="font-size: 14px; color: var(--muted);">Indian Equivalent:</div>
+              <div style="font-size: 16px;">${indianSign.name} ${indianSign.symbol}</div>
+            </div>
+            <div style="color: var(--muted); font-size: 12px; margin-top: 10px;">
+              ℹ️ Using Western (Tropical) Zodiac System
+            </div>
+          `;
+            }
+
+            detailedResults.innerHTML = `
+          <div class="row" style="margin-bottom: 10px;">
+            <div class="control">
+              <strong>Total Days:</strong><br>${totalDays.toLocaleString()}
+            </div>
+            <div class="control">
+              <strong>Total Weeks:</strong><br>${totalWeeks.toLocaleString()}
+            </div>
+            <div class="control">
+              <strong>Age in Months:</strong><br>${(years * 12 + months).toLocaleString()}
+            </div>
+          </div>
+          <div class="row">
+            <div class="control">
+              <strong>Total Hours:</strong><br>${totalHours.toLocaleString()}
+            </div>
+            <div class="control">
+              <strong>Total Minutes:</strong><br>${totalMinutes.toLocaleString()}
+            </div>
+            <div class="control">
+              <strong>Total Seconds:</strong><br>${totalSeconds.toLocaleString()}
+            </div>
+          </div>
+        `;
+
+            nextBirthday.innerHTML = `
+          <div style="margin-bottom: 10px;">
+            <strong>Next Birthday:</strong><br>${nextBirthdayDate.toDateString()}
+          </div>
+          <div style="margin-bottom: 10px;">
+            <strong>Days until next birthday:</strong><br>${daysUntilNextBirthday}
+          </div>
+          <div style="margin-bottom: 10px;">
+            <strong>Will turn:</strong><br>${years + 1} years old
+          </div>
+        `;
+
+            // Birth information
+            birthInfo.innerHTML = `
+          <div style="margin-bottom: 10px;">
+            <strong>Birth Date:</strong><br>
+            ${birthDayOfWeek}, ${birthMonthName} ${birth.getDate()}, ${birthYear}
+          </div>
+          <div style="margin-bottom: 10px;">
+            <strong>Birth Time:</strong><br>
+            ${birthTime.value} (24-hour format)
+          </div>
+          <div style="margin-bottom: 10px;">
+            <strong>Birth Place:</strong><br>
+            ${birthPlace.value || "Not specified"}
+          </div>
+          <div style="margin-bottom: 10px;">
+            <strong>Birthstone:</strong><br>
+            ${birthstone.name} (${birthstone.color})
+          </div>
+        `;
+
+            // Update log
+            const zodiacSystem = indianZodiac.checked ? "Indian" : "Western";
+            logMessage.textContent = `Age calculated successfully! Using ${zodiacSystem} zodiac system.`;
+            ageDetails.innerHTML = `
+          Born on ${birth.toDateString()}, age calculated as of ${target.toDateString()}<br>
+          You are ${years} years, ${months} months, and ${days} days old.
+        `;
+            ageDetails.style.display = 'block';
+            results.style.display = 'block';
+        }
+
+        // Clear function
+        function clearAll() {
+            birthDate.value = '';
+            birthTime.value = '02:15';
+            birthPlace.value = 'Mumbai, India';
+            ageAtDate.value = todayStr;
+            useToday.checked = true;
+            indianZodiac.checked = true;
+            logMessage.textContent = "Enter your birth details to calculate age and rashi. For Indian zodiac, birth time and place are important.";
+            ageDetails.style.display = 'none';
+            results.style.display = 'none';
+        }
+
+        // Event listeners
+        calculateBtn.addEventListener('click', calculateAge);
+
+        clearBtn.addEventListener('click', clearAll);
+
+        useToday.addEventListener('change', function () {
+            if (this.checked) {
+                ageAtDate.value = todayStr;
+                ageAtDate.disabled = true;
+            } else {
+                ageAtDate.disabled = false;
+            }
+        });
+
+        // Initialize
+        ageAtDate.disabled = useToday.checked;
+
+        // Auto-calculate on change
+        birthDate.addEventListener('change', calculateAge);
+        birthTime.addEventListener('change', calculateAge);
+        birthPlace.addEventListener('input', calculateAge);
+        ageAtDate.addEventListener('change', calculateAge);
+        indianZodiac.addEventListener('change', calculateAge);
+
+        // Set default to user's example
+        birthDate.value = "1978-09-02";
+        birthTime.value = "02:15";
+        birthPlace.value = "Mumbai, India";
+
+        // Calculate on load
+        setTimeout(() => {
+            calculateAge();
+        }, 500);
+    </script>
+    </section>
+</body>
+
+</html>
