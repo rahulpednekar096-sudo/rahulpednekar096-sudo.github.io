@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4T90FQG02K');
+    </script>
+    <!-- AdSense account verification -->
+    <meta name="google-adsense-account" content="ca-pub-7933209486512555">
+
+    <!-- AdSense Auto Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933209486512555"
+        crossorigin="anonymous"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="RDroid Apps" />
+    <title>Hardware & Advanced Tuning - Part 3 | Slow PC Fix Handbook</title>
+    <meta name="description"
+        content="Learn hardware upgrades and advanced system tuning to boost PC performance. SSD upgrades, RAM expansion, GPU optimization, BIOS tweaks, and power management." />
+    <meta name="keywords"
+        content="Hardware Upgrade, SSD Upgrade, RAM Upgrade, GPU Optimization, BIOS Tweaks, Power Management, PC Performance, System Tuning" />
+    <link rel="canonical" href="https://rdroidapps.com/blog/handbook/hardware-advanced-tuning.html" />
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/blogs-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <h1 class="rdroid-blogs-title">
+        <span class="rdroid">Hand</span>
+        <span class="blogs">Book</span>
+    </h1>
+    <!-- MAIN CONTENT -->
+
+    <div class="tools-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar" style="position: sticky; top: 80px;">
+            <h3>Guide Chapters</h3>
+            <ul>
+                <li><a href="/blog/handbook/the-slow-pc-fix-handbook.html#part1">Part 1: First Aid</a></li>
+                <li><a href="/blog/handbook/software-deep-clean.html">Part 2: Software Deep Clean</a></li>
+                <li><a href="/blog/handbook/hardware-advanced-tuning.html">Part 3: Hardware & Advanced Tuning</a></li>
+                <li><a href="/blog/handbook/maintenance-routine.html">Part 4: Maintenance Routine</a></li>
+                <li><a href="/blog/handbook/advanced-optimization.html">Part 5: Advanced Optimization</a></li>
+            </ul>
+
+            <h3 style="margin-top: 25px;">Hardware Sections</h3>
+            <ul>
+                <li><a href="#section1">Diagnosing Bottlenecks</a></li>
+                <li><a href="#section2">Storage Revolution</a></li>
+                <li><a href="#section3">RAM Upgrade Guide</a></li>
+                <li><a href="#section4">Graphics & Display</a></li>
+                <li><a href="#section5">Advanced System Tuning</a></li>
+            </ul>
+        </div>
+
+        <!-- Right Content -->
+        <div class="tools-list">
+            <section class="card">
+                <h1 id="part3">Part 3: Hardware & Advanced Tuning – The Ultimate Guide to Powering Up Your
+                    PC's Engine</h1>
+
+                <h2>Introduction: When Software Cleanup Isn't Enough</h2>
+                <p class="lead">
+                    You've performed the first aid. You've done the deep digital decluttering. Yet, your PC still
+                    struggles.
+                    This is the critical juncture where we move from optimizing your existing setup to enhancing its
+                    fundamental capabilities. The bottleneck is no longer in the software layers but in the physical
+                    hardware or the deep system settings that govern how that hardware is used.
+                </p>
+                <p>
+                    This guide is for those ready to look under the hood. We will explore impactful upgrades,
+                    interpret
+                    performance data to find your true bottleneck, and adjust advanced system settings. These steps
+                    require
+                    more technical confidence and, for upgrades, a modest budget, but they deliver the most dramatic
+                    and
+                    lasting performance gains. Think of this as transforming your reliable sedan into a tuned
+                    performance machine.
+                </p>
+
+                <h2 id="section1">Section 1: Diagnosing Your True Bottleneck – The Art of Measurement</h2>
+                <h3 id="diagnose">1. The Philosophy: "Upgrade Smart, Not Hard"</h3>
+                <p>
+                    Before spending money, you must identify the slowest component in your specific workflow—the
+                    "weakest link"
+                    in the chain. Upgrading anything else will yield minimal results. This is your performance
+                    bottleneck.
+                </p>
+
+                <h3>2. Your Primary Diagnostic Tool: Task Manager & Performance Monitor</h3>
+                <ul>
+                    <li><strong>Task Manager (Ctrl+Shift+Esc):</strong> Go to the Performance tab. This is your
+                        real-time dashboard.</li>
+                    <li><strong>Resource Monitor:</strong> A more advanced view. Type <code>resmon</code> in the
+                        Start Menu.</li>
+                    <li><strong>Performance Monitor (perfmon):</strong> For logging and deep historical analysis.
+                    </li>
+                </ul>
+
+                <h3>3. How to Stress Test and Observe:</h3>
+                <ul>
+                    <li>Open Task Manager → Performance tab. Arrange windows so you can see it while working.</li>
+                    <li>Perform the task that makes your PC feel slow (e.g., open a large file, boot a game, compile
+                        code).</li>
+                    <li>Observe which resource hits 95-100% and stays there while others have capacity.</li>
+                </ul>
+                <ul>
+                    <li><strong>CPU:</strong> If the CPU is at 100% while disk and RAM are lower, the CPU is the
+                        bottleneck.</li>
+                    <li><strong>Memory (RAM):</strong> If RAM is at 95%+ and "Available" is near zero, while disk is
+                        active, you're bottlenecked by RAM and using slow "page file" swapping.</li>
+                    <li><strong>Disk (C:):</strong> If disk usage is at 100% for prolonged periods during simple
+                        file tasks or game loading, your storage is the bottleneck.</li>
+                    <li><strong>GPU (if shown):</strong> If gaming or GPU-accelerated apps are slow and the GPU hits
+                        100%, your graphics card is the bottleneck.</li>
+                </ul>
+
+                <h3>4. Key Metrics to Understand:</h3>
+                <ul>
+                    <li><strong>CPU:</strong> Utilization % and Speed (GHz). Is it running at its base or boost
+                        speed? If speed is low while utilization is high, check for thermal throttling (Part 1).
+                    </li>
+                    <li><strong>Memory:</strong> In Use (GB), Available (GB), and Speed (MHz) in the bottom-left.
+                        Also watch "Committed" – if it's much higher than your physical RAM, you need more.</li>
+                    <li><strong>Disk:</strong> Active time % and Response time (ms). An HDD at 100% active time with
+                        response times over 50ms is screaming in pain. An SSD should have sub-1ms response times.
+                    </li>
+                </ul>
+
+                <h3>5. Using Windows Performance Monitor to Log Bottlenecks:</h3>
+                <ul>
+                    <li>Run <code>perfmon /report</code> for a 60-second system diagnostic report.</li>
+                    <li>For custom logging: Open perfmon, go to Data Collector Sets > User Defined. Create a new set
+                        that logs: Processor(_Total)\% Processor Time, Memory\% Committed Bytes In Use, and
+                        PhysicalDisk(_Total)\% Disk Time.</li>
+                    <li>Run the log while replicating the slow behavior, then stop it and view the report graph.
+                    </li>
+                </ul>
+
+                <h3>6. Third-Party Diagnostic Suites:</h3>
+                <ul>
+                    <li><strong>HWiNFO64:</strong> The ultimate sensor and system information tool. Shows every
+                        component detail, temperatures, power draw, and clocks in real-time.</li>
+                    <li><strong>UserBenchmark:</strong> Runs a quick, standardized test on CPU, GPU, RAM, and disk,
+                        then compares your components' performance to average results from identical hardware.
+                        Excellent for identifying an underperforming specific part.</li>
+                </ul>
+
+                <hr class="section-divider">
+
+                <h2 id="section2">Section 2: The Storage Revolution – HDD vs. SSD vs. NVMe</h2>
+                <h3 id="ssd">7. Understanding the Storage Hierarchy (Fastest to Slowest)</h3>
+                <ul>
+                    <li><strong>CPU Cache (L1/L2/L3):</strong> On the chip, nanoseconds.</li>
+                    <li><strong>System RAM (DDR4/DDR5):</strong> Main working memory, nanoseconds to microseconds.
+                    </li>
+                    <li><strong>NVMe SSD (M.2 PCIe 4.0/5.0):</strong> Direct CPU connection, 3,000-12,000 MB/s.</li>
+                    <li><strong>SATA SSD (2.5" or M.2 SATA):</strong> SATA bus limited, ~550 MB/s.</li>
+                    <li><strong>Hard Disk Drive (HDD, 2.5" or 3.5"):</strong> Spinning platters, 80-160 MB/s.</li>
+                </ul>
+
+                <h3>8. Why an SSD is the #1 Upgrade for Any PC with an HDD</h3>
+                <p>
+                    An HDD is mechanical. A read/write head must move to a location on a spinning magnetic platter.
+                    This results in high access latency (ms). An SSD has no moving parts; it uses flash memory,
+                    offering
+                    near-instant access (microsecond latency). This affects everything: boot time, application
+                    launch,
+                    file saves, level loading in games, and overall system responsiveness.
+                </p>
+
+                <h3>9. How to Check Your Current Drive:</h3>
+                <ul>
+                    <li>Open Task Manager → Performance tab → Click Disk.</li>
+                    <li>The model name at the top often reveals "SSD" or "HDD."</li>
+                    <li>Look at the read/write speeds in the graph. An HDD will rarely exceed 200 MB/s. A SATA SSD
+                        will cap near 550 MB/s.</li>
+                </ul>
+
+                <h3>10. Choosing the Right SSD Upgrade:</h3>
+                <p><strong>Form Factor:</strong></p>
+                <ul>
+                    <li><strong>2.5" SATA:</strong> Fits in the same slot as a laptop/desktop HDD. Universal.</li>
+                    <li><strong>M.2 SATA:</strong> Key M+B, looks like a stick of gum. Same speed as 2.5" SATA.</li>
+                    <li><strong>M.2 NVMe (PCIe):</strong> Key M, same gum-stick look. Requires an M.2 slot
+                        supporting PCIe (check motherboard manual). 5-20x faster than SATA.</li>
+                </ul>
+                <p><strong>Interface:</strong></p>
+                <ul>
+                    <li><strong>SATA III (6 Gb/s):</strong> The standard for 2.5" and M.2 SATA SSDs. Max ~550 MB/s.
+                    </li>
+                    <li><strong>PCIe 3.0 x4:</strong> Common NVMe speed. Max ~3,500 MB/s.</li>
+                    <li><strong>PCIe 4.0 x4:</strong> Current high-end. Max ~7,000 MB/s. Requires compatible
+                        CPU/motherboard.</li>
+                    <li><strong>PCIe 5.0 x4:</strong> Cutting-edge. Max ~12,000+ MB/s.</li>
+                </ul>
+
+                <h3>11. The Upgrade Process: Cloning vs. Fresh Install</h3>
+                <ul>
+                    <li><strong>Cloning (Recommended for simplicity):</strong> Use software like Macrium Reflect
+                        Free or Clonezilla to copy your entire HDD (including Windows, apps, files) to the new SSD.
+                        Then, swap the drives. Your system is identical but now lightning fast.</li>
+                    <li><strong>Prerequisite:</strong> The used space on your HDD must be less than the capacity of
+                        the new SSD.</li>
+                    <li><strong>Process:</strong> Connect new SSD (via USB adapter or internal slot), run cloning
+                        software, select source (HDD) and target (SSD), execute clone, shutdown, swap drives, boot.
+                    </li>
+                    <li><strong>Fresh Windows Install:</strong> More work but guarantees a clean, bloatware-free
+                        system. Create a Windows USB installer, replace the HDD with the SSD, boot from USB, and
+                        install Windows fresh. You must then reinstall all applications and restore files from
+                        backup.</li>
+                </ul>
+
+                <h3>12. SSD Optimization (Post-Installation):</h3>
+                <ul>
+                    <li><strong>Ensure TRIM is enabled:</strong> Open Admin Command Prompt, type
+                        <code>fsutil behavior query DisableDeleteNotify</code>. Result should be 0 (enabled).
+                        Windows handles this automatically for modern SSDs.
+                    </li>
+                    <li><strong>Do NOT defragment an SSD!</strong> It causes unnecessary write cycles. Windows 10/11
+                        should automatically disable defrag (now called "Optimize") for SSDs and run a TRIM command
+                        instead.</li>
+                    <li><strong>Leave Over-Provisioning:</strong> Don't fill an SSD to 100% capacity. Aim to keep at
+                        least 10-15% free for wear-leveling algorithms and sustained performance.</li>
+                </ul>
+
+                <h3>13. The Role of the Page File (Virtual Memory) on an SSD</h3>
+                <p>
+                    The page file is a disk-based extension of your RAM. Placing it on an SSD instead of an HDD
+                    makes
+                    "running out of RAM" far less painful, as swapping is much faster. Leave it system-managed on
+                    your fastest (C:) SSD.
+                </p>
+
+                <hr class="section-divider">
+
+                <h2 id="section3">Section 3: Memory (RAM) – Giving Your System Breathing Room</h2>
+                <h3 id="ram">14. RAM's Role: The Active Workspace</h3>
+                <p>
+                    While the SSD is your quick-filing cabinet, RAM is your desk. Every open program, browser tab,
+                    and
+                    system service loads its active data here for the CPU to access instantly. Insufficient RAM
+                    forces
+                    Windows to use the page file on your disk (even an SSD), which is orders of magnitude slower.
+                </p>
+
+                <h3>15. How to Diagnose a RAM Bottleneck:</h3>
+                <ul>
+                    <li><strong>Task Manager → Performance → Memory:</strong>
+                        <ul>
+                            <li>Look at "In Use" vs. "Committed": "Committed" = In Use + reserved in page file. If
+                                Committed is much higher than your total physical RAM, you need more.</li>
+                            <li>Check "Available": Should be several GB. If it's consistently below 1 GB, you're
+                                memory-starved.</li>
+                            <li>Observe "Cached": High cached memory is good—it's Windows using spare RAM to speed
+                                up file access.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>16. Understanding RAM Specifications:</h3>
+                <ul>
+                    <li><strong>Capacity (GB):</strong> 8 GB is the absolute minimum for Windows 10/11. 16 GB is the
+                        sweet spot for most users. 32 GB is for heavy multitaskers, content creators, and high-end
+                        gaming.</li>
+                    <li><strong>Generation (DDR3, DDR4, DDR5):</strong> Must match your motherboard's supported
+                        type. They are physically and electrically incompatible.</li>
+                    <li><strong>Speed (MHz):</strong> e.g., DDR4-3200. Higher is better, but the gains are smaller
+                        than capacity increases. Must be supported by your CPU and motherboard.</li>
+                    <li><strong>Timings (CAS Latency):</strong> e.g., CL16. Lower is better (faster response).</li>
+                    <li><strong>Channels:</strong> Dual-channel (two matched sticks) provides significantly more
+                        bandwidth than a single stick. Always install RAM in pairs if your motherboard supports it.
+                    </li>
+                </ul>
+
+                <h3>17. How to Check Your Current RAM Specs:</h3>
+                <ul>
+                    <li>Use Task Manager → Performance → Memory. It shows Speed, Slots used, Form factor, and
+                        Hardware reserved.</li>
+                    <li>Use CPU-Z (free tool). Go to the "Memory" and "SPD" tabs for detailed specs, including
+                        manufacturer and timings.</li>
+                </ul>
+
+                <h3>18. The Upgrade Process:</h3>
+                <ul>
+                    <li><strong>Compatibility is KEY:</strong> Use your motherboard manufacturer's website to find
+                        the QVL (Qualified Vendor List) for compatible RAM kits.</li>
+                    <li><strong>Purchase a Matched Kit:</strong> Buy RAM in a kit of 2 or 4 sticks. This ensures
+                        they are tested to work together.</li>
+                    <li><strong>Installation:</strong>
+                        <ul>
+                            <li>Power down, unplug, ground yourself.</li>
+                            <li>Open the case, release the side clips on the RAM slots.</li>
+                            <li>Align the notch on the RAM stick with the slot key and press firmly until the clips
+                                snap closed.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Enabling XMP/DOCP (CRITICAL STEP):</strong> High-speed RAM will run at a default low
+                        speed (e.g., 2133 MHz) unless you enable the eXtreme Memory Profile in your motherboard's
+                        BIOS/UEFI. This is a one-click setting that applies the rated speed and timings.</li>
+                </ul>
+
+                <h3>19. Virtual Memory (Page File) Tuning:</h3>
+                <p>While system-managed is fine for most, if you have a small SSD and a large amount of RAM (32GB+),
+                    you can consider:</p>
+                <ul>
+                    <li>Setting a custom size to prevent it from growing too large. Initial = 1.5 x RAM, Maximum = 3
+                        x RAM is an old guideline.</li>
+                    <li>Moving it to a secondary HDD if you have a small primary SSD (but this degrades performance
+                        if paging is needed).</li>
+                    <li><strong>General advice for SSDs:</strong> Leave it system-managed on the C: drive.</li>
+                </ul>
+
+                <hr class="section-divider">
+
+                <h2 id="section4">Section 4: Graphics & Display – Beyond Basic Video</h2>
+                <h3 id="gpu">20. Integrated vs. Dedicated Graphics:</h3>
+                <ul>
+                    <li><strong>Integrated (iGPU):</strong> Part of the CPU (Intel UHD, Iris Xe; AMD Radeon
+                        Graphics). Shares system RAM. Fine for office work, web browsing, video playback.</li>
+                    <li><strong>Dedicated (dGPU):</strong> Separate card (NVIDIA GeForce, AMD Radeon, Intel Arc).
+                        Has its own faster RAM (VRAM) and processor (GPU). Essential for gaming, 3D rendering, video
+                        editing, and GPU-accelerated tasks.</li>
+                </ul>
+
+                <h3>21. Diagnosing a Graphics Bottleneck:</h3>
+                <ul>
+                    <li><strong>In-game:</strong> Enable performance overlays (like NVIDIA's GeForce Experience or
+                        AMD's Adrenalin software) to see GPU utilization %. If it's at 99% while CPU is lower, you
+                        are GPU-bound.</li>
+                    <li>Use Task Manager → Performance → GPU. Watch utilization, dedicated/shared memory usage, and
+                        temperature.</li>
+                </ul>
+
+                <h3>22. Upgrading Your Graphics Card (GPU):</h3>
+                <ul>
+                    <li><strong>Check Physical Constraints:</strong> Does your desktop case have enough length and
+                        clearance? Does your Power Supply Unit (PSU) have sufficient wattage and the correct power
+                        connectors (e.g., 6+2 pin PCIe)?</li>
+                    <li><strong>Check Motherboard Interface:</strong> A modern GPU uses a PCIe x16 slot. Even older
+                        PCIe 3.0 slots are fine for most current cards.</li>
+                    <li><strong>Driver Management (DDU):</strong> When changing GPU brands (NVIDIA to AMD or
+                        vice-versa), use Display Driver Uninstaller in Windows Safe Mode to completely remove old
+                        drivers before installing new ones. Prevents conflicts.</li>
+                </ul>
+
+                <h3>23. Driver Optimization for Performance:</h3>
+                <ul>
+                    <li>Always download drivers from the official NVIDIA/AMD/Intel website, not third-party sites or
+                        Windows Update (which can be outdated).</li>
+                    <li>Use the "Standard" or "Game Ready" driver type, not "DCH" unless specifically required.</li>
+                    <li><strong>In the GPU Control Panel (NVIDIA Control Panel/AMD Adrenalin), you can set global or
+                            per-application settings:</strong>
+                        <ul>
+                            <li><strong>Power Management Mode:</strong> Prefer "Prefer Maximum Performance" for
+                                desktops.</li>
+                            <li><strong>Texture Filtering - Quality:</strong> "High Performance" can give a small
+                                FPS boost with minimal visual loss.</li>
+                            <li><strong>Vertical Sync (V-Sync):</strong> Can cause input lag. Consider disabling
+                                in-game if you have a high-refresh-rate monitor or use adaptive sync
+                                (G-Sync/FreeSync).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>24. Advanced Display Settings in Windows:</h3>
+                <ul>
+                    <li><strong>Refresh Rate:</strong> Right-click desktop → Display Settings → Advanced Display
+                        Settings. Ensure your monitor is set to its highest refresh rate (e.g., 144Hz, not 60Hz) if
+                        supported.</li>
+                    <li><strong>Hardware-Accelerated GPU Scheduling (Windows 10/11):</strong> Settings → System →
+                        Display → Graphics Settings. Toggle this ON if available. It can improve performance and
+                        latency by allowing the GPU to manage its memory more efficiently.</li>
+                </ul>
+
+                <hr class="section-divider">
+
+                <h2 id="section5">Section 5: Advanced System Tuning & Power Management</h2>
+                <h3 id="bios">25. Power Plan Configuration:</h3>
+                <p>Windows power plans throttle CPU performance to save energy.</p>
+                <ul>
+                    <li>For Desktops: ALWAYS use the "High Performance" plan. It prevents CPU throttling.</li>
+                    <li>For Laptops: Use "High Performance" when plugged in; "Balanced" or "Power Saver" on battery.
+                    </li>
+                </ul>
+                <p><strong>Creating a Custom High-Performance Plan:</strong></p>
+                <ul>
+                    <li>Open Control Panel → Power Options.</li>
+                    <li>Select "High performance" → Click "Change plan settings" → "Change advanced power settings."
+                    </li>
+                    <li><strong>Key settings to adjust:</strong>
+                        <ul>
+                            <li>Processor power management → Minimum processor state: Set to 100% when plugged in.
+                            </li>
+                            <li>PCI Express → Link State Power Management: Set to Off.</li>
+                            <li>Hard disk → Turn off hard disk after: Set to a very high value or 0 (never).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>26. Visual Effects for Performance (The Beauty vs. Speed Trade-off):</h3>
+                <ul>
+                    <li>Search for "Adjust the appearance and performance of Windows".</li>
+                    <li>In the Visual Effects tab, you have three choices:
+                        <ul>
+                            <li><strong>Let Windows choose:</strong> Default.</li>
+                            <li><strong>Adjust for best appearance:</strong> Enables all effects (shadows,
+                                animations, transparency).</li>
+                            <li><strong>Adjust for best performance:</strong> Disables all visual effects. The
+                                interface will look like Windows 2000 but feel extremely responsive on old hardware.
+                            </li>
+                            <li><strong>Custom:</strong> The recommended choice. Disable specific animations:
+                                <ul>
+                                    <li>Animate controls and elements inside windows</li>
+                                    <li>Animate windows when minimizing and maximizing</li>
+                                    <li>Animations in the taskbar</li>
+                                    <li>Fade or slide menus into view</li>
+                                    <li>Fade or slide ToolTips into view</li>
+                                    <li>Fade out menu items after clicking</li>
+                                    <li>Show shadows under windows/mouse pointer</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>27. Disk Optimization for HDDs (Defragmentation):</h3>
+                <ul>
+                    <li><strong>Do NOT defragment SSDs.</strong> It's unnecessary and reduces their lifespan.</li>
+                    <li><strong>For HDDs ONLY:</strong> Search for "Defragment and Optimize Drives." Select your HDD
+                        and click "Optimize" (the new term for defrag). Schedule this to run weekly.</li>
+                </ul>
+
+                <h3>28. Processor Scheduling and Virtual Memory:</h3>
+                <ul>
+                    <li>Settings → System → About → Advanced system settings (on the right).</li>
+                    <li>Under Performance, click Settings.</li>
+                    <li><strong>Advanced tab:</strong> Here you can see and change the size of the paging file
+                        (virtual memory) for each drive.</li>
+                    <li><strong>Processor scheduling:</strong> Choose "Background services" if you run servers,
+                        databases, or heavy background tasks. "Programs" is the default for most users.</li>
+                </ul>
+
+                <h3>29. Windows Search Indexing:</h3>
+                <p>Indexing makes file searches fast but can cause high disk/CPU usage when it runs. You can modify
+                    it.</p>
+                <ul>
+                    <li>Search for "Indexing Options".</li>
+                    <li>Click "Modify" to choose which locations are indexed. Remove folders you never search (e.g.,
+                        entire drive partitions used only for backups).</li>
+                    <li>Click "Advanced" to rebuild the index if searches are failing, or change the index location
+                        to a different drive.</li>
+                </ul>
+
+                <h3>30. System Configuration (MSConfig) Tweaks:</h3>
+                <ul>
+                    <li>Press Windows + R, type <code>msconfig</code>.</li>
+                    <li><strong>Boot tab:</strong> Click "Advanced options..."
+                        <ul>
+                            <li><strong>Number of processors:</strong> Unchecking this lets Windows use all.
+                                Checking and selecting a lower number can be a troubleshooting step for unstable
+                                overclocks.</li>
+                            <li><strong>Maximum memory:</strong> Usually unchecked. Don't limit it unless
+                                troubleshooting.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Services tab:</strong> Check "Hide all Microsoft services" to see only third-party
+                        services. You can disable non-essential ones here (similar to Startup tab but for background
+                        services). Extreme caution is needed.</li>
+                </ul>
+
+                <h3>31. BIOS/UEFI Tweaks (Advanced - Warning):</h3>
+                <p>Enter your BIOS/UEFI by pressing a key during boot (Del, F2, F10, F12).</p>
+                <ul>
+                    <li><strong>Enable XMP/DOCP:</strong> As mentioned, for RAM speed.</li>
+                    <li><strong>Disable Unused Features:</strong> Disable legacy CSM, parallel/serial ports, onboard
+                        audio if you use a sound card.</li>
+                    <li><strong>Boot Order:</strong> Set your primary SSD as the first boot device for faster
+                        startup.</li>
+                    <li><strong>Power & CPU Settings:</strong> Ensure CPU C-states (power-saving) and Intel
+                        SpeedStep/AMD Cool'n'Quiet are enabled for efficiency. Disabling them can give a tiny,
+                        constant performance boost at the cost of heat and power.</li>
+                </ul>
+
+                <h3>Conclusion of Part 3:</h3>
+                <p>
+                    You have now ventured into the realm of hardware upgrades and deep system tuning. You've learned
+                    to
+                    diagnose your true bottleneck, understood the transformative power of an SSD, seen how to
+                    properly
+                    expand your RAM, optimized your graphics, and adjusted core system settings for maximum
+                    responsiveness.
+                    These steps represent the final, most powerful levers you can pull to combat PC slowdown. If
+                    performance
+                    is still unsatisfactory after all this, your needs may have simply outgrown your platform,
+                    signaling it
+                    might be time for a new system. However, for the vast majority, the combination of
+                    <a href="/blog/handbook/the-slow-pc-fix-handbook.html" class="part-link">Part 1 (Immediate Fixes)</a>,
+                    <a href="/blog/handbook/software-deep-clean.html" class="part-link">Part 2 (Software Cleanup)</a>, and
+                    <strong>Part 3 (Hardware Tuning)</strong> will have resurrected your PC's speed and given it a
+                    new lease on life.
+                </p>
+
+                <!-- Navigation to other parts -->
+                <div class="part-navigation">
+                    <a href="/blog/handbook/software-deep-clean.html" class="nav-button prev">Previous</a>
+                    <a href="/blog/handbook/maintenance-routine.html" class="nav-button next">Next</a>
+                </div>
+                <p>
+                <h2>Explore our more windows toos like
+                    <a href="/windows-tools/pdf/pdf-to-word.html" class="tool-btn">PDF Tools</a>,
+                    <a href="/windows-tools/image/image-to-pdf.html" class="tool-btn">Image Tools</a>,
+                    <a href="/windows-tools/audio/audio-volume-boost.html" class="tool-btn">Audio Tools</a>,
+                    <a href="/windows-tools/system/startup-program-manager.html" class="tool-btn">System Tools</a>,
+                    <a href="/windows-tools/utility/qr-generator.html" class="tool-btn">Utility Tools</a>,
+                    and more on our
+                    <a href="/windows-tools.html" class="tool-btn">Tools page</a>
+                </h2>
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <!-- END OF MAIN CONTENT -->
+
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('drawer')?.classList.toggle('open');
+        }
+    </script>
+
+</body>
+
+</html>

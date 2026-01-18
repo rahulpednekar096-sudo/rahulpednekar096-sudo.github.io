@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4T90FQG02K');
+    </script>
+    <!-- AdSense account verification -->
+    <meta name="google-adsense-account" content="ca-pub-7933209486512555">
+
+    <!-- AdSense Auto Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933209486512555"
+        crossorigin="anonymous"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Understanding Image Formats: JPG, PNG, WebP - Complete Guide | RDroid Apps Blog</title>
+    <meta name="description"
+        content="Complete guide to image formats: JPG, PNG, and WebP. Learn when to use each format, how to convert between them, and optimize your images for web and print." />
+    <meta name="keywords"
+        content="image formats, JPG vs PNG, WebP guide, image conversion, image compression, file formats, RDroid tools" />
+    <link rel="canonical" href="https://rdroidapps.com/blog/articles/image-formats-guide.html" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .card {
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/image-tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <!-- Blog Hero Section -->
+    <div class="wrap">
+        <section class="hero">
+            <div class="hero-right">
+                <h1>Understanding Image Formats: JPG, PNG, WebP</h1>
+                <p class="lead">
+                    A complete guide to the three most important image formats on the web today.
+                    Learn when to use each format, how they work, and how to convert between them
+                    using RDroid Apps tools for optimal results.
+                </p>
+                <div class="meta">
+                    <span>📅 March 5, 2024</span> |
+                    <span>⏱️ 8 min read</span> |
+                    <span>🖼️ Image Tools</span>
+                </div>
+                <div class="cta">
+                    <a href="#comparison" class="btn btn-primary">Quick Comparison</a>
+                    <a href="#conversion" class="btn">Conversion Guide</a>
+                    <a href="/blog/" class="btn">More Articles</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Introduction -->
+    <section class="section" style="margin-top: 40px;">
+        <div class="card">
+            <h2>Why Image Format Choice Matters</h2>
+            <p>
+                Choosing the right image format is crucial for web performance, quality preservation,
+                and user experience. The wrong format can result in:
+            </p>
+
+            <div class="row" style="margin: 20px 0;">
+                <div class="col">
+                    <div class="app">
+                        <div class="app-content">
+                            <h3 class="app-title">🐌 Slow Loading</h3>
+                            <p>Unoptimized images slow down websites, increasing bounce rates by up to 32%.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="app">
+                        <div class="app-content">
+                            <h3 class="app-title">🎨 Quality Loss</h3>
+                            <p>Using lossy formats for graphics can result in visible artifacts and color banding.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="app">
+                        <div class="app-content">
+                            <h3 class="app-title">📱 Compatibility Issues</h3>
+                            <p>Some formats may not display properly on all browsers or devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Format Deep Dive -->
+    <section class="section">
+        <div class="card">
+            <h2>JPG (JPEG) - The Photographer's Choice</h2>
+
+            <div class="apps">
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">📊 Technical Overview</h3>
+                        <p>
+                            <strong>Full Name:</strong> Joint Photographic Experts Group<br>
+                            <strong>Compression:</strong> Lossy<br>
+                            <strong>Color Depth:</strong> 24-bit (16.7 million colors)<br>
+                            <strong>Transparency:</strong> Not supported<br>
+                            <strong>Best For:</strong> Photographs, complex images with gradients
+                        </p>
+                    </div>
+                </div>
+
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">✅ Advantages</h3>
+                        <ul>
+                            <li><strong>Excellent compression:</strong> Can reduce file size by 50-90% with minimal
+                                quality loss</li>
+                            <li><strong>Universal compatibility:</strong> Supported by every browser and device</li>
+                            <li><strong>Progressive loading:</strong> Can display low-quality version while loading</li>
+                            <li><strong>Color richness:</strong> Supports millions of colors ideal for photos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">❌ Limitations</h3>
+                        <ul>
+                            <li><strong>No transparency:</strong> Cannot have transparent backgrounds</li>
+                            <li><strong>Lossy compression:</strong> Repeated saves degrade quality</li>
+                            <li><strong>Artifacts:</strong> Visible in high-compression settings</li>
+                            <li><strong>Not ideal for text:</strong> Can make text appear blurry</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>When to Use JPG</h3>
+            <div class="controls">
+                <div class="control">
+                    <label>✅ Perfect For</label>
+                    <p class="small">Photographs, product images, real-world scenes, social media photos</p>
+                </div>
+                <div class="control">
+                    <label>❌ Avoid For</label>
+                    <p class="small">Logos, graphics with text, images requiring transparency</p>
+                </div>
+                <div class="control">
+                    <label>⚙️ Recommended Quality</label>
+                    <p class="small">70-85% for web, 90-95% for print</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="card">
+            <h2>PNG - The Graphics Specialist</h2>
+
+            <div class="apps">
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">📊 Technical Overview</h3>
+                        <p>
+                            <strong>Full Name:</strong> Portable Network Graphics<br>
+                            <strong>Compression:</strong> Lossless<br>
+                            <strong>Color Depth:</strong> 8-bit to 48-bit<br>
+                            <strong>Transparency:</strong> Full alpha channel support<br>
+                            <strong>Best For:</strong> Graphics, logos, screenshots, text
+                        </p>
+                    </div>
+                </div>
+
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">✅ Advantages</h3>
+                        <ul>
+                            <li><strong>Lossless quality:</strong> No quality degradation on save</li>
+                            <li><strong>Transparency support:</strong> Full alpha channel for smooth edges</li>
+                            <li><strong>Text preservation:</strong> Keeps text sharp and readable</li>
+                            <li><strong>Multiple variants:</strong> PNG-8 (256 colors) and PNG-24 (millions)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">❌ Limitations</h3>
+                        <ul>
+                            <li><strong>Larger file sizes:</strong> Typically 2-10x larger than JPG</li>
+                            <li><strong>No animation:</strong> Static images only (APNG is separate)</li>
+                            <li><strong>Poor for photos:</strong> Inefficient compression for complex images</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>PNG Variants Explained</h3>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <h4>PNG-8</h4>
+                        <p class="small">
+                            <strong>Colors:</strong> 256 maximum<br>
+                            <strong>Transparency:</strong> 1-bit (on/off)<br>
+                            <strong>File Size:</strong> Very small<br>
+                            <strong>Best For:</strong> Simple logos, icons, graphics with few colors
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <h4>PNG-24</h4>
+                        <p class="small">
+                            <strong>Colors:</strong> 16.7 million<br>
+                            <strong>Transparency:</strong> Alpha channel (smooth)<br>
+                            <strong>File Size:</strong> Large<br>
+                            <strong>Best For:</strong> Complex graphics, screenshots, images with gradients
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>When to Use PNG</h3>
+            <div class="controls">
+                <div class="control">
+                    <label>✅ Perfect For</label>
+                    <p class="small">Logos, icons, screenshots, graphics with text, transparent backgrounds</p>
+                </div>
+                <div class="control">
+                    <label>❌ Avoid For</label>
+                    <p class="small">Photographs, large background images, where file size is critical</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="card">
+            <h2>WebP - The Modern Contender</h2>
+
+            <div class="apps">
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">📊 Technical Overview</h3>
+                        <p>
+                            <strong>Developer:</strong> Google<br>
+                            <strong>Compression:</strong> Both lossy and lossless<br>
+                            <strong>Color Depth:</strong> 24-bit<br>
+                            <strong>Transparency:</strong> Supported<br>
+                            <strong>Best For:</strong> Web optimization, modern applications
+                        </p>
+                    </div>
+                </div>
+
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">✅ Advantages</h3>
+                        <ul>
+                            <li><strong>Superior compression:</strong> 25-35% smaller than JPG at same quality</li>
+                            <li><strong>Dual modes:</strong> Choose lossy or lossless based on needs</li>
+                            <li><strong>Transparency:</strong> Supports alpha channel like PNG</li>
+                            <li><strong>Animation:</strong> Can contain animated sequences</li>
+                            <li><strong>Metadata:</strong> EXIF and XMP support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">❌ Limitations</h3>
+                        <ul>
+                            <li><strong>Browser support:</strong> Not universal (though improving)</li>
+                            <li><strong>Editing support:</strong> Limited in older software</li>
+                            <li><strong>Processing:</strong> More CPU intensive to encode</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>WebP Compression Modes</h3>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <h4>Lossy WebP</h4>
+                        <p class="small">
+                            <strong>Compression:</strong> Similar to JPG<br>
+                            <strong>Quality:</strong> Adjustable (1-100)<br>
+                            <strong>Size Reduction:</strong> 25-35% vs JPG<br>
+                            <strong>Best For:</strong> Photos, complex images for web
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <h4>Lossless WebP</h4>
+                        <p class="small">
+                            <strong>Compression:</strong> Similar to PNG<br>
+                            <strong>Quality:</strong> Perfect preservation<br>
+                            <strong>Size Reduction:</strong> 25-50% vs PNG<br>
+                            <strong>Best For:</strong> Graphics, logos, text images
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>When to Use WebP</h3>
+            <div class="controls">
+                <div class="control">
+                    <label>✅ Perfect For</label>
+                    <p class="small">Modern websites, progressive web apps, where performance is critical</p>
+                </div>
+                <div class="control">
+                    <label>⚠️ Check Compatibility</label>
+                    <p class="small">Ensure target browsers support WebP (95% do in 2024)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section" id="comparison">
+        <div class="card">
+            <h2>Side-by-Side Comparison</h2>
+
+            <div class="preview" style="margin: 20px 0;">
+                <table class="table-preview">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>JPG</th>
+                            <th>PNG</th>
+                            <th>WebP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Compression Type</strong></td>
+                            <td>Lossy</td>
+                            <td>Lossless</td>
+                            <td>Both</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Transparency</strong></td>
+                            <td>No</td>
+                            <td>Yes (Alpha)</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Animation</strong></td>
+                            <td>No</td>
+                            <td>No (APNG separate)</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Best For</strong></td>
+                            <td>Photos</td>
+                            <td>Graphics/Logos</td>
+                            <td>Web Optimization</td>
+                        </tr>
+                        <tr>
+                            <td><strong>File Size</strong></td>
+                            <td>Small</td>
+                            <td>Large</td>
+                            <td>Smallest</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Browser Support</strong></td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>95%+</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Quality at 80%</strong></td>
+                            <td>Good</td>
+                            <td>Perfect</td>
+                            <td>Excellent</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Quick Decision Guide</h3>
+            <div class="contact-form" style="background: rgba(34, 211, 166, 0.1); padding: 20px; border-radius: 10px;">
+                <h4>Use JPG when:</h4>
+                <ul>
+                    <li>You have photographs or complex images</li>
+                    <li>Maximum compatibility is required</li>
+                    <li>Transparency is not needed</li>
+                    <li>File size needs to be as small as possible</li>
+                </ul>
+
+                <h4>Use PNG when:</h4>
+                <ul>
+                    <li>You need transparency (logos, icons)</li>
+                    <li>Preserving text sharpness is critical</li>
+                    <li>You need lossless compression</li>
+                    <li>Universal browser support is required</li>
+                </ul>
+
+                <h4>Use WebP when:</h4>
+                <ul>
+                    <li>Web performance is top priority</li>
+                    <li>You can implement fallbacks for older browsers</li>
+                    <li>You want the best compression available</li>
+                    <li>You need both lossy and lossless options</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conversion Guide -->
+    <section class="section" id="conversion">
+        <div class="card">
+            <h2>Converting Between Formats with RDroid Tools</h2>
+
+            <h3>Available Conversion Tools</h3>
+            <div class="apps">
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">
+                            <a href="/windows-tools/image/convert-image.html" class="tool-btn">Universal Image
+                                Converter</a>
+                        </h3>
+                        <br>
+                        <p>
+                            Convert between all three formats (JPG, PNG, WebP) with adjustable quality settings.
+                            Perfect for batch conversions and experimenting with different formats.
+                        </p>
+                        <div class="meta">
+                            <strong>Features:</strong> Quality control, preview, batch support
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">
+                            <a href="/windows-tools/image/jpg-to-webp.html" class="tool-btn">JPG to WebP Converter</a>
+                        </h3>
+                        <br>
+                        <p>
+                            Specifically optimized for converting JPG photographs to WebP format.
+                            Achieve 25-35% size reduction with minimal quality loss.
+                        </p>
+                        <div class="meta">
+                            <strong>Best For:</strong> Photo optimization for web
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">
+                            <a href="/windows-tools/image/png-to-webp.html" class="tool-btn">PNG to WebP Converter</a>
+                        </h3>
+                        <br>
+                        <p>
+                            Convert PNG graphics to WebP while preserving transparency.
+                            Achieve 25-50% size reduction for logos and graphics.
+                        </p>
+                        <div class="meta">
+                            <strong>Best For:</strong> Logo and graphic optimization
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Conversion Best Practices</h3>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <h4>JPG to PNG</h4>
+                        <p class="small">
+                            <strong>When:</strong> Need transparency or lossless quality<br>
+                            <strong>Quality:</strong> No quality settings (lossless)<br>
+                            <strong>Note:</strong> File size will increase significantly<br>
+                            <strong>Use:</strong> Universal Image Converter
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <h4>PNG to JPG</h4>
+                        <p class="small">
+                            <strong>When:</strong> Transparency not needed, reduce size<br>
+                            <strong>Quality:</strong> 70-85% for optimal balance<br>
+                            <strong>Note:</strong> Transparency becomes white background<br>
+                            <strong>Use:</strong> Universal Image Converter
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <h4>Anything to WebP</h4>
+                        <p class="small">
+                            <strong>When:</strong> Web optimization is priority<br>
+                            <strong>Quality:</strong> 75-85% for photos, lossless for graphics<br>
+                            <strong>Note:</strong> Check browser compatibility<br>
+                            <strong>Use:</strong> Specific converters for best results
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <h4>WebP Fallback Strategy</h4>
+                        <p class="small">
+                            <strong>HTML:</strong> Use &lt;picture&gt; element with multiple sources<br>
+                            <strong>Serve WebP</strong> to supporting browsers<br>
+                            <strong>Fallback:</strong> JPG/PNG for others<br>
+                            <strong>Result:</strong> Best performance with full compatibility
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real World Examples -->
+    <section class="section">
+        <div class="card">
+            <h2>Real-World Examples & File Sizes</h2>
+
+            <div class="preview" style="margin: 20px 0;">
+                <table class="table-preview">
+                    <thead>
+                        <tr>
+                            <th>Image Type</th>
+                            <th>JPG Size</th>
+                            <th>PNG Size</th>
+                            <th>WebP Size</th>
+                            <th>Recommended</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Portrait Photo</strong> (1200×800)</td>
+                            <td>150 KB</td>
+                            <td>850 KB</td>
+                            <td>95 KB</td>
+                            <td>WebP (35% smaller)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Logo with Transparency</strong></td>
+                            <td>Not applicable</td>
+                            <td>50 KB</td>
+                            <td>30 KB</td>
+                            <td>WebP (40% smaller)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Screenshot with Text</strong></td>
+                            <td>120 KB</td>
+                            <td>180 KB</td>
+                            <td>65 KB</td>
+                            <td>WebP (45% smaller)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Product Image</strong> (eCommerce)</td>
+                            <td>200 KB</td>
+                            <td>900 KB</td>
+                            <td>140 KB</td>
+                            <td>WebP (30% smaller)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Website Impact Analysis</h3>
+            <div class="apps">
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">📈 Performance Impact</h3>
+                        <p>
+                            Converting a typical website from JPG/PNG to WebP can:
+                        </p>
+                        <ul>
+                            <li>Reduce page weight by 25-35%</li>
+                            <li>Improve loading times by 15-25%</li>
+                            <li>Increase Google PageSpeed score by 10-15 points</li>
+                            <li>Reduce bandwidth costs significantly</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">💼 Business Impact</h3>
+                        <p>
+                            For e-commerce and content websites:
+                        </p>
+                        <ul>
+                            <li>1 second faster loading = 7% conversion increase</li>
+                            <li>Better Core Web Vitals = Higher SEO ranking</li>
+                            <li>Reduced bandwidth = Lower hosting costs</li>
+                            <li>Improved mobile experience = More engagement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="section">
+        <div class="card">
+            <h2>Conclusion & Recommendations</h2>
+
+            <div class="row" style="margin: 25px 0;">
+                <div class="col">
+                    <div class="card">
+                        <h4>For Beginners</h4>
+                        <ul class="small">
+                            <li>Start with JPG for photos</li>
+                            <li>Use PNG for logos and graphics</li>
+                            <li>Experiment with WebP for web projects</li>
+                            <li>Use our Universal Converter to compare results</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <h4>For Web Developers</h4>
+                        <ul class="small">
+                            <li>Implement WebP with fallbacks</li>
+                            <li>Use JPG for maximum compatibility</li>
+                            <li>Optimize PNGs before converting</li>
+                            <li>Monitor performance impacts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Future Trends</h3>
+            <p>
+                Looking ahead, newer formats like AVIF and JPEG XL promise even better compression,
+                but WebP remains the practical choice for 2024-2025 due to its excellent balance of
+                compression, quality, and browser support.
+            </p>
+
+            <div class="cta" style="margin-top: 30px;">
+                <a href="/windows-tools/image/convert-image.html" class="btn btn-primary">Try Image Converter</a>
+                <a href="/windows-tools/image/jpg-to-webp.html" class="btn">Convert JPG to WebP</a>
+                <a href="/windows-tools/image/png-to-webp.html" class="btn">Convert PNG to WebP</a>
+            </div>
+
+            <div class="meta" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p class="small">
+                    <strong>Tags:</strong> Image Formats, JPG, PNG, WebP, Image Optimization, File Conversion,
+                    Web Performance, RDroid Tools
+                </p>
+                <p class="small">
+                    <strong>Related Articles:</strong>
+                    <a href="/blog/how-to-compress-pdf.html" class="token">PDF Compression Guide</a> |
+                    <a href="/blog/web-image-optimization.html" class="token">Web Image Optimization</a> |
+                    <a href="/blog/top-android-tools.html" class="token">Top Android Tools</a>
+                </p>
+                <p class="small">
+                    <strong>Tools Used:</strong>
+                    <a href="/windows-tools/image/convert-image.html" class="token">Image Converter</a>,
+                    <a href="/windows-tools/image/jpg-to-webp.html" class="token">JPG to WebP</a>,
+                    <a href="/windows-tools/image/png-to-webp.html" class="token">PNG to WebP</a>
+                </p>
+            </div>
+            <div class="part-navigation">
+                <a href="/blog/articles/top-android-tools.html" class="nav-button prev">Previous</a>
+                <a href="/blog/index.html" class="nav-button home">🏠 Back to blogs Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+
+    <script>
+        function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Firebase v12 Modular SDKs (ES Modules) -->
+    <script type="module" src="/js/firebase-config.js"></script>
+    <script type="module" src="/js/login.js"></script>
+
+    <!-- Main UI Script -->
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>

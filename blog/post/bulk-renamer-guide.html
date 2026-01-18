@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4T90FQG02K');
+    </script>
+    <!-- AdSense account verification -->
+    <meta name="google-adsense-account" content="ca-pub-7933209486512555">
+
+    <!-- AdSense Auto Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933209486512555"
+        crossorigin="anonymous"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Organizing Files with Bulk Renamer - Complete Guide | RDroid Apps Blog</title>
+    <meta name="description"
+        content="Learn how to efficiently rename multiple files at once using patterns, sequences, and custom rules with RDroid Bulk Renamer tool." />
+    <meta name="keywords"
+        content="bulk rename, file organizer, batch rename, file management, productivity tools, RDroid tools" />
+    <link rel="canonical" href="https://rdroidapps.com/blog/post/bulk-renamer-guide.html" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .card {
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/system-tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <!-- Blog Hero Section -->
+    <div class="wrap">
+        <section class="hero">
+            <div class="hero-right">
+                <h1>Organizing Files with Bulk Renamer</h1>
+                <p class="lead">
+                    Master the art of batch file renaming. Learn advanced patterns, sequences,
+                    and automation techniques to organize thousands of files in minutes.
+                </p>
+                <div class="meta">
+                    <span>📅 February 15, 2024</span> |
+                    <span>⏱️ 4 min read</span> |
+                    <span>📁 File Management</span>
+                </div>
+                <div class="cta">
+                    <a href="#scenarios" class="btn btn-primary">Common Scenarios</a>
+                    <a href="#patterns" class="btn">Naming Patterns</a>
+                    <a href="/blog/index.html" class="btn">More Articles</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Why Bulk Rename Section -->
+    <section class="section" id="scenarios">
+        <div class="card">
+            <h2>When to Use Bulk Renamer</h2>
+
+            <div class="row" style="margin: 20px 0;">
+                <div class="col">
+                    <div class="app">
+                        <div class="app-content">
+                            <h3 class="app-title">📷 Photo Collections</h3>
+                            <p>Rename vacation photos from "IMG_001.jpg" to "Hawaii_Trip_001.jpg" automatically.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="app">
+                        <div class="app-content">
+                            <h3 class="app-title">🎬 Video Projects</h3>
+                            <p>Organize video clips with scene numbers and descriptions for easy editing.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="app">
+                        <div class="app-content">
+                            <h3 class="app-title">📊 Business Files</h3>
+                            <p>Standardize invoice names with client codes and dates for accounting.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Time Savings Comparison</h3>
+            <div class="preview" style="margin: 20px 0;">
+                <table class="table-preview">
+                    <thead>
+                        <tr>
+                            <th>Number of Files</th>
+                            <th>Manual Renaming</th>
+                            <th>Bulk Renamer</th>
+                            <th>Time Saved</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>10 files</strong></td>
+                            <td>2-3 minutes</td>
+                            <td>30 seconds</td>
+                            <td>75% faster</td>
+                        </tr>
+                        <tr>
+                            <td><strong>100 files</strong></td>
+                            <td>20-30 minutes</td>
+                            <td>1 minute</td>
+                            <td>95% faster</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1000 files</strong></td>
+                            <td>3-5 hours</td>
+                            <td>2 minutes</td>
+                            <td>99% faster</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- RDroid Bulk Renamer Tool -->
+    <section class="section">
+        <div class="card">
+            <h2>RDroid Bulk Renamer Tool</h2>
+            <p><a href="/windows-tools/system/file-renamer.html" class="h2">File Renamer Tool</a> offers powerful
+                features for batch renaming without software installation.</p>
+
+            <div class="apps">
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">Key Features</h3>
+                        <ul>
+                            <li><strong>Pattern-based renaming:</strong> Use templates with variables</li>
+                            <li><strong>Sequential numbering:</strong> Add auto-increment numbers</li>
+                            <li><strong>Text replacement:</strong> Find and replace text in filenames</li>
+                            <li><strong>Case conversion:</strong> Change to uppercase/lowercase/title case</li>
+                            <li><strong>Preview before applying:</strong> See changes before committing</li>
+                            <li><strong>Undo functionality:</strong> Revert changes if needed</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">Supported File Types</h3>
+                        <ul>
+                            <li>📷 Images: JPG, PNG, GIF, WebP</li>
+                            <li>🎵 Audio: MP3, WAV, AAC, FLAC</li>
+                            <li>🎬 Video: MP4, AVI, MOV, MKV</li>
+                            <li>📄 Documents: PDF, DOC, XLS, PPT</li>
+                            <li>📁 Archives: ZIP, RAR, 7Z</li>
+                            <li>💻 Code files: JS, HTML, CSS, PY</li>
+                        </ul>
+                        <div class="meta">
+                            <strong>All file types supported</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Naming Patterns -->
+    <section class="section" id="patterns">
+        <div class="card">
+            <h2>Advanced Naming Patterns & Templates</h2>
+
+            <h3>1. Sequential Numbering Patterns</h3>
+            <div class="contact-form" style="background: rgba(34, 211, 166, 0.1); padding: 20px; border-radius: 10px;">
+                <table class="table-preview">
+                    <thead>
+                        <tr>
+                            <th>Original Files</th>
+                            <th>Pattern Template</th>
+                            <th>Result</th>
+                            <th>Use Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>photo1.jpg, photo2.jpg...</td>
+                            <td><code>Vacation_{N3}.jpg</code></td>
+                            <td>Vacation_001.jpg, Vacation_002.jpg...</td>
+                            <td>Photo organization</td>
+                        </tr>
+                        <tr>
+                            <td>document.pdf, document(1).pdf...</td>
+                            <td><code>Report_{YYMMDD}_{N2}.pdf</code></td>
+                            <td>Report_240215_01.pdf, Report_240215_02.pdf...</td>
+                            <td>Business documents</td>
+                        </tr>
+                        <tr>
+                            <td>file_a.txt, file_b.txt...</td>
+                            <td><code>Chapter_{A1}.txt</code></td>
+                            <td>Chapter_A.txt, Chapter_B.txt...</td>
+                            <td>Book chapters</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="small"><strong>Pattern Variables:</strong> {N} = number, {A} = letter, {YYMMDD} = date, {TIME}
+                    = timestamp</p>
+            </div>
+
+            <h3>2. Text Replacement Patterns</h3>
+            <div class="contact-form"
+                style="background: rgba(56, 189, 248, 0.1); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                <table class="table-preview">
+                    <thead>
+                        <tr>
+                            <th>Find</th>
+                            <th>Replace With</th>
+                            <th>Original → Result</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>IMG_</code></td>
+                            <td><code>Photo_</code></td>
+                            <td>IMG_1234.jpg → Photo_1234.jpg</td>
+                            <td>Camera file standardization</td>
+                        </tr>
+                        <tr>
+                            <td><code>screenshot</code></td>
+                            <td><code>SCR</code></td>
+                            <td>screenshot-2024.png → SCR-2024.png</td>
+                            <td>Abbreviation for space saving</td>
+                        </tr>
+                        <tr>
+                            <td><code>  </code> (double space)</td>
+                            <td><code>_</code> (underscore)</td>
+                            <td>my file name.docx → my_file_name.docx</td>
+                            <td>Space to underscore conversion</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-World Scenarios -->
+    <section class="section">
+        <div class="card">
+            <h2>Real-World Bulk Renaming Scenarios</h2>
+
+            <div class="apps">
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">Scenario 1: Vacation Photos</h3>
+                        <p><strong>Problem:</strong> 500 photos named "DSC_0001.jpg" to "DSC_0500.jpg"</p>
+                        <p><strong>Solution:</strong> Use pattern: <code>Paris_Trip_{N4}.jpg</code></p>
+                        <p><strong>Result:</strong> Paris_Trip_0001.jpg to Paris_Trip_0500.jpg</p>
+                        <div class="meta">
+                            <strong>Time saved:</strong> 4 hours of manual work
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">Scenario 2: Music Collection</h3>
+                        <p><strong>Problem:</strong> MP3 files with inconsistent naming: "artist - song.mp3", "song by
+                            artist.mp3"</p>
+                        <p><strong>Solution:</strong> Multiple find/replace operations</p>
+                        <p><strong>Result:</strong> All files standardized as "Artist - Song Title.mp3"</p>
+                        <div class="meta">
+                            <strong>Benefit:</strong> Compatible with all music players
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">Scenario 3: Project Documents</h3>
+                        <p><strong>Problem:</strong> Client files with various naming conventions</p>
+                        <p><strong>Solution:</strong> Pattern: <code>{Client}_{DocType}_{YYMMDD}.pdf</code></p>
+                        <p><strong>Result:</strong> "ACME_Invoice_20240215.pdf", "ACME_Contract_20240215.pdf"</p>
+                        <div class="meta">
+                            <strong>Benefit:</strong> Professional organization system
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Practices -->
+    <section class="section">
+        <div class="card">
+            <h2>Bulk Renaming Best Practices</h2>
+
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <h4>Before Renaming</h4>
+                        <ul class="small">
+                            <li>✅ Backup original files</li>
+                            <li>✅ Test on a small batch first</li>
+                            <li>✅ Use preview feature</li>
+                            <li>✅ Check for special characters</li>
+                            <li>✅ Consider file name length limits</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <h4>Naming Conventions</h4>
+                        <ul class="small">
+                            <li>✅ Use descriptive names</li>
+                            <li>✅ Include dates in YYYYMMDD format</li>
+                            <li>✅ Use underscores instead of spaces</li>
+                            <li>✅ Keep names under 255 characters</li>
+                            <li>✅ Avoid special characters: \ / : * ? " &lt; &gt; |</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Common Mistakes to Avoid</h3>
+            <div class="controls">
+                <div class="control">
+                    <label>❌ Using ambiguous names</label>
+                    <p class="small"><strong>Example:</strong> "file1.pdf" vs "Invoice_Q1_2024.pdf"</p>
+                </div>
+                <div class="control">
+                    <label>❌ Overwriting original files</label>
+                    <p class="small"><strong>Solution:</strong> Always keep backup copies</p>
+                </div>
+                <div class="control">
+                    <label>❌ Inconsistent naming</label>
+                    <p class="small"><strong>Solution:</strong> Create and follow naming standards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Features -->
+    <section class="section">
+        <div class="card">
+            <h2>Advanced Features & Automation</h2>
+
+            <div class="apps">
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">Metadata-Based Renaming</h3>
+                        <p>Rename files based on embedded metadata:</p>
+                        <ul>
+                            <li>Photos: Use EXIF data (date, camera model)</li>
+                            <li>Music: Use ID3 tags (artist, album, track)</li>
+                            <li>Documents: Use properties (author, title)</li>
+                        </ul>
+                        <div class="meta">
+                            Pattern: <code>{Artist} - {TrackNumber} - {Title}.mp3</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app">
+                    <div class="app-content">
+                        <h3 class="app-title">Regular Expressions</h3>
+                        <p>Advanced pattern matching for complex renaming:</p>
+                        <ul>
+                            <li><code>^(.+?) - (.+?)\.mp3$</code> → Capture artist and song</li>
+                            <li><code>IMG_(\d{4})\.jpg</code> → Extract camera numbers</li>
+                            <li><code>(\d{8})_.*\.pdf</code> → Find files with date prefixes</li>
+                        </ul>
+                        <div class="meta">
+                            <strong>For power users only</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="section">
+        <div class="card">
+            <h2>Getting Started with Bulk Renaming</h2>
+
+            <div class="row" style="margin: 25px 0;">
+                <div class="col">
+                    <div class="card">
+                        <h4>Quick Start Guide</h4>
+                        <ol class="small">
+                            <li>Select files to rename</li>
+                            <li>Choose renaming pattern</li>
+                            <li>Preview the changes</li>
+                            <li>Apply and verify results</li>
+                            <li>Create templates for reuse</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <h4>Template Library</h4>
+                        <ul class="small">
+                            <li><code>{Project}_{Type}_{N3}.{ext}</code></li>
+                            <li><code>{YYYY}-{MM}-{DD} {Description}.{ext}</code></li>
+                            <li><code>{Client}_{Doc}_{Version}.{ext}</code></li>
+                            <li><code>{Event}_{Location}_{N2}.{ext}</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta" style="margin-top: 30px;">
+                <a href="/windows-tools/system/file-renamer.html" class="btn btn-primary">Try Bulk Renamer</a>
+                <a href="/windows-tools/system/folder-size-analyzer.html" class="btn">More System Tools</a>
+                <a href="/contact.html" class="btn">Request Features</a>
+            </div>
+
+            <div class="meta" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p class="small">
+                    <strong>Tags:</strong> Bulk Rename, File Organization, Productivity Tools, Batch Processing,
+                    File Management, RDroid Tools
+                </p>
+                <p class="small">
+                    <strong>Related Articles:</strong>
+                    <a href="/blog/post/web-image-optimization.html" class="tool-btn">Image Optimization Guide</a> |
+                    <a href="/blog/post/audio-editing-basics.html" class="btn">Audio Editing Basics</a> |
+                    <a href="/blog/post/merge-pdf-guide.html" class="btn btn-ghost">PDF Merge Guide</a>
+                </p>
+                <p class="small">
+                    <strong>Tool Featured:</strong>
+                    <a href="/windows-tools/system/file-renamer.html" class="token">Bulk File Renamer</a>
+                </p>
+            </div>
+        </div>
+        <!-- Pagination -->
+        <div style="
+                              display: flex;
+                              justify-content: center;
+                              margin-top: 40px;
+                              gap: 10px;
+                            ">
+            <a href="/blog/post/audio-editing-basics.html" class="btn">← Previous</a>
+            <a href="/blog/index.html" class="nav-button home">🏠 Back to blogs Home</a>
+            <a href="/blog/post/android-privacy-features.html" class="btn">Next</a>
+        </div>
+    </section>
+
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+
+    <script>
+        function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Firebase & Newsletter -->
+    <script type="module" src="/js/firebase-config.js"></script>
+    <script type="module" src="/js/newsletter.js"></script>
+    <script type="module" src="/js/login.js"></script>
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>

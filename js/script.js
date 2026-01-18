@@ -231,3 +231,32 @@ document.addEventListener("DOMContentLoaded", initializeSearch);
 // Also initialize search when favorite-tools-quick-links.html is loaded
 // This ensures search works even if the component is loaded dynamically
 setTimeout(initializeSearch, 500);
+// --------------------
+
+// Sidebar link smooth scrolling and active state
+const sidebarLinks = document.querySelectorAll('.sidebar a');
+
+sidebarLinks.forEach(link => {
+  link.addEventListener('click', function (e) {
+
+    const href = this.getAttribute('href');
+
+    // ✅ ONLY handle same-page anchor links
+    if (href.startsWith('#')) {
+      e.preventDefault();
+
+      sidebarLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+
+      const targetElement = document.querySelector(href);
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 120,
+          behavior: 'smooth'
+        });
+       }
+     }
+    // ✅ else: external or other page links → browser handles normally
+   });
+});

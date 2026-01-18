@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="/js/script.js" defer></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4T90FQG02K');
+  </script>
+  <!-- AdSense account verification -->
+  <meta name="google-adsense-account" content="ca-pub-7933209486512555">
+
+  <!-- AdSense Auto Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933209486512555"
+    crossorigin="anonymous"></script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="RDroid Apps" />
+  <title>The Slow PC Fix Handbook - Blog | Tech Solutions</title>
+  <meta name="description"
+    content="Discover effective strategies to speed up your slow PC with The Slow PC Fix Handbook. Learn practical tips and solutions to enhance your computer's performance." />
+  <meta name="keywords"
+    content="Slow PC Fix, Computer Performance, Tech Solutions, PC Optimization, Speed Up Computer, The Complete PC Care Guide, PC Performance Mastery" />
+  <link rel="canonical" href="https://rdroidapps.com/blog/handbook/the-slow-pc-fix-handbook.html" />
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- Include jQuery for load function -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <!-- HEADER (loaded from external file) -->
+  <div id="header-container"></div>
+
+  <!-- TOOLS QUICK LINKS (loaded from external file) -->
+  <div id="tools-links-container"></div>
+
+  <!-- MENU DRAWER (loaded from external file) -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load all components -->
+  <script>
+    $(function () {
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#tools-links-container").load("/components/blogs-quick-links.html");
+      $("#footer-container").load("/components/footer.html");
+    });
+  </script>
+
+  <h1 class="rdroid-blogs-title">
+    <span class="rdroid">Hand</span>
+    <span class="blogs">Book</span>
+  </h1>
+  <!-- MAIN CONTENT -->
+
+  <div class="tools-container">
+    <!-- Left Sidebar -->
+    <div class="sidebar" style="position: sticky; top: 80px;">
+      <h3>Guide Chapters</h3>
+      <ul>
+        <li><a href="/blog/handbook/the-slow-pc-fix-handbook.html#part1">Part 1: First Aid</a></li>
+        <li><a href="/blog/handbook/software-deep-clean.html">Part 2: Software Deep Clean</a></li>
+        <li><a href="/blog/handbook/hardware-advanced-tuning.html">Part 3: Hardware & Advanced Tuning</a></li>
+        <li><a href="/blog/handbook/maintenance-routine.html">Part 4: Maintenance Routine</a></li>
+        <li><a href="/blog/handbook/advanced-optimization.html">Part 5: Advanced Optimization</a></li>
+      </ul>
+
+      <h3 style="margin-top: 25px;">Quick Tips</h3>
+      <ul>
+        <li><a href="#restart">The Restart Fix</a></li>
+        <li><a href="#overheating">Overheating Solutions</a></li>
+        <li><a href="#storage">Free Up Storage</a></li>
+        <li><a href="#taskmanager">Task Manager Guide</a></li>
+        <li><a href="#peripherals">Peripheral Issues</a></li>
+      </ul>
+    </div>
+
+    <!-- Right Content -->
+    <div class="tools-list">
+      <section class="card">
+        <h1>The Slow PC Fix Handbook: Your Ultimate Guide to Speeding Up Your Computer</h1>
+
+        <h2>Is Your PC Crawling? The Ultimate Step Guide to Revive a Slow Computer</h2>
+        <p class="lead">
+          Is your once-speedy computer now moving at the pace of a sleepy snail? Do you click and wait, wait, and wait
+          some more?
+          You're not alone. PC slowdown is a universal frustration, but the good news is that you don't need to be a
+          tech wizard
+          to fix it. Often, it's a combination of digital clutter, outdated components, and background chaos. This
+          comprehensive
+          guide will walk you through dozens of actionable steps and explanations (totaling over 500 lines of advice)
+          to
+          diagnose,
+          treat, and prevent a slow PC, transforming it back into the speedy machine you deserve.
+        </p>
+
+        <h2 id="part1">Part 1: First Aid – The Ultimate Guide to Immediate PC Speed Fixes</h2>
+        <h3>Introduction: Why Your PC Feels Slow & Where to Start</h3>
+        <p>
+          The experience of a slowing computer is a universal frustration in the digital age. One day, your machine
+          boots in
+          seconds, applications snap open, and files transfer in the blink of an eye. The next, you find yourself
+          staring at a
+          spinning wheel, a frozen cursor, or a progress bar that seems to move backward. This decline is rarely due
+          to a single
+          catastrophic failure. Instead, it's typically the result of "digital entropy"—the gradual accumulation of
+          software
+          clutter, background processes, outdated systems, and hardware strain that occurs through normal use.
+        </p>
+        <p>
+          Before you consider expensive hardware upgrades or a full system wipe, there are critical, immediate actions
+          you can
+          take. These "first aid" steps address the most common, surface-level culprits of PC slowdowns. They require
+          minimal
+          technical expertise, are generally safe, and can yield dramatic improvements in a matter of minutes. This
+          500-line guide
+          will walk you through each step with exhaustive detail, ensuring you understand not just the "how," but the
+          crucial
+          "why."
+        </p>
+
+        <h2>Section 1: The Golden Rule – Restart Your Computer</h2>
+        <h3 id="restart">1. The Science of the Restart</h3>
+        <p>
+          When your PC runs, every program, system process, and background service consumes a portion of your
+          computer's Random
+          Access Memory (RAM). RAM is your system's short-term, high-speed workspace. Unlike storage (your hard drive
+          or SSD), RAM
+          is volatile—it needs constant power to hold data. Over time, as you open and close programs, some processes
+          may not
+          terminate cleanly. They leave behind "memory leaks" or orphaned data fragments that clutter your RAM. Other
+          processes
+          might enter a high-usage state and never relinquish their hold on the CPU. A restart is the equivalent of a
+          deep,
+          cleansing breath for your operating system. It forcibly clears the entire contents of the RAM and reloads
+          only the
+          essential system processes from a clean slate.
+        </p>
+
+        <h3>2. The Proper Restart vs. Shutdown (Modern Windows)</h3>
+        <p>
+          This is a critical distinction, especially for Windows 10 and 11 users. Since Windows 8, the default
+          "Shutdown" option
+          is not a full power-off. It uses a feature called "Fast Startup." This hybrid state saves the kernel (the
+          core of the
+          operating system) and driver states to a file on your hard drive (hiberfil.sys). When you power back on,
+          Windows reloads
+          this snapshot, which is faster than a full boot but means it never truly resets the system kernel. A
+          Restart, however,
+          completely shuts down the kernel and all processes before booting fresh. For troubleshooting a slow PC,
+          always use
+          "Restart."
+        </p>
+
+        <h3>3. How to Perform a Proper Diagnostic Restart:</h3>
+        <ul>
+          <li>Step A: Close all open applications you are working on. Save your documents.</li>
+          <li>Step B: Click the Start Menu (Windows icon) in the bottom-left corner.</li>
+          <li>Step C: Click the Power Icon.</li>
+          <li>Step D: Select "Restart." Do not select "Shut down" or "Sleep."</li>
+          <li>Step E: Wait patiently. Do not interrupt the process by holding the power button unless the system is
+            completely non-responsive for over 5 minutes.</li>
+        </ul>
+
+        <h3>4. When to Make Restarting a Habit</h3>
+        <ul>
+          <li>After installing significant new software or major Windows updates.</li>
+          <li>If you leave your PC on for days or weeks at a time (common with laptops in sleep mode).</li>
+          <li>The moment you notice system sluggishness or odd behavior in core functions.</li>
+          <li>As the very first step in any troubleshooting sequence.</li>
+        </ul>
+
+        <h3>5. Advanced Restart Options (Windows 10/11)</h3>
+        <p>
+          Hold the Shift key while clicking "Restart" in the Start Menu. This will boot you into the Windows Recovery
+          Environment
+          (WinRE), where you can access advanced troubleshooting tools like Safe Mode, System Restore, and Startup
+          Repair. This is
+          useful if a normal restart doesn't resolve severe instability.
+        </p>
+
+        <hr class="section-divider">
+
+        <h2>Section 2: Check for and Resolve Overheating</h2>
+        <h3 id="overheating">6. Understanding Thermal Throttling</h3>
+        <p>
+          The Central Processing Unit (CPU) and Graphics Processing Unit (GPU) are the brains of your PC. They
+          generate immense
+          heat. To prevent physical damage (melting solder, frying transistors), they have built-in thermal
+          safeguards. When a
+          sensor detects that the chip has reached a critical temperature (often 90-100°C), it forcibly "throttles"
+          its
+          performance. It drastically reduces its clock speed (from, say, 3.5 GHz to 0.8 GHz), making calculations
+          much slower to
+          produce less heat. This is the primary reason a fast PC suddenly becomes a slideshow during gaming, video
+          editing, or
+          other intensive tasks.
+        </p>
+
+        <h3>7. Physical Symptoms of Overheating</h3>
+        <ul>
+          <li>The PC case or laptop base feels excessively hot to the touch.</li>
+          <li>Fans are constantly running at maximum speed, creating a loud, persistent whirring or roaring noise.
+          </li>
+          <li>Performance is great when you start a task but degrades severely after a few minutes.</li>
+          <li>Sudden, unexpected shutdowns or blue screens (BSOD) during heavy use.</li>
+        </ul>
+
+        <h3>8. Immediate Physical Interventions</h3>
+        <ul>
+          <li>For Laptops: Never use a laptop on a soft surface like a bed, couch, or pillow. These surfaces block the
+            air intake vents (usually on the bottom or sides). Always place it on a hard, flat surface. For an instant
+            boost, elevate the rear of the laptop with a book or a dedicated laptop stand to create an air gap.</li>
+          <li>For Desktop Towers: Ensure the computer is not shoved into an enclosed cabinet or pressed against a
+            wall. Leave at least 6 inches of clearance on all sides, especially where you can see vent grilles or
+            fans.</li>
+          <li>Power Settings Check (Laptops): Click the battery icon in your system tray. Make sure the power slider
+            is set to "Best Performance" when plugged in. The "Better Performance" or "Battery Saver" modes can limit
+            power to the CPU, mimicking a slow PC.</li>
+        </ul>
+
+        <h3>9. Software Monitoring (Free Tools)</h3>
+        <p>To confirm overheating, use a lightweight monitoring tool:</p>
+        <ul>
+          <li>HWMonitor (by CPUID): A free, trusted tool that reads all temperature sensors in your system. Download,
+            run it, and look for "Temperatures." Check the values for your CPU (e.g., "CPU Package") and GPU. Ideal
+            idle temps: 30-50°C. Under load temps: 70-85°C is generally acceptable. Critical/Dangerous temps: 90°C+.
+          </li>
+          <li>Task Manager: Open it (Ctrl+Shift+Esc), go to the "Performance" tab, and click on "CPU" or "GPU." The
+            current clock speed (GHz) is listed. If you see it dropping far below its rated speed (e.g., a 3.5 GHz CPU
+            stuck at 0.8 GHz) while the "Utilization" is high, that's a classic sign of thermal throttling.</li>
+        </ul>
+
+        <h3>10. Emergency Cleaning (If You're Comfortable)</h3>
+        <ul>
+          <li>For Desktops: Power down, unplug, and open the case. Use a can of compressed air to blow out dust from
+            CPU heatsinks, GPU fans, case fans, and power supply vents. Hold fans in place with a finger to prevent
+            them from spinning uncontrollably. Do this outdoors or in a well-ventilated area.</li>
+          <li>For Laptops: If the vents are clogged, you can often use compressed air to blow into the exhaust vents
+            (where the hot air comes out) to dislodge dust bunnies. Avoid opening a laptop unless you are confident,
+            as they are more delicate.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h2>Section 3: Free Up Critical Storage Space</h2>
+        <h3 id="storage">11. The "15% Rule" Explained</h3>
+        <p>
+          Your operating system and programs need free space on your primary drive (C:) for essential operations. They
+          use this
+          space for temporary files, system caches, swap files (virtual memory), and updates. When free space drops
+          below 10-15%,
+          Windows must work much harder to manage these files, leading to severe fragmentation on HDDs and reduced
+          performance on
+          all drives. It's like trying to cook a large meal in a tiny, cluttered kitchen.
+        </p>
+
+        <h3>12. The Built-in Disk Cleanup Tool (The First Weapon)</h3>
+        <ul>
+          <li>Step A: Type "Disk Cleanup" in the Start Menu and run it.</li>
+          <li>Step B: Select your C: drive and click OK.</li>
+          <li>
+            Step C: The tool will calculate how much space you can free. In the main list, you can safely select:
+            <ul>
+              <li>Downloaded Program Files: Old Internet Explorer leftovers (safe).</li>
+              <li>Temporary Internet Files: Browser cache.</li>
+              <li>Windows Error Reports & Feedback Diagnostics: Logs of past crashes.</li>
+              <li>Delivery Optimization Files: Leftover files from updating other PCs on your network.</li>
+              <li>Recycle Bin: Ensure you don't need anything in it.</li>
+              <li>Temporary Files: A major source of clutter. Always check this.</li>
+            </ul>
+          </li>
+          <li>
+            Step D (CRITICAL): Click "Clean up system files." This rescans with admin rights and adds crucial, large
+            categories:
+            <ul>
+              <li>Windows Update Cleanup: This can be several gigabytes of old update files safely removed after a
+                successful update.</li>
+              <li>Previous Windows Installation(s): If you upgraded Windows, this can free 20+ GB but removes your
+                rollback option.</li>
+            </ul>
+          </li>
+          <li>Step E: Review the list again, check the boxes, and click OK. This can easily free 5-50 GB.</li>
+        </ul>
+
+        <h3>13. Manual Cleanup of User Folders</h3>
+        <ul>
+          <li>Downloads Folder: This is the #1 clutter culprit. Open C:\Users\[YourUsername]\Downloads. Sort by size.
+            Move important files elsewhere (Documents, Pictures, external drive). Delete installers, old zips, and
+            temporary downloads.</li>
+          <li>Desktop: Files on your Desktop live on your C: drive. A visually cluttered desktop also slows down icon
+            loading. Create folders and organize, or move files to their proper locations.</li>
+          <li>Large Media Files: Use File Explorer's search function. Navigate to C:\, then in the top-right search
+            bar, type size:gigantic. This will show files over 1 GB. Review them (often large video files, ISO images,
+            game mods) and move or delete.</li>
+        </ul>
+
+        <h3>14. Uninstalling Unused Applications</h3>
+        <ul>
+          <li>Go to Settings > Apps > Installed apps.</li>
+          <li>Sort the list by "Size" (largest first).</li>
+          <li>Scrutinize the list. Look for:
+            <ul>
+              <li>Old games you no longer play.</li>
+              <li>Bundled software from your PC manufacturer (Dell, HP, etc.)—often labeled with their name.</li>
+              <li>Trial versions of antivirus, photo editors, etc.</li>
+              <li>"Free" toolbars or utilities installed accidentally.</li>
+            </ul>
+          </li>
+          <li>Click the three dots (...) next to an app and select Uninstall. Use the app's own uninstaller if it pops
+            up.</li>
+        </ul>
+
+        <h3>15. Managing Cloud Storage Sync Folders</h3>
+        <p>
+          If you use OneDrive, Dropbox, or Google Drive, their local sync folders are on your C: drive by default.
+          Right-click their system tray icon and check the sync status. You can often use "Files On-Demand" (OneDrive)
+          or "Smart Sync" (Dropbox) to keep file placeholders on your PC without storing the full contents locally,
+          saving enormous space.
+        </p>
+
+        <h3>16. The Nuclear Option for Huge, Hidden Files: WinDirStat</h3>
+        <p>
+          For a visual map of your disk usage, download the free tool WinDirStat. Run it as Administrator and select
+          your C: drive. It will scan and display a "treemap"—a colorful graphic where larger rectangles represent
+          larger files. You can visually identify space hogs (like a huge blue block for a video.mp4 file) and delete
+          them directly from the interface.
+        </p>
+
+        <hr class="section-divider">
+
+        <h2>Section 4: Closing Resource-Hungry Programs with Task Manager</h2>
+        <h3 id="taskmanager">17. Task Manager: Your Mission Control</h3>
+        <p>Press Ctrl + Shift + Esc. This is your direct window into everything running on your PC. If you see the
+          simple view, click "More details" at the bottom.</p>
+
+        <h3>18. Reading the Columns (Sorting is Key)</h3>
+        <ul>
+          <li>CPU (%): Shows how much of your processor's capacity a process is using. At idle, "System Idle Process"
+            will be high (that's good—it means CPU is free). Anything consistently above 10-20% when you're not
+            actively using it is suspect.</li>
+          <li>Memory (RAM): Shows how much physical RAM a process is consuming. Sort by this column to see the biggest
+            memory hogs.</li>
+          <li>Disk (%): Shows active read/write activity to your storage drive. High disk usage (90-100%) by a
+            non-system process can freeze the PC.</li>
+          <li>Power usage: Identifies which apps are draining your laptop battery (and thus using significant
+            resources).</li>
+        </ul>
+
+        <h3>19. Identifying and Terminating Culprits</h3>
+        <ul>
+          <li>Click on the "CPU" column header to sort by descending order (highest on top).</li>
+          <li>Look for processes that are not your active browser or open application (e.g., "Desktop Window Manager"
+            is normal; a game launcher using 30% CPU while closed is not).</li>
+          <li>Common Non-Essential Culprits:
+            <ul>
+              <li>Browser Tabs/Extensions: Each Chrome/Firefox tab is a process. A misbehaving tab or ad-heavy site
+                can spike CPU.</li>
+              <li>Updater Services: Adobe Updater.exe, jhi_service.exe (Intel), various game client updaters.</li>
+              <li>Legacy/Background Apps: Spotify web helper, Skype, OneNote sync, cloud storage sync clients.</li>
+            </ul>
+          </li>
+          <li>To end a task, select it and click "End task" in the bottom-right corner. WARNING: Do not end tasks
+            under the "Windows processes" section unless you know what they are. Ending "Windows Explorer" will remove
+            your taskbar/desktop (you can restart it via File > Run new task > type explorer.exe).</li>
+        </ul>
+
+        <h3>20. The "Startup Impact" Tab</h3>
+        <p>
+          This is different from the Processes tab. Click on the "Startup" tab. This lists every program configured to
+          launch automatically when you log in. Each one slows down your boot time and consumes memory in the
+          background.
+        </p>
+        <ul>
+          <li>Right-click on any program with a "High" or "Medium" impact that you don't need immediately on boot
+            (e.g., Discord, Steam, Adobe Reader Updater, Microsoft Office Click-to-Run).</li>
+          <li>Select "Disable." This does not uninstall the program; it only stops it from auto-starting. You can
+            always run it manually when needed.</li>
+        </ul>
+
+        <h3>21. The "Details" Tab for Advanced Users</h3>
+        <p>
+          This shows the raw process list, similar to the old "Processes" tab in Windows 7. You can right-click a
+          process here to set its "Priority" (e.g., set a game to "High" for slightly better performance) or
+          "Affinity" (which CPU cores it can use), but these are temporary changes that reset on restart.
+        </p>
+
+        <hr class="section-divider">
+
+        <h2>Section 5: Disconnect Unnecessary Peripherals and Drivers</h2>
+        <h3 id="peripherals">22. How Peripherals Can Slow You Down</h3>
+        <p>
+          Every device plugged into your USB port, Thunderbolt port, or SD card slot requires a small piece of
+          software called a driver to function. Sometimes these drivers are poorly coded, outdated, or conflict with
+          other system drivers. Furthermore, some peripherals (especially external hard drives or flash drives) can
+          cause high "Disk Usage" in Task Manager if Windows is constantly polling them or if they are failing.
+        </p>
+
+        <h3>23. The Diagnostic Disconnect</h3>
+        <ul>
+          <li>Step 1: Shut down your PC completely.</li>
+          <li>Step 2: Unplug everything that is not absolutely essential for basic operation. This includes:
+            <ul>
+              <li>External hard drives and USB flash drives.</li>
+              <li>Printers, scanners, webcams, drawing tablets.</li>
+              <li>Phones, tablets, or media players.</li>
+              <li>Non-essential Bluetooth devices (leave keyboard/mouse if wireless).</li>
+              <li>SD cards from card readers.</li>
+              <li>Docking stations or port replicators.</li>
+            </ul>
+          </li>
+          <li>Step 3: Boot your PC with only the monitor, power cable, and one input device (keyboard/mouse)
+            connected.</li>
+          <li>Step 4: Assess performance. If the speed returns to normal, you have identified a peripheral or driver
+            as the culprit.</li>
+        </ul>
+
+        <h3>24. The Reconnection Process (Isolation)</h3>
+        <ul>
+          <li>Reconnect devices one at a time, restarting or checking performance after each one.</li>
+          <li>When you reconnect the device that causes the slowdown, you've found your problem child.</li>
+          <li>Solutions for a Problem Peripheral:
+            <ul>
+              <li>Update its driver from the manufacturer's website (not just Windows Update).</li>
+              <li>Try a different USB port (preferably one directly on the motherboard/PC, not on a hub).</li>
+              <li>For external drives, run the Error Checking tool: Right-click the drive in File Explorer >
+                Properties > Tools > Check.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>25. Driver Conflicts and Rollbacks</h3>
+        <p>If the slowdown began after you installed a new piece of hardware or a driver update, you can roll back the
+          driver.</p>
+        <ul>
+          <li>Go to Device Manager (type it in the Start Menu).</li>
+          <li>Find the device category (e.g., "Display adapters" for GPU, "Keyboards," "Universal Serial Bus
+            controllers").</li>
+          <li>Right-click the specific device > Properties > Driver tab.</li>
+          <li>If the option is available, click "Roll Back Driver." This reverts to the previous version.</li>
+        </ul>
+
+        <h3>Conclusion of Part 1:</h3>
+        <p>
+          These five sections—Restart, Overheating, Storage, Task Manager, and Peripherals—form the essential first
+          line of defense against a slow PC. By methodically working through each, you will resolve a significant
+          majority of common performance issues. If your PC is still slow after these immediate fixes, the problem
+          likely lies deeper in software configuration, system integrity, or hardware limitations, which will be
+          covered in Part 2: The Software Deep Clean.
+        </p>
+        <!-- Navigation to other parts -->
+        <div class="part-navigation">
+          <a href="/blog/handbook/software-deep-clean.html" class="nav-button next">Next</a>
+        </div>
+        <!-- Placeholder for future parts -->
+        <div id="part3" style="margin-top: 60px; padding-top: 20px; border-top: 2px dashed rgba(34, 211, 166, 0.3);">
+          <h2>
+            <a href="/blog/handbook/hardware-advanced-tuning.html" class="part-link">
+              Part 3: Hardware Advanced Tuning
+            </a>
+          </h2>
+          <p>
+            Exploring hardware upgrades and advanced system tweaks to push your PC's performance to the next level.
+          </p>
+        </div>
+        <div id="part4" style="margin-top: 60px; padding-top: 20px; border-top: 2px dashed rgba(34, 211, 166, 0.3);">
+          <h2>
+            <a href="/blog/handbook/maintenance-routine.html" class="part-link">
+              Part 4: Maintenance Routine
+            </a>
+          </h2>
+          <p>
+            Setting up a regular maintenance schedule to keep your PC running smoothly over time.
+          </p>
+        </div>
+        <p>
+        <h2>Explore our more windows toos like
+          <a href="/windows-tools/pdf/pdf-to-word.html" class="tool-btn">PDF Tools</a>,
+          <a href="/windows-tools/image/image-to-pdf.html" class="tool-btn">Image Tools</a>,
+          <a href="/windows-tools/audio/audio-volume-boost.html" class="tool-btn">Audio Tools</a>,
+          <a href="/windows-tools/system/startup-program-manager.html" class="tool-btn">System Tools</a>,
+          <a href="/windows-tools/utility/qr-generator.html" class="tool-btn">Utility Tools</a>,
+          and more on our
+          <a href="/windows-tools.html" class="tool-btn">Tools page</a>
+        </h2>
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <!-- END OF MAIN CONTENT -->
+
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('drawer')?.classList.toggle('open');
+    }
+  </script>
+
+</body>
+
+</html>
