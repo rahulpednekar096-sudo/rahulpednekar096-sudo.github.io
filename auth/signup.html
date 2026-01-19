@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
+  <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Create Account — RDroid Apps</title>
   <meta name="description" content="Sign up for RDroid Apps to access your profile and favorites." />
@@ -186,6 +188,7 @@
         opacity: 0;
         transform: translateY(-10px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -224,35 +227,17 @@
       <form id="signupForm" onsubmit="handleSignup(event)">
         <div class="form-group">
           <label for="name">Full Name</label>
-          <input
-            type="text"
-            id="name"
-            placeholder="John Doe"
-            required
-            autocomplete="name"
-          />
+          <input type="text" id="name" placeholder="John Doe" required autocomplete="name" />
         </div>
 
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            placeholder="your@email.com"
-            required
-            autocomplete="email"
-          />
+          <input type="email" id="email" placeholder="your@email.com" required autocomplete="email" />
         </div>
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="••••••••"
-            required
-            autocomplete="new-password"
-          />
+          <input type="password" id="password" placeholder="••••••••" required autocomplete="new-password" />
           <div class="password-hint">Minimum 6 characters</div>
         </div>
 
@@ -328,4 +313,5 @@
     }
   </script>
 </body>
+
 </html>
