@@ -532,10 +532,10 @@ header .nav-links::-webkit-scrollbar-thumb {
 }
 
 .footer-grid {
-  max-width: 1200px;
+  max-width: 90%;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   gap: 30px;
 }
 
