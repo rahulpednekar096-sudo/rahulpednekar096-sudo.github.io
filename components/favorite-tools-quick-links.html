@@ -1,40 +1,11 @@
-<!-- tools-quick-links.html -->
-<section class="favorite-tools-quick-links">
-    <div class="tools-wrapper">
-        <button class="scroll-btn left" onclick="scrollTools(-300)">‹</button>
-        <div class="tools-scroll" id="toolsScroll">
-            <a href="/windows-tools/audio/trim-audio.html" class="tool-btn">Trim Audio</a>
-            <a href="/windows-tools/audio/audio-volume-boost.html" class="tool-btn">Volume Boost</a>
-            <a href="/windows-tools/audio/merge-audio.html" class="tool-btn">Merge Audio</a>
-            <a href="/windows-tools/audio/change-audio-speed.html" class="tool-btn">Audio Speed</a>
-            <a href="/windows-tools/audio/change-audio-pitch.html" class="tool-btn">Audio Pitch</a>
-            <a href="/windows-tools/pdf/compress-pdf.html" class="tool-btn">Compress PDF</a>
-            <a href="/windows-tools/pdf/book-editor.html" class="tool-btn">Edit Book</a>
-            <a href="/windows-tools/pdf/excel-to-pdf.html" class="tool-btn">Excel to PDF</a>
-            <a href="/windows-tools/pdf/jpg-to-pdf.html" class="tool-btn">JPG to PDF</a>
-            <a href="/windows-tools/pdf/merge-pdf.html" class="tool-btn">Merge PDF</a>
-            <a href="/windows-tools/pdf/protect-unlock-pdf.html" class="tool-btn">Protect/Unlock PDF</a>
-            <a href="/windows-tools/image/compress-image.html" class="tool-btn">Compress Image</a>
-            <a href="/windows-tools/image/convert-image.html" class="tool-btn">Convert Image</a>
-            <a href="/windows-tools/image/image-to-text-ocr.html" class="tool-btn">Image to Text (OCR)</a>
-            <a href="/windows-tools/image/add-watermark.html" class="tool-btn">Add Watermark</a>
-            <a href="/windows-tools/image/image-metadata-viewer.html" class="tool-btn">Image Metadata</a>
-            <a href="/windows-tools/image/image-metadata-remover.html" class="tool-btn">Remove Metadata</a>
-            <a href="/windows-tools/system/file-renamer.html" class="tool-btn">File Renamer</a>
-            <a href="/windows-tools/system/duplicate-file-finder.html" class="tool-btn">Duplicate Finder</a>
-            <a href="/windows-tools/system/folder-size-analyzer.html" class="tool-btn">Folder Size</a>
-            <a href="/windows-tools/system/startup-program-manager.html" class="tool-btn">Startup Manager</a>
-            <a href="/windows-tools/system/system-info-checker.html" class="tool-btn">System Info</a>
-            <a href="/windows-tools/system/disk-usage-visualizer.html" class="tool-btn">Disk Usage</a>
-        </div>
-        <button class="scroll-btn right" onclick="scrollTools(300)">›</button>
-    </div>
-    <script>
-        function scrollTools(amount) {
-            const scrollContainer = document.getElementById('toolsScroll');
-            scrollContainer.scrollBy({ left: amount, behavior: 'smooth' });
-        }
-    </script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Favorite Tools Quick Links Component</title>
+
     <style>
         .tools-wrapper {
             display: flex;
@@ -59,29 +30,72 @@
             scroll-behavior: smooth;
         }
     </style>
-</section>
-<!-- SEARCH BAR (Body - Above Tools) -->
-<section class="tools-search-section">
-    <div class="header-search" style="position: relative;">
-        <input type="search" id="siteSearch" placeholder="Search tools, apps…" aria-label="Search RDroid Apps"
-            autocomplete="off" />
-        <div class="search-results" id="searchResults"></div>
-    </div>
-</section>
-<script>
-    // Active tool button highlighting
-    (function () {
-        setTimeout(() => {
-            const currentPage = window.location.pathname.split("/").pop().toLowerCase();
-            const toolButtons = document.querySelectorAll(".favorite-tools-quick-links .tool-btn");
+</head>
 
-            toolButtons.forEach(btn => {
-                btn.classList.remove("active");
-                const btnPage = btn.getAttribute("href").toLowerCase();
-                if (btnPage === currentPage) {
-                    btn.classList.add("active");
-                }
-            });
-        }, 100);
-    })();
-</script>
+<body>
+    <!-- tools-quick-links.html -->
+    <section class="favorite-tools-quick-links">
+        <div class="tools-wrapper">
+            <button class="scroll-btn left" onclick="scrollTools(-300)">‹</button>
+            <div class="tools-scroll" id="toolsScroll">
+                <a href="/windows-tools/audio/trim-audio.html" class="tool-btn">Trim Audio</a>
+                <a href="/windows-tools/audio/audio-volume-boost.html" class="tool-btn">Volume Boost</a>
+                <a href="/windows-tools/audio/merge-audio.html" class="tool-btn">Merge Audio</a>
+                <a href="/windows-tools/audio/change-audio-speed.html" class="tool-btn">Audio Speed</a>
+                <a href="/windows-tools/audio/change-audio-pitch.html" class="tool-btn">Audio Pitch</a>
+                <a href="/windows-tools/pdf/compress-pdf.html" class="tool-btn">Compress PDF</a>
+                <a href="/windows-tools/pdf/book-editor.html" class="tool-btn">Edit Book</a>
+                <a href="/windows-tools/pdf/excel-to-pdf.html" class="tool-btn">Excel to PDF</a>
+                <a href="/windows-tools/pdf/jpg-to-pdf.html" class="tool-btn">JPG to PDF</a>
+                <a href="/windows-tools/pdf/merge-pdf.html" class="tool-btn">Merge PDF</a>
+                <a href="/windows-tools/pdf/protect-unlock-pdf.html" class="tool-btn">Protect/Unlock PDF</a>
+                <a href="/windows-tools/image/compress-image.html" class="tool-btn">Compress Image</a>
+                <a href="/windows-tools/image/convert-image.html" class="tool-btn">Convert Image</a>
+                <a href="/windows-tools/image/image-to-text-ocr.html" class="tool-btn">Image to Text (OCR)</a>
+                <a href="/windows-tools/image/add-watermark.html" class="tool-btn">Add Watermark</a>
+                <a href="/windows-tools/image/image-metadata-viewer.html" class="tool-btn">Image Metadata</a>
+                <a href="/windows-tools/image/image-metadata-remover.html" class="tool-btn">Remove Metadata</a>
+                <a href="/windows-tools/system/file-renamer.html" class="tool-btn">File Renamer</a>
+                <a href="/windows-tools/system/duplicate-file-finder.html" class="tool-btn">Duplicate Finder</a>
+                <a href="/windows-tools/system/folder-size-analyzer.html" class="tool-btn">Folder Size</a>
+                <a href="/windows-tools/system/startup-program-manager.html" class="tool-btn">Startup Manager</a>
+                <a href="/windows-tools/system/system-info-checker.html" class="tool-btn">System Info</a>
+                <a href="/windows-tools/system/disk-usage-visualizer.html" class="tool-btn">Disk Usage</a>
+            </div>
+            <button class="scroll-btn right" onclick="scrollTools(300)">›</button>
+        </div>
+        <script>
+            function scrollTools(amount) {
+                const scrollContainer = document.getElementById('toolsScroll');
+                scrollContainer.scrollBy({ left: amount, behavior: 'smooth' });
+            }
+        </script>
+    </section>
+    <!-- SEARCH BAR (Body - Above Tools) -->
+    <section class="tools-search-section">
+        <div class="header-search" style="position: relative;">
+            <input type="search" id="siteSearch" placeholder="Search tools, apps…" aria-label="Search RDroid Apps"
+                autocomplete="off" />
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </section>
+    <script>
+        // Active tool button highlighting
+        (function () {
+            setTimeout(() => {
+                const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+                const toolButtons = document.querySelectorAll(".favorite-tools-quick-links .tool-btn");
+
+                toolButtons.forEach(btn => {
+                    btn.classList.remove("active");
+                    const btnPage = btn.getAttribute("href").toLowerCase();
+                    if (btnPage === currentPage) {
+                        btn.classList.add("active");
+                    }
+                });
+            }, 100);
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,38 +1,51 @@
-<!-- tools-quick-links.html -->
-<section class="system-tools-quick-links">
-    <div class="tools-scroll">
-        <!-- System Tools -->
-        <a href="/windows-tools/system/file-renamer.html" class="tool-btn">File Renamer</a>
-        <a href="/windows-tools/system/duplicate-file-finder.html" class="tool-btn">Duplicate Finder</a>
-        <a href="/windows-tools/system/folder-size-analyzer.html" class="tool-btn">Folder Size</a>
-        <a href="/windows-tools/system/startup-program-manager.html" class="tool-btn">Startup Manager</a>
-        <a href="/windows-tools/system/system-info-checker.html" class="tool-btn">System Info</a>
-        <a href="/windows-tools/system/disk-usage-visualizer.html" class="tool-btn">Disk Usage</a>
+<!DOCTYPE html>
+<html lang="en">
 
-    </div>
-</section>
-<!-- SEARCH BAR (Body - Above Tools) -->
-<section class="tools-search-section">
-    <div class="header-search" style="position: relative;">
-        <input type="search" id="siteSearch" placeholder="Search tools, apps…" aria-label="Search RDroid Apps"
-            autocomplete="off" />
-        <div class="search-results" id="searchResults"></div>
-    </div>
-</section>
-<script>
-    // Active tool button highlighting
-    (function () {
-        setTimeout(() => {
-            const currentPage = window.location.pathname.split("/").pop().toLowerCase();
-            const toolButtons = document.querySelectorAll(".system-tools-quick-links .tool-btn");
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <title>System Tools Quick Links Component</title>
+</head>
 
-            toolButtons.forEach(btn => {
-                btn.classList.remove("active");
-                const btnPage = btn.getAttribute("href").toLowerCase();
-                if (btnPage === currentPage) {
-                    btn.classList.add("active");
-                }
-            });
-        }, 100);
-    })();
-</script>
+<body>
+    <!-- tools-quick-links.html -->
+    <section class="system-tools-quick-links">
+        <div class="tools-scroll">
+            <!-- System Tools -->
+            <a href="/windows-tools/system/file-renamer.html" class="tool-btn">File Renamer</a>
+            <a href="/windows-tools/system/duplicate-file-finder.html" class="tool-btn">Duplicate Finder</a>
+            <a href="/windows-tools/system/folder-size-analyzer.html" class="tool-btn">Folder Size</a>
+            <a href="/windows-tools/system/startup-program-manager.html" class="tool-btn">Startup Manager</a>
+            <a href="/windows-tools/system/system-info-checker.html" class="tool-btn">System Info</a>
+            <a href="/windows-tools/system/disk-usage-visualizer.html" class="tool-btn">Disk Usage</a>
+
+        </div>
+    </section>
+    <!-- SEARCH BAR (Body - Above Tools) -->
+    <section class="tools-search-section">
+        <div class="header-search" style="position: relative;">
+            <input type="search" id="siteSearch" placeholder="Search tools, apps…" aria-label="Search RDroid Apps"
+                autocomplete="off" />
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </section>
+    <script>
+        // Active tool button highlighting
+        (function () {
+            setTimeout(() => {
+                const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+                const toolButtons = document.querySelectorAll(".system-tools-quick-links .tool-btn");
+
+                toolButtons.forEach(btn => {
+                    btn.classList.remove("active");
+                    const btnPage = btn.getAttribute("href").toLowerCase();
+                    if (btnPage === currentPage) {
+                        btn.classList.add("active");
+                    }
+                });
+            }, 100);
+        })();
+    </script>
+</body>
+
+</html>
