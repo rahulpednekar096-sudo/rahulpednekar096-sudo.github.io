@@ -15,16 +15,36 @@
 
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #34a853;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
 
+    .back-to-top:hover {
+      background-color: #2e8b47;
+      transform: translateY(-3px);
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- HEADER -->
   <div id="header-container"></div>
-
-  <!-- TOOLS QUICK LINKS -->
-  <div id="tools-links-container"></div>
 
   <!-- MENU DRAWER -->
   <div id="menu-drawer-container"></div>
@@ -34,7 +54,6 @@
     $(function () {
       $("#header-container").load("/components/header.html");
       $("#menu-drawer-container").load("/components/menu-drawer.html");
-      $("#tools-links-container").load("/components/favorite-tools-quick-links.html");
       $("#footer-container").load("/components/footer.html");
     });
   </script>
@@ -42,105 +61,110 @@
   <!-- Privacy Policy Content -->
   <div class="wrap" id="privacy">
     <section class="section">
+      <section>
+        <h1>Privacy Policy</h1>
 
-      <h1>Privacy Policy</h1>
+        <p><strong>Last updated:</strong> January 2026</p>
 
-      <p><strong>Last updated:</strong> January 2026</p>
+        <p>
+          <strong>RDroid Apps</strong> operates Android applications, Windows tools,
+          and the website <strong>https://rdroidapps.com</strong>.
+          This Privacy Policy explains how our apps, tools, and website
+          handle user data and privacy.
+        </p>
 
-      <p>
-        <strong>RDroid Apps</strong> operates Android applications, Windows tools,
-        and the website <strong>https://rdroidapps.com</strong>.
-        This Privacy Policy explains how our apps, tools, and website
-        handle user data and privacy.
-      </p>
+        <h3>1. Information We Collect</h3>
+        <p>
+          We do not directly collect or store personally identifiable information
+          such as your name, address, phone number, or email through our website
+          or Windows tools.
+        </p>
+        <p>
+          Our Android apps and website may use trusted third-party services
+          for analytics and advertising, which may collect limited
+          non-personal information as described below.
+        </p>
 
-      <h3>1. Information We Collect</h3>
-      <p>
-        We do not directly collect or store personally identifiable information
-        such as your name, address, phone number, or email through our website
-        or Windows tools.
-      </p>
-      <p>
-        Our Android apps and website may use trusted third-party services
-        for analytics and advertising, which may collect limited
-        non-personal information as described below.
-      </p>
+        <h3>2. Website Data & Cookies</h3>
+        <p>
+          Our website (<strong>rdroidapps.com</strong>) may use cookies and similar
+          technologies to improve user experience and display advertisements.
+        </p>
+        <p>
+          We use <strong>Google AdSense</strong> to show ads on our website.
+          Google AdSense may use cookies or device identifiers to serve
+          personalized or non-personalized ads based on user consent
+          and regional regulations.
+        </p>
 
-      <h3>2. Website Data & Cookies</h3>
-      <p>
-        Our website (<strong>rdroidapps.com</strong>) may use cookies and similar
-        technologies to improve user experience and display advertisements.
-      </p>
-      <p>
-        We use <strong>Google AdSense</strong> to show ads on our website.
-        Google AdSense may use cookies or device identifiers to serve
-        personalized or non-personalized ads based on user consent
-        and regional regulations.
-      </p>
+        <h3>3. Android Apps</h3>
+        <p>
+          Some of our Android apps (such as Color Mixer and other utilities)
+          may display ads or collect anonymous usage statistics to help
+          improve app performance and stability.
+        </p>
 
-      <h3>3. Android Apps</h3>
-      <p>
-        Some of our Android apps (such as Color Mixer and other utilities)
-        may display ads or collect anonymous usage statistics to help
-        improve app performance and stability.
-      </p>
+        <h3>4. Third-Party Services</h3>
+        <p>
+          We may use the following third-party services:
+        </p>
+        <ul>
+          <li><strong>Google AdSense</strong> – advertising on the website</li>
+          <li><strong>Google AdMob</strong> – advertising in Android apps</li>
+          <li><strong>Google Firebase</strong> – analytics, authentication, and crash reporting</li>
+        </ul>
+        <p>
+          These services may collect anonymous or aggregated data
+          according to their own privacy policies.
+        </p>
 
-      <h3>4. Third-Party Services</h3>
-      <p>
-        We may use the following third-party services:
-      </p>
-      <ul>
-        <li><strong>Google AdSense</strong> – advertising on the website</li>
-        <li><strong>Google AdMob</strong> – advertising in Android apps</li>
-        <li><strong>Google Firebase</strong> – analytics, authentication, and crash reporting</li>
-      </ul>
-      <p>
-        These services may collect anonymous or aggregated data
-        according to their own privacy policies.
-      </p>
+        <h3>5. Windows Tools & Local Processing</h3>
+        <p>
+          Our Windows tools are designed to work locally on your device.
+          Files processed using these tools are not uploaded to our servers
+          unless explicitly stated.
+        </p>
 
-      <h3>5. Windows Tools & Local Processing</h3>
-      <p>
-        Our Windows tools are designed to work locally on your device.
-        Files processed using these tools are not uploaded to our servers
-        unless explicitly stated.
-      </p>
+        <h3>6. Children’s Privacy</h3>
+        <p>
+          Our apps, tools, and website are intended for general audiences.
+          We do not knowingly collect personal data from children under the
+          age of 13.
+        </p>
 
-      <h3>6. Children’s Privacy</h3>
-      <p>
-        Our apps, tools, and website are intended for general audiences.
-        We do not knowingly collect personal data from children under the
-        age of 13.
-      </p>
+        <h3>7. Data Security</h3>
+        <p>
+          We take reasonable measures to protect user privacy and ensure
+          that our tools and services operate securely.
+          However, no method of transmission or storage is 100% secure.
+        </p>
 
-      <h3>7. Data Security</h3>
-      <p>
-        We take reasonable measures to protect user privacy and ensure
-        that our tools and services operate securely.
-        However, no method of transmission or storage is 100% secure.
-      </p>
+        <h3>8. Policy Updates</h3>
+        <p>
+          This Privacy Policy may be updated from time to time.
+          Any changes will be posted on this page with an updated date.
+        </p>
+        <p>
+          We encourage users to review this Privacy Policy periodically
+          to stay informed about our data practices.
+        </p>
 
-      <h3>8. Policy Updates</h3>
-      <p>
-        This Privacy Policy may be updated from time to time.
-        Any changes will be posted on this page with an updated date.
-      </p>
-      <p>
-        We encourage users to review this Privacy Policy periodically
-        to stay informed about our data practices.
-      </p>
+        <h3>9. Contact Us</h3>
+        <p>
+          If you have any questions about this Privacy Policy or our practices,
+          you can contact us at:
+        </p>
+        <div>
+          <h3>Email</h3>
+          <p><a href="mailto:rdroidapps096@gmail.com">rdroidapps096@gmail.com</a></p>
+        </div>
 
-      <h3>9. Contact Us</h3>
-      <p>
-        If you have any questions about this Privacy Policy or our practices,
-        you can contact us at:
-      </p>
-      <p>
-        <a href="mailto:rdroidapps096@gmail.com" class="btn">
-          rdroidapps096@gmail.com
-        </a>
-      </p>
-
+      </section>
+      <div>
+        <button class="back-to-top" id="backToTop">
+          <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+      </div>
     </section>
   </div>
 
@@ -151,6 +175,26 @@
     function toggleMenu() {
       document.getElementById('drawer').classList.toggle('open');
     }
+    // Back to top functionality
+    document.getElementById('backToTop').addEventListener('click', function () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Show/hide back to top button based on scroll position
+    window.addEventListener('scroll', function () {
+      const backToTopBtn = document.getElementById('backToTop');
+      if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'flex';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+
+    // Initially hide the back to top button
+    document.getElementById('backToTop').style.display = 'none';
   </script>
 
 </body>
