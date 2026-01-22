@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/js/script.js" defer></script>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Easy Music User Guide | RDroid Apps</title>
+    <meta name="description"
+        content="Complete user guide for Easy Music by RDroid Apps. Learn how to create, save, and share guitar-based music tracks." />
+    <link rel="canonical" href="https://rdroidapps.com/easy-music-user-guide.html" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <div class="wrap">
+        <!-- Main Guide Section -->
+        <section class="section">
+            <h1>🎵 Easy Music - User Guide</h1>
+            <p class="lead">Welcome to Easy Music by RDroid Apps!</p>
+            <p>Here's how to use the app:</p>
+
+            <!-- Step 1 -->
+            <h2>1️⃣ Start a New Track</h2>
+            <ul class="about-points">
+                <li>Tap on <strong>"New Track"</strong> to begin.</li>
+                <li>Add musical notes like <code>C4</code>, <code>D#3</code>, <code>A#4</code> etc.</li>
+                <li>Adjust each note's duration and position using the sliders.</li>
+            </ul>
+
+            <!-- Step 2 -->
+            <h2>2️⃣ Play Your Track</h2>
+            <ul class="about-points">
+                <li>Tap the <strong>"Play"</strong> button to listen to your composition.</li>
+                <li>Use <strong>Pause</strong>, <strong>Stop</strong>, or <strong>Replay</strong> controls anytime.</li>
+                <li>Adjust playback speed with the tempo control.</li>
+            </ul>
+
+            <!-- Step 3 -->
+            <h2>3️⃣ Save and Load</h2>
+            <ul class="about-points">
+                <li>Save your current track to local storage for later editing.</li>
+                <li>Load any previously saved track from your device storage.</li>
+                <li>Organize tracks with custom names and timestamps.</li>
+            </ul>
+
+            <!-- Step 4 -->
+            <h2>4️⃣ Share Your Music</h2>
+            <ul class="about-points">
+                <li>Export your track as audio file (M4A/WAV format).</li>
+                <li>Share directly to social media or messaging apps.</li>
+                <li>Send your composition to friends via email or Bluetooth.</li>
+            </ul>
+
+            <!-- Step 5 -->
+            <h2>5️⃣ Track View & Notes</h2>
+            <ul class="about-points">
+                <li>Each musical note is displayed clearly on the timeline.</li>
+                <li>Drag and drop to change note order and timing.</li>
+                <li>Visual layout helps understand timing and flow of composition.</li>
+                <li>Color-coded notes for easy identification of pitch and duration.</li>
+            </ul>
+
+            <!-- Step 6 -->
+            <h2>6️⃣ Settings</h2>
+            <ul class="about-points">
+                <li>Manage sound mode: <strong>Normal</strong> or <strong>Studio Quality</strong>.</li>
+                <li>Adjust master volume and individual track volumes.</li>
+                <li>Choose between light and dark display themes.</li>
+                <li>Enable/disable haptic feedback for touch interactions.</li>
+            </ul>
+
+            <!-- Pro Tips -->
+            <div class="section" style="background: rgba(34, 211, 166, 0.05); border-left: 4px solid var(--accent);">
+                <h3>💡 Pro Tips for Better Compositions</h3>
+                <ul class="about-points">
+                    <li>Start with simple melodies before adding complex chords.</li>
+                    <li>Use the metronome feature to maintain rhythm consistency.</li>
+                    <li>Experiment with different note durations for varied expression.</li>
+                    <li>Layer multiple tracks for richer, fuller sound.</li>
+                    <li>Save multiple versions to compare and choose the best one.</li>
+                </ul>
+            </div>
+
+            <!-- Navigation -->
+            <div class="part-navigation">
+                <a href="/easy-music.html" class="nav-button prev">Back to Easy Music</a>
+                <a href="/easy-music-privacy-policy.html" class="nav-button next">Privacy Policy →</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('drawer').classList.toggle('open');
+        }
+    </script>
+
+    <!-- Firebase v12 Modular SDKs (ES Modules) -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/login.js"></script>
+</body>
+
+</html>

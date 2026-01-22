@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/js/script.js" defer></script>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Golden Calc User Guide | RDroid Apps</title>
+    <meta name="description"
+        content="Complete user guide for Golden Calc by RDroid Apps. Learn how to use the advanced scientific calculator and unit converter." />
+    <link rel="canonical" href="https://rdroidapps.com/golden-calc-user-guide.html" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <div class="wrap">
+        <!-- Main Guide Section -->
+        <section class="section">
+            <h1>🧮 Golden Calc - User Guide</h1>
+            <p class="lead">Welcome to Golden Calc by RDroid Apps!</p>
+            <p>Here's how to use the advanced scientific calculator and unit converter:</p>
+
+            <!-- Calculator Basics -->
+            <h2>1️⃣ Basic Calculator Operations</h2>
+            <ul class="about-points">
+                <li>Tap number buttons (0-9) and decimal point (.) for input.</li>
+                <li>Use basic operators: <code>+</code> (add), <code>-</code> (subtract), <code>×</code> (multiply),
+                    <code>÷</code> (divide).
+                </li>
+                <li>Press <strong>"="</strong> to calculate or see live results as you type.</li>
+                <li>Use <strong>"C"</strong> to clear the current expression.</li>
+                <li>Use <strong>"⌫"</strong> (backspace) to delete the last character.</li>
+            </ul>
+
+            <!-- Scientific Functions -->
+            <h2>2️⃣ Scientific Functions</h2>
+            <ul class="about-points">
+                <li><strong>π (Pi)</strong>: Insert the mathematical constant π (3.14159...).</li>
+                <li><strong>√ (Square Root)</strong>: Calculate square root of a number. Tap √ then number, or wrap
+                    selection with √().</li>
+                <li><strong>^ (Power)</strong>: Raise a number to a power. Example: <code>2^3 = 8</code>.</li>
+                <li><strong>! (Factorial)</strong>: Calculate factorial of a number. Example: <code>5! = 120</code>.
+                </li>
+                <li><strong>% (Percentage)</strong>: Calculate percentages. Example: <code>50% = 0.5</code>.</li>
+                <li><strong>() Parentheses</strong>: Group expressions for correct order of operations.</li>
+            </ul>
+
+            <!-- Unit Converter -->
+            <h2>3️⃣ Unit Converter</h2>
+            <ul class="about-points">
+                <li>Tap the <strong>"Unit Converter"</strong> button to switch to conversion mode.</li>
+                <li>Select category: Length, Area, Temperature, Volume, Mass, Data, Speed, Time, Energy, Power,
+                    Pressure, Frequency, or Storage.</li>
+                <li>Choose "From" unit and "To" unit from the dropdowns.</li>
+                <li>Enter value in the input field - conversion happens automatically.</li>
+                <li>Use <strong>"↔"</strong> (swap) button to reverse the conversion direction.</li>
+            </ul>
+
+            <!-- History Feature -->
+            <h2>4️⃣ Calculation History</h2>
+            <ul class="about-points">
+                <li>Tap the <strong>"History"</strong> button to view all previous calculations.</li>
+                <li>Each entry shows the expression and result in format: <code>expression = result</code>.</li>
+                <li><strong>Long press</strong> on any text to select it for copying.</li>
+                <li>Use <strong>"Select"</strong> option in context menu to select entire line.</li>
+                <li>Use <strong>"Clear"</strong> option to delete selected text or entire history.</li>
+                <li>History is automatically saved across app sessions (up to 100 entries).</li>
+            </ul>
+
+            <!-- Smart Features -->
+            <h2>5️⃣ Smart Input Features</h2>
+            <ul class="about-points">
+                <li><strong>Live Calculation</strong>: See results as you type without pressing "=".</li>
+                <li><strong>Tap to Select</strong>: Tap any word/number in expression to select it for easy editing.
+                </li>
+                <li><strong>Selection-aware Insertion</strong>: New symbols are inserted at cursor or replace selection.
+                </li>
+                <li><strong>Implicit Multiplication</strong>: Automatically adds × between numbers and functions (e.g.,
+                    2√9 becomes 2*√9).</li>
+                <li><strong>Error Handling</strong>: Invalid expressions show "Error" instead of crashing.</li>
+            </ul>
+
+            <!-- Advanced Tips -->
+            <div class="section" style="background: rgba(255, 193, 7, 0.05); border-left: 4px solid #FFC107;">
+                <h3>💡 Advanced Tips & Tricks</h3>
+                <ul class="about-points">
+                    <li>Use parentheses for complex expressions: <code>(2+3)×(4-1)</code></li>
+                    <li>Combine multiple operations: <code>√(25) + 3^2 - 10%</code></li>
+                    <li>For temperature conversions, note that °F and °C conversions go through Kelvin internally.</li>
+                    <li>Data storage units support both decimal (KB=1000) and binary (KiB=1024) prefixes.</li>
+                    <li>Use the history feature to review complex calculations or copy results for reuse.</li>
+                    <li>You can edit previous calculations by selecting text in history and copying back to calculator.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Common Formulas -->
+            <h2>6️⃣ Common Formulas & Examples</h2>
+            <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; margin: 15px 0;">
+                <h4>Area of Circle:</h4>
+                <code>π × r^2</code> (where r is radius)
+
+                <h4 style="margin-top: 15px;">Pythagorean Theorem:</h4>
+                <code>√(a^2 + b^2)</code> (hypotenuse calculation)
+
+                <h4 style="margin-top: 15px;">Compound Interest:</h4>
+                <code>P × (1 + r/100)^t</code> (where P=principal, r=rate, t=time)
+
+                <h4 style="margin-top: 15px;">Temperature Conversion:</h4>
+                <code>(°F - 32) × 5/9</code> (Fahrenheit to Celsius)
+            </div>
+
+            <!-- Navigation -->
+            <div class="part-navigation">
+                <a href="/golden-calc.html" class="nav-button prev">Back to Golden Calc</a>
+                <a href="/golden-calc-privacy-policy.html" class="nav-button next">Privacy Policy →</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('drawer').classList.toggle('open');
+        }
+    </script>
+
+    <!-- Firebase v12 Modular SDKs (ES Modules) -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/login.js"></script>
+</body>
+
+</html>
