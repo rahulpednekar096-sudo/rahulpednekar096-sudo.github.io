@@ -34,13 +34,13 @@
       z-index: 9999;
       min-width: 260px;
       max-width: 380px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.247), rgba(255, 255, 255, 0.26));
+      background: linear-gradient(180deg, rgb(2, 51, 158), rgb(1, 18, 44));
       border: 1px solid rgba(255, 255, 255, 0.623);
       color: var(--fg-main);
       box-shadow: 0 12px 34px rgba(2, 6, 23, 0.7);
       border-radius: 12px;
       padding: 12px;
-      backdrop-filter: blur(8px);
+
       display: none;
       /* shown by JS */
       transition: transform 0.16s ease, opacity 0.12s ease;
@@ -49,19 +49,27 @@
     }
 
     /* small arrow */
+    .tool-popup[data-arrow="top"]::after {
+      top: -6px;
+      left: var(--arrow-x, 20px);
+    }
+
+    .tool-popup[data-arrow="bottom"]::after {
+      bottom: -6px;
+      left: var(--arrow-x, 20px);
+    }
+
     .tool-popup::after {
       content: "";
       position: absolute;
       width: 12px;
       height: 12px;
       background: inherit;
-      left: 18px;
-      top: -6px;
       transform: rotate(45deg);
-      border-left: 1px solid rgba(255, 255, 255, 0.04);
-      border-top: 1px solid rgba(255, 255, 255, 0.04);
-      filter: blur(.2px);
+      border-left: 1px solid rgba(255, 255, 255, .15);
+      border-top: 1px solid rgba(255, 255, 255, .15);
     }
+
 
     /* header inside popup */
     .tool-popup .tp-head {
@@ -170,12 +178,6 @@
   <!-- Hero Section -->
   <div class="wrap" id="home">
     <section class="hero">
-      <div class="hero-left">
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <img src="assets/my_brand_icon.png" alt="RDroid Logo Large" />
-      </div>
       <div class="hero-right">
         <h1 class="rdroid-blogs-title">
           <span class="rdroid">Smart Apps And</span>
@@ -335,6 +337,10 @@
     function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
     /* ---------- Category popup behavior for index.html cards ---------- */
     (function () {
+      // 🔒 Popup hover state (IMPORTANT)
+      let overCard = false;
+      let overPopup = false;
+      let hideTimer = null;
       // category -> tools mapping (adjust items as needed)
       const TOOL_MAP = {
         pdf: [
@@ -391,7 +397,9 @@
         ],
         utility: [
           { name: "Notes Manager", href: "windows-tools/utility/notes-manager.html" },
-          { name: "QR Generator", href: "windows-tools/utility/qr-generator.html" }
+          { name: "QR Generator", href: "windows-tools/utility/qr-generator.html" },
+          { name: "Unit Converter", href: "windows-tools/utility/unit-converter.html" },
+          { name: "Age Calculator", href: "windows-tools/utility/age-calculator.html" }
         ],
         blog: [
           { name: "How to Compress PDF Files Without Losing Quality", href: "blog/articles/how-to-compress-pdf.html" },
@@ -422,7 +430,6 @@
 
       const listEl = popup.querySelector('.tp-list');
       const openAllEl = popup.querySelector('.open-all');
-      let hideTimer = null;
 
       function buildList(cat) {
         listEl.innerHTML = '';
@@ -444,45 +451,71 @@
       }
 
       function showPopupFor(el, cat) {
+        overCard = true;
+
         buildList(cat);
+        popup.style.display = 'block';
+        popup.style.opacity = '0';
+
+        const rect = el.getBoundingClientRect();
+
+        // force layout so height is correct
+        const popupRect = popup.getBoundingClientRect();
+        const popupW = popupRect.width;
+        const popupH = popupRect.height;
+
+        let top, left;
+        let arrowSide = 'top';
+
+        // try ABOVE card
+        if (rect.top > popupH + 16) {
+          top = rect.top - popupH - 10;
+          arrowSide = 'bottom';
+        } else {
+          // place BELOW
+          top = rect.bottom + 10;
+          arrowSide = 'top';
+        }
+
+        // horizontal center aligned with card
+        left = rect.left + rect.width / 2 - popupW / 2;
+
+        // screen clamp
+        left = Math.max(12, Math.min(left, window.innerWidth - popupW - 12));
+
+        popup.style.top = top + 'px';
+        popup.style.left = left + 'px';
+
+        // arrow exact card center
+        const arrowX = rect.left + rect.width / 2 - left - 6;
+        popup.style.setProperty('--arrow-x', arrowX + 'px');
+        popup.setAttribute('data-arrow', arrowSide);
+
         popup.classList.add('show');
 
-        // position: prefer above-right of the element, if space, else below
-        const rect = el.getBoundingClientRect();
-        const popupW = Math.min(380, window.innerWidth - 24);
-        let left = rect.left + 12;
-        if (left + popupW > window.innerWidth - 12) left = window.innerWidth - popupW - 12;
-        let top = rect.top - 12 - popup.offsetHeight;
-        // if not enough space above, put below
-        if (rect.top < 160) {
-          top = rect.bottom + 12;
-        }
-        // Apply computed positions
-        popup.style.left = left + 'px';
-        // On mobile, we prefer bottom sheet; JS will let CSS media query handle it (we set bottom on small screens)
-        if (window.innerWidth <= 680) {
-          popup.style.bottom = '18px';
-          popup.style.top = 'auto';
-        } else {
-          popup.style.top = (top < 8 ? 8 : top) + 'px';
-          popup.style.bottom = 'auto';
-        }
-        // small transform for animation
-        popup.style.transform = 'translateY(0)';
-        // ensure visible
-        popup.style.display = 'block';
-        setTimeout(() => popup.style.opacity = '1', 10);
+        requestAnimationFrame(() => {
+          popup.style.opacity = '1';
+        });
       }
 
-      function hidePopup() {
-        popup.style.opacity = '0';
-        popup.classList.remove('show');
-        // small delay to allow fade
+      function hidePopup(delay = 120) {
         if (hideTimer) clearTimeout(hideTimer);
+
         hideTimer = setTimeout(() => {
-          popup.style.display = 'none';
-        }, 160);
+          if (overCard || overPopup) return; // STILL hovering → do nothing
+
+          popup.classList.remove('show');
+          popup.style.opacity = '0';
+
+          setTimeout(() => {
+            if (!popup.classList.contains('show')) {
+              popup.style.display = 'none';
+            }
+          }, 180);
+
+        }, delay);
       }
+
 
       // attach to all .card elements on the page
       function init() {
@@ -498,28 +531,28 @@
           cat = cat && cat.toLowerCase();
 
           // mouse interactions (desktop)
-          card.addEventListener('mouseenter', (e) => {
+          card.addEventListener('mouseenter', () => {
             if (!cat) return;
+            overCard = true;
             showPopupFor(card, cat);
           });
-          card.addEventListener('mouseleave', (e) => {
-            // hide after a short delay to allow pointer to move into popup
-            setTimeout(() => {
-              // if pointer inside popup, don't hide
-              // use document.elementFromPoint
-              const p = document.elementFromPoint(e.clientX, e.clientY);
-              if (p && popup.contains(p)) return;
-              hidePopup();
-            }, 140);
+
+          card.addEventListener('mouseleave', () => {
+            overCard = false;
+            hidePopup();
           });
 
           // also keep popup visible if user moves to popup
           popup.addEventListener('mouseenter', () => {
+            overPopup = true;
             if (hideTimer) clearTimeout(hideTimer);
           });
+
           popup.addEventListener('mouseleave', () => {
+            overPopup = false;
             hidePopup();
           });
+
 
           // mobile / touch: toggle on click
           card.addEventListener('click', (ev) => {
@@ -563,4 +596,3 @@
 </body>
 
 </html>
-
