@@ -1144,6 +1144,28 @@ select {
   box-shadow: 0 0 12px rgba(34, 211, 166, .5);
 }
 
+/* Mobile tab fix */
+@media (max-width: 768px) {
+  .tabs {
+    flex-wrap: wrap;
+    /* buttons wrap होतील */
+    gap: 8px;
+  }
+
+  .tab-btn {
+    flex: 1 1 auto;
+    /* button auto-size */
+    padding: 10px 12px;
+    /* padding कमी */
+    font-size: 14px;
+    /* text readable */
+    border-radius: 8px;
+    text-align: center;
+    white-space: nowrap;
+    /* text break होऊ नये */
+  }
+}
+
 .tab-content {
   display: none;
   animation: fade 0.3s ease;
