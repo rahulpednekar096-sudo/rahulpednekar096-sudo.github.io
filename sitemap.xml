@@ -290,7 +290,7 @@
         <priority>0.6</priority>
     </url>
 
-    <!-- ================= SYSTEM TOOLS ================= -->
+    <!-- ================= Utility Tools ================= -->
     <url>
         <loc>https://rdroidapps.com/windows-tools/utility/age-calculator.html</loc>
         <changefreq>monthly</changefreq>
@@ -311,6 +311,85 @@
 
     <url>
         <loc>https://rdroidapps.com/windows-tools/utility/qr-code-generator.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- ================= blogs section ================= -->
+    <url>
+        <loc>https://rdroidapps.com/blog/articles/how-to-compress-pdf.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/blog/articles/image-formats-guide.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/blog/articles/top-android-tools.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/blog/handbook/advanced-optimization.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/blog/handbook/hardware-advanced-tuning.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/blog/handbook/maintenance-routine.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/blog/handbook/software-deep-clean.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/blog/handbook/the-slow-pc-fix-handbook.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/blog/post/android-privacy-features.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/blog/post/audio-editing-basics.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/blog/post/bulk-renamer-guide.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/blog/post/merge-pdf-guide.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://rdroidapps.com/blog/post/web-image-optimization.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
