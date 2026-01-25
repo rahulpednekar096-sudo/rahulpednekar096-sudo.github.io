@@ -93,18 +93,29 @@
     });
   </script>
   <!-- Header Title -->
-  <section style="text-align:center; padding: 120px 10px 40px;">
+  <section style="text-align:center; padding: 0px 10px 40px;">
     <h1 class="rdroid-blogs-title">
       <span class="rdroid">🪟 Windows</span>
       <span class="blogs">Tools</span>
     </h1>
-    <p style="max-width:700px; margin:auto;">
-      Use our fast, secure, and lightweight Windows utilities built for everyday productivity.
-    </p>
+    <section style="max-width:900px; margin:0 auto 30px; text-align:center;">
+      <p>
+        The Windows Tools section on RDroidApps provides a collection of focused utilities
+        designed to help with document handling, media processing, and system-related tasks.
+        Each tool is built to perform a specific function clearly and efficiently, without
+        unnecessary complexity or misleading features.
+      </p>
+      <p>
+        Users can explore different categories such as PDF tools, image tools, audio tools,
+        system tools, and utility tools to find exactly what they need for their everyday
+        digital work.
+      </p>
+    </section>
+
   </section>
 
   <!-- MAIN CONTENT -->
-  <div class="tools-container">
+  <div class="tools-container" style="max-width: 900px;">
 
     <!-- LEFT SIDEBAR -->
     <div class="sidebar" style="position: sticky; top: 80px;">
@@ -394,7 +405,7 @@
         list.innerHTML += `
       <div class="tool-item">
         <div class="tool-category">${category.toUpperCase()}</div>
-        <a href="/windows-tools/${category}/${tool.file}" class="tool-name" target="_blank">
+        <a href="/windows-tools/${category}/${tool.file}" class="tool-name">
           ${tool.name}
         </a>
         <div class="tool-desc">${tool.desc}</div>
