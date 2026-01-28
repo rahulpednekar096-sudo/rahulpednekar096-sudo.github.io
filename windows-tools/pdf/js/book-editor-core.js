@@ -107,10 +107,33 @@ class BookEditorCore {
         this.bookTitleInput.value = this.bookData.title;
         this.bookAuthorInput.value = this.bookData.author;
         this.updatePreview();
-
         this.startAutoSave();
+        // Set default orientation active state
+        if (this.bookData.settings.orientation === 'portrait') {
+            this.portraitBtn.classList.add('active');
+            this.landscapeBtn.classList.remove('active');
+        }
+        else {
+            this.landscapeBtn.classList.add('active');
+            this.portraitBtn.classList.remove('active');
+        }
+
     }
 
+    getDefaultEditorContent() {
+        return `
+        <h1>Welcome to Book Editor Pro</h1>
+                    <p>Start writing your book here. You can:</p>
+                    <ul>
+                        <li>Add multiple chapters and pages</li>
+                        <li>Format text using the toolbar above</li>
+                        <li>Rearrange pages using drag & drop</li>
+                        <li>Choose different page sizes</li>
+                        <li>Export to professional PDF</li>
+                    </ul>
+                    <p>First click <strong>Add Chapter</strong>, rename it, and then use <strong>Add Page</strong> to start writing your book.</p>
+        `;
+    }
 
     initializeBook() {
         this.bookData = {
@@ -132,11 +155,16 @@ class BookEditorCore {
             }
         };
 
-        const firstPage = this.createPage("Introduction", this.editorContent.innerHTML);
+        const defaultContent = this.getDefaultEditorContent();
+
+        const firstPage = this.createPage("Introduction", defaultContent);
         this.bookData.pages.push(firstPage);
 
         this.currentPageIndex = 0;
         this.currentChapterIndex = -1;
+
+        // 🔥 UI sync
+        this.editorContent.innerHTML = defaultContent;
 
         this.renderPagesList();
         this.renderChaptersList();
@@ -673,7 +701,7 @@ class BookEditorCore {
         // every 10 seconds
         this.autoSaveTimer = setInterval(() => {
             this.autoSaveDraft();
-        }, 10000);
+        }, 5000);
     }
 
     autoSaveDraft() {
@@ -958,6 +986,20 @@ class BookEditorCore {
             });
         });
 
+        // Orientation buttons
+        this.portraitBtn.addEventListener('click', () => {
+            this.bookData.settings.orientation = 'portrait';
+
+            this.portraitBtn.classList.add('active');
+            this.landscapeBtn.classList.remove('active');
+        });
+
+        this.landscapeBtn.addEventListener('click', () => {
+            this.bookData.settings.orientation = 'landscape';
+
+            this.landscapeBtn.classList.add('active');
+            this.portraitBtn.classList.remove('active');
+        });
 
 
         // Font family change
