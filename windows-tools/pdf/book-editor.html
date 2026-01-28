@@ -49,7 +49,7 @@
             transition: all 0.2s ease;
         }
 
-        .card:hover {
+        .a:hover {
             background: rgba(255, 255, 255, 0.1);
         }
 
@@ -575,9 +575,31 @@
     </script>
 
     <section class="section" role="main" aria-labelledby="title">
-        <h1 id="title">Book Editor Pro</h1>
-        <p class="lead">Create and edit multi-page books with chapters. Customize page sizes, format text, and export to
-            professional PDF format.</p>
+        <div class="card">
+            <div class="main-wrap">
+                <!-- LEFT: Drop Area -->
+                <div class="main half" id="mainArea">
+                    <h1 id="title">Book Editor Pro</h1>
+                    <p class="lead">Create and edit multi-page books with chapters. Customize page sizes, format text,
+                        and export to
+                        professional PDF format.
+                    </p><br>
+                    <h3>Why Book Editor Pro?</h3><br><br>
+                    <ul>
+                        <li>📘 Write complete books directly in your browser</li>
+                        <li>🧩 Organize chapters & pages with ease</li>
+                        <li>✍️ Professional formatting tools built-in</li>
+                        <li>📄 Export print-ready PDF without extra software</li>
+                    </ul>
+                </div>
+                <!-- RIGHT: Tool Image -->
+                <div class="tool-image half">
+                    <img src="/assets/images/pdf-image/book-editor.webp"
+                        alt="Compress PDF tool interface showing file drop area and compression options" loading="lazy"
+                        width="600" height="340">
+                </div>
+            </div>
+        </div>
 
         <div class="book-controls">
             <button class="btn btn-primary" id="newBookBtn">New Book</button>
@@ -910,6 +932,11 @@
                         Once your book is complete, you can export the entire project
                         as a professionally formatted PDF file, ready for sharing or printing.
                     </p>
+                    <img src="/assets/images/pdf-image/book-editor-1.webp"
+                        alt="Compress PDF tool interface showing file drop area and compression options" loading="lazy"
+                        width="480" height="340">
+                    <br>
+                    <br>
                     <br>
                     <div class="card-icon">🚀</div>
                     <h3>Export Formats</h3>
@@ -1193,6 +1220,17 @@
                         in your final output.
                         What you see here is exactly what you get in your exported book.
                     </p>
+
+                    <p>
+                        Don’t forget to check our other tool:
+                        <strong>Click the image below to try Compress PDF ⬇️</strong>
+                    </p>
+
+                    <a href="/windows-tools/pdf/compress-pdf.html">
+                        <img src="/assets/images/pdf-image/compress-pdf.webp"
+                            alt="Compress PDF tool interface showing file drop area and compression options"
+                            loading="lazy" width="480" height="340" style="cursor:pointer;">
+                    </a>
                 </div>
             </div>
         </section>

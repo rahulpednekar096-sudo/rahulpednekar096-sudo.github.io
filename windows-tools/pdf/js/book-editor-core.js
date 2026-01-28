@@ -584,10 +584,13 @@ class BookEditorCore {
 
         if (node.nodeType === 3) node = node.parentNode;
 
-        const block = node.closest('p, h1, h2, div');
+        const block = node.closest('p, h1, h2, li');
         if (!block) return;
 
         if (block.tagName.toLowerCase() === tagName) return;
+
+        // ✅ VERY IMPORTANT
+        this.saveUndoState();
 
         const newBlock = document.createElement(tagName);
         newBlock.innerHTML = block.innerHTML;
@@ -1025,6 +1028,13 @@ class BookEditorCore {
             });
 
             this.saveCurrentPage();
+        });
+
+        this.editorContent.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                document.execCommand('insertParagraph');
+            }
         });
 
 
