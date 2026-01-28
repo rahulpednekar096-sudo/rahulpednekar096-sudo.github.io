@@ -643,7 +643,7 @@ header .nav-links::-webkit-scrollbar-thumb {
 .card {
   background: var(--card);
   padding: 22px;
-  width: auto;
+  width: 981px;
   border-radius: 12px;
   box-shadow: 0 3px 12px rgba(253, 253, 253, 0.425);
 }
