@@ -643,7 +643,7 @@ header .nav-links::-webkit-scrollbar-thumb {
 .card {
   background: var(--card);
   padding: 22px;
-  width: 980px;
+  width: auto;
   border-radius: 12px;
   box-shadow: 0 3px 12px rgba(253, 253, 253, 0.425);
 }
@@ -1290,7 +1290,7 @@ select {
   }
 
   .menu-btn {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
@@ -1644,4 +1644,46 @@ h3 {
   overflow-y: auto;
   scroll-behavior: smooth;
   scrollbar-color: var(--brand) rgba(255, 255, 255, 0.05);
+}
+
+/* Drop + Image side-by-side layout */
+.main-wrap {
+  display: flex;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+/* Half width columns */
+.main-wrap .half {
+  flex: 1;
+}
+
+/* Drop area styling (existing look maintain) */
+.main-wrap .drop {
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Image container */
+.tool-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tool-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .main-wrap {
+    flex-direction: column;
+  }
 }
