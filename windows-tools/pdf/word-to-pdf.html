@@ -58,7 +58,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      color: #333;
+      color: black;
       transform: translateZ(0);
       /* Force GPU rendering */
       backface-visibility: hidden;
@@ -79,7 +79,7 @@
     .docx-content h1,
     .docx-content h2,
     .docx-content h3 {
-      color: #333;
+      color: black;
       margin-top: 1.5em;
       margin-bottom: 0.5em;
     }
@@ -138,7 +138,7 @@
     $(function () {
       $("#header-container").load("/components/header.html");
       $("#menu-drawer-container").load("/components/menu-drawer.html");
-      $("#tools-links-container").load("/components/pdf-tools-quick-links.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
       $("#footer-container").load("/components/footer.html");
     });
   </script>
@@ -229,7 +229,7 @@
       <p>Transform your Word documents into professional PDFs with ease using RDroidApps Pro. Try our Word to PDF
         converter now and experience the convenience of fast, secure, and high-quality document conversion.</p>
     </section><br>
-    <a href="/windows-tools/pdf/index.html" class="nav-button home">🏠 Back to PDF Home</a>
+    <a href="/index.html#pdf-tools" class="nav-button home">🏠 Back to PDF Home</a>
   </section>
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>

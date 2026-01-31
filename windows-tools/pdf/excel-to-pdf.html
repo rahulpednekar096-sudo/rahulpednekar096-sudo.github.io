@@ -64,17 +64,18 @@
     $(function () {
       $("#header-container").load("/components/header.html");
       $("#menu-drawer-container").load("/components/menu-drawer.html");
-      $("#tools-links-container").load("/components/pdf-tools-quick-links.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
       $("#footer-container").load("/components/footer.html");
     });
   </script>
 
   <div class="container" role="main">
     <div class="header">
-      <div>
+      <div class="main half" id="mainArea">
         <h1>Excel → PDF — RDroidApps Pro</h1>
-        <div class="lead">Multi-sheet export, header/footer, pagination, repeat header, image embedding, ZIP output —
-          client-side.</div>
+        <h3> export, header/footer, pagination, repeat header, image embedding, ZIP output —
+          client-side.
+        </h3>
       </div>
       <div style="margin-left:auto"></div>
     </div>
@@ -87,14 +88,18 @@
             file</button>
           <input id="fileInput" class="inputfile" type="file" accept=".xlsx,.xls,.csv" />
         </div>
-
+        <div class="tool-image half">
+          <img src="/assets/images/pdf-image/excel-to-pdf-1.webp" onclick="openPreview(this.src)"
+            alt="Excel to PDF conversion tool preview showing sample output" loading="lazy" width="600" height="340">
+        </div>
         <div class="thumbs" id="sheetThumbs"></div>
         <div class="note">Tip: For best style preservation, use .xlsx exported from Excel. Some styles may be
-          approximated.</div>
+          approximated.
+        </div>
       </div>
 
       <div class="card" style="flex:1 1 600px">
-        <label class="small">Sheets & Export</label>
+        <label class="small">Select Sheets & Export</label>
         <div style="display:flex;gap:8px;align-items:center;">
           <select id="sheetSelect" class="select" multiple size="6" style="flex:1"></select>
           <div style="width:140px">
@@ -125,11 +130,15 @@
 
           <div style="flex:1" class="card">
             <label class="small">Margins (mm)</label>
+            <div class="small" style="margin-bottom:6px; opacity:0.8">
+              Order: Top → Right → Bottom → Left
+            </div>
             <input type="number" id="marginTop" value="12" />
             <input type="number" id="marginRight" value="12" style="margin-top:6px" />
             <input type="number" id="marginBottom" value="12" style="margin-top:6px" />
             <input type="number" id="marginLeft" value="12" style="margin-top:6px" />
           </div>
+
 
           <div style="flex:1" class="card">
             <label class="small">Output</label>
@@ -147,7 +156,8 @@
           <label class="small">Rendering & Pagination</label>
           <div class="optionRow">
             <label class="small"><input type="checkbox" id="autoFitCols" checked> Auto-fit columns</label>
-            <label class="small" style="margin-left:8px"><input type="checkbox" id="repeatHeader" checked> Repeat header
+            <label class="small" style="margin-left:8px"><input type="checkbox" id="repeatHeader" checked> Repeat
+              header
               on new pages</label>
           </div>
 
@@ -220,16 +230,17 @@
       </ul>
 
       <h2>How to Use the Excel to PDF Converter</h2>
-
       <ol>
-        <li><strong>Select Your File:</strong> Click the "Choose file" button or drag and drop your Excel file into the
+        <li><strong>Select Your File:</strong> Click the "Choose file" button or drag and drop your Excel file into
+          the
           designated area.</li>
         <li><strong>Load Sheets:</strong> After the file is loaded, click "Load" to populate the list of sheets
           available
           for export.</li>
         <li><strong>Select Sheets:</strong> Choose one or more sheets from the list. You can use the "Select All" or
           "Clear" buttons for convenience.</li>
-        <li><strong>Configure Settings:</strong> Adjust page size, orientation, margins, output mode, and other options
+        <li><strong>Configure Settings:</strong> Adjust page size, orientation, margins, output mode, and other
+          options
           as needed.</li>
         <li><strong>Convert to PDF:</strong> Click the "Convert → PDF" button to start the conversion process. Once
           complete, download your PDF(s) as per your selected output mode.</li>
@@ -238,7 +249,8 @@
       <p>
         RDroidApps Pro offers a suite of reliable and user-friendly online tools designed to enhance productivity.
         The Excel to PDF Converter is built with performance and privacy in mind, ensuring that your data is processed
-        securely without the need for server uploads. Whether you're preparing reports, presentations, or sharing data,
+        securely without the need for server uploads. Whether you're preparing reports, presentations, or sharing
+        data,
         this tool provides a seamless experience for converting Excel files to professional-grade PDFs.
       </p>
       <h2>Get Started Today</h2>
@@ -249,15 +261,37 @@
       </p>
       <h2>Related System Tools</h2>
       <p>
-        Explore more useful system tools by RDroidApps:
-        <a href="/windows-tools/file/merge-pdf.html" class="btn tools">Merge Files</a>,
-        <a href="/windows-tools/file/pdf-to-excel.html" class="btn tools">PDF to Excel</a>,
-        <a href="/windows-tools/pdf/ppt-to-pdf.html" class="btn tools">PPT to PDF</a>,
-        <a href="/windows-tools/pdf/rotate-pdf.html" class="btn tools">Rotate PDF</a>,
-        <a href="/windows-tools/pdf/protect-unlock-pdf.html" class="btn tools">Protect/Unlock PDF</a>,
+        <a>
+          <h3>more useful system tools by RDroidApps:</h3>
+        </a>
+        <a href="/windows-tools/pdf/merge-pdf.html">
+          <img src="/assets/images/pdf-image/merge.webp"
+            alt="Merge PDF tool interface showing file selection and merge options" loading="lazy" width="280"
+            height="150" style="cursor:pointer;">
+        </a>
+        <a href="/windows-tools/pdf/pdf-to-excel.html">
+          <img src="/assets/images/pdf-image/pdf-to-excel.webp"
+            alt="PDF to Excel conversion tool interface showing file drop area and conversion options" loading="lazy"
+            width="280" height="150" style="cursor:pointer;">
+        </a>
+        <a href="/windows-tools/pdf/ppt-to-pdf.html">
+          <img src="/assets/images/pdf-image/ppt-to-pdf.webp"
+            alt="PowerPoint to PDF conversion tool interface showing file drop area and conversion options"
+            loading="lazy" width="280" height="150" style="cursor:pointer;">
+        </a>
+        <a href="/windows-tools/pdf/rotate-pdf.html">
+          <img src="/assets/images/pdf-image/rotate-pdf.webp"
+            alt="Rotate PDF tool interface showing file drop area and rotation options" loading="lazy" width="280"
+            height="150" style="cursor:pointer;">
+        </a>
+        <a href="/windows-tools/pdf/protect-unlock-pdf.html">
+          <img src="/assets/images/pdf-image/unlock-pdf.webp"
+            alt="Protect/Unlock PDF tool interface showing file drop area and protection options" loading="lazy"
+            width="280" height="150" style="cursor:pointer;">
+        </a>
       </p>
     </section><br>
-    <a href="/windows-tools/pdf/index.html" class="nav-button home">🏠 Back to PDF Home</a>
+    <a href="/index.html#pdf-tools" class="nav-button home">🏠 Back to PDF Home</a>
   </div>
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
@@ -763,7 +797,11 @@
 
   </script>
 
-
+  <!-- 🔍 IMAGE PREVIEW POPUP -->
+  <div id="imgPreviewOverlay">
+    <span id="imgPreviewClose" onclick="closePreview()">✕</span>
+    <img id="imgPreviewBox" src="">
+  </div>
 </body>
 
 </html>

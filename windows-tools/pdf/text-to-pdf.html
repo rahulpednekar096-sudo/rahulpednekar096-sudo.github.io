@@ -116,20 +116,6 @@
       font-weight: 500;
     }
 
-    .btn-secondary {
-      background: #6c757d;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-left: 10px;
-    }
-
-    .btn-secondary:hover {
-      background: #5a6268;
-    }
-
     .controls-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -178,7 +164,7 @@
     $(function () {
       $("#header-container").load("/components/header.html");
       $("#menu-drawer-container").load("/components/menu-drawer.html");
-      $("#tools-links-container").load("/components/pdf-tools-quick-links.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
       $("#footer-container").load("/components/footer.html");
     });
   </script>
@@ -308,14 +294,14 @@
         </ol>
       </section>
     </article><br>
-    <a href="/windows-tools/pdf/index.html" class="nav-button home">🏠 Back to PDF Home</a>
+    <a href="/index.html#pdf-tools" class="nav-button home">🏠 Back to PDF Home</a>
   </main>
 
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
 
   <!-- Include Noto Sans Devanagari font -->
-  <script src="../../assets/fonts/noto-devanagari-base64.js"></script>
+  <script src="/assets/fonts/noto-devanagari-base64.js"></script>
 
   <script>
     // Drawer toggle

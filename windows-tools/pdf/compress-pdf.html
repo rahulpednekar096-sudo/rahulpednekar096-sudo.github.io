@@ -52,67 +52,76 @@
     $(function () {
       $("#header-container").load("/components/header.html");
       $("#menu-drawer-container").load("/components/menu-drawer.html");
-      $("#tools-links-container").load("/components/pdf-tools-quick-links.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
       $("#footer-container").load("/components/footer.html");
     });
   </script>
 
   <section class="tool-section">
     <div class="card">
-      <h1>Compress PDF — Heavy (Upgraded)</h1>
-      <p class="note">Pages are rasterized to JPEG images and re-packed. Great for large image-heavy PDFs. Text will NOT
-        remain selectable. Use OCR summary if you need extracted text separately.</p>
-
-      <div class="drop" id="dropArea">Drop PDF here or <button class="btn btn-ghost" id="pickBtn">Choose
-          file</button></div>
-      <input type="file" id="fileInput" accept="application/pdf" />
-
-      <div class="row">
-        <div class="col">
-          <label class="small">Target scale</label>
-          <select id="scaleSelect">
-            <option value="0.25">Very small (0.25×) — max reduction</option>
-            <option value="0.5" selected>Medium (0.5×) — balanced</option>
-            <option value="0.75">High quality (0.75×)</option>
-            <option value="1">Original size (1×)</option>
-          </select>
+      <div class="card">
+        <div class="main-wrap">
+          <h1>Compress PDF — Heavy (Upgraded)</h1>
+          <p class="note" style="font-size: 16px;">Pages are rasterized to JPEG images and re-packed. Great for large
+            image-heavy PDFs. Text will
+            NOT
+            remain selectable. Use OCR summary if you need extracted text separately.
+          </p>
         </div>
+      </div>
 
-        <div class="col">
-          <label class="small">JPEG quality (%)</label>
-          <input type="range" id="jpegQ" min="10" max="95" value="70">
-          <div class="meta" id="jpegVal">Quality: 70%</div>
-        </div>
+      <div class="card">
+        <div class="drop" id="dropArea">Drop PDF here or <button class="btn btn-ghost" id="pickBtn">Choose
+            file</button></div>
+        <input type="file" id="fileInput" accept="application/pdf" />
 
-        <div class="col">
-          <label class="small">Max pages to process (set 0 for all)</label>
-          <input type="number" id="maxPages" min="0" value="0" />
-        </div>
+        <div class="row">
+          <div class="col">
+            <label class="small">Target scale</label>
+            <select id="scaleSelect">
+              <option value="0.25">Very small (0.25×) — max reduction</option>
+              <option value="0.5" selected>Medium (0.5×) — balanced</option>
+              <option value="0.75">High quality (0.75×)</option>
+              <option value="1">Original size (1×)</option>
+            </select>
+          </div>
 
-        <div class="col">
-          <label class="small">Options</label>
-          <div style="display:flex;gap:8px;flex-direction:column">
-            <label><input type="checkbox" id="optPreview" checked> Show preview thumbnails</label>
-            <label><input type="checkbox" id="optOCR"> Include OCR text summary (slow)</label>
+          <div class="col">
+            <label class="small">JPEG quality (%)</label>
+            <input type="range" id="jpegQ" min="10" max="95" value="70">
+            <div class="meta" id="jpegVal">Quality: 70%</div>
+          </div>
+
+          <div class="col">
+            <label class="small">Max pages to process (set 0 for all)</label>
+            <input type="number" id="maxPages" min="0" value="0" />
+          </div>
+
+          <div class="col">
+            <label class="small">Options</label>
+            <div style="display:flex;gap:8px;flex-direction:column">
+              <label><input type="checkbox" id="optPreview" checked> Show preview thumbnails</label>
+              <label><input type="checkbox" id="optOCR"> Include OCR text summary (slow)</label>
+            </div>
           </div>
         </div>
+
+        <div style="margin-top:12px; display:flex; gap:8px; align-items:center;">
+          <button class="btn btn-primary" id="startBtn">Compress PDF</button>
+          <button class="btn btn-ghost" id="cancelBtn" style="display:none">Cancel</button>
+          <a id="downloadLink" class="btn" style="display:none"></a>
+          <div style="margin-left:auto" id="sizeInfo"></div>
+        </div>
+
+        <div class="progress" id="progressWrap" style="display:none">
+          <div class="bar" id="progressBar"></div>
+        </div>
+
+        <div id="preview" style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap"></div>
+
+        <pre id="log">Ready.</pre>
+        <div id="warning" style="color:#ffb199; margin-top:8px"></div>
       </div>
-
-      <div style="margin-top:12px; display:flex; gap:8px; align-items:center;">
-        <button class="btn btn-primary" id="startBtn">Compress PDF</button>
-        <button class="btn btn-ghost" id="cancelBtn" style="display:none">Cancel</button>
-        <a id="downloadLink" class="btn" style="display:none"></a>
-        <div style="margin-left:auto" id="sizeInfo"></div>
-      </div>
-
-      <div class="progress" id="progressWrap" style="display:none">
-        <div class="bar" id="progressBar"></div>
-      </div>
-
-      <div id="preview" style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap"></div>
-
-      <pre id="log">Ready.</pre>
-      <div id="warning" style="color:#ffb199; margin-top:8px"></div>
 
       <!-- SEO Content -->
       <hr style="margin:32px 0">
@@ -124,7 +133,8 @@
         <p>
           Compress PDF Online (Heavy) is an advanced and privacy-focused PDF compression tool from RDroidApps.
           This tool is specially designed to compress large size, image-heavy PDF documents.
-          This PDF compressor is very useful for students, teachers, office users, designers and business professionals.
+          This PDF compressor is very useful for students, teachers, office users, designers and business
+          professionals.
         </p>
 
         <p>
@@ -206,7 +216,7 @@
 
       </section>
     </div><br>
-    <a href="/windows-tools/pdf/index.html" class="nav-button home">🏠 Back to PDF Home</a>
+    <a href="/index.html#pdf-tools" class="nav-button home">🏠 Back to PDF Home</a>
   </section>
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>

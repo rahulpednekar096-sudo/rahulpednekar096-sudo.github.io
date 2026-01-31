@@ -47,7 +47,7 @@
         $(function () {
             $("#header-container").load("/components/header.html");
             $("#menu-drawer-container").load("/components/menu-drawer.html");
-            $("#tools-links-container").load("/components/audio-tools-quick-links.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
             $("#footer-container").load("/components/footer.html");
         });
     </script>
@@ -60,9 +60,10 @@
                 Merge multiple audio files in sequence.<br>
                 Supports gap and smooth fade transitions.
             </p>
-
-            <button class="btn btn-ghost" id="pick">🎵 Upload Audio Files</button>
-            <input type="file" id="file" accept="audio/*" multiple hidden>
+            <div class="card" style="color:#ffb199; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">
+                <button class="btn btn-ghost" id="pick">🎵 Upload Audio Files</button>
+                <input type="file" id="file" accept="audio/*" multiple hidden>
+            </div>
 
             <div class="row">
                 <label>Gap between tracks (seconds):</label>
@@ -124,7 +125,7 @@
                     musicians, podcasters, and audio enthusiasts alike!</p>
             </section>
         </div><br>
-        <a href="/windows-tools/audio/index.html" class="nav-button home">🏠 Back to Audio Home</a>
+        <a href="/index.html#audio-tools" class="nav-button home">🏠 Back to Audio Home</a>
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>

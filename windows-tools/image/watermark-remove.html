@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-4T90FQG02K');
+    </script>
+    <!-- AdSense account verification -->
+    <meta name="google-adsense-account" content="ca-pub-7933209486512555">
+
+    <!-- AdSense Auto Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933209486512555"
+        crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Remove Watermark Tool - Effortlessly eliminate watermarks from your images using advanced auto-refine inpainting techniques. Free online tool." />
+    <meta name="keywords"
+        content="Remove Watermark, Watermark Remover, Image Inpainting, Auto-Refine, Online Image Tool, Free Image Editor" />
+    <meta name="author" content="RDroid Apps" />
+    <title>Remove Watermark — RDroid Apps (Auto-Refine Inpainting)</title>
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/image/watermark-remove.html" />
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <section class="tool-section">
+        <div class="card">
+            <h1>Remove Watermark — Auto-Refine Inpainting</h1>
+            <p class="note">Select watermark area → Start. Tool will run exemplar-based inpainting repeatedly
+                (auto-refine passes) to progressively remove watermark. Adjust patch size / samples / iterations &
+                refine passes for best results.</p>
+
+            <label class="drop" id="dropArea"
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
+                <button class="btn btn-ghost" id="pickBtn">Choose file</button>
+            </label>
+            <input type="file" id="fileInput" accept="image/*" />
+
+            <canvas id="canvas" style="margin-top:15px;max-width:100%;border-radius:8px;background:#111"></canvas>
+
+            <div class="advanced-controls">
+                <div class="adv-col">
+                    <label class="small-muted">Patch size</label>
+                    <input id="patchSize" type="range" min="5" max="51" step="2" value="21">
+                    <div class="small-muted" id="patchSizeVal">21 px</div>
+                </div>
+
+                <div class="adv-col">
+                    <label class="small-muted">Sample attempts</label>
+                    <input id="samples" type="range" min="10" max="600" step="10" value="200">
+                    <div class="small-muted" id="samplesVal">200</div>
+                </div>
+
+                <div class="adv-col">
+                    <label class="small-muted">Inner iterations (per pass)</label>
+                    <input id="iters" type="range" min="1" max="6" step="1" value="2">
+                    <div class="small-muted" id="itersVal">2</div>
+                </div>
+
+                <div class="adv-col">
+                    <label class="small-muted">Refine passes (auto)</label>
+                    <input id="passes" type="range" min="1" max="10" step="1" value="3">
+                    <div class="small-muted" id="passesVal">3</div>
+                </div>
+
+                <div style="margin-left:auto; display:flex; gap:8px; align-items:center">
+                    <button class="btn btn-primary" id="removeBtn">Start Auto-Refine</button>
+                    <button class="btn btn-ghost" id="resetBtn">Reset</button>
+                    <a id="downloadLink" class="btn" style="display:none"></a>
+                </div>
+            </div>
+
+            <div style="margin-top:12px;">
+                <div id="progressBar">
+                    <div class="bar"></div>
+                </div>
+            </div>
+
+            <pre id="log">Ready.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+
+            <section class="seo-content">
+                <h2>Remove Watermark from Images Online</h2>
+                <p>Our Remove Watermark tool uses advanced auto-refine inpainting techniques to effectively eliminate
+                    watermarks from your images. Simply select the watermark area and let the tool do the rest,
+                    progressively
+                    refining the result for a clean finish.</p>
+
+                <h2>How It Works</h2>
+                <p>The tool employs exemplar-based inpainting, which fills in the selected watermark area by sampling
+                    surrounding pixels. By running multiple passes, it refines the image to ensure a natural look
+                    without
+                    visible artifacts.</p>
+
+                <h2>Customizable Settings</h2>
+                <p>Adjust parameters like patch size, sample attempts, inner iterations, and refine passes to optimize
+                    results based on your specific image and watermark characteristics.</p>
+
+                <h2>Why Choose Our Tool?</h2>
+                <ul>
+                    <li><strong>User-Friendly:</strong> Intuitive interface for easy watermark removal.</li>
+                    <li><strong>Advanced Technology:</strong> Utilizes state-of-the-art inpainting algorithms.</li>
+                    <li><strong>Free and Online:</strong> No downloads or installations required.</li>
+                </ul>
+
+                <h2>Get Started Now</h2>
+                <p>Upload your image, select the watermark area, and click "Start Auto-Refine" to see the magic happen.
+                    Download your watermark-free image once the process is complete!</p>
+            </section>
+        </div><br>
+        <a href="/index.html#image-tools" class="nav-button home">🏠 Back to Image Home</a>
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+
+    <script>
+        /* Auto-Refine Inpainting — final integrated version
+           - Single "Start Auto-Refine" runs N passes (passes slider).
+           - Each pass runs a short inpainting sweep (controlled by inner iterations, samples, patch size).
+           - Results progressively improve across passes.
+        */
+
+        function toggleMenu() { document.getElementById('drawer').classList.toggle('open'); }
+
+        const pickBtn = document.getElementById('pickBtn');
+        const fileInput = document.getElementById('fileInput');
+        const dropArea = document.getElementById('dropArea');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const removeBtn = document.getElementById('removeBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const downloadLink = document.getElementById('downloadLink');
+        const logEl = document.getElementById('log');
+        const progBar = document.querySelector('#progressBar .bar');
+
+        const patchSizeInput = document.getElementById('patchSize');
+        const samplesInput = document.getElementById('samples');
+        const itersInput = document.getElementById('iters');
+        const passesInput = document.getElementById('passes');
+
+        const patchSizeVal = document.getElementById('patchSizeVal');
+        const samplesVal = document.getElementById('samplesVal');
+        const itersVal = document.getElementById('itersVal');
+        const passesVal = document.getElementById('passesVal');
+
+        patchSizeInput.addEventListener('input', () => patchSizeVal.textContent = patchSizeInput.value + ' px');
+        samplesInput.addEventListener('input', () => samplesVal.textContent = samplesInput.value);
+        itersInput.addEventListener('input', () => itersVal.textContent = itersInput.value);
+        passesInput.addEventListener('input', () => passesVal.textContent = passesInput.value);
+
+        let img = null;
+        let isDown = false;
+        let start = null;
+        let rect = null;
+        let originalImageData = null;
+        let mask = null; // 1 = masked
+
+        /* File load / drag & drop */
+        pickBtn.onclick = () => fileInput.click();
+        fileInput.onchange = loadFile;
+
+        dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = "#00d48b"; });
+        dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = "#202426");
+        dropArea.addEventListener('drop', e => {
+            e.preventDefault();
+            if (e.dataTransfer.files && e.dataTransfer.files.length) { fileInput.files = e.dataTransfer.files; loadFile(); }
+        });
+
+        function loadFile() {
+            const f = fileInput.files[0];
+            if (!f) return;
+            img = new Image();
+            img.src = URL.createObjectURL(f);
+            img.onload = () => {
+                // auto-scale for performance (optional)
+                const maxDim = 1600;
+                let w = img.naturalWidth, h = img.naturalHeight;
+                let scale = 1;
+                if (Math.max(w, h) > maxDim) {
+                    scale = maxDim / Math.max(w, h);
+                    w = Math.round(w * scale); h = Math.round(h * scale);
+                }
+                canvas.width = w; canvas.height = h;
+                ctx.clearRect(0, 0, w, h);
+                ctx.drawImage(img, 0, 0, w, h);
+                originalImageData = ctx.getImageData(0, 0, w, h);
+                mask = new Uint8Array(w * h);
+                rect = null;
+                log('Image loaded: ' + f.name + ' (scale:' + (scale !== 1 ? scale.toFixed(2) : '1') + ')');
+            }
+        }
+
+        /* Selection rectangle */
+        canvas.addEventListener('mousedown', e => {
+            if (!originalImageData) return;
+            isDown = true;
+            const r = canvas.getBoundingClientRect();
+            start = {
+                x: Math.round((e.clientX - r.left) * (canvas.width / r.width)),
+                y: Math.round((e.clientY - r.top) * (canvas.height / r.height))
+            };
+        });
+        canvas.addEventListener('mousemove', e => {
+            if (!isDown) return;
+            const r = canvas.getBoundingClientRect();
+            const x = Math.round((e.clientX - r.left) * (canvas.width / r.width));
+            const y = Math.round((e.clientY - r.top) * (canvas.height / r.height));
+            rect = { x: Math.min(start.x, x), y: Math.min(start.y, y), w: Math.abs(x - start.x), h: Math.abs(y - start.y) };
+            redraw();
+        });
+        canvas.addEventListener('mouseup', () => isDown = false);
+
+        function redraw() {
+            if (!originalImageData) return;
+            ctx.putImageData(originalImageData, 0, 0);
+            if (rect) {
+                ctx.strokeStyle = "#00d48b";
+                ctx.lineWidth = 2;
+                ctx.strokeRect(rect.x + 0.5, rect.y + 0.5, rect.w, rect.h);
+                ctx.fillStyle = "rgba(0,215,140,0.12)";
+                ctx.fillRect(rect.x, rect.y, rect.w, rect.h);
+            }
+        }
+
+        /* helpers */
+        function idx(x, y, w) { return (y * w + x); }
+        function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+        function buildMaskFromRect() {
+            if (!rect || !originalImageData) return false;
+            const w = canvas.width, h = canvas.height;
+            mask = new Uint8Array(w * h);
+            const sx = clamp(rect.x, 0, w - 1), sy = clamp(rect.y, 0, h - 1);
+            const ex = clamp(rect.x + rect.w, 0, w), ey = clamp(rect.y + rect.h, 0, h);
+            for (let yy = sy; yy < ey; yy++) {
+                for (let xx = sx; xx < ex; xx++) {
+                    mask[idx(xx, yy, w)] = 1;
+                }
+            }
+            log('Mask built: ' + (ex - sx) + 'x' + (ey - sy));
+            return true;
+        }
+
+        function getCopyImageData() { return new ImageData(new Uint8ClampedArray(originalImageData.data), originalImageData.width, originalImageData.height); }
+
+        function computeSSD(targetData, sourceData, maskArr, tx, ty, sx, sy, patchR, w, h) {
+            let ssd = 0, count = 0;
+            for (let dy = -patchR; dy <= patchR; dy++) {
+                const tyy = ty + dy, syy = sy + dy;
+                if (tyy < 0 || tyy >= h || syy < 0 || syy >= h) continue;
+                for (let dx = -patchR; dx <= patchR; dx++) {
+                    const txx = tx + dx, sxx = sx + dx;
+                    if (txx < 0 || txx >= w || sxx < 0 || sxx >= w) continue;
+                    const midxT = idx(txx, tyy, w);
+                    if (maskArr[midxT] === 1) continue; // skip masked pixels
+                    const tI = ((tyy * w) + txx) * 4, sI = ((syy * w) + sxx) * 4;
+                    const dr = targetData[tI] - sourceData[sI];
+                    const dg = targetData[tI + 1] - sourceData[sI + 1];
+                    const db = targetData[tI + 2] - sourceData[sI + 2];
+                    ssd += dr * dr + dg * dg + db * db;
+                    count++;
+                }
+            }
+            if (count === 0) return Infinity;
+            return ssd / count;
+        }
+
+        function copyPatchToTarget(imageData, sourceX, sourceY, targetX, targetY, patchR, maskArr) {
+            const data = imageData.data; const w = imageData.width, h = imageData.height;
+            for (let dy = -patchR; dy <= patchR; dy++) {
+                const ty = targetX ? targetY + dy : targetY + dy; // no-op to satisfy linter
+                for (let dx = -patchR; dx <= patchR; dx++) {
+                    const tx = targetX + dx, sx = sourceX + dx;
+                    const ty2 = targetY + dy, sy2 = sourceY + dy;
+                    if (tx < 0 || tx >= w || sx < 0 || sx >= w || ty2 < 0 || ty2 >= h || sy2 < 0 || sy2 >= h) continue;
+                    const mIndex = idx(tx, ty2, w);
+                    if (maskArr[mIndex] === 0) continue;
+                    const tI = ((ty2 * w) + tx) * 4, sI = ((sy2 * w) + sx) * 4;
+                    data[tI] = Math.round((data[tI] * 0.2) + (data[sI] * 0.8));
+                    data[tI + 1] = Math.round((data[tI + 1] * 0.2) + (data[sI + 1] * 0.8));
+                    data[tI + 2] = Math.round((data[tI + 2] * 0.2) + (data[sI + 2] * 0.8));
+                    data[tI + 3] = 255;
+                    maskArr[mIndex] = 0;
+                }
+            }
+        }
+
+        function randomCandidatePosition(w, h, patchR, maskArr) {
+            const sx = Math.floor(Math.random() * (w - patchR * 2)) + patchR;
+            const sy = Math.floor(Math.random() * (h - patchR * 2)) + patchR;
+            // quick overlap check (small window)
+            for (let dy = -patchR; dy <= patchR; dy++) {
+                for (let dx = -patchR; dx <= patchR; dx++) {
+                    const x = sx + dx, y = sy + dy;
+                    if (x < 0 || x >= w || y < 0 || y >= h) return null;
+                    if (maskArr[idx(x, y, w)] === 1) return null;
+                }
+            }
+            return { sx, sy };
+        }
+
+        /* SINGLE PASS inpaint — one sweep that attempts to fill many masked pixels.
+           This function performs one coarse filling pass using current parameters.
+        */
+        async function runSinglePass(imageData, maskArr) {
+            const w = imageData.width, h = imageData.height;
+            const dataSrc = originalImageData.data;
+            const dataTgt = imageData.data;
+            const patchSize = Math.max(5, parseInt(patchSizeInput.value));
+            const patchR = Math.floor(patchSize / 2);
+            const samples = parseInt(samplesInput.value);
+            // build list of masked coordinates
+            let coords = [];
+            for (let y = 0; y < h; y++) {
+                for (let x = 0; x < w; x++) {
+                    if (maskArr[idx(x, y, w)] === 1) coords.push({ x, y });
+                }
+            }
+            // shuffle
+            for (let i = coords.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[coords[i], coords[j]] = [coords[j], coords[i]]; }
+
+            let processed = 0;
+            const total = coords.length;
+            for (const coord of coords) {
+                if (maskArr[idx(coord.x, coord.y, w)] === 0) { processed++; continue; }
+                let best = { score: Infinity, sx: 0, sy: 0 };
+                const tx = coord.x, ty = coord.y;
+                let attempts = 0;
+                while (attempts < samples) {
+                    const cand = randomCandidatePosition(w, h, patchR, maskArr);
+                    attempts++;
+                    if (!cand) continue;
+                    const ssd = computeSSD(dataTgt, dataSrc, maskArr, tx, ty, cand.sx, cand.sy, patchR, w, h);
+                    if (ssd < best.score) { best.score = ssd; best.sx = cand.sx; best.sy = cand.sy; }
+                }
+                if (best.score < Infinity) {
+                    copyPatchToTarget(imageData, best.sx, best.sy, tx, ty, patchR, maskArr);
+                }
+                processed++;
+                if (processed % 250 === 0) {
+                    ctx.putImageData(imageData, 0, 0);
+                    await new Promise(r => setTimeout(r, 8)); // yield
+                }
+            }
+            // done single pass
+            ctx.putImageData(imageData, 0, 0);
+        }
+
+        /* AUTO MULTI-PASS wrapper */
+        async function runAutoRefine(totalPasses) {
+            if (!originalImageData) { alert('Load image first'); return; }
+            if (!rect) { alert('Select watermark area first'); return; }
+            if (!buildMaskFromRect()) return;
+
+            // parameters
+            const innerIters = Math.max(1, parseInt(itersInput.value)); // inner iterations per pass (optional)
+            const w = originalImageData.width, h = originalImageData.height;
+            // working copy
+            let workImage = getCopyImageData();
+            // create a working mask copy (will be mutated)
+            let workMask = new Uint8Array(mask);
+
+            progBar.style.width = '0%';
+            const totalSteps = totalPasses * innerIters;
+            let stepCount = 0;
+
+            log('Starting Auto-Refine: passes=' + totalPasses + ' innerIters=' + innerIters);
+
+            for (let p = 0; p < totalPasses; p++) {
+                for (let it = 0; it < innerIters; it++) {
+                    // for each inner iteration run a single-pass fill sweep
+                    await runSinglePass(workImage, workMask);
+                    stepCount++;
+                    const percent = (stepCount / totalSteps) * 100;
+                    progBar.style.width = percent.toFixed(2) + '%';
+                    log('Pass ' + (p + 1) + '/' + totalPasses + ' — iter ' + (it + 1) + '/' + innerIters + ' (' + Math.round(percent) + '%)');
+                    // small breathing pause
+                    await new Promise(r => setTimeout(r, 20));
+                }
+            }
+
+            // finalize — draw to canvas and provide download
+            ctx.putImageData(workImage, 0, 0);
+            canvas.toBlob(b => {
+                const url = URL.createObjectURL(b);
+                downloadLink.href = url;
+                downloadLink.download = 'inpainted-auto.png';
+                downloadLink.style.display = 'inline-block';
+                downloadLink.textContent = 'Download';
+            }, 'image/png');
+
+            progBar.style.width = '100%';
+            log('Auto-Refine finished.');
+        }
+
+        /* buildMaskFromRect re-used but keeping local copy so mask variable is available */
+        function buildMaskFromRect() {
+            if (!rect || !originalImageData) return false;
+            const w = canvas.width, h = canvas.height;
+            mask = new Uint8Array(w * h);
+            const sx = clamp(rect.x, 0, w - 1), sy = clamp(rect.y, 0, h - 1);
+            const ex = clamp(rect.x + rect.w, 0, w), ey = clamp(rect.y + rect.h, 0, h);
+            for (let yy = sy; yy < ey; yy++) {
+                for (let xx = sx; xx < ex; xx++) {
+                    mask[idx(xx, yy, w)] = 1;
+                }
+            }
+            return true;
+        }
+
+        /* UI handlers */
+        removeBtn.addEventListener('click', async () => {
+            // disable UI
+            removeBtn.disabled = true; resetBtn.disabled = true;
+            const passes = Math.max(1, parseInt(passesInput.value));
+            try {
+                await runAutoRefine(passes);
+            } catch (err) {
+                alert('Error: ' + (err.message || err));
+            }
+            removeBtn.disabled = false; resetBtn.disabled = false;
+        });
+
+        resetBtn.addEventListener('click', () => {
+            rect = null;
+            if (originalImageData) ctx.putImageData(originalImageData, 0, 0);
+            downloadLink.style.display = 'none';
+            progBar.style.width = '0%';
+            mask = new Uint8Array(canvas.width * canvas.height);
+            log('Reset.');
+        });
+
+        function log(msg) { logEl.textContent = msg + '\n' + (logEl.textContent || ''); }
+
+    </script>
+</body>
+
+</html>

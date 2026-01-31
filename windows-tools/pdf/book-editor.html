@@ -562,7 +562,7 @@
         $(function () {
             $("#header-container").load("/components/header.html");
             $("#menu-drawer-container").load("/components/menu-drawer.html");
-            $("#tools-links-container").load("/components/pdf-tools-quick-links.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
             $("#footer-container").load("/components/footer.html");
 
             // ✅ FIX: init immediately after DOM ready
@@ -578,7 +578,7 @@
     <section class="section" role="main" aria-labelledby="title">
         <div class="card">
             <div class="main-wrap">
-                <!-- LEFT: Drop Area -->
+                <!-- LEFT:  Area -->
                 <div class="main half" id="mainArea">
                     <h1 id="title">Book Editor Pro</h1>
                     <p class="lead">Create and edit multi-page books with chapters. Customize page sizes, format
@@ -597,9 +597,9 @@
                 </div>
                 <!-- RIGHT: Tool Image -->
                 <div class="tool-image half">
-                    <img src="/assets/images/pdf-image/book-editor.webp"
-                        alt="Compress PDF tool interface showing file drop area and compression options" loading="lazy"
-                        width="600" height="340">
+                    <img src="/assets/images/pdf-image/book-editor.webp" onclick="openPreview(this.src)"
+                        alt="Book Editor Pro interface showing multi-page book creation and editing tools"
+                        loading="lazy" width="600" height="340">
                 </div>
             </div>
         </div>
@@ -935,8 +935,8 @@
                         Once your book is complete, you can export the entire project
                         as a professionally formatted PDF file, ready for sharing or printing.
                     </p>
-                    <img src="/assets/images/pdf-image/book-editor-1.webp"
-                        alt="Compress PDF tool interface showing file drop area and compression options" loading="lazy"
+                    <img src="/assets/images/pdf-image/book-editor-1.webp" onclick="openPreview(this.src)"
+                        alt="Book Editor tool preview – write, edit, and format your book online" loading="lazy"
                         width="480" height="340">
                     <br>
                     <br>
@@ -1242,6 +1242,10 @@
 
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div id="imgPreviewOverlay">
+        <span id="imgPreviewClose" onclick="closePreview()">✕</span>
+        <img id="imgPreviewBox" src="">
+    </div>
 
     <!-- External JavaScript Files -->
     <script src="js/book-editor-core.js"></script>
@@ -1250,4 +1254,3 @@
 </body>
 
 </html>
-
