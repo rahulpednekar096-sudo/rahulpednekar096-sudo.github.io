@@ -63,21 +63,6 @@
 </head>
 
 <body>
-
-  <!-- HEADER (loaded from external file) -->
-  <div id="header-container"></div>
-
-  <!-- MENU DRAWER (loaded from external file) -->
-  <div id="menu-drawer-container"></div>
-
-  <!-- Load all components -->
-  <script>
-    $(function () {
-      $("#header-container").load("/components/header.html");
-      $("#menu-drawer-container").load("/components/menu-drawer.html");
-      $("#footer-container").load("/components/footer.html");
-    });
-  </script>
   <div class="wrap">
     <section class="section">
       <h1>Privacy Policy – Color Mixer</h1>
@@ -172,20 +157,46 @@
       </section>
 
       <section>
-        <h3>9. Contact</h3>
-        <p><strong>Developer:</strong> RDroid Apps</p>
-        <h3>Email</h3>
-        <p><a href="mailto:rdroidapps096@gmail.com">rdroidapps096@gmail.com</a></p>
+        <h2>9. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, you can contact us at:</p>
+
+        <div>
+          <div>
+            <h3>Developer</h3>
+            <p>RDroid Apps</p>
+          </div>
+
+          <div>
+            <h3>Website</h3>
+            <p><a href="https://rdroidapps.com" target="_blank">https://rdroidapps.com</a></p>
+          </div>
+
+          <div>
+            <h3>Email</h3>
+            <p><a href="mailto:rdroidapps096@gmail.com">rdroidapps096@gmail.com</a></p>
+          </div>
+
+          <div>
+            <h3>App Support</h3>
+            <p>For technical support or privacy concerns regarding Color Mixer, please contact us at the email address above.</p>
+          </div>
+        </div>
       </section>
+
       <div>
         <button class="back-to-top" id="backToTop">
-          <i class="fas fa-arrow-up">Back to Top</i>
+          ↑ Back to Top
         </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+        <button class="btn btn-secondary" onclick="window.location.href='/color-mixer.html'">← Back to App</button>
+        <span style="margin: 0 10px;">|</span>
+        <button class="btn btn-secondary" onclick="window.location.href='/color-mixer-user-guide.html'">User Guide →</button>
       </div>
     </section>
   </div>
-  <!-- FOOTER (loaded from external file) -->
-  <div id="footer-container"></div>
   <script>
     // Back to top functionality
     document.getElementById('backToTop').addEventListener('click', function () {

@@ -17,9 +17,6 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933209486512555"
     crossorigin="anonymous"></script>
 
-  <!-- 🔧 TEMPORARY MAINTENANCE REDIRECT -->
-  <meta http-equiv="refresh" content="0;url=/maintenance.html">
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RDroid Apps — Official Website</title>
@@ -31,126 +28,49 @@
   <link rel="canonical" href="https://rdroidapps.com/index.html" />
   <link rel="stylesheet" href="/css/style.css" />
   <style>
-    /* ---------- Category popup (cards) ---------- */
-    .tool-popup {
-      position: fixed;
-      z-index: 9999;
-      min-width: 260px;
-      max-width: 380px;
-      background: linear-gradient(180deg, rgb(2, 51, 158), rgb(1, 18, 44));
-      border: 1px solid rgba(255, 255, 255, 0.623);
-      color: var(--fg-main);
-      box-shadow: 0 12px 34px rgba(2, 6, 23, 0.7);
-      border-radius: 12px;
-      padding: 12px;
+    /* Rough paper style background for long content section */
+    .home-content {
+      background:
+        linear-gradient(135deg,
+          #f3e8ca 0%,
+          #bdb29e 40%,
+          #979692 100%);
 
-      display: none;
-      /* shown by JS */
-      transition: transform 0.16s ease, opacity 0.12s ease;
-      transform-origin: top left;
-      opacity: 0;
+      border-radius: 18px;
+      box-shadow:
+        inset 0 0 60px rgba(0, 0, 0, 0.08),
+        0 10px 40px rgba(0, 0, 0, 0.35);
+
+      color: #2b2b2b;
+      /* paper text color */
     }
 
-    /* small arrow */
-    .tool-popup[data-arrow="top"]::after {
-      top: -6px;
-      left: var(--arrow-x, 20px);
+    /* Headings pop nicely */
+    .home-content h3 {
+      color: #7c3f00;
+      /* warm brown / orange */
     }
 
-    .tool-popup[data-arrow="bottom"]::after {
-      bottom: -6px;
-      left: var(--arrow-x, 20px);
+    /* Paragraph readability */
+    .home-content p {
+      color: #2f2f2f;
     }
 
-    .tool-popup::after {
-      content: "";
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      background: inherit;
-      transform: rotate(45deg);
-      border-left: 1px solid rgba(255, 255, 255, .15);
-      border-top: 1px solid rgba(255, 255, 255, .15);
-    }
-
-
-    /* header inside popup */
-    .tool-popup .tp-head {
-      font-weight: 700;
-      margin-bottom: 8px;
+    .tool-card {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 8px;
-    }
-
-    .tool-popup .tp-head small {
-      color: var(--fg-muted);
-      font-weight: 600;
-      font-size: 12px;
-    }
-
-    /* list */
-    .tool-popup ul {
-      margin: 6px 0 0;
-      padding: 0;
-      list-style: none;
-      max-height: 300px;
-      overflow: auto;
-    }
-
-    .tool-popup ul li {
-      padding: 8px 8px;
-      border-radius: 8px;
-      margin-bottom: 6px;
-      font-size: 14px;
-      color: var(--fg-main);
-      transition: background .21s, padding-left .21s;
-    }
-
-    .tool-popup ul li:hover {
-      background: rgba(10, 163, 127, 0.06);
-      padding-left: 10px;
-    }
-
-    /* quick action link */
-    .tool-popup .open-all {
-      display: inline-block;
-      margin-left: 8px;
-      padding: 6px 10px;
-      border-radius: 8px;
-      background: linear-gradient(145deg, var(--brand), var(--brand2));
-      color: #350202;
-      font-weight: 700;
+      gap: 10px;
+      padding: 20px;
+      background: #00030ecc;
+      border-radius: 20px;
       text-decoration: none;
-      font-size: 13px;
+      transition: 0.25s;
     }
 
-    /* show class */
-    .tool-popup.show {
-      display: block;
-      transform: translateY(6px);
-      opacity: 1;
-    }
-
-    .card {
-      width: auto;
-    }
-
-    /* Mobile: make popup full width bottom sheet on small screens */
-    @media (max-width: 680px) {
-      .tool-popup {
-        left: 12px !important;
-        right: 12px !important;
-        top: auto !important;
-        bottom: 18px !important;
-        transform-origin: bottom center;
-        max-width: calc(100% - 28px);
-      }
-
-      .tool-popup::after {
-        display: none;
-      }
+    .tool-card:hover {
+      background: #00061d7a;
+      box-shadow: 0 8px 24px rgba(219, 217, 217, 0.2);
+      transform: translateY(-4px);
     }
   </style>
   <!-- Include jQuery for load function -->
@@ -162,9 +82,6 @@
   <!-- HEADER (loaded from external file) -->
   <div id="header-container"></div>
 
-  <!-- TOOLS QUICK LINKS (loaded from external file) -->
-  <div id="tools-links-container"></div>
-
   <!-- MENU DRAWER (loaded from external file) -->
   <div id="menu-drawer-container"></div>
 
@@ -173,664 +90,864 @@
     $(function () {
       $("#header-container").load("/components/header.html");
       $("#menu-drawer-container").load("/components/menu-drawer.html");
-      $("#tools-links-container").load("/components/favorite-tools-quick-links.html");
       $("#footer-container").load("/components/footer.html");
     });
   </script>
-
-  <!-- Hero Section -->
-  <div class="wrap" id="home">
-    <section class="hero">
-      <div class="hero-right">
-        <h1 class="rdroid-blogs-title">
-          <span class="rdroid">Smart Apps And</span>
-          <span class="blogs">Powerful Windoes Tools</span>
-        </h1>
-
-        <h2>Apps and Powerful Windows Tools for Everyday Productivity</h2>
-
-        <p>RDroidApps is a privacy-focused software platform offering lightweight Android apps and powerful Windows
-          tools
-          designed
-          to simplify everyday digital tasks. From document management and image editing to audio tools and system
-          information utilities,
-          RDroidApps focuses on speed, simplicity, and user control.
-
-        </p>
-        <div class="cta">
-          <a class="btn btn-primary" href="windows-tools.html">View Windows Tools</a>
-          <a class="btn btn-primary" href="apps.html">View Apps</a>
-          <a class="btn" href="contact.html">Contact Us</a>
-        </div>
-      </div>
-    </section>
-  </div>
-  <!-- Windows Tools Section -->
-  <section class="windows-tools" style="padding: 40px 20px; text-align: center;">
-
-    <!-- TWO COLUMN LAYOUT -->
-    <div style="
-      display: flex;
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: left;
-      align-items: flex-start;
-    ">
-
-      <section class="container">
-
-        <h2 style="text-align:center; margin-bottom:10px;">🧰 Windows Tool Categories</h2>
-        <p class="note" style="text-align:center; max-width:720px; margin:0 auto 30px;">
-          Clean, fast, offline-ready utilities for documents, images, audio, and productivity.
-        </p>
-        <p style="max-width: 800px; margin: 0 auto 20px; font-size: 15px;">
-          Use our fast, secure, and lightweight Windows utilities built for everyday productivity.
-          Click below to explore the full collection of tools.
-        </p>
-
-        <div style="
-              display:grid;
-              grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-              gap:26px;
-            ">
-
-          <a href="/windows-tools/pdf/index.html#pdf" class="card" style="text-decoration:none; color:#ffffff;">
-            <h3>📄 PDF Tools</h3>
-            <p>
-              Merge, split, compress, rotate, convert, protect, and edit PDF files using
-              simple and focused tools designed for everyday document tasks.
-            </p>
-          </a>
-
-          <a href="/windows-tools/image/index.html#image" class="card" style="text-decoration:none; color:#ffffff;">
-            <h3>🖼️ Image Tools</h3>
-            <p>
-              Resize, crop, rotate, flip, compress, convert image formats, manage metadata,
-              and prepare images for documents and web use.
-            </p>
-          </a>
-
-          <a href="/windows-tools/audio/index.html#audio" class="card" style="text-decoration:none; color:#ffffff;">
-            <h3>🎵 Audio Tools</h3>
-            <p>
-              Trim, merge, convert audio files, extract MP3 tracks, adjust speed or pitch,
-              and edit audio metadata with easy-to-use tools.
-            </p>
-          </a>
-
-          <a href="/windows-tools/system/index.html#system" class="card" style="text-decoration:none; color:#ffffff;">
-            <h3>⚙️ System Tools</h3>
-            <p>
-              Tools for file renaming, finding duplicate files, analyzing folder sizes,
-              visualizing disk usage, managing startup programs, and viewing system information.
-            </p>
-          </a>
-          <a href="/windows-tools/utility/index.html#utility" class="card" style="text-decoration:none; color:#ffffff;">
-            <h3>🧰 Utility Tools</h3>
-            <p>
-              Simple utility tools including QR code generator, notes manager,
-              unit converter, and age calculator for everyday use.
-            </p>
-          </a>
-          <a href="/apps.html#apps" class="card" style="text-decoration:none; color:#ffffff;">
-            <h3>📱 Android Apps</h3>
-            <p>
-              Lightweight Android apps such as Golden Calc, Color Mixer, and Easy Music,
-              built for simple functionality and smooth user experience.
-            </p>
-          </a>
-          <a href="blog/index.html#blog" class="card" style="text-decoration:none; color:#ffffff;">
-            <h3>📦 Blogs Section</h3>
-            <p>
-              Read handbooks, articles, and practical posts related to PDF handling,
-              image formats, tool usage, file organization, and basic digital workflows.
-            </p>
-          </a>
-          <div class="card">
-            <ul>
-              <h2>Articles</h2><br>
-              <li><a href="/blog/articles/how-to-compress-pdf.html" class="btn">How to Compress PDF Files</a></li>
-              <br>
-              <li><a href="/blog/articles/image-formats-guide.html" class="btn">Understanding Image Formats:</a>
-              </li>
-              <br>
-              <li><a href="/blog/articles/top-android-tools.html" class="btn">Top 5 Essential Android Tools</a></li>
-            </ul>
-          </div>
-        </div>
-      </section>
+  <!-- SEARCH BAR (Body - Above Tools) -->
+  <section class="tools-search-section">
+    <!-- LEFT BUTTONS -->
+    <div style="display:flex; gap:20px; margin-right:12px;">
+      <a href="#pdf-tools" class="btn btn-primary">
+        PDF Tools
+      </a>
+      <a href="#image-tools" class="btn btn-primary">
+        Image Tools
+      </a>
+      <a href="#audio-tools" class="btn btn-primary">
+        Audio Tools
+      </a>
+      <a href="#system-tools" class="btn btn-primary">
+        System Tools
+      </a>
+      <a href="#utility-tools" class="btn btn-primary">
+        Utility Tools
+      </a>
+    </div>
+    <!-- SEARCH -->
+    <div class="header-search" style="position: relative;">
+      <input type="search" id="siteSearch" placeholder="Search tools, apps…" aria-label="Search RDroid Apps"
+        autocomplete="off" />
+      <div class="search-results" id="searchResults"></div>
     </div>
   </section>
-  <section class="container">
-    <section class="home-content" style="padding:30px 20px;">
-      <div style="max-width:1200px; margin:0 auto; line-height:1.7;">
-        <h3>🔹 What is RDroidApps?</h3>
 
-        <p>
-          RDroidApps is an independent software platform created to make everyday digital work easier, faster, and more
-          reliable. The website brings together carefully designed Android applications, Windows desktop tools, and
-          essential utilities that help users manage documents, images, audio files, and system tasks with confidence.
-        </p>
+  <!-- Hero Section -->
 
-        <p>
-          Unlike many platforms that focus on aggressive monetization, forced sign-ups, or excessive permissions,
-          RDroidApps
-          follows a user-first approach. Every tool and application is designed to be lightweight, straightforward, and
-          respectful of user privacy. The goal is simple: provide useful tools that do exactly what they promise,
-          without
-          hidden behavior or unnecessary distractions.
-        </p>
+  <section class="hero">
+    <h1 class="rdroid-blogs-title">
+      <span class="rdroid">Smart Apps And</span>
+      <span class="blogs">Powerful Windoes Tools</span>
+    </h1>
 
-        <p>
-          RDroidApps is built for students, professionals, creators, small businesses, and everyday users who value
-          clean
-          software and predictable behavior. Whether you need to compress a PDF, convert images, manage files, or use a
-          practical Android utility, RDroidApps aims to understand real-world needs and deliver focused solutions.
-        </p>
+    <h2 style="text-align:center; margin-top:0px; margin-bottom: 0px;">Apps and Powerful Windows Tools for Everyday
+      Productivity</h2>
 
-        <p>
-          This website is developed and maintained by an independent developer with a strong emphasis on long-term
-          usability, transparent design, and continuous improvement. Every feature added to RDroidApps is guided by the
-          principle that software should serve the user — not exploit them.
-        </p>
-
-        <h3>🔹 Why Choose RDroidApps?</h3>
-
-        <p>
-          Choosing the right tools matters, especially when handling personal or professional data. RDroidApps stands
-          apart
-          by following a few core principles that guide every product published on the platform.
-        </p>
-
-        <p>
-          First, privacy is a priority. RDroidApps avoids unnecessary data collection and tracking wherever possible.
-          Many
-          tools are designed to work locally on your device, reducing dependency on external servers and improving
-          security.
-        </p>
-
-        <p>
-          Second, performance matters. The tools provided are optimized to be fast and lightweight, ensuring they run
-          smoothly even on older systems. There are no bloated installers, no hidden background services, and no forced
-          updates that interrupt your workflow.
-        </p>
-
-        <p>
-          Third, simplicity is intentional. Every interface is designed to be clear and approachable. Features are
-          explained, workflows are predictable, and users are never forced into confusing steps or misleading buttons.
-        </p>
-
-        <p>
-          Finally, RDroidApps is transparent. Each app and tool is described clearly so users understand what it does,
-          how
-          it works, and what its limitations are. This honesty builds trust and allows users to make informed decisions.
-        </p>
-
-        <h3>🔹 Our Approach to Privacy and Security</h3>
-
-        <p>
-          RDroidApps is built with a strong respect for user privacy and data ownership. Whenever possible, tools are
-          designed to process files locally on the user’s device rather than uploading them to remote servers. This
-          approach
-          reduces exposure, improves speed, and gives users peace of mind.
-        </p>
-
-        <p>
-          We do not believe in unnecessary permissions, silent background tracking, or hidden analytics that compromise
-          user
-          trust. Any use of analytics or third-party services is disclosed clearly in our Privacy Policy, and users
-          remain
-          in control of how they interact with the platform.
-        </p>
-
-        <p>
-          Security is treated as a design choice, not an afterthought. By keeping tools focused and lightweight,
-          RDroidApps
-          reduces potential risks while maintaining reliability.
-        </p>
-
-        <h3>🔹 Windows Tools for Productivity</h3>
-
-        <p>
-          RDroidApps offers a growing collection of Windows tools designed to assist with everyday digital tasks related
-          to
-          documents, media files, and system information. These tools are suitable for students, professionals, and
-          creators who
-          need focused utilities without complex software suites or unnecessary features.
-        </p>
-
-        <p>
-          The Windows tools available on RDroidApps include a wide range of PDF utilities such as compressing, merging,
-          splitting,
-          converting, protecting, and editing PDF files. In addition, the platform provides practical image tools for
-          resizing,
-          cropping, compressing, converting formats, managing metadata, and preparing images for documents and sharing.
-        </p>
-
-        <p>
-          RDroidApps also includes audio tools for trimming, converting, merging audio files, adjusting speed or pitch,
-          extracting
-          MP3 tracks, and editing audio metadata. For system-related needs, the platform provides informational and
-          file-management utilities such as file renaming, duplicate file detection, folder size analysis, disk usage
-          visualization, startup program management, and system information checking.
-        </p>
-
-        <p>
-          All Windows tools are organized into clear categories including PDF tools, image tools, audio tools, system
-          tools, and
-          utility tools. This structured approach helps users quickly find the exact tool they need, perform a specific
-          task
-          efficiently, and continue their work without unnecessary friction or misleading functionality.
-        </p>
-
-        <h3>🔹 Android Apps Built with Purpose</h3>
-
-        <p>
-          In addition to desktop tools, RDroidApps develops Android applications that focus on essential functionality
-          and
-          clean design. These apps are built to be lightweight, offline-friendly where possible, and free from
-          unnecessary
-          permissions.
-        </p>
-
-        <p>
-          Each Android app is created to solve a specific problem — whether it’s calculation, utility, productivity, or
-          everyday assistance. Rather than bundling unrelated features, RDroidApps prefers focused apps that do one job
-          well.
-        </p>
-
-        <p>
-          The goal is to provide Android users with reliable tools that feel fast, predictable, and respectful of device
-          resources.
-        </p>
-
-        <h3>🔹 How RDroidApps Tools Work</h3>
-
-        <p>
-          Most tools available on RDroidApps are designed with simplicity at their core. Users can access a tool, follow
-          clear instructions, and complete their task without confusion or unnecessary steps.
-        </p>
-
-        <p>
-          For file-based tools, the workflow is kept transparent. Users know when a file is processed locally and when a
-          feature requires additional interaction. This clarity helps users understand what happens to their data at
-          every
-          step.
-        </p>
-
-        <p>
-          RDroidApps avoids dark patterns such as misleading download buttons, forced redirects, or hidden actions. What
-          you
-          see is what you get — a tool that performs a specific function as described.
-        </p>
-
-        <h3>🔹 Responsible Use and Limitations</h3>
-
-        <p>
-          While RDroidApps strives to provide reliable and accurate tools, users are encouraged to use the platform
-          responsibly. Tools are provided “as-is” and may not be suitable for critical, legal, or mission-critical data
-          without proper verification.
-        </p>
-
-        <p>
-          Users should always keep backups of important files and verify results when working with sensitive
-          information.
-          RDroidApps does not claim ownership over user files or data processed through its tools.
-        </p>
-
-        <p>
-          By using the platform, users acknowledge that they remain responsible for how tools are applied and for
-          verifying
-          outputs as needed.
-        </p>
-
-        <h3>🔹 Learning Resources and Guides</h3>
-
-        <p>
-          Beyond tools and apps, RDroidApps also offers educational articles and guides. These resources explain common
-          digital tasks, file formats, optimization techniques, and best practices for productivity.
-        </p>
-
-        <p>
-          The articles section is designed to help users understand not just how to use tools, but why certain
-          approaches
-          work better. This focus on learning adds long-term value and helps users make smarter technology choices.
-        </p>
-
-        <h3>🔹 Growing with RDroidApps</h3>
-
-        <p>
-          RDroidApps is continuously evolving. New tools, apps, and features are added based on user needs, feedback,
-          and
-          emerging technology trends. The platform is built with scalability in mind, ensuring it can grow without
-          sacrificing performance or simplicity.
-        </p>
-
-        <p>
-          At its core, RDroidApps represents a commitment to thoughtful software — software that respects users, values
-          clarity, and focuses on genuine usefulness.
-        </p>
-
-        <h3>🔹 Explore RDroidApps</h3>
-
-        <p>
-          Explore the available <a href="/windows-tools.html">Windows Tools</a>, browse <a href="/apps.html">apps</a>,
-          or read helpful guides to get started. RDroidApps is
-          built to support everyday productivity with tools you can trust.
-        </p>
-
-      </div>
-      <div>
-        <h3>🔹 Blogs, Guides, and Learning Resources</h3>
-
-        <p>
-          The blog section on RDroidApps serves as a supportive and informative extension of the tools available on the
-          platform.
-          It features carefully selected guides, articles, and posts focused on practical digital tasks and real-world
-          use
-          cases.
-          The content primarily covers document handling, media files, system-related information, and helpful tips for
-          everyday
-          digital work.
-        </p>
-
-        <p>
-          The Handbook section on RDroidApps includes in-depth guides related to computer maintenance, understanding
-          system
-          behavior, improving workflows, and reducing digital clutter. These handbooks focus on a single topic at a time
-          and
-          explain concepts in a structured, step-by-step manner for better understanding.
-        </p>
-
-        <p>
-          The Articles section contains focused write-ups on topics such as PDF file handling, image formats, and
-          selected
-          Android-related tools. These articles are concise, clear, and aimed at solving specific problems or explaining
-          common
-          concepts in a simple way.
-        </p>
-
-        <p>
-          The Posts section features practical, usage-based content related to the tools available on RDroidApps. These
-          posts
-          include topics such as merging PDF files, optimizing images for the web, organizing files efficiently, and
-          learning the
-          basics of audio editing.
-        </p>
-
-        <p>
-          This blog section continues to grow gradually, and all currently available content is designed to directly
-          complement
-          the tools and workflows provided on the RDroidApps platform.
-        </p>
-
-        <p>
-          <a href="/blog/index.html" class="btn btn-primary">Explore Blog Articles</a>
-        </p>
-      </div>
-    </section>
+    <p style="text-align:center;">RDroidApps is a privacy-focused software platform offering lightweight Android apps
+      and powerful Windows
+      tools
+      designed
+      to simplify everyday digital tasks. From document management and image editing to audio tools and system
+      information utilities,
+      RDroidApps focuses on speed, simplicity, and user control.
+    </p>
   </section>
+
+  <!-- Windows Tools Section -->
+  <h2 style="text-align:center; margin: 0 auto 0px;">🧰 Windows Tool Categories</h2>
+  <p class="note" style="text-align:center; max-width:720px; margin:0 auto 10px;">
+    Clean, fast, offline-ready utilities for documents, images, audio, and productivity.
+  </p>
+  <p style="max-width: 90%; margin: 0 auto 0px; font-size: 18px; text-align:center;">
+    Use our fast, secure, and lightweight Windows utilities built for everyday productivity.
+    Click below to explore the full collection of tools.
+  </p>
+
+  <div class="tool-item" style="padding: 6px 30px;">
+    <h2 id="pdf-tools">All PDF Tools</h2>
+    <!-- Tool Cards Grid -->
+    <div style="
+                        display:grid;
+                        grid-template-columns:repeat(auto-fit, minmax(370px, 1fr));
+                        gap: 9px;
+                      ">
+      <a href="/windows-tools/pdf/book-editor.html" class="tool-card">
+        <img src="/assets/images/pdf-image/book-editor-1.webp" alt="Compress PDF tool interface" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>Book Editor</h3>
+          <p>Edit and manage PDF books.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+
+      <a href="/windows-tools/pdf/compress-pdf.html" class="tool-card">
+        <img src="/assets/images/pdf-image/compress-pdf.webp" alt="Compress PDF tool interface" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>Compress PDF</h3>
+          <p>Reduce PDF file size without quality loss.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+
+      <a href="/windows-tools/pdf/excel-to-pdf.html" class="tool-card">
+        <img src="/assets/images/pdf-image/excel-to-pdf.webp" alt="Compress PDF tool interface" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>Excel to PDF</h3>
+          <p>Transform Excel sheets into PDF documents.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/pdf/jpg-to-pdf.html" class="tool-card">
+        <img src="/assets/images/pdf-image/jpg-to-pdf.webp" alt="Compress PDF tool interface" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>JPG to PDF</h3>
+          <p>Convert images to PDF with adjustable settings.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/pdf/merge-pdf.html" class="tool-card">
+        <img src="/assets/images/pdf-image/merge.webp" alt="Compress PDF tool interface" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Merge PDF</h3>
+          <p>Combine multiple PDFs into one document.</p>
+          <span class="tool-badge">Popular</span>
+        </div>
+      </a>
+      <a href="/windows-tools/pdf/pdf-to-excel.html" class="tool-card">
+        <img src="/assets/images/pdf-image/pdf-to-excel.webp" alt="Compress PDF tool interface" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>PDF to Excel</h3>
+          <p>Extract tables from PDF to Excel.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/pdf/pdf-to-jpg.html" class="tool-card">
+        <img src="/assets/images/pdf-image/pdf-to-jpg.webp" alt="Compress PDF tool interface" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>PDF to JPG</h3>
+          <p>Convert PDF pages to JPG images.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/pdf/pdf-to-png.html" class="tool-card">
+        <img src="/assets/images/pdf-image/pdf-to-png.webp" alt="Compress PDF tool interface" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>PDF to PNG</h3>
+          <p>Convert PDF pages to PNG images.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/pdf/pdf-to-ppt.html" class="tool-card">
+        <img src="/assets/images/pdf-image/pdf-to-ppt.webp" alt="Compress PDF tool interface" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>PDF to PPT</h3>
+          <p>Convert PDF to PowerPoint presentations.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/pdf/pdf-to-text.html" class="tool-card">
+        <img src="/assets/images/pdf-image/pdf-to-text.webp" alt="Compress PDF tool interface" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>PDF to Text</h3>
+          <p>Extract text from PDF files.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/pdf/pdf-to-word.html" class="tool-card">
+        <img src="/assets/images/pdf-image/pdf-to-word.webp" alt="Compress PDF tool interface" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>PDF to Word</h3>
+          <p>Convert PDF to editable Word files.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/pdf/png-to-pdf.html" class="tool-card">
+        <img src="/assets/images/pdf-image/png-to-pdf.webp" alt="Compress PDF tool interface" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>PNG to PDF</h3>
+          <p>Convert PNG images to PDF format.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/pdf/ppt-to-pdf.html" class="tool-card">
+        <img src="/assets/images/pdf-image/ppt-to-pdf.webp" alt="Compress PDF tool interface" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>PPT to PDF</h3>
+          <p>Convert PPT/PPTX files to PDF format.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/pdf/protect-unlock-pdf.html" class="tool-card">
+        <img src="/assets/images/pdf-image/unlock-pdf.webp" alt="Compress PDF tool interface" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Protect/Unlock PDF</h3>
+          <p>Add or remove password protection.</p>
+          <span class="tool-badge">Secure</span>
+        </div>
+      </a>
+      <a href="/windows-tools/pdf/rotate-pdf.html" class="tool-card">
+        <img src="/assets/images/pdf-image/rotate-pdf.webp" alt="Compress PDF tool interface" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Rotate PDF</h3>
+          <p>Rotate PDF pages 90°, 180°, or 270°.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/pdf/split-pdf.html" class="tool-card">
+        <img src="/assets/images/pdf-image/split-pdf.webp" alt="Compress PDF tool interface" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Split PDF</h3>
+          <p>Divide PDF into multiple files by pages.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/pdf/text-to-pdf.html" class="tool-card">
+        <img src="/assets/images/pdf-image/text-to-pdf.webp" alt="Compress PDF tool interface" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>Text to PDF</h3>
+          <p>Convert plain text to PDF.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/pdf/word-to-pdf.html" class="tool-card">
+        <img src="/assets/images/pdf-image/word-to-pdf.webp" alt="Compress PDF tool interface" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>Word to PDF</h3>
+          <p>Convert DOC/DOCX files to PDF format.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="tool-item" style="padding: 6px 30px;">
+    <h2 id="image-tools">All Image Tools</h2>
+    <!-- Tool Cards Grid -->
+    <div style="
+                                        display:grid;
+                                        grid-template-columns:repeat(auto-fit, minmax(370px, 1fr));
+                                        gap: 9px;
+                                      ">
+      <a href="/windows-tools/image/add-watermark.html" class="tool-card">
+        <img src="/assets/images/image-image/add-watermark.webp" alt="Add Watermark" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Add Watermark</h3>
+          <p>Protect images with text or logo watermark.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/image/compress-image.html" class="tool-card">
+        <img src="/assets/images/image-image/compress-image.webp" alt="Compress Image" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Compress Image</h3>
+          <p>Reduce image file size without losing quality.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/image/convert-image.html" class="tool-card">
+        <img src="/assets/images/image-image/convert-image.webp" alt="Convert Image" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Convert Image</h3>
+          <p>Convert between JPG, PNG, BMP, TIFF, etc.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/image/crop-image.html" class="tool-card">
+        <img src="/assets/images/image-image/crop-image.webp" alt="Crop Image" loading="lazy" width="200" height="140">
+        <div class="tool-content">
+          <h3>Crop Image</h3>
+          <p>Cut out unwanted parts of an image.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/image/flip-image.html" class="tool-card">
+        <img src="/assets/images/image-image/flip-image.webp" alt="Flip Image" loading="lazy" width="200" height="140">
+        <div class="tool-content">
+          <h3>Flip Image</h3>
+          <p>Flip images horizontally or vertically.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/image/image-metadata-remover.html" class="tool-card">
+        <img src="/assets/images/image-image/image-metadata-remover.webp" alt="Image Metadata Remover" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>Image Metadata Remover</h3>
+          <p>Remove private metadata from images.</p>
+          <span class="tool-badge">Secure</span>
+        </div>
+      </a>
+      <a href="/windows-tools/image/image-metadata-viewer.html" class="tool-card">
+        <img src="/assets/images/image-image/image-metadata-viewer.webp" alt="Image Metadata Viewer" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>Image Metadata Viewer</h3>
+          <p>View EXIF and camera info.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/image/image-to-pdf.html" class="tool-card">
+        <img src="/assets/images/image-image/image-to-pdf.webp" alt="Image to PDF" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Image to PDF</h3>
+          <p>Convert multiple images into a PDF.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/image/jpg-to-webp.html" class="tool-card">
+        <img src="/assets/images/image-image/jpg-to-webp.webp" alt="JPG to WebP" loading="lazy" width="200"
+          loading="lazy" width="200" height="140">
+        <div class="tool-content">
+          <h3>JPG to WebP</h3>
+          <p>Convert JPG to modern WebP format.</p>
+          <span class="tool-badge">Popular</span>
+        </div>
+      </a>
+      <a href="/windows-tools/image/png-to-webp.html" class="tool-card">
+        <img src="/assets/images/image-image/png-to-webp.webp" alt="PNG to WebP" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>PNG to WebP</h3>
+          <p>Convert PNG to WebP for better compression.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/image/resize-image.html" class="tool-card">
+        <img src="/assets/images/image-image/resize-image.webp" alt="Resize Image" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Resize Image</h3>
+          <p>Change image dimensions while keeping quality.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/image/rotate-image.html" class="tool-card">
+        <img src="/assets/images/image-image/rotate-image.webp" alt="Rotate Image" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Rotate Image</h3>
+          <p>Rotate images 90°, 180°, or 270°.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="tool-item" style="padding: 6px 30px;">
+    <h2 id="audio-tools">All Audio Tools</h2>
+    <!-- Tool Cards Grid -->
+    <div style="
+                                    display:grid;
+                                    grid-template-columns:repeat(auto-fit, minmax(370px, 1fr));
+                                    gap: 9px;
+                                  ">
+      <a href="/windows-tools/audio/audio-metadata-editor.html" class="tool-card">
+        <img src="/assets/images/audio-image/audio-metadata-editor.webp" alt="Audio Metadata Editor" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>Audio Metadata Editor</h3>
+          <p>Edit ID3 tags and cover art.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/audio/audio-volume-boost.html" class="tool-card">
+        <img src="/assets/images/audio-image/audio-volume-boost.webp" alt="Audio Volume Boost" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>Audio Volume Boost</h3>
+          <p>Increase volume without distortion.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/audio/change-audio-pitch.html" class="tool-card">
+        <img src="/assets/images/audio-image/change-audio-pitch.webp" alt="Change Audio Pitch" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>Change Audio Pitch</h3>
+          <p>Adjust pitch while keeping tempo.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/audio/change-audio-speed.html" class="tool-card">
+        <img src="/assets/images/audio-image/change-audio-speed.webp" alt="Change Audio Speed" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>Change Audio Speed</h3>
+          <p>Speed up or slow down audio.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/audio/convert-audio.html" class="tool-card">
+        <img src="/assets/images/audio-image/convert-audio.webp" alt="Convert Audio" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Convert Audio</h3>
+          <p>Convert between MP3, WAV, FLAC, AAC, OGG.</p>
+          <span class="tool-badge">Popular</span>
+        </div>
+      </a>
+      <a href="/windows-tools/audio/extract-mp3.html" class="tool-card">
+        <img src="/assets/images/audio-image/extract-mp3.webp" alt="Extract MP3" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Extract MP3</h3>
+          <p>Extract audio from video files as MP3.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/audio/merge-audio.html" class="tool-card">
+        <img src="/assets/images/audio-image/merge-audio.webp" alt="Merge Audio" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Merge Audio</h3>
+          <p>Combine multiple audio tracks.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/audio/trim-audio.html" class="tool-card">
+        <img src="/assets/images/audio-image/trim-audio.webp" alt="Trim Audio" loading="lazy" width="200" height="140">
+        <div class="tool-content">
+          <h3>Trim Audio</h3>
+          <p>Cut unwanted parts from audio files.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="tool-item" style="padding: 6px 30px;">
+    <h2 id="system-tools">All System Tools</h2>
+    <!-- Tool Cards Grid -->
+    <div style="
+                            display:grid;
+                            grid-template-columns:repeat(auto-fit, minmax(370px, 1fr));
+                            gap: 9px;
+                          ">
+      <a href="/windows-tools/system/disk-usage-visualizer.html" class="tool-card">
+        <img src="/assets/images/system-image/disk-usage-visualizer.webp" alt="Disk Usage Visualizer" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>Disk Usage Visualizer</h3>
+          <p>Visualize disk space with interactive charts.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/system/duplicate-file-finder.html" class="tool-card">
+        <img src="/assets/images/system-image/duplicate-file-finder.webp" alt="Duplicate File Finder" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>Duplicate File Finder</h3>
+          <p>Find and remove duplicate files.</p>
+          <span class="tool-badge">Popular</span>
+        </div>
+      </a>
+      <a href="/windows-tools/system/file-renamer.html" class="tool-card">
+        <img src="/assets/images/system-image/file-renamer.webp" alt="File Renamer" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>File Renamer</h3>
+          <p>Batch rename multiple files.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/system/folder-size-analyzer.html" class="tool-card">
+        <img src="/assets/images/system-image/folder-size-analyzer.webp" alt="Folder Size Analyzer" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>Folder Size Analyzer</h3>
+          <p>See which folders take the most space.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/system/startup-program-manager.html" class="tool-card">
+        <img src="/assets/images/system-image/startup-program-manager.webp" alt="Startup Program Manager" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>Startup Program Manager</h3>
+          <p>Manage apps that launch at startup.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/system/system-info-checker.html" class="tool-card">
+        <img src="/assets/images/system-image/system-info-checker.webp" alt="System Info Checker" loading="lazy"
+          width="200" height="140">
+        <div class="tool-content">
+          <h3>System Info Checker</h3>
+          <p>View detailed system and hardware info.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="tool-item" style="padding: 6px 30px;">
+    <h2 id="utility-tools">All Utility Tools</h2>
+    <!-- Tool Cards Grid -->
+    <div style="
+                            display:grid;
+                            grid-template-columns:repeat(auto-fit, minmax(370px, 1fr));
+                            gap: 9px;
+                          ">
+      <a href="/windows-tools/utility/age-calculator.html" class="tool-card">
+        <img src="/assets/images/utility-image/age-calculator.webp" alt="age-calculator" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Age Calculator</h3>
+          <p>Calculate age in years, months, days.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/utility/notes-manager.html" class="tool-card">
+        <img src="/assets/images/utility-image/notes-manager.webp" alt="notes-manager" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Notes Manager</h3>
+          <p>Organize and manage your notes.</p>
+          <span class="tool-badge">Popular</span>
+        </div>
+      </a>
+      <a href="/windows-tools/utility/qr-generator.html" class="tool-card">
+        <img src="/assets/images/utility-image/qr-generator.webp" alt="qr-generator" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>QR Generator</h3>
+          <p>Generate QR codes from text/URLs.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+      <a href="/windows-tools/utility/unit-converter.html" class="tool-card">
+        <img src="/assets/images/utility-image/unit-converter.webp" alt="unit-converter" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Unit Converter</h3>
+          <p>Convert length, weight, volume, etc.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="tool-item" style="padding: 6px 30px;">
+    <h2>Our Featured Android Apps</h2>
+    <p>Each app is crafted for performance, privacy, and user delight. Explore what we’ve built 👇</p>
+    <!-- Tool Cards Grid -->
+    <div style="
+                        display:grid;
+                        grid-template-columns:repeat(auto-fit, minmax(370px, 1fr));
+                        gap: 9px;
+                      ">
+      <a href="/color-mixer.html" class="tool-card">
+        <img src="/assets/icons/color-mixer.webp" alt="Color Mixer tool interface" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Color Mixer</h3>
+          <p>Combine and mix colors to create new ones.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+
+      <a href="/easy-music.html" class="tool-card">
+        <img src="/assets/icons/easy-music-icon.webp" alt="Compress PDF tool interface" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Easy Music</h3>
+          <p>Play and manage your music files easily.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+
+      <a href="/golden-calc.html" class="tool-card">
+        <img src="/assets/icons/golden-calc.webp" alt="Golden Calculator tool interface" loading="lazy" width="200"
+          height="140">
+        <div class="tool-content">
+          <h3>Golden Calculator</h3>
+          <p>Advanced calculator with scientific functions.</p>
+          <span class="tool-badge">Free</span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
+  <!-- About RDroidApps Section -->
+  <section class="home-content" style="padding:30px 20px;">
+    <div style=" margin:0px auto; line-height:1.7;">
+      <h3>🔹 What is RDroidApps?</h3>
+
+      <p>
+        RDroidApps is an independent software platform created to make everyday digital work easier, faster, and more
+        reliable. The website brings together carefully designed Android applications, Windows desktop tools, and
+        essential utilities that help users manage documents, images, audio files, and system tasks with confidence.
+      </p>
+
+      <p>
+        Unlike many platforms that focus on aggressive monetization, forced sign-ups, or excessive permissions,
+        RDroidApps
+        follows a user-first approach. Every tool and application is designed to be lightweight, straightforward, and
+        respectful of user privacy. The goal is simple: provide useful tools that do exactly what they promise,
+        without
+        hidden behavior or unnecessary distractions.
+      </p>
+
+      <p>
+        RDroidApps is built for students, professionals, creators, small businesses, and everyday users who value
+        clean
+        software and predictable behavior. Whether you need to compress a PDF, convert images, manage files, or use a
+        practical Android utility, RDroidApps aims to understand real-world needs and deliver focused solutions.
+      </p>
+
+      <p>
+        This website is developed and maintained by an independent developer with a strong emphasis on long-term
+        usability, transparent design, and continuous improvement. Every feature added to RDroidApps is guided by the
+        principle that software should serve the user — not exploit them.
+      </p>
+
+      <h3>🔹 Why Choose RDroidApps?</h3>
+
+      <p>
+        Choosing the right tools matters, especially when handling personal or professional data. RDroidApps stands
+        apart
+        by following a few core principles that guide every product published on the platform.
+      </p>
+
+      <p>
+        First, privacy is a priority. RDroidApps avoids unnecessary data collection and tracking wherever possible.
+        Many
+        tools are designed to work locally on your device, reducing dependency on external servers and improving
+        security.
+      </p>
+
+      <p>
+        Second, performance matters. The tools provided are optimized to be fast and lightweight, ensuring they run
+        smoothly even on older systems. There are no bloated installers, no hidden background services, and no forced
+        updates that interrupt your workflow.
+      </p>
+
+      <p>
+        Third, simplicity is intentional. Every interface is designed to be clear and approachable. Features are
+        explained, workflows are predictable, and users are never forced into confusing steps or misleading buttons.
+      </p>
+
+      <p>
+        Finally, RDroidApps is transparent. Each app and tool is described clearly so users understand what it does,
+        how
+        it works, and what its limitations are. This honesty builds trust and allows users to make informed decisions.
+      </p>
+
+      <h3>🔹 Our Approach to Privacy and Security</h3>
+
+      <p>
+        RDroidApps is built with a strong respect for user privacy and data ownership. Whenever possible, tools are
+        designed to process files locally on the user’s device rather than uploading them to remote servers. This
+        approach
+        reduces exposure, improves speed, and gives users peace of mind.
+      </p>
+
+      <p>
+        We do not believe in unnecessary permissions, silent background tracking, or hidden analytics that compromise
+        user
+        trust. Any use of analytics or third-party services is disclosed clearly in our Privacy Policy, and users
+        remain
+        in control of how they interact with the platform.
+      </p>
+
+      <p>
+        Security is treated as a design choice, not an afterthought. By keeping tools focused and lightweight,
+        RDroidApps
+        reduces potential risks while maintaining reliability.
+      </p>
+
+      <h3>🔹 Windows Tools for Productivity</h3>
+
+      <p>
+        RDroidApps offers a growing collection of Windows tools designed to assist with everyday digital tasks related
+        to
+        documents, media files, and system information. These tools are suitable for students, professionals, and
+        creators who
+        need focused utilities without complex software suites or unnecessary features.
+      </p>
+
+      <p>
+        The Windows tools available on RDroidApps include a wide range of PDF utilities such as compressing, merging,
+        splitting,
+        converting, protecting, and editing PDF files. In addition, the platform provides practical image tools for
+        resizing,
+        cropping, compressing, converting formats, managing metadata, and preparing images for documents and sharing.
+      </p>
+
+      <p>
+        RDroidApps also includes audio tools for trimming, converting, merging audio files, adjusting speed or pitch,
+        extracting
+        MP3 tracks, and editing audio metadata. For system-related needs, the platform provides informational and
+        file-management utilities such as file renaming, duplicate file detection, folder size analysis, disk usage
+        visualization, startup program management, and system information checking.
+      </p>
+
+      <p>
+        All Windows tools are organized into clear categories including PDF tools, image tools, audio tools, system
+        tools, and
+        utility tools. This structured approach helps users quickly find the exact tool they need, perform a specific
+        task
+        efficiently, and continue their work without unnecessary friction or misleading functionality.
+      </p>
+
+      <h3>🔹 Android Apps Built with Purpose</h3>
+
+      <p>
+        In addition to desktop tools, RDroidApps develops Android applications that focus on essential functionality
+        and
+        clean design. These apps are built to be lightweight, offline-friendly where possible, and free from
+        unnecessary
+        permissions.
+      </p>
+
+      <p>
+        Each Android app is created to solve a specific problem — whether it’s calculation, utility, productivity, or
+        everyday assistance. Rather than bundling unrelated features, RDroidApps prefers focused apps that do one job
+        well.
+      </p>
+
+      <p>
+        The goal is to provide Android users with reliable tools that feel fast, predictable, and respectful of device
+        resources.
+      </p>
+
+      <h3>🔹 How RDroidApps Tools Work</h3>
+
+      <p>
+        Most tools available on RDroidApps are designed with simplicity at their core. Users can access a tool, follow
+        clear instructions, and complete their task without confusion or unnecessary steps.
+      </p>
+
+      <p>
+        For file-based tools, the workflow is kept transparent. Users know when a file is processed locally and when a
+        feature requires additional interaction. This clarity helps users understand what happens to their data at
+        every
+        step.
+      </p>
+
+      <p>
+        RDroidApps avoids dark patterns such as misleading download buttons, forced redirects, or hidden actions. What
+        you
+        see is what you get — a tool that performs a specific function as described.
+      </p>
+
+      <h3>🔹 Responsible Use and Limitations</h3>
+
+      <p>
+        While RDroidApps strives to provide reliable and accurate tools, users are encouraged to use the platform
+        responsibly. Tools are provided “as-is” and may not be suitable for critical, legal, or mission-critical data
+        without proper verification.
+      </p>
+
+      <p>
+        Users should always keep backups of important files and verify results when working with sensitive
+        information.
+        RDroidApps does not claim ownership over user files or data processed through its tools.
+      </p>
+
+      <p>
+        By using the platform, users acknowledge that they remain responsible for how tools are applied and for
+        verifying
+        outputs as needed.
+      </p>
+
+      <h3>🔹 Learning Resources and Guides</h3>
+
+      <p>
+        Beyond tools and apps, RDroidApps also offers educational articles and guides. These resources explain common
+        digital tasks, file formats, optimization techniques, and best practices for productivity.
+      </p>
+
+      <p>
+        The articles section is designed to help users understand not just how to use tools, but why certain
+        approaches
+        work better. This focus on learning adds long-term value and helps users make smarter technology choices.
+      </p>
+
+      <h3>🔹 Growing with RDroidApps</h3>
+
+      <p>
+        RDroidApps is continuously evolving. New tools, apps, and features are added based on user needs, feedback,
+        and
+        emerging technology trends. The platform is built with scalability in mind, ensuring it can grow without
+        sacrificing performance or simplicity.
+      </p>
+
+      <p>
+        At its core, RDroidApps represents a commitment to thoughtful software — software that respects users, values
+        clarity, and focuses on genuine usefulness.
+      </p>
+
+      <h3>🔹 Explore RDroidApps</h3>
+
+      <p>
+        Explore the available <a href="/windows-tools.html">Windows Tools</a>, browse <a href="/apps.html">apps</a>,
+        or read helpful guides to get started. RDroidApps is
+        built to support everyday productivity with tools you can trust.
+      </p>
+
+      <h3>🔹 Blogs, Guides, and Learning Resources</h3>
+
+      <p>
+        The blog section on RDroidApps serves as a supportive and informative extension of the tools available on the
+        platform.
+        It features carefully selected guides, articles, and posts focused on practical digital tasks and real-world
+        use
+        cases.
+        The content primarily covers document handling, media files, system-related information, and helpful tips for
+        everyday
+        digital work.
+      </p>
+
+      <p>
+        The Handbook section on RDroidApps includes in-depth guides related to computer maintenance, understanding
+        system
+        behavior, improving workflows, and reducing digital clutter. These handbooks focus on a single topic at a time
+        and
+        explain concepts in a structured, step-by-step manner for better understanding.
+      </p>
+
+      <p>
+        The Articles section contains focused write-ups on topics such as PDF file handling, image formats, and
+        selected
+        Android-related tools. These articles are concise, clear, and aimed at solving specific problems or explaining
+        common
+        concepts in a simple way.
+      </p>
+
+      <p>
+        The Posts section features practical, usage-based content related to the tools available on RDroidApps. These
+        posts
+        include topics such as merging PDF files, optimizing images for the web, organizing files efficiently, and
+        learning the
+        basics of audio editing.
+      </p>
+
+      <p>
+        This blog section continues to grow gradually, and all currently available content is designed to directly
+        complement
+        the tools and workflows provided on the RDroidApps platform.
+      </p>
+
+      <p>
+        <a href="/blog/index.html" class="btn btn-primary">Explore Blog Articles</a>
+      </p>
+    </div>
+  </section>
+
 
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
-
-  <script>
-    function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
-    /* ---------- Category popup behavior for index.html cards ---------- */
-    (function () {
-      // 🔒 Popup hover state (IMPORTANT)
-      let overCard = false;
-      let overPopup = false;
-      let hideTimer = null;
-      // category -> tools mapping (adjust items as needed)
-      const TOOL_MAP = {
-        pdf: [
-          { name: "Compress PDF", href: "windows-tools/pdf/compress-pdf.html" },
-          { name: "Merge PDF", href: "windows-tools/pdf/merge-pdf.html" },
-          { name: "Split PDF", href: "windows-tools/pdf/split-pdf.html" },
-          { name: "PDF to Word", href: "windows-tools/pdf/pdf-to-word.html" },
-          { name: "PDF to JPG", href: "windows-tools/pdf/pdf-to-jpg.html" },
-          { name: "Protect/Unlock PDF", href: "windows-tools/pdf/protect-unlock-pdf.html" },
-          { name: "Book Editor", href: "windows-tools/pdf/book-editor.html" },
-          { name: "Excel to PDF", href: "windows-tools/pdf/excel-to-pdf.html" },
-          { name: "JPG to PDF", href: "windows-tools/pdf/jpg-to-pdf.html" },
-          { name: "PDF to Excel", href: "windows-tools/pdf/pdf-to-excel.html" },
-          { name: "PDF to PNG", href: "windows-tools/pdf/pdf-to-png.html" },
-          { name: "PDF to PPT", href: "windows-tools/pdf/pdf-to-ppt.html" },
-          { name: "PDF to Text", href: "windows-tools/pdf/pdf-to-text.html" },
-          { name: "PNG to PDF", href: "windows-tools/pdf/png-to-pdf.html" },
-          { name: "PPT to PDF", href: "windows-tools/pdf/ppt-to-pdf.html" },
-          { name: "Rotate PDF", href: "windows-tools/pdf/rotate-pdf.html" },
-          { name: "Text to PDF", href: "windows-tools/pdf/text-to-pdf.html" },
-          { name: "Word to PDF", href: "windows-tools/pdf/word-to-pdf.html" }
-        ],
-        image: [
-          { name: "Resize Image", href: "windows-tools/image/resize-image.html" },
-          { name: "Crop Image", href: "windows-tools/image/crop-image.html" },
-          { name: "Rotate Image", href: "windows-tools/image/rotate-image.html" },
-          { name: "Flip Image", href: "windows-tools/image/flip-image.html" },
-          { name: "Image Compressor", href: "windows-tools/image/image-compressor.html" },
-          { name: "Image Converter", href: "windows-tools/image/image-converter.html" },
-          { name: "PNG to WebP", href: "windows-tools/image/png-to-webp.html" },
-          { name: "JPG to WebP", href: "windows-tools/image/jpg-to-webp.html" },
-          { name: "Add Watermark", href: "windows-tools/image/add-watermark.html" },
-          { name: "Image Metadata viewer", href: "windows-tools/image/image-metadata-viewer.html" },
-          { name: "Image Metadata Remover", href: "windows-tools/image/image-metadata-remover.html" },
-          { name: "Image to pdf", href: "windows-tools/image/image-to-pdf.html" }
-        ],
-        audio: [
-          { name: "Trim Audio", href: "windows-tools/audio/trim-audio.html" },
-          { name: "Convert Audio", href: "windows-tools/audio/convert-audio.html" },
-          { name: "Extract MP3", href: "windows-tools/audio/extract-mp3.html" },
-          { name: "Volume Booster", href: "windows-tools/audio/volume-booster.html" },
-          { name: "Merge Audio", href: "windows-tools/audio/merge-audio.html" },
-          { name: "Change Audio Speed", href: "windows-tools/audio/change-audio-speed.html" },
-          { name: "Change Audio Pitch", href: "windows-tools/audio/change-audio-pitch.html" },
-          { name: "Audio Metadata Editor", href: "windows-tools/audio/audio-metadata-editor.html" }
-        ],
-        system: [
-          { name: "File Renamer", href: "windows-tools/system/file-renamer.html" },
-          { name: "Duplicate File Finder", href: "windows-tools/system/duplicate-file-finder.html" },
-          { name: "Folder Size Analyzer", href: "windows-tools/system/folder-size-analyzer.html" },
-          { name: "Startup Program Manager", href: "windows-tools/system/startup-program-manager.html" },
-          { name: "System Info Checker", href: "windows-tools/system/system-Info-Checker.html" },
-          { name: "Disk Usage Visualizer", href: "windows-tools/system/disk-usage-visualizer.html" }
-        ],
-        utility: [
-          { name: "Notes Manager", href: "windows-tools/utility/notes-manager.html" },
-          { name: "QR Generator", href: "windows-tools/utility/qr-generator.html" },
-          { name: "Unit Converter", href: "windows-tools/utility/unit-converter.html" },
-          { name: "Age Calculator", href: "windows-tools/utility/age-calculator.html" }
-        ],
-        apps: [
-          { name: "Color Mixer", href: "color-mixer.html" },
-          { name: "Easy Music", href: "easy-music.html" },
-          { name: "Golden Calc", href: "golden-calc.html" }
-        ],
-        blog: [
-          { name: "How to Compress PDF Files Without Losing Quality", href: "blog/articles/how-to-compress-pdf.html" },
-          { name: "Understanding Image Formats: JPG, PNG, WebP", hrep: "blog/articles/image-formats-guide.html" },
-          { name: "Top 5 Essential Android Tools for 2025", href: "blog/articles/top-android-tool.html" },
-          { name: "Your Ultimate Guide to Speeding Up Your Computer", hrep: "blog/handbook/the-sloe-pc-fix-handbook.html" },
-          { name: "The Software Deep Clean – The Ultimate Guide to Digital Decluttering", href: "blog/handbook/software-deep-clean.html" },
-          { name: "Hardware & Advanced Tuning – The Ultimate Guide to Powering Up Your PC's Engine", hrep: "blog/handbook/hardware-advanced-tuning.html" },
-          { name: "The Maintenance Routine – The Ultimate Guide to Sustaining Peak PC Performance", href: "blog/handbook/maintenance-routine.html" },
-          { name: "Advanced Optimization – The Expert's Guide to Maximum Performance", hrep: "blog/handbook/advanced-optimization.html" }
-        ]
-      };
-
-      // create popup element and attach to body
-      const popup = document.createElement('div');
-      popup.className = 'tool-popup';
-      popup.innerHTML = `
-    <div class="tp-head">
-      <div class="tp-title">Tools</div>
-      <small class="tp-sub">Quick actions</small>
-    </div>
-    <ul class="tp-list"></ul>
-    <div style="margin-top:10px; text-align:right;">
-      <a class="open-all" href="#" target="_self">Open category</a>
-    </div>
-  `;
-      document.body.appendChild(popup);
-
-      const listEl = popup.querySelector('.tp-list');
-      const openAllEl = popup.querySelector('.open-all');
-
-      function buildList(cat) {
-        listEl.innerHTML = '';
-        const tools = TOOL_MAP[cat] || [];
-        tools.forEach(t => {
-          const li = document.createElement('li');
-          const a = document.createElement('a');
-          a.textContent = t.name;
-          a.href = t.href;
-          a.style.color = 'inherit';
-          a.style.textDecoration = 'none';
-          li.appendChild(a);
-          listEl.appendChild(li);
-        });
-        // update header and openAll
-        popup.querySelector('.tp-title').textContent = (cat || '').toUpperCase() + ' Tools';
-        openAllEl.href = `windows-tools.html#${cat}`;
-        openAllEl.textContent = 'Open all';
-      }
-
-      function showPopupFor(el, cat) {
-        overCard = true;
-
-        buildList(cat);
-        popup.style.display = 'block';
-        popup.style.opacity = '0';
-
-        const rect = el.getBoundingClientRect();
-
-        // force layout so height is correct
-        const popupRect = popup.getBoundingClientRect();
-        const popupW = popupRect.width;
-        const popupH = popupRect.height;
-
-        let top, left;
-        let arrowSide = 'top';
-
-        // try ABOVE card
-        if (rect.top > popupH + 16) {
-          top = rect.top - popupH - 10;
-          arrowSide = 'bottom';
-        } else {
-          // place BELOW
-          top = rect.bottom + 10;
-          arrowSide = 'top';
-        }
-
-        // horizontal center aligned with card
-        left = rect.left + rect.width / 2 - popupW / 2;
-
-        // screen clamp
-        left = Math.max(12, Math.min(left, window.innerWidth - popupW - 12));
-
-        popup.style.top = top + 'px';
-        popup.style.left = left + 'px';
-
-        // arrow exact card center
-        const arrowX = rect.left + rect.width / 2 - left - 6;
-        popup.style.setProperty('--arrow-x', arrowX + 'px');
-        popup.setAttribute('data-arrow', arrowSide);
-
-        popup.classList.add('show');
-
-        requestAnimationFrame(() => {
-          popup.style.opacity = '1';
-        });
-      }
-
-      function hidePopup(delay = 120) {
-        if (hideTimer) clearTimeout(hideTimer);
-
-        hideTimer = setTimeout(() => {
-          if (overCard || overPopup) return; // STILL hovering → do nothing
-
-          popup.classList.remove('show');
-          popup.style.opacity = '0';
-
-          setTimeout(() => {
-            if (!popup.classList.contains('show')) {
-              popup.style.display = 'none';
-            }
-          }, 180);
-
-        }, delay);
-      }
-
-
-      // attach to all .card elements on the page
-      function init() {
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-          // determine category from data-cat or from href fragment
-          let cat = card.getAttribute('data-cat');
-          if (!cat) {
-            const href = card.getAttribute('href') || '';
-            const frag = href.split('#')[1] || '';
-            cat = frag || (card.querySelector('h3') ? card.querySelector('h3').textContent.toLowerCase().split(' ')[0] : '');
-          }
-          cat = cat && cat.toLowerCase();
-
-          // mouse interactions (desktop)
-          card.addEventListener('mouseenter', () => {
-            if (!cat) return;
-            overCard = true;
-            showPopupFor(card, cat);
-          });
-
-          card.addEventListener('mouseleave', () => {
-            overCard = false;
-            hidePopup();
-          });
-
-          // also keep popup visible if user moves to popup
-          popup.addEventListener('mouseenter', () => {
-            overPopup = true;
-            if (hideTimer) clearTimeout(hideTimer);
-          });
-
-          popup.addEventListener('mouseleave', () => {
-            overPopup = false;
-            hidePopup();
-          });
-
-
-          // mobile / touch: toggle on click
-          card.addEventListener('click', (ev) => {
-            if (window.innerWidth <= 680) {
-              ev.preventDefault(); // prevent immediate navigation on small screens
-              if (popup.style.display === 'block') {
-                hidePopup();
-              } else {
-                showPopupFor(card, cat);
-              }
-            }
-          });
-        });
-
-        // Close on ESC
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') hidePopup();
-        });
-
-        // Close on resize (reposition next time)
-        window.addEventListener('resize', () => hidePopup());
-      }
-
-      // init when DOM ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-      } else {
-        init();
-      }
-    })();
-  </script>
 
   <!-- Firebase v12 Modular SDKs (ES Modules) -->
   <script type="module" src="js/firebase-config.js"></script>

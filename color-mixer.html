@@ -47,13 +47,21 @@
     $(function () {
       $("#header-container").load("/components/header.html");
       $("#menu-drawer-container").load("/components/menu-drawer.html");
-      $("#tools-links-container").load("/components/favorite-tools-quick-links.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
       $("#footer-container").load("/components/footer.html");
     });
   </script>
 
   <div class="wrap">
     <section class="section">
+      <div style="display: flex; flex-direction: column; align-items: left; gap: 10px;">
+        <img src="/assets/icons/color-mixer.webp" alt="Color Mixer Icon"
+          style="width: 120px; height: 120px; border-radius: 25px; box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);">
+        <span
+          style=" width: fit-content; background: linear-gradient(135deg, #FFC107, #FF9800); color: #000; padding: 6px 16px; border-radius: 20px; font-weight: 600; font-size: 15px; text-align: left;">
+          Free
+        </span>
+      </div>
       <h1>🎨 Color Mixer</h1>
 
       <!-- TAB BUTTONS -->
@@ -141,14 +149,51 @@
             ▶️ View on Play Store
           </a>
         </div>
+        <div>
+          <button class="back-to-top" id="backToTop">
+            ↑ Back to Top
+          </button>
+        </div>
+
+        <!-- Tip Section -->
+        <div class="section"
+          style="margin-top: 30px; background: linear-gradient(135deg, rgba(34, 211, 166, 0.1), rgba(14, 165, 233, 0.1)); border: 1px solid rgba(34, 211, 166, 0.3);">
+          <h3 style="color: #22D3A6;">🎵 Creative Tip</h3>
+          <p>
+            <strong>Explore our other apps!</strong><br>
+            Try <strong>Golden Calc by RDroid Apps</strong> — a versatile calculator for Perfect for students,
+            engineers, and professionals. It features a
+            golden ratio calculator, and unit converter to enhance your creative workflow.
+          </p>
+
+          <div class="cta" style="margin-top: 15px;">
+            <a href="/golden-calc.html" class="btn btn-ghost" target="_blank"
+              style="background: linear-gradient(135deg, #22D3A6, #0ea5e9); color: #000;">
+              🎸 Get Golden calc
+            </a>
+          </div>
+
+          <p style="margin-top: 15px; font-size: 14px; color: var(--muted);">
+            Available on RDroidApps.com: "Golden Calc"<br>
+            © RDroid Apps
+          </p>
+        </div>
+        <div class="cta" style="margin-top:30px;">
+          <a class="btn btn-secondary" href="/index.html" target="_blank">
+            🏠 Explore More Tools
+          </a>
+        </div>
       </div>
 
       <!-- TAB CONTENT: PRIVACY -->
       <div id="privacyTab" class="tab-content">
-        <iframe src="privacy-color-mixer.html"
-          style="width:100%; height:150vh; border:none; border-radius:12px; background:#111;">
-        </iframe>
-      </div>
+        <a href="privacy-color-mixer.html" target="_blank">
+          <button class="btn btn-secondary" style="margin-bottom: 20px;">
+            Open Privacy Policy in New Tab
+          </button>
+        </a>
+        <div id="policyLoader">
+        </div>
 
 
     </section>
@@ -161,7 +206,6 @@
 
   <!-- TAB SCRIPT -->
   <script>
-    function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
     function openTab(tabId) {
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
@@ -186,12 +230,6 @@
         });
     }
   </script>
-
-  <!-- Login Popup -->
-
-
-  <!-- Profile Popup -->
-
 
   <!-- Firebase v12 Modular SDKs (ES Modules) -->
   <script type="module" src="js/firebase-config.js"></script>

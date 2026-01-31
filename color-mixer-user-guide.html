@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/js/script.js" defer></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Color Mixer User Guide | RDroid Apps</title>
+    <meta name="description"
+        content="User guide for Color Mixer by RDroid Apps. Learn how to mix, save, and export colors." />
+    <link rel="canonical" href="https://rdroidapps.com/color-mixer-user-guide.html" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <body>
+        <div class="wrap">
+            <!-- Main Guide Section -->
+            <section class="section">
+
+                <h1>📘 User Guide – Color Mixer</h1>
+
+                <div class="section">
+                    <h2>1) Getting Started</h2>
+                    <ul>
+                        <li>Open the app and explore the top color headers.</li>
+                        <li>Tap on a color header to view 90 shades of that color.</li>
+                        <li>Long-press a header to see all colors again.</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>2) Mixing Colors</h2>
+                    <ul>
+                        <li>Tap a color cell to add it into a slot.</li>
+                        <li>Use <b>+</b> / <b>-</b> buttons to adjust quantity.</li>
+                        <li>Reset a slot by long-pressing it (Undo option available).</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>3) Favorites</h2>
+                    <ul>
+                        <li>Long-press on a color cell to save it to Favorites.</li>
+                        <li>Tap on any favorite to quickly reuse that color.</li>
+                        <li>Remove favorites with long-press → Undo available.</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>4) Mix Preview & Share</h2>
+                    <ul>
+                        <li>Mixed color appears in the preview box with HEX code.</li>
+                        <li>Tap <b>Favorite</b> to save, or <b>Share</b> to send your mix as an image.</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>5) Colors Calculator</h2>
+                    <ul>
+                        <li>Access the Colors Calculator from the main menu.</li>
+                        <li>Pick colors from your camera or gallery images.</li>
+                        <li>View detailed RGB and RYB breakdowns with interactive percentage bars.</li>
+                        <li>Tap on color headers (Red, Yellow, Blue, etc.) to explore mixing tables and select shades.
+                        </li>
+                        <li>Long-press colors to save to favorites for quick reuse.</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>6) New: Add Colors from Images</h2>
+                    <ul>
+                        <li><b>Add from Gallery:</b> Tap the Add button to pick any image and select colors from it.
+                        </li>
+                        <li><b>Catch with Camera:</b> Capture a photo and pick colors in real-time.</li>
+                        <li>Both methods open a color picker for precise selection.</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Mixing Modes Explained</h2>
+
+                    <ul>
+                        <li>
+                            <b>Vivid Mix (Painter / Subtractive):</b>
+                            Works like real paints or inks. Colors combine by reducing reflected light,
+                            so mixes may darken or desaturate as more colors are added.
+                        </li>
+                        <li>
+                            <b>Classic Mix (Additive RGB):</b>
+                            Works like light on screens. Channels are averaged,
+                            so mixes usually stay brighter and lighter.
+                        </li>
+                    </ul>
+
+                    <div class="tip">
+                        💡 <b>Tip:</b> Choose <b>Vivid</b> for paint, print, or real-world color mixing.
+                        Use <b>Classic</b> for digital UI, screens, and LED-based designs.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>8) Contact & Support</h2>
+                    <ul>
+                        <li>Privacy Policy:
+                            <a href="https://www.rdroidapps.com/privacy-color-mixer.html" target="_blank">
+                                rdroidapps.com/privacy-color-mixer.html
+                            </a>
+                        </li>
+                        <li>Contact: rdroidapps096@gmail.com</li>
+                        <li>Developer: RDroid Apps</li>
+                    </ul>
+                </div>
+                <!-- Navigation -->
+                <div class="part-navigation">
+                    <a href="/color-mixer.html" class="nav-button prev">Back to Color Mixer</a>
+                    <a href="/privacy-color-mixer.html" class="nav-button next">Privacy Policy →</a>
+                </div>
+            </section>
+        </div>
+        <!-- FOOTER (loaded from external file) -->
+        <div id="footer-container"></div>
+
+        <script>
+            function toggleMenu() {
+                document.getElementById('drawer').classList.toggle('open');
+            }
+        </script>
+    </body>
+
+</html>

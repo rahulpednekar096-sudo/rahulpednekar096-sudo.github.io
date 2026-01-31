@@ -63,22 +63,6 @@
 </head>
 
 <body>
-
-    <!-- HEADER (loaded from external file) -->
-    <div id="header-container"></div>
-
-    <!-- MENU DRAWER (loaded from external file) -->
-    <div id="menu-drawer-container"></div>
-
-    <!-- Load all components -->
-    <script>
-        $(function () {
-            $("#header-container").load("/components/header.html");
-            $("#menu-drawer-container").load("/components/menu-drawer.html");
-            $("#footer-container").load("/components/footer.html");
-        });
-    </script>
-
     <div class="wrap">
         <section class="section">
             <div>
@@ -349,14 +333,12 @@
 
             <!-- Navigation Links -->
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
-                <a href="/golden-calc.html" style="margin-right: 20px;">← Back to Golden Calc</a>
-                <a href="/golden-calc-user-guide.html">User Guide →</a>
+                <button class="btn btn-secondary" onclick="window.location.href='/golden-calc.html'">← Back to App</button>
+                <span style="margin: 0 10px;">|</span>
+                <button class="btn btn-secondary" onclick="window.location.href='/golden-calc-user-guide.html'">User Guide →</button>
             </div>
         </section>
     </div>
-
-    <!-- FOOTER (loaded from external file) -->
-    <div id="footer-container"></div>
 
     <script>
         // Back to top functionality

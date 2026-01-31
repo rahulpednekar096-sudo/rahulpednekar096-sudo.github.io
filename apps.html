@@ -29,7 +29,64 @@
 
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Replace the existing <style> block in the head with this -->
+  <style>
+    /* layout container for the app cards */
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: flex-start;
+      justify-content: space-between;
+      max-width: 100%;
+      margin: 0 auto;
+    }
 
+    .app-card {
+      display: flex;
+      gap: 16px;
+      padding: 16px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      align-items: center;
+    }
+
+    .app-thumb {
+      width: 90px;
+      height: 90px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .app-info {
+      flex: 1;
+    }
+
+    .app-info h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .app-short-desc {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .app-meta {
+      display: flex;
+      gap: 10px;
+      font-size: 12px;
+      color: #9fbfb0;
+    }
+
+    .app-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  </style>
 
 </head>
 
@@ -48,139 +105,107 @@
     $(function () {
       $("#header-container").load("/components/header.html");
       $("#menu-drawer-container").load("/components/menu-drawer.html");
-      $("#tools-links-container").load("/components/favorite-tools-quick-links.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
       $("#footer-container").load("/components/footer.html");
     });
   </script>
   <!-- Apps Section -->
-  <div class="wrap" id="apps" style="padding: 30px 10px 40px;">
-    <section class="section">
-      <h1>Our Featured Apps</h1>
-      <p>Each app is crafted for performance, privacy, and user delight. Explore what we’ve built 👇</p>
-
-      <!-- ========== COLOR MIXER ========== -->
-      <div class="app">
-        <div class="app-content">
-          <h2 class="app-title">
-            <a href="color-mixer.html">🎨 Color Mixer</a>
-          </h2>
-
-          <small>
-            <p>
-              Color Mixer is a creative and intuitive color studio designed for artists, designers,
-              and anyone who loves working with shades. It brings true artistic blending to your
-              device through its unique RYB mixing engine, letting you experiment with natural
-              paint-style color combinations alongside precise RGB tones. You can explore over
-              900 curated shades, build personalized palettes, and capture colors from images with
-              pixel-perfect accuracy — all inside a clean and focused interface.
-            </p>
-
-            <p>
-              Whether you're studying color theory, designing UI elements, planning artwork, or
-              simply exploring how colors interact, Color Mixer gives you a practical and enjoyable
-              workspace. It works fully offline, stores your palettes locally, and makes color
-              experimentation easy and inspiring — perfect for creativity, learning, and everyday design use.
-            </p>
-
-            <p>
-              Key features include RYB and RGB mixing modes, a library of named colors, palette
-              creation, image color picking, and full offline support.
-            </p>
-          </small>
-
-          <a button class="tab-btn active" href="color-mixer.html">Go to Details →</a>
-        </div>
-
-        <div class="app-images">
-          <img src="/assets/images/color_mixer.webp" onclick="openPreview(this.src)">
-
-          <img src="/assets/images/color_calculator.webp" onclick="openPreview(this.src)">
-
-        </div>
-      </div>
-
-
-
-      <div class="app">
-        <div class="app-content">
-          <h2 class="app-title">
-            <a href="easy-music.html">🎵 Easy Music</a>
-          </h2>
-          <small>
-            <p>
-              Easy Music is a simple and intuitive music creation tool designed for beginners, hobbyists,
-              and anyone who enjoys experimenting with melodies. It lets you build your own tracks using
-              musical notes like C4, D#3, and A#4, adjust timing and duration, and visualize the flow of your
-              composition in a clean, structured layout. With real-time playback, you can instantly hear your
-              ideas and refine them as you go.
-            </p>
-            <p>
-              The app also includes features like track saving and loading, customizable sound modes,
-              volume controls, and an easy-to-read note board that helps you understand rhythm and structure
-              visually. Whether you're learning music basics, composing melodies for fun, or exploring creative
-              ideas, Easy Music provides a friendly, offline workspace that makes music creation enjoyable and
-              accessible.
-            </p>
-            <p>
-              Key features include note-based track creation, adjustable note durations and tempo, multi-track
-              layering, and audio export options (M4A/WAV). Easy Music respects your privacy by storing all data
-              locally and requiring no unnecessary permissions. Start composing your own tunes with Easy Music —
-              where making music is as easy as playing!
-            </p>
-            <p>
-              Unleash your musical creativity with Easy Music — your pocket music studio.
-            </p>
-          </small>
-          <a button class="tab-btn active" href="easy-music.html">Go to Details →</a>
-        </div>
-
-        <div class="app-images">
-          <img src="/assets/images/easy_music.webp" onclick="openPreview(this.src)">
-          <img src="/assets/images/music.webp" onclick="openPreview(this.src)">
-        </div>
-      </div>
-
-      <div class="app">
-        <div class="app-content">
-          <h2 class="app-title">
-            <a href="golden-calc.html">🧮 Golden Calc</a>
-          </h2>
-          <p>
-            Golden Calc is a fast and reliable calculator app designed for everyday and advanced
-            calculations. It supports basic arithmetic, percentages, powers, roots, brackets,
-            factorials, and live result preview, making calculations smooth and accurate.
-          </p>
-
-          <p>
-            The app includes a built-in History viewer and a versatile Unit Converter with multiple
-            categories such as Length, Temperature, Volume, Speed, Data, and Energy. Its clean
-            interface and intelligent input handling make it suitable for students and professionals.
-          </p>
-
-          <p>
-            Golden Calc works fully offline, requires no unnecessary permissions, and focuses on
-            privacy and performance, making it a dependable tool for daily calculations.
-          </p>
-
-          <div class="app-description">
-            <p><a button class="tab-btn active" href="golden-calc.html">Go to Details →</a></p>
-          </div>
-        </div>
-
-        <div class="app-images">
-          <img src="/assets/images/calculator.webp" onclick="openPreview(this.src)">
-          <img src="/assets/images/unit_converter.webp" onclick="openPreview(this.src)">
-        </div>
-      </div>
-      <section style="max-width:800px; margin:40px auto; text-align:center;">
-        <p>
-          All RDroidApps Android applications are built with a focus on simplicity, offline
-          usability, and user privacy. The apps do not require unnecessary permissions and store
-          data locally whenever possible.
-        </p>
-      </section>
-    </section>
+  <div style="max-width: 600px; margin:40px auto; text-align:center;">
+    <h1>Our Featured Apps</h1>
+    <p>Each app is crafted for performance, privacy, and user delight. Explore what we’ve built 👇</p>
   </div>
+  <section class="section">
+    <!-- ========== COLOR MIXER ========== -->
+    <div class="app-card">
+      <!-- LEFT: IMAGE -->
+      <img src="/assets/icons/color-mixer.webp" class="app-thumb" />
+
+      <!-- CENTER: SHORT INFO -->
+      <div class="app-info">
+        <h3>🎨 Color Mixer</h3>
+
+        <p class="app-short-desc">
+          Creative color mixing app with RYB & RGB modes. Works fully offline.
+        </p>
+
+        <div class="app-meta">
+          <span>📱 Android</span>
+          <span>🔒 Privacy-Friendly</span>
+          <span>📴 Offline</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: ACTIONS -->
+      <div class="app-actions">
+        <a href="color-mixer.html" class="btn btn-secondary">
+          More Information →
+        </a>
+
+        <a href="https://play.google.com/..." class="btn btn-primary" target="_blank">
+          ▶ Play Store
+        </a>
+      </div>
+    </div>
+    <!-- ========== EASY MUSIC ========== -->
+    <div class="app-card">
+      <img src="/assets/icons/easy-music-icon.webp" class="app-thumb" />
+
+      <div class="app-info">
+        <h3>🎵 Easy Music</h3>
+
+        <p class="app-short-desc">
+          Simple music creation app to compose melodies using notes and tempo control.
+        </p>
+
+        <div class="app-meta">
+          <span>📱 Android</span>
+          <span>📴 Offline</span>
+          <span>🎶 Music</span>
+        </div>
+      </div>
+
+      <div class="app-actions">
+        <a href="easy-music.html" class="btn btn-secondary">
+          More Information →
+        </a>
+
+        <a href="https://play.google.com/" class="btn btn-primary" target="_blank">
+          ▶ Download
+        </a>
+      </div>
+    </div>
+
+    <!-- ========== GOLDEN CALC ========== -->
+    <div class="app-card">
+      <img src="/assets/icons/golden-calc.webp" class="app-thumb" />
+
+      <div class="app-info">
+        <h3>🧮 Golden Calc</h3>
+
+        <p class="app-short-desc">
+          Fast offline calculator with scientific functions and built-in unit converter.
+        </p>
+
+        <div class="app-meta">
+          <span>📱 Android</span>
+          <span>🔢 Calculator</span>
+          <span>📴 Offline</span>
+        </div>
+      </div>
+
+      <div class="app-actions">
+        <a href="golden-calc.html" class="btn btn-secondary">
+          More Information →
+        </a>
+
+        <a href="https://play.google.com/" class="btn btn-primary" target="_blank">
+          ▶ Download
+        </a>
+      </div>
+    </div>
+
+  </section>
+
 
   <!-- 🔍 IMAGE PREVIEW POPUP -->
   <div id="imgPreviewOverlay">
