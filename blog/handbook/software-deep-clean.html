@@ -47,7 +47,7 @@
         $(function () {
             $("#header-container").load("/components/header.html");
             $("#menu-drawer-container").load("/components/menu-drawer.html");
-            $("#tools-links-container").load("/components/blogs-quick-links.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
             $("#footer-container").load("/components/footer.html");
         });
     </script>
@@ -58,536 +58,536 @@
     </h1>
     <!-- MAIN CONTENT -->
 
-        <div class="tools-container">
-            <!-- Left Sidebar -->
-            <div class="sidebar" style="position: sticky; top: 80px;">
-                <h3>Guide Chapters</h3>
-                <ul>
-                    <li><a href="/blog/handbook/the-slow-pc-fix-handbook.html#part1">Part 1: First Aid</a></li>
-                    <li><a href="/blog/handbook/software-deep-clean.html">Part 2: Software Deep Clean</a></li>
-                    <li><a href="/blog/handbook/hardware-advanced-tuning.html">Part 3: Hardware & Advanced Tuning</a></li>
-                    <li><a href="/blog/handbook/maintenance-routine.html">Part 4: Maintenance Routine</a></li>
-                    <li><a href="/blog/handbook/advanced-optimization.html">Part 5: Advanced Optimization</a></li>
-                </ul>
+    <div class="tools-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar" style="position: sticky; top: 80px;">
+            <h3>Guide Chapters</h3>
+            <ul>
+                <li><a href="/blog/handbook/the-slow-pc-fix-handbook.html#part1">Part 1: First Aid</a></li>
+                <li><a href="/blog/handbook/software-deep-clean.html">Part 2: Software Deep Clean</a></li>
+                <li><a href="/blog/handbook/hardware-advanced-tuning.html">Part 3: Hardware & Advanced Tuning</a></li>
+                <li><a href="/blog/handbook/maintenance-routine.html">Part 4: Maintenance Routine</a></li>
+                <li><a href="/blog/handbook/advanced-optimization.html">Part 5: Advanced Optimization</a></li>
+            </ul>
 
-                <h3 style="margin-top: 25px;">Deep Clean Sections</h3>
-                <ul>
-                    <li><a href="#section1">Taming Startup Programs</a></li>
-                    <li><a href="#section2">The Bloatware Purge</a></li>
-                    <li><a href="#section3">Browser Overhaul</a></li>
-                    <li><a href="#section4">Malware & Virus Scanning</a></li>
-                    <li><a href="#section5">OS Health Tune-Up</a></li>
-                </ul>
-            </div>
-
-            <!-- Right Content -->
-            <div class="tools-list">
-                <section class="card">
-                    <h1>Part 2: The Software Deep Clean – The Ultimate Guide to Digital Decluttering</h1>
-
-                    <h2>Introduction: The Invisible Weight of Digital Clutter</h2>
-                    <p class="lead">
-                        If Part 1 was emergency first aid, Part 2 is the comprehensive health checkup and lifestyle
-                        change.
-                        Your PC's slowdown often isn't from one big problem, but from thousands of small ones—background
-                        services you never use, temporary files that never deleted, registry entries for
-                        long-uninstalled
-                        programs, and applications that quietly siphon resources 24/7. This digital clutter accumulates
-                        like plaque in arteries, gradually restricting the flow of data and processing power.
-                    </p>
-                    <p>
-                        A software deep clean addresses the root causes of chronic slowdown. It requires more time and
-                        attention than immediate fixes but delivers transformative, lasting results. This 500-line guide
-                        will methodically walk you through five major decluttering categories, ensuring you remove the
-                        parasitic software, optimize the essential, and restore your PC's foundational efficiency.
-                    </p>
-
-                    <h2 id="section1">Section 1: Taming Startup Programs – Taking Back Control of Boot Time</h2>
-                    <h3 id="startup">1. The Startup Problem: Why Your PC Boots Slowly</h3>
-                    <p>
-                        When you press the power button, Windows loads its core files. Immediately after, it launches
-                        every
-                        program in your "Startup" folder and every background service configured by installed
-                        applications.
-                        Each of these consumes RAM, CPU cycles, and often initiates disk activity. A clean system might
-                        have
-                        10-15 startup items. A cluttered one can have 40+, adding minutes to your boot time and creating
-                        constant background drag.
-                    </p>
-
-                    <h3>2. Accessing Startup Managers</h3>
-                    <ul>
-                        <li><strong>Primary Method (Windows 10/11):</strong> Task Manager → Startup tab. This shows
-                            user-friendly names and "Startup impact" ratings.</li>
-                        <li><strong>Advanced Method:</strong> Press Windows + R, type <code>shell:startup</code> and
-                            <code>shell:common startup</code> to see the actual folders where some startup shortcuts
-                            reside.
-                        </li>
-                        <li><strong>Legacy Method:</strong> Press Windows + R, type <code>msconfig</code> (System
-                            Configuration). The "Startup" tab here redirects to Task Manager in modern Windows.</li>
-                        <li><strong>Third-Party Insight:</strong> Tools like Autoruns from Sysinternals show EVERY
-                            auto-starting item, including drivers and services (for advanced users).</li>
-                    </ul>
-
-                    <h3>3. Analyzing Startup Impact Ratings</h3>
-                    <p>In Task Manager's Startup tab, you'll see three ratings:</p>
-                    <ul>
-                        <li><strong>High Impact:</strong> Program significantly slows startup. Examples: Heavy security
-                            suites, full Adobe Creative Cloud, some game clients.</li>
-                        <li><strong>Medium Impact:</strong> Moderate effect. Examples: Cloud storage sync (OneDrive,
-                            Dropbox), communication apps (Skype, Discord).</li>
-                        <li><strong>Low Impact:</strong> Minimal effect. Examples: Lightweight utilities (touchpad
-                            controls, audio managers).</li>
-                        <li><strong>No Impact/Not measured:</strong> Usually harmless background services.</li>
-                    </ul>
-
-                    <h3>4. The Safe Disable List: What You Can Almost Always Turn Off</h3>
-                    <p>You can safely disable these common startup items (right-click → Disable):</p>
-                    <ul>
-                        <li>Adobe Reader Update Service, Adobe Acrobat Update Service</li>
-                        <li>Apple, Adobe, or Spotify Updater Services</li>
-                        <li>Microsoft Office Click-to-Run (You can open Office manually)</li>
-                        <li>Game Launchers: Steam, Epic Games Launcher, EA Desktop, Ubisoft Connect (Unless you want
-                            them running 24/7 for updates/messages)</li>
-                        <li>Communication Apps: Zoom, Skype, Microsoft Teams (Consumer version), Slack (Unless you need
-                            instant notifications)</li>
-                        <li>Hardware Utilities: Printer software (like HP Director), mouse/keyboard configuration tools
-                            (unless you use macro keys daily)</li>
-                        <li>Media Helpers: Spotify Web Helper, iTunes Helper, QuickTime Task</li>
-                    </ul>
-
-                    <h3>5. The Caution List: Items to Research Before Disabling</h3>
-                    <ul>
-                        <li>Anything with your hardware manufacturer's name (Dell, HP, Lenovo, ASUS). Some are
-                            bloatware; others control important functions like fan profiles or special keys.</li>
-                        <li>"Windows Defender" or "Windows Security notification" – Keep this enabled.</li>
-                        <li>"Realtek HD Audio Manager" or "Audio Control" – Disabling might break audio enhancements or
-                            jack detection.</li>
-                        <li>"Synaptics Pointing Device" or "ELAN Touchpad" – Controls your touchpad gestures.</li>
-                        <li>"Intel" or "AMD" utilities – Often for graphics control panels or power management.</li>
-                    </ul>
-
-                    <h3>6. The Never-Disable List</h3>
-                    <ul>
-                        <li>Your Antivirus/Security client (Windows Security, if it's your main AV).</li>
-                        <li>Driver services that sound core to the system (e.g., "Storage Service").</li>
-                        <li>Anything listed under "Windows" in the "Publisher" column.</li>
-                    </ul>
-
-                    <h3>7. The Hidden Startup: Scheduled Tasks & Services</h3>
-                    <p>Some programs don't use the standard startup folder but use Windows Task Scheduler or Services.
-                    </p>
-                    <ul>
-                        <li><strong>Task Scheduler:</strong> Press Windows + R, type <code>taskschd.msc</code>. Navigate
-                            to Task Scheduler Library. Look for tasks with triggers "At startup" or "At logon" from
-                            non-Microsoft publishers. Research before disabling.</li>
-                        <li><strong>Services:</strong> Press Windows + R, type <code>services.msc</code>. This is for
-                            advanced users. Most startup programs that run as services appear in Task Manager.</li>
-                    </ul>
-
-                    <h3>8. Measuring the Impact</h3>
-                    <p>After disabling a batch of startups (restart to apply):</p>
-                    <ul>
-                        <li>Time your boot from pressing power to a usable desktop.</li>
-                        <li>Open Task Manager → Performance tab. Note your Memory (RAM) usage right after boot. It
-                            should be significantly lower.</li>
-                        <li>Observe if the programs you need still function normally when launched manually.</li>
-                    </ul>
-
-                    <h3>9. Startup Management Philosophy</h3>
-                    <p>
-                        Adopt a "zero-based budgeting" approach: No program gets to start automatically unless it has a
-                        proven,
-                        daily need. Your boot is not a convenience shuttle for every app you might use.
-                    </p>
-
-                    <hr class="section-divider">
-
-                    <h2 id="section2">Section 2: The Bloatware Purge – Removing Unwanted Software</h2>
-                    <h3 id="bloatware">10. What is Bloatware?</h3>
-                    <p>
-                        Bloatware is any software pre-installed on your PC (by the manufacturer or Microsoft) or
-                        installed
-                        later (often bundled with other software) that provides little to no value to you, while
-                        consuming
-                        space, memory, and background cycles. It ranges from harmless trials to performance-hogging
-                        utilities.
-                    </p>
-
-                    <h3>11. Sources of Bloatware:</h3>
-                    <ul>
-                        <li><strong>OEM Pre-installs (Worst Offenders):</strong> Dell's "Dell Digital Delivery," HP's
-                            "HP JumpStart," ASUS utilities, Acer games, etc.</li>
-                        <li><strong>Windows "Featured" Apps:</strong> Candy Crush, Disney+, Spotify, TikTok, etc. that
-                            appear after fresh installs/updates.</li>
-                        <li><strong>Third-Party Bundles:</strong> Installing free software like PDF readers or video
-                            players often includes "offers" for toolbars, anti-malware, or other utilities.</li>
-                        <li><strong>Leftover Trials:</strong> McAfee, Norton, or other security trials that have expired
-                            but remain installed.</li>
-                    </ul>
-
-                    <h3>12. The Uninstallation Process (Settings App)</h3>
-                    <ul>
-                        <li>Go to Settings → Apps → Apps & features.</li>
-                        <li>Sort by "Install date" to see recently added software that might coincide with slowdowns.
-                        </li>
-                        <li>Sort by "Size" to find large applications you may have forgotten.</li>
-                        <li>Use the search bar to find specific publishers (e.g., "Adobe," "McAfee," "Dell").</li>
-                    </ul>
-
-                    <h3>13. Identifying Bloatware: The "Do I Need This?" Checklist</h3>
-                    <p>For each program, ask:</p>
-                    <ul>
-                        <li>Do I recognize the name? If not, Google it before removing.</li>
-                        <li>Who is the publisher? Is it your PC maker (Dell Inc., HP Inc.) or a known software house
-                            (Adobe, Microsoft)? Unknown publishers are red flags.</li>
-                        <li>When was it last used? Windows 11 shows a "Last used" column. If it says "Never" or was
-                            months ago, consider removal.</li>
-                        <li>Does it have a clear, daily purpose? Utilities that configure special hardware (like audio
-                            enhancements) might be useful. Generic "helper" or "update assistant" services often are
-                            not.</li>
-                    </ul>
-
-                    <h3>14. Common Bloatware Candidates for Removal:</h3>
-                    <ul>
-                        <li><strong>Trialware & Security:</strong> McAfee LiveSafe, Norton Security Scan, WebAdvisor by
-                            McAfee.</li>
-                        <li><strong>Manufacturer Utilities:</strong> Most things with your brand's name that aren't for
-                            driver updates (e.g., Dell Shop, HP Support Assistant can often go).</li>
-                        <li><strong>Windows App Store Games:</strong> Candy Crush Saga, Minecraft for Windows, Royal
-                            Revolt 2, etc.</li>
-                        <li><strong>Bundled Media:</strong> Netflix, Disney+, Hulu apps (if you use the browser).</li>
-                        <li><strong>Toolbars & Browser Extensions:</strong> Ask Toolbar, Babylon Toolbar, any "search
-                            assistant."</li>
-                        <li><strong>Outdated Runtimes:</strong> Old versions of Java, Adobe Flash Player (obsolete),
-                            Microsoft Silverlight.</li>
-                    </ul>
-
-                    <h3>15. The Nuclear Option: Fresh Start / Windows Reinstall</h3>
-                    <p>
-                        If your PC came loaded with bloatware, the most thorough fix is a clean Windows installation
-                        from a
-                        Microsoft-created USB drive. This gives you pure Windows without OEM additions. Use the "Reset
-                        this PC"
-                        option (Settings → System → Recovery) and choose "Remove everything" → "Cloud download" for the
-                        cleanest
-                        result. <strong>WARNING: Back up all personal files first!</strong>
-                    </p>
-
-                    <h3>16. Preventing Bloatware Reinfection</h3>
-                    <ul>
-                        <li>During software installation, always choose "Custom" or "Advanced" install. Uncheck boxes
-                            for optional software, toolbars, or changing your homepage/search engine.</li>
-                        <li>Download software only from the official vendor's website or the Microsoft Store.</li>
-                        <li>Regularly review your installed apps list every few months.</li>
-                    </ul>
-
-                    <h3>17. Using Third-Party Uninstallers</h3>
-                    <p>
-                        Standard uninstallers sometimes leave behind files and registry entries. Tools like Revo
-                        Uninstaller
-                        Free or Geek Uninstaller scan for these leftovers after the standard uninstall process, allowing
-                        for
-                        a more complete removal.
-                    </p>
-
-                    <h3>18. The Registry Warning</h3>
-                    <p>
-                        Manually editing the Windows Registry (regedit) to remove software traces is dangerous and
-                        generally
-                        unnecessary for performance. A few leftover registry entries have negligible impact. Focus on
-                        removing
-                        the main program files.
-                    </p>
-
-                    <hr class="section-divider">
-
-                    <h2 id="section3">Section 3: Browser Overhaul – Fixing Your Gateway to the Web</h2>
-                    <h3 id="browser">19. Why Your Browser Feels Like Your Whole PC is Slow</h3>
-                    <p>
-                        Modern browsers are essentially operating systems within your operating system. Each tab,
-                        extension,
-                        and open window is a separate process consuming RAM and CPU. A misbehaving tab or extension can
-                        grind
-                        your entire browsing—and sometimes your whole PC—to a halt.
-                    </p>
-
-                    <h3>20. The Tab Management Crisis</h3>
-                    <ul>
-                        <li><strong>The Cost:</strong> Each open tab can use 50-500+ MB of RAM, depending on the site.
-                            20 tabs can easily consume 4-8 GB.</li>
-                        <li><strong>The Solution:</strong> Adopt a "one-tab" or "project-based" tab mentality. Use
-                            bookmarks or read-it-later services (Pocket, Instapaper). Extensions like OneTab
-                            (Chrome/Firefox) convert all tabs into a list, freeing massive memory.</li>
-                    </ul>
-
-                    <h3>21. The Cache and Cookies Purge</h3>
-                    <ul>
-                        <li><strong>Purpose:</strong> Cache stores website images/files locally for faster reloading.
-                            Cookies store site preferences/logins. Over time, massive caches can slow down browser
-                            management and contain corrupt data.</li>
-                        <li><strong>How-To (Chrome/Edge):</strong> Ctrl+Shift+Del opens the "Clear browsing data" box.
-                            Select "Cached images and files" and "Cookies and other site data". Choose "All time" as the
-                            time range. Note: This will log you out of most websites.</li>
-                        <li><strong>Frequency:</strong> Do this every 1-2 months for maintenance.</li>
-                    </ul>
-
-                    <h3>22. The Extension Audit – The Single Biggest Speed Win</h3>
-                    <p>Extensions are small programs that run inside your browser. Poorly coded or malicious extensions
-                        are major performance killers.</p>
-                    <ul>
-                        <li><strong>Access:</strong> In Chrome/Edge, go to <code>chrome://extensions/</code>. In
-                            Firefox, go to <code>about:addons</code>.</li>
-                        <li><strong>The Purge Rule:</strong> For each extension, ask: "Have I used this in the last
-                            month?" If no, remove it.</li>
-                        <li><strong>High-Risk Extensions:</strong> Be extremely wary of:
-                            <ul>
-                                <li>"Free" VPNs or proxy extensions.</li>
-                                <li>Coupon/finding/shopping assistants.</li>
-                                <li>Download managers/accelerators.</li>
-                                <li>Search engine changers.</li>
-                                <li>Unverified "ad blockers" or "privacy protectors."</li>
-                            </ul>
-                        </li>
-                        <li><strong>Keep Essentials:</strong> A trusted ad blocker (uBlock Origin), a password manager,
-                            and perhaps a dark mode extension.</li>
-                    </ul>
-
-                    <h3>23. Browser Hardware Acceleration</h3>
-                    <p>This setting uses your GPU to render web pages, offloading work from your CPU.</p>
-                    <ul>
-                        <li><strong>Enable it</strong> if you have a dedicated GPU: It usually helps.</li>
-                        <li><strong>Disable it</strong> if you have graphical glitches or crashes: In Chrome/Edge:
-                            Settings → System → "Use hardware acceleration when available." Toggle and restart.</li>
-                    </ul>
-
-                    <h3>24. Reset Your Browser</h3>
-                    <p>If your browser is chronically slow and unstable, reset it to default settings.</p>
-                    <ul>
-                        <li><strong>Chrome:</strong> Settings → Advanced → Reset and clean up → Restore settings to
-                            their original defaults.</li>
-                        <li><strong>Edge:</strong> Settings → Reset settings → Restore settings to their default values.
-                        </li>
-                    </ul>
-                    <p>This will remove: Extensions, cookies, cached data, site permissions. It will not delete
-                        bookmarks, history, or saved passwords (but confirm during the process).</p>
-
-                    <h3>25. Considering a Browser Switch</h3>
-                    <ul>
-                        <li><strong>For Low-RAM PCs:</strong> Consider Firefox or Microsoft Edge (yes, the new Chromium
-                            Edge is actually quite efficient).</li>
-                        <li><strong>For Stability:</strong> Chrome is most consistent but a known RAM hog.</li>
-                        <li><strong>For Extreme Efficiency:</strong> Brave Browser is Chromium-based but blocks
-                            trackers/ads by default, reducing page load overhead.</li>
-                    </ul>
-
-                    <h3>26. Advanced: Browser Process Management</h3>
-                    <p>Open your browser's task manager:</p>
-                    <ul>
-                        <li><strong>Chrome/Edge:</strong> Press Shift+Esc while in the browser.</li>
-                    </ul>
-                    <p>This shows each tab, extension, and plugin as a separate process. You can see which is using
-                        excessive CPU/Memory and end it specifically.</p>
-
-                    <hr class="section-divider">
-
-                    <h2 id="section4">Section 4: Malware & Virus Scanning – The Silent Resource Thieves</h2>
-                    <h3 id="malware">27. Understanding Modern Malware's Impact</h3>
-                    <p>While old viruses aimed to destroy data, modern malware often aims to monetize your resources.
-                        This includes:</p>
-                    <ul>
-                        <li><strong>Cryptominers:</strong> Use your CPU/GPU to mine cryptocurrency, causing 100% usage
-                            and extreme slowdown.</li>
-                        <li><strong>Adware/Browser Hijackers:</strong> Inject ads and redirects, consuming browser
-                            resources.</li>
-                        <li><strong>Spyware:</strong> Runs constant monitoring in the background.</li>
-                        <li><strong>Rootkits:</strong> Hide deep in the system, consuming resources and masking other
-                            malware.</li>
-                    </ul>
-
-                    <h3>28. The Primary Scan: Windows Security (Defender)</h3>
-                    <ul>
-                        <li><strong>It's better than you think:</strong> Consistently scores high in independent
-                            antivirus tests.</li>
-                        <li><strong>Run a Full Scan:</strong> Open Windows Security → Virus & threat protection → Scan
-                            options → Full scan. This checks every file and running process. Can take hours.</li>
-                        <li><strong>Run an Offline Scan:</strong> Under "Scan options," choose Microsoft Defender
-                            Offline scan and restart. This runs before Windows boots, removing deeply embedded malware.
-                        </li>
-                    </ul>
-
-                    <h3>29. The Second Opinion: On-Demand Scanners</h3>
-                    <p>Never run two real-time antivirus programs. Instead, use a second-opinion on-demand scanner
-                        periodically.</p>
-                    <ul>
-                        <li><strong>Malwarebytes Free:</strong> The gold standard. Download, install, update, run a
-                            Threat Scan. It excels at finding adware, PUPs (Potentially Unwanted Programs), and browser
-                            hijackers that traditional AV might miss. Quarantine found threats. You can uninstall it
-                            afterward.</li>
-                        <li><strong>HitmanPro:</strong> Another excellent second-opinion scanner.</li>
-                        <li><strong>ESET Online Scanner:</strong> Runs from your browser, no installation needed.</li>
-                    </ul>
-
-                    <h3>30. Signs of Hidden Malware</h3>
-                    <ul>
-                        <li>High CPU/disk usage from unknown processes in Task Manager (e.g., svchost.exe with a strange
-                            username, or random named .exe files).</li>
-                        <li>Browser homepage/search engine changes without your input.</li>
-                        <li>New toolbars, pop-up ads in places you didn't before.</li>
-                        <li>Slowness that began after downloading "cracked" software, free games, or unusual email
-                            attachments.</li>
-                    </ul>
-
-                    <h3>31. The Hosts File Check</h3>
-                    <p>Malware sometimes edits the hosts file to redirect web traffic.</p>
-                    <ul>
-                        <li>Navigate to <code>C:\Windows\System32\drivers\etc\</code>.</li>
-                        <li>Open the file named <code>hosts</code> with Notepad (as Administrator).</li>
-                        <li>It should only contain lines starting with # (comments) or a single line:
-                            <code>127.0.0.1 localhost</code>. Any other lines, especially with IP addresses you don't
-                            recognize, could be malicious.
-                        </li>
-                    </ul>
-
-                    <h3>32. Browser Reset for Hijacks</h3>
-                    <p>If your browser is compromised (redirects, unwanted extensions you can't remove), use the reset
-                        function mentioned in Section 3, and run Malwarebytes.</p>
-
-                    <h3>33. Prevention is Key</h3>
-                    <ul>
-                        <li>Use an ad-blocker (uBlock Origin) to block malicious ads.</li>
-                        <li>Never download software from unofficial sources.</li>
-                        <li>Keep Windows and all software updated to patch security holes.</li>
-                        <li>Be skeptical of email attachments and links, even from known contacts.</li>
-                    </ul>
-
-                    <hr class="section-divider">
-
-                    <h2 id="section5">Section 5: Operating System Health – The Core Tune-Up</h2>
-                    <h3 id="systemfiles">34. Windows Updates: Not Just Features, But Performance Patches</h3>
-                    <p>
-                        Microsoft constantly releases patches that fix memory leaks, improve scheduler efficiency, and
-                        patch
-                        security vulnerabilities that malware exploits to waste resources.
-                    </p>
-                    <ul>
-                        <li>Go to Settings → Windows Update → Check for updates. Install all, including optional updates
-                            (often contain newer driver versions).</li>
-                        <li>After major updates, run Disk Cleanup → Clean up system files to remove the old Windows
-                            version (labeled "Windows Update Cleanup").</li>
-                    </ul>
-
-                    <h3>35. Check for Disk Errors (CHKDSK)</h3>
-                    <p>This scans your drive's file system integrity and attempts to fix logical errors (bad sectors are
-                        marked and avoided).</p>
-                    <ul>
-                        <li>Open Command Prompt as Administrator.</li>
-                        <li>Type: <code>chkdsk C: /f /r</code>
-                            <ul>
-                                <li><code>/f</code> fixes errors.</li>
-                                <li><code>/r</code> locates bad sectors and recovers readable information (implies /f).
-                                </li>
-                            </ul>
-                        </li>
-                        <li>It will schedule the scan for the next restart. Let it run; it can take over an hour on
-                            large HDDs.</li>
-                    </ul>
-
-                    <h3>36. System File Checker (SFC /SCANNOW)</h3>
-                    <p>Scans and repairs corrupted or modified Windows system files.</p>
-                    <ul>
-                        <li>In Admin Command Prompt, type: <code>sfc /scannow</code></li>
-                        <li>Let it run to 100%. If it finds and fixes corruption, restart your PC.</li>
-                    </ul>
-
-                    <h3>37. DISM (Deployment Image Servicing and Management)</h3>
-                    <p>A more advanced tool that fixes the Windows image that SFC uses for repairs. If SFC fails, run
-                        DISM first.</p>
-                    <ul>
-                        <li>In Admin Command Prompt, type: <code>DISM /Online /Cleanup-Image /RestoreHealth</code></li>
-                        <li>This downloads healthy files from Windows Update to replace corrupt ones. Requires an
-                            internet connection. After it completes, run <code>sfc /scannow</code> again.</li>
-                    </ul>
-
-                    <h3>38. Performance Troubleshooter</h3>
-                    <p>Windows has a built-in, automated troubleshooter.</p>
-                    <ul>
-                        <li>Go to Settings → System → Troubleshoot → Other troubleshooters.</li>
-                        <li>Run the "Windows Store Apps" and "Program Compatibility" troubleshooters. They can
-                            automatically fix some common issues.</li>
-                    </ul>
-
-                    <h3>39. Review Event Viewer for Clues</h3>
-                    <p>For persistent, mysterious slowdowns, the Event Viewer logs errors.</p>
-                    <ul>
-                        <li>Press Windows + R, type <code>eventvwr.msc</code>.</li>
-                        <li>Look under Windows Logs → System and Application. Filter for Critical, Error, and Warning
-                            events around the time you experienced slowdowns. The error codes can be Googled for
-                            solutions.</li>
-                    </ul>
-
-                    <h3>40. Creating a System Restore Point (Before Major Changes)</h3>
-                    <p>Before you began this deep clean, you should have created a restore point. If you haven't, do it
-                        now for future safety.</p>
-                    <ul>
-                        <li>Search for "Create a restore point" in the Start Menu.</li>
-                        <li>Click the "Create..." button and give it a name like "Pre-Deep Clean."</li>
-                        <li>If anything goes wrong in future tweaks, you can revert to this point.</li>
-                    </ul>
-
-                    <h3>Conclusion of Part 2:</h3>
-                    <p>
-                        You have now systematically decluttered your PC's software environment. You've taken control of
-                        startup programs, removed parasitic bloatware, optimized your web browser, eliminated malware,
-                        and repaired the core Windows operating system. This work addresses the vast majority of
-                        software-induced
-                        slowdowns. If your PC is still not performing to expectations after Parts 1 and 2, the
-                        bottleneck is
-                        almost certainly hardware-related, which will be addressed in part 3
-                    </p>
-                    <!-- Navigation to other parts -->
-                    <div class="part-navigation">
-                        <a href="/blog/handbook/the-slow-pc-fix-handbook.html" class="nav-button prev">Previous</a>
-                        <a href="/blog/handbook/hardware-advanced-tuning.html" class="nav-button next">Next</a>
-                    </div>
-                    <!-- Placeholder for future parts -->
-                    <div id="part4"
-                        style="margin-top: 60px; padding-top: 20px; border-top: 2px dashed rgba(34, 211, 166, 0.3);">
-                        <h2>
-                            <a href="/blog/handbook/maintenance-routine.html" class="part-link">
-                                Part 4: Maintenance Routine
-                            </a>
-                        </h2>
-                        <p>
-                            A regular maintenance routine is essential for keeping your PC running smoothly.
-                        </p>
-                    </div>
-                    <div id="part5"
-                        style="margin-top: 60px; padding-top: 20px; border-top: 2px dashed rgba(34, 211, 166, 0.3);">
-                        <h2>
-                            <a href="/blog/handbook/advanced-optimization.html" class="part-link">
-                                Part 5: Advanced Optimization
-                            </a>
-                        </h2>
-                        <p>
-                            Advanced software optimization, registry cleaning, malware removal, and system integrity
-                            checks
-                        </p>
-                    </div>
-                    <p>
-                    <h2>Explore our more windows toos like
-                        <a href="/windows-tools/pdf/pdf-to-word.html" class="tool-btn">PDF Tools</a>,
-                        <a href="/windows-tools/image/image-to-pdf.html" class="tool-btn">Image Tools</a>,
-                        <a href="/windows-tools/audio/audio-volume-boost.html" class="tool-btn">Audio Tools</a>,
-                        <a href="/windows-tools/system/startup-program-manager.html" class="tool-btn">System Tools</a>,
-                        <a href="/windows-tools/utility/qr-generator.html" class="tool-btn">Utility Tools</a>,
-                        and more on our
-                        <a href="/windows-tools.html" class="tool-btn">Tools page</a>
-                    </h2>
-                    </p>
-                </section>
-            </div>
+            <h3 style="margin-top: 25px;">Deep Clean Sections</h3>
+            <ul>
+                <li><a href="#section1">Taming Startup Programs</a></li>
+                <li><a href="#section2">The Bloatware Purge</a></li>
+                <li><a href="#section3">Browser Overhaul</a></li>
+                <li><a href="#section4">Malware & Virus Scanning</a></li>
+                <li><a href="#section5">OS Health Tune-Up</a></li>
+            </ul>
         </div>
+
+        <!-- Right Content -->
+        <div class="tools-list">
+            <section class="card">
+                <h1>Part 2: The Software Deep Clean – The Ultimate Guide to Digital Decluttering</h1>
+
+                <h2>Introduction: The Invisible Weight of Digital Clutter</h2>
+                <p class="lead">
+                    If Part 1 was emergency first aid, Part 2 is the comprehensive health checkup and lifestyle
+                    change.
+                    Your PC's slowdown often isn't from one big problem, but from thousands of small ones—background
+                    services you never use, temporary files that never deleted, registry entries for
+                    long-uninstalled
+                    programs, and applications that quietly siphon resources 24/7. This digital clutter accumulates
+                    like plaque in arteries, gradually restricting the flow of data and processing power.
+                </p>
+                <p>
+                    A software deep clean addresses the root causes of chronic slowdown. It requires more time and
+                    attention than immediate fixes but delivers transformative, lasting results. This 500-line guide
+                    will methodically walk you through five major decluttering categories, ensuring you remove the
+                    parasitic software, optimize the essential, and restore your PC's foundational efficiency.
+                </p>
+
+                <h2 id="section1">Section 1: Taming Startup Programs – Taking Back Control of Boot Time</h2>
+                <h3 id="startup">1. The Startup Problem: Why Your PC Boots Slowly</h3>
+                <p>
+                    When you press the power button, Windows loads its core files. Immediately after, it launches
+                    every
+                    program in your "Startup" folder and every background service configured by installed
+                    applications.
+                    Each of these consumes RAM, CPU cycles, and often initiates disk activity. A clean system might
+                    have
+                    10-15 startup items. A cluttered one can have 40+, adding minutes to your boot time and creating
+                    constant background drag.
+                </p>
+
+                <h3>2. Accessing Startup Managers</h3>
+                <ul>
+                    <li><strong>Primary Method (Windows 10/11):</strong> Task Manager → Startup tab. This shows
+                        user-friendly names and "Startup impact" ratings.</li>
+                    <li><strong>Advanced Method:</strong> Press Windows + R, type <code>shell:startup</code> and
+                        <code>shell:common startup</code> to see the actual folders where some startup shortcuts
+                        reside.
+                    </li>
+                    <li><strong>Legacy Method:</strong> Press Windows + R, type <code>msconfig</code> (System
+                        Configuration). The "Startup" tab here redirects to Task Manager in modern Windows.</li>
+                    <li><strong>Third-Party Insight:</strong> Tools like Autoruns from Sysinternals show EVERY
+                        auto-starting item, including drivers and services (for advanced users).</li>
+                </ul>
+
+                <h3>3. Analyzing Startup Impact Ratings</h3>
+                <p>In Task Manager's Startup tab, you'll see three ratings:</p>
+                <ul>
+                    <li><strong>High Impact:</strong> Program significantly slows startup. Examples: Heavy security
+                        suites, full Adobe Creative Cloud, some game clients.</li>
+                    <li><strong>Medium Impact:</strong> Moderate effect. Examples: Cloud storage sync (OneDrive,
+                        Dropbox), communication apps (Skype, Discord).</li>
+                    <li><strong>Low Impact:</strong> Minimal effect. Examples: Lightweight utilities (touchpad
+                        controls, audio managers).</li>
+                    <li><strong>No Impact/Not measured:</strong> Usually harmless background services.</li>
+                </ul>
+
+                <h3>4. The Safe Disable List: What You Can Almost Always Turn Off</h3>
+                <p>You can safely disable these common startup items (right-click → Disable):</p>
+                <ul>
+                    <li>Adobe Reader Update Service, Adobe Acrobat Update Service</li>
+                    <li>Apple, Adobe, or Spotify Updater Services</li>
+                    <li>Microsoft Office Click-to-Run (You can open Office manually)</li>
+                    <li>Game Launchers: Steam, Epic Games Launcher, EA Desktop, Ubisoft Connect (Unless you want
+                        them running 24/7 for updates/messages)</li>
+                    <li>Communication Apps: Zoom, Skype, Microsoft Teams (Consumer version), Slack (Unless you need
+                        instant notifications)</li>
+                    <li>Hardware Utilities: Printer software (like HP Director), mouse/keyboard configuration tools
+                        (unless you use macro keys daily)</li>
+                    <li>Media Helpers: Spotify Web Helper, iTunes Helper, QuickTime Task</li>
+                </ul>
+
+                <h3>5. The Caution List: Items to Research Before Disabling</h3>
+                <ul>
+                    <li>Anything with your hardware manufacturer's name (Dell, HP, Lenovo, ASUS). Some are
+                        bloatware; others control important functions like fan profiles or special keys.</li>
+                    <li>"Windows Defender" or "Windows Security notification" – Keep this enabled.</li>
+                    <li>"Realtek HD Audio Manager" or "Audio Control" – Disabling might break audio enhancements or
+                        jack detection.</li>
+                    <li>"Synaptics Pointing Device" or "ELAN Touchpad" – Controls your touchpad gestures.</li>
+                    <li>"Intel" or "AMD" utilities – Often for graphics control panels or power management.</li>
+                </ul>
+
+                <h3>6. The Never-Disable List</h3>
+                <ul>
+                    <li>Your Antivirus/Security client (Windows Security, if it's your main AV).</li>
+                    <li>Driver services that sound core to the system (e.g., "Storage Service").</li>
+                    <li>Anything listed under "Windows" in the "Publisher" column.</li>
+                </ul>
+
+                <h3>7. The Hidden Startup: Scheduled Tasks & Services</h3>
+                <p>Some programs don't use the standard startup folder but use Windows Task Scheduler or Services.
+                </p>
+                <ul>
+                    <li><strong>Task Scheduler:</strong> Press Windows + R, type <code>taskschd.msc</code>. Navigate
+                        to Task Scheduler Library. Look for tasks with triggers "At startup" or "At logon" from
+                        non-Microsoft publishers. Research before disabling.</li>
+                    <li><strong>Services:</strong> Press Windows + R, type <code>services.msc</code>. This is for
+                        advanced users. Most startup programs that run as services appear in Task Manager.</li>
+                </ul>
+
+                <h3>8. Measuring the Impact</h3>
+                <p>After disabling a batch of startups (restart to apply):</p>
+                <ul>
+                    <li>Time your boot from pressing power to a usable desktop.</li>
+                    <li>Open Task Manager → Performance tab. Note your Memory (RAM) usage right after boot. It
+                        should be significantly lower.</li>
+                    <li>Observe if the programs you need still function normally when launched manually.</li>
+                </ul>
+
+                <h3>9. Startup Management Philosophy</h3>
+                <p>
+                    Adopt a "zero-based budgeting" approach: No program gets to start automatically unless it has a
+                    proven,
+                    daily need. Your boot is not a convenience shuttle for every app you might use.
+                </p>
+
+                <hr class="section-divider">
+
+                <h2 id="section2">Section 2: The Bloatware Purge – Removing Unwanted Software</h2>
+                <h3 id="bloatware">10. What is Bloatware?</h3>
+                <p>
+                    Bloatware is any software pre-installed on your PC (by the manufacturer or Microsoft) or
+                    installed
+                    later (often bundled with other software) that provides little to no value to you, while
+                    consuming
+                    space, memory, and background cycles. It ranges from harmless trials to performance-hogging
+                    utilities.
+                </p>
+
+                <h3>11. Sources of Bloatware:</h3>
+                <ul>
+                    <li><strong>OEM Pre-installs (Worst Offenders):</strong> Dell's "Dell Digital Delivery," HP's
+                        "HP JumpStart," ASUS utilities, Acer games, etc.</li>
+                    <li><strong>Windows "Featured" Apps:</strong> Candy Crush, Disney+, Spotify, TikTok, etc. that
+                        appear after fresh installs/updates.</li>
+                    <li><strong>Third-Party Bundles:</strong> Installing free software like PDF readers or video
+                        players often includes "offers" for toolbars, anti-malware, or other utilities.</li>
+                    <li><strong>Leftover Trials:</strong> McAfee, Norton, or other security trials that have expired
+                        but remain installed.</li>
+                </ul>
+
+                <h3>12. The Uninstallation Process (Settings App)</h3>
+                <ul>
+                    <li>Go to Settings → Apps → Apps & features.</li>
+                    <li>Sort by "Install date" to see recently added software that might coincide with slowdowns.
+                    </li>
+                    <li>Sort by "Size" to find large applications you may have forgotten.</li>
+                    <li>Use the search bar to find specific publishers (e.g., "Adobe," "McAfee," "Dell").</li>
+                </ul>
+
+                <h3>13. Identifying Bloatware: The "Do I Need This?" Checklist</h3>
+                <p>For each program, ask:</p>
+                <ul>
+                    <li>Do I recognize the name? If not, Google it before removing.</li>
+                    <li>Who is the publisher? Is it your PC maker (Dell Inc., HP Inc.) or a known software house
+                        (Adobe, Microsoft)? Unknown publishers are red flags.</li>
+                    <li>When was it last used? Windows 11 shows a "Last used" column. If it says "Never" or was
+                        months ago, consider removal.</li>
+                    <li>Does it have a clear, daily purpose? Utilities that configure special hardware (like audio
+                        enhancements) might be useful. Generic "helper" or "update assistant" services often are
+                        not.</li>
+                </ul>
+
+                <h3>14. Common Bloatware Candidates for Removal:</h3>
+                <ul>
+                    <li><strong>Trialware & Security:</strong> McAfee LiveSafe, Norton Security Scan, WebAdvisor by
+                        McAfee.</li>
+                    <li><strong>Manufacturer Utilities:</strong> Most things with your brand's name that aren't for
+                        driver updates (e.g., Dell Shop, HP Support Assistant can often go).</li>
+                    <li><strong>Windows App Store Games:</strong> Candy Crush Saga, Minecraft for Windows, Royal
+                        Revolt 2, etc.</li>
+                    <li><strong>Bundled Media:</strong> Netflix, Disney+, Hulu apps (if you use the browser).</li>
+                    <li><strong>Toolbars & Browser Extensions:</strong> Ask Toolbar, Babylon Toolbar, any "search
+                        assistant."</li>
+                    <li><strong>Outdated Runtimes:</strong> Old versions of Java, Adobe Flash Player (obsolete),
+                        Microsoft Silverlight.</li>
+                </ul>
+
+                <h3>15. The Nuclear Option: Fresh Start / Windows Reinstall</h3>
+                <p>
+                    If your PC came loaded with bloatware, the most thorough fix is a clean Windows installation
+                    from a
+                    Microsoft-created USB drive. This gives you pure Windows without OEM additions. Use the "Reset
+                    this PC"
+                    option (Settings → System → Recovery) and choose "Remove everything" → "Cloud download" for the
+                    cleanest
+                    result. <strong>WARNING: Back up all personal files first!</strong>
+                </p>
+
+                <h3>16. Preventing Bloatware Reinfection</h3>
+                <ul>
+                    <li>During software installation, always choose "Custom" or "Advanced" install. Uncheck boxes
+                        for optional software, toolbars, or changing your homepage/search engine.</li>
+                    <li>Download software only from the official vendor's website or the Microsoft Store.</li>
+                    <li>Regularly review your installed apps list every few months.</li>
+                </ul>
+
+                <h3>17. Using Third-Party Uninstallers</h3>
+                <p>
+                    Standard uninstallers sometimes leave behind files and registry entries. Tools like Revo
+                    Uninstaller
+                    Free or Geek Uninstaller scan for these leftovers after the standard uninstall process, allowing
+                    for
+                    a more complete removal.
+                </p>
+
+                <h3>18. The Registry Warning</h3>
+                <p>
+                    Manually editing the Windows Registry (regedit) to remove software traces is dangerous and
+                    generally
+                    unnecessary for performance. A few leftover registry entries have negligible impact. Focus on
+                    removing
+                    the main program files.
+                </p>
+
+                <hr class="section-divider">
+
+                <h2 id="section3">Section 3: Browser Overhaul – Fixing Your Gateway to the Web</h2>
+                <h3 id="browser">19. Why Your Browser Feels Like Your Whole PC is Slow</h3>
+                <p>
+                    Modern browsers are essentially operating systems within your operating system. Each tab,
+                    extension,
+                    and open window is a separate process consuming RAM and CPU. A misbehaving tab or extension can
+                    grind
+                    your entire browsing—and sometimes your whole PC—to a halt.
+                </p>
+
+                <h3>20. The Tab Management Crisis</h3>
+                <ul>
+                    <li><strong>The Cost:</strong> Each open tab can use 50-500+ MB of RAM, depending on the site.
+                        20 tabs can easily consume 4-8 GB.</li>
+                    <li><strong>The Solution:</strong> Adopt a "one-tab" or "project-based" tab mentality. Use
+                        bookmarks or read-it-later services (Pocket, Instapaper). Extensions like OneTab
+                        (Chrome/Firefox) convert all tabs into a list, freeing massive memory.</li>
+                </ul>
+
+                <h3>21. The Cache and Cookies Purge</h3>
+                <ul>
+                    <li><strong>Purpose:</strong> Cache stores website images/files locally for faster reloading.
+                        Cookies store site preferences/logins. Over time, massive caches can slow down browser
+                        management and contain corrupt data.</li>
+                    <li><strong>How-To (Chrome/Edge):</strong> Ctrl+Shift+Del opens the "Clear browsing data" box.
+                        Select "Cached images and files" and "Cookies and other site data". Choose "All time" as the
+                        time range. Note: This will log you out of most websites.</li>
+                    <li><strong>Frequency:</strong> Do this every 1-2 months for maintenance.</li>
+                </ul>
+
+                <h3>22. The Extension Audit – The Single Biggest Speed Win</h3>
+                <p>Extensions are small programs that run inside your browser. Poorly coded or malicious extensions
+                    are major performance killers.</p>
+                <ul>
+                    <li><strong>Access:</strong> In Chrome/Edge, go to <code>chrome://extensions/</code>. In
+                        Firefox, go to <code>about:addons</code>.</li>
+                    <li><strong>The Purge Rule:</strong> For each extension, ask: "Have I used this in the last
+                        month?" If no, remove it.</li>
+                    <li><strong>High-Risk Extensions:</strong> Be extremely wary of:
+                        <ul>
+                            <li>"Free" VPNs or proxy extensions.</li>
+                            <li>Coupon/finding/shopping assistants.</li>
+                            <li>Download managers/accelerators.</li>
+                            <li>Search engine changers.</li>
+                            <li>Unverified "ad blockers" or "privacy protectors."</li>
+                        </ul>
+                    </li>
+                    <li><strong>Keep Essentials:</strong> A trusted ad blocker (uBlock Origin), a password manager,
+                        and perhaps a dark mode extension.</li>
+                </ul>
+
+                <h3>23. Browser Hardware Acceleration</h3>
+                <p>This setting uses your GPU to render web pages, offloading work from your CPU.</p>
+                <ul>
+                    <li><strong>Enable it</strong> if you have a dedicated GPU: It usually helps.</li>
+                    <li><strong>Disable it</strong> if you have graphical glitches or crashes: In Chrome/Edge:
+                        Settings → System → "Use hardware acceleration when available." Toggle and restart.</li>
+                </ul>
+
+                <h3>24. Reset Your Browser</h3>
+                <p>If your browser is chronically slow and unstable, reset it to default settings.</p>
+                <ul>
+                    <li><strong>Chrome:</strong> Settings → Advanced → Reset and clean up → Restore settings to
+                        their original defaults.</li>
+                    <li><strong>Edge:</strong> Settings → Reset settings → Restore settings to their default values.
+                    </li>
+                </ul>
+                <p>This will remove: Extensions, cookies, cached data, site permissions. It will not delete
+                    bookmarks, history, or saved passwords (but confirm during the process).</p>
+
+                <h3>25. Considering a Browser Switch</h3>
+                <ul>
+                    <li><strong>For Low-RAM PCs:</strong> Consider Firefox or Microsoft Edge (yes, the new Chromium
+                        Edge is actually quite efficient).</li>
+                    <li><strong>For Stability:</strong> Chrome is most consistent but a known RAM hog.</li>
+                    <li><strong>For Extreme Efficiency:</strong> Brave Browser is Chromium-based but blocks
+                        trackers/ads by default, reducing page load overhead.</li>
+                </ul>
+
+                <h3>26. Advanced: Browser Process Management</h3>
+                <p>Open your browser's task manager:</p>
+                <ul>
+                    <li><strong>Chrome/Edge:</strong> Press Shift+Esc while in the browser.</li>
+                </ul>
+                <p>This shows each tab, extension, and plugin as a separate process. You can see which is using
+                    excessive CPU/Memory and end it specifically.</p>
+
+                <hr class="section-divider">
+
+                <h2 id="section4">Section 4: Malware & Virus Scanning – The Silent Resource Thieves</h2>
+                <h3 id="malware">27. Understanding Modern Malware's Impact</h3>
+                <p>While old viruses aimed to destroy data, modern malware often aims to monetize your resources.
+                    This includes:</p>
+                <ul>
+                    <li><strong>Cryptominers:</strong> Use your CPU/GPU to mine cryptocurrency, causing 100% usage
+                        and extreme slowdown.</li>
+                    <li><strong>Adware/Browser Hijackers:</strong> Inject ads and redirects, consuming browser
+                        resources.</li>
+                    <li><strong>Spyware:</strong> Runs constant monitoring in the background.</li>
+                    <li><strong>Rootkits:</strong> Hide deep in the system, consuming resources and masking other
+                        malware.</li>
+                </ul>
+
+                <h3>28. The Primary Scan: Windows Security (Defender)</h3>
+                <ul>
+                    <li><strong>It's better than you think:</strong> Consistently scores high in independent
+                        antivirus tests.</li>
+                    <li><strong>Run a Full Scan:</strong> Open Windows Security → Virus & threat protection → Scan
+                        options → Full scan. This checks every file and running process. Can take hours.</li>
+                    <li><strong>Run an Offline Scan:</strong> Under "Scan options," choose Microsoft Defender
+                        Offline scan and restart. This runs before Windows boots, removing deeply embedded malware.
+                    </li>
+                </ul>
+
+                <h3>29. The Second Opinion: On-Demand Scanners</h3>
+                <p>Never run two real-time antivirus programs. Instead, use a second-opinion on-demand scanner
+                    periodically.</p>
+                <ul>
+                    <li><strong>Malwarebytes Free:</strong> The gold standard. Download, install, update, run a
+                        Threat Scan. It excels at finding adware, PUPs (Potentially Unwanted Programs), and browser
+                        hijackers that traditional AV might miss. Quarantine found threats. You can uninstall it
+                        afterward.</li>
+                    <li><strong>HitmanPro:</strong> Another excellent second-opinion scanner.</li>
+                    <li><strong>ESET Online Scanner:</strong> Runs from your browser, no installation needed.</li>
+                </ul>
+
+                <h3>30. Signs of Hidden Malware</h3>
+                <ul>
+                    <li>High CPU/disk usage from unknown processes in Task Manager (e.g., svchost.exe with a strange
+                        username, or random named .exe files).</li>
+                    <li>Browser homepage/search engine changes without your input.</li>
+                    <li>New toolbars, pop-up ads in places you didn't before.</li>
+                    <li>Slowness that began after downloading "cracked" software, free games, or unusual email
+                        attachments.</li>
+                </ul>
+
+                <h3>31. The Hosts File Check</h3>
+                <p>Malware sometimes edits the hosts file to redirect web traffic.</p>
+                <ul>
+                    <li>Navigate to <code>C:\Windows\System32\drivers\etc\</code>.</li>
+                    <li>Open the file named <code>hosts</code> with Notepad (as Administrator).</li>
+                    <li>It should only contain lines starting with # (comments) or a single line:
+                        <code>127.0.0.1 localhost</code>. Any other lines, especially with IP addresses you don't
+                        recognize, could be malicious.
+                    </li>
+                </ul>
+
+                <h3>32. Browser Reset for Hijacks</h3>
+                <p>If your browser is compromised (redirects, unwanted extensions you can't remove), use the reset
+                    function mentioned in Section 3, and run Malwarebytes.</p>
+
+                <h3>33. Prevention is Key</h3>
+                <ul>
+                    <li>Use an ad-blocker (uBlock Origin) to block malicious ads.</li>
+                    <li>Never download software from unofficial sources.</li>
+                    <li>Keep Windows and all software updated to patch security holes.</li>
+                    <li>Be skeptical of email attachments and links, even from known contacts.</li>
+                </ul>
+
+                <hr class="section-divider">
+
+                <h2 id="section5">Section 5: Operating System Health – The Core Tune-Up</h2>
+                <h3 id="systemfiles">34. Windows Updates: Not Just Features, But Performance Patches</h3>
+                <p>
+                    Microsoft constantly releases patches that fix memory leaks, improve scheduler efficiency, and
+                    patch
+                    security vulnerabilities that malware exploits to waste resources.
+                </p>
+                <ul>
+                    <li>Go to Settings → Windows Update → Check for updates. Install all, including optional updates
+                        (often contain newer driver versions).</li>
+                    <li>After major updates, run Disk Cleanup → Clean up system files to remove the old Windows
+                        version (labeled "Windows Update Cleanup").</li>
+                </ul>
+
+                <h3>35. Check for Disk Errors (CHKDSK)</h3>
+                <p>This scans your drive's file system integrity and attempts to fix logical errors (bad sectors are
+                    marked and avoided).</p>
+                <ul>
+                    <li>Open Command Prompt as Administrator.</li>
+                    <li>Type: <code>chkdsk C: /f /r</code>
+                        <ul>
+                            <li><code>/f</code> fixes errors.</li>
+                            <li><code>/r</code> locates bad sectors and recovers readable information (implies /f).
+                            </li>
+                        </ul>
+                    </li>
+                    <li>It will schedule the scan for the next restart. Let it run; it can take over an hour on
+                        large HDDs.</li>
+                </ul>
+
+                <h3>36. System File Checker (SFC /SCANNOW)</h3>
+                <p>Scans and repairs corrupted or modified Windows system files.</p>
+                <ul>
+                    <li>In Admin Command Prompt, type: <code>sfc /scannow</code></li>
+                    <li>Let it run to 100%. If it finds and fixes corruption, restart your PC.</li>
+                </ul>
+
+                <h3>37. DISM (Deployment Image Servicing and Management)</h3>
+                <p>A more advanced tool that fixes the Windows image that SFC uses for repairs. If SFC fails, run
+                    DISM first.</p>
+                <ul>
+                    <li>In Admin Command Prompt, type: <code>DISM /Online /Cleanup-Image /RestoreHealth</code></li>
+                    <li>This downloads healthy files from Windows Update to replace corrupt ones. Requires an
+                        internet connection. After it completes, run <code>sfc /scannow</code> again.</li>
+                </ul>
+
+                <h3>38. Performance Troubleshooter</h3>
+                <p>Windows has a built-in, automated troubleshooter.</p>
+                <ul>
+                    <li>Go to Settings → System → Troubleshoot → Other troubleshooters.</li>
+                    <li>Run the "Windows Store Apps" and "Program Compatibility" troubleshooters. They can
+                        automatically fix some common issues.</li>
+                </ul>
+
+                <h3>39. Review Event Viewer for Clues</h3>
+                <p>For persistent, mysterious slowdowns, the Event Viewer logs errors.</p>
+                <ul>
+                    <li>Press Windows + R, type <code>eventvwr.msc</code>.</li>
+                    <li>Look under Windows Logs → System and Application. Filter for Critical, Error, and Warning
+                        events around the time you experienced slowdowns. The error codes can be Googled for
+                        solutions.</li>
+                </ul>
+
+                <h3>40. Creating a System Restore Point (Before Major Changes)</h3>
+                <p>Before you began this deep clean, you should have created a restore point. If you haven't, do it
+                    now for future safety.</p>
+                <ul>
+                    <li>Search for "Create a restore point" in the Start Menu.</li>
+                    <li>Click the "Create..." button and give it a name like "Pre-Deep Clean."</li>
+                    <li>If anything goes wrong in future tweaks, you can revert to this point.</li>
+                </ul>
+
+                <h3>Conclusion of Part 2:</h3>
+                <p>
+                    You have now systematically decluttered your PC's software environment. You've taken control of
+                    startup programs, removed parasitic bloatware, optimized your web browser, eliminated malware,
+                    and repaired the core Windows operating system. This work addresses the vast majority of
+                    software-induced
+                    slowdowns. If your PC is still not performing to expectations after Parts 1 and 2, the
+                    bottleneck is
+                    almost certainly hardware-related, which will be addressed in part 3
+                </p>
+                <!-- Navigation to other parts -->
+                <div class="part-navigation">
+                    <a href="/blog/handbook/the-slow-pc-fix-handbook.html" class="nav-button prev">Previous</a>
+                    <a href="/blog/handbook/hardware-advanced-tuning.html" class="nav-button next">Next</a>
+                </div>
+                <!-- Placeholder for future parts -->
+                <div id="part4"
+                    style="margin-top: 60px; padding-top: 20px; border-top: 2px dashed rgba(34, 211, 166, 0.3);">
+                    <h2>
+                        <a href="/blog/handbook/maintenance-routine.html" class="part-link">
+                            Part 4: Maintenance Routine
+                        </a>
+                    </h2>
+                    <p>
+                        A regular maintenance routine is essential for keeping your PC running smoothly.
+                    </p>
+                </div>
+                <div id="part5"
+                    style="margin-top: 60px; padding-top: 20px; border-top: 2px dashed rgba(34, 211, 166, 0.3);">
+                    <h2>
+                        <a href="/blog/handbook/advanced-optimization.html" class="part-link">
+                            Part 5: Advanced Optimization
+                        </a>
+                    </h2>
+                    <p>
+                        Advanced software optimization, registry cleaning, malware removal, and system integrity
+                        checks
+                    </p>
+                </div>
+                <p>
+                <h2>Explore our more windows toos like
+                    <a href="/windows-tools/pdf/pdf-to-word.html" class="tool-btn">PDF Tools</a>,
+                    <a href="/windows-tools/image/image-to-pdf.html" class="tool-btn">Image Tools</a>,
+                    <a href="/windows-tools/audio/audio-volume-boost.html" class="tool-btn">Audio Tools</a>,
+                    <a href="/windows-tools/system/startup-program-manager.html" class="tool-btn">System Tools</a>,
+                    <a href="/windows-tools/utility/qr-generator.html" class="tool-btn">Utility Tools</a>,
+                    and more on our
+                    <a href="/windows-tools.html" class="tool-btn">Tools page</a>
+                </h2>
+                </p>
+            </section>
+        </div>
+    </div>
 
     <!-- END OF MAIN CONTENT -->
 

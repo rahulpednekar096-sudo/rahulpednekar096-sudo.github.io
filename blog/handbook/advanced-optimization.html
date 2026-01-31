@@ -30,6 +30,21 @@
     <link rel="stylesheet" href="/css/style.css">
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Info Section with background image */
+        .info-section {
+            position: relative;
+            width: 100%;
+            padding: 24px;
+            background:
+                linear-gradient(135deg,
+                    rgb(0, 3, 14),
+                    rgba(0, 3, 14, 0.527)), ;
+            border-radius: 16px;
+            overflow: hidden;
+            /* 🔥 KEY FIX */
+        }
+    </style>
 </head>
 
 <body>
@@ -47,7 +62,7 @@
         $(function () {
             $("#header-container").load("/components/header.html");
             $("#menu-drawer-container").load("/components/menu-drawer.html");
-            $("#tools-links-container").load("/components/blogs-quick-links.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
             $("#footer-container").load("/components/footer.html");
         });
     </script>
@@ -86,149 +101,148 @@
         </div>
 
         <!-- Right Content -->
-        <div class="tools-list">
-            <section class="card">
-                <h1 id="part5">Part 5: Advanced Optimization – The Expert's Guide to Maximum Performance</h1>
+        <section class="card info-section">
+            <h1 id="part5">Part 5: Advanced Optimization – The Expert's Guide to Maximum Performance</h1>
 
-                <h2>Introduction: Pushing Beyond Standard Optimization</h2>
-                <p class="lead">
-                    You've mastered the basics, implemented hardware upgrades, and established maintenance
-                    routines.
-                    We venture into the realm of expert-level optimization—where microscopic gains accumulate
-                    into
-                    noticeable performance improvements.
-                    This section is for power users who want to extract every
-                    ounce of performance from their systems,
-                    understand the inner workings of Windows, and implement
-                    tweaks that go beyond standard guides.
-                </p>
-                <p>
-                    <strong>Warning:</strong> These techniques require technical knowledge and carry inherent risks.
-                    Always back up your system before proceeding.
-                    These optimizations are not for everyone, but for
-                    those seeking ultimate performance, they can be transformative.
-                </p>
+            <h2>Introduction: Pushing Beyond Standard Optimization</h2>
+            <p class="lead">
+                You've mastered the basics, implemented hardware upgrades, and established maintenance
+                routines.
+                We venture into the realm of expert-level optimization—where microscopic gains accumulate
+                into
+                noticeable performance improvements.
+                This section is for power users who want to extract every
+                ounce of performance from their systems,
+                understand the inner workings of Windows, and implement
+                tweaks that go beyond standard guides.
+            </p>
+            <p>
+                <strong>Warning:</strong> These techniques require technical knowledge and carry inherent risks.
+                Always back up your system before proceeding.
+                These optimizations are not for everyone, but for
+                those seeking ultimate performance, they can be transformative.
+            </p>
 
-                <h2 id="section1">Section 1: Advanced Registry & System Tweaks</h2>
-                <h3 id="registry">1. Understanding the Windows Registry</h3>
-                <p>
-                    The Registry is Windows's hierarchical database storing configuration settings for the operating
-                    system,
-                    hardware, software, and users. While "registry cleaners" are generally snake oil, targeted
-                    manual tweaks
-                    can yield performance benefits.
-                </p>
+            <h2 id="section1">Section 1: Advanced Registry & System Tweaks</h2>
+            <h3 id="registry">1. Understanding the Windows Registry</h3>
+            <p>
+                The Registry is Windows's hierarchical database storing configuration settings for the operating
+                system,
+                hardware, software, and users. While "registry cleaners" are generally snake oil, targeted
+                manual tweaks
+                can yield performance benefits.
+            </p>
 
-                <h3>2. Critical Precautions Before Registry Editing</h3>
-                <ul>
-                    <li><strong>Backup First:</strong> Open Registry Editor (regedit), click File → Export, select
-                        "All" and save a .reg backup.</li>
-                    <li><strong>Create System Restore Point:</strong> Additional safety net.</li>
-                    <li><strong>Document Changes:</strong> Keep notes of every tweak for potential reversal.</li>
-                    <li><strong>One Change at a Time:</strong> Test stability after each modification.</li>
-                </ul>
+            <h3>2. Critical Precautions Before Registry Editing</h3>
+            <ul>
+                <li><strong>Backup First:</strong> Open Registry Editor (regedit), click File → Export, select
+                    "All" and save a .reg backup.</li>
+                <li><strong>Create System Restore Point:</strong> Additional safety net.</li>
+                <li><strong>Document Changes:</strong> Keep notes of every tweak for potential reversal.</li>
+                <li><strong>One Change at a Time:</strong> Test stability after each modification.</li>
+            </ul>
 
-                <h3>3. Performance-Oriented Registry Tweaks</h3>
+            <h3>3. Performance-Oriented Registry Tweaks</h3>
 
-                <h4>A. Disable Windows Telemetry & Data Collection</h4>
-                <p>Reduces background data uploads and associated resource usage:</p>
-                <pre><code>Navigate to: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection
+            <h4>A. Disable Windows Telemetry & Data Collection</h4>
+            <p>Reduces background data uploads and associated resource usage:</p>
+            <pre><code>Navigate to: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection
 Create DWORD (32-bit) named: AllowTelemetry
 Set value to: 0</code></pre>
 
-                <h4>B. Optimize Network Performance</h4>
-                <p>Improves network throughput for high-speed connections:</p>
-                <pre><code>Navigate to: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{Your-Interface-GUID}
+            <h4>B. Optimize Network Performance</h4>
+            <p>Improves network throughput for high-speed connections:</p>
+            <pre><code>Navigate to: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{Your-Interface-GUID}
 Create DWORD named: TcpAckFrequency
 Set value to: 1
 Create DWORD named: TCPNoDelay
 Set value to: 1</code></pre>
 
-                <h4>C. Reduce Menu Show Delay</h4>
-                <p>Makes UI feel more responsive:</p>
-                <pre><code>Navigate to: HKEY_CURRENT_USER\Control Panel\Desktop
+            <h4>C. Reduce Menu Show Delay</h4>
+            <p>Makes UI feel more responsive:</p>
+            <pre><code>Navigate to: HKEY_CURRENT_USER\Control Panel\Desktop
 Modify string: MenuShowDelay
 Set value to: 0 (or 1 for slight delay)</code></pre>
 
-                <h4>D. Disable NTFS Last Access Time Stamping</h4>
-                <p>Reduces disk write operations on NTFS volumes:</p>
-                <pre><code>Navigate to: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem
+            <h4>D. Disable NTFS Last Access Time Stamping</h4>
+            <p>Reduces disk write operations on NTFS volumes:</p>
+            <pre><code>Navigate to: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem
 Create DWORD named: NtfsDisableLastAccessUpdate
 Set value to: 1</code></pre>
 
-                <h4>E. Increase File System Cache</h4>
-                <p>Allows more system memory for file caching (8GB+ RAM systems):</p>
-                <pre><code>Navigate to: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management
+            <h4>E. Increase File System Cache</h4>
+            <p>Allows more system memory for file caching (8GB+ RAM systems):</p>
+            <pre><code>Navigate to: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management
 Modify DWORD: LargeSystemCache
 Set value to: 1</code></pre>
 
-                <h3>4. Group Policy Editor Tweaks (Windows Pro/Enterprise)</h3>
-                <ul>
-                    <li>Press Win + R, type <code>gpedit.msc</code></li>
-                    <li><strong>Computer Configuration → Administrative Templates → System:</strong>
-                        <ul>
-                            <li>Enable "Turn off Windows Customer Experience Improvement Program"</li>
-                            <li>Configure "Specify settings for optional component installation and component
-                                repair" → Disable</li>
-                        </ul>
-                    </li>
-                    <li><strong>Computer Configuration → Administrative Templates → Windows Components:</strong>
-                        <ul>
-                            <li>Disable "Let Windows apps run in the background"</li>
-                            <li>Disable "Allow suggested apps in Windows Ink Workspace"</li>
-                        </ul>
-                    </li>
-                </ul>
+            <h3>4. Group Policy Editor Tweaks (Windows Pro/Enterprise)</h3>
+            <ul>
+                <li>Press Win + R, type <code>gpedit.msc</code></li>
+                <li><strong>Computer Configuration → Administrative Templates → System:</strong>
+                    <ul>
+                        <li>Enable "Turn off Windows Customer Experience Improvement Program"</li>
+                        <li>Configure "Specify settings for optional component installation and component
+                            repair" → Disable</li>
+                    </ul>
+                </li>
+                <li><strong>Computer Configuration → Administrative Templates → Windows Components:</strong>
+                    <ul>
+                        <li>Disable "Let Windows apps run in the background"</li>
+                        <li>Disable "Allow suggested apps in Windows Ink Workspace"</li>
+                    </ul>
+                </li>
+            </ul>
 
-                <hr class="section-divider">
+            <hr class="section-divider">
 
-                <h2 id="section2">Section 2: Windows Services Optimization</h2>
-                <h3 id="services">5. Understanding Windows Services</h3>
-                <p>
-                    Services are background processes that run independently of user sessions. Many are essential,
-                    but some can be safely disabled to free resources.
-                </p>
+            <h2 id="section2">Section 2: Windows Services Optimization</h2>
+            <h3 id="services">5. Understanding Windows Services</h3>
+            <p>
+                Services are background processes that run independently of user sessions. Many are essential,
+                but some can be safely disabled to free resources.
+            </p>
 
-                <h3>6. Safe-to-Disable Services List</h3>
-                <p><strong>Always set to "Manual" or "Disabled" (test in Manual first):</strong></p>
-                <ul>
-                    <li><strong>Connected User Experiences and Telemetry (DiagTrack):</strong> Primary telemetry
-                        service</li>
-                    <li><strong>Downloaded Maps Manager:</strong> If you don't use offline maps</li>
-                    <li><strong>Fax:</strong> Legacy fax service</li>
-                    <li><strong>Geolocation Service:</strong> Unless you need location tracking</li>
-                    <li><strong>HomeGroup Provider & Listener:</strong> Deprecated in Windows 10/11</li>
-                    <li><strong>Microsoft iSCSI Initiator Service:</strong> Unless using iSCSI storage</li>
-                    <li><strong>Offline Files:</strong> If not using Sync Center</li>
-                    <li><strong>Remote Registry:</strong> Security risk, disable unless needed</li>
-                    <li><strong>Retail Demo Service:</strong> For store display units only</li>
-                    <li><strong>Touch Keyboard and Handwriting Panel Service:</strong> If not using touch</li>
-                    <li><strong>Windows Error Reporting Service:</strong> Prevents error reports but saves resources
-                    </li>
-                    <li><strong>Windows Insider Service:</strong> Unless enrolled in Insider program</li>
-                    <li><strong>Windows Search:</strong> <strong>Warning:</strong> Disabling kills file search
-                        functionality</li>
-                </ul>
+            <h3>6. Safe-to-Disable Services List</h3>
+            <p><strong>Always set to "Manual" or "Disabled" (test in Manual first):</strong></p>
+            <ul>
+                <li><strong>Connected User Experiences and Telemetry (DiagTrack):</strong> Primary telemetry
+                    service</li>
+                <li><strong>Downloaded Maps Manager:</strong> If you don't use offline maps</li>
+                <li><strong>Fax:</strong> Legacy fax service</li>
+                <li><strong>Geolocation Service:</strong> Unless you need location tracking</li>
+                <li><strong>HomeGroup Provider & Listener:</strong> Deprecated in Windows 10/11</li>
+                <li><strong>Microsoft iSCSI Initiator Service:</strong> Unless using iSCSI storage</li>
+                <li><strong>Offline Files:</strong> If not using Sync Center</li>
+                <li><strong>Remote Registry:</strong> Security risk, disable unless needed</li>
+                <li><strong>Retail Demo Service:</strong> For store display units only</li>
+                <li><strong>Touch Keyboard and Handwriting Panel Service:</strong> If not using touch</li>
+                <li><strong>Windows Error Reporting Service:</strong> Prevents error reports but saves resources
+                </li>
+                <li><strong>Windows Insider Service:</strong> Unless enrolled in Insider program</li>
+                <li><strong>Windows Search:</strong> <strong>Warning:</strong> Disabling kills file search
+                    functionality</li>
+            </ul>
 
-                <h3>7. How to Manage Services</h3>
-                <ul>
-                    <li>Press Win + R, type <code>services.msc</code></li>
-                    <li>Right-click any service → Properties</li>
-                    <li>Change "Startup type" to Manual, Automatic (Delayed Start), or Disabled</li>
-                    <li>Click "Stop" if currently running</li>
-                    <li>Apply and restart to test</li>
-                </ul>
-                <h3>8. Service Dependencies Check</h3>
-                <p>Before disabling any service:</p>
-                <ul>
-                    <li>Open service Properties → Dependencies tab</li>
-                    <li>Check what services depend on it</li>
-                    <li>If critical services depend on it, leave it enabled</li>
-                </ul>
+            <h3>7. How to Manage Services</h3>
+            <ul>
+                <li>Press Win + R, type <code>services.msc</code></li>
+                <li>Right-click any service → Properties</li>
+                <li>Change "Startup type" to Manual, Automatic (Delayed Start), or Disabled</li>
+                <li>Click "Stop" if currently running</li>
+                <li>Apply and restart to test</li>
+            </ul>
+            <h3>8. Service Dependencies Check</h3>
+            <p>Before disabling any service:</p>
+            <ul>
+                <li>Open service Properties → Dependencies tab</li>
+                <li>Check what services depend on it</li>
+                <li>If critical services depend on it, leave it enabled</li>
+            </ul>
 
-                <h3>9. PowerShell Script for Bulk Service Optimization</h3>
-                <p>Create a PowerShell script to manage services efficiently:</p>
-                <pre><code># Services to set to Manual (safe)
+            <h3>9. PowerShell Script for Bulk Service Optimization</h3>
+            <p>Create a PowerShell script to manage services efficiently:</p>
+            <pre><code># Services to set to Manual (safe)
 $manualServices = @(
     "DiagTrack",
     "MapsBroker",
@@ -257,178 +271,178 @@ foreach ($service in $disabledServices) {
     Write-Host "Disabled $service" -ForegroundColor Yellow
 }</code></pre>
 
-                <hr class="section-divider">
+            <hr class="section-divider">
 
-                <h2 id="section3">Section 3: Overclocking & Undervolting</h2>
-                <h3 id="overclocking">10. Understanding Overclocking Principles</h3>
-                <p>
-                    Overclocking increases component clock speeds beyond factory settings.
-                    Undervolting reduces
-                    voltage
-                    while maintaining stability, decreasing heat and power consumption.
-                </p>
+            <h2 id="section3">Section 3: Overclocking & Undervolting</h2>
+            <h3 id="overclocking">10. Understanding Overclocking Principles</h3>
+            <p>
+                Overclocking increases component clock speeds beyond factory settings.
+                Undervolting reduces
+                voltage
+                while maintaining stability, decreasing heat and power consumption.
+            </p>
 
-                <h3>11. CPU Overclocking (Intel & AMD)</h3>
-                <h4>Prerequisites:</h4>
-                <ul>
-                    <li>Unlocked CPU (Intel K-series, AMD Ryzen non-G)</li>
-                    <li>Adequate cooling (high-end air or liquid)</li>
-                    <li>Quality motherboard with robust VRM</li>
-                    <li>Reliable power supply</li>
-                </ul>
+            <h3>11. CPU Overclocking (Intel & AMD)</h3>
+            <h4>Prerequisites:</h4>
+            <ul>
+                <li>Unlocked CPU (Intel K-series, AMD Ryzen non-G)</li>
+                <li>Adequate cooling (high-end air or liquid)</li>
+                <li>Quality motherboard with robust VRM</li>
+                <li>Reliable power supply</li>
+            </ul>
 
-                <h4>Step-by-Step Process:</h4>
-                <ol>
-                    <li>Enter BIOS/UEFI (Del/F2 during boot)</li>
-                    <li>Disable power-saving features temporarily</li>
-                    <li>Increase CPU multiplier gradually (e.g., +1 each test)</li>
-                    <li>Test stability with Prime95 (Small FFTs) for 15 minutes</li>
-                    <li>If stable, increase further; if unstable, increase voltage slightly (0.01V increments)</li>
-                    <li>Monitor temperatures (keep below 85°C under load)</li>
-                    <li>Final stability test: 8+ hours of Prime95 or OCCT</li>
-                </ol>
+            <h4>Step-by-Step Process:</h4>
+            <ol>
+                <li>Enter BIOS/UEFI (Del/F2 during boot)</li>
+                <li>Disable power-saving features temporarily</li>
+                <li>Increase CPU multiplier gradually (e.g., +1 each test)</li>
+                <li>Test stability with Prime95 (Small FFTs) for 15 minutes</li>
+                <li>If stable, increase further; if unstable, increase voltage slightly (0.01V increments)</li>
+                <li>Monitor temperatures (keep below 85°C under load)</li>
+                <li>Final stability test: 8+ hours of Prime95 or OCCT</li>
+            </ol>
 
-                <h4>Safe Voltage Limits:</h4>
-                <ul>
-                    <li>Intel 14nm/10nm: 1.35-1.4V max (dependent on cooling)</li>
-                    <li>AMD Ryzen 5000/7000: 1.25-1.3V max for daily use</li>
-                </ul>
+            <h4>Safe Voltage Limits:</h4>
+            <ul>
+                <li>Intel 14nm/10nm: 1.35-1.4V max (dependent on cooling)</li>
+                <li>AMD Ryzen 5000/7000: 1.25-1.3V max for daily use</li>
+            </ul>
 
-                <h3>12. GPU Overclocking</h3>
-                <h4>Tools:</h4>
-                <ul>
-                    <li>MSI Afterburner (universal)</li>
-                    <li>AMD Adrenalin (AMD cards)</li>
-                    <li>EVGA Precision X1 (NVIDIA cards)</li>
-                </ul>
+            <h3>12. GPU Overclocking</h3>
+            <h4>Tools:</h4>
+            <ul>
+                <li>MSI Afterburner (universal)</li>
+                <li>AMD Adrenalin (AMD cards)</li>
+                <li>EVGA Precision X1 (NVIDIA cards)</li>
+            </ul>
 
-                <h4>Process:</h4>
-                <ol>
-                    <li>Increase Core Clock by +25MHz increments</li>
-                    <li>Test with Heaven Benchmark or 3DMark</li>
-                    <li>If artifacts/crashes, increase Power Limit or Voltage</li>
-                    <li>Once core stable, repeat with Memory Clock</li>
-                    <li>Monitor temperatures and performance gains</li>
-                </ol>
+            <h4>Process:</h4>
+            <ol>
+                <li>Increase Core Clock by +25MHz increments</li>
+                <li>Test with Heaven Benchmark or 3DMark</li>
+                <li>If artifacts/crashes, increase Power Limit or Voltage</li>
+                <li>Once core stable, repeat with Memory Clock</li>
+                <li>Monitor temperatures and performance gains</li>
+            </ol>
 
-                <h3>13. Undervolting for Efficiency</h3>
-                <p><strong>Why Undervolt?</strong> Reduces heat, power consumption, and can allow higher sustained
-                    boosts.</p>
+            <h3>13. Undervolting for Efficiency</h3>
+            <p><strong>Why Undervolt?</strong> Reduces heat, power consumption, and can allow higher sustained
+                boosts.</p>
 
-                <h4>AMD Ryzen Undervolting:</h4>
-                <ul>
-                    <li>Use Curve Optimizer in BIOS or Ryzen Master</li>
-                    <li>Apply negative offset (-10 to -30mV per core)</li>
-                    <li>Test stability with CoreCycler</li>
-                </ul>
+            <h4>AMD Ryzen Undervolting:</h4>
+            <ul>
+                <li>Use Curve Optimizer in BIOS or Ryzen Master</li>
+                <li>Apply negative offset (-10 to -30mV per core)</li>
+                <li>Test stability with CoreCycler</li>
+            </ul>
 
-                <h4>Intel Undervolting:</h4>
-                <ul>
-                    <li>Use Intel XTU or BIOS voltage offset</li>
-                    <li>Apply negative voltage offset (start with -0.050V)</li>
-                    <li>Test with Prime95 and real-world applications</li>
-                </ul>
+            <h4>Intel Undervolting:</h4>
+            <ul>
+                <li>Use Intel XTU or BIOS voltage offset</li>
+                <li>Apply negative voltage offset (start with -0.050V)</li>
+                <li>Test with Prime95 and real-world applications</li>
+            </ul>
 
-                <h3>14. RAM Timing Optimization</h3>
-                <p>Beyond XMP, manual timings can improve performance:</p>
-                <ol>
-                    <li>Enable XMP first for baseline</li>
-                    <li>Reduce primary timings (CL, tRCD, tRP, tRAS)</li>
-                    <li>Test stability with MemTest86 (4+ passes)</li>
-                    <li>Adjust secondary/tertiary timings with DRAM Calculator (optional)</li>
-                </ol>
+            <h3>14. RAM Timing Optimization</h3>
+            <p>Beyond XMP, manual timings can improve performance:</p>
+            <ol>
+                <li>Enable XMP first for baseline</li>
+                <li>Reduce primary timings (CL, tRCD, tRP, tRAS)</li>
+                <li>Test stability with MemTest86 (4+ passes)</li>
+                <li>Adjust secondary/tertiary timings with DRAM Calculator (optional)</li>
+            </ol>
 
-                <hr class="section-divider">
+            <hr class="section-divider">
 
-                <h2 id="section4">Section 4: Advanced Virtual Memory & Memory Management</h2>
-                <h3 id="memory">15. Virtual Memory Deep Dive</h3>
-                <p>
-                    Virtual memory (page file) is disk space used as extension of physical RAM.
-                    Optimal configuration depends on usage patterns.
-                </p>
+            <h2 id="section4">Section 4: Advanced Virtual Memory & Memory Management</h2>
+            <h3 id="memory">15. Virtual Memory Deep Dive</h3>
+            <p>
+                Virtual memory (page file) is disk space used as extension of physical RAM.
+                Optimal configuration depends on usage patterns.
+            </p>
 
-                <h3>16. Page File Sizing Formulas</h3>
-                <ul>
-                    <li><strong>Minimum Formula:</strong> 1.5 × Physical RAM</li>
-                    <li><strong>Maximum Formula:</strong> 3 × Physical RAM (or no maximum for system-managed)</li>
-                    <li><strong>Gaming/Heavy Apps:</strong> 1.5-2 × Physical RAM</li>
-                    <li><strong>Content Creation:</strong> 2-3 × Physical RAM</li>
-                </ul>
+            <h3>16. Page File Sizing Formulas</h3>
+            <ul>
+                <li><strong>Minimum Formula:</strong> 1.5 × Physical RAM</li>
+                <li><strong>Maximum Formula:</strong> 3 × Physical RAM (or no maximum for system-managed)</li>
+                <li><strong>Gaming/Heavy Apps:</strong> 1.5-2 × Physical RAM</li>
+                <li><strong>Content Creation:</strong> 2-3 × Physical RAM</li>
+            </ul>
 
-                <h3>17. Multiple Page Files Strategy</h3>
-                <p>For multi-drive systems:</p>
-                <ul>
-                    <li>Primary (C:): 1-2GB minimum for crash dumps</li>
-                    <li>Secondary (fast SSD): Main page file (calculated size)</li>
-                    <li>Tertiary (HDD/other): Optional for overflow</li>
-                </ul>
+            <h3>17. Multiple Page Files Strategy</h3>
+            <p>For multi-drive systems:</p>
+            <ul>
+                <li>Primary (C:): 1-2GB minimum for crash dumps</li>
+                <li>Secondary (fast SSD): Main page file (calculated size)</li>
+                <li>Tertiary (HDD/other): Optional for overflow</li>
+            </ul>
 
-                <h3>18. Disabling Page File Completely (Advanced)</h3>
-                <p><strong>Only with 32GB+ RAM and specific use cases:</strong></p>
-                <ul>
-                    <li>Prevents disk writes/reads for virtual memory</li>
-                    <li>Risk: Applications may crash if they demand more than physical RAM</li>
-                    <li>Not recommended for general use</li>
-                </ul>
+            <h3>18. Disabling Page File Completely (Advanced)</h3>
+            <p><strong>Only with 32GB+ RAM and specific use cases:</strong></p>
+            <ul>
+                <li>Prevents disk writes/reads for virtual memory</li>
+                <li>Risk: Applications may crash if they demand more than physical RAM</li>
+                <li>Not recommended for general use</li>
+            </ul>
 
-                <h3>19. RAMDisk Implementation</h3>
-                <p>Using RAM as ultra-fast temporary storage:</p>
-                <h4>Software Options:</h4>
-                <ul>
-                    <li>SoftPerfect RAM Disk (paid)</li>
-                    <li>ImDisk Toolkit (free)</li>
-                    <li>AMD Radeon RAMDisk (free up to 4GB)</li>
-                </ul>
+            <h3>19. RAMDisk Implementation</h3>
+            <p>Using RAM as ultra-fast temporary storage:</p>
+            <h4>Software Options:</h4>
+            <ul>
+                <li>SoftPerfect RAM Disk (paid)</li>
+                <li>ImDisk Toolkit (free)</li>
+                <li>AMD Radeon RAMDisk (free up to 4GB)</li>
+            </ul>
 
-                <h4>Practical Uses:</h4>
-                <ul>
-                    <li>Browser cache (dramatically speeds up browsing)</li>
-                    <li>Temp folders (TEMP, TMP environment variables)</li>
-                    <li>Game texture caches</li>
-                    <li>Compilation/rendering temporary files</li>
-                </ul>
+            <h4>Practical Uses:</h4>
+            <ul>
+                <li>Browser cache (dramatically speeds up browsing)</li>
+                <li>Temp folders (TEMP, TMP environment variables)</li>
+                <li>Game texture caches</li>
+                <li>Compilation/rendering temporary files</li>
+            </ul>
 
-                <h3>20. Memory Compression Analysis</h3>
-                <p>Windows 10/11 compresses memory pages to reduce paging. Monitor with PowerShell:</p>
-                <pre><code>Get-Counter '\Memory\Compression\Compression Size'</code></pre>
-                <p>High compression (>500MB) indicates RAM pressure. Consider adding more RAM.</p>
+            <h3>20. Memory Compression Analysis</h3>
+            <p>Windows 10/11 compresses memory pages to reduce paging. Monitor with PowerShell:</p>
+            <pre><code>Get-Counter '\Memory\Compression\Compression Size'</code></pre>
+            <p>High compression (>500MB) indicates RAM pressure. Consider adding more RAM.</p>
 
-                <hr class="section-divider">
+            <hr class="section-divider">
 
-                <h2 id="section5">Section 5: Expert Tools & Automation Scripts</h2>
-                <h3 id="scripts">21. Professional Optimization Tools</h3>
+            <h2 id="section5">Section 5: Expert Tools & Automation Scripts</h2>
+            <h3 id="scripts">21. Professional Optimization Tools</h3>
 
-                <h4>A. Process Lasso (ProBalance Technology)</h4>
-                <ul>
-                    <li>Dynamically adjusts process priorities</li>
-                    <li>Prevents CPU hogging by background processes</li>
-                    <li>Memory compression and responsiveness tuning</li>
-                </ul>
+            <h4>A. Process Lasso (ProBalance Technology)</h4>
+            <ul>
+                <li>Dynamically adjusts process priorities</li>
+                <li>Prevents CPU hogging by background processes</li>
+                <li>Memory compression and responsiveness tuning</li>
+            </ul>
 
-                <h4>B. ParkControl (CPU Core Parking Management)</h4>
-                <ul>
-                    <li>Controls Windows core parking behavior</li>
-                    <li>Can improve multi-threaded performance</li>
-                    <li>Reduces latency for time-sensitive applications</li>
-                </ul>
+            <h4>B. ParkControl (CPU Core Parking Management)</h4>
+            <ul>
+                <li>Controls Windows core parking behavior</li>
+                <li>Can improve multi-threaded performance</li>
+                <li>Reduces latency for time-sensitive applications</li>
+            </ul>
 
-                <h4>C. Autoruns (Microsoft Sysinternals)</h4>
-                <ul>
-                    <li>Comprehensive startup management</li>
-                    <li>Shows drivers, services, DLLs, and more</li>
-                    <li>Removes deeply embedded auto-start items</li>
-                </ul>
+            <h4>C. Autoruns (Microsoft Sysinternals)</h4>
+            <ul>
+                <li>Comprehensive startup management</li>
+                <li>Shows drivers, services, DLLs, and more</li>
+                <li>Removes deeply embedded auto-start items</li>
+            </ul>
 
-                <h4>D. O&O ShutUp10++ (Privacy & Performance)</h4>
-                <ul>
-                    <li>One-click Windows telemetry disable</li>
-                    <li>Performance-impacting feature management</li>
-                    <li>Creates system restore points automatically</li>
-                </ul>
+            <h4>D. O&O ShutUp10++ (Privacy & Performance)</h4>
+            <ul>
+                <li>One-click Windows telemetry disable</li>
+                <li>Performance-impacting feature management</li>
+                <li>Creates system restore points automatically</li>
+            </ul>
 
-                <h3>22. Custom PowerShell Optimization Script</h3>
-                <p>Create a comprehensive optimization script:</p>
-                <pre><code># Comprehensive PC Optimization Script
+            <h3>22. Custom PowerShell Optimization Script</h3>
+            <p>Create a comprehensive optimization script:</p>
+            <pre><code># Comprehensive PC Optimization Script
 # Run as Administrator
 
 Write-Host "=== PC Optimization Script ===" -ForegroundColor Cyan
@@ -475,17 +489,17 @@ foreach ($service in $servicesToDisable) {
 
 Write-Host "Optimization complete! Restart recommended." -ForegroundColor Green</code></pre>
 
-                <h3>23. Scheduled Task Automation</h3>
-                <p>Automate weekly optimization tasks:</p>
-                <pre><code># Create scheduled task for weekly maintenance
+            <h3>23. Scheduled Task Automation</h3>
+            <p>Automate weekly optimization tasks:</p>
+            <pre><code># Create scheduled task for weekly maintenance
 $action = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "-File C:\Scripts\WeeklyOptimization.ps1"
 $trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Sunday -At 2am
 $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
 Register-ScheduledTask -TaskName "WeeklyPC优化" -Action $action -Trigger $trigger -Settings $settings -RunLevel Highest</code></pre>
 
-                <h3>24. Performance Monitoring Dashboard</h3>
-                <p>Create real-time monitoring with PowerShell:</p>
-                <pre><code># Real-time performance monitor
+            <h3>24. Performance Monitoring Dashboard</h3>
+            <p>Create real-time monitoring with PowerShell:</p>
+            <pre><code># Real-time performance monitor
 while ($true) {
     Clear-Host
     $cpu = Get-Counter '\Processor(_Total)\% Processor Time'
@@ -500,64 +514,65 @@ while ($true) {
     Start-Sleep -Seconds 2
 }</code></pre>
 
-                <h3>25. BIOS-Level Optimization Checklist</h3>
-                <ul>
-                    <li>✅ Enable XMP/DOCP for RAM</li>
-                    <li>✅ Disable unused onboard devices (serial/parallel ports)</li>
-                    <li>✅ Enable Above 4G Decoding (for modern GPUs)</li>
-                    <li>✅ Set PCIe to Gen3/Gen4 (depending on hardware)</li>
-                    <li>✅ Disable CSM for faster boot</li>
-                    <li>✅ Enable Fast Boot (after stability confirmed)</li>
-                    <li>✅ Set fan curves for optimal cooling/noise balance</li>
-                    <li>✅ Enable SVM/Intel VT-d for virtualization</li>
-                    <li>✅ Disable legacy USB support if not needed</li>
-                </ul>
+            <h3>25. BIOS-Level Optimization Checklist</h3>
+            <ul>
+                <li>✅ Enable XMP/DOCP for RAM</li>
+                <li>✅ Disable unused onboard devices (serial/parallel ports)</li>
+                <li>✅ Enable Above 4G Decoding (for modern GPUs)</li>
+                <li>✅ Set PCIe to Gen3/Gen4 (depending on hardware)</li>
+                <li>✅ Disable CSM for faster boot</li>
+                <li>✅ Enable Fast Boot (after stability confirmed)</li>
+                <li>✅ Set fan curves for optimal cooling/noise balance</li>
+                <li>✅ Enable SVM/Intel VT-d for virtualization</li>
+                <li>✅ Disable legacy USB support if not needed</li>
+            </ul>
 
-                <h3>Conclusion: The Optimization Master</h3>
-                <p>
-                    You have now traversed the complete optimization journey—from basic first aid to
-                    expert-level
-                    tuning.
-                    These advanced techniques represent the final frontier of PC performance optimization.
-                    Remember
-                    that
-                    with great power comes great responsibility: each tweak should be implemented methodically,
-                    tested
-                    thoroughly, and documented carefully.
-                </p>
-                <p>
-                    <strong>The ultimate optimization is understanding your system.</strong> Monitor, learn, and
-                    adapt.
-                    >Performance tuning is not a destination but an ongoing journey of understanding the
-                    intricate
-                    dance
-                    between hardware and software. Your PC is now not just a tool, but a finely-tuned instrument
-                    ready
-                    to perform at its absolute peak.
-                </p>
-                <p>
-                    Your journey to
-                    ultimate PC performance is now complete.
-                </p>
-                <!-- Navigation to other parts -->
-                <div class="part-navigation">
-                    <a href="/blog/handbook/maintenance-routine.html" class="nav-button prev">Previous</a>
-                    <a href="/blog/handbook/the-slow-pc-fix-handbook.html" class="nav-button home">🏠 Back to Guide Home</a>
-                </div>
-                <p>
-                <h2>Explore our more windows toos like
-                    <a href="/windows-tools/pdf/pdf-to-word.html" class="tool-btn">PDF Tools</a>,
-                    <a href="/windows-tools/image/image-to-pdf.html" class="tool-btn">Image Tools</a>,
-                    <a href="/windows-tools/audio/audio-volume-boost.html" class="tool-btn">Audio Tools</a>,
-                    <a href="/windows-tools/system/startup-program-manager.html" class="tool-btn">System Tools</a>,
-                    <a href="/windows-tools/utility/qr-generator.html" class="tool-btn">Utility Tools</a>,
-                    <br>and more on our
-                    <a href="/windows-tools.html" class="tool-btn">Tools page</a>
-                </h2>
-                </p>
+            <h3>Conclusion: The Optimization Master</h3>
+            <p>
+                You have now traversed the complete optimization journey—from basic first aid to
+                expert-level
+                tuning.
+                These advanced techniques represent the final frontier of PC performance optimization.
+                Remember
+                that
+                with great power comes great responsibility: each tweak should be implemented methodically,
+                tested
+                thoroughly, and documented carefully.
+            </p>
+            <p>
+                <strong>The ultimate optimization is understanding your system.</strong> Monitor, learn, and
+                adapt.
+                >Performance tuning is not a destination but an ongoing journey of understanding the
+                intricate
+                dance
+                between hardware and software. Your PC is now not just a tool, but a finely-tuned instrument
+                ready
+                to perform at its absolute peak.
+            </p>
+            <p>
+                Your journey to
+                ultimate PC performance is now complete.
+            </p>
+            <!-- Navigation to other parts -->
+            <div class="part-navigation">
+                <a href="/blog/handbook/maintenance-routine.html" class="nav-button prev">Previous</a>
+                <a href="/blog/handbook/the-slow-pc-fix-handbook.html" class="nav-button home">🏠 Back to Guide
+                    Home</a>
+            </div>
+            <p>
+            <h2>Explore our more windows toos like
+                <a href="/windows-tools/pdf/pdf-to-word.html" class="tool-btn">PDF Tools</a>,
+                <a href="/windows-tools/image/image-to-pdf.html" class="tool-btn">Image Tools</a>,
+                <a href="/windows-tools/audio/audio-volume-boost.html" class="tool-btn">Audio Tools</a>,
+                <a href="/windows-tools/system/startup-program-manager.html" class="tool-btn">System Tools</a>,
+                <a href="/windows-tools/utility/qr-generator.html" class="tool-btn">Utility Tools</a>,
+                <br>and more on our
+                <a href="/windows-tools.html" class="tool-btn">Tools page</a>
+            </h2>
+            </p>
 
-            </section>
-        </div>
+        </section>
+
     </div>
 
     <!-- END OF MAIN CONTENT -->

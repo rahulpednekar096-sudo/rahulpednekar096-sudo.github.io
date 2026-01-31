@@ -92,6 +92,7 @@ const sitePages = [
     { title: "Windows Tools", url: "/windows-tools.html" },
 
     // PDF Tools
+    { title: "PDF Tools Home", url: "/index.html#pdf-tools" },
     { title: "Compress PDF", url: "/windows-tools/pdf/compress-pdf.html" },
     { title: "Edit Book", url: "/windows-tools/pdf/book-editor.html" },
     { title: "Excel to PDF", url: "/windows-tools/pdf/excel-to-pdf.html" },
@@ -105,13 +106,14 @@ const sitePages = [
     { title: "PDF to Word", url: "/windows-tools/pdf/pdf-to-word.html" },
     { title: "Png to PDF", url: "/windows-tools/pdf/png-to-pdf.html" },
     { title: "PPT to PDF", url: "/windows-tools/pdf/ppt-to-pdf.html" },
-    { title: "Protect/Unlock PDF", url: "/windows-tools/pdf/protect-unlock-pdf.html" },
+    { title: "Unlock PDF", url: "/windows-tools/pdf/protect-unlock-pdf.html" },
     { title: "Rotate PDF", url: "/windows-tools/pdf/rotate-pdf.html" },
     { title: "Split PDF", url: "/windows-tools/pdf/split-pdf.html" },
     { title: "Text-to-PDF", url: "/windows-tools/pdf/text-to-pdf.html" },
     { title: "Word to PDF", url: "/windows-tools/pdf/word-to-pdf.html" },
 
     // Image Tools
+    { title: "Image Tools Home", url: "/index.html#image-tools" },
     { title: "Resize Image", url: "/windows-tools/image/resize-image.html" },
     { title: "Crop Image", url: "/windows-tools/image/crop-image.html" },
     { title: "Rotate Image", url: "/windows-tools/image/rotate-image.html" },
@@ -126,6 +128,7 @@ const sitePages = [
     { title: "Image to PDF", url: "/windows-tools/image/image-to-pdf.html" },
 
     // Audio Tools
+    { title: "Audio Tools Home", url: "/index.html#audio-tools" },
     { title: "Trim Audio", url: "/windows-tools/audio/trim-audio.html" },
     { title: "Convert Audio", url: "/windows-tools/audio/convert-audio.html" },
     { title: "Extract MP3", url: "/windows-tools/audio/extract-mp3.html" },
@@ -136,13 +139,33 @@ const sitePages = [
     { title: "Audio Metadata", url: "/windows-tools/audio/audio-metadata-editor.html" },
 
     // System Tools
+    { title: "System Tools Home", url: "/index.html#system-tools" },
     { title: "File Renamer", url: "/windows-tools/system/file-renamer.html" },
     { title: "Duplicate Finder", url: "/windows-tools/system/duplicate-file-finder.html" },
     { title: "Folder Size", url: "/windows-tools/system/folder-size-analyzer.html" },
     { title: "Startup Manager", url: "/windows-tools/system/startup-program-manager.html" },
     { title: "System Info", url: "/windows-tools/system/system-info-checker.html" },
-    { title: "Disk Usage", url: "/windows-tools/system/disk-usage-visualizer.html" }
-];
+    { title: "Disk Usage", url: "/windows-tools/system/disk-usage-visualizer.html" },
+
+    //utility Tools
+    { title: "Utility Tools Home", url: "windows-tools/utility/index.html" },
+    { title: "Notes Manager", url: "windows-tools/utility/notes-manager.html" },
+    { title: "QR Generator", url: "windows-tools/utility/qr-generator.html" },
+    { title: "Unit Converter", url: "windows-tools/utility/unit-converter.html" },
+    { title: "Age Calculator", url: "windows-tools/utility/age-calculator.html" },
+
+  //blog section
+    { title: "Blog Home", url: "blog/index.html" },
+    { title: "How to Compress PDF Files Without Losing Quality", url: "blog/articles/how-to-compress-pdf.html" },
+    { title: "Understanding Image Formats: JPG, PNG, WebP", url: "blog/articles/image-formats-guide.html" },
+    { title: "Top 5 Essential Android Tools for 2025", url: "blog/articles/top-android-tool.html" },
+    { title: "Your Ultimate Guide to Speeding Up Your Computer", url: "blog/handbook/the-sloe-pc-fix-handbook.html" },
+    { title: "The Software Deep Clean – The Ultimate Guide to Digital Decluttering", url: "blog/handbook/software-deep-clean.html" },
+    { title: "Hardware & Advanced Tuning – The Ultimate Guide to Powering Up Your PC's Engine", url: "blog/handbook/hardware-advanced-tuning.html" },
+    { title: "The Maintenance Routine – The Ultimate Guide to Sustaining Peak PC Performance", url: "blog/handbook/maintenance-routine.html" },
+    { title: "Advanced Optimization – The Expert's Guide to Maximum Performance", url: "blog/handbook/advanced-optimization.html" },
+
+]
 
 // ---- LIVE SEARCH FUNCTIONALITY ----
 function initializeSearch() {
@@ -260,3 +283,24 @@ sidebarLinks.forEach(link => {
     // ✅ else: external or other page links → browser handles normally
    });
 });
+
+// Back to top functionality
+document.getElementById('backToTop').addEventListener('click', function () {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Show/hide back to top button based on scroll position
+ window.addEventListener('scroll', function () {
+    const backToTopBtn = document.getElementById('backToTop');
+    if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'flex';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+});
+
+// Initially hide the back to top button
+document.getElementById('backToTop').style.display = 'none';
