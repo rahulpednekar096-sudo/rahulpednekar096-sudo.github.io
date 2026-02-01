@@ -1761,7 +1761,7 @@ h3 {
   /* BODY */
   body {
     padding: 8px;
-    margin-top: 42px;
+    margin-top: 54px;
   }
 
   /* HERO */
@@ -1825,9 +1825,6 @@ h3 {
   }
 
   .tool-card img {
-    width: 100%;
-    max-width: 200px;
-    height: 90px;
     border-radius: 14px;
   }
 
@@ -1878,10 +1875,6 @@ h3 {
     padding-bottom: 0 !important;
     margin-bottom: 0 !important;
     min-height: auto !important;
-  }
-
-  .tool-card img {
-    max-width: 180px;
   }
 
   .tool-content h3 {
@@ -1965,6 +1958,27 @@ h3 {
     overflow-x: hidden;
   }
 
+  .div.style {
+    display: grid;
+  }
+
+  /* ❌ Kill fit-content on mobile */
+  *,
+  *::before,
+  *::after {
+    max-width: 100%;
+  }
+
+  /* 🔥 PREVIEW / TABLE */
+  .preview,
+  .previewWrap,
+  table {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: auto;
+    display: block;
+  }
+
   /* 🔹 Force rows to wrap */
   .row {
     flex-wrap: wrap;
@@ -2016,8 +2030,7 @@ h3 {
 @media (max-width: 480px) {
 
   /* 🔒 No horizontal scroll */
-  html,
-  body {
+  html {
     max-width: 100%;
     overflow-x: hidden;
   }
@@ -2098,5 +2111,78 @@ h3 {
     display: inline-block;
     margin: 6px 4px;
     font-size: 13px;
+  }
+}
+
+/* ==================================
+   📱 MOBILE – ACTION BUTTON BAR FIX
+   ================================== */
+@media (max-width: 480px) {
+
+  /* Parent row fix */
+  #convertBtn,
+  #clearBtn,
+  #selectAllBtn,
+  #unselectAllBtn {
+    flex: 1 1 48%;
+    min-width: 140px;
+    font-size: 12px;
+    margin-bottom: 9px;
+  }
+
+  /* Button container */
+  .btn-group,
+  div[style*="display:flex"][style*="gap"] {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* Page info goes full width */
+  #pageInfo {
+    width: 100%;
+    text-align: center;
+    margin-left: 0 !important;
+    margin-top: 6px;
+    font-size: 13px;
+  }
+}
+
+/* ==================================
+   📱 MOBILE – RELATED TOOLS BUTTON FIX
+   ================================== */
+@media (max-width: 480px) {
+
+  h2+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  h2+ul a.btn {
+    flex: 1 1 100%;
+    text-align: center;
+    white-space: normal;
+  }
+}
+
+/* ==================================
+   📱 MOBILE – TAGS + READ BUTTON FIX
+   ================================== */
+@media (max-width: 480px) {
+
+  /* Parent wrapper */
+  div[style*="margin-top: 10px"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }
+
+  /* Tags */
+  .tag {
+    white-space: nowrap;
+    font-size: 11px;
   }
 }

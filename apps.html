@@ -43,7 +43,7 @@
     }
 
     .app-card {
-      display: flex;
+      grid-column: auto;
       gap: 16px;
       padding: 16px;
       border-radius: 12px;
@@ -85,6 +85,7 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+      width: fit-content;
     }
   </style>
 
@@ -118,11 +119,11 @@
     <!-- ========== COLOR MIXER ========== -->
     <div class="app-card">
       <!-- LEFT: IMAGE -->
-      <img src="/assets/icons/color-mixer.webp" class="app-thumb" />
+      <img alt="Color Mixer App Icon" src="/assets/icons/color-mixer.webp" class="app-thumb" />
 
       <!-- CENTER: SHORT INFO -->
       <div class="app-info">
-        <h3>🎨 Color Mixer</h3>
+        <a href="color-mixer.html" class="btn btn-secondary">🎨 Color Mixer</a>
 
         <p class="app-short-desc">
           Creative color mixing app with RYB & RGB modes. Works fully offline.
@@ -137,10 +138,6 @@
 
       <!-- RIGHT: ACTIONS -->
       <div class="app-actions">
-        <a href="color-mixer.html" class="btn btn-secondary">
-          More Information →
-        </a>
-
         <a href="https://play.google.com/..." class="btn btn-primary" target="_blank">
           ▶ Play Store
         </a>
@@ -148,10 +145,10 @@
     </div>
     <!-- ========== EASY MUSIC ========== -->
     <div class="app-card">
-      <img src="/assets/icons/easy-music-icon.webp" class="app-thumb" />
+      <img alt="Easy Music App Icon" src="/assets/icons/easy-music-icon.webp" class="app-thumb" />
 
       <div class="app-info">
-        <h3>🎵 Easy Music</h3>
+        <a href="easy-music.html" class="btn btn-secondary">🎵 Easy Music</a>
 
         <p class="app-short-desc">
           Simple music creation app to compose melodies using notes and tempo control.
@@ -165,10 +162,6 @@
       </div>
 
       <div class="app-actions">
-        <a href="easy-music.html" class="btn btn-secondary">
-          More Information →
-        </a>
-
         <a href="https://play.google.com/" class="btn btn-primary" target="_blank">
           ▶ Download
         </a>
@@ -177,10 +170,12 @@
 
     <!-- ========== GOLDEN CALC ========== -->
     <div class="app-card">
-      <img src="/assets/icons/golden-calc.webp" class="app-thumb" />
+      <img alt="Golden Calc App Icon" src="/assets/icons/golden-calc.webp" class="app-thumb" />
 
       <div class="app-info">
-        <h3>🧮 Golden Calc</h3>
+        <a href="golden-calc.html" class="btn btn-secondary">
+          🧮 Golden Calc
+        </a>
 
         <p class="app-short-desc">
           Fast offline calculator with scientific functions and built-in unit converter.
@@ -194,10 +189,6 @@
       </div>
 
       <div class="app-actions">
-        <a href="golden-calc.html" class="btn btn-secondary">
-          More Information →
-        </a>
-
         <a href="https://play.google.com/" class="btn btn-primary" target="_blank">
           ▶ Download
         </a>
@@ -208,10 +199,6 @@
 
 
   <!-- 🔍 IMAGE PREVIEW POPUP -->
-  <div id="imgPreviewOverlay">
-    <span id="imgPreviewClose" onclick="closePreview()">✕</span>
-    <img id="imgPreviewBox" src="">
-  </div>
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
 
