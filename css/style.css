@@ -1752,3 +1752,351 @@ h3 {
     scroll-margin-top: 110px;
   }
 }
+
+/* =========================
+   📱 MOBILE FIRST FIXES
+   ========================= */
+@media (max-width: 768px) {
+
+  /* BODY */
+  body {
+    padding: 8px;
+    margin-top: 42px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 14px 12px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .hero h2 {
+    font-size: 18px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  /* 🔹 TOP TOOL BUTTONS → horizontal scroll */
+  .tools-search-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tools-search-section>div:first-child {
+    overflow-x: auto;
+    display: flex;
+    gap: 10px;
+    padding-bottom: 6px;
+  }
+
+  .tools-search-section a.btn {
+    font-size: 11px;
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
+
+  /* SEARCH */
+  .header-search {
+    max-width: 100%;
+  }
+
+  /* 🔹 TOOL GRID FIX */
+  .tool-item {
+    padding: 14px;
+  }
+
+  .tool-item>div {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  /* 🔹 TOOL CARD STACK */
+  .tool-card {
+    align-items: center;
+    text-align: center;
+    padding: 14px;
+  }
+
+  .tool-card img {
+    width: 100%;
+    max-width: 200px;
+    height: 90px;
+    border-radius: 14px;
+  }
+
+  .tool-content h3 {
+    font-size: 15px;
+    margin-top: 0px;
+  }
+
+  .tool-content p {
+    font-size: 11px;
+  }
+
+  /* ANDROID APPS */
+  .apps {
+    padding: 0 8px;
+  }
+
+  .app {
+    padding: 16px;
+  }
+
+  .app-images {
+    justify-content: center;
+  }
+
+  /* FOOTER */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 22px;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  /* Hero section ची extra जागा काढ */
+  .hero {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    min-height: auto !important;
+  }
+
+  .tool-card img {
+    max-width: 180px;
+  }
+
+  .tool-content h3 {
+    font-size: 15px;
+  }
+
+  /* Windows Tool Categories खालील long intro text */
+
+  h2+p+p {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+/* ===============================
+   📱 SMALL MOBILE HEADER FIX
+   =============================== */
+@media (max-width: 480px) {
+
+  header {
+    padding: 6px 8px;
+    gap: 6px;
+  }
+
+  /* ☰ Menu button */
+  .menu-btn {
+    font-size: 11px;
+    padding: 4px;
+  }
+
+  /* 🏠 Home button */
+  header .tab-btn {
+    font-size: 9px;
+    padding: 6px 8px;
+  }
+
+  /* 🔰 LOGO */
+  .logo {
+    gap: 6px;
+  }
+
+  .logo img {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .logo div {
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .logo span {
+    font-size: 9px;
+  }
+
+  /* 🔗 Right side buttons */
+  header .nav-links a {
+    font-size: 9px;
+    padding: 6px 8px;
+  }
+
+  /* 🔑 Login */
+  .login-btn {
+    font-size: 9px;
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
+}
+
+/* ==================================
+   📱 MOBILE – PREVENT RIGHT OVERFLOW
+   ================================== */
+@media (max-width: 480px) {
+
+  /* 🔒 Global safety */
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* 🔹 Force rows to wrap */
+  .row {
+    flex-wrap: wrap;
+  }
+
+  /* 🔹 Cards full width */
+  .row>.card {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+
+  /* 🔹 Images never overflow */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* 🔹 Tool preview image */
+  .tool-image img {
+    width: 100% !important;
+  }
+
+  /* 🔹 Preview / table area */
+  .previewWrap,
+  .preview,
+  table {
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+
+  /* 🔹 Select + buttons stacks */
+  select,
+  input,
+  button {
+    max-width: 100%;
+  }
+
+  /* 🔹 SEO images section */
+  .seo-content img {
+    width: 100% !important;
+    max-width: 100%;
+  }
+}
+
+/* =========================================
+   📱 BLOG / HANDBOOK – MOBILE PERFECT FIX
+   ========================================= */
+@media (max-width: 480px) {
+
+  /* 🔒 No horizontal scroll */
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* 🔹 Main container stack */
+  .tools-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* 🔹 Sidebar hide on mobile */
+  .sidebar {
+    display: none !important;
+  }
+
+  /* 🔹 Content card full width */
+  .tools-container>section.card {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  /* 🔹 Blog title */
+  .rdroid-blogs-title {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* 🔹 Headings spacing */
+  section.card h1 {
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  section.card h2 {
+    font-size: 18px;
+    margin-top: 18px;
+  }
+
+  section.card h3 {
+    font-size: 16px;
+  }
+
+  /* 🔹 Paragraph readability */
+  section.card p,
+  section.card li {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* 🔹 Lists padding fix */
+  section.card ul,
+  section.card ol {
+    padding-left: 18px;
+  }
+
+  /* 🔹 HR divider */
+  .section-divider {
+    margin: 20px 0;
+  }
+
+  /* 🔹 Navigation buttons */
+  .part-navigation,
+  .nav-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-button {
+    display: block;
+    padding: 10px 14px;
+    font-size: 15px;
+  }
+
+  /* 🔹 Tool buttons wrap */
+  .tool-btn {
+    display: inline-block;
+    margin: 6px 4px;
+    font-size: 13px;
+  }
+}
