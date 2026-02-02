@@ -21,7 +21,6 @@
   <title>JPG → PDF Converter — Free Online Tool | RDroid Apps (Upgraded)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/jpg-to-pdf.html">
-  <link rel="stylesheet" href="/css/style.css">
   <meta name="description"
     content="Convert multiple JPG, PNG, WEBP images to PDF in seconds. Reorder, rotate, set page size, margins, and compress quality. 100% free, secure, and works offline." />
   <meta name="keywords"
@@ -30,10 +29,7 @@
 
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-
-
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -56,197 +52,204 @@
     });
   </script>
 
-  <section class="section" role="main" aria-labelledby="title">
-    <h1 id="title">JPG → PDF Converter — Free Online Tool | RDroid Apps (Upgraded)</h1>
-    <p class="lead">Convert multiple JPG, PNG, WEBP images to PDF in seconds. Rotate, set page size, margins, and
-      compress quality.
-      100% free, secure, and works offline.</p>
+  <section class="tool-section">
+    <div class="card">
+      <h1 id="title">JPG → PDF Converter — Free Online Tool | RDroid Apps (Upgraded)</h1>
+      <p class="lead">Convert multiple JPG, PNG, WEBP images to PDF in seconds. Rotate, set page size, margins, and
+        compress quality.
+        100% free, secure, and works offline.</p>
 
-    <div class="drop" id="dropArea">Drop images here or <button class="btn" id="chooseBtn">Choose files</button>
-      <input type="file" id="fileInput" accept="image/*" multiple style="display:none" />
-    </div>
+      <div class="drop" id="dropArea">Drop images here or <button class="btn" id="chooseBtn">Choose files</button>
+        <input type="file" id="fileInput" accept="image/*" multiple style="display:none" />
+      </div>
 
-    <div class="controls" style="margin-top:8px;">
-      <div class="control">
-        <label>Page size</label>
-        <select id="pageSize">
-          <option value="A4" selected>A4 (210 × 297 mm)</option>
-          <option value="Letter">Letter (8.5 × 11 in)</option>
-          <option value="Custom">Custom (mm)</option>
-        </select>
-        <div id="customSize" style="display:none; margin-top:8px;">
-          <input type="number" id="customW" placeholder="Width (mm)" min="10" value="210" />
-          <input type="number" id="customH" placeholder="Height (mm)" min="10" value="297" style="margin-top:6px;" />
+      <div class="controls" style="margin-top:8px;">
+        <div class="control">
+          <label>Page size</label>
+          <select id="pageSize">
+            <option value="A4" selected>A4 (210 × 297 mm)</option>
+            <option value="Letter">Letter (8.5 × 11 in)</option>
+            <option value="Custom">Custom (mm)</option>
+          </select>
+          <div id="customSize" style="display:none; margin-top:8px;">
+            <input type="number" id="customW" placeholder="Width (mm)" min="10" value="210" />
+            <input type="number" id="customH" placeholder="Height (mm)" min="10" value="297" style="margin-top:6px;" />
+          </div>
+        </div>
+
+        <div class="control">
+          <label>Orientation</label>
+          <select id="orientation">
+            <option>portrait</option>
+            <option>landscape</option>
+          </select>
+          <label style="margin-top:8px;">Margins (mm)</label>
+          <input type="number" id="margin" min="0" value="10" />
+        </div>
+
+        <div class="control">
+          <label>Scale mode</label>
+          <select id="scaleMode">
+            <option value="fit">Fit to page (keep aspect)</option>
+            <option value="fill">Fill page (crop)</option>
+            <option value="actual">Actual size (no scale)</option>
+          </select>
+
+          <label style="margin-top:8px;">Add page numbers</label>
+          <select id="pageNumbers">
+            <option value="no" selected>No</option>
+            <option value="bottom-center">Bottom — center</option>
+            <option value="bottom-right">Bottom — right</option>
+          </select>
+        </div>
+
+        <div class="control">
+          <label>Output filename</label>
+          <input type="text" id="outName" value="images.pdf" />
+          <label style="margin-top:8px;">PDF Quality (image compression)</label>
+          <input type="number" id="quality" min="10" max="100" value="90" />
         </div>
       </div>
 
-      <div class="control">
-        <label>Orientation</label>
-        <select id="orientation">
-          <option>portrait</option>
-          <option>landscape</option>
-        </select>
-        <label style="margin-top:8px;">Margins (mm)</label>
-        <input type="number" id="margin" min="0" value="10" />
+      <div style="display:flex; gap:12px; align-items:center;">
+        <button class="btn btn-primary" id="convertBtn">Convert JPG to PDF</button>
+        <button class="btn" id="clearBtn">Clear</button>
+        <div style="margin-left:auto" id="sizeInfo" class="small"></div>
       </div>
 
-      <div class="control">
-        <label>Scale mode</label>
-        <select id="scaleMode">
-          <option value="fit">Fit to page (keep aspect)</option>
-          <option value="fill">Fill page (crop)</option>
-          <option value="actual">Actual size (no scale)</option>
-        </select>
-
-        <label style="margin-top:8px;">Add page numbers</label>
-        <select id="pageNumbers">
-          <option value="no" selected>No</option>
-          <option value="bottom-center">Bottom — center</option>
-          <option value="bottom-right">Bottom — right</option>
-        </select>
+      <div class="progress" id="progressWrap">
+        <div class="bar" id="progressBar"></div>
       </div>
+      <div class="log" id="log">Ready.</div>
 
-      <div class="control">
-        <label>Output filename</label>
-        <input type="text" id="outName" value="images.pdf" />
-        <label style="margin-top:8px;">PDF Quality (image compression)</label>
-        <input type="number" id="quality" min="10" max="100" value="90" />
-      </div>
+      <div id="thumbs" class="thumbs" aria-live="polite"></div>
+
+      <div id="downloadWrap" style="margin-top:14px;"></div>
+      <!-- SEO Content -->
+      <pre id="log">Ready.</pre>
+      <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+      <hr style="margin:32px 0">
+
+      <section class="seo-content">
+        <h2>About JPG to PDF Converter</h2>
+        <p>
+          The JPG to PDF Converter tool allows you to easily convert multiple images (JPG, PNG, WEBP) into a single PDF
+          document.
+          You can reorder images, rotate them, choose page size and orientation, set margins, and select scaling
+          options.
+        </p>
+
+        <h2>Key Features</h2>
+        <ul>
+          <li>Supports multiple image formats: JPG, PNG, WEBP.</li>
+          <li>Drag and drop or select files via file picker.</li>
+          <li>Reorder images by dragging thumbnails.</li>
+          <li>Rotate images as needed.</li>
+          <li>Choose standard page sizes (A4, Letter) or set custom dimensions.</li>
+          <li>Select page orientation: portrait or landscape.</li>
+          <li>Set margins around images.</li>
+          <li>Choose scaling mode: fit to page, fill page, or actual size.</li>
+          <li>Add optional page numbers in different styles.</li>
+          <li>Adjust output PDF quality for smaller file sizes.</li>
+          <li>All processing is done locally in your browser for privacy and speed.</li>
+        </ul>
+
+        <h2>How to Use</h2>
+        <p>
+          To use the JPG to PDF Converter, simply drag and drop your image files into the designated area or click the
+          "Choose files" button to select them. Once the images are loaded, you can reorder and rotate them as needed.
+          Adjust the settings for page size, orientation, margins, scaling, and output filename. Finally, click the
+          "Convert to PDF" button to generate your PDF document.
+        </p>
+        <h2>Why Choose Our JPG to PDF Converter?</h2>
+        <p>
+          Our JPG to PDF converter stands out because it’s completely free, works entirely in your browser, and gives
+          you
+          full
+          control over the output. You can reorder, rotate, adjust margins, and choose from multiple page sizes — all
+          without
+          uploading your images to a server. Your privacy is guaranteed.
+        </p>
+
+        <h2>Common Use Cases for JPG to PDF Conversion</h2>
+        <ul>
+          <li>Create photo albums from multiple images.</li>
+          <li>Convert scanned documents to PDF for sharing.</li>
+          <li>Prepare presentations or reports with images.</li>
+          <li>Archive receipts, bills, or certificates in PDF format.</li>
+          <li>Merge multiple screenshots into a single PDF.</li>
+        </ul>
+
+        <h2>Tips for Best Results</h2>
+        <ul>
+          <li>Use high-resolution images for better print quality.</li>
+          <li>Select “Fit to page” to avoid cropping.</li>
+          <li>Lower PDF quality (e.g., 70%) to reduce file size for email sharing.</li>
+          <li>Add page numbers for easy navigation in multi-page PDFs.</li>
+        </ul>
+
+        <h2>Related Tools You Might Like</h2>
+        <p>
+          If you found this tool useful, check out our other free PDF tools:
+        </p>
+        <ul>
+          <li><a href="https://rdroidapps.com/windows-tools/pdf/merge-pdf.html" class="tool-btn">Merge PDF</a> – Combine
+            multiple PDFs into
+            one.
+          </li>
+          <br>
+          <li><a href="https://rdroidapps.com/windows-tools/pdf/split-pdf.html" class="tool-btn">Split PDF</a> – Extract
+            pages from a PDF.
+          </li>
+          <br>
+          <li><a href="https://rdroidapps.com/windows-tools/pdf/compress-pdf.html" class="tool-btn">Compress PDF</a> –
+            Reduce PDF file size
+            without losing quality.</li>
+          <br>
+          <li><a href="https://rdroidapps.com/windows-tools/pdf/pdf-to-word.html" class="tool-btn">PDF to Word</a> –
+            Convert PDF to
+            editable Word
+            documents.</li>
+        </ul>
+        <h2>Privacy and Security</h2>
+        <p>
+          Your images are processed entirely within your web browser, ensuring that your files remain private and
+          secure.
+          No data is uploaded to any server.
+        </p>
+        <h2>FAQ</h2>
+        <p>
+          <strong>Is this tool free?</strong> Yes, it's completely free to use.
+        </p>
+        <p>
+          <strong>How is my data kept private?</strong> All processing happens in your browser. No files are uploaded to
+          any server.
+        </p>
+        <p>
+          <strong>What image formats are supported?</strong> JPG, PNG, and WEBP formats are supported.
+        </p>
+        <p>
+          <strong>Can I convert PNG to PDF?</strong> Yes, this tool supports PNG, JPG, and WEBP formats.
+        </p>
+        <p>
+          <strong>What is the maximum number of images I can convert at once?</strong> There is no strict limit, but
+          performance
+          may vary based on your device’s memory.
+        </p>
+        <p>
+          <strong>Can I use this tool on mobile?</strong> Yes, it works on all modern browsers including Chrome,
+          Firefox,
+          and
+          Safari on mobile devices.
+        </p>
+        <p>
+          <strong>Does the tool support password protection for PDFs?</strong> Not yet, but we plan to add this feature
+          in
+          the
+          future.
+        </p>
+      </section>
     </div>
-
-    <div style="display:flex; gap:12px; align-items:center;">
-      <button class="btn btn-primary" id="convertBtn">Convert JPG to PDF</button>
-      <button class="btn" id="clearBtn">Clear</button>
-      <div style="margin-left:auto" id="sizeInfo" class="small"></div>
-    </div>
-
-    <div class="progress" id="progressWrap">
-      <div class="bar" id="progressBar"></div>
-    </div>
-    <div class="log" id="log">Ready.</div>
-
-    <div id="thumbs" class="thumbs" aria-live="polite"></div>
-
-    <div id="downloadWrap" style="margin-top:14px;"></div>
-    <!-- SEO Content -->
-    <pre id="log">Ready.</pre>
-    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
-    <hr style="margin:32px 0">
-
-    <section class="seo-content">
-      <h2>About JPG to PDF Converter</h2>
-      <p>
-        The JPG to PDF Converter tool allows you to easily convert multiple images (JPG, PNG, WEBP) into a single PDF
-        document.
-        You can reorder images, rotate them, choose page size and orientation, set margins, and select scaling options.
-      </p>
-
-      <h2>Key Features</h2>
-      <ul>
-        <li>Supports multiple image formats: JPG, PNG, WEBP.</li>
-        <li>Drag and drop or select files via file picker.</li>
-        <li>Reorder images by dragging thumbnails.</li>
-        <li>Rotate images as needed.</li>
-        <li>Choose standard page sizes (A4, Letter) or set custom dimensions.</li>
-        <li>Select page orientation: portrait or landscape.</li>
-        <li>Set margins around images.</li>
-        <li>Choose scaling mode: fit to page, fill page, or actual size.</li>
-        <li>Add optional page numbers in different styles.</li>
-        <li>Adjust output PDF quality for smaller file sizes.</li>
-        <li>All processing is done locally in your browser for privacy and speed.</li>
-      </ul>
-
-      <h2>How to Use</h2>
-      <p>
-        To use the JPG to PDF Converter, simply drag and drop your image files into the designated area or click the
-        "Choose files" button to select them. Once the images are loaded, you can reorder and rotate them as needed.
-        Adjust the settings for page size, orientation, margins, scaling, and output filename. Finally, click the
-        "Convert to PDF" button to generate your PDF document.
-      </p>
-      <h2>Why Choose Our JPG to PDF Converter?</h2>
-      <p>
-        Our JPG to PDF converter stands out because it’s completely free, works entirely in your browser, and gives you
-        full
-        control over the output. You can reorder, rotate, adjust margins, and choose from multiple page sizes — all
-        without
-        uploading your images to a server. Your privacy is guaranteed.
-      </p>
-
-      <h2>Common Use Cases for JPG to PDF Conversion</h2>
-      <ul>
-        <li>Create photo albums from multiple images.</li>
-        <li>Convert scanned documents to PDF for sharing.</li>
-        <li>Prepare presentations or reports with images.</li>
-        <li>Archive receipts, bills, or certificates in PDF format.</li>
-        <li>Merge multiple screenshots into a single PDF.</li>
-      </ul>
-
-      <h2>Tips for Best Results</h2>
-      <ul>
-        <li>Use high-resolution images for better print quality.</li>
-        <li>Select “Fit to page” to avoid cropping.</li>
-        <li>Lower PDF quality (e.g., 70%) to reduce file size for email sharing.</li>
-        <li>Add page numbers for easy navigation in multi-page PDFs.</li>
-      </ul>
-
-      <h2>Related Tools You Might Like</h2>
-      <p>
-        If you found this tool useful, check out our other free PDF tools:
-      </p>
-      <ul>
-        <li><a href="https://rdroidapps.com/windows-tools/pdf/merge-pdf.html" class="tool-btn">Merge PDF</a> – Combine
-          multiple PDFs into
-          one.
-        </li>
-        <br>
-        <li><a href="https://rdroidapps.com/windows-tools/pdf/split-pdf.html" class="tool-btn">Split PDF</a> – Extract
-          pages from a PDF.
-        </li>
-        <br>
-        <li><a href="https://rdroidapps.com/windows-tools/pdf/compress-pdf.html" class="tool-btn">Compress PDF</a> –
-          Reduce PDF file size
-          without losing quality.</li>
-        <br>
-        <li><a href="https://rdroidapps.com/windows-tools/pdf/pdf-to-word.html" class="tool-btn">PDF to Word</a> –
-          Convert PDF to
-          editable Word
-          documents.</li>
-      </ul>
-      <h2>Privacy and Security</h2>
-      <p>
-        Your images are processed entirely within your web browser, ensuring that your files remain private and secure.
-        No data is uploaded to any server.
-      </p>
-      <h2>FAQ</h2>
-      <p>
-        <strong>Is this tool free?</strong> Yes, it's completely free to use.
-      </p>
-      <p>
-        <strong>How is my data kept private?</strong> All processing happens in your browser. No files are uploaded to
-        any server.
-      </p>
-      <p>
-        <strong>What image formats are supported?</strong> JPG, PNG, and WEBP formats are supported.
-      </p>
-      <p>
-        <strong>Can I convert PNG to PDF?</strong> Yes, this tool supports PNG, JPG, and WEBP formats.
-      </p>
-      <p>
-        <strong>What is the maximum number of images I can convert at once?</strong> There is no strict limit, but
-        performance
-        may vary based on your device’s memory.
-      </p>
-      <p>
-        <strong>Can I use this tool on mobile?</strong> Yes, it works on all modern browsers including Chrome, Firefox,
-        and
-        Safari on mobile devices.
-      </p>
-      <p>
-        <strong>Does the tool support password protection for PDFs?</strong> Not yet, but we plan to add this feature in
-        the
-        future.
-      </p>
-    </section>
     <br>
     <a href="/index.html#pdf-tools" class="nav-button home">🏠 Back to PDF Home</a>
   </section>
