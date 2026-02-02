@@ -21,7 +21,7 @@
     <title>File Renamer — RDroid Apps</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/system/file-renamer.html" />
-    <link rel="stylesheet" href="/css/style.css">
+
     <meta name="description"
         content="Rename multiple files at once with advanced patterns. Support for sequential numbering, find/replace, case conversion, and metadata-based renaming." />
     <meta name="keywords"
@@ -29,12 +29,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <style>
-        .card {
-            width: auto;
-        }
-    </style>
-
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -57,513 +52,529 @@
         });
     </script>
 
-    <section class="section" role="main" aria-labelledby="title">
-        <h1 id="title">File Renamer</h1>
-        <p class="lead">Rename multiple files at once with advanced patterns. Supports sequential numbering,
-            find/replace,
-            case conversion, and more. All processing happens locally in your browser.</p>
+    <section class="tool-section">
+        <div class="card">
+            <h1 id="title">File Renamer</h1>
+            <p class="lead">Rename multiple files at once with advanced patterns. Supports sequential numbering,
+                find/replace,
+                case conversion, and more. All processing happens locally in your browser.</p>
 
-        <div class="card" style="margin-top: 24px;">
-            <div class="drop" id="dropArea">
-                <p>📁 Drop files here to rename</p>
-                <p class="small">or</p>
-                <button class="btn" id="chooseBtn">Choose Files</button>
-                <input type="file" id="fileInput" multiple style="display:none" />
-                <p class="small" style="margin-top: 12px;">Supports all file types. Files are processed locally.</p>
-            </div>
-
-            <div class="tabs" style="margin-top: 20px;">
-                <button class="tab-btn active" data-tab="basic">Basic Rename</button>
-                <button class="tab-btn" data-tab="advanced">Advanced Patterns</button>
-                <button class="tab-btn" data-tab="metadata">Metadata</button>
-                <button class="tab-btn" data-tab="preview">Preview & Edit</button>
-            </div>
-
-            <!-- Basic Rename Tab -->
-            <div class="tab-content active" id="basic">
-                <div class="row" style="margin-top: 15px;">
-                    <div class="col">
-                        <div class="control">
-                            <label>Naming Pattern</label>
-                            <select id="namingPattern">
-                                <option value="sequential">Sequential Numbering</option>
-                                <option value="replace">Find & Replace</option>
-                                <option value="prefix">Add Prefix/Suffix</option>
-                                <option value="date">Add Date/Time</option>
-                                <option value="custom">Custom Pattern</option>
-                            </select>
-                        </div>
-
-                        <div id="sequentialOptions" class="pattern-options">
-                            <div class="optionRow">
-                                <label for="prefixText" class="small">Prefix:</label>
-                                <input type="text" id="prefixText" placeholder="Image_" value="File_">
-                            </div>
-                            <div class="optionRow">
-                                <label for="startNumber" class="small">Start Number:</label>
-                                <input type="number" id="startNumber" value="1" min="1">
-                            </div>
-                            <div class="optionRow">
-                                <label for="digits" class="small">Digits:</label>
-                                <input type="number" id="digits" value="3" min="1" max="6">
-                                <span class="small">(e.g., 001, 002)</span>
-                            </div>
-                            <div class="optionRow">
-                                <label for="suffixText" class="small">Suffix:</label>
-                                <input type="text" id="suffixText" placeholder="">
-                            </div>
-                        </div>
-
-                        <div id="replaceOptions" class="pattern-options" style="display: none;">
-                            <div class="optionRow">
-                                <label for="findText" class="small">Find:</label>
-                                <input type="text" id="findText" placeholder="Text to find">
-                            </div>
-                            <div class="optionRow">
-                                <label for="replaceWith" class="small">Replace With:</label>
-                                <input type="text" id="replaceWith" placeholder="Replacement text">
-                            </div>
-                            <div class="optionRow">
-                                <input type="checkbox" id="caseSensitive" checked>
-                                <label for="caseSensitive" class="small">Case sensitive</label>
-                            </div>
-                            <div class="optionRow">
-                                <input type="checkbox" id="regexMode">
-                                <label for="regexMode" class="small">Use regex</label>
-                            </div>
-                        </div>
-
-                        <div id="prefixOptions" class="pattern-options" style="display: none;">
-                            <div class="optionRow">
-                                <label for="addPrefix" class="small">Add Prefix:</label>
-                                <input type="text" id="addPrefix" placeholder="Prefix_">
-                            </div>
-                            <div class="optionRow">
-                                <label for="addSuffix" class="small">Add Suffix:</label>
-                                <input type="text" id="addSuffix" placeholder="_suffix">
-                            </div>
-                            <div class="optionRow">
-                                <input type="checkbox" id="keepOriginal">
-                                <label for="keepOriginal" class="small">Keep original filename</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="control">
-                            <label>Case Conversion</label>
-                            <select id="caseConversion">
-                                <option value="none">No change</option>
-                                <option value="lower">lowercase</option>
-                                <option value="upper">UPPERCASE</option>
-                                <option value="title">Title Case</option>
-                                <option value="sentence">Sentence case</option>
-                                <option value="camel">camelCase</option>
-                                <option value="pascal">PascalCase</option>
-                                <option value="snake">snake_case</option>
-                                <option value="kebab">kebab-case</option>
-                            </select>
-                        </div>
-
-                        <div class="control">
-                            <label>Space Handling</label>
-                            <select id="spaceHandling">
-                                <option value="keep">Keep spaces</option>
-                                <option value="underscore">Replace with _</option>
-                                <option value="dash">Replace with -</option>
-                                <option value="remove">Remove spaces</option>
-                                <option value="dot">Replace with .</option>
-                            </select>
-                        </div>
-
-                        <div class="control">
-                            <label>Extension Handling</label>
-                            <select id="extensionHandling">
-                                <option value="keep">Keep original</option>
-                                <option value="lower">Convert to lowercase</option>
-                                <option value="upper">Convert to UPPERCASE</option>
-                                <option value="remove">Remove extension</option>
-                                <option value="custom">Change to custom</option>
-                            </select>
-                            <input type="text" id="customExtension" placeholder=".txt"
-                                style="margin-top: 8px; display: none;">
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="control">
-                            <label>Date/Time Format</label>
-                            <select id="dateFormat">
-                                <option value="none">No date</option>
-                                <option value="YYYY-MM-DD">2023-12-31</option>
-                                <option value="DD-MM-YYYY">31-12-2023</option>
-                                <option value="MM-DD-YYYY">12-31-2023</option>
-                                <option value="YYYYMMDD">20231231</option>
-                                <option value="timestamp">Timestamp</option>
-                                <option value="custom">Custom format</option>
-                            </select>
-                            <input type="text" id="customDateFormat" placeholder="YYYY_MM_DD"
-                                style="margin-top: 8px; display: none;">
-                        </div>
-
-                        <div class="control">
-                            <label>Preview Sample</label>
-                            <div id="previewSample" class="small"
-                                style="padding: 8px; background: rgba(255,255,255,0.05); border-radius: 4px; margin-top: 8px;">
-                                original_file.txt → new_file_001.txt
-                            </div>
-                        </div>
-
-                        <div class="control">
-                            <label>Apply to</label>
-                            <select id="applyTo">
-                                <option value="all">All files</option>
-                                <option value="selected">Selected files only</option>
-                                <option value="filtered">Files matching pattern</option>
-                            </select>
-                            <input type="text" id="filterPattern" placeholder="*.jpg, *.png"
-                                style="margin-top: 8px; display: none;">
-                        </div>
-                    </div>
+            <div class="card" style="margin-top: 24px;">
+                <div class="drop" id="dropArea">
+                    <p>📁 Drop files here to rename</p>
+                    <p class="small">or</p>
+                    <button class="btn" id="chooseBtn">Choose Files</button>
+                    <input type="file" id="fileInput" multiple style="display:none" />
+                    <p class="small" style="margin-top: 12px;">Supports all file types. Files are processed locally.</p>
                 </div>
-            </div>
 
-            <!-- Advanced Patterns Tab -->
-            <div class="tab-content" id="advanced">
-                <div class="row" style="margin-top: 15px;">
-                    <div class="col">
-                        <div class="control">
-                            <label>Custom Pattern</label>
-                            <input type="text" id="customPattern" placeholder="[prefix][counter][suffix].[ext]"
-                                style="width: 100%;">
-                            <div class="small" style="margin-top: 8px;">
-                                Available tokens: [name], [ext], [counter], [date], [time], [random], [uuid]
+                <div class="tabs" style="margin-top: 20px;">
+                    <button class="tab-btn active" data-tab="basic">Basic Rename</button>
+                    <button class="tab-btn" data-tab="advanced">Advanced Patterns</button>
+                    <button class="tab-btn" data-tab="metadata">Metadata</button>
+                    <button class="tab-btn" data-tab="preview">Preview & Edit</button>
+                </div>
+
+                <!-- Basic Rename Tab -->
+                <div class="tab-content active" id="basic">
+                    <div class="row" style="margin-top: 15px;">
+                        <div class="col">
+                            <div class="control">
+                                <label>Naming Pattern</label>
+                                <select id="namingPattern">
+                                    <option value="sequential">Sequential Numbering</option>
+                                    <option value="replace">Find & Replace</option>
+                                    <option value="prefix">Add Prefix/Suffix</option>
+                                    <option value="date">Add Date/Time</option>
+                                    <option value="custom">Custom Pattern</option>
+                                </select>
+                            </div>
+
+                            <div id="sequentialOptions" class="pattern-options">
+                                <div class="optionRow">
+                                    <label for="prefixText" class="small">Prefix:</label>
+                                    <input type="text" id="prefixText" placeholder="Image_" value="File_">
+                                </div>
+                                <div class="optionRow">
+                                    <label for="startNumber" class="small">Start Number:</label>
+                                    <input type="number" id="startNumber" value="1" min="1">
+                                </div>
+                                <div class="optionRow">
+                                    <label for="digits" class="small">Digits:</label>
+                                    <input type="number" id="digits" value="3" min="1" max="6">
+                                    <span class="small">(e.g., 001, 002)</span>
+                                </div>
+                                <div class="optionRow">
+                                    <label for="suffixText" class="small">Suffix:</label>
+                                    <input type="text" id="suffixText" placeholder="">
+                                </div>
+                            </div>
+
+                            <div id="replaceOptions" class="pattern-options" style="display: none;">
+                                <div class="optionRow">
+                                    <label for="findText" class="small">Find:</label>
+                                    <input type="text" id="findText" placeholder="Text to find">
+                                </div>
+                                <div class="optionRow">
+                                    <label for="replaceWith" class="small">Replace With:</label>
+                                    <input type="text" id="replaceWith" placeholder="Replacement text">
+                                </div>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="caseSensitive" checked>
+                                    <label for="caseSensitive" class="small">Case sensitive</label>
+                                </div>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="regexMode">
+                                    <label for="regexMode" class="small">Use regex</label>
+                                </div>
+                            </div>
+
+                            <div id="prefixOptions" class="pattern-options" style="display: none;">
+                                <div class="optionRow">
+                                    <label for="addPrefix" class="small">Add Prefix:</label>
+                                    <input type="text" id="addPrefix" placeholder="Prefix_">
+                                </div>
+                                <div class="optionRow">
+                                    <label for="addSuffix" class="small">Add Suffix:</label>
+                                    <input type="text" id="addSuffix" placeholder="_suffix">
+                                </div>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="keepOriginal">
+                                    <label for="keepOriginal" class="small">Keep original filename</label>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="control">
-                            <label>Counter Settings</label>
-                            <div class="optionRow">
-                                <label for="counterStart" class="small">Start:</label>
-                                <input type="number" id="counterStart" value="1" min="0" style="width: 80px;">
+                        <div class="col">
+                            <div class="control">
+                                <label>Case Conversion</label>
+                                <select id="caseConversion">
+                                    <option value="none">No change</option>
+                                    <option value="lower">lowercase</option>
+                                    <option value="upper">UPPERCASE</option>
+                                    <option value="title">Title Case</option>
+                                    <option value="sentence">Sentence case</option>
+                                    <option value="camel">camelCase</option>
+                                    <option value="pascal">PascalCase</option>
+                                    <option value="snake">snake_case</option>
+                                    <option value="kebab">kebab-case</option>
+                                </select>
                             </div>
-                            <div class="optionRow">
-                                <label for="counterStep" class="small">Step:</label>
-                                <input type="number" id="counterStep" value="1" min="1" style="width: 80px;">
-                            </div>
-                            <div class="optionRow">
-                                <label for="counterDigits" class="small">Digits:</label>
-                                <input type="number" id="counterDigits" value="3" min="1" max="10" style="width: 80px;">
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col">
-                        <div class="control">
-                            <label>Text Transformations</label>
-                            <div class="optionRow">
-                                <input type="checkbox" id="truncateNames">
-                                <label for="truncateNames" class="small">Truncate names to</label>
-                                <input type="number" id="truncateLength" value="20" min="1" max="255"
-                                    style="width: 60px;" disabled>
-                                <span class="small">chars</span>
+                            <div class="control">
+                                <label>Space Handling</label>
+                                <select id="spaceHandling">
+                                    <option value="keep">Keep spaces</option>
+                                    <option value="underscore">Replace with _</option>
+                                    <option value="dash">Replace with -</option>
+                                    <option value="remove">Remove spaces</option>
+                                    <option value="dot">Replace with .</option>
+                                </select>
                             </div>
-                            <div class="optionRow">
-                                <input type="checkbox" id="removeAccents">
-                                <label for="removeAccents" class="small">Remove accents/diacritics</label>
-                            </div>
-                            <div class="optionRow">
-                                <input type="checkbox" id="removeSpecial">
-                                <label for="removeSpecial" class="small">Remove special characters</label>
-                            </div>
-                            <div class="optionRow">
-                                <input type="checkbox" id="asciiOnly">
-                                <label for="asciiOnly" class="small">ASCII characters only</label>
-                            </div>
-                        </div>
 
-                        <div class="control">
-                            <label>Random String</label>
-                            <div class="optionRow">
-                                <label for="randomLength" class="small">Length:</label>
-                                <input type="number" id="randomLength" value="8" min="1" max="32" style="width: 80px;">
-                            </div>
-                            <div class="optionRow">
-                                <input type="checkbox" id="randomLetters" checked>
-                                <label for="randomLetters" class="small">Include letters</label>
-                            </div>
-                            <div class="optionRow">
-                                <input type="checkbox" id="randomNumbers" checked>
-                                <label for="randomNumbers" class="small">Include numbers</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="control">
-                            <label>File Sorting</label>
-                            <select id="sortOrder">
-                                <option value="original">Original order</option>
-                                <option value="nameAsc">Name A-Z</option>
-                                <option value="nameDesc">Name Z-A</option>
-                                <option value="sizeAsc">Size Small-Large</option>
-                                <option value="sizeDesc">Size Large-Small</option>
-                                <option value="dateAsc">Date Old-New</option>
-                                <option value="dateDesc">Date New-Old</option>
-                                <option value="type">File type</option>
-                            </select>
-                        </div>
-
-                        <div class="control">
-                            <label>Undo/Redo</label>
-                            <div class="optionRow" style="justify-content: space-between;">
-                                <button class="btn" id="undoBtn" disabled>↩️ Undo</button>
-                                <button class="btn" id="redoBtn" disabled>↪️ Redo</button>
-                                <button class="btn" id="resetBtn">🔄 Reset</button>
+                            <div class="control">
+                                <label>Extension Handling</label>
+                                <select id="extensionHandling">
+                                    <option value="keep">Keep original</option>
+                                    <option value="lower">Convert to lowercase</option>
+                                    <option value="upper">Convert to UPPERCASE</option>
+                                    <option value="remove">Remove extension</option>
+                                    <option value="custom">Change to custom</option>
+                                </select>
+                                <input type="text" id="customExtension" placeholder=".txt"
+                                    style="margin-top: 8px; display: none;">
                             </div>
                         </div>
 
-                        <div class="control">
-                            <label>Batch Processing</label>
-                            <div class="optionRow">
-                                <input type="checkbox" id="skipExisting">
-                                <label for="skipExisting" class="small">Skip if name exists</label>
+                        <div class="col">
+                            <div class="control">
+                                <label>Date/Time Format</label>
+                                <select id="dateFormat">
+                                    <option value="none">No date</option>
+                                    <option value="YYYY-MM-DD">2023-12-31</option>
+                                    <option value="DD-MM-YYYY">31-12-2023</option>
+                                    <option value="MM-DD-YYYY">12-31-2023</option>
+                                    <option value="YYYYMMDD">20231231</option>
+                                    <option value="timestamp">Timestamp</option>
+                                    <option value="custom">Custom format</option>
+                                </select>
+                                <input type="text" id="customDateFormat" placeholder="YYYY_MM_DD"
+                                    style="margin-top: 8px; display: none;">
                             </div>
-                            <div class="optionRow">
-                                <input type="checkbox" id="preserveOriginals">
-                                <label for="preserveOriginals" class="small">Keep original files</label>
+
+                            <div class="control">
+                                <label>Preview Sample</label>
+                                <div id="previewSample" class="small"
+                                    style="padding: 8px; background: rgba(255,255,255,0.05); border-radius: 4px; margin-top: 8px;">
+                                    original_file.txt → new_file_001.txt
+                                </div>
+                            </div>
+
+                            <div class="control">
+                                <label>Apply to</label>
+                                <select id="applyTo">
+                                    <option value="all">All files</option>
+                                    <option value="selected">Selected files only</option>
+                                    <option value="filtered">Files matching pattern</option>
+                                </select>
+                                <input type="text" id="filterPattern" placeholder="*.jpg, *.png"
+                                    style="margin-top: 8px; display: none;">
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Metadata Tab -->
-            <div class="tab-content" id="metadata">
-                <div class="row" style="margin-top: 15px;">
-                    <div class="col">
-                        <div class="control">
-                            <label>Image Metadata</label>
-                            <div class="optionRow">
-                                <input type="checkbox" id="useExif">
-                                <label for="useExif" class="small">Use EXIF data for naming</label>
+                <!-- Advanced Patterns Tab -->
+                <div class="tab-content" id="advanced">
+                    <div class="row" style="margin-top: 15px;">
+                        <div class="col">
+                            <div class="control">
+                                <label>Custom Pattern</label>
+                                <input type="text" id="customPattern" placeholder="[prefix][counter][suffix].[ext]"
+                                    style="width: 100%;">
+                                <div class="small" style="margin-top: 8px;">
+                                    Available tokens: [name], [ext], [counter], [date], [time], [random], [uuid]
+                                </div>
                             </div>
-                            <div class="optionRow">
-                                <label for="exifPattern" class="small">EXIF Pattern:</label>
-                                <input type="text" id="exifPattern" placeholder="[date]_[camera]" disabled>
-                            </div>
-                            <div class="small" style="margin-top: 8px;">
-                                Available: [date], [time], [camera], [width]x[height]
+
+                            <div class="control">
+                                <label>Counter Settings</label>
+                                <div class="optionRow">
+                                    <label for="counterStart" class="small">Start:</label>
+                                    <input type="number" id="counterStart" value="1" min="0" style="width: 80px;">
+                                </div>
+                                <div class="optionRow">
+                                    <label for="counterStep" class="small">Step:</label>
+                                    <input type="number" id="counterStep" value="1" min="1" style="width: 80px;">
+                                </div>
+                                <div class="optionRow">
+                                    <label for="counterDigits" class="small">Digits:</label>
+                                    <input type="number" id="counterDigits" value="3" min="1" max="10"
+                                        style="width: 80px;">
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col">
-                        <div class="control">
-                            <label>Audio Metadata</label>
-                            <div class="optionRow">
-                                <input type="checkbox" id="useID3">
-                                <label for="useID3" class="small">Use ID3 tags for naming</label>
+                        <div class="col">
+                            <div class="control">
+                                <label>Text Transformations</label>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="truncateNames">
+                                    <label for="truncateNames" class="small">Truncate names to</label>
+                                    <input type="number" id="truncateLength" value="20" min="1" max="255"
+                                        style="width: 60px;" disabled>
+                                    <span class="small">chars</span>
+                                </div>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="removeAccents">
+                                    <label for="removeAccents" class="small">Remove accents/diacritics</label>
+                                </div>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="removeSpecial">
+                                    <label for="removeSpecial" class="small">Remove special characters</label>
+                                </div>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="asciiOnly">
+                                    <label for="asciiOnly" class="small">ASCII characters only</label>
+                                </div>
                             </div>
-                            <div class="optionRow">
-                                <label for="id3Pattern" class="small">ID3 Pattern:</label>
-                                <input type="text" id="id3Pattern" placeholder="[artist] - [title]" disabled>
-                            </div>
-                            <div class="small" style="margin-top: 8px;">
-                                Available: [artist], [title], [album], [track], [year]
+
+                            <div class="control">
+                                <label>Random String</label>
+                                <div class="optionRow">
+                                    <label for="randomLength" class="small">Length:</label>
+                                    <input type="number" id="randomLength" value="8" min="1" max="32"
+                                        style="width: 80px;">
+                                </div>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="randomLetters" checked>
+                                    <label for="randomLetters" class="small">Include letters</label>
+                                </div>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="randomNumbers" checked>
+                                    <label for="randomNumbers" class="small">Include numbers</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col">
-                        <div class="control">
-                            <label>Document Properties</label>
-                            <div class="optionRow">
-                                <input type="checkbox" id="useDocProps">
-                                <label for="useDocProps" class="small">Use document properties</label>
+                        <div class="col">
+                            <div class="control">
+                                <label>File Sorting</label>
+                                <select id="sortOrder">
+                                    <option value="original">Original order</option>
+                                    <option value="nameAsc">Name A-Z</option>
+                                    <option value="nameDesc">Name Z-A</option>
+                                    <option value="sizeAsc">Size Small-Large</option>
+                                    <option value="sizeDesc">Size Large-Small</option>
+                                    <option value="dateAsc">Date Old-New</option>
+                                    <option value="dateDesc">Date New-Old</option>
+                                    <option value="type">File type</option>
+                                </select>
                             </div>
-                            <div class="optionRow">
-                                <label for="docPattern" class="small">Document Pattern:</label>
-                                <input type="text" id="docPattern" placeholder="[title] - [author]" disabled>
+
+                            <div class="control">
+                                <label>Undo/Redo</label>
+                                <div class="optionRow" style="justify-content: space-between;">
+                                    <button class="btn" id="undoBtn" disabled>↩️ Undo</button>
+                                    <button class="btn" id="redoBtn" disabled>↪️ Redo</button>
+                                    <button class="btn" id="resetBtn">🔄 Reset</button>
+                                </div>
                             </div>
-                            <div class="small" style="margin-top: 8px;">
-                                Available: [title], [author], [subject], [keywords]
+
+                            <div class="control">
+                                <label>Batch Processing</label>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="skipExisting">
+                                    <label for="skipExisting" class="small">Skip if name exists</label>
+                                </div>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="preserveOriginals">
+                                    <label for="preserveOriginals" class="small">Keep original files</label>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card" style="margin-top: 15px; background: rgba(255,255,255,0.02);">
-                    <p class="small" style="text-align: center;">
-                        <strong>Note:</strong> Metadata extraction requires additional processing and may not work for
-                        all file types.
-                        For advanced metadata renaming, consider dedicated metadata tools.
-                    </p>
-                </div>
-            </div>
 
-            <!-- Preview & Edit Tab -->
-            <div class="tab-content" id="preview">
-                <div style="margin-top: 15px;">
-                    <div class="advanced-controls">
-                        <input type="text" id="searchPreview" placeholder="Search in files..." style="flex: 1;">
-                        <button class="btn" id="selectAllBtn">Select All</button>
-                        <button class="btn" id="deselectAllBtn">Deselect All</button>
-                        <button class="btn" id="invertSelectionBtn">Invert Selection</button>
-                    </div>
+                <!-- Metadata Tab -->
+                <div class="tab-content" id="metadata">
+                    <div class="row" style="margin-top: 15px;">
+                        <div class="col">
+                            <div class="control">
+                                <label>Image Metadata</label>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="useExif">
+                                    <label for="useExif" class="small">Use EXIF data for naming</label>
+                                </div>
+                                <div class="optionRow">
+                                    <label for="exifPattern" class="small">EXIF Pattern:</label>
+                                    <input type="text" id="exifPattern" placeholder="[date]_[camera]" disabled>
+                                </div>
+                                <div class="small" style="margin-top: 8px;">
+                                    Available: [date], [time], [camera], [width]x[height]
+                                </div>
+                            </div>
+                        </div>
 
-                    <div id="previewContainer" class="preview"
-                        style="margin-top: 10px; max-height: 400px; overflow: auto;">
-                        <div style="text-align: center; padding: 40px 20px; color: var(--muted);">
-                            <p>No files loaded yet</p>
-                            <p class="small">Add files to see preview of renamed files</p>
+                        <div class="col">
+                            <div class="control">
+                                <label>Audio Metadata</label>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="useID3">
+                                    <label for="useID3" class="small">Use ID3 tags for naming</label>
+                                </div>
+                                <div class="optionRow">
+                                    <label for="id3Pattern" class="small">ID3 Pattern:</label>
+                                    <input type="text" id="id3Pattern" placeholder="[artist] - [title]" disabled>
+                                </div>
+                                <div class="small" style="margin-top: 8px;">
+                                    Available: [artist], [title], [album], [track], [year]
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="control">
+                                <label>Document Properties</label>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="useDocProps">
+                                    <label for="useDocProps" class="small">Use document properties</label>
+                                </div>
+                                <div class="optionRow">
+                                    <label for="docPattern" class="small">Document Pattern:</label>
+                                    <input type="text" id="docPattern" placeholder="[title] - [author]" disabled>
+                                </div>
+                                <div class="small" style="margin-top: 8px;">
+                                    Available: [title], [author], [subject], [keywords]
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div style="display: flex; gap: 10px; margin-top: 15px;">
-                        <button class="btn" id="applyPreviewBtn" disabled>Apply Preview</button>
-                        <button class="btn" id="manualEditBtn" disabled>✏️ Manual Edit</button>
-                        <button class="btn" id="revertBtn" disabled>↩️ Revert Changes</button>
+                    <div class="card" style="margin-top: 15px; background: rgba(255,255,255,0.02);">
+                        <p class="small" style="text-align: center;">
+                            <strong>Note:</strong> Metadata extraction requires additional processing and may not work
+                            for
+                            all file types.
+                            For advanced metadata renaming, consider dedicated metadata tools.
+                        </p>
                     </div>
                 </div>
-            </div>
 
-            <div style="display: flex; gap: 12px; align-items: center; margin-top: 20px;">
-                <button class="btn btn-primary" id="renameBtn" disabled>🚀 Rename Files</button>
-                <button class="btn" id="clearBtn">Clear All</button>
-                <div style="margin-left: auto" id="fileCountInfo" class="small"></div>
-            </div>
+                <!-- Preview & Edit Tab -->
+                <div class="tab-content" id="preview">
+                    <div style="margin-top: 15px;">
+                        <div class="advanced-controls">
+                            <input type="text" id="searchPreview" placeholder="Search in files..." style="flex: 1;">
+                            <button class="btn" id="selectAllBtn">Select All</button>
+                            <button class="btn" id="deselectAllBtn">Deselect All</button>
+                            <button class="btn" id="invertSelectionBtn">Invert Selection</button>
+                        </div>
 
-            <div class="progress" id="progressWrap" style="display: none; margin-top: 15px;">
-                <div class="bar" id="progressBar"></div>
-            </div>
+                        <div id="previewContainer" class="preview"
+                            style="margin-top: 10px; max-height: 400px; overflow: auto;">
+                            <div style="text-align: center; padding: 40px 20px; color: var(--muted);">
+                                <p>No files loaded yet</p>
+                                <p class="small">Add files to see preview of renamed files</p>
+                            </div>
+                        </div>
 
-            <div id="downloadSection" style="display: none; margin-top: 20px;">
-                <h3>📥 Download Renamed Files</h3>
-                <div id="downloadContainer">
-                    <!-- Download links will appear here -->
+                        <div style="display: flex; gap: 10px; margin-top: 15px;">
+                            <button class="btn" id="applyPreviewBtn" disabled>Apply Preview</button>
+                            <button class="btn" id="manualEditBtn" disabled>✏️ Manual Edit</button>
+                            <button class="btn" id="revertBtn" disabled>↩️ Revert Changes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; align-items: center; margin-top: 20px;">
+                    <button class="btn btn-primary" id="renameBtn" disabled>🚀 Rename Files</button>
+                    <button class="btn" id="clearBtn">Clear All</button>
+                    <div style="margin-left: auto" id="fileCountInfo" class="small"></div>
+                </div>
+
+                <div class="progress" id="progressWrap" style="display: none; margin-top: 15px;">
+                    <div class="bar" id="progressBar"></div>
+                </div>
+
+                <div id="downloadSection" style="display: none; margin-top: 20px;">
+                    <h3>📥 Download Renamed Files</h3>
+                    <div id="downloadContainer">
+                        <!-- Download links will appear here -->
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 20px; background: rgba(255,255,255,0.02);">
+                    <h3>💡 Renaming Tips</h3>
+                    <ul class="about-points">
+                        <li><strong>Preview first:</strong> Always check the preview before applying changes</li>
+                        <li><strong>Use counters:</strong> Sequential numbering is great for organizing photos and
+                            documents
+                        </li>
+                        <li><strong>Remove spaces:</strong> Use underscores or dashes for better web compatibility</li>
+                        <li><strong>Case consistency:</strong> Stick to one case style (lowercase recommended)</li>
+                        <li><strong>Test with copies:</strong> Work on file copies until you're confident with the
+                            pattern
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="card" style="margin-top: 20px; background: rgba(255,255,255,0.02);">
-                <h3>💡 Renaming Tips</h3>
+            <hr style="margin: 32px 0;">
+            <section class="seo-content">
+                <h2>About File Renamer</h2>
+                <p>
+                    File Renamer is a powerful tool for batch renaming multiple files at once. It supports various
+                    renaming
+                    patterns including sequential numbering, find and replace, case conversion, and custom patterns with
+                    tokens.
+                    All processing happens locally in your browser, ensuring your files remain private and secure.
+                </p>
+
+                <h2>Key Features</h2>
                 <ul class="about-points">
-                    <li><strong>Preview first:</strong> Always check the preview before applying changes</li>
-                    <li><strong>Use counters:</strong> Sequential numbering is great for organizing photos and documents
+                    <li><strong>Multiple Renaming Methods:</strong> Sequential numbering, find/replace, prefix/suffix,
+                        date/time
+                        stamps</li>
+                    <li><strong>Case Conversion:</strong> Convert filenames to lowercase, UPPERCASE, Title Case,
+                        camelCase,
+                        snake_case, and kebab-case</li>
+                    <li><strong>Advanced Patterns:</strong> Custom patterns with tokens for counter, date, time, random
+                        strings</li>
+                    <li><strong>Text Transformations:</strong> Remove accents, special characters, truncate long names
                     </li>
-                    <li><strong>Remove spaces:</strong> Use underscores or dashes for better web compatibility</li>
-                    <li><strong>Case consistency:</strong> Stick to one case style (lowercase recommended)</li>
-                    <li><strong>Test with copies:</strong> Work on file copies until you're confident with the pattern
+                    <li><strong>File Sorting:</strong> Sort files by name, size, date, or type before renaming</li>
+                    <li><strong>Undo/Redo:</strong> Multiple levels of undo and redo for safe experimentation</li>
+                    <li><strong>Preview & Edit:</strong> Preview changes before applying, with manual editing option
+                    </li>
+                    <li><strong>No File Limits:</strong> Process as many files as your browser can handle</li>
+                    <li><strong>Privacy Guaranteed:</strong> All processing happens locally - no file upload to servers
                     </li>
                 </ul>
-            </div>
-        </div>
 
-        <hr style="margin: 32px 0;">
-        <section class="seo-content">
-            <h2>About File Renamer</h2>
-            <p>
-                File Renamer is a powerful tool for batch renaming multiple files at once. It supports various renaming
-                patterns including sequential numbering, find and replace, case conversion, and custom patterns with
-                tokens.
-                All processing happens locally in your browser, ensuring your files remain private and secure.
-            </p>
-
-            <h2>Key Features</h2>
-            <ul class="about-points">
-                <li><strong>Multiple Renaming Methods:</strong> Sequential numbering, find/replace, prefix/suffix,
-                    date/time
-                    stamps</li>
-                <li><strong>Case Conversion:</strong> Convert filenames to lowercase, UPPERCASE, Title Case, camelCase,
-                    snake_case, and kebab-case</li>
-                <li><strong>Advanced Patterns:</strong> Custom patterns with tokens for counter, date, time, random
-                    strings</li>
-                <li><strong>Text Transformations:</strong> Remove accents, special characters, truncate long names</li>
-                <li><strong>File Sorting:</strong> Sort files by name, size, date, or type before renaming</li>
-                <li><strong>Undo/Redo:</strong> Multiple levels of undo and redo for safe experimentation</li>
-                <li><strong>Preview & Edit:</strong> Preview changes before applying, with manual editing option</li>
-                <li><strong>No File Limits:</strong> Process as many files as your browser can handle</li>
-                <li><strong>Privacy Guaranteed:</strong> All processing happens locally - no file upload to servers</li>
-            </ul>
-
-            <h2>Common Use Cases</h2>
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 15px 0;">
-                <div class="card" style="background: rgba(10, 163, 127, 0.1);">
-                    <h4 style="color: #0aa37f;">📸 Photo Organization</h4>
-                    <p class="small">Rename vacation photos with dates and sequential numbers: "2023-12-25_001.jpg",
-                        "2023-12-25_002.jpg"</p>
+                <h2>Common Use Cases</h2>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 15px 0;">
+                    <div class="card" style="background: rgba(10, 163, 127, 0.1);">
+                        <h4 style="color: #0aa37f;">📸 Photo Organization</h4>
+                        <p class="small">Rename vacation photos with dates and sequential numbers: "2023-12-25_001.jpg",
+                            "2023-12-25_002.jpg"</p>
+                    </div>
+                    <div class="card" style="background: rgba(14, 165, 233, 0.1);">
+                        <h4 style="color: #0ea5e9;">📄 Document Management</h4>
+                        <p class="small">Standardize document names: "Invoice_202312_vendor.pdf",
+                            "Contract_202401_client.docx"</p>
+                    </div>
+                    <div class="card" style="background: rgba(139, 92, 246, 0.1);">
+                        <h4 style="color: #8b5cf6;">🎵 Media Files</h4>
+                        <p class="small">Rename music files: "Artist - Song Title.mp3", "Album - Track Number.mp3"</p>
+                    </div>
+                    <div class="card" style="background: rgba(245, 158, 11, 0.1);">
+                        <h4 style="color: #f59e0b;">💾 Web Development</h4>
+                        <p class="small">Convert filenames to web-friendly format: "my-image-file.jpg" →
+                            "my-image-file.jpg"
+                        </p>
+                    </div>
                 </div>
-                <div class="card" style="background: rgba(14, 165, 233, 0.1);">
-                    <h4 style="color: #0ea5e9;">📄 Document Management</h4>
-                    <p class="small">Standardize document names: "Invoice_202312_vendor.pdf",
-                        "Contract_202401_client.docx"</p>
-                </div>
-                <div class="card" style="background: rgba(139, 92, 246, 0.1);">
-                    <h4 style="color: #8b5cf6;">🎵 Media Files</h4>
-                    <p class="small">Rename music files: "Artist - Song Title.mp3", "Album - Track Number.mp3"</p>
-                </div>
-                <div class="card" style="background: rgba(245, 158, 11, 0.1);">
-                    <h4 style="color: #f59e0b;">💾 Web Development</h4>
-                    <p class="small">Convert filenames to web-friendly format: "my-image-file.jpg" → "my-image-file.jpg"
-                    </p>
-                </div>
-            </div>
 
-            <h2>Pattern Examples</h2>
-            <table class="table-preview">
-                <tr>
-                    <th>Original</th>
-                    <th>Pattern</th>
-                    <th>Result</th>
-                </tr>
-                <tr>
-                    <td>IMG_1234.jpg</td>
-                    <td>[prefix][counter].[ext]</td>
-                    <td>photo_001.jpg</td>
-                </tr>
-                <tr>
-                    <td>my document.txt</td>
-                    <td>Remove spaces + Title Case</td>
-                    <td>MyDocument.txt</td>
-                </tr>
-                <tr>
-                    <td>file-(1).pdf</td>
-                    <td>Find "(" replace with "_"</td>
-                    <td>file_1).pdf</td>
-                </tr>
-                <tr>
-                    <td>image.png</td>
-                    <td>Add date prefix</td>
-                    <td>20231231_image.png</td>
-                </tr>
-            </table>
+                <h2>Pattern Examples</h2>
+                <table class="table-preview">
+                    <tr>
+                        <th>Original</th>
+                        <th>Pattern</th>
+                        <th>Result</th>
+                    </tr>
+                    <tr>
+                        <td>IMG_1234.jpg</td>
+                        <td>[prefix][counter].[ext]</td>
+                        <td>photo_001.jpg</td>
+                    </tr>
+                    <tr>
+                        <td>my document.txt</td>
+                        <td>Remove spaces + Title Case</td>
+                        <td>MyDocument.txt</td>
+                    </tr>
+                    <tr>
+                        <td>file-(1).pdf</td>
+                        <td>Find "(" replace with "_"</td>
+                        <td>file_1).pdf</td>
+                    </tr>
+                    <tr>
+                        <td>image.png</td>
+                        <td>Add date prefix</td>
+                        <td>20231231_image.png</td>
+                    </tr>
+                </table>
 
-            <h2>Safety Tips</h2>
-            <ul class="about-points">
-                <li><strong>Always preview:</strong> Use the preview tab to see changes before applying them</li>
-                <li><strong>Work with copies:</strong> Test renaming patterns on file copies first</li>
-                <li><strong>Use undo feature:</strong> The undo button can revert changes if you make a mistake</li>
-                <li><strong>Check extensions:</strong> Be careful when changing file extensions - it can make files
-                    unopenable</li>
-                <li><strong>Backup important files:</strong> Keep backups of critical files before batch renaming</li>
-            </ul>
+                <h2>Safety Tips</h2>
+                <ul class="about-points">
+                    <li><strong>Always preview:</strong> Use the preview tab to see changes before applying them</li>
+                    <li><strong>Work with copies:</strong> Test renaming patterns on file copies first</li>
+                    <li><strong>Use undo feature:</strong> The undo button can revert changes if you make a mistake</li>
+                    <li><strong>Check extensions:</strong> Be careful when changing file extensions - it can make files
+                        unopenable</li>
+                    <li><strong>Backup important files:</strong> Keep backups of critical files before batch renaming
+                    </li>
+                </ul>
 
-            <h2>Technical Details</h2>
-            <p>
-                File Renamer uses HTML5 File API and JavaScript to process files entirely in your browser. No files are
-                uploaded to any server. The tool can handle hundreds of files simultaneously, limited only by your
-                browser's
-                memory capacity. For very large batches, consider processing in smaller groups.
-            </p>
-            <h2>Related System Tools</h2>
-            <p>
-                Check out our other system utilities:
-                <a href="/windows-tools/system/duplicate-file-finder.html" class="btn tools">Duplicate File Finder</a>,
-                <a href="/windows-tools/system/disk-usage-visualizer.html" class="btn tools">Disk Space Analyzer</a>,
-                <a href="/windows-tools/system/system-info.html" class="btn tools">System Info Checker</a>.
-            </p>
-
-        </section><br>
+                <h2>Technical Details</h2>
+                <p>
+                    File Renamer uses HTML5 File API and JavaScript to process files entirely in your browser. No files
+                    are
+                    uploaded to any server. The tool can handle hundreds of files simultaneously, limited only by your
+                    browser's
+                    memory capacity. For very large batches, consider processing in smaller groups.
+                </p>
+                <h2>Related System Tools</h2>
+                <p>
+                    Check out our other system utilities:
+                    <a href="/windows-tools/system/duplicate-file-finder.html" class="btn tools">Duplicate File
+                        Finder</a>,
+                    <a href="/windows-tools/system/disk-usage-visualizer.html" class="btn tools">Disk Space
+                        Analyzer</a>,
+                    <a href="/windows-tools/system/system-info.html" class="btn tools">System Info Checker</a>.
+                </p>
+            </section>
+        </div><br>
         <a href="/index.html#system-tools" class="nav-button home">🏠 Back to System Home</a>
     </section>
 
