@@ -21,7 +21,7 @@
     <title>Duplicate File Finder — RDroid Apps</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/system/duplicate-file-finder.html" />
-    <link rel="stylesheet" href="/css/style.css">
+
     <meta name="description"
         content="Find and remove duplicate files by comparing size, content, name, or hash. Recover disk space by deleting unnecessary duplicates." />
     <meta name="keywords"
@@ -30,11 +30,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    <style>
-        .card {
-            width: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -57,411 +53,434 @@
         });
     </script>
 
-    <section class="section" role="main" aria-labelledby="title">
-        <h1 id="title">Duplicate File Finder</h1>
-        <p class="lead">Find and remove duplicate files by comparing size, content, name, or hash. Recover disk space by
-            deleting unnecessary duplicates. All processing happens locally in your browser.</p>
+    <section class="tool-section">
+        <div class="card">
+            <h1 id="title">Duplicate File Finder</h1>
+            <p class="lead">Find and remove duplicate files by comparing size, content, name, or hash. Recover disk
+                space by
+                deleting unnecessary duplicates. All processing happens locally in your browser.</p>
 
-        <div class="card" style="margin-top: 24px;">
-            <div class="drop" id="dropArea">
-                <p>🔍 Drop files/folders here to scan for duplicates</p>
-                <p class="small">or</p>
-                <button class="btn" id="chooseBtn">Choose Files/Folders</button>
-                <input type="file" id="fileInput" webkitdirectory multiple style="display:none" />
-                <p class="small" style="margin-top: 12px;">For folder scanning, use Chrome/Edge. For other browsers,
-                    select
-                    multiple files.</p>
-            </div>
-
-            <div class="controls" style="margin-top: 20px;">
-                <div class="control">
-                    <label>Scan Method</label>
-                    <select id="scanMethod">
-                        <option value="quick">Quick Scan (File Size & Name)</option>
-                        <option value="content">Content Comparison</option>
-                        <option value="hash">Hash Comparison (MD5/SHA-1)</option>
-                        <option value="advanced">Advanced Comparison</option>
-                    </select>
+            <div class="card" style="margin-top: 24px;">
+                <div class="drop" id="dropArea">
+                    <p>🔍 Drop files/folders here to scan for duplicates</p>
+                    <p class="small">or</p>
+                    <button class="btn" id="chooseBtn">Choose Files/Folders</button>
+                    <input type="file" id="fileInput" webkitdirectory multiple style="display:none" />
+                    <p class="small" style="margin-top: 12px;">For folder scanning, use Chrome/Edge. For other browsers,
+                        select
+                        multiple files.</p>
                 </div>
-                <div class="control">
-                    <label>File Types to Scan</label>
-                    <select id="fileTypes">
-                        <option value="all">All File Types</option>
-                        <option value="images">Images Only (JPG, PNG, GIF)</option>
-                        <option value="documents">Documents Only (PDF, DOC, TXT)</option>
-                        <option value="media">Media Files (MP3, MP4, AVI)</option>
-                        <option value="custom">Custom Types</option>
-                    </select>
-                    <input type="text" id="customTypes" placeholder=".jpg,.png,.pdf"
-                        style="margin-top: 8px; display: none;">
-                </div>
-                <div class="control">
-                    <label>Minimum File Size</label>
-                    <select id="minSize">
-                        <option value="0">Any Size</option>
-                        <option value="1024">> 1 KB</option>
-                        <option value="1048576" selected>> 1 MB</option>
-                        <option value="10485760">> 10 MB</option>
-                        <option value="104857600">> 100 MB</option>
-                    </select>
-                </div>
-            </div>
 
-            <div class="advanced-controls" style="margin-top: 15px; display: none;" id="advancedOptions">
-                <div class="adv-col">
-                    <label class="small">Comparison Algorithm</label>
-                    <select id="hashAlgorithm">
-                        <option value="md5">MD5 (Fast)</option>
-                        <option value="sha1">SHA-1 (Reliable)</option>
-                        <option value="sha256">SHA-256 (Secure)</option>
-                    </select>
-                </div>
-                <div class="adv-col">
-                    <label class="small">Byte-by-byte Comparison</label>
-                    <select id="byteComparison">
-                        <option value="off">Off (Use Hash)</option>
-                        <option value="partial">Partial (First 1MB)</option>
-                        <option value="full">Full (Entire File)</option>
-                    </select>
-                </div>
-                <div class="adv-col">
-                    <label class="small">Similarity Threshold</label>
-                    <input type="range" id="similarityThreshold" min="80" max="100" value="100">
-                    <span class="small" id="thresholdValue">100% (Exact Match)</span>
-                </div>
-            </div>
-
-            <div style="display:flex; gap:12px; align-items:center; margin-top: 20px;">
-                <button class="btn btn-primary" id="scanBtn" disabled>🔍 Scan for Duplicates</button>
-                <button class="btn" id="clearBtn">Clear All</button>
-                <div style="margin-left:auto" id="scanSummary" class="small"></div>
-            </div>
-
-            <div class="progress" id="progressWrap" style="display: none; margin-top: 15px;">
-                <div class="bar" id="progressBar"></div>
-            </div>
-
-            <div class="tabs" style="margin-top: 20px;">
-                <button class="tab-btn active" data-tab="results">Duplicate Results</button>
-                <button class="tab-btn" data-tab="statistics">Statistics</button>
-                <button class="tab-btn" data-tab="preview">File Preview</button>
-                <button class="tab-btn" data-tab="settings">Scan Settings</button>
-            </div>
-
-            <!-- Results Tab -->
-            <div class="tab-content active" id="results">
-                <div style="margin-top: 15px;">
-                    <div class="advanced-controls">
-                        <button class="btn" id="selectAllDupes">Select All Duplicates</button>
-                        <button class="btn" id="deselectAllBtn">Deselect All</button>
-                        <button class="btn" id="keepNewestBtn">Keep Newest</button>
-                        <button class="btn" id="keepOldestBtn">Keep Oldest</button>
-                        <button class="btn" id="invertSelectionBtn">Invert Selection</button>
+                <div class="controls" style="margin-top: 20px;">
+                    <div class="control">
+                        <label>Scan Method</label>
+                        <select id="scanMethod">
+                            <option value="quick">Quick Scan (File Size & Name)</option>
+                            <option value="content">Content Comparison</option>
+                            <option value="hash">Hash Comparison (MD5/SHA-1)</option>
+                            <option value="advanced">Advanced Comparison</option>
+                        </select>
                     </div>
-
-                    <div id="resultsContainer" class="preview"
-                        style="margin-top: 10px; max-height: 500px; overflow: auto;">
-                        <div style="text-align: center; padding: 40px 20px; color: var(--muted);">
-                            <p>No duplicates found yet</p>
-                            <p class="small">Add files and click "Scan for Duplicates" to begin</p>
-                        </div>
+                    <div class="control">
+                        <label>File Types to Scan</label>
+                        <select id="fileTypes">
+                            <option value="all">All File Types</option>
+                            <option value="images">Images Only (JPG, PNG, GIF)</option>
+                            <option value="documents">Documents Only (PDF, DOC, TXT)</option>
+                            <option value="media">Media Files (MP3, MP4, AVI)</option>
+                            <option value="custom">Custom Types</option>
+                        </select>
+                        <input type="text" id="customTypes" placeholder=".jpg,.png,.pdf"
+                            style="margin-top: 8px; display: none;">
                     </div>
+                    <div class="control">
+                        <label>Minimum File Size</label>
+                        <select id="minSize">
+                            <option value="0">Any Size</option>
+                            <option value="1024">> 1 KB</option>
+                            <option value="1048576" selected>> 1 MB</option>
+                            <option value="10485760">> 10 MB</option>
+                            <option value="104857600">> 100 MB</option>
+                        </select>
+                    </div>
+                </div>
 
+                <div class="advanced-controls" style="margin-top: 15px; display: none;" id="advancedOptions">
+                    <div class="adv-col">
+                        <label class="small">Comparison Algorithm</label>
+                        <select id="hashAlgorithm">
+                            <option value="md5">MD5 (Fast)</option>
+                            <option value="sha1">SHA-1 (Reliable)</option>
+                            <option value="sha256">SHA-256 (Secure)</option>
+                        </select>
+                    </div>
+                    <div class="adv-col">
+                        <label class="small">Byte-by-byte Comparison</label>
+                        <select id="byteComparison">
+                            <option value="off">Off (Use Hash)</option>
+                            <option value="partial">Partial (First 1MB)</option>
+                            <option value="full">Full (Entire File)</option>
+                        </select>
+                    </div>
+                    <div class="adv-col">
+                        <label class="small">Similarity Threshold</label>
+                        <input type="range" id="similarityThreshold" min="80" max="100" value="100">
+                        <span class="small" id="thresholdValue">100% (Exact Match)</span>
+                    </div>
+                </div>
+
+                <div style="display:flex; gap:12px; align-items:center; margin-top: 20px;">
+                    <button class="btn btn-primary" id="scanBtn" disabled>🔍 Scan for Duplicates</button>
+                    <button class="btn" id="clearBtn">Clear All</button>
+                    <div style="margin-left:auto" id="scanSummary" class="small"></div>
+                </div>
+
+                <div class="progress" id="progressWrap" style="display: none; margin-top: 15px;">
+                    <div class="bar" id="progressBar"></div>
+                </div>
+
+                <div class="tabs" style="margin-top: 20px;">
+                    <button class="tab-btn active" data-tab="results">Duplicate Results</button>
+                    <button class="tab-btn" data-tab="statistics">Statistics</button>
+                    <button class="tab-btn" data-tab="preview">File Preview</button>
+                    <button class="tab-btn" data-tab="settings">Scan Settings</button>
+                </div>
+
+                <!-- Results Tab -->
+                <div class="tab-content active" id="results">
                     <div style="margin-top: 15px;">
-                        <h3>Selected for Removal</h3>
-                        <div id="selectedContainer" class="preview" style="min-height: 80px;">
-                            <div style="text-align: center; padding: 20px; color: var(--muted);">
-                                <p>No files selected for removal</p>
+                        <div class="advanced-controls">
+                            <button class="btn" id="selectAllDupes">Select All Duplicates</button>
+                            <button class="btn" id="deselectAllBtn">Deselect All</button>
+                            <button class="btn" id="keepNewestBtn">Keep Newest</button>
+                            <button class="btn" id="keepOldestBtn">Keep Oldest</button>
+                            <button class="btn" id="invertSelectionBtn">Invert Selection</button>
+                        </div>
+
+                        <div id="resultsContainer" class="preview"
+                            style="margin-top: 10px; max-height: 500px; overflow: auto;">
+                            <div style="text-align: center; padding: 40px 20px; color: var(--muted);">
+                                <p>No duplicates found yet</p>
+                                <p class="small">Add files and click "Scan for Duplicates" to begin</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Statistics Tab -->
-            <div class="tab-content" id="statistics">
-                <div
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
-                    <div class="card" style="text-align: center;">
-                        <h3>📁 Total Files</h3>
-                        <div style="font-size: 28px; font-weight: bold; color: var(--brand);" id="statTotalFiles">0
-                        </div>
-                    </div>
-                    <div class="card" style="text-align: center;">
-                        <h3>🔄 Duplicate Files</h3>
-                        <div style="font-size: 28px; font-weight: bold; color: var(--brand2);" id="statDuplicates">0
-                        </div>
-                    </div>
-                    <div class="card" style="text-align: center;">
-                        <h3>💾 Space Wasted</h3>
-                        <div style="font-size: 28px; font-weight: bold; color: var(--accent);" id="statWasted">0 B</div>
-                    </div>
-                    <div class="card" style="text-align: center;">
-                        <h3>🎯 Potential Savings</h3>
-                        <div style="font-size: 28px; font-weight: bold; color: var(--primary);" id="statSavings">0 B
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="margin-top: 15px;">
-                    <h3>Duplicate Distribution by Type</h3>
-                    <table class="table-preview" id="typeDistribution">
-                        <tr>
-                            <th>File Type</th>
-                            <th>Total Files</th>
-                            <th>Duplicates</th>
-                            <th>Space Wasted</th>
-                            <th>% Duplicate</th>
-                        </tr>
-                        <tr>
-                            <td colspan="5" style="text-align: center; color: var(--muted);">No data available</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="card" style="margin-top: 15px;">
-                    <h3>📊 Scan Summary</h3>
-                    <div id="scanStats" class="preview" style="padding: 15px;">
-                        <div style="text-align: center; color: var(--muted);">
-                            <p>Scan not performed yet</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Preview Tab -->
-            <div class="tab-content" id="preview">
-                <div style="margin-top: 15px;">
-                    <div class="advanced-controls">
-                        <input type="text" id="searchPreview" placeholder="Search duplicates..." style="flex: 1;">
-                        <button class="btn" id="compareBtn">Compare Files</button>
-                        <button class="btn" id="viewOriginalsBtn">View Originals</button>
-                    </div>
-
-                    <div style="display: flex; gap: 20px; margin-top: 15px;">
-                        <div style="flex: 1;">
-                            <h4>File Comparison</h4>
-                            <div id="fileComparison" class="preview" style="height: 300px; overflow: auto;">
-                                <div style="text-align: center; padding: 40px 20px; color: var(--muted);">
-                                    <p>Select duplicate group to compare files</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="flex: 1;">
-                            <h4>Image Preview (if available)</h4>
-                            <div id="imagePreview" class="preview"
-                                style="height: 300px; display: flex; align-items: center; justify-content: center;">
-                                <div style="text-align: center; color: var(--muted);">
-                                    <p>No image selected</p>
+                        <div style="margin-top: 15px;">
+                            <h3>Selected for Removal</h3>
+                            <div id="selectedContainer" class="preview" style="min-height: 80px;">
+                                <div style="text-align: center; padding: 20px; color: var(--muted);">
+                                    <p>No files selected for removal</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Settings Tab -->
-            <div class="tab-content" id="settings">
-                <div class="row" style="margin-top: 15px;">
-                    <div class="col">
-                        <div class="control">
-                            <label>Scan Options</label>
-                            <div class="optionRow">
-                                <input type="checkbox" id="ignoreEmpty" checked>
-                                <label for="ignoreEmpty" class="small">Ignore empty files (0 bytes)</label>
+                <!-- Statistics Tab -->
+                <div class="tab-content" id="statistics">
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                        <div class="card" style="text-align: center;">
+                            <h3>📁 Total Files</h3>
+                            <div style="font-size: 28px; font-weight: bold; color: var(--brand);" id="statTotalFiles">0
                             </div>
-                            <div class="optionRow">
-                                <input type="checkbox" id="ignoreSystem" checked>
-                                <label for="ignoreSystem" class="small">Ignore system/hidden files</label>
+                        </div>
+                        <div class="card" style="text-align: center;">
+                            <h3>🔄 Duplicate Files</h3>
+                            <div style="font-size: 28px; font-weight: bold; color: var(--brand2);" id="statDuplicates">0
                             </div>
-                            <div class="optionRow">
-                                <input type="checkbox" id="scanSubfolders" checked>
-                                <label for="scanSubfolders" class="small">Scan subfolders recursively</label>
+                        </div>
+                        <div class="card" style="text-align: center;">
+                            <h3>💾 Space Wasted</h3>
+                            <div style="font-size: 28px; font-weight: bold; color: var(--accent);" id="statWasted">0 B
                             </div>
-                            <div class="optionRow">
-                                <input type="checkbox" id="caseSensitive" checked>
-                                <label for="caseSensitive" class="small">Case-sensitive name comparison</label>
+                        </div>
+                        <div class="card" style="text-align: center;">
+                            <h3>🎯 Potential Savings</h3>
+                            <div style="font-size: 28px; font-weight: bold; color: var(--primary);" id="statSavings">0 B
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="control">
-                            <label>Auto-Selection Rules</label>
-                            <div class="optionRow">
-                                <input type="checkbox" id="autoKeepNewest">
-                                <label for="autoKeepNewest" class="small">Auto-keep newest file</label>
-                            </div>
-                            <div class="optionRow">
-                                <input type="checkbox" id="autoKeepShortest">
-                                <label for="autoKeepShortest" class="small">Auto-keep shortest path</label>
-                            </div>
-                            <div class="optionRow">
-                                <input type="checkbox" id="autoKeepOriginal">
-                                <label for="autoKeepOriginal" class="small">Auto-keep original (first found)</label>
-                            </div>
-                        </div>
+
+                    <div class="card" style="margin-top: 15px;">
+                        <h3>Duplicate Distribution by Type</h3>
+                        <table class="table-preview" id="typeDistribution">
+                            <tr>
+                                <th>File Type</th>
+                                <th>Total Files</th>
+                                <th>Duplicates</th>
+                                <th>Space Wasted</th>
+                                <th>% Duplicate</th>
+                            </tr>
+                            <tr>
+                                <td colspan="5" style="text-align: center; color: var(--muted);">No data available</td>
+                            </tr>
+                        </table>
                     </div>
-                    <div class="col">
-                        <div class="control">
-                            <label>Performance Settings</label>
-                            <div class="optionRow">
-                                <label for="chunkSize" class="small">Hash chunk size:</label>
-                                <select id="chunkSize" style="width: 120px;">
-                                    <option value="65536">64 KB (Fast)</option>
-                                    <option value="131072">128 KB</option>
-                                    <option value="262144" selected>256 KB (Balanced)</option>
-                                    <option value="524288">512 KB</option>
-                                    <option value="1048576">1 MB (Accurate)</option>
-                                </select>
-                            </div>
-                            <div class="optionRow">
-                                <label for="maxFiles" class="small">Max files per scan:</label>
-                                <select id="maxFiles" style="width: 120px;">
-                                    <option value="100">100</option>
-                                    <option value="500">500</option>
-                                    <option value="1000" selected>1,000</option>
-                                    <option value="5000">5,000</option>
-                                    <option value="10000">10,000</option>
-                                </select>
+
+                    <div class="card" style="margin-top: 15px;">
+                        <h3>📊 Scan Summary</h3>
+                        <div id="scanStats" class="preview" style="padding: 15px;">
+                            <div style="text-align: center; color: var(--muted);">
+                                <p>Scan not performed yet</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div style="display:flex; gap:12px; margin-top: 20px;">
-                <button class="btn btn-primary" id="deleteBtn" disabled>🗑️ Delete Selected</button>
-                <button class="btn" id="exportReportBtn" disabled>📄 Export Report</button>
-                <button class="btn" id="saveSessionBtn">💾 Save Session</button>
-                <button class="btn" id="loadSessionBtn">📂 Load Session</button>
-            </div>
+                <!-- Preview Tab -->
+                <div class="tab-content" id="preview">
+                    <div style="margin-top: 15px;">
+                        <div class="advanced-controls">
+                            <input type="text" id="searchPreview" placeholder="Search duplicates..." style="flex: 1;">
+                            <button class="btn" id="compareBtn">Compare Files</button>
+                            <button class="btn" id="viewOriginalsBtn">View Originals</button>
+                        </div>
 
-            <div id="downloadSection" style="display: none; margin-top: 20px;">
-                <h3>📥 Download Clean Files</h3>
-                <div id="downloadContainer">
-                    <!-- Download links will appear here -->
+                        <div style="display: flex; gap: 20px; margin-top: 15px;">
+                            <div style="flex: 1;">
+                                <h4>File Comparison</h4>
+                                <div id="fileComparison" class="preview" style="height: 300px; overflow: auto;">
+                                    <div style="text-align: center; padding: 40px 20px; color: var(--muted);">
+                                        <p>Select duplicate group to compare files</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="flex: 1;">
+                                <h4>Image Preview (if available)</h4>
+                                <div id="imagePreview" class="preview"
+                                    style="height: 300px; display: flex; align-items: center; justify-content: center;">
+                                    <div style="text-align: center; color: var(--muted);">
+                                        <p>No image selected</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Tab -->
+                <div class="tab-content" id="settings">
+                    <div class="row" style="margin-top: 15px;">
+                        <div class="col">
+                            <div class="control">
+                                <label>Scan Options</label>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="ignoreEmpty" checked>
+                                    <label for="ignoreEmpty" class="small">Ignore empty files (0 bytes)</label>
+                                </div>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="ignoreSystem" checked>
+                                    <label for="ignoreSystem" class="small">Ignore system/hidden files</label>
+                                </div>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="scanSubfolders" checked>
+                                    <label for="scanSubfolders" class="small">Scan subfolders recursively</label>
+                                </div>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="caseSensitive" checked>
+                                    <label for="caseSensitive" class="small">Case-sensitive name comparison</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="control">
+                                <label>Auto-Selection Rules</label>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="autoKeepNewest">
+                                    <label for="autoKeepNewest" class="small">Auto-keep newest file</label>
+                                </div>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="autoKeepShortest">
+                                    <label for="autoKeepShortest" class="small">Auto-keep shortest path</label>
+                                </div>
+                                <div class="optionRow">
+                                    <input type="checkbox" id="autoKeepOriginal">
+                                    <label for="autoKeepOriginal" class="small">Auto-keep original (first found)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="control">
+                                <label>Performance Settings</label>
+                                <div class="optionRow">
+                                    <label for="chunkSize" class="small">Hash chunk size:</label>
+                                    <select id="chunkSize" style="width: 120px;">
+                                        <option value="65536">64 KB (Fast)</option>
+                                        <option value="131072">128 KB</option>
+                                        <option value="262144" selected>256 KB (Balanced)</option>
+                                        <option value="524288">512 KB</option>
+                                        <option value="1048576">1 MB (Accurate)</option>
+                                    </select>
+                                </div>
+                                <div class="optionRow">
+                                    <label for="maxFiles" class="small">Max files per scan:</label>
+                                    <select id="maxFiles" style="width: 120px;">
+                                        <option value="100">100</option>
+                                        <option value="500">500</option>
+                                        <option value="1000" selected>1,000</option>
+                                        <option value="5000">5,000</option>
+                                        <option value="10000">10,000</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display:flex; gap:12px; margin-top: 20px;">
+                    <button class="btn btn-primary" id="deleteBtn" disabled>🗑️ Delete Selected</button>
+                    <button class="btn" id="exportReportBtn" disabled>📄 Export Report</button>
+                    <button class="btn" id="saveSessionBtn">💾 Save Session</button>
+                    <button class="btn" id="loadSessionBtn">📂 Load Session</button>
+                </div>
+
+                <div id="downloadSection" style="display: none; margin-top: 20px;">
+                    <h3>📥 Download Clean Files</h3>
+                    <div id="downloadContainer">
+                        <!-- Download links will appear here -->
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 20px; background: rgba(255,255,255,0.02);">
+                    <h3>💡 Duplicate Finding Tips</h3>
+                    <ul class="about-points">
+                        <li><strong>Start with quick scan:</strong> Use file size and name comparison first for speed
+                        </li>
+                        <li><strong>Verify before deleting:</strong> Always preview files before marking for deletion
+                        </li>
+                        <li><strong>Keep originals:</strong> When in doubt, keep the file with the original/earliest
+                            date
+                        </li>
+                        <li><strong>Check file contents:</strong> Files with same size but different names might still
+                            be
+                            duplicates</li>
+                        <li><strong>Backup important files:</strong> Always keep backups before deleting duplicates</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="card" style="margin-top: 20px; background: rgba(255,255,255,0.02);">
-                <h3>💡 Duplicate Finding Tips</h3>
-                <ul class="about-points">
-                    <li><strong>Start with quick scan:</strong> Use file size and name comparison first for speed</li>
-                    <li><strong>Verify before deleting:</strong> Always preview files before marking for deletion</li>
-                    <li><strong>Keep originals:</strong> When in doubt, keep the file with the original/earliest date
+            <hr style="margin: 32px 0;">
+            <section class="seo-content">
+                <h2>About Duplicate File Finder</h2>
+                <p>
+                    Duplicate File Finder helps you identify and remove duplicate files from your computer, freeing up
+                    valuable
+                    disk space. It uses multiple comparison methods including file size, name, content hash, and
+                    byte-by-byte
+                    comparison to ensure accurate detection. All processing happens locally in your browser for privacy
+                    and
+                    security.
+                </p>
+
+                <h2>How It Works</h2>
+                <ol class="about-points">
+                    <li><strong>File Collection:</strong> Select files or folders to scan for duplicates</li>
+                    <li><strong>Initial Filtering:</strong> Files are grouped by size (different sizes cannot be
+                        duplicates)
                     </li>
-                    <li><strong>Check file contents:</strong> Files with same size but different names might still be
-                        duplicates</li>
-                    <li><strong>Backup important files:</strong> Always keep backups before deleting duplicates</li>
+                    <li><strong>Content Comparison:</strong> Files with same size are compared using hash algorithms or
+                        direct
+                        byte comparison</li>
+                    <li><strong>Duplicate Grouping:</strong> Identical files are grouped together for review</li>
+                    <li><strong>Selection & Removal:</strong> Choose which duplicates to keep and which to remove</li>
+                    <li><strong>Cleanup:</strong> Download cleaned files or generate deletion report</li>
+                </ol>
+
+                <h2>Comparison Methods</h2>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 15px 0;">
+                    <div class="card" style="background: rgba(10, 163, 127, 0.1);">
+                        <h4 style="color: #0aa37f;">⚡ Quick Scan</h4>
+                        <p class="small">Compares file sizes and names. Fastest method but may miss some duplicates if
+                            files
+                            have
+                            different names.</p>
+                    </div>
+                    <div class="card" style="background: rgba(14, 165, 233, 0.1);">
+                        <h4 style="color: #0ea5e9;">🔍 Content Scan</h4>
+                        <p class="small">Reads file contents and compares byte patterns. More accurate but slower for
+                            large
+                            files.
+                        </p>
+                    </div>
+                    <div class="card" style="background: rgba(139, 92, 246, 0.1);">
+                        <h4 style="color: #8b5cf6;">🔐 Hash Comparison</h4>
+                        <p class="small">Computes cryptographic hashes (MD5, SHA-1, SHA-256) for each file. Very
+                            accurate
+                            and
+                            efficient for comparison.</p>
+                    </div>
+                    <div class="card" style="background: rgba(245, 158, 11, 0.1);">
+                        <h4 style="color: #f59e0b;">🎯 Advanced Scan</h4>
+                        <p class="small">Combines multiple methods with configurable thresholds. Can find similar but
+                            not
+                            identical
+                            files.</p>
+                    </div>
+                </div>
+
+                <h2>Common Sources of Duplicate Files</h2>
+                <ul class="about-points">
+                    <li><strong>Multiple Downloads:</strong> Downloading the same file multiple times to different
+                        locations
+                    </li>
+                    <li><strong>Backup Copies:</strong> Creating backups that include already existing files</li>
+                    <li><strong>Sync Conflicts:</strong> Cloud storage or sync services creating multiple versions</li>
+                    <li><strong>Software Installations:</strong> Applications copying the same files to multiple
+                        directories
+                    </li>
+                    <li><strong>Photo Imports:</strong> Importing photos from cameras or phones multiple times</li>
+                    <li><strong>Email Attachments:</strong> Saving the same attachment from multiple emails</li>
                 </ul>
-            </div>
-        </div>
 
-        <hr style="margin: 32px 0;">
-        <section class="seo-content">
-            <h2>About Duplicate File Finder</h2>
-            <p>
-                Duplicate File Finder helps you identify and remove duplicate files from your computer, freeing up
-                valuable
-                disk space. It uses multiple comparison methods including file size, name, content hash, and
-                byte-by-byte
-                comparison to ensure accurate detection. All processing happens locally in your browser for privacy and
-                security.
-            </p>
+                <h2>Safety Features</h2>
+                <ul class="about-points">
+                    <li><strong>Preview Before Delete:</strong> View file contents before marking for deletion</li>
+                    <li><strong>Auto-Selection Rules:</strong> Smart rules to automatically select which duplicates to
+                        keep
+                    </li>
+                    <li><strong>Undo Support:</strong> Multiple levels of undo for safe experimentation</li>
+                    <li><strong>Session Saving:</strong> Save scan results to resume later</li>
+                    <li><strong>Export Reports:</strong> Generate detailed reports of found duplicates</li>
+                    <li><strong>No Permanent Deletion:</strong> Files are only removed from the list, not from your
+                        computer
+                    </li>
+                </ul>
 
-            <h2>How It Works</h2>
-            <ol class="about-points">
-                <li><strong>File Collection:</strong> Select files or folders to scan for duplicates</li>
-                <li><strong>Initial Filtering:</strong> Files are grouped by size (different sizes cannot be duplicates)
-                </li>
-                <li><strong>Content Comparison:</strong> Files with same size are compared using hash algorithms or
-                    direct
-                    byte comparison</li>
-                <li><strong>Duplicate Grouping:</strong> Identical files are grouped together for review</li>
-                <li><strong>Selection & Removal:</strong> Choose which duplicates to keep and which to remove</li>
-                <li><strong>Cleanup:</strong> Download cleaned files or generate deletion report</li>
-            </ol>
+                <h2>Technical Details</h2>
+                <p>
+                    Duplicate File Finder uses the HTML5 File API to read files locally in your browser. For hash
+                    computation,
+                    it uses the Web Crypto API where available, with fallbacks to JavaScript implementations. The tool
+                    can
+                    handle thousands of files, though performance depends on file sizes and your computer's
+                    specifications.
+                    For very large files (>100MB), consider using the quick scan option or limiting the scan to specific
+                    folders.
+                </p>
+                <h2>Related System Tools</h2>
+                <p>
+                    You might also find these system tools useful:
+                <ul class="about-points">
+                    <li><a href="/windows-tools/system/startup-program-manager.html" class="btn tools">Startup
+                            Manager</a> -
+                        Manage which
+                        programs
+                        at startup.</li><br>
+                    <li><a href="/windows-tools/system/file-renamer.html" class="btn tools">Bulk File Renamer</a> -
+                        Rename
+                        multiple files
+                        once using patterns.</li><br>
+                    <li><a href="/windows-tools/system/folder-size-analyzer.html" class="btn tools">Folder Size
+                            Analyzer</a>
+                        - View and manage
+                        disk space usage by folder.</li>
+                </ul>
+                </p>
 
-            <h2>Comparison Methods</h2>
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 15px 0;">
-                <div class="card" style="background: rgba(10, 163, 127, 0.1);">
-                    <h4 style="color: #0aa37f;">⚡ Quick Scan</h4>
-                    <p class="small">Compares file sizes and names. Fastest method but may miss some duplicates if files
-                        have
-                        different names.</p>
-                </div>
-                <div class="card" style="background: rgba(14, 165, 233, 0.1);">
-                    <h4 style="color: #0ea5e9;">🔍 Content Scan</h4>
-                    <p class="small">Reads file contents and compares byte patterns. More accurate but slower for large
-                        files.
-                    </p>
-                </div>
-                <div class="card" style="background: rgba(139, 92, 246, 0.1);">
-                    <h4 style="color: #8b5cf6;">🔐 Hash Comparison</h4>
-                    <p class="small">Computes cryptographic hashes (MD5, SHA-1, SHA-256) for each file. Very accurate
-                        and
-                        efficient for comparison.</p>
-                </div>
-                <div class="card" style="background: rgba(245, 158, 11, 0.1);">
-                    <h4 style="color: #f59e0b;">🎯 Advanced Scan</h4>
-                    <p class="small">Combines multiple methods with configurable thresholds. Can find similar but not
-                        identical
-                        files.</p>
-                </div>
-            </div>
-
-            <h2>Common Sources of Duplicate Files</h2>
-            <ul class="about-points">
-                <li><strong>Multiple Downloads:</strong> Downloading the same file multiple times to different locations
-                </li>
-                <li><strong>Backup Copies:</strong> Creating backups that include already existing files</li>
-                <li><strong>Sync Conflicts:</strong> Cloud storage or sync services creating multiple versions</li>
-                <li><strong>Software Installations:</strong> Applications copying the same files to multiple directories
-                </li>
-                <li><strong>Photo Imports:</strong> Importing photos from cameras or phones multiple times</li>
-                <li><strong>Email Attachments:</strong> Saving the same attachment from multiple emails</li>
-            </ul>
-
-            <h2>Safety Features</h2>
-            <ul class="about-points">
-                <li><strong>Preview Before Delete:</strong> View file contents before marking for deletion</li>
-                <li><strong>Auto-Selection Rules:</strong> Smart rules to automatically select which duplicates to keep
-                </li>
-                <li><strong>Undo Support:</strong> Multiple levels of undo for safe experimentation</li>
-                <li><strong>Session Saving:</strong> Save scan results to resume later</li>
-                <li><strong>Export Reports:</strong> Generate detailed reports of found duplicates</li>
-                <li><strong>No Permanent Deletion:</strong> Files are only removed from the list, not from your computer
-                </li>
-            </ul>
-
-            <h2>Technical Details</h2>
-            <p>
-                Duplicate File Finder uses the HTML5 File API to read files locally in your browser. For hash
-                computation,
-                it uses the Web Crypto API where available, with fallbacks to JavaScript implementations. The tool can
-                handle thousands of files, though performance depends on file sizes and your computer's specifications.
-                For very large files (>100MB), consider using the quick scan option or limiting the scan to specific
-                folders.
-            </p>
-            <h2>Related System Tools</h2>
-            <p>
-                You might also find these system tools useful:
-            <ul class="about-points">
-                <li><a href="/windows-tools/system/startup-program-manager.html" class="btn tools">Startup Manager</a> -
-                    Manage which
-                    programs
-                    at startup.</li><br>
-                <li><a href="/windows-tools/system/file-renamer.html" class="btn tools">Bulk File Renamer</a> - Rename
-                    multiple files
-                    once using patterns.</li><br>
-                <li><a href="/windows-tools/system/folder-size-analyzer.html" class="btn tools">Folder Size Analyzer</a>
-                    - View and manage
-                    disk space usage by folder.</li>
-            </ul>
-            </p>
-
-        </section><br>
+            </section>
+        </div><br>
         <a href="/index.html#system-tools" class="nav-button home">🏠 Back to System Home</a>
     </section>
 
