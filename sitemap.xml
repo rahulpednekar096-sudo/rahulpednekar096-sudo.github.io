@@ -255,12 +255,6 @@
     </url>
 
     <url>
-        <loc>https://rdroidapps.com/windows-tools/system/system-info-checker.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <url>
         <loc>https://rdroidapps.com/windows-tools/system/startup-program-manager.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>

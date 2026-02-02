@@ -144,7 +144,6 @@ const sitePages = [
     { title: "Duplicate Finder", url: "/windows-tools/system/duplicate-file-finder.html" },
     { title: "Folder Size", url: "/windows-tools/system/folder-size-analyzer.html" },
     { title: "Startup Manager", url: "/windows-tools/system/startup-program-manager.html" },
-    { title: "System Info", url: "/windows-tools/system/system-info.html" },
     { title: "Disk Usage", url: "/windows-tools/system/disk-usage-visualizer.html" },
 
     //utility Tools
