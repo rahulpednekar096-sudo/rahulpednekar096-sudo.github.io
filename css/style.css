@@ -35,9 +35,9 @@
 body {
   background:
     linear-gradient(180deg,
-      rgba(3, 9, 61, 0.692),
-      rgba(2, 65, 138, 0.678)),
-    url("/assets/rdroidapps.webp");
+      rgb(1, 7, 68),
+      #022958 40%,
+      rgb(1, 59, 126));
   /* तुझा image path */
 
   background-size: cover;
@@ -2235,4 +2235,3 @@ h3 {
     content: none;
   }
 }
-
