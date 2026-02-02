@@ -2186,3 +2186,53 @@ h3 {
     font-size: 11px;
   }
 }
+
+/* ==================================
+   📱 MOBILE – META SECTION FIX
+   ================================== */
+@media (max-width: 480px) {
+
+  /* Meta container */
+  .meta {
+    padding-top: 12px !important;
+    margin-top: 16px !important;
+  }
+
+  /* Paragraphs stack neatly */
+  .meta p.small {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    line-height: 1.4;
+  }
+
+  /* Labels like Tags / Related / Tools */
+  .meta p.small strong {
+    width: 100%;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  /* All buttons / links inside meta */
+  .meta a.btn,
+  .meta a.btn-ghost,
+  .meta a.tool-btn {
+    white-space: normal !important;
+    font-size: 12px;
+    padding: 6px 10px;
+    margin: 2px 0;
+  }
+
+  /* Force each tool link on new line if needed */
+  .meta p.small a {
+    display: inline-block;
+  }
+
+  /* Remove visual separators */
+  .meta p.small span,
+  .meta p.small:has(a)::after {
+    content: none;
+  }
+}
+
