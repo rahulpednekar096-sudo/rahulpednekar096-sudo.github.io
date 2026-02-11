@@ -230,7 +230,7 @@ class BookEditorCore {
 
         const chapter = this.bookData.chapters.find(c => c.id === page.chapterId);
         const chapterInfo = chapter
-            ? `<div style="font-size: 10px; color: var(--brand);">${chapter.title}</div>`
+            ? `<div style="font-size: 12px; color: var(--brand2);">${chapter.title}</div>`
             : '';
 
         pageItem.innerHTML = `

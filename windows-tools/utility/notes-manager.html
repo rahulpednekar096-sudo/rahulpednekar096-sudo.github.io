@@ -4,16 +4,11 @@
 <head>
     <!-- Monetag In-Page Push -->
     <script>(function (s) { s.dataset.zone = '10573804', s.src = 'https://nap5k.com/tag.min.js' })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
     <!-- Site-wide script -->
     <script src="/js/script.js" defer></script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-4T90FQG02K');
-    </script>
+
     <meta charset="utf-8" />
     <title>Notes Manager — RDroid Apps</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -63,7 +58,7 @@
                     📝 Note Title
                 </label>
                 <input type="text" id="noteTitle" placeholder="Enter note title"
-                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2b2f33; background: #0f3547; color: #e6eef0;" />
+                    style="width: 96%; padding: 9px; border-radius: 8px; border: 1px solid #2b2f33; background: #0f3547; color: #e6eef0;" />
             </div>
 
             <div class="control" style="margin-top: 16px;">
@@ -71,7 +66,7 @@
                     📄 Note Content
                 </label>
                 <textarea id="noteContent" rows="10" placeholder="Start typing your note here..."
-                    style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #2b2f33; background: #0f3547; color: #e6eef0; font-family: Arial, sans-serif;"></textarea>
+                    style="width: 96%; padding: 9px; border-radius: 8px; border: 1px solid #2b2f33; background: #0f3547; color: #e6eef0; font-family: Arial, sans-serif;"></textarea>
             </div>
 
             <div style="display:flex; gap:12px; align-items:center; margin-top: 20px;">
@@ -469,6 +464,7 @@
         }
     </style>
     </section>
+    <script type="module" src="/js/firebase-config.js"></script>
 </body>
 
 </html>

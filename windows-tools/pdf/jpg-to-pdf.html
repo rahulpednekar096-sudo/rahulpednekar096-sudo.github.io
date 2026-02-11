@@ -4,16 +4,11 @@
 <head>
   <!-- Monetag In-Page Push -->
   <script>(function (s) { s.dataset.zone = '10573804', s.src = 'https://nap5k.com/tag.min.js' })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
   <!-- Site-wide script -->
   <script src="/js/script.js" defer></script>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-4T90FQG02K');
-  </script>
+
   <meta charset="utf-8" />
   <title>JPG → PDF Converter — Free Online Tool | RDroid Apps (Upgraded)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -48,14 +43,16 @@
       $("#footer-container").load("/components/footer.html");
     });
   </script>
-
-  <section class="tool-section">
+  <section class="hero">
+    <h1 style="text-align:center;">
+      JPG → PDF Converter — Free Online Tool | RDroid Apps (Upgraded)</h1>
+    <h3 class="lead" style="text-align: center;">Convert multiple JPG, PNG, WEBP images to PDF in seconds. Rotate, set
+      page size, margins, and
+      compress quality.
+      100% free, secure, and works offline.</h3>
+  </section>
+  <section class="tool-section" style="width: 90%;">
     <div class="card">
-      <h1 id="title">JPG → PDF Converter — Free Online Tool | RDroid Apps (Upgraded)</h1>
-      <p class="lead">Convert multiple JPG, PNG, WEBP images to PDF in seconds. Rotate, set page size, margins, and
-        compress quality.
-        100% free, secure, and works offline.</p>
-
       <div class="drop" id="dropArea">Drop images here or <button class="btn" id="chooseBtn">Choose files</button>
         <input type="file" id="fileInput" accept="image/*" multiple style="display:none" />
       </div>
@@ -246,8 +243,7 @@
           future.
         </p>
       </section>
-    </div>
-    <br>
+    </div><br>
     <a href="/index.html#pdf-tools" class="nav-button home">🏠 Back to PDF Home</a>
   </section>
   <!-- FOOTER (loaded from external file) -->
@@ -614,6 +610,7 @@
     updateSizeInfo();
   </script>
 
+  <script type="module" src="/js/firebase-config.js"></script>
 </body>
 
 </html>

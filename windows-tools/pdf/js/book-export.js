@@ -690,6 +690,7 @@ Generated EPUB metadata:
         <p>Created with Book Editor Pro - A free online book writing tool</p>
         <p>Generated on: ${new Date().toLocaleString()}</p>
     </footer>
+
 </body>
 </html>`;
 

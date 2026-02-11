@@ -4,16 +4,11 @@
 <head>
     <!-- Monetag In-Page Push -->
     <script>(function (s) { s.dataset.zone = '10573804', s.src = 'https://nap5k.com/tag.min.js' })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
     <!-- Site-wide script -->
     <script src="/js/script.js" defer></script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-4T90FQG02K');
-    </script>
+
     <meta charset="utf-8" />
     <title>Duplicate File Finder — RDroid Apps</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -388,7 +383,7 @@
                 <div
                     style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 15px 0;">
                     <div class="card" style="background: rgba(10, 163, 127, 0.1);">
-                        <h4 style="color: #0aa37f;">⚡ Quick Scan</h4>
+                        <h4 style="color: #23fdca;">⚡ Quick Scan</h4>
                         <p class="small">Compares file sizes and names. Fastest method but may miss some duplicates if
                             files
                             have
@@ -409,7 +404,7 @@
                             efficient for comparison.</p>
                     </div>
                     <div class="card" style="background: rgba(245, 158, 11, 0.1);">
-                        <h4 style="color: #f59e0b;">🎯 Advanced Scan</h4>
+                        <h4 style="color: #fcd89b;">🎯 Advanced Scan</h4>
                         <p class="small">Combines multiple methods with configurable thresholds. Can find similar but
                             not
                             identical
@@ -1443,6 +1438,7 @@
         // Initialize
         updateScanSummary();
     </script>
+    <script type="module" src="/js/firebase-config.js"></script>
 </body>
 
 </html>

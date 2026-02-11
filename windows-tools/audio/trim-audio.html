@@ -4,16 +4,11 @@
 <head>
     <!-- Monetag In-Page Push -->
     <script>(function (s) { s.dataset.zone = '10573804', s.src = 'https://nap5k.com/tag.min.js' })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
     <!-- Site-wide script -->
     <script src="/js/script.js" defer></script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-4T90FQG02K');
-    </script>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description"
@@ -59,8 +54,9 @@
             <input type="file" id="audioFile" accept="audio/*" hidden>
 
             <div class="row">
-                <b>Total Duration:</b>
-                <span id="totalDur">—</span> sec
+                <label>Total Duration:</label>
+                <span id="totalDur">—</span>
+                <li>sec</li>
             </div>
 
             <div class="row">
@@ -76,8 +72,9 @@
             </div>
 
             <div class="row">
-                <b>Selected Length:</b>
-                <span id="selLen">—</span> sec
+                <label>Selected Length:</label>
+                <span id="selLen">—</span>
+                <li>sec</li>
             </div>
 
             <div class="actions">
@@ -275,6 +272,7 @@
             return view;
         }
     </script>
+    <script type="module" src="/js/firebase-config.js"></script>
 </body>
 
 </html>

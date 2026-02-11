@@ -4,16 +4,11 @@
 <head>
     <!-- Monetag In-Page Push -->
     <script>(function (s) { s.dataset.zone = '10573804', s.src = 'https://nap5k.com/tag.min.js' })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
     <!-- Site-wide script -->
     <script src="/js/script.js" defer></script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-4T90FQG02K');
-    </script>
+
     <meta charset="utf-8" />
     <title>Startup Program Manager — RDroid Apps</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -113,7 +108,7 @@
             <div class="tab-content active" id="all">
                 <div class="files-list">
                     <div class="file-item"
-                        style="background: rgba(255,255,255,0.02); border-bottom: none; font-weight: bold;">
+                        style="background: rgb(241 144 144 / 68%); border-bottom: none; font-weight: bold;">
                         <div style="flex: 2;">Program Name</div>
                         <div>Status</div>
                         <div>Impact</div>
@@ -296,7 +291,7 @@
             <h2>What to Disable vs. What to Keep</h2>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 15px 0;">
                 <div class="card" style="background: rgba(10, 163, 127, 0.1);">
-                    <h4 style="color: #0aa37f;">✅ Keep Enabled</h4>
+                    <h4 style="color: #24fcc9;">✅ Keep Enabled</h4>
                     <ul class="about-points">
                         <li>Security software (antivirus, firewall)</li>
                         <li>Hardware drivers (graphics, sound)</li>
@@ -306,7 +301,7 @@
                     </ul>
                 </div>
                 <div class="card" style="background: rgba(239, 68, 68, 0.1);">
-                    <h4 style="color: #ef4444;">❌ Can Disable</h4>
+                    <h4 style="color: #f79393;">❌ Can Disable</h4>
                     <ul class="about-points">
                         <li>Update checkers for rarely used software</li>
                         <li>Media players and launchers</li>
@@ -1156,6 +1151,7 @@ ${item.essential ? '⚠️ Essential: This item is required for system operation
         // Initial display update
         updateDisplay();
     </script>
+    <script type="module" src="/js/firebase-config.js"></script>
 </body>
 
 </html>

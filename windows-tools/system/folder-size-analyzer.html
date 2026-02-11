@@ -4,16 +4,11 @@
 <head>
     <!-- Monetag In-Page Push -->
     <script>(function (s) { s.dataset.zone = '10573804', s.src = 'https://nap5k.com/tag.min.js' })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
     <!-- Site-wide script -->
     <script src="/js/script.js" defer></script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-4T90FQG02K');
-    </script>
+
     <meta charset="utf-8" />
     <title>Folder Size Analyzer — RDroid Apps</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -62,10 +57,10 @@
                 <p class="small">or</p>
                 <button class="btn" id="chooseBtn">Choose Folders/Files</button>
                 <input type="file" id="fileInput" webkitdirectory multiple style="display:none" />
-                <p class="small" style="margin-top: 12px;">Note: For folder selection, use Chrome/Edge browsers. For
-                    other
-                    browsers, select multiple files.</p>
             </div>
+            <p class="small" style="margin-top: 12px;">Note: For folder selection, use Chrome/Edge browsers. For
+                other
+                browsers, select multiple files.</p>
 
             <div class="controls" style="margin-top: 20px;">
                 <div class="control">
@@ -774,6 +769,7 @@ Generated on: ${new Date().toLocaleString()}
         // Initialize
         updateResults();
     </script>
+    <script type="module" src="/js/firebase-config.js"></script>
 </body>
 
 </html>
