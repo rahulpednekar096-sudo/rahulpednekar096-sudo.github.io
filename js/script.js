@@ -16,41 +16,6 @@ function toggleLogin() {
   box.style.display = box.style.display === "block" ? "none" : "block";
 }
 
-// --------------------
-// THEME SWITCHER
-// --------------------
-function toggleTheme() {
-  document.body.classList.toggle("light-theme");
-
-  // Save preference
-  const mode = document.body.classList.contains("light-theme") ? "light" : "dark";
-  localStorage.setItem("theme", mode);
-
-  // Update icon
-  updateThemeIcon();
-}
-
-function updateThemeIcon() {
-  const btn = document.querySelector(".theme-btn");
-  if (!btn) return;
-
-  if (document.body.classList.contains("light-theme")) {
-    btn.textContent = "☀️";
-  } else {
-    btn.textContent = "🌙";
-  }
-}
-
-// On page load, apply saved theme
-document.addEventListener("DOMContentLoaded", () => {
-  const saved = localStorage.getItem("theme");
-  if (saved === "light") {
-    document.body.classList.add("light-theme");
-  }
-
-  updateThemeIcon();
-});
-
 // Close menu & login popup when clicking outside
 document.addEventListener("click", function(e) {
   const drawer = document.getElementById("drawer");

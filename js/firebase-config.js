@@ -1,14 +1,15 @@
 /**
  * firebase-config.js
  * RDroid Apps – Firebase v12 Modular Initialization
- * 
- * This module exports the initialized Firebase app, authentication, and Firestore instances.
- * Uses ES6 imports for Firebase v12 modular SDK.
  */
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+import {
+  getAnalytics,
+  setAnalyticsCollectionEnabled
+} from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
 
 // Firebase Configuration
 const firebaseConfig = {
@@ -21,13 +22,29 @@ const firebaseConfig = {
   measurementId: "G-4T90FQG02K"
 };
 
-// Initialize Firebase App
+// Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-
-// Initialize Authentication
 export const auth = getAuth(app);
-
-// Initialize Firestore Database
 export const db = getFirestore(app);
+
+let analytics = null;
+
+try {
+  analytics = getAnalytics(app);
+
+  const isTesting =
+    location.hostname === "localhost" ||
+    location.hostname === "127.0.0.1" ||
+    location.search.includes("test=true");
+
+  if (isTesting) {
+    setAnalyticsCollectionEnabled(analytics, false);
+    console.log("🚫 Firebase Analytics disabled (testing)");
+  } else {
+    console.log("✅ Firebase Analytics enabled (production)");
+  }
+} catch (e) {
+  console.warn("⚠️ Analytics not supported in this environment");
+}
 
 console.log("✓ Firebase v12 initialized successfully");

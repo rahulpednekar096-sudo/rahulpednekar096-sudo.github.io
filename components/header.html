@@ -22,8 +22,118 @@
                 <a href="/blog/index.html" class="btn tools">Blog section</a>
             </div>
         </section>
+
+        <!-- Add Theme Toggle Button Here -->
+        <button class="theme-btn" id="themeToggle" title="Toggle Theme">
+            ☀️
+        </button>
+
         <a href="/auth/login.html" class="login-btn">🔑 Login</a>
     </header>
+
+    <!-- Add this small script to handle theme immediately -->
+    <script>
+        // Quick theme initialization for header
+        (function () {
+            // Apply saved theme to header immediately
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.body.className = savedTheme + '-theme';
+
+            // Update button text
+            const themeBtn = document.getElementById('themeToggle');
+            if (themeBtn) {
+                themeBtn.textContent = savedTheme === 'light' ? '🌙' : '☀️';
+            }
+        })();
+
+        // ========================================
+        // THEME MANAGEMENT SYSTEM
+        // ========================================
+
+        // Initialize theme system
+        function initThemeSystem() {
+            // Get theme button and body
+            const themeBtn = document.getElementById('themeToggle');
+            const body = document.body;
+
+            // If no theme button, exit
+            if (!themeBtn) return;
+
+            // Get current theme from localStorage or default to dark
+            let currentTheme = localStorage.getItem('theme') || 'dark';
+
+            // Apply theme to body
+            function applyTheme(theme) {
+                // Remove both classes
+                body.classList.remove('dark-theme', 'light-theme');
+                // Add current theme class
+                body.classList.add(theme + '-theme');
+
+                // Update button
+                themeBtn.textContent = theme === 'light' ? '🌙' : '☀️';
+                themeBtn.title = theme === 'light'
+                    ? 'Switch to Dark Theme'
+                    : 'Switch to Light Theme';
+
+                // Save to localStorage
+                localStorage.setItem('theme', theme);
+
+                // Update theme color meta tag for mobile browsers
+                updateThemeMeta(theme);
+
+                // Dispatch event for other scripts
+                document.dispatchEvent(new CustomEvent('themeChanged', {
+                    detail: { theme: theme }
+                }));
+            }
+
+            // Update meta tag for mobile browser theme colors
+            function updateThemeMeta(theme) {
+                let metaThemeColor = document.querySelector('meta[name="theme-color"]');
+                if (!metaThemeColor) {
+                    metaThemeColor = document.createElement('meta');
+                    metaThemeColor.name = "theme-color";
+                    document.head.appendChild(metaThemeColor);
+                }
+                metaThemeColor.content = theme === 'light' ? '#3b82f6' : '#020617';
+            }
+
+            // Toggle theme function
+            function toggleTheme() {
+                currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                applyTheme(currentTheme);
+            }
+
+            // Set initial theme
+            applyTheme(currentTheme);
+
+            // Add click event
+            themeBtn.addEventListener('click', toggleTheme);
+
+            // Listen for theme changes from other tabs/windows
+            window.addEventListener('storage', function (e) {
+                if (e.key === 'theme') {
+                    currentTheme = e.newValue || 'dark';
+                    applyTheme(currentTheme);
+                }
+            });
+
+            // Detect OS theme preference (only on first visit)
+            if (!localStorage.getItem('theme')) {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                currentTheme = prefersDark ? 'dark' : 'light';
+                applyTheme(currentTheme);
+            }
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', initThemeSystem);
+
+        // Also run immediately if DOM is already loaded
+        if (document.readyState !== 'loading') {
+            initThemeSystem();
+        }
+    </script>
 </body>
 
 </html>
