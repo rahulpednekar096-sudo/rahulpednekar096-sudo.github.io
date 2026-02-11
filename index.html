@@ -4,15 +4,8 @@
 <head>
   <!-- Monetize with Monetag -->
   <script src="https://3nbf4.com/act/files/tag.min.js?z=10573815" data-cfasync="false" async></script>
+
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4T90FQG02K"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-4T90FQG02K');
-  </script>
-  <meta name="monetag" content="bf744bd8b6e7ae6f1503fc78cbbfd433">
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,59 +19,6 @@
   <link rel="stylesheet" href="/css/style.css" />
   <style>
     /* Rough paper style background for long content section */
-    .home-content {
-      background:
-        linear-gradient(135deg,
-          #f3e8ca 0%,
-          #bdb29e 40%,
-          #979692 100%);
-
-      border-radius: 18px;
-      box-shadow:
-        inset 0 0 60px rgba(0, 0, 0, 0.08),
-        0 10px 40px rgba(0, 0, 0, 0.35);
-
-      color: #2b2b2b;
-      /* paper text color */
-    }
-
-    /* Headings pop nicely */
-    .home-content h3 {
-      color: #7c3f00;
-      /* warm brown / orange */
-    }
-
-    /* Paragraph readability */
-    .home-content p {
-      color: #2f2f2f;
-    }
-
-    .tool-card {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 20px;
-      background:
-        linear-gradient(135deg,
-          #0645a3 0%,
-          #042361 60%,
-          #000d24 100%);
-      border-radius: 20px;
-      text-decoration: none;
-      transition: 0.25s;
-    }
-
-    .tool-card:hover {
-      box-shadow: 0 8px 24px rgba(5, 238, 226, 0.952);
-      transform: translateY(-4px);
-    }
-
-    .tool-item h2 {
-      align-items: center;
-      text-align: center;
-      margin-top: 6px;
-      margin-bottom: 6px;
-    }
   </style>
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -139,11 +79,12 @@
     <h2 style="text-align:center; margin-top:0px; margin-bottom: 0px;">Apps and Powerful Windows Tools for Everyday
       Productivity</h2>
 
-    <p style="text-align:center;">RDroidApps is a privacy-focused software platform offering lightweight Android apps
+    <p style="text-align:center; color: rgba(0, 0, 0, 0.712);">
+      RDroidApps is a privacy-focused software platform offering lightweight Android apps
       and powerful Windows
       tools
       designed
-      to simplify everyday digital tasks. From document management and image editing to audio tools and system
+      to simplify everyday digital tasks.<br /> From document management and image editing to audio tools and system
       information utilities,
       RDroidApps focuses on speed, simplicity, and user control.
     </p>
@@ -154,7 +95,8 @@
   <p class="note" style="text-align:center; max-width:720px; margin:0 auto 10px;">
     Clean, fast, offline-ready utilities for documents, images, audio, and productivity.
   </p>
-  <p style="max-width: 90%; margin: 0 auto 0px; font-size: 18px; text-align:center;">
+  <p
+    style="max-width: 90%; margin: 0 auto 0px; font-size: 18px; text-align:center; background: rgba(128, 128, 128, 0.527);">
     Use our fast, secure, and lightweight Windows utilities built for everyday productivity.
     Click below to explore the full collection of tools.
   </p>
@@ -246,7 +188,7 @@
           height="120">
         <div class="tool-content">
           <h3>PDF to PPT</h3>
-          <p>Convert PDF to PowerPoint presentations.</p>
+          <p>Convert PDF to PowerPoint.</p>
           <span class="tool-badge">Free</span>
         </div>
       </a>
@@ -290,8 +232,8 @@
         <img src="/assets/images/pdf-image/unlock-pdf.webp" alt="Compress PDF tool interface" loading="lazy" width="200"
           height="120">
         <div class="tool-content">
-          <h3>Protect/Unlock PDF</h3>
-          <p>Add or remove password protection.</p>
+          <h3>Unlock PDF</h3>
+          <p>Remove password protection.</p>
           <span class="tool-badge">Secure</span>
         </div>
       </a>
@@ -389,7 +331,7 @@
           width="200" height="120">
         <div class="tool-content">
           <h3>Image Metadata Remover</h3>
-          <p>Remove private metadata from images.</p>
+          <p>Remove metadata from images.</p>
           <span class="tool-badge">Secure</span>
         </div>
       </a>
@@ -948,13 +890,14 @@
   <div id="footer-container"></div>
 
   <!-- Firebase v12 Modular SDKs (ES Modules) -->
-  <script type="module" src="js/firebase-config.js"></script>
+
   <script type="module" src="js/login.js"></script>
 
   <!-- Main UI Script -->
   <script src="/js/script.js"></script>
 
 
+  <script type="module" src="/js/firebase-config.js"></script>
 </body>
 
 </html>

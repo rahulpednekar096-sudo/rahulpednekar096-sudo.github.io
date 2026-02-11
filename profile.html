@@ -266,7 +266,7 @@
     $(function () {
       $("#header-container").load("/components/header.html");
       $("#menu-drawer-container").load("/components/menu-drawer.html");
-      $("#tools-links-container").load("/components/favorite-tools-quick-links.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
       $("#footer-container").load("/components/footer.html");
     });
   </script>
@@ -335,7 +335,7 @@
     function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
   </script>
   <!-- Firebase v12 Modular Scripts -->
-  <script type="module" src="js/firebase-config.js"></script>
+
   <script type="module" src="js/login.js"></script>
 
   <!-- Auth Guard -->
@@ -450,6 +450,7 @@
       }
     }
   </script>
+  <script type="module" src="/js/firebase-config.js"></script>
 </body>
 
 </html>

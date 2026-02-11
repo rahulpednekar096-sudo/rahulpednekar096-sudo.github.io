@@ -26,7 +26,8 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 16px;
       padding: 24px;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: (5px);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -201,7 +202,7 @@
     $(function () {
       $("#header-container").load("/components/header.html");
       $("#menu-drawer-container").load("/components/menu-drawer.html");
-      $("#tools-links-container").load("/components/favorite-tools-quick-links.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
       $("#footer-container").load("/components/footer.html");
     });
   </script>
@@ -236,7 +237,7 @@
   </script>
 
   <!-- Firebase v12 Modular Scripts -->
-  <script type="module" src="js/firebase-config.js"></script>
+
   <script type="module" src="js/login.js"></script>
 
   <!-- Auth Guard & Load Favorites -->
@@ -362,6 +363,7 @@
 
   <!-- Main UI Script -->
 
+  <script type="module" src="/js/firebase-config.js"></script>
 </body>
 
 </html>

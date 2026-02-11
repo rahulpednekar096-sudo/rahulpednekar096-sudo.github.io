@@ -15,45 +15,10 @@
 
     }
 
-    h1 {
-      border-bottom: 2px solid #555;
-      padding-bottom: 5px;
-    }
+
 
     section {
       margin-bottom: 25px;
-    }
-
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #34a853;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      z-index: 100;
-    }
-
-    .back-to-top:hover {
-      background-color: #2e8b47;
-      transform: translateY(-3px);
     }
   </style>
   <!-- Include jQuery for load function -->
@@ -177,7 +142,8 @@
 
           <div>
             <h3>App Support</h3>
-            <p>For technical support or privacy concerns regarding Color Mixer, please contact us at the email address above.</p>
+            <p>For technical support or privacy concerns regarding Color Mixer, please contact us at the email address
+              above.</p>
           </div>
         </div>
       </section>
@@ -192,7 +158,8 @@
       <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
         <button class="btn btn-secondary" onclick="window.location.href='/color-mixer.html'">← Back to App</button>
         <span style="margin: 0 10px;">|</span>
-        <button class="btn btn-secondary" onclick="window.location.href='/color-mixer-user-guide.html'">User Guide →</button>
+        <button class="btn btn-secondary" onclick="window.location.href='/color-mixer-user-guide.html'">User Guide
+          →</button>
       </div>
     </section>
   </div>
@@ -218,6 +185,7 @@
     // Initially hide the back to top button
     document.getElementById('backToTop').style.display = 'none';
   </script>
+  <script type="module" src="/js/firebase-config.js"></script>
 </body>
 
 </html>
