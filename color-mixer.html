@@ -17,7 +17,8 @@
   <meta name="keywords" content="color mixer, color theory, RGB, RYB, color palette, design tools" />
   <link rel="canonical" href="https://rdroidapps.com/color-mixer.html" />
   <title>Color Mixer | RDroid Apps</title>
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -58,25 +59,36 @@
 
       <!-- TAB BUTTONS -->
       <div class="tabs">
-        <button class="tab-btn active" onclick="openTab('aboutTab')">About Color Mixer</button>
-        <button class="tab-btn" onclick="openTab('privacyTab')">Privacy Policy</button>
+        <button class="tab-btn active" onclick="openTab(event,'aboutTab')">About Color Mixer</button>
+        <button class="tab-btn" onclick="openTab(event,'privacyTab')">Privacy Policy</button>
       </div>
 
       <!-- TAB CONTENT: ABOUT -->
       <div id="aboutTab" class="tab-content active">
         <div class="app-details">
 
-          <h3 style="margin-bottom: 15px;">App Screenshots</h3>
-          <div
-            style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: thin; scrollbar-color: var(--brand) rgba(255, 255, 255, 0.05);">
-            <img src="/assets/images/color_mixer.webp" alt="Color Mixer Screenshot 1"
-              style="width: 180px; height: 320px; border-radius: 12px; border: 2px solid rgba(255, 255, 255, 0.1); cursor: pointer; transition: transform 0.3s ease;"
-              class="screenshot-img" onclick="openImagePreview(this.src)">
-            <img src="/assets/images/color_calculator.webp" alt="Color Mixer Screenshot 2"
-              style="width: 180px; height: 320px; border-radius: 12px; border: 2px solid rgba(255, 255, 255, 0.1); cursor: pointer; transition: transform 0.3s ease;"
-              class="screenshot-img" onclick="openImagePreview(this.src)">
+          <div style="margin-top: 30px;">
+            <h3 style="margin-bottom: 15px; color: white;">App Screenshots</h3>
+            <div
+              style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: thin; scrollbar-color: var(--brand) rgba(255, 255, 255, 0.05);">
+              <img src="/assets/images/color_mixer.webp" alt="Color Mixer Screenshot 1"
+                style="width: 180px; height: 320px; border-radius: 12px; border: 2px solid rgba(255, 255, 255, 0.1); cursor: pointer; transition: transform 0.3s ease;"
+                class="screenshot-img" onclick="openImagePreview(this.src)">
+              <img src="/assets/images/color_calculator.webp" alt="Color Mixer Screenshot 2"
+                style="width: 180px; height: 320px; border-radius: 12px; border: 2px solid rgba(255, 255, 255, 0.1); cursor: pointer; transition: transform 0.3s ease;"
+                class="screenshot-img" onclick="openImagePreview(this.src)">
+            </div>
+            <p style="color: var(--muted); font-size: 13px; margin-top: 8px; text-align: center;">Click on any
+              screenshot to
+              view larger</p>
           </div>
+          <hr style="border: 1px solid rgb(3, 219, 226); margin: 30px 0 20px;" />
 
+          <!-- Image Preview Modal -->
+          <div id="imgPreviewOverlay" onclick="closeImagePreview()">
+            <span id="imgPreviewClose">&times;</span>
+            <img id="imgPreviewBox" src="" alt="Preview">
+          </div>
 
           <p><b>Explore, Create & Capture Colors</b></p>
           <p>
@@ -154,15 +166,10 @@
             ▶️ View on Play Store
           </a>
         </div>
-        <div>
-          <button class="back-to-top" id="backToTop">
-            ↑ Back to Top
-          </button>
-        </div>
 
         <!-- Tip Section -->
         <div class="section"
-          style="margin-top: 30px; background: linear-gradient(135deg, rgba(34, 211, 166, 0.1), rgba(14, 165, 233, 0.1)); border: 1px solid rgba(34, 211, 166, 0.3);">
+          style="margin-top: 30px; background: linear-gradient(135deg, rgb(34, 211, 167), rgb(14, 164, 233)); border: 1px solid rgb(34, 211, 167);">
           <h3 style="color: #22D3A6;">🎵 Creative Tip</h3>
           <p>
             <strong>Explore our other apps!</strong><br>
@@ -203,15 +210,45 @@
 
     </section>
   </div>
-
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
 
+  <script>
+    function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
 
+    function openImagePreview(src) {
+      document.getElementById('imgPreviewBox').src = src;
+      document.getElementById('imgPreviewOverlay').style.display = 'flex';
+    }
+
+    function closeImagePreview() {
+      document.getElementById('imgPreviewOverlay').style.display = 'none';
+    }
+
+    // Close when clicking the X
+    document.getElementById('imgPreviewClose').onclick = closeImagePreview;
+
+    // Add hover effects to screenshots
+    document.querySelectorAll('.screenshot-img').forEach(img => {
+      img.addEventListener('mouseenter', function () {
+        this.style.transform = 'scale(1.05)';
+        this.style.boxShadow = '0 10px 25px rgba(34, 211, 166, 0.3)';
+      });
+      img.addEventListener('mouseleave', function () {
+        this.style.transform = 'scale(1)';
+        this.style.boxShadow = 'none';
+      });
+    });
+  </script>
 
   <!-- TAB SCRIPT -->
   <script>
-    function openTab(tabId) {
+    function openTab(event, tabId) {
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
 

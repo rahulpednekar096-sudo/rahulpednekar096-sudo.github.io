@@ -17,7 +17,8 @@
     content="Explore privacy-focused Android apps by RDroidApps including Color Mixer, Easy Music, and Golden Calc." />
 
   <link rel="canonical" href="https://rdroidapps.com/apps.html" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
 
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -46,10 +47,15 @@
   <!-- Apps Section -->
   <div style="max-width: 600px; margin:40px auto; text-align:center;">
     <h1>Our Featured Apps</h1>
-    <p style="background: gray;">Each app is crafted for performance, privacy, and user delight. Explore what we’ve
+    <p style="background: rgb(238, 252, 252);">Each app is crafted for performance, privacy, and user delight. Explore
+      what we’ve
       built 👇</p>
   </div>
-  <section class="section" style="display: flex;">
+  <section class="section" style="
+                        display:grid;
+                        grid-template-columns:repeat(auto-fit, minmax(370px, 1fr));
+                        gap: 9px;
+                      ">
     <!-- ========== COLOR MIXER ========== -->
     <div class="app-card">
       <!-- LEFT: IMAGE -->
@@ -138,6 +144,11 @@
   <!-- 🔍 IMAGE PREVIEW POPUP -->
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
 
   <script>
     function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
