@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/system/folder-size-analyzer.html" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
     <meta name="description"
         content="Analyze folder sizes and disk usage. Get detailed breakdown of file sizes by type, folder structure and storage distribution." />
     <meta name="keywords"
@@ -46,11 +47,12 @@
         });
     </script>
 
-    <section class="section" role="main" aria-labelledby="title">
+    <section class="hero">
         <h1 id="title">Folder Size Analyzer</h1>
         <p class="lead">Analyze folder sizes and disk usage. Get detailed breakdown of file sizes by type and folder
             structure. All processing is done locally in your browser.</p>
-
+    </section>
+    <section class="section" role="main" aria-labelledby="title">
         <div class="card" style="margin-top: 24px;">
             <div class="drop" id="dropArea">
                 <p>📁 Drop folders or files here</p>
@@ -170,7 +172,8 @@
             </div>
         </div>
 
-        <hr style="margin: 32px 0;">
+        <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+        <hr style="margin:32px 0">
         <section class="seo-content">
             <h2>About Folder Size Analyzer</h2>
             <p>
@@ -230,6 +233,11 @@
 
     <!-- FOOTER -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>

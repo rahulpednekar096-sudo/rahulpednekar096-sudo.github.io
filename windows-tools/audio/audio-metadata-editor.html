@@ -19,6 +19,7 @@
     <title>Audio Metadata Editor — RDroid Apps</title>
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/audio/audio-metadata-editor.html" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
 
 
     <!-- Include jQuery for load function -->
@@ -45,15 +46,19 @@
             $("#footer-container").load("/components/footer.html");
         });
     </script>
+
+    <section class="hero">
+        <h1>Audio Metadata Editor</h1>
+        <h3>
+            View audio information and remove metadata safely.<br>
+            <b>Note:</b> Browser cannot edit MP3 tags. Clean WAV export removes metadata completely.
+        </h3>
+    </section>
     <section class="tool-section">
         <div class="card">
-            <h1>Audio Metadata Editor</h1>
-            <p class="note">
-                View audio information and remove metadata safely.<br>
-                <b>Note:</b> Browser cannot edit MP3 tags. Clean WAV export removes metadata completely.
-            </p>
-
-            <button class="btn btn-ghost" id="pick">🎵 Upload Audio</button>
+            <button class="btn btn-ghost" id="pick"
+                style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload
+                Audio</button>
             <input type="file" id="file" accept="audio/*" hidden>
 
             <div class="meta-box">
@@ -73,7 +78,6 @@
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
-
             <section class="seo-content">
                 <h2>About Audio Metadata Editor</h2>
                 <p>
@@ -121,6 +125,11 @@
     <!-- ===== FOOTER (UNCHANGED) ===== -->
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
 
     <script>
         function toggleMenu() {

@@ -18,6 +18,7 @@
     <title>Image Metadata Viewer — RDroid Apps</title>
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/image/image-metadata-viewer.html" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
     <!-- exif-js for EXIF reading -->
     <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
     <!-- Include jQuery for load function -->
@@ -45,11 +46,12 @@
         });
     </script>
 
+    <section class="hero">
+        <h1>Image Metadata Viewer</h1>
+        <h3>View EXIF metadata embedded in JPG/HEIC (where supported). Drag & drop supported.</h3>
+    </section>
     <section class="tool-section">
         <div class="card">
-            <h1>Image Metadata Viewer</h1>
-            <p class="note">View EXIF metadata embedded in JPG/HEIC (where supported). Drag & drop supported.</p>
-
             <label class="drop" id="dropArea"
                 style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
                 <button class="btn btn-ghost" id="pickBtn">Choose file</button>
@@ -65,7 +67,6 @@
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
-
             <section class="seo-content">
                 <h2>Image Metadata Viewer Tool</h2>
                 <p>The Image Metadata Viewer is a powerful online tool that allows users to easily view and analyze
@@ -114,6 +115,11 @@
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
 

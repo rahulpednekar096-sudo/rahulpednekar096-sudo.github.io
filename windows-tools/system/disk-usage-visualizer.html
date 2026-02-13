@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/system/disk-usage-visualizer.html" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
     <meta name="description"
         content="Visualize disk usage with interactive charts and treemap. Analyze storage distribution by file types and folders. All processing done locally." />
     <meta name="keywords"
@@ -49,12 +50,13 @@
         });
     </script>
 
-    <section class="section" role="main" aria-labelledby="title">
+    <section class="hero">
         <h1 id="title">Disk Usage Visualizer</h1>
         <p class="lead">Visualize disk usage with interactive charts and treemap visualization. Analyze storage
             distribution
             by file types, folders, and sizes. All processing is done locally in your browser.</p>
-
+    </section>
+    <section class="section" role="main" aria-labelledby="title">
         <div class="card" style="margin-top: 24px;">
             <p class="small" style="margin-top: 12px;">Supports folder selection in Chrome/Edge. For other browsers,
                 select
@@ -132,14 +134,14 @@
                         </div>
                     </div>
                     <div style="flex: 1; min-width: 250px;">
-                        <div class="card" style="background: rgba(255,255,255,0.02);">
+                        <div class="card" style="background: rgb(173 172 172 / 66%);">
                             <h3>Legend</h3>
                             <div id="legendContainer" style="margin-top: 10px;">
                                 <div class="small" style="text-align: center; color: var(--muted);">No data to display
                                 </div>
                             </div>
                         </div>
-                        <div class="card" style="background: rgba(255,255,255,0.02); margin-top: 10px;">
+                        <div class="card" style="background: rgb(173 172 172 / 66%); margin-top: 10px;">
                             <h3>Filters</h3>
                             <div style="margin-top: 10px;">
                                 <div class="optionRow">
@@ -245,7 +247,8 @@
             </div>
         </div>
 
-        <hr style="margin: 32px 0;">
+        <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+        <hr style="margin:32px 0">
         <section class="seo-content">
             <h2>About Disk Usage Visualizer</h2>
             <p>
@@ -327,6 +330,11 @@
 
     <!-- FOOTER -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
 
     <script>
         function toggleMenu() {

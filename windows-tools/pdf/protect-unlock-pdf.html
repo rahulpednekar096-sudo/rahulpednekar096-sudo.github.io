@@ -19,6 +19,7 @@
   <title>Protect / Unlock PDF — RDroid Apps</title>
   <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/protect-unlock-pdf.html">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
 
   <!-- Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
@@ -51,10 +52,11 @@
     });
   </script>
 
-  <div class="container">
+  <section class="hero">
     <h1>Protect / Unlock PDF</h1>
     <p class="lead">PDF To lock or unlock practical tool. (Browser-side Limitations — Please read the Notes below.)</p>
-
+  </section>
+  <div class="container">
     <div class="drop" id="dropArea">Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
       <input type="file" id="fileInput" accept="application/pdf" style="display:none">
     </div>
@@ -122,6 +124,8 @@
     <div id="warning" style="color:#ffb199; margin-top:8px"></div>
     <hr style="margin:32px 0">
 
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
     <section class="seo-content">
       <h2>Protect/Unlock PDF Converter — RDroidApps Pro</h2>
 
@@ -162,6 +166,11 @@
   </div>
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
   <script>
     // Drawer toggle
     function toggleMenu() {

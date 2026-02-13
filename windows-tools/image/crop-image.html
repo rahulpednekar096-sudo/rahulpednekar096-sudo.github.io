@@ -16,6 +16,7 @@
     <title>Crop Image — RDroid Apps</title>
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/image/crop-image.html" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -42,11 +43,12 @@
         });
     </script>
 
+    <section class="hero">
+        <h1>Crop Image</h1>
+        <h3>Draw a rectangle on the image to crop. Works for large images.</h3>
+    </section>
     <section class="tool-section">
         <div class="card">
-            <h1>Crop Image</h1>
-            <p class="note">Draw a rectangle on the image to crop. Works for large images.</p>
-
             <label class="drop" id="dropArea"
                 style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
                 <button class="btn btn-ghost" id="pickBtn">Choose file</button>
@@ -66,7 +68,6 @@
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
-
             <section class="seo-content">
                 <h2>Crop Image Tool</h2>
                 <p>The Crop Image tool on RDroid Apps allows you to easily crop images by drawing a rectangle over the
@@ -101,6 +102,11 @@
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
 
 
     <script>

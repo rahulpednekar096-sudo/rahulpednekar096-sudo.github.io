@@ -257,9 +257,16 @@ document.getElementById('backToTop').addEventListener('click', function () {
 });
 
 // Show/hide back to top button based on scroll position
- window.addEventListener('scroll', function () {
+ const scrollContainer = document.querySelector('.editor-area') || window;
+
+scrollContainer.addEventListener('scroll', function () {
+    const scrollTop = scrollContainer === window
+        ? window.scrollY
+        : scrollContainer.scrollTop;
+
     const backToTopBtn = document.getElementById('backToTop');
-    if (window.scrollY > 300) {
+
+    if (scrollTop > 300) {
         backToTopBtn.style.display = 'flex';
     } else {
         backToTopBtn.style.display = 'none';

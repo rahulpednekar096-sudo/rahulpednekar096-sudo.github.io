@@ -22,6 +22,7 @@
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
 </head>
 
 <body>
@@ -46,12 +47,12 @@
   <section class="hero">
     <h1 style="text-align:center;">
       JPG → PDF Converter — Free Online Tool | RDroid Apps (Upgraded)</h1>
-    <h3 class="lead" style="text-align: center;">Convert multiple JPG, PNG, WEBP images to PDF in seconds. Rotate, set
+    <p class="lead" style="text-align: center;">Convert multiple JPG, PNG, WEBP images to PDF in seconds. Rotate, set
       page size, margins, and
       compress quality.
-      100% free, secure, and works offline.</h3>
+      100% free, secure, and works offline.</p>
   </section>
-  <section class="tool-section" style="width: 90%;">
+  <section class="tool-section">
     <div class="card">
       <div class="drop" id="dropArea">Drop images here or <button class="btn" id="chooseBtn">Choose files</button>
         <input type="file" id="fileInput" accept="image/*" multiple style="display:none" />
@@ -124,6 +125,8 @@
       <div id="warning" style="color:#ffb199; margin-top:8px"></div>
       <hr style="margin:32px 0">
 
+      <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+      <hr style="margin:32px 0">
       <section class="seo-content">
         <h2>About JPG to PDF Converter</h2>
         <p>
@@ -248,6 +251,11 @@
   </section>
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
 
   <script>
     // Drawer toggle

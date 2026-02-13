@@ -18,6 +18,7 @@
   <meta name="author" content="RDroid Apps" />
   <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/pdf-to-png.html">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
 
   <!-- pdf.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
@@ -49,11 +50,12 @@
       $("#footer-container").load("/components/footer.html");
     });
   </script>
-  <section class="section">
+  <section class="hero">
     <h1>PDF → PNG (Upgraded)</h1>
     <p class="lead">Convert PDF pages into PNG images. Select pages, set DPI/scale, rotate/reorder, download
       individually or as ZIP.</p>
-
+  </section>
+  <section class="section">
     <div class="drop" id="dropArea">Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
       <input type="file" id="fileInput" accept="application/pdf" style="display:none" />
     </div>
@@ -122,6 +124,8 @@
     <!-- SEO Content -->
     <hr style="margin:32px 0">
 
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
     <section class="seo-content">
       <h2>PDF to PNG Converter — RDroidApps Pro</h2>
 
@@ -172,6 +176,11 @@
   </section>
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
   <script>
     // Drawer toggle
     function toggleMenu() {

@@ -18,6 +18,7 @@
     <title>Extract Audio from Video — RDroid Apps</title>
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/audio/extract-mp3.html" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -43,15 +44,17 @@
             $("#footer-container").load("/components/footer.html");
         });
     </script>
+
+    <section class="hero">
+        <h1>Extract Audio</h1>
+        <h3>
+            Extract audio track from video file.<br>
+            <b>Note:</b> Browser exports clean WAV (MP3 not supported without ffmpeg).
+        </h3>
+    </section>
     <section class="tool-section">
         <div class="card">
-            <h1>Extract Audio</h1>
-            <p class="note">
-                Extract audio track from video file.<br>
-                <b>Note:</b> Browser exports clean WAV (MP3 not supported without ffmpeg).
-            </p>
-
-            <button class="btn btn-ghost" id="pick">🎬 Upload Video</button>
+            <button class="btn btn-ghost" id="pick" style="color:#fff0eb; max-width: 100%; background-color: rgba(119, 4, 113, 0.753);">🎬 Upload Video</button>
             <input type="file" id="file" accept="video/*" hidden>
 
             <div class="row">
@@ -69,7 +72,6 @@
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
-
             <section class="seo-content">
                 <h2>Extract Audio from Video Files with RDroid Apps</h2>
                 <p>Looking to extract audio from your video files quickly and easily? RDroid Apps offers a user-friendly
@@ -104,6 +106,11 @@
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
 
 
     <script>

@@ -19,6 +19,7 @@
   <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/png-to-pdf.html">
 
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <!-- Include jQuery for load function -->
@@ -46,11 +47,12 @@
     });
   </script>
 
-  <section class="section">
+  <section class="hero">
     <h1>PNG → PDF (Upgraded)</h1>
     <p class="lead">Convert multiple images (PNG/JPG/WEBP) to a single PDF. Reorder, rotate, select page size & scale.
     </p>
-
+  </section>
+  <section class="section">
     <div class="drop" id="dropArea">Drop images here or <button class="btn" id="pickBtn">Choose files</button>
       <input type="file" id="fileInput" accept="image/*" multiple style="display:none" />
     </div>
@@ -126,6 +128,8 @@
     <div id="warning" style="color:#ffb199; margin-top:8px"></div>
     <hr style="margin:32px 0">
 
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
     <section class="seo-content">
       <h2>PNG to PDF Converter — RDroidApps Pro</h2>
 
@@ -158,6 +162,11 @@
   </section>
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
   <script>
     // Drawer toggle
     function toggleMenu() {

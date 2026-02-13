@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/utility/age-calculator.html">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
     <meta name="description"
         content="Calculate your exact age in years, months, days, weeks, hours, minutes and seconds. Find out how old you are or calculate time between two dates." />
     <meta name="keywords"
@@ -48,11 +49,12 @@
         });
     </script>
 
-    <section class="section" role="main" aria-labelledby="title">
+    <section class="hero">
         <h1 id="title">Age Calculator & Rashi Finder</h1>
         <p class="lead">Calculate your exact age and find your accurate zodiac sign (Rashi) based on Indian astrology.
         </p>
-
+    </section>
+    <section class="section" role="main" aria-labelledby="title">
         <div class="controls">
             <div class="control">
                 <label>Birth Date</label>
@@ -135,6 +137,8 @@
 
         <hr>
 
+        <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+        <hr style="margin:32px 0">
         <section class="seo-content">
             <h2>About Age Calculator & Rashi Finder</h2>
             <p>
@@ -336,6 +340,11 @@
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
 
     <script>
         // Elements

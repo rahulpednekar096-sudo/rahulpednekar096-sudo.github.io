@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/utility/qr-generator.html">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
     <meta name="description"
         content="Generate QR codes for URLs, text, contact info, WiFi credentials and more. Customize colors and download as PNG." />
     <meta name="keywords"
@@ -46,10 +47,11 @@
         });
     </script>
 
-    <section class="section" role="main" aria-labelledby="title">
+    <section class="hero">
         <h1 id="title">QR Code Generator</h1>
         <p class="lead">Generate QR codes for URLs, text, contact info, WiFi credentials and more.</p>
-
+    </section>
+    <section class="section" role="main" aria-labelledby="title">
         <div class="controls">
             <div class="control">
                 <label>Content Type</label>
@@ -142,6 +144,8 @@
 
         <hr style="margin:32px 0">
 
+        <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+        <hr style="margin:32px 0">
         <section class="seo-content">
             <h2>About QR Code Generator</h2>
             <p>
@@ -188,6 +192,11 @@
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
 
     <script>
         // Elements

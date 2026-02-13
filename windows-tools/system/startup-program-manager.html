@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/system/startup-program-manager.html" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
     <meta name="description"
         content="Manage and control startup programs. Disable unnecessary startup items to improve system boot time and performance." />
     <meta name="keywords"
@@ -46,11 +47,14 @@
         });
     </script>
 
-    <section class="section" role="main" aria-labelledby="title">
+    <section class="hero">
         <h1 id="title">Startup Program Manager</h1>
-        <p class="lead">Manage programs that run at system startup. Disable unnecessary items to improve boot time and
+        <p class="lead">Manage programs that run at system startup. Disable unnecessary
+            items to improve boot time and
             system performance. Note: This is a simulation for demonstration purposes.</p>
+    </section>
 
+    <section class="section" role="main" aria-labelledby="title">
         <div class="card" style="margin-top: 24px;">
             <div style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
                 <button class="btn btn-primary" id="refreshBtn">🔄 Refresh List</button>
@@ -59,7 +63,7 @@
                 <button class="btn" id="addCustomBtn">➕ Add Custom Entry</button>
                 <div style="margin-left: auto; display: flex; align-items: center; gap: 8px;">
                     <span class="small">Filter:</span>
-                    <select id="filterStatus" style="padding: 4px 8px; border-radius: 4px; background: #002F54;">
+                    <select id="filterStatus" style="padding: 4px 8px; border-radius: 4px; background: #ffffff;">
                         <option value="all">All Items</option>
                         <option value="enabled">Enabled Only</option>
                         <option value="disabled">Disabled Only</option>
@@ -255,7 +259,8 @@
             </div>
         </div>
 
-        <hr style="margin: 32px 0;">
+        <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+        <hr style="margin:32px 0">
         <section class="seo-content">
             <h2>About Startup Program Manager</h2>
             <p>
@@ -291,7 +296,7 @@
             <h2>What to Disable vs. What to Keep</h2>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 15px 0;">
                 <div class="card" style="background: rgba(10, 163, 127, 0.1);">
-                    <h4 style="color: #24fcc9;">✅ Keep Enabled</h4>
+                    <h4 style="color: #02cf40;">✅ Keep Enabled</h4>
                     <ul class="about-points">
                         <li>Security software (antivirus, firewall)</li>
                         <li>Hardware drivers (graphics, sound)</li>
@@ -301,7 +306,7 @@
                     </ul>
                 </div>
                 <div class="card" style="background: rgba(239, 68, 68, 0.1);">
-                    <h4 style="color: #f79393;">❌ Can Disable</h4>
+                    <h4 style="color: #ff0000;">❌ Can Disable</h4>
                     <ul class="about-points">
                         <li>Update checkers for rarely used software</li>
                         <li>Media players and launchers</li>
@@ -346,6 +351,11 @@
 
     <!-- FOOTER -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
 
     <script>
         function toggleMenu() {

@@ -18,6 +18,7 @@
     <title>Change Audio Pitch — RDroid Apps</title>
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/audio/change-audio-pitch.html" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -43,15 +44,17 @@
             $("#footer-container").load("/components/footer.html");
         });
     </script>
+
+    <section class="hero">
+        <h1>Change Audio Pitch</h1>
+        <h3>
+            Adjust pitch in semitones.<br>
+            <b>Note:</b> Browser uses approximate pitch shifting (speed may change slightly).
+        </h3>
+    </section>
     <section class="tool-section">
         <div class="card">
-            <h1>Change Audio Pitch</h1>
-            <p class="note">
-                Adjust pitch in semitones.<br>
-                <b>Note:</b> Browser uses approximate pitch shifting (speed may change slightly).
-            </p>
-
-            <button class="btn btn-ghost" id="pick">🎵 Upload Audio</button>
+            <button class="btn btn-ghost" id="pick" style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload Audio</button>
             <input type="file" id="file" accept="audio/*" hidden>
 
             <div class="row">
@@ -74,7 +77,6 @@
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
-
             <section class="seo-content">
                 <h2>About Change Audio Pitch Tool</h2>
                 <p>The Change Audio Pitch tool is a web-based application designed to help users modify the pitch of
@@ -124,6 +126,11 @@
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
     <script>
         function toggleMenu() {
             document.getElementById('drawer').classList.toggle('open');

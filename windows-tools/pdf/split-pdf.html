@@ -19,6 +19,7 @@
   <title>Split PDF — RDroid Apps</title>
   <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/split-pdf.html">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
 
   <!-- pdf.js for preview -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
@@ -52,10 +53,12 @@
       $("#footer-container").load("/components/footer.html");
     });
   </script>
-  <div class="container">
+
+  <section class="hero">
     <h1>Split PDF</h1>
     <p class="lead">Split PDF by ranges, every N pages, or extract selected pages. Outputs separate PDFs or a ZIP.</p>
-
+  </section>
+  <div class="container">
     <div class="drop" id="dropArea">Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
       <input type="file" id="fileInput" accept="application/pdf" style="display:none">
     </div>
@@ -130,6 +133,8 @@
     <!-- SEO Content -->
     <hr style="margin:32px 0">
 
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
     <section class="seo-content">
       <h2>Split PDF Tool — RDroidApps Pro</h2>
 
@@ -171,6 +176,11 @@
   </div>
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
   <script>
     // Drawer toggle
     function toggleMenu() {

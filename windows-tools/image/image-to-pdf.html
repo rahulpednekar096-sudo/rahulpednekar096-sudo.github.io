@@ -18,6 +18,7 @@
     <title>Image → PDF — RDroid Apps</title>
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/image/image-to-pdf.html" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 
     <!-- Include jQuery for load function -->
@@ -45,12 +46,13 @@
         });
     </script>
 
+    <section class="hero">
+        <h1>Image → PDF</h1>
+        <h3>Select multiple images and create a single multi-page PDF. Images are fit to page (A4) by
+            default.</h3>
+    </section>
     <section class="tool-section">
         <div class="card">
-            <h1>Image → PDF</h1>
-            <p class="note">Select multiple images and create a single multi-page PDF. Images are fit to page (A4) by
-                default.</p>
-
             <label class="drop" id="dropArea"
                 style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
                 <button class="btn btn-ghost" id="pickBtn">Choose file</button>
@@ -66,7 +68,6 @@
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
-
             <section class="seo-content">
                 <h2>Image to PDF Converter</h2>
                 <p>This tool allows you to convert images to PDF format easily. You can select multiple images, and the
@@ -103,6 +104,11 @@
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
 

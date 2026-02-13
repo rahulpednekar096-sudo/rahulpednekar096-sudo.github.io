@@ -20,6 +20,7 @@
     content="Text to PDF, TXT to PDF, text file to PDF, offline text to PDF, free PDF tools, RDroidApps Pro, document converter, create PDF from text">
   <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/text-to-pdf.html">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <!-- Include jQuery for load function -->
@@ -161,11 +162,12 @@
     });
   </script>
 
-  <main class="section">
-    <article>
+  <article>
+    <section class="hero">
       <h1>Text → PDF</h1>
       <p class="lead">Write or paste text and convert into a formatted PDF with custom page settings.</p>
-
+    </section>
+    <main class="section">
       <!-- Error and Success Messages -->
       <div id="errorMessage" class="error-message"></div>
       <div id="successMessage" class="success-message"></div>
@@ -252,6 +254,8 @@
       <!-- SEO Content -->
       <hr style="margin:32px 0">
 
+      <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+      <hr style="margin:32px 0">
       <section class="seo-content">
         <h2>Text to PDF Converter — RDroidApps Pro</h2>
 
@@ -285,12 +289,17 @@
           <li><strong>Download:</strong> Save your generated PDF instantly.</li>
         </ol>
       </section>
-    </article><br>
-    <a href="/index.html#pdf-tools" class="nav-button home">🏠 Back to PDF Home</a>
+  </article><br>
+  <a href="/index.html#pdf-tools" class="nav-button home">🏠 Back to PDF Home</a>
   </main>
 
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
 
   <!-- Include Noto Sans Devanagari font -->
   <script src="/assets/fonts/noto-devanagari-base64.js"></script>

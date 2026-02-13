@@ -19,6 +19,7 @@
     <title>Rotate Image — RDroid Apps</title>
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/image/rotate-image.html" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -45,11 +46,12 @@
         });
     </script>
 
+    <section class="hero">
+        <h1>Rotate Image</h1>
+        <h3>Rotate by 90° increments or custom degrees.</h3>
+    </section>
     <section class="tool-section">
         <div class="card">
-            <h1>Rotate Image</h1>
-            <p class="note">Rotate by 90° increments or custom degrees.</p>
-
             <label class="drop" id="dropArea"
                 style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image here or
                 <button class="btn btn-ghost" id="pickBtn">Choose
@@ -84,7 +86,6 @@
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
-
             <section class="seo-content">
                 <h2>What is an Image Rotator Tool?</h2>
                 <p>Using an Image Rotator Tool, you can easily rotate your images by 90° CW, 180°, 90° CCW, or by a
@@ -116,6 +117,11 @@
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
 
 
     <script>

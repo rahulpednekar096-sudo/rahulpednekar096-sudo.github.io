@@ -18,6 +18,7 @@
     <title>Compress Image — RDroid Apps</title>
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/image/compress-image.html" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -44,11 +45,12 @@
         });
     </script>
 
+    <section class="hero">
+        <h1>Compress Image</h1>
+        <h3>Reduce filesize. Works best for JPEG; PNG compressed by re-encoding to JPEG or WebP.</h3>
+    </section>
     <section class="tool-section">
         <div class="card">
-            <h1>Compress Image</h1>
-            <p class="note">Reduce filesize. Works best for JPEG; PNG compressed by re-encoding to JPEG or WebP.</p>
-
             <div class="drop" id="dropArea">Drop image or <button class="btn btn-ghost" id="pickBtn">Choose
                     file</button></div>
             <input type="file" id="fileInput" accept="image/*" />
@@ -76,7 +78,6 @@
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
-
             <section class="seo-content">
                 <h2>Image Compression Tool</h2>
                 <p>Welcome to the Compress Image tool by RDroid Apps, your go-to solution for reducing image file sizes
@@ -117,6 +118,11 @@
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
 
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }

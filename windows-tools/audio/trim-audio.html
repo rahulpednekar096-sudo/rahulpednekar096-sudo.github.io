@@ -18,10 +18,10 @@
     <title>Trim Audio — RDroid Apps</title>
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/audio/trim-audio.html">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 </head>
 
 <body>
@@ -45,12 +45,15 @@
     </script>
 
     <!-- ===== MAIN TOOL SECTION ===== -->
+    <section class="hero">
+        <h1>Trim Audio</h1>
+        <h3>Select start and end time to cut your audio file precisely.</h3>
+    </section>
     <section class="tool-section">
         <div class="card">
-            <h1>Trim Audio</h1>
-            <p class="note">Select start and end time to cut your audio file precisely.</p>
-
-            <button class="btn btn-ghost" id="pickAudio">🎵 Upload Audio</button>
+            <button class="btn btn-ghost" id="pickAudio"
+                style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload
+                Audio</button>
             <input type="file" id="audioFile" accept="audio/*" hidden>
 
             <div class="row">
@@ -83,12 +86,10 @@
                 <button class="btn btn-ghost" id="resetBtn">Reset</button>
                 <a id="downloadBtn" class="btn" style="display:none">Download</a>
             </div>
-
             <pre id="status">Upload an audio file.</pre>
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
-
             <section class="seo-content">
                 <h2>About Trim Audio Tool</h2>
                 <p>
@@ -127,6 +128,11 @@
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
 
     <!-- ===== JS ===== -->
     <script>

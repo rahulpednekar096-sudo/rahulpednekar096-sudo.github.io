@@ -18,6 +18,7 @@
     content="compress pdf online, heavy pdf compression, reduce pdf size, free pdf compressor, secure pdf tool, rdroidapps pdf tools">
   <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/compress-pdf.html">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
 
   <!-- pdf.js + pdf-lib + tesseract (optional) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
@@ -50,16 +51,15 @@
   </script>
 
   <section class="hero">
-    <h1 style="text-align:center;">Compress PDF — Heavy (Upgraded)</h1>
-    <p class="note" style="font-size: 16px; text-align: center;">Pages are rasterized to JPEG images and re-packed.
+    <h1>Compress PDF — Heavy (Upgraded)</h1>
+    <p class="lead">Pages are rasterized to JPEG images and re-packed.
       Great for large
       image-heavy PDFs. Text will
       NOT
       remain selectable. Use OCR summary if you need extracted text separately.
     </p>
-
   </section>
-  <section class="tool-section" style="width: 90%;">
+  <section class="tool-section">
     <div class="card">
       <div class="card">
         <div class="drop" id="dropArea">Drop PDF here or <button class="btn btn-ghost" id="pickBtn">Choose
@@ -117,6 +117,8 @@
       <!-- SEO Content -->
       <hr style="margin:32px 0">
 
+      <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+      <hr style="margin:32px 0">
       <section class="seo-content">
 
         <h2>Compress PDF Online – Heavy Compression Tool</h2>
@@ -211,6 +213,11 @@
   </section>
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
   <script>
     // Drawer toggle
     function toggleMenu() {

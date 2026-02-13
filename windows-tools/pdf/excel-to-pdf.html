@@ -20,6 +20,7 @@
 
   <!-- Stylesheet (RDroidApps theme) -->
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
 
   <!-- Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -60,16 +61,14 @@
     });
   </script>
 
-
-
   <section class="hero">
-    <h1 style="text-align:center;">Excel → PDF — RDroidApps Pro</h1>
-    <h3 style="text-align: center;"> export, header/footer, pagination, repeat header, image embedding, ZIP output —
+    <h1>Excel → PDF — RDroidApps Pro</h1>
+    <p class="lead"> export, header/footer, pagination, repeat header, image embedding, ZIP output —
       client-side.
-    </h3>
+    </p>
   </section>
 
-  <div class="container" role="main" style="width: 90%;">
+  <div class="container" role="main">
     <!-- File input / drop -->
     <div class="row">
       <div class="card" style="flex:1 1 420px">
@@ -190,6 +189,8 @@
     <div id="warning" style="color:#ffb199; margin-top:8px"></div>
     <hr style="margin:32px 0">
 
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
     <section class="seo-content">
       <h2>Excel to PDF Converter — RDroidApps Pro</h2>
 
@@ -285,6 +286,11 @@
   </div>
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
   <script>
     // Drawer toggle
     function toggleMenu() {

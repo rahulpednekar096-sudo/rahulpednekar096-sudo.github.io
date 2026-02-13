@@ -18,6 +18,7 @@
     <title>Change Audio Speed — RDroid Apps</title>
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/audio/change-audio-speed.html" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -43,12 +44,15 @@
             $("#footer-container").load("/components/footer.html");
         });
     </script>
+    <section class="hero">
+        <h1>Change Audio Speed</h1>
+        <h3>Adjust playback speed. Preview before download.</h3>
+    </section>
     <section class="tool-section">
         <div class="card">
-            <h1>Change Audio Speed</h1>
-            <p class="note">Adjust playback speed. Preview before download.</p>
-
-            <button class="btn btn-ghost" id="pick">🎵 Upload Audio</button>
+            <button class="btn btn-ghost" id="pick"
+                style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload
+                Audio</button>
             <input type="file" id="file" accept="audio/*" hidden>
 
             <div class="row">
@@ -74,7 +78,6 @@
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
-
             <section class="seo-content">
                 <h2>About Change Audio Speed Tool</h2>
                 <p>
@@ -115,6 +118,11 @@
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
     <script>
         function toggleMenu() {
             document.getElementById('drawer').classList.toggle('open');

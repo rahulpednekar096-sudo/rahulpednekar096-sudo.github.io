@@ -18,6 +18,7 @@
     <title>Add Watermark — RDroid Apps</title>
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/image/add-watermark.html" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -44,11 +45,12 @@
         });
     </script>
 
+    <section class="hero">
+        <h1>Add Watermark</h1>
+        <h3>Add text or image watermark. Drag to position (text watermark supported).</h3>
+    </section>
     <section class="tool-section">
         <div class="card">
-            <h1>Add Watermark</h1>
-            <p class="note">Add text or image watermark. Drag to position (text watermark supported).</p>
-
             <div class="drop" id="dropArea">Drop image or <button class="btn btn-ghost" id="pickBtn">Choose
                     file</button></div>
             <input type="file" id="fileInput" accept="image/*" />
@@ -58,10 +60,21 @@
                         <option value="text">Text</option>
                         <option value="image">Image</option>
                     </select></div>
-                <div class="col" id="textOpts"><label class="small">Text</label><input id="wmText"
-                        placeholder="© RDroid Apps"></div>
-                <div class="col" id="imageOpts" style="display:none"><label class="small">Watermark image</label><input
-                        type="file" id="wmImage" accept="image/*" /></div>
+                <div class="col" id="textOpts">
+                    <label class="small">Text</label>
+                    <textarea id="wmText" placeholder="© RDroid Apps"
+                        style="width:100%; min-height:80px; resize:vertical; padding:8px; border-radius:6px;"></textarea>
+                </div>
+
+                <div class="col" id="imageOpts" style="display:none">
+                    <label class="small">Watermark image</label>
+                    <button type="button" class="btn btn-ghost" id="wmPickBtn">
+                        Choose Watermark Image
+                    </button>
+                    <input type="file" id="wmImage" accept="image/*" style="display:none">
+                    <div id="wmImageName" class="small"></div>
+                </div>
+
                 <div class="col"><label class="small">Opacity</label><input type="range" id="wmOpacity" min="10"
                         max="100" value="60">
                     <div id="opVal">60%</div>
@@ -79,7 +92,6 @@
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
-
             <section class="seo-content">
                 <h2>Add Watermark — RDroidApps Pro</h2>
                 <p>Add Watermark is a simple and effective online tool provided by RDroid Apps that allows users to
@@ -124,6 +136,11 @@
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
 
@@ -174,6 +191,9 @@
                 imageOpts.style.display = 'block';
             }
         });
+
+        // Force correct visibility on page load
+        wmType.dispatchEvent(new Event('change'));
 
         wmOpacity.addEventListener('input', () => opVal.textContent = wmOpacity.value + '%');
 
@@ -241,12 +261,25 @@
             }
         });
 
-        // Apply Watermark Function
+        const wmPickBtn = document.getElementById("wmPickBtn");
+        const wmImageName = document.getElementById("wmImageName");
+
+        wmPickBtn.addEventListener("click", () => wmImage.click());
+
+        wmImage.addEventListener("change", () => {
+            if (!wmImage.files.length) return;
+            wmImageName.textContent = "Selected: " + wmImage.files[0].name;
+        });
+
+        // Apply Watermark Function (UPDATED PRO VERSION)
         applyBtn.addEventListener('click', async () => {
+
             if (!currentFile) return alert('कृपया image निवडा');
 
             const reader = new FileReader();
-            reader.onload = async e => {
+
+            reader.onload = async (e) => {
+
                 const img = new Image();
                 img.src = e.target.result;
                 await img.decode();
@@ -254,83 +287,97 @@
                 const canvas = document.createElement('canvas');
                 canvas.width = img.naturalWidth;
                 canvas.height = img.naturalHeight;
+
                 const ctx = canvas.getContext('2d');
                 ctx.drawImage(img, 0, 0);
+
+                // Opacity
                 ctx.globalAlpha = parseInt(wmOpacity.value) / 100;
 
+                /* ==========================
+                   TEXT WATERMARK (MULTILINE)
+                ========================== */
                 if (wmType.value === 'text') {
-                    const text = wmText.value || '© RDroid Apps';
-                    const fontSize = Math.max(16, Math.round(canvas.width / 20));
+
+                    const text = wmText.value.trim() || '© RDroid Apps';
+                    const lines = text.split('\n');
+
+                    const fontSize = Math.max(18, Math.round(canvas.width / 20));
                     ctx.font = `${fontSize}px sans-serif`;
                     ctx.textBaseline = 'bottom';
-                    const textWidth = ctx.measureText(text).width;
 
-                    // bottom-right default
-                    const x = canvas.width - textWidth - 20, y = canvas.height - 20;
-                    ctx.fillStyle = 'white';
-                    ctx.strokeStyle = 'rgba(0,0,0,0.45)';
-                    ctx.lineWidth = 3;
-                    ctx.strokeText(text, x, y);
-                    ctx.fillText(text, x, y);
-                } else {
+                    let y = canvas.height - 20;
+
+                    for (let i = lines.length - 1; i >= 0; i--) {
+
+                        const line = lines[i];
+                        const textWidth = ctx.measureText(line).width;
+                        const x = canvas.width - textWidth - 20;
+
+                        ctx.fillStyle = 'white';
+                        ctx.strokeStyle = 'rgba(0,0,0,0.5)';
+                        ctx.lineWidth = 3;
+
+                        ctx.strokeText(line, x, y);
+                        ctx.fillText(line, x, y);
+
+                        y -= fontSize + 6;
+                    }
+                }
+
+                /* ==========================
+                   IMAGE WATERMARK (STABLE)
+                ========================== */
+                else {
+
                     const wmF = wmImage.files[0];
                     if (!wmF) return alert("कृपया watermark image निवडा");
 
-                    // Read watermark image from file
                     const wmi = new Image();
-                    wmi.src = URL.createObjectURL(wmF);
+                    const wmURL = URL.createObjectURL(wmF);
+                    wmi.src = wmURL;
 
-                    wmi.onload = () => {
-                        // Auto scaling based on base image size
-                        const scale = Math.min(0.25, canvas.width / (wmi.naturalWidth * 3));
-                        const w = Math.round(wmi.naturalWidth * scale);
-                        const h = Math.round(wmi.naturalHeight * scale);
+                    await wmi.decode();
 
-                        const x = canvas.width - w - 20;
-                        const y = canvas.height - h - 20;
+                    // Scale watermark relative to main image
+                    const scale = Math.min(0.25, canvas.width / (wmi.naturalWidth * 3));
+                    const w = Math.round(wmi.naturalWidth * scale);
+                    const h = Math.round(wmi.naturalHeight * scale);
 
-                        ctx.drawImage(wmi, x, y, w, h);
+                    const x = canvas.width - w - 20;
+                    const y = canvas.height - h - 20;
 
-                        // Release temporary watermark image URL
-                        URL.revokeObjectURL(wmi.src);
+                    ctx.drawImage(wmi, x, y, w, h);
 
-                        // Output final image
-                        canvas.toBlob(b => {
-                            const url = URL.createObjectURL(b);
-
-                            // Release previous output image URL
-                            if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
-                                URL.revokeObjectURL(downloadLink.href);
-                            }
-
-                            preview.innerHTML = `<img src="${url}" style="max-width:420px;border-radius:8px">`;
-                            downloadLink.href = url;
-                            downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, "") + "-wm.png";
-                            downloadLink.textContent = "Download";
-                            downloadLink.style.display = "inline-block";
-                            logEl.textContent = "Watermark applied successfully!";
-                        }, "image/png");
-                    };
-                    return;
+                    URL.revokeObjectURL(wmURL);
                 }
 
                 ctx.globalAlpha = 1;
-                canvas.toBlob(b => {
+
+                canvas.toBlob((b) => {
+
                     const url = URL.createObjectURL(b);
 
-                    // Release previous output image URL
                     if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
                         URL.revokeObjectURL(downloadLink.href);
                     }
 
-                    preview.innerHTML = `<img src="${url}" style="max-width:420px;border-radius:8px">`;
+                    preview.innerHTML = `
+                <img src="${url}"
+                     style="max-width:420px;border-radius:8px">
+            `;
+
                     downloadLink.href = url;
-                    downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-wm.png';
+                    downloadLink.download =
+                        currentFile.name.replace(/\.[^/.]+$/, '') + '-wm.png';
+
                     downloadLink.textContent = 'Download';
                     downloadLink.style.display = 'inline-block';
+
                     logEl.textContent = "Watermark applied successfully!";
                 }, 'image/png');
             };
+
             reader.readAsDataURL(currentFile);
         });
     </script>

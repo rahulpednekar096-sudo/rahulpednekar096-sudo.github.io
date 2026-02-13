@@ -22,6 +22,7 @@
 
   <!-- Stylesheet (RDroidApps theme) -->
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
   <!-- Libs -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -57,16 +58,14 @@
     });
   </script>
 
-  <div class="container" role="main">
-    <div class="header">
-      <div>
-        <h1>PDF → Excel — RDroidApps Pro</h1>
-        <div class="lead">Smart table detection, OCR fallback, multi-table extraction, XLSX/CSV output — पूर्ण
-          client-side.</div>
-      </div>
-      <div style="margin-left:auto"></div>
+  <section class="hero">
+    <div>
+      <h1>PDF → Excel — RDroidApps Pro</h1>
+      <p class="lead">Smart table detection, OCR fallback, multi-table extraction, XLSX/CSV output — Complete
+        client-side.</p>
     </div>
-
+  </section>
+  <div class="container" role="main">
     <div class="row">
       <div class="card" style="flex:1 1 420px">
         <label class="small">Source PDF</label>
@@ -145,6 +144,8 @@
     <div id="warning" style="color:#ffb199; margin-top:8px"></div>
     <hr style="margin:32px 0">
 
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
     <section class="seo-content">
       <h2>PDF to Excel Converter — RDroidApps Pro</h2>
 
@@ -190,6 +191,11 @@
   </div>
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
   <script>
     // Drawer toggle
     function toggleMenu() {

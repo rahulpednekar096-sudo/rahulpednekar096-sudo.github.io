@@ -18,6 +18,7 @@
     <meta name="author" content="RDroid Apps" />
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/book-editor.html">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
     <style>
         /* ... (keeping all CSS styles exactly as they were) ... */
     </style>
@@ -25,53 +26,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
     <script src="../../assets/fonts/noto-devanagari-base64.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <style>
         .section {
-            max-width: 90%;
-            background: none;
-            backdrop-filter: blur(0px);
-            -webkit-backdrop-filter: blur(0px);
+            max-width: 100%;
         }
 
         .card {
             width: auto;
-            background: rgba(255, 255, 255, 0.452);
-            border: 1px solid rgb(1, 195, 230);
-            box-shadow: 3px 3px 15px rgb(0, 0, 0);
-            color: var(--text);
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            color: #1e293b;
             padding: 10px;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
         }
-
-        .a:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .card.active {
-            background: rgba(0, 39, 29, 0.363);
-            border-color: var(--brand);
-            box-shadow: 0 0 0 2px rgba(34, 211, 166, 0.15);
-        }
-
 
         .seo-content {
             width: auto;
             margin-top: 60px;
-            background: rgba(0, 202, 185, 0.801);
-            box-shadow: 3px 3px 15px rgb(0, 0, 0);
             border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
         }
 
         .seo-card {
             width: auto;
-            background: rgba(0, 0, 0, 0.25);
             border-radius: 14px;
             padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            background: #fff;
+            border: 1px solid #e2e8f0;
         }
 
         /* Card icon spacing */
@@ -96,9 +82,9 @@
         }
 
         .sidebar {
-            background: rgba(12, 58, 0, 0.849);
-            border: 1px solid rgb(6, 253, 253);
-            box-shadow: 3px 3px 15px rgb(0, 0, 0);
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            box-shadow: none;
             border-radius: 12px;
             padding: 20px;
             overflow-y: auto;
@@ -108,13 +94,23 @@
         }
 
         .sidebar h3 {
-            color: aqua;
+            color: var(--brand);
+        }
+
+        .sidebar ul li a {
+            color: var(--text);
+            text-shadow: none;
+        }
+
+        .sidebar ul li a:hover,
+        .sidebar ul li a.active {
+            background: #0f52ba;
+            color: #fff;
         }
 
         .editor-area {
-            background: rgba(12, 58, 0, 0.849);
-            border: 1px solid rgb(6, 253, 253);
-            box-shadow: 3px 3px 15px rgb(0, 0, 0);
+            background: #fff;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
             padding: 25px;
             display: flex;
@@ -127,9 +123,8 @@
         }
 
         .preview-panel {
-            background: rgba(12, 58, 0, 0.849);
-            border: 1px solid rgb(6, 253, 253);
-            box-shadow: 3px 3px 15px rgb(0, 0, 0);
+            background: #fff;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
             padding: 20px;
             overflow-y: auto;
@@ -143,9 +138,9 @@
             padding: 12px 15px;
             margin: 8px 0;
             border-radius: 8px;
-            background: rgba(197, 178, 2, 0.582);
             border-left-color: var(--brand);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -154,12 +149,12 @@
         }
 
         .page-item:hover {
-            background: rgba(255, 255, 255, 0.089);
-            border-color: rgba(34, 211, 166, 0.2);
+            background: #e2e8f0;
+            border-color: rgba(101, 102, 102, 0.2);
         }
 
         .page-item.active {
-            background: rgba(3, 92, 70, 0.692);
+            background: #dbeafe;
             border-color: var(--brand);
         }
 
@@ -196,20 +191,19 @@
         }
 
         .editor-toolbar {
-            background: #616161;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
             padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             flex-wrap: wrap;
         }
 
         .format-btn {
             padding: 8px 12px;
-            background: rgba(180, 180, 180, 0.329);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 1px 1px 9px rgb(0, 0, 0);
+            background: #fff;
+            border: 1px solid #e2e8f0;
             color: var(--text);
             border-radius: 6px;
             cursor: pointer;
@@ -220,20 +214,20 @@
         }
 
         .format-btn.active {
-            background: rgba(250, 247, 94, 0.61);
+            background: #dbeafe;
             border-color: var(--brand);
         }
 
         .editor-content {
             flex: 1;
-            background: rgb(129, 129, 129);
-            border: 1px solid rgba(3, 227, 243, 0.459);
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            color: #1e293b;
             border-radius: 8px;
             padding: 25px;
             padding-bottom: 60px;
             font-family: 'Georgia', serif;
             line-height: 1.6;
-            color: var(--text);
             overflow-y: auto;
             overflow-x: hidden;
             outline: none;
@@ -245,16 +239,15 @@
 
         .editor-content:focus {
             border-color: var(--brand);
-            box-shadow: 0 0 0 2px rgba(34, 211, 166, 0.1);
         }
 
         .preview-page {
-            background: rgb(4 85 74);
-            color: rgb(226, 238, 240);
+            background: #fff;
+            color: #1e293b;
+            border: 1px solid #e2e8f0;
             padding: 30px;
             margin-bottom: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             min-height: 400px;
             font-family: 'Georgia', serif;
             line-height: 1.6;
@@ -293,12 +286,11 @@
         }
 
         .stat-card {
-            background: rgba(184, 182, 182, 0.418);
-            box-shadow: 3px 3px 15px rgb(0, 0, 0);
+            background: #fff;
+            border: 1px solid #e2e8f0;
             padding: 15px;
             border-radius: 10px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .stat-value {
@@ -323,8 +315,8 @@
         .size-option {
             padding: 10px;
             text-align: center;
-            background: rgba(1, 66, 1, 0.692);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #fff;
+            border: 1px solid #e2e8f0;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.2s;
@@ -335,7 +327,7 @@
         }
 
         .size-option.active {
-            background: rgba(250, 247, 94, 0.61);
+            background: #dbeafe;
             border-color: var(--brand);
         }
 
@@ -353,8 +345,8 @@
         .chapter-item {
             padding: 10px 15px;
             margin: 5px 0;
-            background: rgba(105, 104, 104, 0.993);
-            border: 1px solid rgba(3, 227, 243, 0.411);
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
             border-radius: 6px;
             border-left: 3px solid transparent;
             cursor: pointer;
@@ -366,7 +358,7 @@
         }
 
         .chapter-item.active {
-            background: rgb(197, 178, 2);
+            background: #dbeafe;
             border-left-color: var(--brand);
         }
 
@@ -405,17 +397,16 @@
 
         .export-option {
             padding: 20px;
-            background: rgb(30, 143, 151);
+            background: #fff;
+            border: 1px solid #e2e8f0;
             border-radius: 10px;
-            border: 1px solid rgb(1, 195, 230);
-            box-shadow: 3px 3px 15px rgb(0, 0, 0);
             text-align: center;
             cursor: pointer;
             transition: all 0.2s;
         }
 
         .export-option:hover {
-            background: rgba(248, 176, 22, 0.637);
+            background: #98c7f7;
             transform: translateY(-2px);
         }
 
@@ -449,6 +440,7 @@
             justify-content: center;
             z-index: 1000;
             border-radius: 12px;
+            background: rgba(255, 255, 255, 0.8);
         }
 
         .loading-overlay.active {
@@ -481,11 +473,11 @@
 
         /* FAQ Items */
         .faq-item {
-            background: rgba(255, 255, 255, 0.03);
+            background: #f8fafc;
+            border-left: 3px solid var(--brand);
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 15px;
-            border-left: 3px solid var(--brand);
         }
 
         /* Responsive Design */
@@ -541,19 +533,17 @@
 
         #fontFamily,
         #fontSize {
-            background-color: #0b1d4a;
-            color: #ffffff;
+            background-color: #93bdf5;
+            color: #0b1d4a;
+            border: 1px solid #000000;
         }
 
         /* dropdown options */
         #fontFamily option,
         #fontSize option {
-            background-color: #0b1d4a;
-            color: #ffffff;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(250, 247, 94, 0.61);
+            background-color: #93bdf5;
+            color: #0b1d4a;
+            border: 1px solid #000000;
         }
     </style>
 </head>
@@ -586,7 +576,7 @@
         });
     </script>
 
-    <section class="hero" style="text-align:center;">
+    <section class="hero">
         <h1 class="rdroid-blogs-title">
             <span class="rdroid">Book Editor</span>
             <span class="blogs">Pro Tools</span>
@@ -597,14 +587,6 @@
             and export to
             professional PDF format.
         </p>
-        <h3>Why Book Editor Pro?</h3>
-        <ul>
-            <p style="color: rgb(0, 0, 0);">📘 Write complete books directly in your browser.</p>
-            <p style="color: rgb(0, 0, 0);">🧩 Organize chapters & pages with ease.</p>
-            <p style="color: rgb(0, 0, 0);">✍️ Professional formatting tools built-in.</p>
-            <p style="color: rgb(0, 0, 0);">📄 Export print-ready PDF without extra software.</p>
-        </ul>
-        </div>
     </section>
 
     <section class="section" role="main" aria-labelledby="title">
@@ -737,13 +719,13 @@
                     <label style="display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px;">Book
                         Title</label>
                     <input type="text" id="bookTitle" value="My Book"
-                        style="width: 100%; padding: 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--text);">
+                        style="width: 93%; padding: 10px; border-radius: 6px; color: var(--text);">
                 </div>
                 <div style="margin-bottom: 20px;">
                     <label
                         style="display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px;">Author</label>
                     <input type="text" id="bookAuthor" value="Author Name"
-                        style="width: 100%; padding: 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--text);">
+                        style="width: 93%; padding: 10px; border-radius: 6px; color: var(--text);">
                 </div>
                 <div style="margin-bottom: 20px;">
                     <label style="display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px;">Page
@@ -787,17 +769,17 @@
                         <div>
                             <h3 style="font-size: 11px;">Bottom</h3>
                             <input type="number" id="marginBottom" value="20" min="10" max="50"
-                                style="width: 90%; padding: 8px; border: 1px solid rgba(14, 2, 2, 0.562); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--text);">
+                                style="width: 90%; padding: 8px; border: 1px solid rgba(14, 2, 2, 0.562); border-radius: 6px; color: var(--text);">
                         </div>
                         <div>
                             <h3 style="font-size: 11px;">Left</h3>
                             <input type="number" id="marginLeft" value="25" min="10" max="50"
-                                style="width: 90%; padding: 8px; border: 1px solid rgba(14, 2, 2, 0.562); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--text);">
+                                style="width: 90%; padding: 8px; border: 1px solid rgba(14, 2, 2, 0.562); border-radius: 6px; color: var(--text);">
                         </div>
                         <div>
                             <h3 style="font-size: 11px;">Right</h3>
                             <input type="number" id="marginRight" value="25" min="10" max="50"
-                                style="width: 90%; padding: 8px; border: 1px solid rgba(14, 2, 2, 0.562); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: var(--text);">
+                                style="width: 90%; padding: 8px; border: 1px solid rgba(14, 2, 2, 0.562); border-radius: 6px; color: var(--text);">
                         </div>
                     </div>
                 </div>

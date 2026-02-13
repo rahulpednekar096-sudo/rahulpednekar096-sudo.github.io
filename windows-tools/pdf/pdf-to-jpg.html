@@ -18,6 +18,7 @@
   <meta name="author" content="RDroid Apps" />
   <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/pdf-to-jpg.html">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
 
   <!-- pdf.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
@@ -52,10 +53,11 @@
     });
   </script>
 
-  <section class="section">
+  <section class="hero">
     <h1>PDF → JPG (Upgraded)</h1>
     <p class="lead">Convert PDF pages into high-quality JPG images. Select pages, adjust DPI, quality & scaling.</p>
-
+  </section>
+  <section class="section">
     <!-- Drag & Drop -->
     <div class="drop" id="dropArea">
       Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
@@ -133,6 +135,8 @@
     <div id="warning" style="color:#ffb199; margin-top:8px"></div>
     <hr style="margin:32px 0">
 
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
     <section class="seo-content">
       <h2>PDF to JPG Converter — RDroidApps Pro</h2>
 
@@ -179,6 +183,11 @@
   </section>
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
   <script>
     // Drawer toggle
     function toggleMenu() {

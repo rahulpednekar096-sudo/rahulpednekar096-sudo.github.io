@@ -19,6 +19,7 @@
     <title>Image Metadata Remover — RDroid Apps</title>
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/image/image-metadata-remover.html" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
     <!-- exif-js to read orientation if needed -->
     <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
 
@@ -47,12 +48,13 @@
         });
     </script>
 
+    <section class="hero">
+        <h1>Image Metadata Remover</h1>
+        <h3>Strip EXIF metadata by re-encoding the image in the browser. Output forced to PNG (no EXIF).
+        </h3>
+    </section>
     <section class="tool-section">
         <div class="card">
-            <h1>Image Metadata Remover</h1>
-            <p class="note">Strip EXIF metadata by re-encoding the image in the browser. Output forced to PNG (no EXIF).
-            </p>
-
             <label class="drop" id="dropArea"
                 style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
                 <button class="btn btn-ghost" id="pickBtn">Choose file</button>
@@ -69,7 +71,6 @@
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
-
             <section class="seo-content">
                 <h2>Image Metadata Remover Tool</h2>
                 <p>The Image Metadata Remover tool by RDroid Apps is a simple and effective solution for users who want
@@ -113,6 +114,11 @@
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
 

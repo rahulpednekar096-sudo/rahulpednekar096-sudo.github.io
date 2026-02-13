@@ -23,6 +23,7 @@
 
 
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
 
   <!-- Mammoth.js for DOCX to HTML conversion -->
   <script src="https://unpkg.com/mammoth@1.6.0/mammoth.browser.min.js"></script>
@@ -134,12 +135,12 @@
       $("#footer-container").load("/components/footer.html");
     });
   </script>
-  <section class="section">
-
+  <section class="hero">
     <h1>Word (DOCX) → PDF</h1>
     <p class="lead">Upload a Word DOCX file and convert it to PDF. Fully client-side, safe & fast. Preserves formatting,
       images, and tables.</p>
-
+  </section>
+  <section class="section">
     <div class="drop" id="dropArea">
       Drop DOCX here or <button class="btn" id="pickBtn">Choose file</button>
       <input type="file" id="fileInput" accept=".docx" style="display:none">
@@ -189,6 +190,8 @@
     <div id="warning" style="color:#ffb199; margin-top:8px"></div>
     <hr style="margin:32px 0">
 
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
     <section class="seo-content">
       <h2>Convert Word Documents to PDF with RDroidApps Pro</h2>
       <p>Looking for a quick and easy way to convert your Word documents (DOCX) to PDF? RDroidApps Pro offers a
@@ -225,6 +228,11 @@
   </section>
   <!-- FOOTER (loaded from external file) -->
   <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
 
   <script>
     // Drawer toggle

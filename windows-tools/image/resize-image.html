@@ -19,6 +19,7 @@
     <title>Resize Image — RDroid Apps</title>
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/image/resize-image.html" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -45,11 +46,12 @@
         });
     </script>
 
+    <section class="hero">
+        <h1>Resize Image</h1>
+        <h3>Upload an image and resize by pixels or percent. Preserve aspect ratio option included.</h3>
+    </section>
     <section class="tool-section">
         <div class="card">
-            <h1>Resize Image</h1>
-            <p class="note">Upload an image and resize by pixels or percent. Preserve aspect ratio option included.</p>
-
             <label class="drop" id="dropArea"
                 style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
                 <button class="btn btn-ghost" id="pickBtn">Choose file</button>
@@ -89,7 +91,6 @@
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
-
             <section class="seo-content">
                 <h2>Image Resizer Tool</h2>
                 <p>Welcome to our Image Resizer Tool, a simple and efficient way to resize your images directly in your
@@ -136,6 +137,11 @@
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
 
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }

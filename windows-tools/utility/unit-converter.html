@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/utility/unit-converter.html">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
     <meta name="description"
         content="Convert between different units: length, weight, temperature, area, volume, speed, time, pressure, energy, power, and more." />
     <meta name="keywords"
@@ -43,10 +44,11 @@
         });
     </script>
 
-    <section class="section" role="main" aria-labelledby="title">
+    <section class="hero" style="text-align: center;">
         <h1 id="title">Unit Converter</h1>
         <p class="lead">Convert between different units: length, weight, temperature, area, volume, and more.</p>
-
+    </section>
+    <section class="section" role="main" aria-labelledby="title">
         <div class="controls">
             <div class="control">
                 <label>Conversion Type</label>
@@ -99,6 +101,8 @@
 
         <hr>
 
+        <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+        <hr style="margin:32px 0">
         <section class="seo-content">
             <h2>About Unit Converter</h2>
             <p>
@@ -210,6 +214,11 @@
     </section>
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
 
     <script>
         // Unit definitions
