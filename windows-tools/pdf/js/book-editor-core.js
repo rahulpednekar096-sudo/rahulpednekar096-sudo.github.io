@@ -62,6 +62,10 @@ class BookEditorCore {
         this.wordCountEl = document.getElementById('wordCount');
         this.charCountEl = document.getElementById('charCount');
 
+        // Undo/Redo
+        this.undoBtn = document.getElementById('undoBtn');
+        this.redoBtn = document.getElementById('redoBtn');
+
         // Settings Elements
         this.bookTitleInput = document.getElementById('bookTitle');
         this.bookAuthorInput = document.getElementById('bookAuthor');
@@ -117,7 +121,7 @@ class BookEditorCore {
             this.landscapeBtn.classList.add('active');
             this.portraitBtn.classList.remove('active');
         }
-
+        this.updateUndoRedoButtons();
     }
 
     getDefaultEditorContent() {
@@ -478,6 +482,7 @@ class BookEditorCore {
 
         // new action → redo clear
         this.redoStack = [];
+        this.updateUndoRedoButtons(); // 👈 इथे add कर
     }
 
     //  Undo / Redo functions
@@ -485,6 +490,7 @@ class BookEditorCore {
         if (this.undoStack.length === 0) return;
 
         const state = this.undoStack.pop();
+            if (!state) return;
 
         // save current for redo
         this.redoStack.push({
@@ -495,6 +501,7 @@ class BookEditorCore {
         });
 
         this.restoreState(state);
+        this.updateUndoRedoButtons(); // 👈 इथे
     }
 
     redo() {
@@ -510,6 +517,7 @@ class BookEditorCore {
         });
 
         this.restoreState(state);
+        this.updateUndoRedoButtons(); // 👈 इथे
     }
 
     restoreState(state) {
@@ -523,8 +531,15 @@ class BookEditorCore {
         this.updateWordCount();
         this.updatePreview();
         this.updateToolbarState();
+
+        this.updateUndoRedoButtons(); // 👈 इथे call करायचा
     }
 
+    // 👇 इथे define करायचा (restoreState च्या बाहेर)
+    updateUndoRedoButtons() {
+        this.undoBtn.disabled = this.undoStack.length === 0;
+        this.redoBtn.disabled = this.redoStack.length === 0;
+    }
 
     // 🟢 Utility function
     applyStyleToSelection(styleCallback) {
@@ -989,21 +1004,9 @@ class BookEditorCore {
             });
         });
 
-        // Orientation buttons
-        this.portraitBtn.addEventListener('click', () => {
-            this.bookData.settings.orientation = 'portrait';
-
-            this.portraitBtn.classList.add('active');
-            this.landscapeBtn.classList.remove('active');
-        });
-
-        this.landscapeBtn.addEventListener('click', () => {
-            this.bookData.settings.orientation = 'landscape';
-
-            this.landscapeBtn.classList.add('active');
-            this.portraitBtn.classList.remove('active');
-        });
-
+        // Undo / Redo Buttons
+        this.undoBtn.addEventListener('click', () => this.undo());
+        this.redoBtn.addEventListener('click', () => this.redo());
 
         // Font family change
         this.fontFamilySelect.addEventListener('change', () => {
@@ -1040,13 +1043,17 @@ class BookEditorCore {
 
         // Editor content change
         let undoTimer;
-        this.editorContent.addEventListener('input', () => {
-            clearTimeout(undoTimer);
-            undoTimer = setTimeout(() => {
-                this.saveUndoState();              // ✅
-            }, 400);
+        // 🔥 Save state BEFORE change
+        this.editorContent.addEventListener('keydown', (e) => {
+        // Ignore control keys
+            if (e.ctrlKey || e.metaKey) return;
 
-            this.updateWordCount();
+            this.saveUndoState();
+        });
+
+        // Update stats AFTER change
+        this.editorContent.addEventListener('input', () => {
+    this.updateWordCount();
         });
 
         this.editorContent.addEventListener('blur', () => this.saveCurrentPage());

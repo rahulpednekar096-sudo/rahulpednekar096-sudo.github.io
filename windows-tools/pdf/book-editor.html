@@ -242,7 +242,7 @@
         }
 
         .preview-page {
-            background: #fff;
+            background: #dfe8f8cc;
             color: #1e293b;
             border: 1px solid #e2e8f0;
             padding: 30px;
@@ -286,9 +286,10 @@
         }
 
         .stat-card {
+            height: fit-content;
             background: #fff;
             border: 1px solid #e2e8f0;
-            padding: 15px;
+            padding: 0px 15px;
             border-radius: 10px;
             text-align: center;
         }
@@ -670,6 +671,8 @@
                         ⇔
                     </button>
                     <div style="flex: 1;"></div>
+                    <button class="format-btn" id="undoBtn" title="Undo (Ctrl+Z)">↶</button>
+                    <button class="format-btn" id="redoBtn" title="Redo (Ctrl+Y)">↷</button>
                     <select id="fontFamily"
                         style="border: 1px solid rgba(255, 255, 255, 0.342); color: var(--text); padding: 8px; border-radius: 6px;">
                         <option value="Georgia">Georgia</option>
@@ -678,6 +681,7 @@
                         <option value="Verdana">Verdana</option>
                         <option value="Courier New">Courier New</option>
                     </select>
+                    <div style="flex: 1;"></div>
                     <select id="fontSize"
                         style="border: 1px solid rgba(255, 255, 255, 0.425); color: var(--text); padding: 8px; border-radius: 6px; width: 80px;">
                         <option value="12">12px</option>
@@ -687,6 +691,9 @@
                         <option value="20">20px</option>
                         <option value="24">24px</option>
                     </select>
+
+
+                    <div style="width: 1px; background: rgba(255,255,255,0.1); margin: 0 10px;"></div>
                 </div>
 
                 <div class="editor-content" id="editorContent" contenteditable="true">
