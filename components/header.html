@@ -25,7 +25,7 @@
 
         <!-- Add Theme Toggle Button Here -->
         <button class="theme-btn" id="themeToggle" title="Toggle Theme">
-            ☀️
+            🌄
         </button>
 
         <a href="/auth/login.html" class="login-btn">🔑 Login</a>
@@ -33,104 +33,61 @@
 
     <!-- Add this small script to handle theme immediately -->
     <script>
-        // Quick theme initialization for header
+        // Quick theme initialization - ALWAYS DARK FIRST for new tabs
         (function () {
-            // Apply saved theme to header immediately
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            document.body.className = savedTheme + '-theme';
+            // Force dark theme immediately
+            document.body.className = 'dark-theme';
 
-            // Update button text
+            // Set button icon to moon (dark theme)
             const themeBtn = document.getElementById('themeToggle');
             if (themeBtn) {
-                themeBtn.textContent = savedTheme === 'light' ? '🌙' : '☀️';
+                themeBtn.textContent = '☀️';
             }
         })();
 
         // ========================================
-        // THEME MANAGEMENT SYSTEM
+        // THEME MANAGEMENT SYSTEM (with sessionStorage)
         // ========================================
-
-        // Initialize theme system
         function initThemeSystem() {
-            // Get theme button and body
             const themeBtn = document.getElementById('themeToggle');
             const body = document.body;
 
-            // If no theme button, exit
             if (!themeBtn) return;
 
-            // Get current theme from localStorage or default to dark
-            let currentTheme = localStorage.getItem('theme') || 'dark';
+            // Check if we have a theme stored for this session (same tab)
+            // If not, default to 'dark'
+            let currentTheme = sessionStorage.getItem('theme') || 'dark';
 
-            // Apply theme to body
             function applyTheme(theme) {
-                // Remove both classes
+                // Update body class
                 body.classList.remove('dark-theme', 'light-theme');
-                // Add current theme class
                 body.classList.add(theme + '-theme');
 
                 // Update button
-                themeBtn.textContent = theme === 'light' ? '☀️' : '🌄';
-                themeBtn.title = theme === 'light'
-                    ? 'Switch to Dark Theme'
-                    : 'Switch to Light Theme';
+                themeBtn.textContent = theme === 'light' ? '🌄' : '☀️';
+                themeBtn.title = theme === 'light' ? 'Switch to Dark Theme' : 'Switch to Light Theme';
 
-                // Save to localStorage
-                localStorage.setItem('theme', theme);
-
-                // Update theme color meta tag for mobile browsers
-                updateThemeMeta(theme);
-
-                // Dispatch event for other scripts
-                document.dispatchEvent(new CustomEvent('themeChanged', {
-                    detail: { theme: theme }
-                }));
+                // Save to sessionStorage (per tab)
+                sessionStorage.setItem('theme', theme);
             }
 
-            // Update meta tag for mobile browser theme colors
-            function updateThemeMeta(theme) {
-                let metaThemeColor = document.querySelector('meta[name="theme-color"]');
-                if (!metaThemeColor) {
-                    metaThemeColor = document.createElement('meta');
-                    metaThemeColor.name = "theme-color";
-                    document.head.appendChild(metaThemeColor);
-                }
-                metaThemeColor.content = theme === 'light' ? '#3b82f6' : '#020617';
-            }
-
-            // Toggle theme function
-            function toggleTheme() {
-                currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                applyTheme(currentTheme);
-            }
-
-            // Set initial theme
+            // Apply the theme (either from session or default dark)
             applyTheme(currentTheme);
 
-            // Add click event
-            themeBtn.addEventListener('click', toggleTheme);
-
-            // Listen for theme changes from other tabs/windows
-            window.addEventListener('storage', function (e) {
-                if (e.key === 'theme') {
-                    currentTheme = e.newValue || 'dark';
-                    applyTheme(currentTheme);
-                }
+            // Toggle theme on button click
+            themeBtn.addEventListener('click', function () {
+                currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                applyTheme(currentTheme);
             });
 
-            // Detect OS theme preference (only on first visit)
-            if (!localStorage.getItem('theme')) {
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                currentTheme = prefersDark ? 'dark' : 'light';
-                applyTheme(currentTheme);
-            }
+            // No storage event listener - we don't want cross-tab sync
+            // No OS preference detection - we always start with dark
         }
 
         // Initialize when DOM is ready
-        document.addEventListener('DOMContentLoaded', initThemeSystem);
-
-        // Also run immediately if DOM is already loaded
-        if (document.readyState !== 'loading') {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initThemeSystem);
+        } else {
             initThemeSystem();
         }
     </script>
