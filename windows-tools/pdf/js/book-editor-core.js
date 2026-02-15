@@ -950,7 +950,7 @@ class BookEditorCore {
 
         // Auto-save every 10 seconds
         this.autoSaveTimer = setInterval(() => {
-            this.saveToLocalStorage(true); // Save as draft
+            this.autoSaveDraft();   // ✔ correct method
             console.log('Auto-saved at', new Date().toLocaleTimeString());
         }, 10000);
     }
@@ -1174,3 +1174,4 @@ class BookEditorCore {
 
 // Initialize and expose to window
 window.bookEditor = new BookEditorCore();
+
