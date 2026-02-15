@@ -1,7 +1,10 @@
 
 // Set footer year
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const yearElement = document.getElementById("year");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
 });
 
 // Drawer open/close
@@ -25,12 +28,12 @@ document.addEventListener("click", function(e) {
   const loginBtn = document.querySelector(".login-btn");
 
   // 1) Close drawer if click is outside drawer + not menu button
-  if (!drawer.contains(e.target) && !menuBtn.contains(e.target)) {
+  if (drawer && menuBtn && !drawer.contains(e.target) && !menuBtn.contains(e.target)) {
     drawer.classList.remove("open");
   }
 
   // 2) Close login box if click is outside loginBox + not login button
-  if (!loginBox.contains(e.target) && !loginBtn.contains(e.target)) {
+  if (loginBox && loginBtn && !loginBox.contains(e.target) && !loginBtn.contains(e.target)) {
     loginBox.style.display = "none";
   }
 });
@@ -249,15 +252,18 @@ sidebarLinks.forEach(link => {
 });
 
 // Back to top functionality
-document.getElementById('backToTop').addEventListener('click', function () {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+const backToTopBtn = document.getElementById('backToTop');
+if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
-});
+}
 
 // Show/hide back to top button based on scroll position
- const scrollContainer = document.querySelector('.editor-area') || window;
+const scrollContainer = document.querySelector('.editor-area') || window;
 
 scrollContainer.addEventListener('scroll', function () {
     const scrollTop = scrollContainer === window
@@ -266,12 +272,17 @@ scrollContainer.addEventListener('scroll', function () {
 
     const backToTopBtn = document.getElementById('backToTop');
 
-    if (scrollTop > 300) {
-        backToTopBtn.style.display = 'flex';
-    } else {
-        backToTopBtn.style.display = 'none';
+    if (backToTopBtn) {
+        if (scrollTop > 300) {
+            backToTopBtn.style.display = 'flex';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
     }
 });
 
 // Initially hide the back to top button
-document.getElementById('backToTop').style.display = 'none';
+const backToTopBtnInitial = document.getElementById('backToTop');
+if (backToTopBtnInitial) {
+    backToTopBtnInitial.style.display = 'none';
+}
