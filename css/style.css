@@ -7,7 +7,6 @@
   --brand: #2563eb;
   --brand-dark: #0a3d91;
   --brand2: #1e3a8a;
-  /* added for gradients */
   --accent: #0d9488;
   --accent-light: rgb(165 205 209);
   --border: #5d5d5e;
@@ -18,18 +17,11 @@
 }
 
 /* -------------------- RESET & BASE -------------------- */
-* {
-  margin: 0;
-  padding: 0;
-  border-radius: 10px;
-  box-sizing: border-box;
-}
 
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   background: var(--bg);
-  color: var(--text);
   color: var(--text);
   min-height: 100vh;
   margin-top: 81px;
@@ -805,7 +797,7 @@ nav a:hover {
 
 .btn#pickBtn {
   background: yellow;
-  color: #000000;
+  color: #ffffff;
   border: 1.5px dashed #ffffff;
   transition: all 0.3s ease;
   box-shadow: 3px 6px 9px rgb(0, 0, 0);
@@ -1017,25 +1009,30 @@ nav a:hover {
 }
 
 .tab-btn {
-  padding: 8px 16px;
-  background: rgb(136, 135, 135);
-  border: none;
+  padding: 12px 20px;
+  background: transparent;
+  border: 1.5px dashed #0f52ba;
+  border-bottom: 3px solid var(--border);
   border-radius: 12px;
+  font-size: 16px;
   font-weight: 600;
-  color: white;
+  color: var(--text);
   cursor: pointer;
   flex-shrink: 0;
   margin-left: 10px;
+  transition: all 0.3s;
+  box-shadow: 3px 6px 9px rgb(0, 0, 0);
 }
 
 .tab-btn:hover {
-  background: rgb(60, 95, 109);
+  background: var(--brand-dark);
+  color: white;
 }
 
 .tab-btn.active {
   background: linear-gradient(145deg, var(--brand), var(--brand2));
   border: none;
-  color: #000;
+  color: #FFFFFF;
 }
 
 .tab-content {

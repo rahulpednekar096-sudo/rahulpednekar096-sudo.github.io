@@ -291,6 +291,11 @@
         <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://rdroidapps.com/windows-tools/utility/password-tool.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
     <!-- ================= blogs section ================= -->
     <url>
         <loc>https://rdroidapps.com/blog/articles/how-to-compress-pdf.html</loc>
