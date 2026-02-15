@@ -1115,7 +1115,14 @@ class BookEditorCore {
         [this.marginTopInput, this.marginBottomInput, this.marginLeftInput, this.marginRightInput].forEach(input => {
             const updateMargin = () => {
                 const margin = input.id.replace('margin', '').toLowerCase();
-                this.bookData.settings.margins[margin] = parseInt(input.value) || 20;
+                const newValue = parseInt(input.value) || 20;
+
+                console.log(`🔧 Updating margin: ${margin} = ${newValue}mm (from input: ${input.id})`);
+
+                this.bookData.settings.margins[margin] = newValue;
+
+                // Log entire margins object for verification
+                console.log('📐 All margins:', this.bookData.settings.margins);
             };
 
             // Use both 'input' (real-time) and 'change' (on blur) events
