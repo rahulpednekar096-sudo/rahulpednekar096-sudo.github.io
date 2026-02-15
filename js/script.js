@@ -120,6 +120,8 @@ const sitePages = [
     { title: "QR Generator", url: "windows-tools/utility/qr-generator.html" },
     { title: "Unit Converter", url: "windows-tools/utility/unit-converter.html" },
     { title: "Age Calculator", url: "windows-tools/utility/age-calculator.html" },
+    { title: "Age Calculator", url: "windows-tools/utility/password-tool.html" },
+
 
   //blog section
     { title: "Blog Home", url: "blog/index.html" },
