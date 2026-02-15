@@ -941,6 +941,28 @@ class BookEditorCore {
         }
     }
 
+    // Auto-save functionality
+    startAutoSave() {
+        // Clear any existing timer
+        if (this.autoSaveTimer) {
+            clearInterval(this.autoSaveTimer);
+        }
+
+        // Auto-save every 10 seconds
+        this.autoSaveTimer = setInterval(() => {
+            this.saveToLocalStorage(true); // Save as draft
+            console.log('Auto-saved at', new Date().toLocaleTimeString());
+        }, 10000);
+    }
+
+    stopAutoSave() {
+        if (this.autoSaveTimer) {
+            clearInterval(this.autoSaveTimer);
+            this.autoSaveTimer = null;
+        }
+    }
+
+
 
     setupEventListeners() {
         // Button events
@@ -1033,34 +1055,36 @@ class BookEditorCore {
             this.saveCurrentPage();
         });
 
+        // Editor content keyboard handling
         this.editorContent.addEventListener('keydown', (e) => {
+            // Handle Enter key for paragraph breaks
             if (e.key === 'Enter') {
                 e.preventDefault();
                 document.execCommand('insertParagraph');
             }
-        });
 
-
-        // Editor content change
-        let undoTimer;
-        // 🔥 Save state BEFORE change
-        this.editorContent.addEventListener('keydown', (e) => {
-        // Ignore control keys
-            if (e.ctrlKey || e.metaKey) return;
-
-            this.saveUndoState();
+            // Save undo state for regular typing (ignore control keys)
+            if (!e.ctrlKey && !e.metaKey) {
+                this.saveUndoState();
+            }
         });
 
         // Update stats AFTER change
         this.editorContent.addEventListener('input', () => {
-    this.updateWordCount();
+            this.updateWordCount();
         });
 
         this.editorContent.addEventListener('blur', () => this.saveCurrentPage());
 
         // Settings changes
-        this.bookTitleInput.addEventListener('input', () => this.updatePreview());
-        this.bookAuthorInput.addEventListener('input', () => this.updatePreview());
+        this.bookTitleInput.addEventListener('input', () => {
+            this.bookData.title = this.bookTitleInput.value;
+            this.updatePreview();
+        });
+        this.bookAuthorInput.addEventListener('input', () => {
+            this.bookData.author = this.bookAuthorInput.value;
+            this.updatePreview();
+        });
 
         // Page size options
         this.pageSizeOptions.forEach(option => {
@@ -1089,10 +1113,14 @@ class BookEditorCore {
 
         // Margin inputs
         [this.marginTopInput, this.marginBottomInput, this.marginLeftInput, this.marginRightInput].forEach(input => {
-            input.addEventListener('change', () => {
+            const updateMargin = () => {
                 const margin = input.id.replace('margin', '').toLowerCase();
                 this.bookData.settings.margins[margin] = parseInt(input.value) || 20;
-            });
+            };
+
+            // Use both 'input' (real-time) and 'change' (on blur) events
+            input.addEventListener('input', updateMargin);
+            input.addEventListener('change', updateMargin);
         });
 
         // Keyboard shortcuts
