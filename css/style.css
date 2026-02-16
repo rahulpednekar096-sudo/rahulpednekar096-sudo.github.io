@@ -95,7 +95,7 @@ a:hover {
 }
 
 span {
-  color: var(--border);
+  color: var(--text);
 }
 
 code {
@@ -1415,6 +1415,7 @@ textarea:focus {
 
 .search-results a:hover {
   background: var(--soft);
+  color: var(--text);
 }
 
 /* -------------------- UTILITIES -------------------- */
