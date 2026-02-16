@@ -39,7 +39,6 @@
             color: #1e293b;
             padding: 10px;
             border-radius: 8px;
-            cursor: pointer;
             transition: all 0.2s ease;
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
         }
@@ -546,6 +545,289 @@
             color: #0b1d4a;
             border: 1px solid #000000;
         }
+
+        /* Light-Theme */
+
+        .light-theme .card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            color: var(--text);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        .light-theme .seo-content {
+            background: var(--bg);
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .seo-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+        }
+
+        /* SEO heading */
+        .light-theme .seo-content>h2 {
+            color: var(--brand);
+        }
+
+        .light-theme .sidebar {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            box-shadow: none;
+        }
+
+        .light-theme .sidebar h3 {
+            color: var(--brand);
+        }
+
+        .light-theme .sidebar ul li a {
+            color: var(--text);
+            text-shadow: none;
+        }
+
+        .light-theme .sidebar ul li a:hover,
+        .light-theme .sidebar ul li a.active {
+            background: var(--brand);
+            color: #fff;
+        }
+
+        .light-theme .editor-area {
+            background: var(--panel);
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .preview-panel {
+            background: var(--panel);
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .page-item {
+            border-left-color: var(--brand);
+            background: #2d3748;
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .page-item:hover {
+            background: #334155;
+            border-color: rgba(101, 102, 102, 0.2);
+        }
+
+        .light-theme .page-item.active {
+            background: #2d3748;
+            border-color: var(--brand);
+        }
+
+        .light-theme .page-number {
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .light-theme .page-action-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            color: var(--muted);
+        }
+
+        .light-theme .page-action-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text);
+        }
+
+        .light-theme .editor-toolbar {
+            background: var(--panel);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .light-theme .format-btn {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .light-theme .format-btn.active {
+            background: #2d3748;
+            border-color: var(--brand);
+        }
+
+        .light-theme .editor-content {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .light-theme .editor-content:focus {
+            border-color: var(--brand);
+        }
+
+        .light-theme .preview-page {
+            background: rgba(30, 41, 59, 0.8);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .page-header {
+            text-align: center;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .light-theme .page-footer {
+            color: var(--muted);
+        }
+
+        .light-theme .stat-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .stat-value {
+            color: var(--brand);
+        }
+
+        .light-theme .stat-label {
+            color: var(--muted);
+        }
+
+        .light-theme .size-option {
+            background: var(--panel);
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .size-option:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .light-theme .size-option.active {
+            background: #2d3748;
+            border-color: var(--brand);
+        }
+
+        .light-theme .size-label {
+            color: var(--text);
+        }
+
+        .light-theme .size-dimensions {
+            color: var(--muted);
+        }
+
+        .light-theme .chapter-item {
+            background: #2d3748;
+            border: 1px solid var(--border);
+            border-left: 3px solid transparent;
+        }
+
+        .light-theme .chapter-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .light-theme .chapter-item.active {
+            background: #2d3748;
+            border-left-color: var(--brand);
+        }
+
+        .light-theme .empty-state {
+            color: var(--muted);
+        }
+
+        .light-theme .word-count {
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .light-theme .export-option {
+            background: var(--panel);
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .export-option:hover {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .light-theme .export-icon {
+            color: var(--brand);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .light-theme .loading-overlay {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .light-theme .loading-spinner {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--brand);
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* FAQ Items */
+        .light-theme .faq-item {
+            background: #2d3748;
+            border-left: 3px solid var(--brand);
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .cards-horizontal {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards-horizontal {
+                grid-template-columns: 1fr;
+            }
+
+            .seo-card {
+                padding: 20px;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .cards-horizontal {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards-horizontal {
+                grid-template-columns: 1fr;
+            }
+
+            .seo-card {
+                padding: 20px;
+            }
+        }
+
+        .light-theme #fontFamily,
+        .light-theme #fontSize {
+            background-color: var(--panel);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        /* dropdown options */
+        .light-theme #fontFamily option,
+        .light-theme #fontSize option {
+            background-color: var(--panel);
+            color: var(--text);
+            border: none;
+        }
     </style>
 </head>
 
@@ -795,7 +1077,7 @@
                     <div class="preview-page" id="pagePreview">
                         <div class="page-header">
                             <div style="font-size: 24px; font-weight: bold;" id="previewTitle">My Book</div>
-                            <div style="font-size: 14px; color: #666; margin-top: 5px;" id="previewAuthor">Author
+                            <div style="font-size: 14px; margin-top: 5px;" id="previewAuthor">Author
                                 Name
                             </div>
                             <div style="font-size: 12px; color: #999; margin-top: 10px;">Page 1</div>
