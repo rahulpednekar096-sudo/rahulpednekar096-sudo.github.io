@@ -25,7 +25,7 @@
 
         <!-- Add Theme Toggle Button Here -->
         <button class="theme-btn" id="themeToggle" title="Toggle Theme">
-            🌄
+            🌙
         </button>
 
         <a href="/auth/login.html" class="login-btn">🔑 Login</a>
@@ -64,7 +64,7 @@
                 body.classList.add(theme + '-theme');
 
                 // Update button
-                themeBtn.textContent = theme === 'light' ? '🌄' : '☀️';
+                themeBtn.textContent = theme === 'light' ? '🌙' : '☀️';
                 themeBtn.title = theme === 'light' ? 'Switch to Dark Theme' : 'Switch to Light Theme';
 
                 // Save to sessionStorage (per tab)
