@@ -4,6 +4,7 @@
   --panel: #ffffff;
   --text: #000d20;
   --muted: #64748b;
+  --hilight: #84ad80;
   --brand: #2563eb;
   --brand-dark: #0a3d91;
   --brand2: #1e3a8a;
@@ -53,6 +54,7 @@ p {
   color: var(--text);
   line-height: 1.7;
   margin-bottom: 15px;
+  background: none !important;
 }
 
 p.lead {
@@ -62,7 +64,7 @@ p.lead {
 
 p.note {
   padding: 15px;
-  background: var(--accent-light);
+  background: var(--accent-light) !important;
   color: var(--text);
   font-size: 14px;
 }
@@ -95,7 +97,7 @@ a:hover {
 }
 
 span {
-  color: var(--text);
+  color: var(--hilight);
 }
 
 code {
@@ -363,6 +365,18 @@ header {
 
 .theme-btn:hover {
   color: var(--brand2);
+}
+
+#cancelBtn,
+#resetBtn {
+  background: #f97316 !important;
+  color: white !important;
+}
+
+#resetGeneratorBtn,
+#resetCheckerBtn {
+  background: #f97316;
+  color: white;
 }
 
 /* -------------------- DRAWER MENU -------------------- */
@@ -1228,7 +1242,7 @@ textarea:focus {
   align-items: center;
   gap: 12px;
   padding: 10px;
-  background: #0f1315;
+  background: var(--panel);
   border-radius: 8px;
   border: 1px solid #222;
 }
