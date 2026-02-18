@@ -111,7 +111,6 @@ const sitePages = [
     { title: "File Renamer", url: "/windows-tools/system/file-renamer.html" },
     { title: "Duplicate Finder", url: "/windows-tools/system/duplicate-file-finder.html" },
     { title: "Folder Size", url: "/windows-tools/system/folder-size-analyzer.html" },
-    { title: "Startup Manager", url: "/windows-tools/system/startup-program-manager.html" },
     { title: "Disk Usage", url: "/windows-tools/system/disk-usage-visualizer.html" },
 
     //utility Tools
@@ -120,10 +119,10 @@ const sitePages = [
     { title: "QR Generator", url: "windows-tools/utility/qr-generator.html" },
     { title: "Unit Converter", url: "windows-tools/utility/unit-converter.html" },
     { title: "Age Calculator", url: "windows-tools/utility/age-calculator.html" },
-    { title: "Age Calculator", url: "windows-tools/utility/password-tool.html" },
+    { title: "Password Generator", url: "windows-tools/utility/password-tool.html" },
+    { title: "Currency Converter", url: "windows-tools/utility/currency-converter.html"},
 
-
-  //blog section
+    //blog section
     { title: "Blog Home", url: "blog/index.html" },
     { title: "How to Compress PDF Files Without Losing Quality", url: "blog/articles/how-to-compress-pdf.html" },
     { title: "Understanding Image Formats: JPG, PNG, WebP", url: "blog/articles/image-formats-guide.html" },
