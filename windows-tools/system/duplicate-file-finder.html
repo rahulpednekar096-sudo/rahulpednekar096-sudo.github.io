@@ -1177,71 +1177,44 @@
         }
 
         // Delete selected files
-        document.getElementById('deleteBtn').addEventListener('click', async () => {
+        document.getElementById('deleteBtn').addEventListener('click', () => {
             if (selectedForDeletion.size === 0) {
                 alert('No files selected for deletion.');
                 return;
             }
 
-            if (!confirm(`Remove ${selectedForDeletion.size} duplicate files? This will free ${formatSize(calculatePotentialSavings())} of space.`)) {
-                return;
+            const confirmDelete = confirm(
+                `⚠️ Browser Security Notice
+
+This web tool cannot delete files directly from your computer.
+
+Please manually delete the selected files from your system file manager.
+
+Would you like to download a list of selected files for reference?`
+            );
+
+            if (confirmDelete) {
+                downloadDeletionList();
             }
+        });
 
-            // Filter out selected files
-            const filesToKeep = filesData.filter(f => !selectedForDeletion.has(f.id));
+        function downloadDeletionList() {
+            const files = filesData.filter(f => selectedForDeletion.has(f.id));
 
-            if (filesToKeep.length === 0) {
-                alert('Cannot delete all files. At least one file must remain.');
-                return;
-            }
+            const content = files.map(f =>
+                `${f.path}  |  ${formatSize(f.size)}`
+            ).join("\n");
 
-            // Create zip of remaining files
-            progressWrap.style.display = 'block';
-            progressBar.style.width = '0%';
-            progressBar.textContent = '0%';
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
 
-            const zip = new JSZip();
-            let processed = 0;
-
-            for (const file of filesToKeep) {
-                zip.file(file.originalName, file.originalFile);
-                processed++;
-
-                const progress = (processed / filesToKeep.length) * 100;
-                progressBar.style.width = `${progress}%`;
-                progressBar.textContent = `${Math.round(progress)}%`;
-
-                await new Promise(resolve => setTimeout(resolve, 10));
-            }
-
-            // Generate and download zip
-            const zipBlob = await zip.generateAsync({ type: 'blob' });
-            const url = URL.createObjectURL(zipBlob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `clean_files_${Date.now()}.zip`;
-            document.body.appendChild(a);
+            a.download = 'files-to-delete.txt';
             a.click();
-            document.body.removeChild(a);
+
             URL.revokeObjectURL(url);
-
-            // Update UI
-            progressWrap.style.display = 'none';
-            downloadSection.style.display = 'block';
-
-            downloadContainer.innerHTML = `
-        <div class="card" style="background: rgba(10, 163, 127, 0.1);">
-          <h4 style="color: #0aa37f;">✅ Clean Files Downloaded</h4>
-          <p>${filesToKeep.length} files (${formatSize(filesToKeep.reduce((sum, f) => sum + f.size, 0))}) have been saved to the ZIP file.</p>
-          <p class="small">Original duplicate files were not modified on your system.</p>
-        </div>
-      `;
-
-            // Clear selection
-            selectedForDeletion.clear();
-            updateSelectedContainer();
-            document.getElementById('deleteBtn').disabled = true;
-        });
+        }
 
         // Export report
         document.getElementById('exportReportBtn').addEventListener('click', () => {
