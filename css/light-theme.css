@@ -4,7 +4,7 @@
     --panel: #1e293b;
     --text: #f1f5f9;
     --muted: #94a3b8;
-    --hilight: #84ad80;
+    --hilight: #3d5e3a;
     --brand: #3b82f6;
     --brand-dark: #2563eb;
     --brand2: #22d3aa;
@@ -1354,3 +1354,4 @@ ul {}
         gap: 18px;
     }
 }
+
