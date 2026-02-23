@@ -4,7 +4,7 @@
   --panel: #ffffff;
   --text: #000d20;
   --muted: #64748b;
-  --hilight: #84ad80;
+  --hilight: #264e23;
   --brand: #2563eb;
   --brand-dark: #0a3d91;
   --brand2: #1e3a8a;
@@ -14,7 +14,6 @@
   --soft: #cddbe9;
   --card-border: rgb(234 243 251);
   --danger: #ef4444;
-
 }
 
 /* -------------------- RESET & BASE -------------------- */
@@ -97,7 +96,7 @@ a:hover {
 }
 
 span {
-  color: var(--hilight);
+  color: var(--hilight) !important;
 }
 
 code {
