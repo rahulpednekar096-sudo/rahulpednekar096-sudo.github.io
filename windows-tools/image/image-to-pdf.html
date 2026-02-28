@@ -23,7 +23,6 @@
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 </head>
 
 <body>
@@ -58,10 +57,16 @@
                 <button class="btn btn-ghost" id="pickBtn">Choose file</button>
             </label>
             <input type="file" id="fileInput" accept="image/*" multiple />
-            <div style="margin-top:12px;display:flex;gap:8px;">
-                <button class="btn btn-primary" id="startBtn">Create PDF</button>
-                <button class="btn btn-ghost" id="resetBtn">Reset</button>
-                <a id="downloadLink" class="btn" style="display:none"></a>
+            <div>
+                <div style="margin-top:12px;display:flex;gap:8px;">
+                    <button class="btn btn-primary" id="startBtn">Create PDF</button>
+                    <button class="btn btn-ghost" id="resetBtn">Reset</button>
+                    <a id="downloadLink" class="btn" style="display:none"></a>
+                </div>
+                <div id="loader" style="display:none; text-align:left;">
+                    <div class="spinner"></div>
+                    <p style="margin-top:8px;">Processing... Please wait</p>
+                </div>
             </div>
             <div id="preview" style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap"></div>
             <pre id="log">Ready.</pre>
@@ -113,6 +118,7 @@
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
 
         // Variables declaration
+        const loader = document.getElementById('loader');
         const pickBtn = document.getElementById('pickBtn'),
             fileInput = document.getElementById('fileInput'),
             dropArea = document.getElementById('dropArea'),
@@ -188,7 +194,15 @@
             const files = Array.from(fileInput.files || []);
             if (!files.length) return alert('कृपया images निवडा');
 
-            logEl.textContent = 'Creating PDF...\n';
+            logEl.textContent = 'Preparing...\n';
+
+            // Disable button + show loader
+            startBtn.disabled = true;
+            loader.style.display = 'block';
+            downloadLink.style.display = 'none';
+
+            // 2.5 second artificial delay
+            await new Promise(resolve => setTimeout(resolve, 2500));
 
             try {
                 const pdfDoc = await PDFLib.PDFDocument.create();
@@ -197,43 +211,30 @@
                     try {
                         const data = await f.arrayBuffer();
 
-                        // Helper function to try embed as JPG then PNG
-                        async function tryEmbed(pdfDoc, data, f) {
-                            let imgEmbed;
-                            try {
-                                imgEmbed = await pdfDoc.embedJpg(data);
-                            } catch (err) {
-                                try {
-                                    imgEmbed = await pdfDoc.embedPng(data);
-                                } catch (err2) {
-                                    throw new Error('Unsupported image format');
-                                }
-                            }
-                            const dims = imgEmbed.scale(1);
-                            const page = pdfDoc.addPage([dims.width, dims.height]);
-                            page.drawImage(imgEmbed, {
-                                x: 0,
-                                y: 0,
-                                width: dims.width,
-                                height: dims.height
-                            });
-                            return imgEmbed;
+                        let imgEmbed;
+                        try {
+                            imgEmbed = await pdfDoc.embedJpg(data);
+                        } catch {
+                            imgEmbed = await pdfDoc.embedPng(data);
                         }
 
-                        await tryEmbed(pdfDoc, data, f);
+                        const dims = imgEmbed.scale(1);
+                        const page = pdfDoc.addPage([dims.width, dims.height]);
+                        page.drawImage(imgEmbed, {
+                            x: 0,
+                            y: 0,
+                            width: dims.width,
+                            height: dims.height
+                        });
+
                         logEl.textContent += `Added: ${f.name}\n`;
                     } catch (e) {
-                        logEl.textContent += 'Skipped file ' + f.name + ': ' + e.message + '\n';
+                        logEl.textContent += `Skipped: ${f.name}\n`;
                     }
                 }
 
                 const pdfBytes = await pdfDoc.save();
                 const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-
-                // Release previous PDF URL if exists
-                if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
-                    URL.revokeObjectURL(downloadLink.href);
-                }
 
                 const url = URL.createObjectURL(blob);
                 downloadLink.href = url;
@@ -241,10 +242,15 @@
                 downloadLink.textContent = 'Download PDF';
                 downloadLink.style.display = 'inline-block';
 
-                logEl.textContent += `Done. PDF created with ${files.length} page(s).\n`;
+                logEl.textContent += 'Done. PDF created.\n';
+
             } catch (error) {
-                logEl.textContent = 'Error: ' + error.message + '\n';
+                logEl.textContent = 'Error: ' + error.message;
             }
+
+            // Hide loader + enable button
+            loader.style.display = 'none';
+            startBtn.disabled = false;
         });
 
         // Reset Function
