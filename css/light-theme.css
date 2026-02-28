@@ -1,10 +1,10 @@
 .light-theme {
     /* Colors - Dark SaaS Theme */
-    --bg: #0f172a;
+    --bg: #16223d;
     --panel: #1e293b;
     --text: #f1f5f9;
     --muted: #94a3b8;
-    --hilight: #3d5e3a;
+    --hilight: #92af8f;
     --brand: #3b82f6;
     --brand-dark: #2563eb;
     --brand2: #22d3aa;
@@ -37,8 +37,6 @@
 .light-theme h3 {
     color: var(--brand-dark);
 }
-
-.light-theme h4 {}
 
 .light-theme p {
     color: var(--muted) !important;
@@ -81,7 +79,6 @@ strong {
 
 .light-theme code {
     font-family: 'Consolas', 'Courier New', monospace;
-    background: #2d3748;
     color: #f1f5f9;
 }
 
@@ -112,9 +109,6 @@ strong {
     color: #b0e0d0;
 }
 
-.light-theme ol,
-ul {}
-
 .light-theme li {
     color: var(--text);
 }
@@ -128,7 +122,6 @@ ul {}
 }
 
 /* -------------------- LAYOUT & CONTAINERS -------------------- */
-.light-theme .wrap {}
 
 .light-theme .light-theme .container {
     background: var(--panel);
@@ -142,9 +135,6 @@ ul {}
     color: var(--text);
 }
 
-.light-theme .section h1,
-.section h2 {}
-
 .light-theme .home-content {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -157,14 +147,6 @@ ul {}
 .light-theme .home-content p {
     color: var(--text);
 }
-
-.light-theme .main-wrap {}
-
-.light-theme .main-wrap .half {}
-
-.light-theme .row {}
-
-.light-theme .col {}
 
 /* -------------------- HEADER & NAVIGATION -------------------- */
 .light-theme header {
@@ -207,8 +189,6 @@ ul {}
 .nav-links a:hover {
     color: #ffffff;
 }
-
-.light-theme .nav-links::-webkit-scrollbar {}
 
 .light-theme .nav-links::-webkit-scrollbar-track {
     background: transparent;
@@ -296,19 +276,12 @@ ul {}
     display: block;
 }
 
-.light-theme
-
 /* -------------------- HERO SECTION -------------------- */
-.hero {}
-
-.light-theme .hero-right h1 {}
 
 .light-theme .hero-right p {
     color: var(--text);
     font-size: 18px;
 }
-
-.light-theme .cta {}
 
 /* -------------------- TOOLS SECTION -------------------- */
 .light-theme .tools-quick-links {
@@ -316,15 +289,9 @@ ul {}
     border-bottom: 1px solid #1f2937;
 }
 
-.light-theme .tools-scroll {}
-
 .light-theme .tools-scroll::-webkit-scrollbar {
     display: none;
 }
-
-.light-theme .tool-section {}
-
-.light-theme .tools-container {}
 
 .light-theme .sidebar {
     background: var(--panel);
@@ -333,8 +300,6 @@ ul {}
 .light-theme .sidebar h3 {
     color: #fbbf24;
 }
-
-.light-theme .sidebar ul {}
 
 .light-theme .sidebar ul li a {
     color: var(--text);
@@ -359,8 +324,6 @@ ul {}
     margin-bottom: 15px;
 }
 
-.light-theme .tool-item {}
-
 .light-theme .tool-item a {
     color: var(--accent);
     text-decoration: none;
@@ -370,8 +333,6 @@ ul {}
 .light-theme .tool-item a:hover {
     color: var(--text);
 }
-
-.light-theme .tool-item h2 {}
 
 .light-theme .tool-item h3 {
     color: var(--brand);
@@ -399,7 +360,6 @@ ul {}
 }
 
 /* -------------------- APPS SECTION -------------------- */
-.light-theme.apps {}
 
 .light-theme .app {
     background: var(--panel);
@@ -410,12 +370,6 @@ ul {}
     border: 1px solid var(--border);
 }
 
-.light-theme .app-thumb {}
-
-.light-theme .app-info {}
-
-.light-theme .app-info h3 {}
-
 .light-theme .app-short-desc {
     color: var(--muted);
 }
@@ -424,8 +378,6 @@ ul {}
     color: var(--muted);
     text-shadow: 3px 3px 15px rgb(0, 0, 0);
 }
-
-.light-theme .app-actions {}
 
 .light-theme .app-title a {
     color: var(--text);
@@ -438,12 +390,6 @@ ul {}
 .light-theme .app small p {
     color: var(--muted);
 }
-
-.light-theme .app-images {}
-
-.light-theme .app-images img {}
-
-.light-theme .app-images img:hover {}
 
 /* -------------------- CARDS & BOXES -------------------- */
 .light-theme .glass-card {
@@ -500,8 +446,6 @@ ul {}
     color: var(--text);
 }
 
-.light-theme .table-preview {}
-
 .light-theme .table-preview th,
 .table-preview td {
     background: rgba(59, 130, 246, 0.2);
@@ -557,7 +501,7 @@ ul {}
 }
 
 .light-theme .btn-ghost {
-    background: transparent;
+    background: gray;
     color: var(--brand);
     border: 1px dashed var(--brand);
     box-shadow: 3px 6px 9px rgb(0, 0, 0);
@@ -639,14 +583,6 @@ ul {}
     color: #ffffff;
 }
 
-.light-theme
-
-/* Undo / Redo Buttons Special Style */
-.light-theme #undoBtn,
-.light-theme #redoBtn {}
-
-.light-theme
-
 /* Hover Effect */
 .light-theme #undoBtn:hover,
 .light-theme #redoBtn:hover {
@@ -655,14 +591,7 @@ ul {}
     transform: translateY(-1px);
 }
 
-.light-theme
-
-/* Disabled State */
-.light-theme #undoBtn:disabled,
-.light-theme #redoBtn:disabled {}
-
 /* -------------------- TABS -------------------- */
-.light-theme .tabs {}
 
 .light-theme .tab-btn {
     background: #2d3748;
@@ -682,14 +611,7 @@ ul {}
     color: #FFFFFF;
 }
 
-.light-theme .tab-content {
-    display: none;
-}
-
-.light-theme .tab-content.active {}
-
 /* -------------------- FORMS -------------------- */
-.light-theme input[type="file"] {}
 
 .light-theme .select,
 .light-theme input[type="text"],
@@ -718,8 +640,6 @@ ul {}
     box-shadow: 0 0 10px rgba(34, 211, 166, .5);
 }
 
-.light-theme .contact-form button:hover {}
-
 .light-theme input:focus,
 .light-theme select:focus,
 .light-theme textarea:focus {
@@ -743,12 +663,6 @@ ul {}
     margin-bottom: 6px;
 }
 
-.light-theme .advanced-controls {}
-
-.light-theme .adv-col {}
-
-.light-theme .optionRow {}
-
 /* -------------------- PROGRESS -------------------- */
 .light-theme .progress {
     background: #1e293b;
@@ -760,36 +674,22 @@ ul {}
 }
 
 /* -------------------- THUMBNAILS & FILE LIST -------------------- */
-.light-theme .thumbs {}
+
 
 .light-theme .thumb {
     background: #2d3748;
     border: 1px solid var(--border);
 }
 
-.light-theme .thumb img {}
-
 .light-theme .thumb .meta {
     font-size: 12px;
     color: var(--muted);
 }
 
-.light-theme .thumb .actions {}
-
-.light-theme .thumb[draggable="true"] {}
-
-.light-theme .thumb.dragging {}
-
-.light-theme .files-list {}
-
 .light-theme .file-item {
     background: #111827;
     border: 1px solid var(--border);
 }
-
-.light-theme .file-meta {}
-
-.light-theme .file-actions {}
 
 /* ======================================== */
 /* LIGHT THEME – LOGIN BOX */
@@ -834,16 +734,10 @@ ul {}
     color: var(--muted);
 }
 
-.light-theme .footer-grid {}
-
 .light-theme .footer-col h4 {
     color: var(--text);
     margin-bottom: 12px;
 }
-
-.light-theme .footer-col ul {}
-
-.light-theme .footer-col li {}
 
 .light-theme .footer-col a {
     color: var(--text);
@@ -862,8 +756,6 @@ ul {}
 .light-theme .tools-search-section {
     padding: 10px 12px 4px;
 }
-
-.light-theme .header-search {}
 
 .light-theme .header-search input {
     background: #1e293b;
@@ -894,13 +786,6 @@ ul {}
 }
 
 /* -------------------- UTILITIES -------------------- */
-.light-theme #pdf-tools,
-.light-theme #image-tools,
-.light-theme #audio-tools,
-.light-theme #system-tools,
-.light-theme #utility-tools {}
-
-.light-theme .rdroid-blogs-title {}
 
 .light-theme .rdroid-blogs-title .rdroid {
     color: var(--accent);
@@ -930,428 +815,3 @@ ul {}
 .light-theme #imgPreviewClose {
     color: rgb(255, 0, 0);
 }
-
-/* -------------------- ANIMATIONS -------------------- */
-@keyframes logo-spin {
-    0% {
-        transform: rotateY(0deg);
-    }
-
-    100% {
-        transform: rotateY(360deg);
-    }
-}
-
-@keyframes fade {
-    from {
-        opacity: 0;
-        transform: translateY(6px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-/* -------------------- MEDIA QUERIES -------------------- */
-@media (max-width: 900px) {
-    .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        min-height: 520px;
-        padding: 0 20px;
-    }
-
-    .footer-grid {
-        grid-template-columns: repeat(6, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 8px;
-        margin-top: 54px;
-    }
-
-    header {
-        padding: 10px 15px;
-    }
-
-    .logo img {
-        width: 44px;
-        height: 44px;
-    }
-
-    nav {
-        width: 240px;
-        /* thoda compact */
-        padding: 60px 16px;
-    }
-
-    .nav-links {
-        gap: 10px;
-        justify-content: flex-start;
-    }
-
-    .nav-links a {
-        font-size: 14px;
-        padding: 6px 8px;
-    }
-
-    .login-btn {
-        padding: 6px 12px;
-        font-size: 14px;
-        margin-left: 5px;
-    }
-
-    .hero {
-        padding: 14px 12px;
-        min-height: auto;
-    }
-
-    .hero h1 {
-        font-size: 26px;
-        line-height: 1.2;
-    }
-
-    .hero p {
-        font-size: 15px;
-    }
-
-    .app {
-        flex-direction: column;
-    }
-
-    .app-images {
-        flex-direction: row;
-    }
-
-    .app-images img {
-        width: 100px;
-    }
-
-    .tabs {
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    .tab-btn {
-        flex: 1 1 auto;
-        padding: 10px 12px;
-        font-size: 14px;
-        white-space: nowrap;
-    }
-
-    .main-wrap {
-        flex-direction: column;
-    }
-
-    .tools-search-section {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .tools-search-section>div:first-child {
-        overflow-x: auto;
-        display: flex;
-        gap: 10px;
-        padding-bottom: 6px;
-    }
-
-    .tools-search-section a.btn {
-        font-size: 11px;
-        padding: 6px 10px;
-        white-space: nowrap;
-    }
-
-    .header-search {
-        max-width: 100%;
-    }
-
-    .tool-item {
-        padding: 14px;
-    }
-
-    .tool-item>div {
-        grid-template-columns: 1fr !important;
-        gap: 12px;
-    }
-
-    .footer-grid {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    #pdf-tools,
-    #image-tools,
-    #audio-tools,
-    #system-tools,
-    #utility-tools {
-        scroll-margin-top: 110px;
-    }
-
-    .page-about {
-        background-attachment: scroll;
-    }
-
-    .tools-container {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .sidebar {
-        display: none !important;
-    }
-
-    .tools-container>section.card {
-        width: 100%;
-        padding: 16px;
-    }
-
-    .rdroid-blogs-title {
-        font-size: 26px;
-    }
-
-    section.card h1 {
-        font-size: 22px;
-    }
-
-    section.card h2 {
-        font-size: 18px;
-        margin-top: 18px;
-    }
-
-    section.card h3 {
-        font-size: 16px;
-    }
-
-    section.card p,
-    section.card li {
-        font-size: 15px;
-        line-height: 1.65;
-    }
-
-    section.card ul,
-    section.card ol {
-        padding-left: 18px;
-    }
-
-    .part-navigation,
-    .nav-button {
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-button {
-        display: block;
-        padding: 10px 14px;
-        font-size: 15px;
-    }
-
-    .tool-btn {
-        display: inline-block;
-        margin: 6px 4px;
-        font-size: 13px;
-    }
-
-    .tools-list {
-        background: var(--panel);
-    }
-
-    .app-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 6px 8px;
-        gap: 6px;
-    }
-
-    .login-box {
-        width: 92%;
-        right: 4%;
-        top: 60px;
-    }
-
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .drop {
-        height: 140px;
-    }
-
-    .menu-btn {
-        font-size: 11px;
-        padding: 4px;
-    }
-
-    .logo img {
-        width: 32px;
-        height: 32px;
-        border-radius: 8px;
-    }
-
-    .logo div {
-        font-size: 11px;
-        font-weight: 700;
-    }
-
-    .logo span {
-        font-size: 9px;
-    }
-
-    .nav-links a {
-        font-size: 9px;
-        padding: 6px 8px;
-    }
-
-    .login-btn {
-        font-size: 9px;
-        padding: 6px 10px;
-    }
-
-    .hero h1 {
-        font-size: 22px;
-        padding-top: 0;
-        margin-top: 0;
-    }
-
-    .hero p {
-        font-size: 14px;
-    }
-
-    html,
-    body {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    *,
-    *::before,
-    *::after {
-        max-width: 100%;
-    }
-
-    .preview,
-    .previewWrap,
-    table {
-        max-width: 100% !important;
-        width: 100% !important;
-        overflow-x: auto;
-        display: block;
-    }
-
-    .row {
-        flex-wrap: wrap;
-    }
-
-    .row>.card {
-        width: 100% !important;
-        flex: 1 1 100% !important;
-    }
-
-    img {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-
-    .tool-image img {
-        width: 100% !important;
-    }
-
-    select,
-    input,
-    button {
-        max-width: 100%;
-    }
-
-    .seo-content img {
-        width: 100% !important;
-    }
-
-    #convertBtn,
-    #clearBtn,
-    #selectAllBtn,
-    #unselectAllBtn {
-        flex: 1 1 48%;
-        min-width: 140px;
-        font-size: 12px;
-        margin-bottom: 9px;
-    }
-
-    .btn-group,
-    div[style*="display:flex"][style*="gap"] {
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    #pageInfo {
-        width: 100%;
-        text-align: center;
-        margin-left: 0;
-        margin-top: 6px;
-        font-size: 13px;
-    }
-
-    h2+ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        padding: 0;
-        margin: 10px 0;
-    }
-
-    h2+ul a.btn {
-        flex: 1 1 100%;
-        text-align: center;
-        white-space: normal;
-    }
-
-    .meta {
-        padding-top: 12px !important;
-        margin-top: 16px !important;
-    }
-
-    .meta p.small {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        align-items: center;
-        line-height: 1.4;
-    }
-
-    .meta p.small strong {
-        width: 100%;
-        font-size: 13px;
-        margin-bottom: 4px;
-    }
-
-    .meta a.btn,
-    .meta a.btn-ghost,
-    .meta a.tool-btn {
-        white-space: normal !important;
-        font-size: 12px;
-        padding: 6px 10px;
-        margin: 2px 0;
-    }
-
-    .footer-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-    }
-}
-
