@@ -13,18 +13,83 @@
     <title>QR Code Generator — RDroid Apps</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="canonical" href="https://rdroidapps.com/windows-tools/utility/qr-generator.html">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/light-theme.css">
     <meta name="description"
         content="Generate QR codes for URLs, text, contact info, WiFi credentials and more. Customize colors and download as PNG." />
     <meta name="keywords"
         content="qr code generator, create qr code, qr code maker, url qr code, text to qr, wifi qr code" />
-
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
     <!-- Include QR Code library - Using qrious library which is more reliable -->
     <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Additional styles for two-column layout -->
+    <style>
+        /* Two-column layout for QR generator */
+        .qr-layout {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        .left-col {
+            flex: 1 1 300px;
+        }
+
+        .right-col {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+
+        /* Make sure controls take full width inside the left column */
+        .left-col .control {
+            width: 100% !important;
+            /* override inline width */
+        }
+
+        .left-col .control select,
+        .left-col .control input,
+        .left-col .control textarea {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Adjust color inputs to sit side by side */
+        .left-col .control:has(#qrColor) {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .left-col .control:has(#qrColor) label {
+            flex: 0 0 auto;
+        }
+
+        .left-col .control:has(#qrColor) input[type="color"] {
+            flex: 1 1 100px;
+            height: 38px;
+            padding: 4px;
+        }
+
+        /* Button group remains flex */
+        .button-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        /* Responsive: stack columns on small screens */
+        @media (max-width: 768px) {
+            .qr-layout {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -51,101 +116,115 @@
         <h1 id="title">QR Code Generator</h1>
         <p class="lead">Generate QR codes for URLs, text, contact info, WiFi credentials and more.</p>
     </section>
+
     <section class="section" role="main" aria-labelledby="title">
-        <div class="controls">
-            <div class="control">
-                <label>Content Type</label>
-                <select id="contentType">
-                    <option value="text">Plain Text</option>
-                    <option value="url" selected>Website URL</option>
-                    <option value="wifi">WiFi Network</option>
-                    <option value="email">Email</option>
-                    <option value="phone">Phone Number</option>
-                </select>
-            </div>
+        <!-- Two-column wrapper -->
+        <div class="qr-layout">
+            <!-- LEFT COLUMN: all inputs and controls -->
+            <div class="left-col">
+                <div class="controls">
+                    <div class="control">
+                        <label for="contentType">Content Type</label>
+                        <select id="contentType">
+                            <option value="text">Plain Text</option>
+                            <option value="url" selected>Website URL</option>
+                            <option value="wifi">WiFi Network</option>
+                            <option value="email">Email</option>
+                            <option value="phone">Phone Number</option>
+                        </select>
+                    </div>
 
-            <div class="control" id="urlControl">
-                <label>Website URL</label>
-                <input type="text" id="urlInput" placeholder="https://example.com" />
-            </div>
+                    <div class="control" id="urlControl">
+                        <label for="urlInput">Website URL</label>
+                        <input type="text" id="urlInput" placeholder="https://example.com" />
+                    </div>
 
-            <div class="control" id="textControl" style="display:none;">
-                <label>Text Content</label>
-                <textarea id="textInput" rows="4" placeholder="Enter text to encode..."></textarea>
-            </div>
+                    <div class="control" id="textControl" style="display:none;">
+                        <label for="textInput">Text Content</label>
+                        <textarea id="textInput" rows="4" placeholder="Enter text to encode..."></textarea>
+                    </div>
 
-            <div class="control" id="wifiControl" style="display:none;">
-                <label>WiFi Network SSID</label>
-                <input type="text" id="wifiSsid" placeholder="Your WiFi name" />
-                <label style="margin-top:8px;">Password</label>
-                <input type="text" id="wifiPassword" placeholder="WiFi password" />
-                <label style="margin-top:8px;">Security Type</label>
-                <select id="wifiSecurity">
-                    <option value="WPA">WPA/WPA2</option>
-                    <option value="WEP">WEP</option>
-                    <option value="nopass">No Password</option>
-                </select>
-            </div>
+                    <div class="control" id="wifiControl" style="display:none;">
+                        <label for="wifiSsid">WiFi Network SSID</label>
+                        <input type="text" id="wifiSsid" placeholder="Your WiFi name">
+                        <label for="wifiPassword">Password</label>
+                        <input type="text" id="wifiPassword" placeholder="WiFi password">
+                        <label for="wifiSecurity">Security Type</label>
+                        <select id="wifiSecurity">
+                            <option value="WPA">WPA/WPA2</option>
+                            <option value="WEP">WEP</option>
+                            <option value="nopass">No Password</option>
+                        </select>
+                    </div>
 
-            <div class="control" id="emailControl" style="display:none;">
-                <label>Email Address</label>
-                <input type="email" id="emailInput" placeholder="user@example.com" />
-                <label style="margin-top:8px;">Subject</label>
-                <input type="text" id="emailSubject" placeholder="Email subject" />
-                <label style="margin-top:8px;">Body</label>
-                <textarea id="emailBody" rows="3" placeholder="Email body text"></textarea>
-            </div>
+                    <div class="control" id="emailControl" style="display:none;">
+                        <label for="emailInput">Email Address</label>
+                        <input type="email" id="emailInput" placeholder="user@example.com">
+                        <label for="emailSubject">Subject</label>
+                        <input type="text" id="emailSubject" placeholder="Email subject">
+                        <label for="emailBody">Body</label>
+                        <textarea id="emailBody" rows="3" placeholder="Email body text"></textarea>
+                    </div>
 
-            <div class="control" id="phoneControl" style="display:none;">
-                <label>Phone Number</label>
-                <input type="tel" id="phoneInput" placeholder="+1234567890" />
-            </div>
-        </div>
+                    <div class="control" id="phoneControl" style="display:none;">
+                        <label for="phoneInput">Phone Number</label>
+                        <input type="tel" id="phoneInput" placeholder="+1234567890">
+                    </div>
 
-        <div class="controls" style="margin-top: 20px;">
-            <div class="control">
-                <label>QR Code Size</label>
-                <select id="qrSize">
-                    <option value="128">128x128 (Small)</option>
-                    <option value="256" selected>256x256 (Medium)</option>
-                    <option value="512">512x512 (Large)</option>
-                </select>
-            </div>
+                    <!-- QR Code Size -->
+                    <div class="control">
+                        <label for="qrSize">QR Code Size</label>
+                        <select id="qrSize">
+                            <option value="128">128x128 (Small)</option>
+                            <option value="256" selected>256x256 (Medium)</option>
+                            <option value="512">512x512 (Large)</option>
+                        </select>
+                    </div>
 
-            <div class="control">
-                <label>QR Code Color</label>
-                <input type="color" id="qrColor" value="#000000" />
-                <label style="margin-top:8px;">Background Color</label>
-                <input type="color" id="bgColor" value="#ffffff" />
-            </div>
+                    <!-- Color controls (side by side) -->
+                    <div class="control">
+                        <label for="qrColor">QR Code Color</label>
+                        <input type="color" id="qrColor" value="#000000">
+                        <label for="bgColor">Background Color</label>
+                        <input type="color" id="bgColor" value="#ffffff">
+                    </div>
 
-            <div class="control">
-                <label>Error Correction</label>
-                <select id="errorCorrection">
-                    <option value="L">Low (7%)</option>
-                    <option value="M" selected>Medium (15%)</option>
-                    <option value="Q">Quartile (25%)</option>
-                    <option value="H">High (30%)</option>
-                </select>
-            </div>
-        </div>
+                    <!-- Error Correction -->
+                    <div class="control">
+                        <label for="errorCorrection">Error Correction</label>
+                        <select id="errorCorrection">
+                            <option value="L">Low (7%)</option>
+                            <option value="M" selected>Medium (15%)</option>
+                            <option value="Q">Quartile (25%)</option>
+                            <option value="H">High (30%)</option>
+                        </select>
+                    </div>
+                </div>
 
-        <div style="display:flex; gap:12px; align-items:center; margin-top: 20px;">
-            <button class="btn btn-primary" id="generateBtn">Generate QR Code</button>
-            <button class="btn" id="downloadBtn" disabled>Download PNG</button>
-            <button class="btn" id="clearBtn">Clear</button>
-        </div>
+                <!-- Buttons -->
+                <div class="button-group">
+                    <button class="btn btn-primary" id="generateBtn">Generate QR Code</button>
+                </div>
+            </div> <!-- end left-col -->
 
-        <div class="log" id="log" style="margin-top: 20px;">Ready. Enter content and generate QR code.</div>
+            <!-- RIGHT COLUMN: QR output, log, warning, rules -->
+            <div class="right-col">
+                <div class="log" id="log" style="margin-top: 0;">Ready. Enter content and generate QR code.</div>
 
-        <div id="qrContainer" style="margin-top: 30px; text-align: center;">
-            <div id="qrPreview"></div>
-        </div>
+                <div id="qrContainer" style="margin-top: 30px; text-align: center;">
+                    <div id="qrPreview"></div>
+                </div>
+                <button class="btn" id="downloadBtn" disabled>Download PNG</button>
+                <button class="btn" id="clearBtn">Clear</button>
 
-        <hr style="margin:32px 0">
+                <hr style="margin:32px 0">
 
-        <div id="warning" style="color:#ffb199; margin-top:8px"></div>
-        <hr style="margin:32px 0">
+                <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+                <hr style="margin:32px 0">
+            </div> <!-- end right-col -->
+        </div> <!-- end qr-layout -->
+
+        <!-- SEO Content (remains below the two columns) -->
         <section class="seo-content">
             <h2>About QR Code Generator</h2>
             <p>
@@ -190,8 +269,10 @@
         </section><br>
         <a href="/index.html#utility-tools" class="nav-button home">🏠 Back to Utility Home</a>
     </section>
+
     <!-- FOOTER (loaded from external file) -->
     <div id="footer-container"></div>
+
     <div>
         <button class="back-to-top" id="backToTop">
             <i class="fas fa-arrow-up">Back to Top</i>
@@ -416,7 +497,7 @@
             }, 1000);
         });
     </script>
-    </section>
+
     <script type="module" src="/js/firebase-config.js"></script>
 </body>
 
