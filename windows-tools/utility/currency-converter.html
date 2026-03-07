@@ -415,12 +415,16 @@
                 <!-- FROM block -->
                 <div class="currency-row">
                     <div class="currency-block">
-                        <label><i class="fas fa-arrow-right-to-bracket" style="margin-right: 4px;"></i> FROM</label>
+                        <!-- Associated with the select -->
+                        <label for="fromCurrency"><i class="fas fa-arrow-right-to-bracket"
+                                style="margin-right: 4px;"></i> FROM</label>
                         <div class="input-group">
                             <img id="fromFlag" class="currency-flag" src="https://flagcdn.com/24x18/us.png" alt="flag"
                                 loading="lazy">
                             <select id="fromCurrency" class="currency-select"></select>
-                            <input type="number" id="fromAmount" placeholder="0.00" value="1.00" step="any" min="0">
+                            <!-- Added aria-label for the amount input -->
+                            <input type="number" id="fromAmount" placeholder="0.00" value="1.00" step="any" min="0"
+                                aria-label="Amount">
                         </div>
                     </div>
                 </div>
@@ -435,12 +439,16 @@
                 <!-- TO block -->
                 <div class="currency-row">
                     <div class="currency-block">
-                        <label><i class="fas fa-arrow-left-from-bracket" style="margin-right: 4px;"></i> TO</label>
+                        <!-- Associated with the select -->
+                        <label for="toCurrency"><i class="fas fa-arrow-left-from-bracket"
+                                style="margin-right: 4px;"></i> TO</label>
                         <div class="input-group">
                             <img id="toFlag" class="currency-flag" src="https://flagcdn.com/24x18/eu.png" alt="flag"
                                 loading="lazy">
                             <select id="toCurrency" class="currency-select"></select>
-                            <input type="number" id="toAmount" placeholder="0.00" readonly disabled>
+                            <!-- Added aria-label for the readonly input -->
+                            <input type="number" id="toAmount" placeholder="0.00" readonly disabled
+                                aria-label="Converted amount">
                         </div>
                     </div>
                 </div>
@@ -471,6 +479,8 @@
 
             const CACHE_KEY = "profx_countries_cache_v1";
             const CACHE_TIME_KEY = "profx_countries_cache_time";
+            const RATE_CACHE_KEY = "profx_rate_data_v2";
+            const RATE_CACHE_TIME_KEY = "profx_rate_time_v2";
             const ONE_DAY = 24 * 60 * 60 * 1000;
 
             const fromCurrencyEl = document.getElementById('fromCurrency');
@@ -487,28 +497,18 @@
 
             let currencyArray = [];
             let rates = null;
-            let isFetching = false;
 
-            const fallbackRates = {
-                USD: 1, EUR: 0.92, GBP: 0.79, JPY: 148.5,
-                INR: 83.2, AUD: 1.52, CAD: 1.36
-            };
-
-            // ------------------ FLAGS ------------------
+            // ---------------- FLAGS ----------------
             function updateFlags() {
                 const fromOpt = fromCurrencyEl.selectedOptions[0];
                 const toOpt = toCurrencyEl.selectedOptions[0];
-
                 if (!fromOpt || !toOpt) return;
 
                 fromFlag.src = `https://flagcdn.com/24x18/${fromOpt.dataset.flag}.png`;
                 toFlag.src = `https://flagcdn.com/24x18/${toOpt.dataset.flag}.png`;
-
-                fromFlag.onerror = () => fromFlag.src = 'https://flagcdn.com/24x18/un.png';
-                toFlag.onerror = () => toFlag.src = 'https://flagcdn.com/24x18/un.png';
             }
 
-            // ------------------ POPULATE ------------------
+            // ---------------- POPULATE ----------------
             function populateSelects() {
                 const html = currencyArray.map(c =>
                     `<option value="${c.code}" data-flag="${c.flag}">
@@ -519,35 +519,26 @@
                 fromCurrencyEl.innerHTML = html;
                 toCurrencyEl.innerHTML = html;
 
-                fromCurrencyEl.selectedIndex = currencyArray.findIndex(c => c.code === 'USD') || 0;
-                toCurrencyEl.selectedIndex = currencyArray.findIndex(c => c.code === 'INR') || 1;
+                fromCurrencyEl.value = "USD";
+                toCurrencyEl.value = "INR";
 
                 updateFlags();
             }
 
-            // ------------------ CACHE LOGIC ------------------
-            function loadFromCache() {
+            // ---------------- COUNTRIES ----------------
+            function loadCountriesCache() {
                 const cached = localStorage.getItem(CACHE_KEY);
-                const cachedTime = localStorage.getItem(CACHE_TIME_KEY);
+                const time = localStorage.getItem(CACHE_TIME_KEY);
+                if (!cached || !time) return false;
 
-                if (!cached || !cachedTime) return false;
-
-                const age = Date.now() - parseInt(cachedTime);
-                if (age > ONE_DAY) return false;
+                if (Date.now() - parseInt(time) > ONE_DAY) return false;
 
                 currencyArray = JSON.parse(cached);
-                console.log("Loaded countries from cache");
                 return true;
             }
 
-            function saveToCache(data) {
-                localStorage.setItem(CACHE_KEY, JSON.stringify(data));
-                localStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
-            }
-
-            // ------------------ FETCH COUNTRIES ------------------
             async function fetchCountries() {
-                if (loadFromCache()) {
+                if (loadCountriesCache()) {
                     populateSelects();
                     return;
                 }
@@ -556,10 +547,8 @@
                     const resp = await fetch(
                         'https://restcountries.com/v3.1/all?fields=name,cca2,currencies'
                     );
-
-                    if (!resp.ok) throw new Error("API failed");
-
                     const data = await resp.json();
+
                     currencyArray = [];
 
                     data.forEach(country => {
@@ -576,53 +565,60 @@
 
                     currencyArray.sort((a, b) => a.name.localeCompare(b.name));
 
-                    saveToCache(currencyArray);
-                    console.log("Countries fetched & cached:", currencyArray.length);
+                    localStorage.setItem(CACHE_KEY, JSON.stringify(currencyArray));
+                    localStorage.setItem(CACHE_TIME_KEY, Date.now());
 
-                } catch (err) {
-                    console.warn("Country API failed");
-
-                    const cached = localStorage.getItem(CACHE_KEY);
-                    if (cached) {
-                        currencyArray = JSON.parse(cached);
-                        console.log("Using expired cache as fallback");
-                    } else {
-                        currencyArray = [
-                            { code: 'USD', name: 'United States', flag: 'us' },
-                            { code: 'EUR', name: 'Germany', flag: 'de' },
-                            { code: 'INR', name: 'India', flag: 'in' }
-                        ];
-                    }
+                } catch {
+                    currencyArray = [
+                        { code: 'USD', name: 'United States', flag: 'us' },
+                        { code: 'INR', name: 'India', flag: 'in' },
+                        { code: 'RUB', name: 'Russia', flag: 'ru' }
+                    ];
                 }
 
                 populateSelects();
             }
 
-            // ------------------ FETCH RATES ------------------
+            // ---------------- RATES ----------------
+            function loadRateCache() {
+                const cached = localStorage.getItem(RATE_CACHE_KEY);
+                const time = localStorage.getItem(RATE_CACHE_TIME_KEY);
+                if (!cached || !time) return false;
+
+                if (Date.now() - parseInt(time) > ONE_DAY) return false;
+
+                rates = JSON.parse(cached);
+                lastUpdateSpan.innerText = "Loaded from cache";
+                return true;
+            }
+
             async function fetchRates() {
-                if (isFetching) return;
-                isFetching = true;
+                if (loadRateCache()) {
+                    convertFrom();
+                    return;
+                }
 
                 try {
-                    const response = await fetch('https://api.frankfurter.app/latest?from=USD');
+                    const response = await fetch('https://api.exchangerate.host/latest?base=USD');
                     const data = await response.json();
 
-                    rates = { USD: 1, ...data.rates };
+                    rates = data.rates;
+
+                    localStorage.setItem(RATE_CACHE_KEY, JSON.stringify(rates));
+                    localStorage.setItem(RATE_CACHE_TIME_KEY, Date.now());
 
                     updateStatus.innerHTML = '<i class="fas fa-cloud"></i> live';
                     lastUpdateSpan.innerText = `Updated ${data.date}`;
 
                 } catch {
-                    rates = fallbackRates;
                     updateStatus.innerHTML = '<i class="fas fa-exclamation-triangle"></i> offline';
-                    lastUpdateSpan.innerText = 'Using fallback rates';
+                    lastUpdateSpan.innerText = "Rate fetch failed";
                 }
 
-                isFetching = false;
                 convertFrom();
             }
 
-            // ------------------ CONVERT ------------------
+            // ---------------- CONVERT ----------------
             function convertFrom() {
                 if (!rates) return;
 
@@ -631,21 +627,15 @@
                 const amount = parseFloat(fromAmount.value);
 
                 if (isNaN(amount) || amount < 0) {
-                    convertedDisplay.innerText = '—';
-                    toAmount.value = '';
+                    convertedDisplay.innerText = "—";
                     return;
                 }
 
                 const rateFrom = rates[fromCode];
                 const rateTo = rates[toCode];
 
-                if (rateFrom === undefined || rateTo === undefined) {
-
-                    convertedDisplay.innerText = 'Rate not supported';
-                    toAmount.value = '';
-                    rateDisplay.innerHTML =
-                        '<i class="fas fa-exclamation-circle"></i> Rate not available';
-
+                if (!rateFrom || !rateTo) {
+                    convertedDisplay.innerText = "Rate not available";
                     return;
                 }
 
@@ -654,16 +644,14 @@
 
                 toAmount.value = result.toFixed(decimals);
                 convertedDisplay.innerText = `${result.toFixed(decimals)} ${toCode}`;
-
                 rateDisplay.innerHTML =
-                    `<i class="fas fa-arrow-right-arrow-left"></i>
-                 1 ${fromCode} = ${(rateTo / rateFrom).toFixed(4)} ${toCode}`;
+                    `1 ${fromCode} = ${(rateTo / rateFrom).toFixed(4)} ${toCode}`;
             }
 
             function swapCurrencies() {
-                const temp = fromCurrencyEl.selectedIndex;
-                fromCurrencyEl.selectedIndex = toCurrencyEl.selectedIndex;
-                toCurrencyEl.selectedIndex = temp;
+                const temp = fromCurrencyEl.value;
+                fromCurrencyEl.value = toCurrencyEl.value;
+                toCurrencyEl.value = temp;
                 updateFlags();
                 convertFrom();
             }
@@ -673,48 +661,6 @@
             toCurrencyEl.addEventListener('change', () => { updateFlags(); convertFrom(); });
             swapBtn.addEventListener('click', swapCurrencies);
 
-            async function fetchRates() {
-
-                const savedDate = localStorage.getItem("profx_rate_date");
-
-                try {
-                    const response = await fetch('https://api.frankfurter.app/latest?from=USD');
-                    const data = await response.json();
-
-                    // जर date आधीच same असेल तर skip update
-                    if (savedDate === data.date) {
-                        console.log("Rates already up to date");
-                        rates = JSON.parse(localStorage.getItem("profx_rate_data"));
-                        lastUpdateSpan.innerText = `Updated ${data.date}`;
-                        return;
-                    }
-
-                    // नवीन date आल्यावर update कर
-                    rates = { USD: 1, ...data.rates };
-
-                    localStorage.setItem("profx_rate_date", data.date);
-                    localStorage.setItem("profx_rate_data", JSON.stringify(rates));
-
-                    lastUpdateSpan.innerText = `Updated ${data.date}`;
-                    updateStatus.innerHTML = '<i class="fas fa-cloud"></i> live';
-
-                    console.log("New rates fetched");
-
-                } catch (err) {
-                    console.warn("API failed, using fallback");
-
-                    const cachedRates = localStorage.getItem("profx_rate_data");
-                    if (cachedRates) {
-                        rates = JSON.parse(cachedRates);
-                    } else {
-                        rates = fallbackRates;
-                    }
-
-                    updateStatus.innerHTML = '<i class="fas fa-exclamation-triangle"></i> offline';
-                }
-
-                convertFrom();
-            }
             (async function init() {
                 await fetchCountries();
                 await fetchRates();
