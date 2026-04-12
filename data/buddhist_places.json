@@ -3,606 +3,707 @@
     "name": "Mahabodhi Temple",
     "country": "India",
     "description": "UNESCO site at Bodh Gaya where the Buddha is said to have attained enlightenment under the Bodhi tree.",
-    "address": "Bodh Gaya, Bihar, India"
+    "address": "Bodh Gaya, Bihar, India",
+    "image": "https://rdroidapps.com/data/images/mahabodhi.webp"
   },
   {
     "name": "Shwedagon Pagoda",
     "country": "Myanmar",
     "description": "Iconic golden stupa in Yangon, one of the most sacred Buddhist sites in Myanmar.",
-    "address": "Yangon, Myanmar"
+    "address": "Yangon, Myanmar",
+    "image": "https://rdroidapps.com/data/images/shwedagon.webp"
   },
   {
     "name": "Temple of the Tooth",
     "country": "Sri Lanka",
     "description": "Temple in Kandy housing a relic of the tooth of the Buddha.",
-    "address": "Kandy, Sri Lanka"
+    "address": "Kandy, Sri Lanka",
+    "image": "https://rdroidapps.com/data/images/temple.webp"
   },
   {
     "name": "Borobudur",
     "country": "Indonesia",
     "description": "Massive 9th-century Mahayana temple in Central Java.",
-    "address": "Magelang, Central Java, Indonesia"
+    "address": "Magelang, Central Java, Indonesia",
+    "image": "https://rdroidapps.com/data/images/borobudur.webp"
   },
   {
     "name": "Wat Phra Kaew",
     "country": "Thailand",
     "description": "Temple of the Emerald Buddha within the Grand Palace complex in Bangkok.",
-    "address": "Bangkok, Thailand"
+    "address": "Bangkok, Thailand",
+    "image": "https://rdroidapps.com/data/images/wat_phra_kaew.webp"
   },
   {
     "name": "Todai-ji",
     "country": "Japan",
     "description": "Great Buddha Hall in Nara, home to one of the largest bronze Buddha statues.",
-    "address": "Nara, Japan"
+    "address": "Nara, Japan",
+    "image": "https://rdroidapps.com/data/images/todai-ji.webp"
   },
   {
     "name": "Haeinsa",
     "country": "South Korea",
     "description": "Temple preserving the Tripitaka Koreana woodblocks.",
-    "address": "Gyeongsangnam-do, South Korea"
+    "address": "Gyeongsangnam-do, South Korea",
+    "image": "https://rdroidapps.com/data/images/haeinsa.webp"
   },
   {
     "name": "Dhammagiri",
     "country": "India",
     "description": "Vipassana meditation centre associated with the teachings of S. N. Goenka.",
-    "address": "Igatpuri, Maharashtra, India"
+    "address": "Igatpuri, Maharashtra, India",
+    "image": "https://rdroidapps.com/data/images/dhammagiri.webp"
   },
   {
     "name": "Sanchi Great Stupa",
     "country": "India",
     "description": "Ancient hemispherical stupa with famous carved gateways; one of the oldest stone structures in India and a UNESCO World Heritage Site.",
-    "address": "Sanchi, Madhya Pradesh, India"
+    "address": "Sanchi, Madhya Pradesh, India",
+    "image": "https://rdroidapps.com/data/images/sanchi.webp"
   },
   {
     "name": "Dhamek Stupa",
     "country": "India",
     "description": "Massive cylindrical stupa at Sarnath marking the Deer Park where the Buddha gave his first sermon on the Four Noble Truths.",
-    "address": "Sarnath, Varanasi, Uttar Pradesh, India"
+    "address": "Sarnath, Varanasi, Uttar Pradesh, India",
+    "image": "https://rdroidapps.com/data/images/dhamek.webp"
   },
   {
     "name": "Parinirvana Temple",
     "country": "India",
     "description": "Temple enshrining a long reclining Buddha statue at the place traditionally identified as the Buddha’s final passing into parinirvana.",
-    "address": "Kushinagar, Uttar Pradesh, India"
+    "address": "Kushinagar, Uttar Pradesh, India",
+    "image": "https://rdroidapps.com/data/images/parinirvana.webp"
   },
   {
     "name": "Maya Devi Temple",
     "country": "Nepal",
     "description": "Sacred garden and temple at Lumbini surrounding the marker of the Buddha’s birth, with ancient Ashokan evidence nearby.",
-    "address": "Lumbini, Lumbini Province, Nepal"
+    "address": "Lumbini, Lumbini Province, Nepal",
+    "image": "https://rdroidapps.com/data/images/maya.webp"
   },
   {
     "name": "Boudhanath Stupa",
     "country": "Nepal",
     "description": "One of the largest spherical stupas in the world and a major center of Tibetan Buddhist practice in the Kathmandu Valley.",
-    "address": "Kathmandu, Bagmati Province, Nepal"
+    "address": "Kathmandu, Bagmati Province, Nepal",
+    "image": "https://rdroidapps.com/data/images/boudhanath.webp"
   },
   {
     "name": "Swayambhunath",
     "country": "Nepal",
     "description": "Ancient hilltop stupa complex overlooking Kathmandu, revered by both Buddhists and Hindus and nicknamed the Monkey Temple.",
-    "address": "Kathmandu, Bagmati Province, Nepal"
+    "address": "Kathmandu, Bagmati Province, Nepal",
+    "image": "https://rdroidapps.com/data/images/swayambhunath.webp"
   },
   {
     "name": "Ruwanwelisaya",
     "country": "Sri Lanka",
     "description": "Colossal dagoba built in Anuradhapura that remains one of the most revered monuments of Sinhalese Buddhist civilization.",
-    "address": "Anuradhapura, North Central Province, Sri Lanka"
+    "address": "Anuradhapura, North Central Province, Sri Lanka",
+    "image": "https://rdroidapps.com/data/images/ruwanwelisaya.webp"
   },
   {
     "name": "Jetavanaramaya",
     "country": "Sri Lanka",
     "description": "Once among the tallest brick structures in the ancient world, this stupa in Anuradhapura marks a major monastic center of Theravāda Buddhism.",
-    "address": "Anuradhapura, North Central Province, Sri Lanka"
+    "address": "Anuradhapura, North Central Province, Sri Lanka",
+    "image": "https://rdroidapps.com/data/images/jetavanaramaya.webp"
   },
   {
     "name": "Gal Vihara",
     "country": "Sri Lanka",
     "description": "Rock-cut Buddha images from the Polonnaruwa period, celebrated masterpieces of Sinhalese Buddhist sculpture.",
-    "address": "Polonnaruwa, North Central Province, Sri Lanka"
+    "address": "Polonnaruwa, North Central Province, Sri Lanka",
+    "image": "https://rdroidapps.com/data/images/gal.webp"
   },
   {
     "name": "Dambulla Cave Temple",
     "country": "Sri Lanka",
     "description": "Cave monastery with extensive murals and hundreds of Buddha statues, a UNESCO World Heritage Site.",
-    "address": "Dambulla, Central Province, Sri Lanka"
+    "address": "Dambulla, Central Province, Sri Lanka",
+    "image": "https://rdroidapps.com/data/images/dambulla.webp"
   },
   {
     "name": "Kelaniya Raja Maha Vihara",
     "country": "Sri Lanka",
     "description": "Historic riverside temple near Colombo, linked in tradition to the Buddha’s visits and a major festival site.",
-    "address": "Kelaniya, Western Province, Sri Lanka"
+    "address": "Kelaniya, Western Province, Sri Lanka",
+    "image": "https://rdroidapps.com/data/images/kelaniya.webp"
   },
   {
     "name": "Mihintale",
     "country": "Sri Lanka",
     "description": "Hill complex regarded as the place where Mahinda introduced Buddhism to Sri Lanka, with ancient steps and ruins.",
-    "address": "Mihintale, Anuradhapura District, Sri Lanka"
+    "address": "Mihintale, Anuradhapura District, Sri Lanka",
+    "image": "https://rdroidapps.com/data/images/mihintale.webp"
   },
   {
     "name": "Wat Pho",
     "country": "Thailand",
     "description": "Bangkok temple famous for its enormous reclining Buddha and long-standing role in Thai medicine and monastic education.",
-    "address": "Phra Nakhon, Bangkok, Thailand"
+    "address": "Phra Nakhon, Bangkok, Thailand",
+    "image": "https://rdroidapps.com/data/images/wat_pho.webp"
   },
   {
     "name": "Wat Arun",
     "country": "Thailand",
     "description": "Iconic riverside prang temple on the Chao Phraya, named for the dawn and central to Bangkok’s Buddhist landscape.",
-    "address": "Bangkok Yai, Bangkok, Thailand"
+    "address": "Bangkok Yai, Bangkok, Thailand",
+    "image": "https://rdroidapps.com/data/images/wat_arun.webp"
   },
   {
     "name": "Wat Phra That Doi Suthep",
     "country": "Thailand",
     "description": "Hilltop temple near Chiang Mai housing a revered relic and offering sweeping views over northern Thailand.",
-    "address": "Mueang Chiang Mai District, Chiang Mai, Thailand"
+    "address": "Mueang Chiang Mai District, Chiang Mai, Thailand",
+    "image": "https://rdroidapps.com/data/images/wat_phra_that.webp"
   },
   {
     "name": "Wat Mahathat (Ayutthaya)",
     "country": "Thailand",
     "description": "Ruined Ayutthaya monastery known for its stone Buddha head embraced by tree roots, part of a UNESCO historic city.",
-    "address": "Phra Nakhon Si Ayutthaya, Ayutthaya, Thailand"
+    "address": "Phra Nakhon Si Ayutthaya, Ayutthaya, Thailand",
+    "image": "https://rdroidapps.com/data/images/wat_mahathat.webp"
   },
   {
     "name": "Wat Rong Khun",
     "country": "Thailand",
     "description": "Contemporary White Temple in Chiang Rai blending traditional Buddhist themes with modern symbolic art.",
-    "address": "Pa O Don Chai, Mueang Chiang Rai District, Chiang Rai, Thailand"
+    "address": "Pa O Don Chai, Mueang Chiang Rai District, Chiang Rai, Thailand",
+    "image": "https://rdroidapps.com/data/images/wat_rong.webp"
   },
   {
     "name": "Kyaiktiyo Pagoda",
     "country": "Myanmar",
     "description": "Golden Rock shrine precariously balanced on a cliff, one of Myanmar’s most dramatic pilgrimage destinations.",
-    "address": "Kyaiktiyo, Mon State, Myanmar"
+    "address": "Kyaiktiyo, Mon State, Myanmar",
+    "image": "https://rdroidapps.com/data/images/kyaiktiyo.webp"
   },
   {
     "name": "Mahamuni Buddha Temple",
     "country": "Myanmar",
     "description": "Mandalay temple housing a highly venerated Buddha image covered in gold leaf by generations of devotees.",
-    "address": "Mandalay, Mandalay Region, Myanmar"
+    "address": "Mandalay, Mandalay Region, Myanmar",
+    "image": "https://rdroidapps.com/data/images/mahamuni.webp"
   },
   {
     "name": "Shwezigon Pagoda",
     "country": "Myanmar",
     "description": "Gold-leafed prototype pagoda of Bagan style, enshrining relics and anchoring the ancient city’s Buddhist landscape.",
-    "address": "Nyaung-U, Mandalay Region, Myanmar"
+    "address": "Nyaung-U, Mandalay Region, Myanmar",
+    "image": "https://rdroidapps.com/data/images/shwezigon.webp"
   },
   {
     "name": "Ananda Temple",
     "country": "Myanmar",
     "description": "Elegant Bagan temple with four standing Buddha images, considered a masterpiece of Burmese Buddhist architecture.",
-    "address": "Nyaung-U, Mandalay Region, Myanmar"
+    "address": "Nyaung-U, Mandalay Region, Myanmar",
+    "image": "https://rdroidapps.com/data/images/ananda.webp"
   },
   {
     "name": "Bulguksa",
     "country": "South Korea",
     "description": "UNESCO-listed Silla temple near Gyeongju, pairing refined wooden halls with stone bridges and stairways on wooded slopes.",
-    "address": "Gyeongju-si, Gyeongsangbuk-do, South Korea"
+    "address": "Gyeongju-si, Gyeongsangbuk-do, South Korea",
+    "image": "https://rdroidapps.com/data/images/bulguksa.webp"
   },
   {
     "name": "Seokguram Grotto",
     "country": "South Korea",
     "description": "Artificial stone grotto on Mount Toham housing a sublime granite Buddha, a pinnacle of Korean Buddhist sculpture.",
-    "address": "Gyeongju-si, Gyeongsangbuk-do, South Korea"
+    "address": "Gyeongju-si, Gyeongsangbuk-do, South Korea",
+    "image": "https://rdroidapps.com/data/images/seokguram.webp"
   },
   {
     "name": "Jogyesa",
     "country": "South Korea",
     "description": "Head temple of the Jogye Order of Korean Buddhism in central Seoul, hub of major ceremonies and urban practice.",
-    "address": "Jongno-gu, Seoul, South Korea"
+    "address": "Jongno-gu, Seoul, South Korea",
+    "image": "https://rdroidapps.com/data/images/jogyesa.webp"
   },
   {
     "name": "Tongdosa",
     "country": "South Korea",
     "description": "Major temple near Yangsan traditionally preserving relics of the Buddha and emphasizing the living presence of the Three Jewels.",
-    "address": "Yangsan-si, Gyeongsangnam-do, South Korea"
+    "address": "Yangsan-si, Gyeongsangnam-do, South Korea",
+    "image": "https://rdroidapps.com/data/images/tongdosa.webp"
   },
   {
     "name": "Kiyomizu-dera",
     "country": "Japan",
     "description": "Timber terrace temple in Kyoto overlooking the city, dedicated to Kannon and a UNESCO World Heritage monument.",
-    "address": "Higashiyama-ku, Kyoto, Japan"
+    "address": "Higashiyama-ku, Kyoto, Japan",
+    "image": "https://rdroidapps.com/data/images/kiyomizu-dera.webp"
   },
   {
     "name": "Senso-ji",
     "country": "Japan",
     "description": "Tokyo’s oldest temple, centered on Kannon and approached through the bustling Nakamise shopping street.",
-    "address": "Taito-ku, Tokyo, Japan"
+    "address": "Taito-ku, Tokyo, Japan",
+    "image": "https://rdroidapps.com/data/images/senso-ji.webp"
   },
   {
     "name": "Byodo-in",
     "country": "Japan",
     "description": "Heian-era Phoenix Hall temple in Uji, famed for Amida Buddha and its reflection in the front pond.",
-    "address": "Uji, Kyoto Prefecture, Japan"
+    "address": "Uji, Kyoto Prefecture, Japan",
+    "image": "https://rdroidapps.com/data/images/byodo-in.webp"
   },
   {
     "name": "Kongōbu-ji",
     "country": "Japan",
     "description": "Head temple of Shingon Buddhism on Mount Kōya, heart of a vast monastic cemetery and pilgrimage network.",
-    "address": "Koya, Ito District, Wakayama Prefecture, Japan"
+    "address": "Koya, Ito District, Wakayama Prefecture, Japan",
+    "image": "https://rdroidapps.com/data/images/kongōbu-ji.webp"
   },
   {
     "name": "Enryaku-ji",
     "country": "Japan",
     "description": "Founding temple complex of Tendai Buddhism on Mount Hiei, overlooking Kyoto and Lake Biwa.",
-    "address": "Otsu, Shiga Prefecture, Japan"
+    "address": "Otsu, Shiga Prefecture, Japan",
+    "image": "https://rdroidapps.com/data/images/enryaku-ji.webp"
   },
   {
     "name": "Mogao Caves",
     "country": "China",
     "description": "Hundreds of decorated cave shrines preserving Buddhist murals and manuscripts along the Silk Road near Dunhuang.",
-    "address": "Dunhuang, Jiuquan, Gansu, China"
+    "address": "Dunhuang, Jiuquan, Gansu, China",
+    "image": "https://rdroidapps.com/data/images/mogao.webp"
   },
   {
     "name": "Longmen Grottoes",
     "country": "China",
     "description": "Limestone cliff niches near Luoyang with thousands of Buddhist statues carved from Northern Wei through Tang times.",
-    "address": "Luolong District, Luoyang, Henan, China"
+    "address": "Luolong District, Luoyang, Henan, China",
+    "image": "https://rdroidapps.com/data/images/longmen.webp"
   },
   {
     "name": "Yungang Grottoes",
     "country": "China",
     "description": "Early Northern Wei cave temples near Datong with colossal seated Buddhas carved from living rock.",
-    "address": "Datong, Shanxi, China"
+    "address": "Datong, Shanxi, China",
+    "image": "https://rdroidapps.com/data/images/yungang.webp"
   },
   {
     "name": "Leshan Giant Buddha",
     "country": "China",
     "description": "Massive cliff-carved Maitreya figure at the confluence of rivers, among the world’s largest stone Buddha images.",
-    "address": "Shizhong District, Leshan, Sichuan, China"
+    "address": "Shizhong District, Leshan, Sichuan, China",
+    "image": "https://rdroidapps.com/data/images/leshan.webp"
   },
   {
     "name": "Mount Wutai",
     "country": "China",
     "description": "Sacred mountain range with dozens of monasteries, revered in Chinese Buddhism as the abode of Mañjuśrī.",
-    "address": "Wutai County, Xinzhou, Shanxi, China"
+    "address": "Wutai County, Xinzhou, Shanxi, China",
+    "image": "https://rdroidapps.com/data/images/mount_wutai.webp"
   },
   {
     "name": "Shaolin Monastery",
     "country": "China",
     "description": "Famous Chan Buddhist monastery on Mount Song, historically linked to martial arts and imperial patronage.",
-    "address": "Dengfeng, Zhengzhou, Henan, China"
+    "address": "Dengfeng, Zhengzhou, Henan, China",
+    "image": "https://rdroidapps.com/data/images/shaolin.webp"
   },
   {
     "name": "Lingyin Temple",
     "country": "China",
     "description": "Major Hangzhou temple beside the West Lake hills, with rock-carved Buddhas and busy pilgrimage traffic.",
-    "address": "Xihu District, Hangzhou, Zhejiang, China"
+    "address": "Xihu District, Hangzhou, Zhejiang, China",
+    "image": "https://rdroidapps.com/data/images/lingyin.webp"
   },
   {
     "name": "Yonghe Temple (Lama Temple)",
     "country": "China",
     "description": "Imperial lamasery in Beijing blending Han and Tibetan Buddhist architecture and large sandalwood Maitreya statue.",
-    "address": "Dongcheng District, Beijing, China"
+    "address": "Dongcheng District, Beijing, China",
+    "image": "https://rdroidapps.com/data/images/yonghe.webp"
   },
   {
     "name": "Famen Temple",
     "country": "China",
     "description": "Ancient Baoji-area temple associated with veneration of the Buddha’s finger bone relic and modern museum complex.",
-    "address": "Fufeng County, Baoji, Shaanxi, China"
+    "address": "Fufeng County, Baoji, Shaanxi, China",
+    "image": "https://rdroidapps.com/data/images/famen.webp"
   },
   {
     "name": "Potala Palace",
     "country": "China",
     "description": "Fortress-palace and winter seat of Dalai Lamas in Lhasa, storing chapels, tombs, and vast Buddhist collections.",
-    "address": "Chengguan District, Lhasa, Tibet Autonomous Region, China"
+    "address": "Chengguan District, Lhasa, Tibet Autonomous Region, China",
+    "image": "https://rdroidapps.com/data/images/potala.webp"
   },
   {
     "name": "Jokhang Temple",
     "country": "China",
     "description": "Holiest temple in Tibet, housing the Jowo Shakyamuni statue and the focus of the Barkhor pilgrimage circuit.",
-    "address": "Chengguan District, Lhasa, Tibet Autonomous Region, China"
+    "address": "Chengguan District, Lhasa, Tibet Autonomous Region, China",
+    "image": "https://rdroidapps.com/data/images/jokhang.webp"
   },
   {
     "name": "Sera Monastery",
     "country": "China",
     "description": "One of Lhasa’s great Gelug monasteries, known for structured debate training among monks in the courtyard.",
-    "address": "Chengguan District, Lhasa, Tibet Autonomous Region, China"
+    "address": "Chengguan District, Lhasa, Tibet Autonomous Region, China",
+    "image": "https://rdroidapps.com/data/images/sera.webp"
   },
   {
     "name": "Drepung Monastery",
     "country": "China",
     "description": "Formerly one of the world’s largest monasteries, a major Gelug seat on the outskirts of Lhasa.",
-    "address": "Chengguan District, Lhasa, Tibet Autonomous Region, China"
+    "address": "Chengguan District, Lhasa, Tibet Autonomous Region, China",
+    "image": "https://rdroidapps.com/data/images/drepung.webp"
   },
   {
     "name": "Tashilhunpo Monastery",
     "country": "China",
     "description": "Traditional seat of the Panchen Lamas in Shigatse, with large chapels and a giant future Buddha statue.",
-    "address": "Samzhubzê District, Shigatse, Tibet Autonomous Region, China"
+    "address": "Samzhubzê District, Shigatse, Tibet Autonomous Region, China",
+    "image": "https://rdroidapps.com/data/images/tashilhunpo.webp"
   },
   {
     "name": "Nalanda Mahavihara (ruins)",
     "country": "India",
     "description": "Archaeological remains of a vast ancient monastic university that attracted scholars from across Asia until the 13th century.",
-    "address": "Nalanda, Bihar, India"
+    "address": "Nalanda, Bihar, India",
+    "image": "https://rdroidapps.com/data/images/nalanda.webp"
   },
   {
     "name": "Vikramshila Ancient University",
     "country": "India",
     "description": "Ruins of a major Pala-era monastic university on the Ganges plain, historically famed for logic and tantric learning.",
-    "address": "Antichak, Kahalgaon, Bhagalpur, Bihar, India"
+    "address": "Antichak, Kahalgaon, Bhagalpur, Bihar, India",
+    "image": "https://rdroidapps.com/data/images/vikramshila.webp"
   },
   {
     "name": "Ajanta Caves",
     "country": "India",
     "description": "Rock-cut Buddhist caves with narrative murals spanning centuries, a UNESCO masterpiece of Indian art.",
-    "address": "Ajanta, Aurangabad District, Maharashtra, India"
+    "address": "Ajanta, Aurangabad District, Maharashtra, India",
+    "image": "https://rdroidapps.com/data/images/ajanta.webp"
   },
   {
     "name": "Ellora Caves (Buddhist)",
     "country": "India",
     "description": "Cliff complex including early Mahayana shrines such as Cave 12 (Teen Tal), part of a UNESCO site shared with Hindu and Jain caves.",
-    "address": "Ellora, Aurangabad District, Maharashtra, India"
+    "address": "Ellora, Aurangabad District, Maharashtra, India",
+    "image": "https://rdroidapps.com/data/images/ellora.webp"
   },
   {
     "name": "Kanheri Caves",
     "country": "India",
     "description": "Buddhist rock-cut viharas and chaityas within Sanjay Gandhi National Park, linked to ancient trade with the western Deccan.",
-    "address": "Borivali East, Mumbai, Maharashtra, India"
+    "address": "Borivali East, Mumbai, Maharashtra, India",
+    "image": "https://rdroidapps.com/data/images/kanheri.webp"
   },
   {
     "name": "Hemis Monastery",
     "country": "India",
     "description": "Largest monastery in Ladakh and a major seat of the Drukpa Kagyu lineage, famous for its annual festival.",
-    "address": "Hemis, Leh District, Ladakh, India"
+    "address": "Hemis, Leh District, Ladakh, India",
+    "image": "https://rdroidapps.com/data/images/hemis.webp"
   },
   {
     "name": "Thiksey Monastery",
     "country": "India",
     "description": "Twelve-story hill monastery in Ladakh resembling the Potala, with a large Maitreya temple and sweeping Indus views.",
-    "address": "Thiksey, Leh District, Ladakh, India"
+    "address": "Thiksey, Leh District, Ladakh, India",
+    "image": "https://rdroidapps.com/data/images/thiksey.webp"
   },
   {
     "name": "Rumtek Monastery",
     "country": "India",
     "description": "Seat of the Karma Kagyu lineage in exile near Gangtok, modeled on Tibet’s Tsurphu with ornate assembly halls.",
-    "address": "Singtam, Gangtok District, Sikkim, India"
+    "address": "Singtam, Gangtok District, Sikkim, India",
+    "image": "https://rdroidapps.com/data/images/rumtek.webp"
   },
   {
     "name": "Tawang Monastery",
     "country": "India",
     "description": "Large Gelug monastery in the eastern Himalayas, founded in the 17th century and culturally tied to Tibetan Buddhism.",
-    "address": "Tawang, Arunachal Pradesh, India"
+    "address": "Tawang, Arunachal Pradesh, India",
+    "image": "https://rdroidapps.com/data/images/tawang.webp"
   },
   {
     "name": "Gridhakuta (Vulture’s Peak)",
     "country": "India",
     "description": "Hill near Rajgir where the Buddha is said to have taught the Heart Sutra and other Mahayana discourses.",
-    "address": "Rajgir, Nalanda District, Bihar, India"
+    "address": "Rajgir, Nalanda District, Bihar, India",
+    "image": "https://rdroidapps.com/data/images/gridhakuta.webp"
   },
   {
     "name": "Vaishali Ashoka Pillar",
     "country": "India",
     "description": "Site with a lion capital pillar commemorating the Buddha’s last donation bowl and Ashoka’s patronage.",
-    "address": "Vaishali, Bihar, India"
+    "address": "Vaishali, Bihar, India",
+    "image": "https://rdroidapps.com/data/images/vaishali.webp"
   },
   {
     "name": "Amaravati Stupa (museum site)",
     "country": "India",
     "description": "Important Andhra Buddhist center whose carved limestone reliefs are among the finest early Mahayana sculptural cycles.",
-    "address": "Amaravati, Guntur District, Andhra Pradesh, India"
+    "address": "Amaravati, Guntur District, Andhra Pradesh, India",
+    "image": "https://rdroidapps.com/data/images/amaravati.webp"
   },
   {
     "name": "Lalitgiri Buddhist Complex",
     "country": "India",
     "description": "Hilltop Odisha site with stupas and monasteries yielding Mahayana sculptures and reliquaries from early centuries CE.",
-    "address": "Jajpur District, Odisha, India"
+    "address": "Jajpur District, Odisha, India",
+    "image": "https://rdroidapps.com/data/images/lalitgiri.webp"
   },
   {
     "name": "Kopan Monastery",
     "country": "Nepal",
     "description": "Tibetan Buddhist monastery above Kathmandu, widely known for teaching Buddhism to international visitors.",
-    "address": "Kathmandu, Bagmati Province, Nepal"
+    "address": "Kathmandu, Bagmati Province, Nepal",
+    "image": "https://rdroidapps.com/data/images/kopan.webp"
   },
   {
     "name": "Pha That Luang",
     "country": "Laos",
     "description": "National symbol of Laos: a gilded stupa in Vientiane said to enshrine a breastbone relic of the Buddha.",
-    "address": "Xaysettha District, Vientiane, Laos"
+    "address": "Xaysettha District, Vientiane, Laos",
+    "image": "https://rdroidapps.com/data/images/pha.webp"
   },
   {
     "name": "Wat Xieng Thong",
     "country": "Laos",
     "description": "Royal monastery in Luang Prabang with elaborate mosaic facades, a UNESCO-listed town’s spiritual heart.",
-    "address": "Luang Prabang, Luang Prabang Province, Laos"
+    "address": "Luang Prabang, Luang Prabang Province, Laos",
+    "image": "https://rdroidapps.com/data/images/wat_xieng.webp"
   },
   {
     "name": "Angkor Wat",
     "country": "Cambodia",
     "description": "Vast Khmer temple-mountain later dedicated as a Buddhist site, the centerpiece of the Angkor World Heritage landscape.",
-    "address": "Siem Reap, Siem Reap Province, Cambodia"
+    "address": "Siem Reap, Siem Reap Province, Cambodia",
+    "image": "https://rdroidapps.com/data/images/angkor.webp"
   },
   {
     "name": "Bayon",
     "country": "Cambodia",
     "description": "Angkor Thom temple famous for serene stone faces, embodying Mahayana Buddhist iconography at the Khmer capital.",
-    "address": "Angkor Thom, Siem Reap Province, Cambodia"
+    "address": "Angkor Thom, Siem Reap Province, Cambodia",
+    "image": "https://rdroidapps.com/data/images/bayon.webp"
   },
   {
     "name": "Ta Prohm",
     "country": "Cambodia",
     "description": "Jungle-shrouded monastery temple at Angkor, left partly unrestored to show nature and monument intertwined.",
-    "address": "Siem Reap, Siem Reap Province, Cambodia"
+    "address": "Siem Reap, Siem Reap Province, Cambodia",
+    "image": "https://rdroidapps.com/data/images/ta.webp"
   },
   {
     "name": "Paro Taktsang (Tiger’s Nest)",
     "country": "Bhutan",
     "description": "Cliffside temple complex where Guru Rinpoche is said to have meditated; Bhutan’s most iconic pilgrimage hike.",
-    "address": "Paro District, Bhutan"
+    "address": "Paro District, Bhutan",
+    "image": "https://rdroidapps.com/data/images/paro.webp"
   },
   {
     "name": "Punakha Dzong",
     "country": "Bhutan",
     "description": "Fortress-monastery at the confluence of two rivers, winter seat of Bhutan’s chief abbot and coronation site.",
-    "address": "Punakha, Bhutan"
+    "address": "Punakha, Bhutan",
+    "image": "https://rdroidapps.com/data/images/punakha.webp"
   },
   {
     "name": "Perfume Pagoda",
     "country": "Vietnam",
     "description": "Complex of shrines in karst hills southwest of Hanoi, reached by boat and climb, busy during spring festivals.",
-    "address": "My Duc District, Hanoi, Vietnam"
+    "address": "My Duc District, Hanoi, Vietnam",
+    "image": "https://rdroidapps.com/data/images/perfume.webp"
   },
   {
     "name": "Thien Mu Pagoda",
     "country": "Vietnam",
     "description": "Seven-story pagoda on the Perfume River in Hue, symbol of the city and Nguyen-era Buddhist patronage.",
-    "address": "Huong Long Ward, Hue, Thua Thien Hue, Vietnam"
+    "address": "Huong Long Ward, Hue, Thua Thien Hue, Vietnam",
+    "image": "https://rdroidapps.com/data/images/thien.webp"
   },
   {
     "name": "Gandan Monastery",
     "country": "Mongolia",
     "description": "Active monastery in Ulaanbaatar reviving Mongolian Buddhism after suppression, with large Migjid Janraisig statue.",
-    "address": "Ulaanbaatar, Mongolia"
+    "address": "Ulaanbaatar, Mongolia",
+    "image": "https://rdroidapps.com/data/images/gandan.webp"
   },
   {
     "name": "Fo Guang Shan Monastery",
     "country": "Taiwan",
     "description": "Large Humanistic Buddhist monastery complex near Kaohsiung with museums, pagodas, and international outreach.",
-    "address": "Dashu District, Kaohsiung, Taiwan"
+    "address": "Dashu District, Kaohsiung, Taiwan",
+    "image": "https://rdroidapps.com/data/images/fo.webp"
   },
   {
     "name": "Longshan Temple",
     "country": "Taiwan",
     "description": "Historic Taipei temple blending Buddhist, Daoist, and folk devotion, centered on Guanyin and local protectors.",
-    "address": "Wanhua District, Taipei, Taiwan"
+    "address": "Wanhua District, Taipei, Taiwan",
+    "image": "https://rdroidapps.com/data/images/longshan.webp"
   },
   {
     "name": "Buddha Tooth Relic Temple",
     "country": "Singapore",
     "description": "Chinese Buddhist temple in Chinatown built to house a reputed tooth relic of the Buddha in a stupa chamber.",
-    "address": "288 South Bridge Road, Singapore"
+    "address": "288 South Bridge Road, Singapore",
+    "image": "https://rdroidapps.com/data/images/buddha.webp"
   },
   {
     "name": "Kong Meng San Phor Kark See Monastery",
     "country": "Singapore",
     "description": "Large modern monastery complex in northern Singapore known for education, retreats, and the giant bronze Buddha.",
-    "address": "88 Bright Hill Road, Singapore"
+    "address": "88 Bright Hill Road, Singapore",
+    "image": "https://rdroidapps.com/data/images/kong.webp"
   },
   {
     "name": "Candi Sewu",
     "country": "Indonesia",
     "description": "8th–9th century Mahayana temple compound near Prambanan, one of Java’s major ancient Buddhist ensembles.",
-    "address": "Bokoharjo, Sleman, Special Region of Yogyakarta, Indonesia"
+    "address": "Bokoharjo, Sleman, Special Region of Yogyakarta, Indonesia",
+    "image": "https://rdroidapps.com/data/images/candi.webp"
   },
   {
     "name": "Mendut Temple",
     "country": "Indonesia",
     "description": "Central Java temple aligned with Borobudur, housing large early Buddhist statues on the pilgrimage axis.",
-    "address": "Mungkid, Magelang, Central Java, Indonesia"
+    "address": "Mungkid, Magelang, Central Java, Indonesia",
+    "image": "https://rdroidapps.com/data/images/mendut.webp"
   },
   {
     "name": "Somapura Mahavihara",
     "country": "Bangladesh",
     "description": "Ruins of a vast Pala-era monastery at Paharpur, a cruciform mahavihara and UNESCO World Heritage Site.",
-    "address": "Paharpur, Naogaon District, Rajshahi Division, Bangladesh"
+    "address": "Paharpur, Naogaon District, Rajshahi Division, Bangladesh",
+    "image": "https://rdroidapps.com/data/images/somapura.webp"
   },
   {
     "name": "Takht-i-Bahi",
     "country": "Pakistan",
     "description": "Well-preserved Gandharan Buddhist monastery on a hill spur, illustrating monastic planning from the Kushan era.",
-    "address": "Mardan, Khyber Pakhtunkhwa, Pakistan"
+    "address": "Mardan, Khyber Pakhtunkhwa, Pakistan",
+    "image": "https://rdroidapps.com/data/images/takht-i-bahi.webp"
   },
   {
     "name": "City of Ten Thousand Buddhas",
     "country": "United States",
     "description": "Large Chan monastery and community in Mendocino County founded by Ven. Hsuan Hua with many halls and statues.",
-    "address": "4951 Bodhi Way, Talmage, CA 95481, United States"
+    "address": "4951 Bodhi Way, Talmage, CA 95481, United States",
+    "image": "https://rdroidapps.com/data/images/city.webp"
   },
   {
     "name": "Zen Mountain Monastery",
     "country": "United States",
     "description": "Zen training monastery in the Catskills affiliated with the Mountains and Rivers Order and Dharma communications.",
-    "address": "Mount Tremper, NY 12457, United States"
+    "address": "Mount Tremper, NY 12457, United States",
+    "image": "https://rdroidapps.com/data/images/zen.webp"
   },
   {
     "name": "Nan Tien Temple",
     "country": "Australia",
     "description": "Southern Hemisphere’s largest Buddhist temple complex, Fo Guang Shan branch south of Sydney.",
-    "address": "Pioneer Road, Berkeley, Wollongong, NSW 2506, Australia"
+    "address": "Pioneer Road, Berkeley, Wollongong, NSW 2506, Australia",
+    "image": "https://rdroidapps.com/data/images/nan.webp"
   },
   {
     "name": "Brickfields Buddhist Maha Vihara",
     "country": "Malaysia",
     "description": "Historic Theravāda temple in Kuala Lumpur serving Sri Lankan and Malaysian Buddhists since the late 19th century.",
-    "address": "123 Jalan Berhala, Brickfields, 50470 Kuala Lumpur, Malaysia"
+    "address": "123 Jalan Berhala, Brickfields, 50470 Kuala Lumpur, Malaysia",
+    "image": "https://rdroidapps.com/data/images/brickfields.webp"
   },
   {
     "name": "Thuparamaya",
     "country": "Sri Lanka",
     "description": "First dagoba built in Sri Lanka after the introduction of Buddhism, holding relics of the Buddha’s hair and collarbone.",
-    "address": "Anuradhapura, North Central Province, Sri Lanka"
+    "address": "Anuradhapura, North Central Province, Sri Lanka",
+    "image": "https://rdroidapps.com/data/images/thuparamaya.webp"
   },
   {
     "name": "Shitenno-ji",
     "country": "Japan",
     "description": "Traditionally counted among Japan’s oldest Buddhist temples, dedicated to the Four Heavenly Kings near Osaka.",
-    "address": "Tennoji-ku, Osaka, Japan"
+    "address": "Tennoji-ku, Osaka, Japan",
+    "image": "https://rdroidapps.com/data/images/shitenno-ji.webp"
   },
   {
     "name": "Baoguo Temple (Mount Emei)",
     "country": "China",
     "description": "Ancient temple on Mount Emei, one of China’s four sacred Buddhist mountains and a UNESCO World Heritage landscape.",
-    "address": "Emeishan City, Leshan, Sichuan, China"
+    "address": "Emeishan City, Leshan, Sichuan, China",
+    "image": "https://rdroidapps.com/data/images/baoguo.webp"
   },
   {
     "name": "Mount Jiuhua (Zhiyuan Temple area)",
     "country": "China",
     "description": "Sacred mountain in Anhui associated with Kṣitigarbha bodhisattva, dotted with monasteries and pilgrimage paths.",
-    "address": "Qingyang County, Chizhou, Anhui, China"
+    "address": "Qingyang County, Chizhou, Anhui, China",
+    "image": "https://rdroidapps.com/data/images/mount_jiuhua.webp"
   },
   {
     "name": "Phimai Historical Park",
     "country": "Thailand",
     "description": "Khmer-era Mahayana Buddhist sanctuary in northeast Thailand, among the best-preserved Angkorian-style monuments in the country.",
-    "address": "Phimai District, Nakhon Ratchasima, Thailand"
+    "address": "Phimai District, Nakhon Ratchasima, Thailand",
+    "image": "https://rdroidapps.com/data/images/phimai.webp"
   },
   {
     "name": "Kek Lok Si Temple",
     "country": "Malaysia",
     "description": "Hilltop temple complex on Penang Island with a towering statue of Guanyin and extensive prayer halls.",
-    "address": "Air Itam, George Town, Penang, Malaysia"
+    "address": "Air Itam, George Town, Penang, Malaysia",
+    "image": "https://rdroidapps.com/data/images/kek.webp"
   },
   {
     "name": "Tsurphu Monastery",
     "country": "China",
     "description": "Traditional seat of the Karma Kagyu lineage in the Tolung Valley, a major center of Tibetan Buddhist practice.",
-    "address": "Doilungdeqen District, Lhasa, Tibet Autonomous Region, China"
+    "address": "Doilungdeqen District, Lhasa, Tibet Autonomous Region, China",
+    "image": "https://rdroidapps.com/data/images/tsurphu.webp"
   },
   {
     "name": "Diskit Monastery",
     "country": "India",
     "description": "Nubra Valley monastery in Ladakh with a tall Maitreya statue overlooking the Shyok river basin.",
-    "address": "Diskit, Leh District, Ladakh, India"
+    "address": "Diskit, Leh District, Ladakh, India",
+    "image": "https://rdroidapps.com/data/images/diskit.webp"
   },
   {
     "name": "Asura Cave (Pharping)",
     "country": "Nepal",
     "description": "Sacred meditation cave south of Kathmandu linked to Padmasambhava and still used by Tibetan Buddhist practitioners.",
-    "address": "Pharping, Dakshinkali, Bagmati Province, Nepal"
+    "address": "Pharping, Dakshinkali, Bagmati Province, Nepal",
+    "image": "https://rdroidapps.com/data/images/asura.webp"
   },
   {
     "name": "Hsi Lai Temple",
     "country": "United States",
     "description": "North American branch monastery of Fo Guang Shan in Greater Los Angeles, with museum, gardens, and large assembly halls.",
-    "address": "3456 Glenmark Drive, Hacienda Heights, CA 91745, United States"
+    "address": "3456 Glenmark Drive, Hacienda Heights, CA 91745, United States",
+    "image": "https://rdroidapps.com/data/images/hsi.webp"
   },
   {
     "name": "Wat Phra Singh",
     "country": "Thailand",
     "description": "Historic Lanna temple in Chiang Mai housing the revered Phra Singh Buddha image and classic northern Thai architecture.",
-    "address": "Mueang Chiang Mai District, Chiang Mai, Thailand"
+    "address": "Mueang Chiang Mai District, Chiang Mai, Thailand",
+    "image": "https://rdroidapps.com/data/images/wat_phra_singh.webp"
   },
   {
     "name": "Chion-in",
     "country": "Japan",
     "description": "Head temple of Jōdo-shū Pure Land Buddhism in Kyoto, with massive Sanmon gate and vast wooden halls.",
-    "address": "Higashiyama-ku, Kyoto, Japan"
+    "address": "Higashiyama-ku, Kyoto, Japan",
+    "image": "https://rdroidapps.com/data/images/chion-in.webp"
   },
   {
     "name": "Shanti Stupa (Rajgir)",
     "country": "India",
     "description": "Japanese-built peace pagoda on Ratnagiri hill near Rajgir, overlooking the valley associated with early Buddhist councils.",
-    "address": "Rajgir, Nalanda District, Bihar, India"
+    "address": "Rajgir, Nalanda District, Bihar, India",
+    "image": "https://rdroidapps.com/data/images/shanti.webp"
   }
 ]
