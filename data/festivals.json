@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "festivals": [
+    { "month": 1, "day": 1, "title": "New Year 2026", "description": "The beginning of a new year. A time for reflection on the path of Dhamma and setting intentions for wisdom, compassion, and social justice.", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 12, "title": "Swami Vivekananda Jayanti", "description": "Birth anniversary of Swami Vivekananda, celebrated as National Youth Day. His 1893 Chicago speech introduced India's spiritual heritage to the world and inspired a generation.", "category": "festival", "year": "1863", "isSymbolic": false },
+    { "month": 1, "day": 14, "title": "Makar Sankranti", "description": "Festival marking the sun's transition into Makara rashi. Celebrated across India with diverse traditions symbolizing harvest, gratitude, and the triumph of light.", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 1, "day": 15, "title": "Indian Army Day", "description": "Marks the day Lt. Gen. K.M. Cariappa became the first Indian Commander-in-Chief of the Indian Army in 1949. Honors the bravery and sacrifice of India's armed forces.", "category": "festival", "year": "1949", "isSymbolic": false },
+    { "month": 1, "day": 24, "title": "National Girl Child Day", "description": "A day to raise awareness about the rights of the girl child, promote education for girls, and fight discrimination. Inspired by the values of equality championed by Dr. Ambedkar.", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 25, "title": "National Voters' Day", "description": "Established in 2011 to encourage young voters to participate in democracy. Dr. Ambedkar said: 'Political democracy cannot last unless there lies at its base social democracy.'", "category": "festival", "year": "2011", "isSymbolic": false },
+    { "month": 1, "day": 26, "title": "Republic Day", "description": "India adopted its Constitution on this day in 1950, drafted under the chairmanship of Dr. B.R. Ambedkar. A celebration of democracy, equality, and the sovereign republic.", "category": "festival", "year": "1950", "isSymbolic": false },
+
+    { "month": 2, "day": 11, "title": "Magha Puja", "description": "An important Buddhist festival commemorating the spontaneous gathering of 1,250 enlightened arahants before the Buddha at Veluvana, where he delivered the Ovadapatimokkha — the core principles of Buddhism.", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 2, "day": 12, "title": "Sant Ravidas Jayanti", "description": "Birth anniversary of Sant Ravidas (c. 1377–1527), the great Bhakti saint, poet, and social reformer who rejected caste hierarchy and preached the equality of all human beings.", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 2, "day": 14, "title": "Maitri Diwas", "description": "A day to celebrate universal love, compassion, and Maitri (loving-kindness) towards all beings — the core teaching of Buddha Dhamma.", "category": "festival", "year": null, "isSymbolic": true }
+  ]
+}
