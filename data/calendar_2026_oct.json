@@ -1,0 +1,746 @@
+[
+  {
+    "date": "01",
+    "title": "International Day of Older Persons",
+    "description": "A UN day honoring the elderly. The Buddha taught respect for elders and emphasized that old age is one of the universal sufferings that all beings must face.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "People's Republic of China Founded",
+    "description": "On October 1, 1949, Mao Zedong proclaimed the establishment of the People's Republic of China in Tiananmen Square, Beijing. This marked the culmination of decades of revolution and civil war, ending Nationalist rule on the mainland and reshaping the geopolitical order of Asia.",
+    "category": "event",
+    "year": "1949",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Nigeria Gains Independence",
+    "description": "On October 1, 1960, Nigeria gained independence from British colonial rule, becoming the most populous nation in Africa to achieve self-governance. The independence movement was led by figures such as Nnamdi Azikiwe and Obafemi Awolowo, who mobilized millions against colonial exploitation.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Gandhi Jayanti",
+    "description": "Birth anniversary of Mahatma Gandhi, the Father of the Nation. His principles of non-violence (ahiṃsā) and truth (satya) are deeply rooted in Indian spiritual traditions including Dhamma.",
+    "category": "festival",
+    "year": "1869",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Thurgood Marshall Sworn In as Supreme Court Justice",
+    "description": "On October 2, 1967, Thurgood Marshall was sworn in as the first African American Justice of the United States Supreme Court. A towering figure in the civil rights movement, Marshall had previously argued the landmark Brown v. Board of Education case that ended racial segregation in public schools.",
+    "category": "event",
+    "year": "1967",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Guinea Declares Independence from France",
+    "description": "On October 2, 1958, Guinea became the first French African colony to gain independence by voting 'No' in a referendum on joining the French Community. Led by Ahmed Sékou Touré, the Guinean people chose sovereignty over continued colonial association, inspiring independence movements across Francophone Africa.",
+    "category": "event",
+    "year": "1958",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Dhamma: End of Vassa (Pavāraṇā)",
+    "description": "Pavāraṇā marks the end of the three-month Rains Retreat. Monks invite criticism from each other, practicing humility and accountability — a beautiful tradition of self-reflection.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "03",
+    "title": "German Reunification",
+    "description": "On October 3, 1990, East and West Germany were officially reunified, ending 45 years of division following World War II. The fall of the Berlin Wall the previous year had unleashed a peaceful revolution, and reunification marked the triumph of popular democratic movements over Cold War authoritarianism.",
+    "category": "event",
+    "year": "1990",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "First Successful V-2 Rocket Launch",
+    "description": "On October 3, 1942, Germany successfully launched the V-2 rocket at Peenemünde, making it the first human-made object to reach the boundary of space. This pioneering achievement in rocketry, though developed during wartime, laid the technological foundation for all subsequent space exploration and satellite technology.",
+    "category": "event",
+    "year": "1942",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "World Animal Day",
+    "description": "A day for animal rights and welfare. The first precept of Buddhism — abstaining from taking life — extends compassion to all sentient beings without distinction.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Sputnik 1 Launched into Orbit",
+    "description": "On October 4, 1957, the Soviet Union launched Sputnik 1, the first artificial satellite to orbit Earth, igniting the Space Age. Its iconic radio beeps, heard worldwide, demonstrated the potential of space technology and triggered the Space Race between the superpowers.",
+    "category": "event",
+    "year": "1957",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Lesotho Gains Independence",
+    "description": "On October 4, 1966, the Kingdom of Lesotho gained independence from British colonial rule under King Moshoeshoe II. The Basotho people had long resisted colonial encroachment, and independence restored sovereignty to a nation whose identity was forged through resistance to both Zulu expansion and European imperialism.",
+    "category": "event",
+    "year": "1966",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "World Teachers' Day",
+    "description": "A UNESCO day honoring teachers worldwide. The Buddha spent 45 years teaching the Dhamma to kings, merchants, farmers, and outcasts alike — the greatest teacher in history.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Women's March on Versailles",
+    "description": "On October 5, 1789, thousands of women from the marketplaces of Paris marched to the Palace of Versailles, demanding bread and political reform. This pivotal event of the French Revolution forced King Louis XVI to return to Paris, effectively ending the monarchy's isolation from the people and accelerating revolutionary change.",
+    "category": "event",
+    "year": "1789",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Portuguese Republic Proclaimed",
+    "description": "On October 5, 1910, a republican revolution in Lisbon overthrew the Portuguese monarchy, establishing the Portuguese First Republic. The revolution was driven by widespread discontent with royal corruption and colonial mismanagement, and it ushered in democratic reforms including the separation of church and state.",
+    "category": "event",
+    "year": "1910",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Dhamma: Kathina Festival",
+    "description": "Kathina is the annual robe-offering ceremony after the Rains Retreat. Lay supporters offer cloth to monks, generating merit and strengthening the bond between laity and Sangha.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "06",
+    "title": "Yom Kippur War Begins",
+    "description": "On October 6, 1973, Egypt and Syria launched a coordinated surprise attack on Israel on the Jewish holy day of Yom Kippur. The war reshaped Middle Eastern geopolitics, led to the 1973 oil crisis, and ultimately paved the way for the Camp David Accords and the Egypt-Israel peace treaty.",
+    "category": "event",
+    "year": "1973",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "The Jazz Singer Premieres — First Talking Motion Picture",
+    "description": "On October 6, 1927, 'The Jazz Singer' premiered in New York City, becoming the first feature-length motion picture with synchronized dialogue. This technological breakthrough revolutionized the film industry, ending the silent film era and transforming entertainment and mass communication forever.",
+    "category": "event",
+    "year": "1927",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Dhamma: Ashoka's Rock Edicts",
+    "description": "Emperor Ashoka's rock edicts, carved across the subcontinent, proclaimed principles of non-violence, religious tolerance, and welfare. They are humanity's first public policy based on Dhamma.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "07",
+    "title": "Battle of Lepanto",
+    "description": "On October 7, 1571, the Holy League fleet decisively defeated the Ottoman Empire's navy in the Battle of Lepanto in the Gulf of Patras, Greece. It was one of the largest naval battles in history and marked a turning point in Mediterranean power dynamics, halting Ottoman naval expansion westward.",
+    "category": "event",
+    "year": "1571",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "German Democratic Republic Founded",
+    "description": "On October 7, 1949, the German Democratic Republic (East Germany) was formally established in the Soviet occupation zone. Its creation cemented the division of Germany into two states along Cold War lines, a division that would endure for over four decades until reunification in 1990.",
+    "category": "event",
+    "year": "1949",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Indian Air Force Day",
+    "description": "Celebrates the founding of the Indian Air Force in 1932. Honors the courage and dedication of the IAF personnel who defend the nation's sovereignty.",
+    "category": "event",
+    "year": "1932",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Che Guevara Captured in Bolivia",
+    "description": "On October 8, 1967, Argentine revolutionary Ernesto 'Che' Guevara was captured by CIA-assisted Bolivian forces in the Yuro ravine. Guevara had been leading a guerrilla campaign to spark revolution among Bolivia's impoverished peasants and miners, and his capture ended one of the 20th century's most iconic revolutionary campaigns.",
+    "category": "event",
+    "year": "1967",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Great Chicago Fire Begins",
+    "description": "On October 8, 1871, the Great Chicago Fire broke out and burned for two days, destroying roughly 3.3 square miles of the city and leaving over 100,000 residents homeless. The disaster led to revolutionary advances in urban planning, fire safety codes, and architectural innovation, giving rise to the Chicago School of architecture.",
+    "category": "event",
+    "year": "1871",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Kanshi Ram Punyatithi",
+    "description": "Remembrance of Kanshi Ram, founder of BSP, who died in 2006. His political movement empowered millions of Bahujans and transformed India's social and political landscape.",
+    "category": "event",
+    "year": "2006",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Hangul Proclaimed by King Sejong",
+    "description": "On October 9, 1446, King Sejong the Great of Korea promulgated Hangul, the Korean phonetic alphabet, designed to be easy for common people to learn. This was a revolutionary act of intellectual liberation, breaking the aristocratic monopoly on literacy that the complex Chinese character system had enforced for centuries.",
+    "category": "event",
+    "year": "1446",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Che Guevara Executed in Bolivia",
+    "description": "On October 9, 1967, revolutionary leader Ernesto 'Che' Guevara was executed without trial by the Bolivian army in the village of La Higuera. His death made him a global symbol of anti-imperialist resistance and revolutionary struggle for oppressed peoples across Latin America, Africa, and Asia.",
+    "category": "event",
+    "year": "1967",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "World Mental Health Day",
+    "description": "A WHO day promoting mental health awareness. Buddhist mindfulness and meditation practices are now scientifically recognized for their benefits in treating anxiety, depression, and stress.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Dr. Ambedkar's Resignation Speech in Parliament",
+    "description": "On 10 October 1951, Dr. B.R. Ambedkar delivered his historic resignation speech in Parliament, formally stepping down as Law Minister from Jawaharlal Nehru's cabinet. He resigned in protest over the government's failure to pass the Hindu Code Bill — landmark legislation for women's rights including divorce, inheritance, and the abolition of caste in marriage.",
+    "category": "event",
+    "year": "1951",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Wuchang Uprising — Xinhai Revolution Begins",
+    "description": "On October 10, 1911, revolutionary soldiers in Wuchang, China, staged an armed uprising against the Qing Dynasty, sparking the Xinhai Revolution. Within months the last imperial dynasty fell, ending over two thousand years of monarchical rule and establishing the Republic of China under Sun Yat-sen.",
+    "category": "event",
+    "year": "1911",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Jayaprakash Narayan Jayanti",
+    "description": "Birth anniversary of Jayaprakash Narayan, the leader of the Total Revolution movement against corruption and authoritarianism. His call for people's power transformed Indian politics.",
+    "category": "event",
+    "year": "1902",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Second Boer War Begins",
+    "description": "On October 11, 1899, the Second Boer War broke out between the British Empire and the Boer republics of South Africa. The war exposed the brutality of British imperialism, including the use of concentration camps against Boer civilians, and foreshadowed the broader anti-colonial struggles of the 20th century.",
+    "category": "event",
+    "year": "1899",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Kathryn Sullivan — First American Woman to Walk in Space",
+    "description": "On October 11, 1984, astronaut Kathryn Sullivan became the first American woman to perform a spacewalk during the Space Shuttle Challenger mission STS-41-G. Her 3.5-hour extravehicular activity demonstrated that the frontiers of space exploration were open to all, regardless of gender.",
+    "category": "event",
+    "year": "1984",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Dhamma: Ashoka's Dhamma Policy",
+    "description": "Emperor Ashoka's Dhamma policy promoted religious tolerance, compassion for animals, free hospitals, tree planting, and respect for all faiths — a model of enlightened governance.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "12",
+    "title": "Columbus Arrives in the Americas — Indigenous Peoples' Day",
+    "description": "On October 12, 1492, Christopher Columbus made landfall in the Bahamas, initiating contact between Europe and the Americas. While long celebrated, this date is increasingly recognized as Indigenous Peoples' Day, honoring the resilience of Native peoples who endured centuries of colonization, displacement, and cultural destruction.",
+    "category": "event",
+    "year": "1492",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Equatorial Guinea Gains Independence",
+    "description": "On October 12, 1968, Equatorial Guinea gained independence from Spain, becoming one of the smallest nations in Africa. The independence struggle was part of the broader wave of African decolonization, as peoples across the continent demanded an end to European colonial rule and the right to self-determination.",
+    "category": "event",
+    "year": "1968",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Dhamma: Navayana Buddhism",
+    "description": "Navayana ('New Vehicle') is the form of Buddhism articulated by Dr. Ambedkar. It emphasizes social equality, rational ethics, and the rejection of supernatural beliefs and caste hierarchy.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "13",
+    "title": "Yeola Declaration — 'I Will Not Die a Hindu'",
+    "description": "On 13 October 1935, at the Depressed Classes Conference in Yeola, Nashik, Dr. B.R. Ambedkar made his historic declaration: 'I was born a Hindu, but I will not die a Hindu.' This watershed moment signaled his resolve to leave Hinduism and seek a religion of equality, ultimately leading to the mass conversion to Buddhism in 1956.",
+    "category": "event",
+    "year": "1935",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Cornerstone of the White House Laid",
+    "description": "On October 13, 1792, the cornerstone of the White House was laid in Washington, D.C., during the presidency of George Washington. The construction relied significantly on the labor of enslaved African Americans, a sobering reminder that the symbols of American democracy were built upon the exploitation of oppressed peoples.",
+    "category": "event",
+    "year": "1792",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Dhamma Chakra Pravartan Din",
+    "description": "On 14 October 1956, Dr. B.R. Ambedkar, along with 600,000 followers, embraced Buddhism at Deekshabhoomi, Nagpur — the largest mass religious conversion in recorded history.",
+    "category": "festival",
+    "year": "1956",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Battle of Hastings",
+    "description": "On October 14, 1066, William the Conqueror's Norman forces defeated King Harold II's Anglo-Saxon army at the Battle of Hastings in England. This decisive battle transformed English language, law, culture, and governance, and remains one of the most consequential military encounters in European history.",
+    "category": "event",
+    "year": "1066",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Martin Luther King Jr. Awarded the Nobel Peace Prize",
+    "description": "On October 14, 1964, Dr. Martin Luther King Jr. was awarded the Nobel Peace Prize for his nonviolent resistance to racial segregation in the United States. At 35, he was the youngest person at the time to receive the honor, and the award amplified the global impact of the American civil rights movement.",
+    "category": "event",
+    "year": "1964",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "APJ Abdul Kalam Jayanti",
+    "description": "Birth anniversary of Dr. APJ Abdul Kalam, the 'Missile Man of India' and beloved President. His vision of an empowered, educated India continues to inspire millions of young Indians.",
+    "category": "event",
+    "year": "1931",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Black Panther Party Founded",
+    "description": "On October 15, 1966, Huey P. Newton and Bobby Seale founded the Black Panther Party for Self-Defense in Oakland, California. The party organized armed patrols to monitor police brutality, established free breakfast programs for children, and became a powerful voice for Black liberation and community empowerment in America.",
+    "category": "event",
+    "year": "1966",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Mata Hari Executed",
+    "description": "On October 15, 1917, Margaretha Zelle, known as Mata Hari, was executed by firing squad in France after being convicted of espionage during World War I. Her trial was widely considered a miscarriage of justice based on flimsy evidence, and her case raised enduring questions about wartime hysteria, gender bias, and state power.",
+    "category": "event",
+    "year": "1917",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "World Food Day",
+    "description": "A FAO day addressing hunger and food security. The Buddha taught moderation in eating and sharing food with the hungry — generosity of food is the most fundamental form of Dāna.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "John Brown's Raid on Harpers Ferry",
+    "description": "On October 16, 1859, abolitionist John Brown led a band of 21 men in a raid on the federal armory at Harpers Ferry, Virginia, aiming to seize weapons and ignite a slave rebellion. Though the raid failed and Brown was executed, his radical action galvanized the abolitionist movement and helped precipitate the American Civil War.",
+    "category": "event",
+    "year": "1859",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "China Detonates Its First Nuclear Weapon",
+    "description": "On October 16, 1964, the People's Republic of China successfully detonated its first atomic bomb at the Lop Nur test site in Xinjiang. This made China the fifth nuclear power in the world, fundamentally altering Cold War geopolitics and the global balance of nuclear deterrence.",
+    "category": "event",
+    "year": "1964",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "International Day for Eradication of Poverty",
+    "description": "A UN day to fight poverty. Dr. Ambedkar's economic theories and labor reforms aimed to uplift the poorest sections of society through education, land reform, and industrialization.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Paris Massacre of Algerian Protesters",
+    "description": "On October 17, 1961, French police attacked a peaceful demonstration by some 30,000 Algerian protesters in Paris who were marching against a discriminatory curfew. Police killed an estimated 200 or more Algerians, throwing bodies into the Seine River — one of the darkest episodes of colonial violence on European soil.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Mother Teresa Awarded the Nobel Peace Prize",
+    "description": "On October 17, 1979, Mother Teresa of Calcutta was awarded the Nobel Peace Prize for her decades of work among the poorest of the poor in India's slums. Her Missionaries of Charity provided care for the dying, orphaned, and destitute, and her recognition brought global attention to the crisis of extreme poverty.",
+    "category": "event",
+    "year": "1979",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Dhamma: Deekshabhoomi — Sacred Ground",
+    "description": "Deekshabhoomi in Nagpur is the site where Dr. Ambedkar and millions embraced Buddhism. Today it is one of the most important Buddhist pilgrimage sites in India.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "18",
+    "title": "Alaska Transferred from Russia to the United States",
+    "description": "On October 18, 1867, the United States formally took possession of Alaska from Russia in a ceremony at Sitka, completing a $7.2 million purchase. Initially ridiculed as 'Seward's Folly,' the acquisition proved enormously valuable for its natural resources, strategic location, and the Indigenous peoples' homeland it encompassed.",
+    "category": "event",
+    "year": "1867",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "British Broadcasting Corporation (BBC) Founded",
+    "description": "On October 18, 1922, the British Broadcasting Company was established, later becoming the British Broadcasting Corporation. The BBC pioneered public service broadcasting, becoming one of the most influential media organizations in history and a model for independent journalism and mass communication worldwide.",
+    "category": "event",
+    "year": "1922",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Dhamma: 22 Vows of Dr. Ambedkar",
+    "description": "At Deekshabhoomi, Dr. Ambedkar administered 22 vows to new Buddhists — pledging to follow the Eightfold Path, renounce inequality, and live by the principles of Dhamma.",
+    "category": "event",
+    "year": "1956",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Siege of Yorktown Ends — American Revolution Victory",
+    "description": "On October 19, 1781, British General Cornwallis surrendered to George Washington and French forces at Yorktown, Virginia, effectively ending the American Revolutionary War. This decisive victory by colonial and allied forces secured American independence and inspired revolutionary movements for self-determination around the world.",
+    "category": "event",
+    "year": "1781",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Black Monday Stock Market Crash",
+    "description": "On October 19, 1987, stock markets around the world crashed, with the Dow Jones Industrial Average plunging 22.6% in a single day — the largest one-day percentage decline in its history. Black Monday exposed the fragility of interconnected global financial systems and led to major reforms in market regulation and circuit breaker mechanisms.",
+    "category": "event",
+    "year": "1987",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Dussehra / Vijaya Dashami",
+    "description": "Dussehra celebrates the triumph of good over evil. In the Buddhist context, it represents the victory of wisdom and compassion over the forces of ignorance, craving, and hatred.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "20",
+    "title": "Sino-Indian War Begins",
+    "description": "On October 20, 1962, the People's Liberation Army of China launched a massive invasion across the disputed Himalayan border with India. The month-long war exposed India's military unpreparedness and reshaped its defense and foreign policies, while highlighting the consequences of unresolved colonial-era boundary disputes.",
+    "category": "event",
+    "year": "1962",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Sydney Opera House Officially Opens",
+    "description": "On October 20, 1973, the Sydney Opera House was officially opened by Queen Elizabeth II after 16 years of construction. Designed by Danish architect Jørn Utzon, its revolutionary sail-shaped shells became an icon of 20th-century architecture and a symbol of creative human achievement.",
+    "category": "event",
+    "year": "1973",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Dhamma: Sāsana — The Dispensation",
+    "description": "Sāsana refers to the Buddha's dispensation — the living tradition of teaching, practice, and realization that has continued unbroken for over 2,500 years through the Sangha.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "21",
+    "title": "Edison Tests the First Practical Incandescent Light Bulb",
+    "description": "On October 21, 1879, Thomas Edison successfully tested a carbonized bamboo filament that burned for over 13 hours in his Menlo Park laboratory. This breakthrough made electric lighting commercially viable, launching a revolution in how humanity lives and works after dark, and ushering in the age of electrical power.",
+    "category": "event",
+    "year": "1879",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Battle of Trafalgar",
+    "description": "On October 21, 1805, the British Royal Navy under Admiral Horatio Nelson decisively defeated the combined fleets of France and Spain off Cape Trafalgar, near the coast of Spain. Though Nelson was killed in the battle, the victory secured British naval supremacy for over a century and ended Napoleon's plans to invade Britain.",
+    "category": "event",
+    "year": "1805",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Dhamma: Meditation Retreat Reflection",
+    "description": "Vipassana meditation retreats — typically 10 days of noble silence — offer a direct experience of the Dhamma. Thousands of centers worldwide teach this practice as taught by the Buddha.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "22",
+    "title": "Cuban Missile Crisis — Kennedy Addresses the Nation",
+    "description": "On October 22, 1962, President John F. Kennedy addressed the American people on national television, revealing the presence of Soviet nuclear missiles in Cuba and announcing a naval blockade. The world stood on the brink of nuclear war for 13 days in the most dangerous confrontation of the Cold War.",
+    "category": "event",
+    "year": "1962",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "First Parachute Jump by André-Jacques Garnerin",
+    "description": "On October 22, 1797, French aeronaut André-Jacques Garnerin made the first successful frameless parachute descent, jumping from a hydrogen balloon at approximately 3,000 feet over Paris. This daring leap proved that humans could safely descend from great heights, pioneering the technology that would become essential to aviation and space exploration.",
+    "category": "event",
+    "year": "1797",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Dhamma: Maha Bodhi Society",
+    "description": "The Maha Bodhi Society, founded by Anagarika Dharmapala in 1891, works to restore and protect Buddhist sacred sites in India and promote the teaching of Dhamma worldwide.",
+    "category": "event",
+    "year": "1891",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Hungarian Revolution Begins",
+    "description": "On October 23, 1956, a spontaneous nationwide revolt erupted in Hungary against the Soviet-imposed communist government. Students and workers took to the streets of Budapest demanding democratic reforms and national independence, sparking a brief but heroic uprising that was crushed by Soviet tanks but inspired anti-authoritarian movements worldwide.",
+    "category": "event",
+    "year": "1956",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Second Battle of El Alamein Begins",
+    "description": "On October 23, 1942, British and Commonwealth forces under Field Marshal Montgomery launched the Second Battle of El Alamein against Rommel's Afrika Korps in Egypt. The decisive Allied victory turned the tide of World War II in North Africa and marked the beginning of the end for Axis ambitions in the region.",
+    "category": "event",
+    "year": "1942",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "United Nations Day",
+    "description": "Marks the founding of the United Nations in 1945. The UN's goals of peace, human rights, and international cooperation resonate with the Buddha's universal message of compassion.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "First Transcontinental Telegraph Completed",
+    "description": "On October 24, 1861, the first transcontinental telegraph line was completed when wires from the east and west were joined in Salt Lake City, Utah. This revolutionary communication technology connected the Atlantic and Pacific coasts instantly for the first time, transforming commerce, journalism, and governance across the United States.",
+    "category": "event",
+    "year": "1861",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Zambia Gains Independence",
+    "description": "On October 24, 1964, Zambia gained independence from British colonial rule under the leadership of Kenneth Kaunda, who became the nation's first president. The independence movement drew strength from widespread opposition to the racial inequalities of the Central African Federation and the exploitation of the country's vast copper resources.",
+    "category": "event",
+    "year": "1964",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Dhamma: Buddhist Councils",
+    "description": "Six Buddhist Councils have been held to preserve and authenticate the Dhamma — from the First Council at Rājagaha to the Sixth Council in Rangoon (1954–1956).",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "25",
+    "title": "October Revolution — Bolsheviks Seize Power",
+    "description": "On October 25, 1917 (Old Style calendar), the Bolsheviks led by Vladimir Lenin overthrew the Russian Provisional Government in Petrograd, seizing the Winter Palace with minimal resistance. This revolution established the world's first socialist state, fundamentally transforming global politics and inspiring revolutionary movements among oppressed peoples worldwide.",
+    "category": "event",
+    "year": "1917",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Charge of the Light Brigade at Balaclava",
+    "description": "On October 25, 1854, during the Battle of Balaclava in the Crimean War, a brigade of British cavalry charged directly into a valley of Russian artillery due to miscommunicated orders. The doomed assault killed or wounded over 250 of the 670 riders and became an enduring symbol of both military valor and the catastrophic cost of incompetent leadership.",
+    "category": "event",
+    "year": "1854",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Dhamma: Dharma Propagation",
+    "description": "'Go forth, O bhikkhus, for the good of the many, for the happiness of the many, out of compassion for the world.' — The Buddha's charge to his first 60 enlightened disciples.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "26",
+    "title": "Sweden Recognizes Norwegian Independence",
+    "description": "On October 26, 1905, King Oscar II of Sweden formally renounced his claim to the Norwegian throne, completing the peaceful dissolution of the Swedish-Norwegian union. Norway's independence was achieved through negotiation rather than armed conflict, making it a remarkable example of national liberation through democratic and diplomatic means.",
+    "category": "event",
+    "year": "1905",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Maharaja of Kashmir Signs Instrument of Accession to India",
+    "description": "On October 26, 1947, Maharaja Hari Singh of Jammu and Kashmir signed the Instrument of Accession, formally joining India amid a tribal invasion backed by Pakistan. This momentous and contested decision shaped the geopolitics of South Asia and led to the first Indo-Pakistani War over the disputed territory.",
+    "category": "event",
+    "year": "1947",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Infantry Day",
+    "description": "Honors the Indian infantry's role in the 1947 Kashmir operations. Bravery and selfless service — laying down one's life for others — are qualities revered in the Buddhist tradition.",
+    "category": "event",
+    "year": "1947",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "New York City Subway Opens",
+    "description": "On October 27, 1904, the New York City subway system opened its first line, running from City Hall to 145th Street. Built largely by immigrant laborers working in dangerous conditions, the subway transformed urban life by making rapid mass transit accessible and connecting diverse communities across the city.",
+    "category": "event",
+    "year": "1904",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Cuban Missile Crisis — Black Saturday",
+    "description": "On October 27, 1962, known as 'Black Saturday,' the Cuban Missile Crisis reached its most perilous moment when a U-2 spy plane was shot down over Cuba and a Soviet submarine nearly launched a nuclear torpedo. The world came closer to nuclear annihilation than at any other point in history before cooler heads prevailed.",
+    "category": "event",
+    "year": "1962",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Dhamma: Chaitya & Vihāra",
+    "description": "Chaityas (prayer halls) and Vihāras (monasteries) were the architectural heart of Indian Buddhism. Rock-cut examples at Karla, Bhaja, and Ajanta remain masterpieces of Buddhist art.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "28",
+    "title": "Statue of Liberty Dedicated",
+    "description": "On October 28, 1886, the Statue of Liberty was dedicated on Bedloe's Island in New York Harbor, a gift from France to the United States. The statue became an enduring symbol of freedom and hope for millions of immigrants arriving in America, though its promise of liberty was not equally extended to all peoples.",
+    "category": "event",
+    "year": "1886",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Czechoslovakia Declares Independence",
+    "description": "On October 28, 1918, Czechoslovakia declared independence from the Austro-Hungarian Empire as the empire collapsed at the end of World War I. Led by Tomáš Masaryk and other leaders, the new republic was founded on principles of democracy and self-determination for the Czech and Slovak peoples after centuries of Habsburg rule.",
+    "category": "event",
+    "year": "1918",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Dhamma: The Pāli Canon (Tipiṭaka)",
+    "description": "The Tipiṭaka — the complete Buddhist canon in Pāli — was first written down in Sri Lanka around 29 BCE. It contains the Vinaya, Sutta, and Abhidhamma Piṭakas.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "29",
+    "title": "Black Tuesday — Wall Street Crash",
+    "description": "On October 29, 1929, the New York Stock Exchange suffered its most catastrophic crash as panicked investors sold over 16 million shares in a single day. Black Tuesday wiped out millions of investors, triggered the Great Depression, and exposed the devastating consequences of unchecked financial speculation on working people worldwide.",
+    "category": "event",
+    "year": "1929",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "First ARPANET Message Sent — Birth of the Internet",
+    "description": "On October 29, 1969, the first message was sent over ARPANET from UCLA to Stanford Research Institute, transmitting the letters 'L' and 'O' before the system crashed. This humble beginning launched the network that evolved into the modern internet, arguably the most transformative technological breakthrough since the printing press.",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Dhamma: Mindfulness in Daily Life",
+    "description": "Dhamma is not only for the cushion. Mindful eating, walking, speaking, and working — every moment of life is an opportunity to practice awareness, compassion, and wisdom.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "30",
+    "title": "Tsar Bomba Detonated — Largest Nuclear Weapon Ever",
+    "description": "On October 30, 1961, the Soviet Union detonated Tsar Bomba over Novaya Zemlya in the Arctic, producing a 50-megaton explosion — the most powerful nuclear weapon ever tested. The blast was over 3,000 times more powerful than the Hiroshima bomb, and its shockwave circled the Earth three times, demonstrating the terrifying extremes of nuclear science.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Rumble in the Jungle — Muhammad Ali Defeats George Foreman",
+    "description": "On October 30, 1974, Muhammad Ali defeated the heavily favored George Foreman in Kinshasa, Zaire, reclaiming the world heavyweight boxing championship. The 'Rumble in the Jungle' was more than a sporting event — Ali, who had been stripped of his title for refusing the Vietnam draft, became a global symbol of Black pride and resistance to injustice.",
+    "category": "event",
+    "year": "1974",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Sardar Patel Jayanti / National Unity Day",
+    "description": "Birth anniversary of Sardar Vallabhbhai Patel, the 'Iron Man of India' who unified the nation's princely states. Observed as National Unity Day (Rashtriya Ekta Diwas).",
+    "category": "festival",
+    "year": "1875",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Martin Luther Posts the 95 Theses — Protestant Reformation Begins",
+    "description": "On October 31, 1517, Martin Luther nailed his 95 Theses to the door of the Castle Church in Wittenberg, Germany, challenging the Catholic Church's sale of indulgences. This act of defiance against religious authority sparked the Protestant Reformation, one of the most profound upheavals in Western civilization, transforming religion, politics, and individual conscience.",
+    "category": "event",
+    "year": "1517",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Indira Gandhi Assassinated",
+    "description": "On October 31, 1984, Indian Prime Minister Indira Gandhi was assassinated by two of her Sikh bodyguards in retaliation for Operation Blue Star, the military assault on the Golden Temple in Amritsar. Her assassination triggered anti-Sikh riots across India in which thousands of Sikhs were murdered, exposing deep communal faultlines in Indian society.",
+    "category": "event",
+    "year": "1984",
+    "isSymbolic": false
+  }
+]

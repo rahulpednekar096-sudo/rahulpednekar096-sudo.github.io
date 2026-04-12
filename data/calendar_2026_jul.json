@@ -1,0 +1,746 @@
+[
+  {
+    "date": "01",
+    "title": "National Doctors' Day",
+    "description": "Honors the birth anniversary of Dr. B.C. Roy, legendary physician and former CM of West Bengal. The Buddha compared himself to a physician who diagnoses and cures the disease of suffering.",
+    "category": "event",
+    "year": "1882",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Battle of Gettysburg Begins",
+    "description": "On July 1, 1863, the Battle of Gettysburg began in Pennsylvania, becoming the bloodiest engagement of the American Civil War. Over three days, Union forces repelled Confederate General Lee's invasion of the North, marking a decisive turning point that shifted momentum toward the abolition of slavery and preservation of the Union.",
+    "category": "event",
+    "year": "1863",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Somalia Gains Independence",
+    "description": "On July 1, 1960, the Trust Territory of Somaliland united with the former British Somaliland to form the independent Somali Republic. This marked the end of decades of European colonial rule in the Horn of Africa and was part of the broader wave of African decolonization during the 1960s.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Dhamma: Asalha Puja / Dharma Day",
+    "description": "Asalha Puja commemorates the Buddha's first sermon — the Dhammacakkappavattana Sutta — delivered to the five ascetics at the Deer Park in Sarnath. The Wheel of Dhamma was set in motion.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "02",
+    "title": "Civil Rights Act of 1964 Signed",
+    "description": "On July 2, 1964, President Lyndon B. Johnson signed the Civil Rights Act into law, outlawing discrimination based on race, color, religion, sex, or national origin. The landmark legislation ended segregation in public places and banned employment discrimination, representing a monumental victory for the American civil rights movement led by figures like Martin Luther King Jr.",
+    "category": "event",
+    "year": "1964",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "First Zeppelin Flight",
+    "description": "On July 2, 1900, the Luftschiff Zeppelin LZ 1 made its maiden flight over Lake Constance in Germany, piloted by Count Ferdinand von Zeppelin. The rigid airship flew for about 18 minutes, ushering in the age of lighter-than-air travel and revolutionizing early aviation technology.",
+    "category": "event",
+    "year": "1900",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Dhamma: Beginning of Vassa (Rains Retreat)",
+    "description": "Vassa begins on the day after Asalha Puja. For three months, monks settle in monasteries for intensive meditation and study, following the tradition established by the Buddha.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "03",
+    "title": "George Washington Takes Command of Continental Army",
+    "description": "On July 3, 1775, George Washington formally took command of the Continental Army in Cambridge, Massachusetts, transforming a ragtag collection of colonial militias into a unified fighting force. This pivotal moment in the American Revolution set the stage for the colonies' eventual victory against British imperial rule.",
+    "category": "event",
+    "year": "1775",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Pickett's Charge at Gettysburg",
+    "description": "On July 3, 1863, Confederate General George Pickett led a disastrous infantry assault against Union positions on Cemetery Ridge at the Battle of Gettysburg. The charge resulted in devastating Confederate casualties and is widely regarded as the 'high-water mark of the Confederacy,' effectively ending the South's last major offensive into the North.",
+    "category": "event",
+    "year": "1863",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Swami Vivekananda Chicago Speech",
+    "description": "On 4 July 1902, Swami Vivekananda passed away. His historic 1893 Chicago address beginning 'Sisters and Brothers of America' introduced Indian spiritual thought to the Western world.",
+    "category": "event",
+    "year": "1902",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "U.S. Declaration of Independence",
+    "description": "On July 4, 1776, the Continental Congress adopted the Declaration of Independence, formally severing the thirteen American colonies from British rule. Drafted primarily by Thomas Jefferson, the document proclaimed that 'all men are created equal' and asserted the right of the people to overthrow tyrannical government.",
+    "category": "event",
+    "year": "1776",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Higgs Boson Discovery Announced",
+    "description": "On July 4, 2012, scientists at CERN announced the discovery of the Higgs boson using the Large Hadron Collider, confirming the existence of the Higgs field theorized nearly 50 years earlier. This breakthrough completed the Standard Model of particle physics and earned Peter Higgs and François Englert the 2013 Nobel Prize in Physics.",
+    "category": "event",
+    "year": "2012",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Dhamma: Upāli — Master of Vinaya",
+    "description": "Upāli, a barber by birth, became the Buddha's foremost disciple in Vinaya (monastic discipline). His story demonstrates that spiritual attainment transcends caste and social status.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "05",
+    "title": "Algeria Gains Independence",
+    "description": "On July 5, 1962, Algeria declared independence from France after a brutal eight-year war of liberation that claimed over one million Algerian lives. The Algerian Revolution became a symbol of anti-colonial resistance worldwide and inspired liberation movements across Africa, the Middle East, and beyond.",
+    "category": "event",
+    "year": "1962",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Dolly the Sheep Born",
+    "description": "On July 5, 1996, Dolly the sheep was born at the Roslin Institute in Scotland, becoming the first mammal successfully cloned from an adult somatic cell. Created by scientists Ian Wilmut and Keith Campbell, Dolly's birth revolutionized the field of genetics and sparked worldwide debate about the ethics and possibilities of cloning technology.",
+    "category": "event",
+    "year": "1996",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Dhamma: Mahāpajāpatī Gotamī",
+    "description": "Mahāpajāpatī Gotamī, the Buddha's foster mother, became the first Buddhist nun. Her ordination established the Bhikkhunī Sangha — the order of female monastics.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "06",
+    "title": "Louis Pasteur Tests Rabies Vaccine",
+    "description": "On July 6, 1885, Louis Pasteur administered his experimental rabies vaccine to Joseph Meister, a nine-year-old boy who had been severely bitten by a rabid dog. The treatment was a resounding success, saving the boy's life and establishing vaccination as a viable method for preventing infectious diseases, a landmark achievement in medical science.",
+    "category": "event",
+    "year": "1885",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Comoros Gains Independence",
+    "description": "On July 6, 1975, the Comoros archipelago in the Indian Ocean declared independence from France after decades of colonial administration. The independence movement was driven by growing nationalist sentiment and the desire for self-determination among the Comorian people, making it one of the last African nations to achieve sovereignty.",
+    "category": "event",
+    "year": "1975",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Dhamma: Ven. Ambedkar's Buddhist Vision",
+    "description": "Dr. Ambedkar studied Buddhism for decades before embracing it. His book 'The Buddha and His Dhamma' presents Buddhism as a rational, ethical, and socially revolutionary philosophy.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "07",
+    "title": "Marco Polo Bridge Incident",
+    "description": "On July 7, 1937, a skirmish between Chinese and Japanese troops at the Marco Polo Bridge near Beijing escalated into the Second Sino-Japanese War, one of the largest Asian conflicts of the 20th century. The incident marked the beginning of full-scale Japanese military aggression in China, leading to immense suffering and the deaths of millions of Chinese civilians.",
+    "category": "event",
+    "year": "1937",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Solomon Islands Gains Independence",
+    "description": "On July 7, 1978, the Solomon Islands achieved independence from British colonial rule after nearly a century of foreign administration. The Pacific island nation's path to sovereignty was part of the broader decolonization movement in Oceania, restoring self-governance to the indigenous Melanesian people.",
+    "category": "event",
+    "year": "1978",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Dhamma: Dhamma & Social Equality",
+    "description": "The Buddha declared: 'Not by birth is one a Brahmin, not by birth is one an outcaste. By deeds alone one becomes a Brahmin, by deeds alone one becomes an outcaste.' — Vasala Sutta.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "08",
+    "title": "People's Education Society Founded",
+    "description": "On 8 July 1945, Dr. B.R. Ambedkar founded the People's Education Society (PES) to bring quality higher education to Dalits and marginalized communities. The PES established Siddharth College in Bombay and later Milind College in Aurangabad — institutions that became engines of Bahujan intellectual empowerment and social mobility.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "First Public Reading of the Declaration of Independence",
+    "description": "On July 8, 1776, the Declaration of Independence was read aloud publicly for the first time in Philadelphia's Independence Square, accompanied by the ringing of the Liberty Bell. Crowds of citizens gathered to hear the revolutionary proclamation that the American colonies had broken free from British tyranny, igniting celebrations and deepening resolve for the cause of independence.",
+    "category": "event",
+    "year": "1776",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Dhamma: Ambapālī — The Courtesan Disciple",
+    "description": "Ambapālī, a courtesan of Vesāli, invited the Buddha for a meal and donated her mango grove to the Sangha. Her story shows that the Dhamma is open to all regardless of background.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "09",
+    "title": "Argentina Declares Independence",
+    "description": "On July 9, 1816, the Congress of Tucumán formally declared Argentina's independence from Spain, culminating years of revolutionary struggle that began in 1810. Led by figures like José de San Martín, the Argentine War of Independence was part of a broader wave of anti-colonial revolutions that liberated much of South America from Spanish imperial control.",
+    "category": "event",
+    "year": "1816",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "14th Amendment Ratified",
+    "description": "On July 9, 1868, the 14th Amendment to the United States Constitution was ratified, granting citizenship to all persons born or naturalized in the United States, including formerly enslaved people. The amendment's Equal Protection Clause became a cornerstone of civil rights law and was later used to challenge segregation, discrimination, and inequality in landmark cases like Brown v. Board of Education.",
+    "category": "event",
+    "year": "1868",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Dhamma: The Lotus Simile",
+    "description": "The Buddha compared beings to lotuses: some submerged, some at the surface, some rising above the water. Just as a lotus blooms unstained by mud, a wise person remains untouched by the world.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "10",
+    "title": "Telstar Satellite Launched",
+    "description": "On July 10, 1962, Telstar 1 was launched from Cape Canaveral, becoming the first active communications satellite to relay television signals, telephone calls, and data across the Atlantic Ocean. Developed by Bell Telephone Laboratories, Telstar ushered in the era of global satellite communications and fundamentally changed how the world shared information.",
+    "category": "event",
+    "year": "1962",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Bahamas Gains Independence",
+    "description": "On July 10, 1973, the Bahamas gained independence from the United Kingdom after nearly 250 years of British colonial rule. Led by Prime Minister Lynden Pindling, the predominantly Black nation's independence movement overcame decades of racial segregation and white minority rule to establish a sovereign democratic state in the Caribbean.",
+    "category": "event",
+    "year": "1973",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "World Population Day",
+    "description": "A UN day raising awareness about population issues. Equitable distribution of resources, access to education, and healthcare for all are goals aligned with Dhamma and justice.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Hamilton–Burr Duel",
+    "description": "On July 11, 1804, Vice President Aaron Burr mortally wounded former Treasury Secretary Alexander Hamilton in a duel at Weehawken, New Jersey. The event shocked the young American republic, exposed the violent undercurrents of early political rivalry, and ultimately ended Burr's political career while elevating Hamilton's legacy as a founding statesman.",
+    "category": "event",
+    "year": "1804",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Skylab Space Station Re-Enters Atmosphere",
+    "description": "On July 11, 1979, NASA's Skylab space station re-entered Earth's atmosphere and disintegrated, scattering debris across the Indian Ocean and parts of Western Australia. Skylab had served as America's first space station from 1973, hosting three crewed missions that conducted groundbreaking experiments in solar astronomy, Earth observation, and the effects of microgravity on the human body.",
+    "category": "event",
+    "year": "1979",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Dhamma: Milindapañha",
+    "description": "The Milindapañha records the famous dialogues between the Greek king Milinda (Menander) and the monk Nāgasena. These philosophical debates illuminate core Buddhist concepts with remarkable clarity.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "12",
+    "title": "Malala Yousafzai Born",
+    "description": "On July 12, 1997, Malala Yousafzai was born in Mingora, Pakistan. She became the world's youngest Nobel Peace Prize laureate in 2014 for her courageous advocacy for girls' education in the face of Taliban threats, surviving an assassination attempt in 2012 and continuing her global campaign for the right of every child to attend school.",
+    "category": "event",
+    "year": "1997",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Bisbee Deportation",
+    "description": "On July 12, 1917, approximately 1,300 striking copper miners and their supporters were illegally rounded up at gunpoint by vigilantes and deputized company men in Bisbee, Arizona, and deported in cattle cars to the New Mexico desert. The workers, many of them Mexican American and immigrant laborers, had been striking for better wages and safer conditions, making the Bisbee Deportation one of the most dramatic labor rights violations in American history.",
+    "category": "event",
+    "year": "1917",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Dhamma: Aṅgulimāla — Transformation",
+    "description": "Aṅgulimāla, a feared serial killer, was transformed by the Buddha's compassion into an enlightened monk. His story is the ultimate testament to the power of redemption through Dhamma.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "13",
+    "title": "Assassination of Jean-Paul Marat",
+    "description": "On July 13, 1793, French revolutionary journalist and politician Jean-Paul Marat was assassinated in his bathtub by Charlotte Corday, a Girondin sympathizer who blamed him for the escalating violence of the Reign of Terror. Marat's death became a powerful symbol of the French Revolution's internal conflicts and was immortalized in Jacques-Louis David's famous painting.",
+    "category": "event",
+    "year": "1793",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "New York City Draft Riots Begin",
+    "description": "On July 13, 1863, the New York City Draft Riots erupted in response to the Civil War conscription law, which allowed wealthy men to buy their way out of military service for $300. The riots, lasting four days, became the largest civil insurrection in American history apart from the Civil War itself, with mobs targeting Black residents and institutions in racially motivated violence.",
+    "category": "event",
+    "year": "1863",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Bastille Day / Freedom Reflection",
+    "description": "The storming of the Bastille in 1789 launched the French Revolution. Its ideals — liberty, equality, fraternity — echo the Buddhist and Ambedkarite vision of a just society.",
+    "category": "event",
+    "year": "1789",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Iraqi Revolution of 1958",
+    "description": "On July 14, 1958, Iraqi military officers led by Brigadier Abd al-Karim Qasim overthrew the Hashemite monarchy in a swift coup, ending British-backed royal rule and establishing the Republic of Iraq. The revolution was driven by popular resentment of foreign influence, economic inequality, and the monarchy's alignment with Western powers through the Baghdad Pact.",
+    "category": "event",
+    "year": "1958",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Mariner 4 Completes First Mars Flyby",
+    "description": "On July 14, 1965, NASA's Mariner 4 spacecraft completed the first successful flyby of Mars, capturing 22 close-up photographs of the Martian surface. The images revealed a barren, cratered landscape, fundamentally changing scientific understanding of Mars and marking a milestone in planetary exploration and space science.",
+    "category": "event",
+    "year": "1965",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Dhamma: Khema — Foremost in Wisdom",
+    "description": "Bhikkhunī Khema was declared foremost among the nuns in wisdom. A former queen, she attained arahantship and became renowned for her deep insight into the nature of reality.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "15",
+    "title": "Rosetta Stone Discovered",
+    "description": "On July 15, 1799, during Napoleon's Egyptian campaign, French soldiers discovered the Rosetta Stone at the town of Rashid (Rosetta) in the Nile Delta. The stone bore inscriptions in three scripts — hieroglyphic, Demotic, and Greek — and ultimately enabled Jean-François Champollion to decipher ancient Egyptian hieroglyphs in 1822, unlocking millennia of lost history.",
+    "category": "event",
+    "year": "1799",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Boeing Company Founded",
+    "description": "On July 15, 1916, William Edward Boeing incorporated Pacific Aero Products Co. in Seattle, Washington, which was later renamed the Boeing Airplane Company. The company grew to become one of the world's largest aerospace manufacturers, revolutionizing both civilian aviation and space exploration over the following century.",
+    "category": "event",
+    "year": "1916",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Dhamma: Patācārā — Foremost in Vinaya",
+    "description": "Patācārā, after losing her entire family, found refuge in the Dhamma. She became foremost among nuns in Vinaya and a guiding light for hundreds of women who followed the path.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "16",
+    "title": "Trinity Nuclear Test",
+    "description": "On July 16, 1945, the United States conducted the Trinity test in the Jornada del Muerto desert of New Mexico, detonating the world's first nuclear weapon. The successful test of the plutonium implosion device, part of the Manhattan Project, ushered in the atomic age and led to the bombings of Hiroshima and Nagasaki weeks later, forever altering the course of warfare and geopolitics.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Apollo 11 Launches for the Moon",
+    "description": "On July 16, 1969, Apollo 11 launched from Kennedy Space Center carrying astronauts Neil Armstrong, Buzz Aldrin, and Michael Collins on humanity's first mission to land on the Moon. The Saturn V rocket propelled the spacecraft on a four-day journey that would culminate in one of the greatest scientific and exploratory achievements in human history.",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Dhamma: Therīgāthā — Verses of Elder Nuns",
+    "description": "The Therīgāthā is the earliest known collection of women's spiritual poetry. These powerful verses by enlightened nuns express the joy of liberation from suffering and social bondage.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "17",
+    "title": "Execution of the Romanov Family",
+    "description": "On July 17, 1918, Bolshevik forces executed Tsar Nicholas II, his wife Alexandra, and their five children in Yekaterinburg, Russia, during the Russian Civil War. The execution marked the definitive end of the 300-year Romanov dynasty and the Russian imperial system, cementing the Bolshevik Revolution's irreversible break with the old order.",
+    "category": "event",
+    "year": "1918",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Apollo-Soyuz Test Project",
+    "description": "On July 17, 1975, an American Apollo spacecraft and a Soviet Soyuz capsule docked in orbit, marking the first international crewed space mission and a symbolic end to the Space Race. The historic handshake between astronaut Thomas Stafford and cosmonaut Alexei Leonov in zero gravity demonstrated that Cold War rivals could cooperate in the pursuit of scientific advancement.",
+    "category": "event",
+    "year": "1975",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Nelson Mandela International Day",
+    "description": "Honoring Nelson Mandela's lifelong fight against apartheid. His message — 'Education is the most powerful weapon to change the world' — mirrors Dr. Ambedkar's vision.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Spanish Civil War Begins",
+    "description": "On July 18, 1936, a military uprising led by General Francisco Franco against the Spanish Republic ignited the Spanish Civil War, a devastating three-year conflict. The war became an international ideological battleground between fascism and democracy, drawing volunteers from around the world and foreshadowing the larger global struggle of World War II.",
+    "category": "event",
+    "year": "1936",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "First BCG Vaccination Administered to a Human",
+    "description": "On July 18, 1921, French bacteriologists Albert Calmette and Camille Guérin administered the Bacillus Calmette-Guérin (BCG) vaccine to a newborn infant in Paris, marking the first human use of a tuberculosis vaccine. BCG went on to become one of the most widely used vaccines in history, saving millions of lives worldwide, particularly in developing nations ravaged by tuberculosis.",
+    "category": "event",
+    "year": "1921",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Mangal Pandey Jayanti",
+    "description": "Birth anniversary of Mangal Pandey, the Indian soldier whose rebellion against the British in 1857 sparked the First War of Independence. A symbol of courage against oppression.",
+    "category": "event",
+    "year": "1827",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Seneca Falls Convention Begins",
+    "description": "On July 19, 1848, the first women's rights convention in the United States opened in Seneca Falls, New York, organized by Elizabeth Cady Stanton and Lucretia Mott. The convention produced the Declaration of Sentiments, modeled on the Declaration of Independence, which proclaimed that 'all men and women are created equal' and launched the organized women's suffrage movement in America.",
+    "category": "event",
+    "year": "1848",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Sandinista Revolution Triumphs in Nicaragua",
+    "description": "On July 19, 1979, the Sandinista National Liberation Front (FSLN) overthrew the Somoza dictatorship in Nicaragua after years of guerrilla warfare and popular uprising. The revolution ended over four decades of authoritarian rule by the Somoza family, which had been propped up by U.S. support, and inspired leftist movements across Latin America.",
+    "category": "event",
+    "year": "1979",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Dhamma: Nāgārjuna — Great Philosopher",
+    "description": "Nāgārjuna (c. 150–250 CE) was the founder of the Mādhyamaka school. His Mūlamadhyamakakārikā on Śūnyatā (emptiness) is one of the most profound works in Buddhist philosophy.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "20",
+    "title": "Bahishkrit Hitakarini Sabha Founded",
+    "description": "On 20 July 1924, Dr. B.R. Ambedkar founded the Bahishkrit Hitakarini Sabha (Association for the Welfare of the Excluded) in Mumbai — his first social organization. Its motto was 'Educate, Agitate, Organize.' The Sabha worked to promote education, improve economic conditions, and assert the civic rights of untouchable communities.",
+    "category": "event",
+    "year": "1924",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Apollo 11 Moon Landing",
+    "description": "On July 20, 1969, NASA's Apollo 11 lunar module Eagle landed on the Moon's Sea of Tranquility, and astronaut Neil Armstrong became the first human to set foot on the lunar surface with the words, 'That's one small step for man, one giant leap for mankind.' The Moon landing, watched by an estimated 600 million people worldwide, stands as one of humanity's greatest scientific and technological achievements.",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Dhamma: Vasubandhu — Yogācāra Master",
+    "description": "Vasubandhu (4th–5th century CE) was a master of the Yogācāra school who wrote the Abhidharmakośa — a comprehensive treatise on Buddhist psychology and metaphysics.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "21",
+    "title": "First Battle of Bull Run",
+    "description": "On July 21, 1861, Union and Confederate forces clashed at the First Battle of Bull Run (Manassas) in Virginia, the first major land battle of the American Civil War. The unexpected Confederate victory shattered Northern hopes for a quick end to the war and made clear that the struggle over slavery and union would be long and bloody.",
+    "category": "event",
+    "year": "1861",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Scopes Trial Verdict",
+    "description": "On July 21, 1925, high school teacher John T. Scopes was found guilty of violating Tennessee's Butler Act by teaching evolution in public schools. The 'Monkey Trial' became a landmark confrontation between science and religious fundamentalism, featuring the legendary courtroom clash between Clarence Darrow and William Jennings Bryan that galvanized public debate over academic freedom and scientific education.",
+    "category": "event",
+    "year": "1925",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "National Flag Adoption Day",
+    "description": "India's national flag with the Ashoka Chakra was adopted on 22 July 1947. The 24-spoke Dharma Chakra at the center represents the Dhamma — the eternal law of righteousness.",
+    "category": "event",
+    "year": "1947",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Gregor Mendel Born",
+    "description": "On July 22, 1822, Gregor Johann Mendel was born in Heinzendorf, Austrian Empire. Through his pioneering experiments with pea plants in the 1850s and 1860s, Mendel discovered the fundamental laws of genetic inheritance, earning him recognition as the 'father of modern genetics' when his work was rediscovered at the turn of the 20th century.",
+    "category": "event",
+    "year": "1822",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Lincoln Presents Emancipation Proclamation Draft",
+    "description": "On July 22, 1862, President Abraham Lincoln presented the first draft of the Emancipation Proclamation to his cabinet, proposing to free all enslaved people in Confederate states. Although advisors urged him to wait for a Union military victory before making the announcement public, this moment marked the beginning of the formal process that would lead to the liberation of nearly four million enslaved African Americans.",
+    "category": "event",
+    "year": "1862",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Bal Gangadhar Tilak Jayanti",
+    "description": "Birth anniversary of Lokmanya Tilak, who declared 'Swaraj is my birthright and I shall have it.' A towering leader of the Indian independence movement.",
+    "category": "event",
+    "year": "1856",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Egyptian Revolution of 1952",
+    "description": "On July 23, 1952, the Free Officers Movement led by Muhammad Naguib and Gamal Abdel Nasser overthrew King Farouk in a bloodless military coup, ending the Egyptian monarchy and British-backed royal rule. The revolution established Egypt as a republic and inspired anti-colonial and pan-Arab nationalist movements across the Middle East and North Africa.",
+    "category": "event",
+    "year": "1952",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Ford Motor Company Sells Its First Car",
+    "description": "On July 23, 1903, the Ford Motor Company sold its first automobile, a Model A, to Dr. Ernst Pfennig of Chicago for $850. Founded just weeks earlier by Henry Ford, the company would go on to revolutionize manufacturing with the assembly line, making automobiles affordable for ordinary workers and transforming modern industrial production.",
+    "category": "event",
+    "year": "1903",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Dhamma: Buddhaghosa — Great Commentator",
+    "description": "Buddhaghosa (5th century CE) authored the Visuddhimagga (Path of Purification), the definitive guide to Theravāda meditation and philosophy. His commentaries illuminate the Pali Canon.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "24",
+    "title": "Machu Picchu Rediscovered",
+    "description": "On July 24, 1911, American historian Hiram Bingham III reached the ruins of Machu Picchu high in the Peruvian Andes, bringing the spectacular 15th-century Inca citadel to worldwide attention. Though local farmers knew of the site, Bingham's expedition revealed its archaeological significance, and Machu Picchu has since become a symbol of Inca engineering genius and indigenous civilizational achievement.",
+    "category": "event",
+    "year": "1911",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Apollo 11 Returns to Earth",
+    "description": "On July 24, 1969, the Apollo 11 command module Columbia splashed down safely in the Pacific Ocean, completing humanity's first successful round trip to the Moon. Astronauts Neil Armstrong, Buzz Aldrin, and Michael Collins were recovered by the USS Hornet, concluding an eight-day mission that demonstrated the extraordinary possibilities of science and human determination.",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Dhamma: Dhammapada Reflection",
+    "description": "'Hatred is never appeased by hatred in this world. By non-hatred alone is hatred appeased. This is an eternal law.' — Dhammapada, verse 5.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "25",
+    "title": "First Test-Tube Baby Born",
+    "description": "On July 25, 1978, Louise Joy Brown was born at Oldham General Hospital in England, becoming the world's first baby conceived through in vitro fertilization (IVF). The groundbreaking procedure, developed by physiologist Robert Edwards and gynecologist Patrick Steptoe, revolutionized reproductive medicine and has since enabled millions of families worldwide to have children.",
+    "category": "event",
+    "year": "1978",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Fall of Mussolini",
+    "description": "On July 25, 1943, the Italian Grand Council of Fascism voted to remove Benito Mussolini from power, and King Victor Emmanuel III ordered his arrest, ending over two decades of fascist dictatorship in Italy. The fall of Mussolini marked the beginning of Italy's exit from World War II and the collapse of one of Europe's most prominent authoritarian regimes.",
+    "category": "event",
+    "year": "1943",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Kargil Vijay Diwas",
+    "description": "Commemorates India's victory in the Kargil War of 1999. Honors the bravery and sacrifice of Indian soldiers who recaptured the mountain heights in Jammu & Kashmir.",
+    "category": "festival",
+    "year": "1999",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Cuban Revolution Begins — Attack on Moncada Barracks",
+    "description": "On July 26, 1953, Fidel Castro led an armed assault on the Moncada Barracks in Santiago de Cuba, attempting to overthrow the U.S.-backed dictator Fulgencio Batista. Although the attack failed and Castro was captured and imprisoned, the date became the rallying symbol of the Cuban Revolution and the name of Castro's revolutionary '26th of July Movement' that eventually toppled Batista in 1959.",
+    "category": "event",
+    "year": "1953",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Americans with Disabilities Act Signed",
+    "description": "On July 26, 1990, President George H.W. Bush signed the Americans with Disabilities Act (ADA) into law, the most comprehensive civil rights legislation for people with disabilities in U.S. history. The ADA prohibited discrimination in employment, public accommodations, transportation, and telecommunications, empowering millions of Americans with disabilities to participate fully in society.",
+    "category": "event",
+    "year": "1990",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Dhamma: Asvaghosa — Buddhist Poet",
+    "description": "Aśvaghoṣa (c. 80–150 CE) wrote the Buddhacarita, one of the earliest biographies of the Buddha in elegant Sanskrit verse. He was a master poet and Buddhist philosopher.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "27",
+    "title": "Korean War Armistice Signed",
+    "description": "On July 27, 1953, the Korean War Armistice Agreement was signed at Panmunjom, ending three years of devastating conflict that claimed millions of lives on the Korean Peninsula. The armistice established the Korean Demilitarized Zone along the 38th parallel but technically left the two Koreas in a state of war, a division that persists to this day.",
+    "category": "event",
+    "year": "1953",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "First Permanent Transatlantic Telegraph Cable Completed",
+    "description": "On July 27, 1866, the Great Eastern steamship successfully laid a permanent telegraph cable across the Atlantic Ocean floor, connecting Valentia Island in Ireland with Heart's Content in Newfoundland. After multiple failed attempts over the previous decade, this technological triumph revolutionized global communications by enabling near-instantaneous messages between Europe and North America.",
+    "category": "event",
+    "year": "1866",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "World Hepatitis Day",
+    "description": "A global health awareness day. The Buddha emphasized the importance of caring for the sick and saw health as a prerequisite for the dedicated pursuit of Dhamma practice.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "World War I Begins",
+    "description": "On July 28, 1914, Austria-Hungary declared war on Serbia following the assassination of Archduke Franz Ferdinand, triggering a chain of alliance obligations that plunged Europe into World War I. The devastating four-year conflict killed over 17 million people, dismantled four empires, redrew the map of the world, and sowed the seeds of future revolutions and upheavals.",
+    "category": "event",
+    "year": "1914",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Peru Declares Independence",
+    "description": "On July 28, 1821, Argentine general José de San Martín proclaimed Peru's independence from Spain in Lima's Plaza de Armas, declaring 'From this moment on, Peru is free and independent.' The declaration was a pivotal moment in the South American wars of liberation against Spanish colonial rule that transformed the continent's political landscape.",
+    "category": "event",
+    "year": "1821",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "International Tiger Day",
+    "description": "A day to raise awareness about tiger conservation. India's Buddhist heritage includes deep reverence for wildlife — the Jātaka tales feature animals as teachers of virtue.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "NASA Established",
+    "description": "On July 29, 1958, President Dwight D. Eisenhower signed the National Aeronautics and Space Act, establishing NASA as the United States' civilian space agency. Born out of the Cold War Space Race with the Soviet Union, NASA went on to lead humanity's exploration of space, from the Mercury and Apollo programs to the Space Shuttle, the International Space Station, and Mars rovers.",
+    "category": "event",
+    "year": "1958",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "International Atomic Energy Agency Established",
+    "description": "On July 29, 1957, the International Atomic Energy Agency (IAEA) was formally established as an autonomous organization within the United Nations system to promote the peaceful use of nuclear energy. The IAEA was created in response to growing concerns about nuclear proliferation and has since served as the world's nuclear watchdog, working to ensure atomic science is used for health, energy, and development rather than weapons.",
+    "category": "event",
+    "year": "1957",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "International Day of Friendship",
+    "description": "A UN day celebrating friendship across cultures. The Buddha told Ānanda: 'Admirable friendship, admirable companionship, admirable camaraderie is actually the whole of the holy life.'",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "First Representative Assembly in America",
+    "description": "On July 30, 1619, the House of Burgesses convened in Jamestown, Virginia, becoming the first elected legislative assembly in the American colonies. This early experiment in self-governance planted the seeds of democratic representation in North America, though it also coincided with the arrival of the first enslaved Africans in Virginia that same year.",
+    "category": "event",
+    "year": "1619",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Medicare Signed into Law",
+    "description": "On July 30, 1965, President Lyndon B. Johnson signed the Medicare and Medicaid programs into law as amendments to the Social Security Act, providing government-funded healthcare to Americans over 65 and to low-income families. The legislation represented a landmark victory for social justice advocates who had fought for decades to ensure that the elderly and the poor would not be denied medical care due to inability to pay.",
+    "category": "event",
+    "year": "1965",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Munshi Premchand Jayanti",
+    "description": "Birth anniversary of Munshi Premchand, one of the greatest Hindi-Urdu writers whose novels and stories portrayed the struggles of the poor, farmers, and marginalized communities.",
+    "category": "event",
+    "year": "1880",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "First U.S. Patent Issued",
+    "description": "On July 31, 1790, the first patent in United States history was granted to Samuel Hopkins of Philadelphia for an improved process for making potash, an ingredient used in fertilizer and soap. Signed by President George Washington, the patent system was enshrined in the Constitution to promote innovation and has since protected millions of inventions that have transformed science and industry.",
+    "category": "event",
+    "year": "1790",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Marquis de Lafayette Commissioned in American Revolution",
+    "description": "On July 31, 1777, the nineteen-year-old Marquis de Lafayette was commissioned as a Major General in the Continental Army by the Continental Congress. The young French aristocrat volunteered to fight without pay for American independence, becoming one of General Washington's most trusted officers and a living symbol of the international solidarity that fueled the American Revolution.",
+    "category": "event",
+    "year": "1777",
+    "isSymbolic": false
+  }
+]

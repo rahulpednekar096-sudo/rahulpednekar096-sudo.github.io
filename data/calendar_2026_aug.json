@@ -1,0 +1,746 @@
+[
+  {
+    "date": "01",
+    "title": "Lokmanya Tilak Punyatithi",
+    "description": "Remembrance of Bal Gangadhar Tilak, the 'Father of Indian Unrest,' who died in 1920. His call for Swaraj and mass political mobilization shaped the freedom movement.",
+    "category": "event",
+    "year": "1920",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Annabhau Sathe Jayanti",
+    "description": "Birth anniversary of Annabhau Sathe (1920–1969), the iconic Dalit writer, poet, and social activist from Maharashtra. Through his novels, poetry, tamasha performances, and revolutionary songs, he gave voice to the struggles and aspirations of the oppressed. His works like 'Fakira' and 'Stavanache Saudagar' remain milestones of Dalit literature.",
+    "category": "event",
+    "year": "1920",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Abolition of Slavery in the British Empire",
+    "description": "On 1 August 1834, the Slavery Abolition Act of 1833 came into effect, emancipating approximately 800,000 enslaved people across the British Empire. While the act excluded territories under the East India Company, it marked a monumental victory for decades of abolitionist struggle led by figures like William Wilberforce and formerly enslaved people who resisted bondage.",
+    "category": "event",
+    "year": "1834",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Dhamma: Paṭiccasamuppāda",
+    "description": "Dependent Origination (Paṭiccasamuppāda) is the Buddha's profound teaching that all phenomena arise dependent on conditions. Nothing exists independently — everything is interconnected.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "02",
+    "title": "Einstein–Szilard Letter to President Roosevelt",
+    "description": "On 2 August 1939, Albert Einstein signed a letter drafted by physicist Leo Szilard and sent to U.S. President Franklin D. Roosevelt, warning that Nazi Germany might develop atomic weapons. The letter urged the United States to begin its own nuclear research, directly leading to the creation of the Manhattan Project and the dawn of the atomic age.",
+    "category": "event",
+    "year": "1939",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Iraq Invades Kuwait",
+    "description": "On 2 August 1990, Iraqi forces under Saddam Hussein invaded and occupied Kuwait, triggering a major international crisis. The invasion was condemned by the United Nations and led to the formation of a 35-nation coalition that launched the Gulf War in January 1991 to liberate Kuwait, reshaping Middle Eastern geopolitics for decades.",
+    "category": "event",
+    "year": "1990",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Dhamma: Ven. Anagarika Dharmapala",
+    "description": "Anagarika Dharmapala (1864–1933) revived Buddhism in India and founded the Maha Bodhi Society. He fought to restore Bodh Gaya as a Buddhist pilgrimage site.",
+    "category": "event",
+    "year": "1864",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Columbus Sets Sail from Spain",
+    "description": "On 3 August 1492, Christopher Columbus departed from Palos de la Frontera, Spain, with three ships — the Niña, Pinta, and Santa María. This voyage across the Atlantic led to European contact with the Americas, fundamentally altering the course of world history and initiating an era of colonization that devastated indigenous populations.",
+    "category": "event",
+    "year": "1492",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Niger Declares Independence from France",
+    "description": "On 3 August 1960, the Republic of Niger proclaimed its independence from France as part of the wave of African decolonization. Hamani Diori became the first president, ending decades of French colonial rule in which Niger's resources were exploited and its people denied self-governance.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Dhamma: The Parinibbāna Sutta",
+    "description": "The Mahāparinibbāna Sutta narrates the Buddha's final journey, last teachings, and passing away at Kushinagar. 'Be a lamp unto yourselves. Work out your own salvation with diligence.'",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "04",
+    "title": "French Revolution: Abolition of Feudalism",
+    "description": "On the night of 4 August 1789, the French National Constituent Assembly abolished the feudal system in a dramatic session driven by revolutionary fervor. Nobles renounced their privileges, tithes, and seigneurial rights, dismantling centuries of aristocratic oppression. This decree was one of the most radical acts of the French Revolution, laying the groundwork for the Declaration of the Rights of Man.",
+    "category": "event",
+    "year": "1789",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Bodies of Three Civil Rights Workers Found in Mississippi",
+    "description": "On 4 August 1964, the bodies of civil rights workers James Chaney, Andrew Goodman, and Michael Schwerner were discovered buried in an earthen dam near Philadelphia, Mississippi. They had been murdered by members of the Ku Klux Klan with help from local law enforcement on 21 June while working on voter registration during Freedom Summer. Their deaths galvanized national support for the Civil Rights Act of 1964.",
+    "category": "event",
+    "year": "1964",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Dhamma: Stupa Tradition",
+    "description": "Stupas are sacred mounds housing the relics of the Buddha and great disciples. From Sanchi to Borobudur, they symbolize the enlightened mind and serve as centers of devotion and meditation.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "05",
+    "title": "Partial Nuclear Test Ban Treaty Signed",
+    "description": "On 5 August 1963, the United States, Soviet Union, and United Kingdom signed the Partial Nuclear Test Ban Treaty in Moscow, prohibiting nuclear weapons tests in the atmosphere, outer space, and underwater. This landmark agreement was a crucial step in arms control during the Cold War and came in the wake of widespread public alarm over radioactive fallout from nuclear testing.",
+    "category": "event",
+    "year": "1963",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Upper Volta (Burkina Faso) Independence",
+    "description": "On 5 August 1960, the Republic of Upper Volta (later renamed Burkina Faso in 1984 by Thomas Sankara) declared independence from France. Maurice Yaméogo became the first president, marking the end of colonial administration in a nation that would later become a symbol of revolutionary Pan-Africanism under Sankara's leadership.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Hiroshima Day",
+    "description": "Remembrance of the atomic bombing of Hiroshima in 1945. A solemn reminder of the devastating consequences of war and the urgent need for peace — the essence of Dhamma.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Voting Rights Act Signed into Law",
+    "description": "On 6 August 1965, President Lyndon B. Johnson signed the Voting Rights Act, one of the most significant pieces of civil rights legislation in American history. The act outlawed discriminatory voting practices such as literacy tests and poll taxes that had been used to disenfranchise African Americans, particularly in the South. It was a direct result of the Selma to Montgomery marches and decades of civil rights activism.",
+    "category": "event",
+    "year": "1965",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "First Website Goes Live on the World Wide Web",
+    "description": "On 6 August 1991, British computer scientist Tim Berners-Lee published the first-ever website at CERN, making the World Wide Web publicly available for the first time. The site described the project itself and how to create web pages. This invention revolutionized global communication, commerce, and access to information, becoming one of the most transformative technological breakthroughs of the 20th century.",
+    "category": "event",
+    "year": "1991",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "National Handloom Day",
+    "description": "Celebrates India's handloom heritage and the Swadeshi movement. Dr. Ambedkar championed the economic empowerment of marginalized communities through self-reliance.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Côte d'Ivoire Declares Independence from France",
+    "description": "On 7 August 1960, the Republic of Côte d'Ivoire (Ivory Coast) declared independence from France under the leadership of Félix Houphouët-Boigny, who became the country's first president. The independence came as part of the broader wave of decolonization across West Africa, ending decades of French colonial exploitation of the region's cocoa, coffee, and natural resources.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Explorer 6 Sends First Photograph of Earth from Orbit",
+    "description": "On 7 August 1959, NASA's Explorer 6 satellite transmitted the first crude photograph of Earth as seen from orbit, a grainy image of the sunlit Central Pacific Ocean. Though primitive by modern standards, this achievement represented a major milestone in space science and Earth observation, foreshadowing the iconic 'Blue Marble' images that would later transform humanity's perception of its home planet.",
+    "category": "event",
+    "year": "1959",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Quit India Day",
+    "description": "On 8 August 1942, Mahatma Gandhi launched the Quit India Movement with the call 'Do or Die.' A decisive moment in India's struggle for independence from British rule.",
+    "category": "festival",
+    "year": "1942",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "8888 Uprising in Myanmar",
+    "description": "On 8 August 1988, a massive pro-democracy uprising erupted across Myanmar (Burma), with hundreds of thousands of students, monks, and civilians taking to the streets demanding an end to decades of authoritarian military rule under General Ne Win. The military junta brutally suppressed the movement, killing an estimated 3,000 or more protesters. The uprising brought Aung San Suu Kyi to prominence as a symbol of the democracy movement.",
+    "category": "event",
+    "year": "1988",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "President Nixon Announces Resignation",
+    "description": "On 8 August 1974, President Richard Nixon announced his resignation in a televised address to the American nation, becoming the first U.S. president to resign from office. His resignation came in the wake of the Watergate scandal, after the House Judiciary Committee had approved articles of impeachment for obstruction of justice, abuse of power, and contempt of Congress.",
+    "category": "event",
+    "year": "1974",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Nagasaki Day",
+    "description": "Remembrance of the atomic bombing of Nagasaki in 1945. The Buddha's teaching of non-violence (ahiṃsā) and compassion stands as the antidote to weapons of mass destruction.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "South African Women's March Against Pass Laws",
+    "description": "On 9 August 1956, approximately 20,000 women of all races marched to the Union Buildings in Pretoria, South Africa, to protest the extension of pass laws to Black women under the apartheid regime. Led by Lillian Ngoyi, Helen Joseph, Rahima Moosa, and Sophie Williams, they delivered petitions to Prime Minister J.G. Strijdom's office. This date is now celebrated as National Women's Day in South Africa.",
+    "category": "event",
+    "year": "1956",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Singapore Gains Independence",
+    "description": "On 9 August 1965, Singapore separated from the Federation of Malaysia to become an independent and sovereign republic. Under the leadership of Prime Minister Lee Kuan Yew, the small island nation transformed from a developing country into one of the world's most prosperous economies, becoming a global hub for trade, finance, and technology.",
+    "category": "event",
+    "year": "1965",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "World Lion Day",
+    "description": "Celebrating the conservation of lions. The Buddha is often called 'Sīhanāda' — the Lion's Roar — symbolizing his fearless proclamation of truth and Dhamma to the world.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Storming of the Tuileries Palace",
+    "description": "On 10 August 1792, revolutionary insurgents and the Paris National Guard stormed the Tuileries Palace, the residence of King Louis XVI, in one of the most decisive events of the French Revolution. The royal family was forced to take refuge with the Legislative Assembly, effectively ending the French monarchy. This insurrection led to the King's arrest, trial, and eventual execution in January 1793.",
+    "category": "event",
+    "year": "1792",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Ecuador's First Cry of Independence",
+    "description": "On 10 August 1809, a group of Criollo revolutionaries in Quito declared independence from Spanish colonial rule in what is known as the 'Primer Grito de Independencia' (First Cry of Independence). Although the movement was initially crushed by royalist forces, it became a catalyst for independence movements across South America. Ecuador celebrates this date as a national holiday.",
+    "category": "event",
+    "year": "1809",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Dhamma: Silk Road & Buddhism",
+    "description": "Buddhism spread along the Silk Road from India to Central Asia, China, Korea, and Japan. Monks, merchants, and pilgrims carried manuscripts, art, and the living Dhamma across continents.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "11",
+    "title": "Watts Rebellion Begins in Los Angeles",
+    "description": "On 11 August 1965, a confrontation between a Black motorist and white California Highway Patrol officers in the Watts neighborhood of Los Angeles sparked six days of civil unrest. Decades of racial discrimination, police brutality, poverty, and housing segregation fueled the uprising. The rebellion resulted in 34 deaths and over $40 million in property damage, and brought national attention to the systemic racism facing African Americans in urban areas.",
+    "category": "event",
+    "year": "1965",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Chad Declares Independence from France",
+    "description": "On 11 August 1960, the Republic of Chad proclaimed its independence from France, with François Tombalbaye becoming the first president. Chad's path to independence was part of the broader wave of African decolonization, ending a colonial period in which France had exploited the region's cotton production and labor while investing little in the country's development.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "International Youth Day",
+    "description": "A UN day celebrating the role of young people. The Buddha encouraged youth to question, investigate, and practice the Dhamma — not to accept teachings on blind faith alone.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "IBM Personal Computer Released",
+    "description": "On 12 August 1981, IBM introduced the IBM Personal Computer (Model 5150), which became the standard for business computing and spawned the entire PC industry. Running on an Intel 8088 processor with Microsoft's DOS operating system, the IBM PC established an open architecture that allowed third-party hardware and software, democratizing access to computing power and transforming the modern world.",
+    "category": "event",
+    "year": "1981",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Echo 1 — First Communications Satellite Launched",
+    "description": "On 12 August 1960, NASA launched Echo 1, the world's first communications satellite, a 100-foot metallic balloon placed in orbit to passively reflect radio signals between ground stations. It successfully relayed the first satellite telephone call, television images, and fax transmissions, demonstrating that global satellite communication was possible and paving the way for the telecommunications revolution.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Dhamma: Borobudur Temple",
+    "description": "Borobudur in Java, Indonesia, is the world's largest Buddhist temple. Built in the 9th century, its terraced design represents the path from the world of desire to enlightenment.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "13",
+    "title": "Construction of the Berlin Wall Begins",
+    "description": "On 13 August 1961, the German Democratic Republic (East Germany) began erecting the Berlin Wall, a concrete barrier that would divide East and West Berlin for 28 years. The wall was built to halt the mass exodus of East Germans fleeing to the West, becoming the most potent symbol of the Iron Curtain and Cold War division. Its fall on 9 November 1989 marked the beginning of German reunification.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Central African Republic Declares Independence",
+    "description": "On 13 August 1960, the Central African Republic declared independence from France under the leadership of David Dacko. The country's independence was part of the sweeping wave of decolonization across Francophone Africa, ending decades of French colonial administration that had imposed forced labor and exploited the region's diamond and mineral wealth.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Pakistan Independence Day Eve",
+    "description": "A day to reflect on the partition of India in 1947. Dr. Ambedkar addressed the complexities of Hindu-Muslim relations and the need for peaceful coexistence in his writings.",
+    "category": "event",
+    "year": "1947",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Social Security Act Signed into Law",
+    "description": "On 14 August 1935, President Franklin D. Roosevelt signed the Social Security Act, establishing a system of old-age pensions, unemployment insurance, and welfare benefits for the most vulnerable Americans. Enacted during the Great Depression, this landmark legislation created the foundation of the American social safety net and represented a fundamental shift in the government's responsibility toward the welfare of its citizens.",
+    "category": "event",
+    "year": "1935",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Japan Announces Surrender — End of World War II",
+    "description": "On 14 August 1945 (15 August in Japan), Emperor Hirohito announced Japan's unconditional surrender in a radio broadcast to the Japanese people, ending World War II after six devastating years of global conflict. The surrender followed the atomic bombings of Hiroshima and Nagasaki and the Soviet declaration of war against Japan, bringing to a close a war that claimed an estimated 70–85 million lives worldwide.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Independence Day",
+    "description": "India gained independence on 15 August 1947. Dr. Ambedkar served as the first Law Minister and Chairman of the Drafting Committee of the Indian Constitution, shaping the new nation.",
+    "category": "festival",
+    "year": "1947",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Independent Labour Party Founded by Ambedkar",
+    "description": "On 15 August 1936, Dr. B.R. Ambedkar founded the Independent Labour Party (ILP), the first political party to represent Dalits, workers, and peasants in India. The ILP fought for labor rights, land reform, and the abolition of the Khoti and Mahar Watan systems — laying the groundwork for Bahujan political consciousness.",
+    "category": "event",
+    "year": "1936",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Panama Canal Officially Opened",
+    "description": "On 15 August 1914, the Panama Canal was officially opened to maritime traffic with the transit of the cargo ship SS Ancon. This 50-mile waterway connecting the Atlantic and Pacific Oceans was one of the greatest engineering feats in history. Its construction, built largely by Caribbean and Central American laborers under dangerous conditions, cost thousands of workers' lives from disease and accidents.",
+    "category": "event",
+    "year": "1914",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Dhamma: Theragāthā — Verses of Elder Monks",
+    "description": "The Theragāthā preserves the inspired verses of enlightened monks — expressing the joy of liberation, the beauty of renunciation, and the bliss of Nibbāna.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "16",
+    "title": "Peterloo Massacre in Manchester",
+    "description": "On 16 August 1819, cavalry charged into a crowd of 60,000–80,000 peaceful pro-democracy demonstrators at St Peter's Field in Manchester, England, killing 15 people and injuring hundreds. The protesters had gathered to demand parliamentary reform and the repeal of the Corn Laws. The massacre — named 'Peterloo' in ironic reference to Waterloo — became a defining moment in the struggle for democratic rights and press freedom in Britain.",
+    "category": "event",
+    "year": "1819",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Dominican Republic Begins War of Restoration",
+    "description": "On 16 August 1863, Dominican patriots launched the War of Restoration against Spain, which had re-annexed the Dominican Republic in 1861 at the invitation of President Pedro Santana. The war was a popular uprising of peasants, freed slaves, and nationalists who fought a guerrilla campaign to restore Dominican sovereignty. Spain withdrew in 1865, and the date is now celebrated as Restoration Day.",
+    "category": "event",
+    "year": "1863",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Dhamma: Indonesian Buddhism",
+    "description": "Indonesia's Sriwijaya and Sailendra dynasties were great patrons of Buddhism. The Borobudur temple and countless Buddhist manuscripts attest to Southeast Asia's deep Buddhist heritage.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "17",
+    "title": "Indonesian Independence Proclaimed",
+    "description": "On 17 August 1945, Sukarno and Mohammad Hatta proclaimed the independence of Indonesia from Dutch colonial rule, just two days after Japan's surrender in World War II. This declaration followed over three centuries of Dutch colonialism and years of Japanese occupation. Indonesia's war for independence continued until 1949, when the Netherlands formally recognized Indonesian sovereignty.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Birth of Marcus Garvey — Pan-African Leader",
+    "description": "On 17 August 1887, Marcus Mosiah Garvey was born in St. Ann's Bay, Jamaica. He became one of the most influential Black nationalist and Pan-African leaders of the 20th century, founding the Universal Negro Improvement Association (UNIA) in 1914. Garvey's message of Black pride, economic self-sufficiency, and African repatriation inspired millions across the diaspora and profoundly influenced later civil rights and Black Power movements.",
+    "category": "event",
+    "year": "1887",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Dhamma: Thai Buddhism",
+    "description": "Thailand is one of the world's largest Theravāda Buddhist nations. The Thai Sangha has preserved the Pali Canon, forest meditation traditions, and the monastic way of life for centuries.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "18",
+    "title": "19th Amendment Ratified — American Women Win the Vote",
+    "description": "On 18 August 1920, Tennessee became the 36th state to ratify the 19th Amendment to the U.S. Constitution, providing the three-fourths majority needed to guarantee women's right to vote nationwide. This victory capped decades of activism by the women's suffrage movement, led by pioneers such as Susan B. Anthony, Elizabeth Cady Stanton, Alice Paul, and Ida B. Wells, who fought against entrenched patriarchal opposition.",
+    "category": "event",
+    "year": "1920",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Discovery of Helium by Pierre Janssen",
+    "description": "On 18 August 1868, French astronomer Pierre Janssen observed a previously unknown bright yellow spectral line during a total solar eclipse in Guntur, India. This line did not correspond to any known element on Earth and was later identified as a new element — helium, named after the Greek sun god Helios. It was the first chemical element to be discovered in space before being found on Earth, a breakthrough in spectroscopy and astrophysics.",
+    "category": "event",
+    "year": "1868",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "World Photography Day",
+    "description": "Celebrating the art of photography. Photographs of Buddhist heritage sites — from Ajanta to Angkor Wat — inspire millions to connect with Dhamma across cultures.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "August Revolution Begins in Vietnam",
+    "description": "On 19 August 1945, the Viet Minh under Ho Chi Minh launched the August Revolution in Hanoi, seizing power from the Japanese-backed imperial government. Tens of thousands of citizens took to the streets, and within weeks the revolution spread across Vietnam. On 2 September 1945, Ho Chi Minh proclaimed the Democratic Republic of Vietnam, ending decades of French colonial rule and Japanese occupation.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Afghanistan Gains Independence",
+    "description": "On 19 August 1919, the Treaty of Rawalpindi was signed following the Third Anglo-Afghan War, granting Afghanistan full independence from British control over its foreign affairs. Under King Amanullah Khan, Afghanistan became one of the first countries to recognize the Soviet Union and pursued modernization reforms. This date is celebrated as Afghan Independence Day.",
+    "category": "event",
+    "year": "1919",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Rajiv Gandhi Jayanti / Sadbhavana Diwas",
+    "description": "Birth anniversary of former PM Rajiv Gandhi, observed as Sadbhavana Diwas (Harmony Day). A day to promote national integration, peace, and communal harmony.",
+    "category": "event",
+    "year": "1944",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "First Enslaved Africans Arrive in English North America",
+    "description": "In late August 1619, approximately 20 enslaved Africans were brought to Point Comfort (present-day Hampton, Virginia) aboard the English privateer White Lion, marking the beginning of African slavery in English North America. Captured from the Portuguese slave ship São João Bautista, these individuals were traded for provisions. This event set in motion over two centuries of chattel slavery that would shape American history.",
+    "category": "event",
+    "year": "1619",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Voyager 2 Launched by NASA",
+    "description": "On 20 August 1977, NASA launched the Voyager 2 spacecraft from Cape Canaveral, Florida, on a mission that would become one of the greatest journeys of exploration in human history. Voyager 2 is the only spacecraft to have visited all four giant outer planets — Jupiter, Saturn, Uranus, and Neptune — and continues to transmit data from interstellar space, over 12 billion miles from Earth.",
+    "category": "event",
+    "year": "1977",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Dhamma: Sri Lankan Buddhism",
+    "description": "Sri Lanka received Buddhism through Emperor Ashoka's son Mahinda. The island nation has been the guardian of Theravāda Buddhism for over 2,300 years.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "21",
+    "title": "Nat Turner's Slave Rebellion in Virginia",
+    "description": "On 21 August 1831, Nat Turner, an enslaved African American who had learned to read and was deeply religious, led the most significant slave revolt in American history in Southampton County, Virginia. Turner and approximately 70 enslaved and free Black people killed around 55 white slaveholders and their families before being suppressed by militia. Turner's rebellion struck terror into the slaveholding South and led to harsher slave codes, but it also intensified the national debate over abolition.",
+    "category": "event",
+    "year": "1831",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Assassination of Benigno Aquino Jr. in the Philippines",
+    "description": "On 21 August 1983, Filipino opposition leader Senator Benigno 'Ninoy' Aquino Jr. was assassinated at Manila International Airport moments after returning from exile in the United States. His murder, widely attributed to the Marcos dictatorship, sparked massive public outrage and galvanized the Philippine opposition, directly leading to the People Power Revolution of 1986 that overthrew Ferdinand Marcos and restored democracy.",
+    "category": "event",
+    "year": "1983",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Sanskrit Day / Narayana Guru Jayanti",
+    "description": "Narayana Guru (1856–1928) was a great social reformer of Kerala who fought against untouchability and advocated 'One Caste, One Religion, One God for All.'",
+    "category": "event",
+    "year": "1856",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Haitian Revolution: Slave Uprising Begins",
+    "description": "On the night of 22 August 1791, enslaved Africans in the French colony of Saint-Domingue (present-day Haiti) launched a massive coordinated uprising, following a Vodou ceremony at Bois Caïman. Thousands of enslaved people rose up, burning plantations and killing slaveholders across the Northern Plain. This insurrection grew into the Haitian Revolution — the only successful large-scale slave revolt in history — culminating in Haiti's independence in 1804 and the abolition of slavery.",
+    "category": "event",
+    "year": "1791",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "First Geneva Convention Signed",
+    "description": "On 22 August 1864, twelve European nations signed the First Geneva Convention in Geneva, Switzerland, establishing rules for the humane treatment of wounded soldiers and the protection of medical personnel during wartime. Championed by Henry Dunant, founder of the International Red Cross, this treaty laid the foundation for international humanitarian law and the modern laws of armed conflict.",
+    "category": "event",
+    "year": "1864",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Dhamma: Burmese Buddhism",
+    "description": "Myanmar has been a bastion of Theravāda Buddhism for centuries. The Shwedagon Pagoda in Yangon and the Vipassana tradition of Sayagyi U Ba Khin and S.N. Goenka emerged from this land.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "23",
+    "title": "Execution of Sacco and Vanzetti",
+    "description": "On 23 August 1927, Italian-born anarchists Nicola Sacco and Bartolomeo Vanzetti were executed in Massachusetts for a 1920 armed robbery and murder, despite worldwide protests and serious doubts about their guilt. Their trial was widely seen as driven by anti-immigrant prejudice and political repression of radicals during the Red Scare. The case became a global cause célèbre for labor rights and civil liberties movements.",
+    "category": "event",
+    "year": "1927",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Lunar Orbiter 1 Photographs Earth from the Moon",
+    "description": "On 23 August 1966, NASA's Lunar Orbiter 1 captured the first photograph of Earth as seen from the vicinity of the Moon. This historic image, taken from a distance of about 236,000 miles while the spacecraft was in lunar orbit, provided humanity with a stunning new perspective on its home planet and became an iconic image of the Space Age.",
+    "category": "event",
+    "year": "1966",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Rajguru Jayanti",
+    "description": "Birth anniversary of Shivaram Rajguru, the revolutionary freedom fighter who was hanged alongside Bhagat Singh and Sukhdev in 1931 at the age of just 22.",
+    "category": "event",
+    "year": "1908",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Eruption of Mount Vesuvius Destroys Pompeii",
+    "description": "On 24 August 79 AD, Mount Vesuvius erupted catastrophically, burying the Roman cities of Pompeii and Herculaneum under meters of volcanic ash and pumice. Thousands of people perished, and the cities were preserved in remarkable detail beneath the debris. Rediscovered in the 18th century, Pompeii became one of the most important archaeological sites in the world, providing an unparalleled window into daily life in the ancient Roman Empire.",
+    "category": "event",
+    "year": "79",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Ukraine Declares Independence from the Soviet Union",
+    "description": "On 24 August 1991, the Verkhovna Rada (parliament) of the Ukrainian Soviet Socialist Republic overwhelmingly adopted the Act of Declaration of Independence, establishing Ukraine as a sovereign and independent state. This declaration came in the aftermath of the failed August coup in Moscow and was confirmed by a national referendum on 1 December 1991 with over 92% approval, accelerating the dissolution of the Soviet Union.",
+    "category": "event",
+    "year": "1991",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Dhamma: Tibetan Buddhism",
+    "description": "Tibetan Buddhism, with its rich traditions of philosophy, art, and meditation, has preserved the Mahāyāna and Vajrayāna teachings. The Dalai Lama carries this living tradition worldwide.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "25",
+    "title": "Liberation of Paris from Nazi Occupation",
+    "description": "On 25 August 1944, Paris was liberated from four years of Nazi German occupation by the combined forces of the French 2nd Armored Division under General Leclerc and the U.S. 4th Infantry Division, supported by the French Resistance. The liberation followed a popular uprising by Parisians that began on 19 August. German military governor Dietrich von Choltitz defied Hitler's orders to destroy Paris and surrendered the city intact.",
+    "category": "event",
+    "year": "1944",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Uruguay Declares Independence",
+    "description": "On 25 August 1825, Uruguay's Congress of Florida declared independence from the Empire of Brazil, asserting the sovereignty of the Banda Oriental and its union with the United Provinces of the Río de la Plata. This declaration triggered the Argentine-Brazilian War, which concluded with the Treaty of Montevideo in 1828 recognizing Uruguay as an independent nation.",
+    "category": "event",
+    "year": "1825",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Women's Equality Day",
+    "description": "A day celebrating women's right to vote and gender equality. The Buddha established the Bhikkhunī Sangha 2,500 years ago — one of the earliest formal communities of women in history.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Declaration of the Rights of Man and of the Citizen Adopted",
+    "description": "On 26 August 1789, the French National Constituent Assembly adopted the Declaration of the Rights of Man and of the Citizen, one of the most influential documents in the history of human rights. Inspired by Enlightenment philosophy and the American Declaration of Independence, it proclaimed that all men are born free and equal in rights, establishing principles of liberty, property, security, and resistance to oppression that would influence democratic movements worldwide.",
+    "category": "event",
+    "year": "1789",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Amistad Captives Seized After Slave Ship Revolt",
+    "description": "On 26 August 1839, the schooner La Amistad was intercepted by the U.S. Navy off Long Island, New York, after enslaved Africans led by Sengbe Pieh (Joseph Cinqué) had revolted and seized control of the ship. The Africans, who had been illegally kidnapped from Sierra Leone, fought for their freedom in a landmark case that reached the U.S. Supreme Court. In 1841, the Court ruled in their favor, and they were freed and returned to Africa.",
+    "category": "event",
+    "year": "1839",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Dhamma: Cambodian Buddhism",
+    "description": "Angkor Wat in Cambodia was originally a Hindu temple that became Buddhist. Cambodia's Buddhist heritage, though severely damaged by the Khmer Rouge, is being restored by the faithful.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "27",
+    "title": "Krakatoa Erupts in Catastrophic Explosion",
+    "description": "On 27 August 1883, the volcanic island of Krakatoa in the Sunda Strait between Java and Sumatra erupted in one of the most violent volcanic events in recorded history. The explosion was heard over 3,000 miles away and generated massive tsunamis that killed over 36,000 people. The eruption ejected so much ash into the atmosphere that global temperatures dropped by over 1°C the following year, producing vivid red sunsets worldwide.",
+    "category": "event",
+    "year": "1883",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "First Successful Oil Well Drilled by Edwin Drake",
+    "description": "On 27 August 1859, Edwin L. Drake struck oil at a depth of 69 feet near Titusville, Pennsylvania, in the first commercially successful oil well in the United States. Drake's use of a steam engine-driven drill and iron pipe casing to prevent borehole collapse became the model for the petroleum industry. This discovery launched the modern oil era, transforming global energy, industry, transportation, and geopolitics.",
+    "category": "event",
+    "year": "1859",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Dhamma: Chinese Buddhism",
+    "description": "Buddhism reached China via the Silk Road in the 1st century CE. Chan (Zen), Pure Land, and Tiantai schools flourished, deeply influencing Chinese culture, art, and philosophy.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "28",
+    "title": "Ayyankali Jayanti",
+    "description": "Birth anniversary of Ayyankali (1863–1941), the legendary social reformer of Kerala who fought against untouchability and caste slavery. He led the Villuvandi Yatra (bullock cart struggle) asserting Dalits' right to use public roads, organized strikes for land and labor rights, and pioneered the movement for Dalit education in southern India.",
+    "category": "event",
+    "year": "1863",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Martin Luther King Jr. Delivers 'I Have a Dream' Speech",
+    "description": "On 28 August 1963, Dr. Martin Luther King Jr. delivered his iconic 'I Have a Dream' speech before over 250,000 people at the March on Washington for Jobs and Freedom, standing at the Lincoln Memorial. His call for an end to racism and his vision of a nation where people would be judged by the content of their character became one of the defining moments of the American civil rights movement and one of the greatest speeches in history.",
+    "category": "event",
+    "year": "1963",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "National Sports Day",
+    "description": "Birth anniversary of hockey legend Major Dhyan Chand. Sports embody discipline, focus, and fair play — qualities also cultivated through the practice of Dhamma.",
+    "category": "festival",
+    "year": "1905",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Michael Faraday Discovers Electromagnetic Induction",
+    "description": "On 29 August 1831, English scientist Michael Faraday discovered electromagnetic induction — the principle that a changing magnetic field induces an electric current in a conductor. This fundamental breakthrough laid the foundation for electric generators, transformers, and the entire modern electrical power industry. Faraday's discovery is widely considered one of the most important scientific achievements in history.",
+    "category": "event",
+    "year": "1831",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Soviet Union Tests Its First Nuclear Weapon",
+    "description": "On 29 August 1949, the Soviet Union successfully detonated its first atomic bomb, codenamed 'First Lightning' (known in the West as 'Joe-1'), at the Semipalatinsk test site in Kazakhstan. This test ended the United States' monopoly on nuclear weapons, dramatically escalated the Cold War arms race, and ushered in an era of nuclear deterrence that shaped global geopolitics for decades.",
+    "category": "event",
+    "year": "1949",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Dhamma: Korean Buddhism",
+    "description": "Buddhism arrived in Korea in 372 CE and became a dominant force. Korean Seon (Zen) Buddhism and its temple-stay programs offer profound meditation experiences to practitioners worldwide.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "30",
+    "title": "Turkish War of Independence: Victory at Battle of Dumlupınar",
+    "description": "On 30 August 1922, Turkish forces under the command of Mustafa Kemal Atatürk achieved a decisive victory over the Greek army at the Battle of Dumlupınar, the final major engagement of the Turkish War of Independence. This victory led to the liberation of Anatolia and the eventual establishment of the Republic of Turkey in 1923. The date is celebrated as Victory Day (Zafer Bayramı) in Turkey.",
+    "category": "event",
+    "year": "1922",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Birth of Ernest Rutherford — Father of Nuclear Physics",
+    "description": "On 30 August 1871, Ernest Rutherford was born in Brightwater, New Zealand. He became one of the greatest experimental physicists in history, discovering the concept of radioactive half-life, the element radon, and the atomic nucleus. His gold foil experiment in 1911 overturned the plum pudding model of the atom and established the nuclear model. He was awarded the Nobel Prize in Chemistry in 1908.",
+    "category": "event",
+    "year": "1871",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Dhamma: Japanese Buddhism",
+    "description": "Japan's Buddhist traditions — Zen, Pure Land, Nichiren, Shingon — have enriched global culture through art, architecture, the tea ceremony, and the pursuit of mindful simplicity.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "31",
+    "title": "Malaya (Malaysia) Gains Independence — Merdeka Day",
+    "description": "On 31 August 1957, the Federation of Malaya achieved independence from British colonial rule after years of negotiations led by Tunku Abdul Rahman, who became the first Prime Minister. At the stroke of midnight, the word 'Merdeka!' (Freedom!) was proclaimed seven times at the Merdeka Stadium in Kuala Lumpur. This date is celebrated as Hari Merdeka (Independence Day) in Malaysia.",
+    "category": "event",
+    "year": "1957",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Trinidad and Tobago Gains Independence",
+    "description": "On 31 August 1962, Trinidad and Tobago became an independent nation within the British Commonwealth, with Dr. Eric Williams serving as its first Prime Minister. Williams, a historian and intellectual, had led the People's National Movement to power and guided the country through its transition from colonial rule. Independence ended over 150 years of British control of the twin-island Caribbean nation.",
+    "category": "event",
+    "year": "1962",
+    "isSymbolic": false
+  }
+]
