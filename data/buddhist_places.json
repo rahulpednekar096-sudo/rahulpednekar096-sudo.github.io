@@ -5,7 +5,7 @@
     "description": "UNESCO site at Bodh Gaya where the Buddha is said to have attained enlightenment under the Bodhi tree.",
     "address": "Bodh Gaya, Bihar, India",
     "image": "https://rdroidapps.com/data/images/mahabodhi.webp",
-    "credit": "Photo by WeeKeeEditor (Wikimedia Commons)",
+    "credit": "Photo by WeeKeeEditor (Wikimedia Commons, modified)",
     "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
   },
   {
@@ -14,7 +14,7 @@
     "description": "Iconic golden stupa in Yangon, one of the most sacred Buddhist sites in Myanmar.",
     "address": "Yangon, Myanmar",
     "image": "https://rdroidapps.com/data/images/shwedagon.webp",
-    "credit": "Photo by Travel Burma (Wikimedia Commons)",
+    "credit": "Photo by Travel Burma (Wikimedia Commons, modified)",
     "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
   },
   {
@@ -23,7 +23,7 @@
     "description": "Temple in Kandy housing a relic of the tooth of the Buddha.",
     "address": "Kandy, Sri Lanka",
     "image": "https://rdroidapps.com/data/images/temple_of_tooth.webp",
-    "credit": "Photo by Miyuru Sankalpa (Wikimedia Commons)",
+    "credit": "Photo by Miyuru Sankalpa (Wikimedia Commons, modified)",
     "license": "CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)"
   },
   {
@@ -32,7 +32,7 @@
     "description": "Massive 9th-century Mahayana temple in Central Java.",
     "address": "Magelang, Central Java, Indonesia",
     "image": "https://rdroidapps.com/data/images/borobudur.webp",
-    "credit": "Source: Wikimedia Commons",
+    "credit": "Source: Wikimedia Commons, modified",
     "license": "CC0 (Public Domain)"
   },
   {
@@ -40,28 +40,36 @@
     "country": "Thailand",
     "description": "Temple of the Emerald Buddha within the Grand Palace complex in Bangkok.",
     "address": "Bangkok, Thailand",
-    "image": "https://rdroidapps.com/data/images/wat_phra_kaew.webp"
+    "image": "https://rdroidapps.com/data/images/wat_phra_kaew.webp",
+    "credit": "Photo by Preecha.MJ (Wikimedia Commons, modified)",
+    "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
   },
   {
     "name": "Todai-ji",
     "country": "Japan",
     "description": "Great Buddha Hall in Nara, home to one of the largest bronze Buddha statues.",
     "address": "Nara, Japan",
-    "image": "https://rdroidapps.com/data/images/todai-ji.webp"
+    "image": "https://rdroidapps.com/data/images/todai-ji.webp",
+    "credit": "Photo by 663highland (Wikimedia Commons, modified)",
+    "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/3.0/)"
   },
   {
     "name": "Haeinsa",
     "country": "South Korea",
     "description": "Temple preserving the Tripitaka Koreana woodblocks.",
     "address": "Gyeongsangnam-do, South Korea",
-    "image": "https://rdroidapps.com/data/images/haeinsa.webp"
+    "image": "https://rdroidapps.com/data/images/haeinsa.webp",
+    "credit": "Photo by Arian Zwegers (Wikimedia Commons, modified)",
+    "license": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/)"
   },
   {
     "name": "Dhammagiri",
     "country": "India",
     "description": "Vipassana meditation centre associated with the teachings of S. N. Goenka.",
     "address": "Igatpuri, Maharashtra, India",
-    "image": "https://rdroidapps.com/data/images/dhammagiri.webp"
+    "image": "https://rdroidapps.com/data/images/dhammagiri.webp",
+    "credit": "Photo by Rohit Sharma (Wikimedia Commons, modified)",
+    "license": "CC BY 2.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
   },
   {
     "name": "Sanchi Great Stupa",
