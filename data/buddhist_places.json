@@ -22,7 +22,9 @@
     "country": "Sri Lanka",
     "description": "Temple in Kandy housing a relic of the tooth of the Buddha.",
     "address": "Kandy, Sri Lanka",
-    "image": "https://rdroidapps.com/data/images/temple.webp"
+    "image": "https://rdroidapps.com/data/images/temple_of_tooth.webp",
+    "credit": "Photo by Miyuru Sankalpa (Wikimedia Commons)",
+    "license": "CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)"
   },
   {
     "name": "Borobudur",
