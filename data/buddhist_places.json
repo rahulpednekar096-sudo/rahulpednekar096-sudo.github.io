@@ -31,7 +31,9 @@
     "country": "Indonesia",
     "description": "Massive 9th-century Mahayana temple in Central Java.",
     "address": "Magelang, Central Java, Indonesia",
-    "image": "https://rdroidapps.com/data/images/borobudur.webp"
+    "image": "https://rdroidapps.com/data/images/borobudur.webp",
+    "credit": "Source: Wikimedia Commons",
+    "license": "CC0 (Public Domain)"
   },
   {
     "name": "Wat Phra Kaew",
