@@ -122,7 +122,8 @@ const sitePages = [
     { title: "Password Generator", url: "windows-tools/utility/password-tool.html" },
     { title: "Currency Converter", url: "windows-tools/utility/currency-converter.html"},
 
-    //blog section
+
+  //blog section
     { title: "Blog Home", url: "blog/index.html" },
     { title: "How to Compress PDF Files Without Losing Quality", url: "blog/articles/how-to-compress-pdf.html" },
     { title: "Understanding Image Formats: JPG, PNG, WebP", url: "blog/articles/image-formats-guide.html" },
