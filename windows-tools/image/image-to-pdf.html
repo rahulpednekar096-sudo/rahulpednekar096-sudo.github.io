@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Site-wide script -->
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="keywords"
+        content="image to pdf, images to pdf, convert image to pdf, convert images to pdf, jpg to pdf, png to pdf, webp to pdf, multi-page pdf, a4 pdf, fit to page pdf" />
+    <meta name="description"
+        content="Convert images to PDF. Supports JPG, PNG, WebP, and more. Create multi-page PDFs with A4 fit to page." />
+    <title>Image → PDF — RDroid Apps</title>
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/image/image-to-pdf.html" />
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Image → PDF — RDroid Apps" />
+  <meta property="og:description" content="Convert images to PDF. Supports JPG, PNG, WebP, and more. Create multi-page PDFs with A4 fit to page." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/image/image-to-pdf.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Image → PDF — RDroid Apps" />
+  <meta name="twitter:description" content="Convert images to PDF. Supports JPG, PNG, WebP, and more. Create multi-page PDFs with A4 fit to page." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Image → PDF — RDroid Apps",
+    "description": "Convert images to PDF. Supports JPG, PNG, WebP, and more. Create multi-page PDFs with A4 fit to page.",
+    "url": "https://rdroidapps.com/windows-tools/image/image-to-pdf.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <section class="hero">
+        <h1>Image → PDF</h1>
+        <h3>Select multiple images and create a single multi-page PDF. Images are fit to page (A4) by
+            default.</h3>
+    </section>
+    <section class="tool-section">
+        <div class="card">
+            <label class="drop" id="dropArea"
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
+                <button class="btn btn-ghost" id="pickBtn">Choose file</button>
+            </label>
+            <input type="file" id="fileInput" accept="image/*" multiple />
+            <div>
+                <div style="margin-top:12px;display:flex;gap:8px;">
+                    <button class="btn btn-primary" id="startBtn">Create PDF</button>
+                    <button class="btn btn-ghost" id="resetBtn">Reset</button>
+                    <a id="downloadLink" class="btn" style="display:none"></a>
+                </div>
+                <div id="loader" style="display:none; text-align:left;">
+                    <div class="spinner"></div>
+                    <p style="margin-top:8px;">Processing... Please wait</p>
+                </div>
+            </div>
+            <div id="preview" style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap"></div>
+            <pre id="log">Ready.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+            <section class="seo-content">
+                <h2>Image to PDF Converter</h2>
+                <p>This tool allows you to convert images to PDF format easily. You can select multiple images, and the
+                    tool will create a single multi-page PDF document for you. The images are automatically resized to
+                    fit A4 pages, ensuring a clean and professional look.</p>
+
+                <h2>Supported Image Formats</h2>
+                <p>The converter supports a wide range of image formats including JPG, PNG, WebP, BMP, and more. This
+                    makes it versatile for various use cases.</p>
+
+                <h2>How to Use</h2>
+                <ol>
+                    <li>Click on the "Choose file" button or drag and drop your images into the designated area.</li>
+                    <li>Select multiple images if needed.</li>
+                    <li>Click on the "Create PDF" button to generate the PDF document.</li>
+                    <li>Once the PDF is created, click on the "Download PDF" link to save it to your device.</li>
+                </ol>
+
+                <h2>Benefits of Using This Tool</h2>
+                <ul>
+                    <li><strong>Convenience:</strong> Quickly convert images to PDF without needing any software
+                        installation.</li>
+                    <li><strong>Multi-Page Support:</strong> Combine multiple images into a single PDF file for easy
+                        sharing and storage.</li>
+                    <li><strong>Free to Use:</strong> This tool is completely free and accessible online.</li>
+                </ul>
+                <h2>Privacy and Security</h2>
+                <p>Your privacy is important to us. All image processing is done locally in your browser, ensuring that
+                    your files are not uploaded to any server.</p>
+
+            </section>
+        </div><br>
+        <a href="/index.html#image-tools" class="nav-button home">🏠 Back to Image Home</a>
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
+    <script>
+        function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+
+        // Variables declaration
+        const loader = document.getElementById('loader');
+        const pickBtn = document.getElementById('pickBtn'),
+            fileInput = document.getElementById('fileInput'),
+            dropArea = document.getElementById('dropArea'),
+            startBtn = document.getElementById('startBtn'),
+            resetBtn = document.getElementById('resetBtn'),
+            downloadLink = document.getElementById('downloadLink'),
+            preview = document.getElementById('preview'),
+            logEl = document.getElementById('log');
+
+        let imageURLs = []; // Store all created object URLs for cleanup
+
+        // Event Listeners
+        pickBtn.addEventListener('click', () => fileInput.click());
+
+        dropArea.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#0aa37f';
+            dropArea.style.background = 'rgba(10, 163, 127, 0.03)';
+        });
+
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+        });
+
+        dropArea.addEventListener('drop', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                previewFiles();
+            }
+        });
+
+        fileInput.addEventListener('change', previewFiles);
+
+        // Preview files function
+        function previewFiles() {
+            // Clear previous preview and URLs
+            clearPreview();
+
+            const files = Array.from(fileInput.files || []);
+            if (files.length === 0) return;
+
+            for (const f of files) {
+                const img = document.createElement('img');
+                const url = URL.createObjectURL(f);
+                imageURLs.push(url); // Store URL for cleanup
+                img.src = url;
+                img.style.maxWidth = '140px';
+                img.style.borderRadius = '6px';
+                img.style.margin = '4px';
+                preview.appendChild(img);
+            }
+
+            logEl.textContent = `Selected ${files.length} image(s)`;
+        }
+
+        // Clear preview and release URLs
+        function clearPreview() {
+            // Release all object URLs
+            imageURLs.forEach(url => URL.revokeObjectURL(url));
+            imageURLs = [];
+
+            // Clear preview container
+            preview.innerHTML = '';
+        }
+
+        // Create PDF function
+        startBtn.addEventListener('click', async () => {
+            const files = Array.from(fileInput.files || []);
+            if (!files.length) return alert('कृपया images निवडा');
+
+            logEl.textContent = 'Preparing...\n';
+
+            // Disable button + show loader
+            startBtn.disabled = true;
+            loader.style.display = 'block';
+            downloadLink.style.display = 'none';
+
+            // 2.5 second artificial delay
+            await new Promise(resolve => setTimeout(resolve, 2500));
+
+            try {
+                const pdfDoc = await PDFLib.PDFDocument.create();
+
+                for (const f of files) {
+                    try {
+                        const data = await f.arrayBuffer();
+
+                        let imgEmbed;
+                        try {
+                            imgEmbed = await pdfDoc.embedJpg(data);
+                        } catch {
+                            imgEmbed = await pdfDoc.embedPng(data);
+                        }
+
+                        const dims = imgEmbed.scale(1);
+                        const page = pdfDoc.addPage([dims.width, dims.height]);
+                        page.drawImage(imgEmbed, {
+                            x: 0,
+                            y: 0,
+                            width: dims.width,
+                            height: dims.height
+                        });
+
+                        logEl.textContent += `Added: ${f.name}\n`;
+                    } catch (e) {
+                        logEl.textContent += `Skipped: ${f.name}\n`;
+                    }
+                }
+
+                const pdfBytes = await pdfDoc.save();
+                const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+
+                const url = URL.createObjectURL(blob);
+                downloadLink.href = url;
+                downloadLink.download = 'images.pdf';
+                downloadLink.textContent = 'Download PDF';
+                downloadLink.style.display = 'inline-block';
+
+                logEl.textContent += 'Done. PDF created.\n';
+
+            } catch (error) {
+                logEl.textContent = 'Error: ' + error.message;
+            }
+
+            // Hide loader + enable button
+            loader.style.display = 'none';
+            startBtn.disabled = false;
+        });
+
+        // Reset Function
+        resetBtn.addEventListener('click', () => {
+            // Reset file input
+            fileInput.value = '';
+
+            // Clear preview and release URLs
+            clearPreview();
+
+            // Reset UI elements
+            downloadLink.style.display = 'none';
+            logEl.textContent = 'Ready.';
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+
+            // Release PDF URL if exists
+            if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+                URL.revokeObjectURL(downloadLink.href);
+                downloadLink.href = '#';
+            }
+
+            logEl.textContent = 'Reset complete.';
+        });
+    </script>
+    <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

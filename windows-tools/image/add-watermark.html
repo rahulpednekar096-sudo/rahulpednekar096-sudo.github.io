@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Site-wide script -->
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Add Watermark is a simple and effective online tool provided by RDroid Apps that allows users to easily add text or image watermarks to their photos. Whether you want to protect your images from unauthorized use or simply brand them with your logo, this tool makes the process quick and hassle-free." />
+    <meta name="keywords"
+        content="Add Watermark, Online Watermark Tool, Image Watermarking, Text Watermark, Image Watermark, Photo Protection, RDroid Apps" />
+    <title>Add Watermark — RDroid Apps</title>
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/image/add-watermark.html" />
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Add Watermark — RDroid Apps" />
+  <meta property="og:description" content="Add Watermark is a simple and effective online tool provided by RDroid Apps that allows users to easily add text or image watermarks to their photos. Whether you want to protect your images from unauthorized use or simply brand them with your logo, this tool makes the process quick and hassle-free." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/image/add-watermark.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Add Watermark — RDroid Apps" />
+  <meta name="twitter:description" content="Add Watermark is a simple and effective online tool provided by RDroid Apps that allows users to easily add text or image watermarks to their photos. Whether you want to protect your images from unauthorized use or simply brand them with your logo, this tool makes the process quick and hassle-free." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
+
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Add Watermark — RDroid Apps",
+    "description": "Add Watermark is a simple and effective online tool provided by RDroid Apps that allows users to easily add text or image watermarks to their photos. Whether you want to protect your images from unauthorized use or simply brand them with your logo, this tool makes the process quick and hassle-free.",
+    "url": "https://rdroidapps.com/windows-tools/image/add-watermark.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <section class="hero">
+        <h1>Add Watermark</h1>
+        <h3>Add text or image watermark. Drag to position (text watermark supported).</h3>
+    </section>
+    <section class="tool-section">
+        <div class="card">
+            <div class="drop" id="dropArea">Drop image or <button class="btn btn-ghost" id="pickBtn">Choose
+                    file</button></div>
+            <input type="file" id="fileInput" accept="image/*" />
+            <hr>
+            <div class="row">
+                <div class="col"><label class="small">Type</label><select id="wmType">
+                        <option value="text">Text</option>
+                        <option value="image">Image</option>
+                    </select></div>
+                <div class="col" id="textOpts">
+                    <label class="small">Text</label>
+                    <textarea id="wmText" placeholder="© RDroid Apps"
+                        style="width:100%; min-height:80px; resize:vertical; padding:8px; border-radius:6px;"></textarea>
+                </div>
+
+                <div class="col" id="imageOpts" style="display:none">
+                    <label class="small">Watermark image</label>
+                    <button type="button" class="btn btn-ghost" id="wmPickBtn">
+                        Choose Watermark Image
+                    </button>
+                    <input type="file" id="wmImage" accept="image/*" style="display:none">
+                    <div id="wmImageName" class="small"></div>
+                </div>
+
+                <div class="col"><label class="small">Opacity</label><input type="range" id="wmOpacity" min="10"
+                        max="100" value="60">
+                    <div id="opVal">60%</div>
+                </div>
+            </div>
+
+            <div style="margin-top:12px;display:flex;gap:8px;">
+                <button class="btn btn-primary" id="applyBtn">Apply watermark</button>
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
+                <a id="downloadLink" class="btn" style="display:none"></a>
+            </div>
+
+            <div id="preview" style="margin-top:12px"></div>
+            <pre id="log">Ready.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+            <section class="seo-content">
+                <h2>Add Watermark — RDroidApps Pro</h2>
+                <p>Add Watermark is a simple and effective online tool provided by RDroid Apps that allows users to
+                    easily add text or image watermarks to their photos. Whether you want to protect your images from
+                    unauthorized use or simply brand them with your logo, this tool makes the process quick and
+                    hassle-free.</p>
+                <h2>Key Features:</h2>
+                <ul>
+                    <li><strong>Text Watermarks:</strong> Users can add custom text watermarks to their images. The tool
+                        allows you to choose the font size, color, and opacity of the text, ensuring that it blends
+                        seamlessly with your photo.</li>
+                    <li><strong>Image Watermarks:</strong> In addition to text, users can also upload their own images
+                        (such as logos) to use as watermarks. The tool supports various image formats and allows you to
+                        adjust the size and opacity of the watermark image.</li>
+                    <li><strong>Drag and Position:</strong> The tool provides an intuitive drag-and-drop interface,
+                        allowing users to easily position the watermark anywhere on the image. This flexibility ensures
+                        that the watermark does not obstruct important parts of the photo.</li>
+                    <li><strong>Adjustable Opacity:</strong> Users can control the opacity of the watermark, making it
+                        more or less visible depending on their preferences. This feature helps maintain the aesthetic
+                        quality of the image while still providing protection.</li>
+                    <li><strong>Easy to Use:</strong> The user-friendly interface makes it easy for anyone to add
+                        watermarks to their images without any technical expertise. Simply upload your image, customize
+                        your watermark, and download the final result.</li>
+                </ul>
+                <h2>How to Use:</h2>
+                <ol>
+                    <li>Upload your image by clicking the "Choose file" button or dragging and dropping it into the
+                        designated area.</li>
+                    <li>Select whether you want to add a text or image watermark.</li>
+                    <li>Customize your watermark by entering text or uploading an image, and adjust the opacity as
+                        desired.</li>
+                    <li>Drag the watermark to your preferred position on the image.</li>
+                    <li>Click the "Apply watermark" button to generate the final image.</li>
+                    <li>Download the watermarked image to your device.</li>
+                </ol>
+                <p>With Add Watermark by RDroid Apps, protecting and branding your images has never been easier. Try it
+                    out today and give your photos the professional touch they deserve!
+                </p>
+            </section><br>
+            <a href="/index.html#image-tools" class="nav-button home">🏠 Back to Image Home</a>
+        </div>
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
+    <script>
+        function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+
+        // Variables declaration
+        const pickBtn = document.getElementById('pickBtn'),
+            fileInput = document.getElementById('fileInput'),
+            dropArea = document.getElementById('dropArea'),
+            wmType = document.getElementById('wmType'),
+            textOpts = document.getElementById('textOpts'),
+            imageOpts = document.getElementById('imageOpts'),
+            wmText = document.getElementById('wmText'),
+            wmImage = document.getElementById('wmImage'),
+            wmOpacity = document.getElementById('wmOpacity'),
+            opVal = document.getElementById('opVal'),
+            applyBtn = document.getElementById('applyBtn'),
+            resetBtn = document.getElementById('resetBtn'),
+            preview = document.getElementById('preview'),
+            downloadLink = document.getElementById('downloadLink'),
+            logEl = document.getElementById('log');
+
+        let currentFile = null;
+        let mainImageURL = null;
+        let watermarkImageURL = null;
+
+        // Event Listeners
+        pickBtn.addEventListener('click', () => fileInput.click());
+
+        dropArea.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#0aa37f';
+        });
+
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.style.borderColor = '';
+        });
+
+        dropArea.addEventListener('drop', e => {
+            e.preventDefault();
+            if (e.dataTransfer.files.length) fileInput.files = e.dataTransfer.files;
+        });
+
+        wmType.addEventListener('change', () => {
+            if (wmType.value === 'text') {
+                textOpts.style.display = 'block';
+                imageOpts.style.display = 'none';
+            } else {
+                textOpts.style.display = 'none';
+                imageOpts.style.display = 'block';
+            }
+        });
+
+        // Force correct visibility on page load
+        wmType.dispatchEvent(new Event('change'));
+
+        wmOpacity.addEventListener('input', () => opVal.textContent = wmOpacity.value + '%');
+
+        wmImage.addEventListener('change', () => {
+            if (!wmImage.files.length) return;
+
+            const f = wmImage.files[0];
+
+            // Release previous watermark image URL
+            if (watermarkImageURL) {
+                URL.revokeObjectURL(watermarkImageURL);
+            }
+
+            watermarkImageURL = URL.createObjectURL(f);
+            logEl.textContent = "Watermark image selected: " + f.name;
+        });
+
+        fileInput.addEventListener('change', () => {
+            currentFile = fileInput.files[0];
+
+            // Release previous main image URL
+            if (mainImageURL) {
+                URL.revokeObjectURL(mainImageURL);
+            }
+
+            mainImageURL = URL.createObjectURL(currentFile);
+            preview.innerHTML = `<img id="loaded" src="${mainImageURL}" style="max-width:420px;border-radius:8px">`;
+        });
+
+        // Reset Function
+        resetBtn.addEventListener('click', () => {
+            // Reset file inputs
+            currentFile = null;
+            fileInput.value = '';
+            wmImage.value = '';
+
+            // Reset text and options
+            wmText.value = '© RDroid Apps';
+            wmType.value = 'text';
+            textOpts.style.display = 'block';
+            imageOpts.style.display = 'none';
+            wmOpacity.value = 60;
+            opVal.textContent = '60%';
+
+            // Reset UI elements
+            downloadLink.style.display = 'none';
+            preview.innerHTML = '';
+            logEl.textContent = 'Ready.';
+            dropArea.style.borderColor = '';
+
+            // Release all Object URLs
+            if (mainImageURL) {
+                URL.revokeObjectURL(mainImageURL);
+                mainImageURL = null;
+            }
+
+            if (watermarkImageURL) {
+                URL.revokeObjectURL(watermarkImageURL);
+                watermarkImageURL = null;
+            }
+
+            if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+                URL.revokeObjectURL(downloadLink.href);
+                downloadLink.href = '#';
+            }
+        });
+
+        const wmPickBtn = document.getElementById("wmPickBtn");
+        const wmImageName = document.getElementById("wmImageName");
+
+        wmPickBtn.addEventListener("click", () => wmImage.click());
+
+        wmImage.addEventListener("change", () => {
+            if (!wmImage.files.length) return;
+            wmImageName.textContent = "Selected: " + wmImage.files[0].name;
+        });
+
+        // Apply Watermark Function (UPDATED PRO VERSION)
+        applyBtn.addEventListener('click', async () => {
+
+            if (!currentFile) return alert('कृपया image निवडा');
+
+            const reader = new FileReader();
+
+            reader.onload = async (e) => {
+
+                const img = new Image();
+                img.src = e.target.result;
+                await img.decode();
+
+                const canvas = document.createElement('canvas');
+                canvas.width = img.naturalWidth;
+                canvas.height = img.naturalHeight;
+
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+
+                // Opacity
+                ctx.globalAlpha = parseInt(wmOpacity.value) / 100;
+
+                /* ==========================
+                   TEXT WATERMARK (MULTILINE)
+                ========================== */
+                if (wmType.value === 'text') {
+
+                    const text = wmText.value.trim() || '© RDroid Apps';
+                    const lines = text.split('\n');
+
+                    const fontSize = Math.max(18, Math.round(canvas.width / 20));
+                    ctx.font = `${fontSize}px sans-serif`;
+                    ctx.textBaseline = 'bottom';
+
+                    let y = canvas.height - 20;
+
+                    for (let i = lines.length - 1; i >= 0; i--) {
+
+                        const line = lines[i];
+                        const textWidth = ctx.measureText(line).width;
+                        const x = canvas.width - textWidth - 20;
+
+                        ctx.fillStyle = 'white';
+                        ctx.strokeStyle = 'rgba(0,0,0,0.5)';
+                        ctx.lineWidth = 3;
+
+                        ctx.strokeText(line, x, y);
+                        ctx.fillText(line, x, y);
+
+                        y -= fontSize + 6;
+                    }
+                }
+
+                /* ==========================
+                   IMAGE WATERMARK (STABLE)
+                ========================== */
+                else {
+
+                    const wmF = wmImage.files[0];
+                    if (!wmF) return alert("कृपया watermark image निवडा");
+
+                    const wmi = new Image();
+                    const wmURL = URL.createObjectURL(wmF);
+                    wmi.src = wmURL;
+
+                    await wmi.decode();
+
+                    // Scale watermark relative to main image
+                    const scale = Math.min(0.25, canvas.width / (wmi.naturalWidth * 3));
+                    const w = Math.round(wmi.naturalWidth * scale);
+                    const h = Math.round(wmi.naturalHeight * scale);
+
+                    const x = canvas.width - w - 20;
+                    const y = canvas.height - h - 20;
+
+                    ctx.drawImage(wmi, x, y, w, h);
+
+                    URL.revokeObjectURL(wmURL);
+                }
+
+                ctx.globalAlpha = 1;
+
+                canvas.toBlob((b) => {
+
+                    const url = URL.createObjectURL(b);
+
+                    if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+                        URL.revokeObjectURL(downloadLink.href);
+                    }
+
+                    preview.innerHTML = `
+                <img src="${url}"
+                     style="max-width:420px;border-radius:8px">
+            `;
+
+                    downloadLink.href = url;
+                    downloadLink.download =
+                        currentFile.name.replace(/\.[^/.]+$/, '') + '-wm.png';
+
+                    downloadLink.textContent = 'Download';
+                    downloadLink.style.display = 'inline-block';
+
+                    logEl.textContent = "Watermark applied successfully!";
+                }, 'image/png');
+            };
+
+            reader.readAsDataURL(currentFile);
+        });
+    </script>
+    <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — RDroid Apps</title>
+  <meta name="description" content="Login to RDroid Apps to access your profile and favorites." />
+  
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Login — RDroid Apps" />
+  <meta property="og:description" content="Login to RDroid Apps to access your profile and favorites." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/auth/login.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Login — RDroid Apps" />
+  <meta name="twitter:description" content="Login to RDroid Apps to access your profile and favorites." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+<link rel="stylesheet" href="../css/auth.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Login — RDroid Apps",
+    "description": "Login to RDroid Apps to access your profile and favorites.",
+    "url": "https://rdroidapps.com/auth/login.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebPage"
+  }
+  </script>
+</head>
+
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <!-- Logo -->
+      <div class="logo-center">
+        <img src="/assets/my_brand_icon.png" alt="RDroid Logo" />
+      </div>
+
+      <!-- Title -->
+      <h1>Welcome Back</h1>
+      <p>Login to access your profile and favorites</p>
+
+      <!-- Error Message -->
+      <div class="error-message" id="errorMessage"></div>
+
+      <!-- Login Form -->
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="your@email.com" required autocomplete="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="••••••••" required autocomplete="current-password" />
+        </div>
+
+        <div class="forgot-password">
+          <a href="reset.html">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn-login" id="loginBtn">Sign In</button>
+      </form>
+
+      <!-- Divider -->
+      <div class="auth-divider">
+        <span>New to RDroid?</span>
+      </div>
+
+      <!-- Footer -->
+      <div class="auth-footer">
+        <p>
+          <a href="signup.html">Create Account</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase v12 Modular Scripts -->
+  <script type="module" src="../js/firebase-config.js"></script>
+  <script type="module" src="../js/login.js"></script>
+
+  <!-- Auth Page Script -->
+  <script>
+    function showError(message) {
+      const errorEl = document.getElementById('errorMessage');
+      errorEl.textContent = message;
+      errorEl.classList.add('show');
+      setTimeout(() => {
+        errorEl.classList.remove('show');
+      }, 5000);
+    }
+
+    function hideError() {
+      const errorEl = document.getElementById('errorMessage');
+      errorEl.classList.remove('show');
+    }
+
+    async function handleLogin(event) {
+      event.preventDefault();
+      hideError();
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const loginBtn = document.getElementById('loginBtn');
+
+      if (!email || !password) {
+        showError('Please enter email and password');
+        return;
+      }
+
+      loginBtn.disabled = true;
+      loginBtn.textContent = 'Signing in...';
+
+      try {
+        await window.rdroidAuth.doLogin(email, password);
+        // Redirect to profile or home
+        window.location.href = '/profile.html';
+      } catch (error) {
+        showError(error.message || 'Login failed. Please try again.');
+      } finally {
+        loginBtn.disabled = false;
+        loginBtn.textContent = 'Sign In';
+      }
+    }
+  </script>
+  <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

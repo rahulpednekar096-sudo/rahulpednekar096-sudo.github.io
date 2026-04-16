@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Site-wide script -->
+  <script src="/js/script.js" defer></script>
+  <!-- Google tag (gtag.js) -->
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Merge PDF Online – Free PDF Merger Tool | RDroid Apps</title>
+  <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/merge-pdf.html">
+
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Merge PDF Online – Free PDF Merger Tool | RDroid Apps" />
+  <meta property="og:description" content="Merge multiple PDF files into one with auto-generated filenames based on input files. Drag-and-drop, reorder, select pages, and merge easily in your browser." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/pdf/merge-pdf.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Merge PDF Online – Free PDF Merger Tool | RDroid Apps" />
+  <meta name="twitter:description" content="Merge multiple PDF files into one with auto-generated filenames based on input files. Drag-and-drop, reorder, select pages, and merge easily in your browser." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="description"
+    content="Merge multiple PDF files into one with auto-generated filenames based on input files. Drag-and-drop, reorder, select pages, and merge easily in your browser." />
+  <meta name="keywords"
+    content="merge pdf, pdf merge, merge pdf mac, ios merge pdf, merge pdf ios, merge pdf free, mail merge pdf, merge pdf 2025, merge pdf on pc, free pdf merge, merge pdf files, how to merge pdf, merge pdf pages, i love pdf merge, free pdf merger, merge pdf online, online pdf merge, merge pdf on ipad, merge pdf on edge, merge pdf into one, pdf merge free, easy pdf merge, merge pdf android, merge pdf files mac, merge pdf tutorial, merge pdf on iphone, merge pdfs, merge pdf files free, merge pdf on android, merge pdf files ipad" />
+  <!-- pdf-lib for merging, pdf.js for rendering thumbnails -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+  <!-- Include jQuery for load function -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Merge PDF Online – Free PDF Merger Tool | RDroid Apps",
+    "description": "Merge multiple PDF files into one with auto-generated filenames based on input files. Drag-and-drop, reorder, select pages, and merge easily in your browser.",
+    "url": "https://rdroidapps.com/windows-tools/pdf/merge-pdf.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <!-- HEADER (loaded from external file) -->
+  <div id="header-container"></div>
+
+  <!-- TOOLS QUICK LINKS (loaded from external file) -->
+  <div id="tools-links-container"></div>
+
+  <!-- MENU DRAWER (loaded from external file) -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load all components -->
+  <script>
+    $(function () {
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
+      $("#footer-container").load("/components/footer.html");
+    });
+  </script>
+
+  <section class="hero">
+    <h1>Merge PDF — Upgraded (Auto-rename)</h1>
+    <p class="lead">Drop multiple PDFs, reorder, optionally restrict pages, then Merge. Output filename will be
+      auto-generated from input filenames.</p>
+  </section>
+  <section class="tool-section">
+    <div class="card">
+      <div class="drop" id="dropArea">Drop PDFs here or <button class="btn btn-ghost" id="pickBtn">Choose
+          files</button></div>
+      <input type="file" id="fileInput" accept="application/pdf" multiple />
+
+      <div class="controls">
+        <label style="display:flex;align-items:center;gap:8px"><input type="checkbox" id="optObjectStreams" checked> Use
+          object streams (smaller)</label>
+        <label style="margin-left:auto" class="muted">Tip: drag items to reorder</label>
+      </div>
+
+      <div class="files-list" id="filesList" aria-live="polite"></div>
+
+      <div style="margin-top:12px; display:flex; gap:8px; align-items:center;">
+        <button class="btn btn-primary" id="mergeBtn">Merge PDF</button>
+        <button class="btn btn-ghost" id="clearBtn">Clear</button>
+        <a class="btn" id="downloadLink" style="display:none"></a>
+        <div style="margin-left:auto" id="statusText" class="muted"></div>
+      </div>
+
+      <div class="progress" id="progressWrap">
+        <div class="bar" id="progressBar"></div>
+      </div>
+
+      <pre id="log"
+        style="margin-top:12px;background:#0b0c0d;padding:12px;border-radius:8px;color:#9fbfb0;max-height:240px;overflow:auto">Ready.</pre>
+
+      <div class="help">Page ranges format: <span class="small">1-3,5,7-9</span> (leave empty to include all pages of
+        that PDF)</div>
+
+      <!-- SEO Content -->
+      <pre id="log">Ready.</pre>
+      <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+      <hr style="margin:32px 0">
+
+      <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+      <hr style="margin:32px 0">
+      <section class="seo-content">
+        <h2>Merge-PDF — RDroidApps Pro</h2>
+
+        <p>
+          Welcome to the enhanced Merge PDF tool by RDroidApps, now featuring an auto-rename functionality for your
+          convenience. This upgraded tool allows you to effortlessly combine multiple PDF files into a single document
+          while
+          automatically generating a meaningful filename based on the input files.
+        </p>
+        <h2>Key Features:</h2>
+        <ul>
+          <li><strong>Auto-Rename Functionality:</strong> The tool intelligently creates a filename for the merged PDF
+            by
+            combining the names of the input files. If there are more than three files, it uses the first file's name
+            along
+            with a count of the total files merged.</li>
+          <li><strong>Drag-and-Drop Interface:</strong> Easily add your PDF files by dragging and dropping them into the
+            designated area or by using the file picker.</li>
+          <li><strong>Reorder Files:</strong> Customize the order of your PDFs before merging by simply dragging them
+            into
+            your desired sequence.</li>
+          <li><strong>Page Selection:</strong> Specify which pages to include from each PDF using a simple range format,
+            giving you full control over the content of your final document.</li>
+          <li><strong>Object Streams Option:</strong> Choose to use object streams for a smaller output file size,
+            optimizing
+            storage and sharing.</li>
+        </ul>
+        <h2>How to Use:</h2>
+        <ol>
+          <li>Drag and drop your PDF files into the designated area or click "Choose files" to select them manually.
+          </li>
+          <li>Reorder the files by dragging them into your preferred sequence.</li>
+          <li>Optionally, specify page ranges for each file in the provided input fields.</li>
+          <li>Select whether to use object streams for a smaller file size.</li>
+          <li>Click the "Merge PDF" button to combine your files. The tool will automatically generate a filename for
+            the
+            merged document.</li>
+          <li>Download your merged PDF using the provided link.</li>
+        </ol>
+        <h2>Benefits of Using Merge PDF with Auto-Rename:</h2>
+        <ul>
+          <li><strong>Time-Saving:</strong> The auto-rename feature eliminates the need to manually name your merged
+            files,
+            streamlining your workflow.</li>
+          <li><strong>Organized Files:</strong> Meaningful filenames help keep your documents organized and easily
+            identifiable.</li>
+          <li><strong>User-Friendly:</strong> The intuitive interface makes it easy for users of all skill levels to
+            merge
+            PDFs
+            efficiently.</li>
+        </ul>
+        <p>
+          Experience the convenience and efficiency of the Merge PDF tool with auto-rename by RDroidApps Pro. Simplify
+          your
+          document management today!
+        </p>
+        <p>Ready to merge your PDFs with ease? Start using the upgraded Merge PDF tool now!</p>
+      </section>
+    </div><br>
+    <a href="/index.html#pdf-tools" class="nav-button home">🏠 Back to PDF Home</a>
+  </section>
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
+
+  <script>
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+    /* Merge PDF with auto-rename feature */
+
+    const fileInput = document.getElementById('fileInput');
+    const pickBtn = document.getElementById('pickBtn');
+    const dropArea = document.getElementById('dropArea');
+    const filesList = document.getElementById('filesList');
+    const mergeBtn = document.getElementById('mergeBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const downloadLink = document.getElementById('downloadLink');
+    const progressWrap = document.getElementById('progressWrap');
+    const progressBar = document.getElementById('progressBar');
+    const logEl = document.getElementById('log');
+    const optObjectStreams = document.getElementById('optObjectStreams');
+    const statusText = document.getElementById('statusText');
+
+    let filesState = []; // { file, id, name, pageCount, thumbDataUrl, rangesInput }
+
+    pickBtn.addEventListener('click', () => fileInput.click());
+    dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f'; });
+    dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = '#202426');
+    dropArea.addEventListener('drop', e => { e.preventDefault(); dropArea.style.borderColor = '#202426'; if (e.dataTransfer.files.length) addFiles(e.dataTransfer.files); });
+
+    fileInput.addEventListener('change', () => addFiles(fileInput.files));
+    clearBtn.addEventListener('click', () => { filesState = []; renderList(); downloadLink.style.display = 'none'; log('Cleared'); });
+
+    function log(msg) { logEl.textContent += msg + '\n'; logEl.scrollTop = logEl.scrollHeight; }
+    function clearLog() { logEl.textContent = ''; }
+
+    function uid() { return Math.random().toString(36).slice(2, 9); }
+
+    async function addFiles(fileList) {
+      clearLog();
+      for (const f of fileList) {
+        if (f.type !== 'application/pdf') { log('Skipped non-PDF: ' + f.name); continue; }
+        const id = uid();
+        const entry = { file: f, id, name: f.name, pageCount: null, thumbDataUrl: null, rangesInput: '' };
+        filesState.push(entry);
+        renderList();
+        await loadPdfInfo(entry);
+      }
+      renderList();
+      log('Files added.');
+    }
+
+    async function loadPdfInfo(entry) {
+      try {
+        const arrayBuffer = await entry.file.arrayBuffer();
+        const pdfData = new Uint8Array(arrayBuffer);
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+        const pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
+        entry.pageCount = pdf.numPages;
+        try {
+          const page = await pdf.getPage(1);
+          const viewport = page.getViewport({ scale: Math.min(150 / page.getViewport({ scale: 1 }).width, 1) });
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          const vp = page.getViewport({ scale: viewport.scale });
+          canvas.width = vp.width; canvas.height = vp.height;
+          await page.render({ canvasContext: ctx, viewport: vp }).promise;
+          entry.thumbDataUrl = canvas.toDataURL('image/jpeg', 0.7);
+        } catch (e) { console.warn('Thumb render failed', e); }
+        renderList();
+      } catch (err) {
+        log('Failed to read ' + entry.name + ': ' + (err.message || err));
+        entry.pageCount = 0;
+        renderList();
+      }
+    }
+
+    function renderList() {
+      filesList.innerHTML = '';
+      filesState.forEach((e, idx) => {
+        const div = document.createElement('div');
+        div.className = 'file-item';
+        div.draggable = true;
+        div.dataset.id = e.id;
+
+        div.addEventListener('dragstart', (ev) => {
+          ev.dataTransfer.setData('text/plain', e.id);
+          ev.currentTarget.style.opacity = '0.6';
+        });
+        div.addEventListener('dragend', (ev) => ev.currentTarget.style.opacity = '1');
+        div.addEventListener('dragover', ev => { ev.preventDefault(); });
+        div.addEventListener('drop', ev => {
+          ev.preventDefault();
+          const fromId = ev.dataTransfer.getData('text/plain');
+          const toId = e.id;
+          reorder(fromId, toId);
+        });
+
+        const thumb = document.createElement('img');
+        thumb.className = 'thumb';
+        thumb.src = e.thumbDataUrl || 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAABx3b5LAAAAH0lEQVR4nO3BMQEAAADCIPunNscwAAAAAAAAAAAAAAwO4GAAEAbc3c4gAAAABJRU5ErkJggg==';
+        div.appendChild(thumb);
+
+        const meta = document.createElement('div');
+        meta.className = 'file-meta';
+        const title = document.createElement('div'); title.innerHTML = `<strong>${e.name}</strong>`;
+        const pages = document.createElement('div'); pages.className = 'muted small'; pages.textContent = e.pageCount ? (e.pageCount + ' pages') : 'loading...';
+        const rangesLabel = document.createElement('div'); rangesLabel.style.marginTop = '6px';
+        rangesLabel.innerHTML = `<input class="pages-input" placeholder="pages (eg. 1-3,5)" value="${e.rangesInput || ''}" data-id="${e.id}" />`;
+        meta.appendChild(title); meta.appendChild(pages); meta.appendChild(rangesLabel);
+
+        const actions = document.createElement('div');
+        actions.className = 'file-actions';
+        const dragHandle = document.createElement('div'); dragHandle.className = 'drag-handle muted'; dragHandle.textContent = '☰';
+        const removeBtn = document.createElement('button'); removeBtn.className = 'btn btn-ghost'; removeBtn.textContent = 'Remove';
+        removeBtn.addEventListener('click', () => { filesState = filesState.filter(x => x.id !== e.id); renderList(); });
+        actions.appendChild(dragHandle);
+        actions.appendChild(removeBtn);
+
+        div.appendChild(meta);
+        div.appendChild(actions);
+
+        filesList.appendChild(div);
+      });
+
+      document.querySelectorAll('.pages-input').forEach(inp => {
+        inp.addEventListener('input', (ev) => {
+          const id = ev.target.dataset.id;
+          const entry = filesState.find(x => x.id === id);
+          if (entry) entry.rangesInput = ev.target.value.trim();
+        });
+      });
+    }
+
+    function reorder(fromId, toId) {
+      const fromIndex = filesState.findIndex(x => x.id === fromId);
+      const toIndex = filesState.findIndex(x => x.id === toId);
+      if (fromIndex < 0 || toIndex < 0) return;
+      const [item] = filesState.splice(fromIndex, 1);
+      filesState.splice(toIndex, 0, item);
+      renderList();
+    }
+
+    function parseRanges(str, pageCount) {
+      if (!str) return Array.from({ length: pageCount }, (_, i) => i);
+      const parts = str.split(',').map(s => s.trim()).filter(Boolean);
+      const indices = new Set();
+      for (const p of parts) {
+        if (p.includes('-')) {
+          const [a, b] = p.split('-').map(x => parseInt(x));
+          if (isNaN(a) || isNaN(b)) continue;
+          for (let k = Math.max(1, a); k <= Math.min(b, pageCount); k++) indices.add(k - 1);
+        } else {
+          const n = parseInt(p);
+          if (!isNaN(n) && n >= 1 && n <= pageCount) indices.add(n - 1);
+        }
+      }
+      return Array.from(indices).sort((a, b) => a - b);
+    }
+
+    mergeBtn.addEventListener('click', async () => {
+      if (!filesState.length) { alert('Add PDF files first'); return; }
+      clearLog();
+      progressWrap.style.display = 'block'; setProgress(0);
+      downloadLink.style.display = 'none';
+      statusText.textContent = 'Starting merge...';
+
+      try {
+        const mergedPdf = await PDFLib.PDFDocument.create();
+        const useObjectStreams = optObjectStreams.checked;
+        const totalSteps = filesState.reduce((s, e) => s + (e.pageCount || 0), 0) || 1;
+        let step = 0;
+
+        for (const entry of filesState) {
+          if (!entry.pageCount) { log('Skipping unreadable: ' + entry.name); continue; }
+          log('Processing ' + entry.name + ' (' + entry.pageCount + ' pages)');
+          const arrayBuffer = await entry.file.arrayBuffer();
+          const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
+          const allIndices = parseRanges(entry.rangesInput, entry.pageCount);
+          if (allIndices.length === 0) { log(`No pages selected for ${entry.name}, skipping.`); continue; }
+
+          const copied = await mergedPdf.copyPages(pdf, allIndices);
+          for (const p of copied) {
+            mergedPdf.addPage(p);
+            step++;
+            setProgress(step / totalSteps);
+            await new Promise(r => setTimeout(r, 20));
+          }
+        }
+
+        statusText.textContent = 'Finalizing...';
+        const saveOpts = useObjectStreams ? { useObjectStreams: true } : {};
+        const mergedBytes = await mergedPdf.save(saveOpts);
+        const blob = new Blob([mergedBytes], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+
+        // ---------- AUTO-RENAME LOGIC ----------
+        const safeName = (name) => {
+          // remove extension, illegal chars, collapse spaces, limit length
+          let s = name.replace(/\.pdf$/i, '');
+          s = s.replace(/[\/\\?%*:|"<>]/g, ''); // remove illegal filename chars
+          s = s.replace(/\s+/g, '_'); // spaces to underscore
+          s = s.replace(/[^a-zA-Z0-9_\-\.]/g, ''); // keep safe chars
+          if (s.length > 60) s = s.slice(0, 60);
+          return s || 'file';
+        };
+
+        let downloadBase = '';
+        if (filesState.length <= 3) {
+          // join sanitized base names
+          const parts = filesState.map(f => safeName(f.name));
+          downloadBase = parts.join('_');
+        } else {
+          const first = safeName(filesState[0].name);
+          downloadBase = `${first}_${filesState.length}files`;
+        }
+        // final filename
+        let finalName = `${downloadBase}_merged.pdf`;
+        // ensure length limit
+        if (finalName.length > 100) finalName = finalName.slice(0, 100).replace(/\s+/g, '_');
+
+        downloadLink.href = url;
+        downloadLink.download = finalName;
+        downloadLink.textContent = `Download: ${finalName}`;
+        downloadLink.style.display = 'inline-block';
+        statusText.textContent = `Done — merged ${(blob.size / 1024).toFixed(1)} KB`;
+        log('Merge completed. Final size: ' + (blob.size / 1024).toFixed(1) + ' KB');
+        setProgress(1);
+      } catch (err) {
+        log('Merge failed: ' + (err.message || err));
+        statusText.textContent = 'Error during merge.';
+        setProgress(0);
+      } finally {
+        progressWrap.style.display = 'none';
+      }
+    });
+
+    function setProgress(p) { progressBar.style.width = Math.min(1, Math.max(0, p)) * 100 + '%'; }
+
+  </script>
+
+
+  <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

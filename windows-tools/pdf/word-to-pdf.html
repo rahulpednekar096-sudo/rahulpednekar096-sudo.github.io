@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Site-wide script -->
+  <script src="/js/script.js" defer></script>
+  <!-- Google tag (gtag.js) -->
+
+  <meta charset="utf-8">
+  <title>Word (DOCX) → PDF — RDroid Apps</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Convert Word (DOCX) files to PDF instantly using RDroidApps Pro. Fully offline, secure, browser-based Word to PDF converter with page size, margins, and orientation options.">
+
+  <meta name="keywords"
+    content="Word to PDF, DOCX to PDF, online Word to PDF converter, offline Word to PDF, RDroidApps tools, free PDF tools, document converter, Word PDF Pro">
+  <meta name="author" content="RDroidApps Pro">
+  <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/word-to-pdf.html">
+
+
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Word (DOCX) → PDF — RDroid Apps" />
+  <meta property="og:description" content="Convert Word (DOCX) files to PDF instantly using RDroidApps Pro. Fully offline, secure, browser-based Word to PDF converter with page size, margins, and orientation options." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/pdf/word-to-pdf.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Word (DOCX) → PDF — RDroid Apps" />
+  <meta name="twitter:description" content="Convert Word (DOCX) files to PDF instantly using RDroidApps Pro. Fully offline, secure, browser-based Word to PDF converter with page size, margins, and orientation options." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
+
+  <!-- Mammoth.js for DOCX to HTML conversion -->
+  <script src="https://unpkg.com/mammoth@1.6.0/mammoth.browser.min.js"></script>
+
+  <!-- html2canvas for HTML to image conversion -->
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Include jQuery for load function -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+
+  <style>
+    .preview-content {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: black;
+      transform: translateZ(0);
+      /* Force GPU rendering */
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .docx-content {
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      font-size: 14pt;
+      line-height: 1.6;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    .docx-content h1,
+    .docx-content h2,
+    .docx-content h3 {
+      color: black;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .docx-content p {
+      margin-bottom: 1em;
+    }
+
+    .docx-content ul,
+    .docx-content ol {
+      margin-left: 2em;
+      margin-bottom: 1em;
+    }
+
+    .docx-content table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 1em;
+    }
+
+    .docx-content table,
+    .docx-content th,
+    .docx-content td {
+      border: 1px solid #ddd;
+    }
+
+    .docx-content th,
+    .docx-content td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    .docx-content img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Word (DOCX) → PDF — RDroid Apps",
+    "description": "Convert Word (DOCX) files to PDF instantly using RDroidApps Pro. Fully offline, secure, browser-based Word to PDF converter with page size, margins, and orientation options.",
+    "url": "https://rdroidapps.com/windows-tools/pdf/word-to-pdf.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <!-- HEADER (loaded from external file) -->
+  <div id="header-container"></div>
+
+  <!-- TOOLS QUICK LINKS (loaded from external file) -->
+  <div id="tools-links-container"></div>
+
+  <!-- MENU DRAWER (loaded from external file) -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load all components -->
+  <script>
+    $(function () {
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
+      $("#footer-container").load("/components/footer.html");
+    });
+  </script>
+  <section class="hero">
+    <h1>Word (DOCX) → PDF</h1>
+    <p class="lead">Upload a Word DOCX file and convert it to PDF. Fully client-side, safe & fast. Preserves formatting,
+      images, and tables.</p>
+  </section>
+  <section class="section">
+    <div class="drop" id="dropArea">
+      Drop DOCX here or <button class="btn" id="pickBtn">Choose file</button>
+      <input type="file" id="fileInput" accept=".docx" style="display:none">
+    </div>
+
+    <div class="controls" style="margin-top:10px">
+      <label>Page size</label>
+      <select id="pageSize">
+        <option value="A4">A4</option>
+        <option value="Letter">Letter</option>
+        <option value="Legal">Legal</option>
+      </select>
+
+      <label>Orientation</label>
+      <select id="orientation">
+        <option value="p">Portrait</option>
+        <option value="l">Landscape</option>
+      </select>
+
+      <label>Margins (mm)</label>
+      <input type="number" id="margin" value="10" min="5" max="50">
+    </div>
+    <div id="download"></div>
+
+    <button class="btn btn-primary" id="convertBtn" style="margin-top:12px">Convert Word to PDF</button>
+
+    <div class="progress" id="progressWrap" style="display:none;">
+      <div class="bar" id="progressBar"></div>
+      <div id="progressText" style="text-align:center; color:white; margin-top:5px;">0%</div>
+    </div>
+
+    <h3 style="margin-top:20px">Preview</h3>
+    <div id="preview" class="preview">
+      <div class="preview-content" id="previewContent">
+        <p>No file selected. Upload a DOCX file to see preview.</p>
+      </div>
+    </div>
+
+    <pre id="log" class="log">Ready.</pre>
+
+
+
+    <!-- Hidden div for PDF generation -->
+    <div id="pdfContent" class="hidden"></div>
+
+    <!-- SEO Content -->
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
+
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
+    <section class="seo-content">
+      <h2>Convert Word Documents to PDF with RDroidApps Pro</h2>
+      <p>Looking for a quick and easy way to convert your Word documents (DOCX) to PDF? RDroidApps Pro offers a
+        powerful online tool that allows you to transform your DOCX files into high-quality PDFs directly in your web
+        browser. Whether you need to share documents professionally or preserve formatting, our Word to PDF converter
+        has you covered.</p>
+
+      <h2>Why Choose RDroidApps Pro for Word to PDF Conversion?</h2>
+      <ul>
+        <li><strong>Fully Offline & Secure:</strong> Your files are processed entirely in your browser, ensuring your
+          data remains private and secure.</li>
+        <li><strong>Fast & Efficient:</strong> Convert documents in seconds without the need for software installation.
+        </li>
+        <li><strong>Customizable Options:</strong> Choose page size, orientation, and margins to suit your needs.</li>
+        <li><strong>Preserves Formatting:</strong> Retains images, tables, and text styles from the original Word
+          document.</li>
+      </ul>
+
+      <h2>How to Convert DOCX to PDF</h2>
+      <ol>
+        <li>Upload your DOCX file by clicking the "Choose file" button or dragging and dropping it into the designated
+          area.</li>
+        <li>Select your preferred page size (A4, Letter, Legal), orientation (Portrait or Landscape), and margin size.
+        </li>
+        <li>Click the "Convert Word to PDF" button to start the conversion process.</li>
+        <li>Once the conversion is complete, download your PDF file or preview it directly in your browser.</li>
+      </ol>
+
+      <h2>Get Started Today!</h2>
+      <p>Transform your Word documents into professional PDFs with ease using RDroidApps Pro. Try our Word to PDF
+        converter now and experience the convenience of fast, secure, and high-quality document conversion.</p>
+    </section><br>
+    <a href="/index.html#pdf-tools" class="nav-button home">🏠 Back to PDF Home</a>
+  </section>
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
+
+  <script>
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+
+    const pickBtn = document.getElementById("pickBtn");
+    const fileInput = document.getElementById("fileInput");
+    const dropArea = document.getElementById("dropArea");
+    const previewContent = document.getElementById("previewContent");
+    const logEl = document.getElementById("log");
+    const progressWrap = document.getElementById("progressWrap");
+    const progressBar = document.getElementById("progressBar");
+    const progressText = document.getElementById("progressText");
+    const download = document.getElementById("download");
+    const pdfContent = document.getElementById("pdfContent");
+    const convertBtn = document.getElementById("convertBtn");
+
+    let currentFile = null;
+    let docxHtml = "";
+
+    function log(msg) {
+      logEl.textContent += "\n" + msg;
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+
+    function clearAll() {
+      previewContent.innerHTML = "<p>No file selected. Upload a DOCX file to see preview.</p>";
+      download.innerHTML = "";
+      logEl.textContent = "Ready.";
+      fileInput.value = "";
+      currentFile = null;
+      docxHtml = "";
+      setProgress(-1);
+    }
+
+    function setProgress(p) {
+      if (p >= 0) {
+        progressWrap.style.display = "block";
+        progressBar.style.width = (p * 100) + "%";
+        progressText.textContent = Math.round(p * 100) + "%";
+      } else {
+        progressWrap.style.display = "none";
+      }
+    }
+
+    pickBtn.onclick = () => fileInput.click();
+    fileInput.onchange = e => loadDocx(e.target.files[0]);
+
+    dropArea.ondragover = e => { e.preventDefault(); dropArea.style.borderColor = "#0aa37f"; }
+    dropArea.ondragleave = () => dropArea.style.borderColor = "#222";
+    dropArea.ondrop = e => {
+      e.preventDefault();
+      dropArea.style.borderColor = "#222";
+      loadDocx(e.dataTransfer.files[0]);
+    };
+
+    async function loadDocx(file) {
+      if (!file || !file.name.toLowerCase().endsWith('.docx')) {
+        alert("Please select a valid DOCX file (.docx)");
+        return;
+      }
+
+      clearAll();
+      log("Loading DOCX file: " + file.name);
+      setProgress(0.1);
+
+      currentFile = file;
+
+      try {
+        const arrayBuffer = await file.arrayBuffer();
+        log("Converting DOCX to HTML...");
+        setProgress(0.3);
+
+        const result = await mammoth.convertToHtml({ arrayBuffer: arrayBuffer });
+        docxHtml = result.value;
+
+        // Display preview
+        previewContent.innerHTML = '<div class="docx-content" style="padding: 20px;">' + docxHtml + '</div>';
+        log("Preview ready. File loaded successfully.");
+        setProgress(1);
+
+        // Hide progress after a moment
+        setTimeout(() => setProgress(-1), 500);
+
+        // Add Clear button after file is loaded
+        addClearButton();
+
+      } catch (error) {
+        log("Error loading file: " + error.message);
+        setProgress(-1);
+        alert("Failed to load DOCX file. Please check if it's a valid Word document.");
+      }
+    }
+
+    function addClearButton() {
+      // Check if clear button already exists
+      if (!document.getElementById("clearFileBtn")) {
+        const clearBtn = document.createElement("button");
+        clearBtn.id = "clearFileBtn";
+        clearBtn.textContent = "Clear File";
+        clearBtn.className = "btn";
+        clearBtn.style.marginLeft = "10px";
+        clearBtn.onclick = clearAll;
+
+        // Insert after convert button
+        convertBtn.parentNode.insertBefore(clearBtn, convertBtn.nextSibling);
+      }
+    }
+
+    convertBtn.onclick = async () => {
+      if (!currentFile || !docxHtml) {
+        alert("Please select a DOCX file first");
+        return;
+      }
+
+      log("Starting PDF conversion...");
+      download.innerHTML = "";
+      setProgress(0);
+
+      try {
+        // Prepare HTML content for PDF with better styling
+        const tempDiv = document.createElement('div');
+        tempDiv.style.position = 'absolute';
+        tempDiv.style.left = '-9999px';
+        tempDiv.style.top = '-9999px';
+        tempDiv.style.width = '800px';
+        tempDiv.style.padding = '20px';
+        tempDiv.style.backgroundColor = 'white';
+        tempDiv.style.fontSmoothing = 'antialiased';
+        tempDiv.style.webkitFontSmoothing = 'antialiased';
+        tempDiv.style.textRendering = 'optimizeLegibility';
+
+        // Wrap content in a container with proper styling
+        tempDiv.innerHTML = `
+      <div class="docx-content" style="
+        font-family: 'Arial', 'Helvetica', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        font-size: 12pt;
+        line-height: 1.5;
+      ">
+        ${docxHtml}
+      </div>
+    `;
+
+        document.body.appendChild(tempDiv);
+
+        const pageSize = document.getElementById("pageSize").value;
+        const orientation = document.getElementById("orientation").value === "p" ? "portrait" : "landscape";
+        const margin = parseFloat(document.getElementById("margin").value) || 10;
+
+        // Get PDF dimensions in mm
+        let pdfWidth, pdfHeight;
+        if (pageSize === "A4") {
+          pdfWidth = orientation === "portrait" ? 210 : 297;
+          pdfHeight = orientation === "portrait" ? 297 : 210;
+        } else if (pageSize === "Letter") {
+          pdfWidth = orientation === "portrait" ? 216 : 279;
+          pdfHeight = orientation === "portrait" ? 279 : 216;
+        } else { // Legal
+          pdfWidth = orientation === "portrait" ? 216 : 356;
+          pdfHeight = orientation === "portrait" ? 356 : 216;
+        }
+
+        log("Rendering HTML to canvas...");
+        setProgress(0.2);
+
+        // Convert HTML to canvas with higher quality
+        const canvas = await html2canvas(tempDiv, {
+          scale: window.devicePixelRatio * 3,
+          useCORS: true,
+          backgroundColor: "#ffffff",
+          letterRendering: true, // हे महत्वाचे आहे
+          logging: false,
+          allowTaint: true,
+          imageTimeout: 15000,
+          removeContainer: true,
+          onclone: function (clonedDoc) {
+            clonedDoc.body.style.fontFamily = "'Times New Roman', serif";
+            clonedDoc.body.style.fontSize = '16px';
+            clonedDoc.body.style.color = '#000000';
+          }
+        });
+
+        // Remove temp div
+        document.body.removeChild(tempDiv);
+
+        log("Generating PDF...");
+        setProgress(0.8);
+
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({
+          unit: "mm",
+          format: pageSize.toLowerCase(),
+          orientation: orientation,
+          compress: true
+        });
+
+        // Calculate image dimensions to fit page
+        const pageWidth = pdfWidth - (margin * 2);
+        const pageHeight = pdfHeight - (margin * 2);
+
+        const imgWidth = pageWidth;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+        // Add image to PDF with quality settings
+        const imgData = canvas.toDataURL('image/png', 1.0); // Maximum quality
+        pdf.addImage(imgData, 'PNG', margin, margin, imgWidth, imgHeight, '', 'MEDIUM');
+
+        log("Saving PDF...");
+        setProgress(0.95);
+
+        // Save PDF
+        const pdfBlob = pdf.output('blob');
+        const fileName = currentFile.name.replace(/\.docx$/i, '.pdf');
+
+        // Create download link
+        const downloadLink = document.createElement('a');
+        downloadLink.href = URL.createObjectURL(pdfBlob);
+        downloadLink.download = fileName;
+        downloadLink.textContent = `📥 Download ${fileName}`;
+        downloadLink.className = "btn-primary";
+        downloadLink.style.marginTop = "10px";
+        downloadLink.style.display = "inline-block";
+        downloadLink.style.textDecoration = "none";
+        downloadLink.style.padding = "10px 20px";
+
+        // Create preview link
+        const previewLink = document.createElement('a');
+        previewLink.href = URL.createObjectURL(pdfBlob);
+        previewLink.target = "_blank";
+        previewLink.textContent = "👁️ Open PDF Preview";
+        previewLink.style.marginLeft = "10px";
+        previewLink.style.display = "inline-block";
+        previewLink.style.padding = "10px 20px";
+        previewLink.style.backgroundColor = "#2a3a4a";
+        previewLink.style.color = "white";
+        previewLink.style.borderRadius = "4px";
+        previewLink.style.textDecoration = "none";
+
+        // Create container for buttons
+        const buttonContainer = document.createElement('div');
+        buttonContainer.style.marginTop = "15px";
+        buttonContainer.style.padding = "15px";
+        buttonContainer.style.backgroundColor = "#0a2a1e";
+        buttonContainer.style.borderRadius = "8px";
+        buttonContainer.style.border = "1px solid #0aa37f";
+
+        const title = document.createElement('h3');
+        title.textContent = "✓ PDF Conversion Complete!";
+        title.style.color = "#0aa37f";
+        title.style.marginTop = "0";
+
+        const info = document.createElement('p');
+        info.textContent = `Your Word document has been converted to PDF.`;
+        info.style.color = "#9fbfb0";
+        info.style.marginBottom = "15px";
+
+        buttonContainer.appendChild(title);
+        buttonContainer.appendChild(info);
+        buttonContainer.appendChild(downloadLink);
+        buttonContainer.appendChild(previewLink);
+
+        download.appendChild(buttonContainer);
+
+        log(`PDF created successfully: ${fileName}`);
+        setProgress(1);
+
+        // Hide progress after a moment
+        setTimeout(() => setProgress(-1), 1000);
+
+      } catch (error) {
+        log("Conversion error: " + error.message);
+        setProgress(-1);
+        alert("Failed to convert to PDF. Please try again with a different file.");
+        console.error("PDF Conversion Error:", error);
+      }
+    };
+
+    // Add initial clear button
+    addClearButton();
+  </script>
+  <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Site-wide script -->
+  <script src="/js/script.js" defer></script>
+  <!-- Google tag (gtag.js) -->
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PDF → Excel — RDroidApps Pro</title>
+  <meta name="description"
+    content="Convert PDF tables to Excel spreadsheets with smart table detection, OCR fallback for scanned PDFs, multi-table extraction, and XLSX/CSV output — all client-side in your browser." />
+  <meta name="keywords"
+    content="pdf file to excel, convert pdf to excel, pdf to excel convert, pdf to excel offline, pdf convert to excel, how to convert pdf to excel, pdf into excel, free pdf to excel converter, pdf file convert to excel, pdf to excel, how to convert pdf to excel offline, from pdf to excel, small pdf to excel, how to pdf to excel, excel to pdf, import pdf to excel, pdf to word to excel, simply pdf to excel, export pdf to excel, pdf data to excel, how to convert pdf to editable excel file, data from pdf to excel" />
+  <meta name="author" content="RDroid Apps" />
+
+  <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/pdf-to-excel.html">
+
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="PDF → Excel — RDroidApps Pro" />
+  <meta property="og:description" content="Convert PDF tables to Excel spreadsheets with smart table detection, OCR fallback for scanned PDFs, multi-table extraction, and XLSX/CSV output — all client-side in your browser." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/pdf/pdf-to-excel.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PDF → Excel — RDroidApps Pro" />
+  <meta name="twitter:description" content="Convert PDF tables to Excel spreadsheets with smart table detection, OCR fallback for scanned PDFs, multi-table extraction, and XLSX/CSV output — all client-side in your browser." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <!-- Stylesheet (RDroidApps theme) -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
+  <!-- Libs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://unpkg.com/tesseract.js@v4.1.1/dist/tesseract.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+  <!-- Include jQuery for load function -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "PDF → Excel — RDroidApps Pro",
+    "description": "Convert PDF tables to Excel spreadsheets with smart table detection, OCR fallback for scanned PDFs, multi-table extraction, and XLSX/CSV output — all client-side in your browser.",
+    "url": "https://rdroidapps.com/windows-tools/pdf/pdf-to-excel.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <!-- HEADER (loaded from external file) -->
+  <div id="header-container"></div>
+
+  <!-- TOOLS QUICK LINKS (loaded from external file) -->
+  <div id="tools-links-container"></div>
+
+  <!-- MENU DRAWER (loaded from external file) -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load all components -->
+  <script>
+    $(function () {
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
+      $("#footer-container").load("/components/footer.html");
+    });
+  </script>
+
+  <section class="hero">
+    <div>
+      <h1>PDF → Excel — RDroidApps Pro</h1>
+      <p class="lead">Smart table detection, OCR fallback, multi-table extraction, XLSX/CSV output — Complete
+        client-side.</p>
+    </div>
+  </section>
+  <div class="container" role="main">
+    <div class="row">
+      <div class="card" style="flex:1 1 420px">
+        <label class="small">Source PDF</label>
+        <div class="drop" id="dropArea">Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
+          <input id="fileInput" type="file" accept="application/pdf" style="display:none" />
+        </div>
+        <div style="margin-top:10px" class="small">Pages detected: <span id="pageCount">0</span></div>
+        <div class="optionRow">
+          <label class="small"><input type="checkbox" id="useOCR"> Enable OCR (scanned PDF)</label>
+          <label class="small"><input type="checkbox" id="visualHints" checked> Show detection preview</label>
+        </div>
+        <div class="note small" style="margin-top:8px">OCR uses Tesseract (client-side). OCR is slower but extracts
+          scanned text for better table detection.</div>
+      </div>
+
+      <div class="card" style="flex:1 1 700px">
+        <label class="small">Extraction options</label>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+          <div style="flex:1">
+            <label class="small">Mode</label>
+            <select id="extractMode" class="select">
+              <option value="perTable" selected>One sheet per detected table</option>
+              <option value="perPage">One sheet per page (all tables merged)</option>
+              <option value="single">Combine all tables into single sheet</option>
+            </select>
+          </div>
+          <div style="width:220px">
+            <label class="small">Max columns (auto)</label>
+            <input type="number" id="maxCols" value="50" />
+          </div>
+        </div>
+
+        <div style="margin-top:10px" class="optionRow">
+          <label class="small">Data types detection</label>
+          <select id="typeDetect" class="select">
+            <option value="auto" selected>Auto (number/date)</option>
+            <option value="text">Treat all as text</option>
+          </select>
+          <label class="small"><input type="checkbox" id="headerHeuristic" checked> First row as header</label>
+        </div>
+
+        <div style="margin-top:10px" class="optionRow">
+          <label class="small">Output format</label>
+          <select id="outFormat" class="select">
+            <option value="xlsx" selected>XLSX</option>
+            <option value="csv">CSV (multi-file ZIP)</option>
+          </select>
+          <label class="small">Filename base</label>
+          <input type="text" id="baseName" value="extracted" />
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:8px;align-items:center;">
+          <button class="btn btn-primary" id="extractBtn">Convert PDF to Excel</button>
+          <button class="btn" id="previewFirstBtn">Detect & Preview Page 1</button>
+          <button class="btn" id="clearBtn">Clear</button>
+          <div style="margin-left:auto" class="small" id="infoLabel"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:12px">
+      <div class="card" style="flex:1 1 420px">
+        <div class="progress" id="progressWrap">
+          <div class="bar" id="progressBar"></div>
+        </div>
+        <div class="log" id="log">Ready.</div>
+      </div>
+
+      <div class="card" style="flex:1 1 700px">
+        <label class="small">Preview / Detected tables</label>
+        <div class="preview" id="previewArea">No preview yet.</div>
+      </div>
+    </div>
+    <!-- SEO Content -->
+    <pre id="log">Ready.</pre>
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
+
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
+    <section class="seo-content">
+      <h2>PDF to Excel Converter — RDroidApps Pro</h2>
+
+      <p>
+        Transforming PDF tables into editable Excel spreadsheets has never been easier with RDroidApps Pro's
+        client-side PDF to Excel converter. Whether you're dealing with digital PDFs or scanned documents, our tool
+        leverages advanced table detection algorithms and OCR technology to extract tabular data accurately and
+        efficiently.
+      </p>
+      <h2>Key Features</h2>
+      <ul>
+        <li><strong>Smart Table Detection:</strong> Our converter intelligently identifies table structures within PDF
+          files, ensuring that rows and columns are accurately mapped to Excel format.</li>
+        <li><strong>OCR Support:</strong> For scanned PDFs, our built-in OCR engine extracts text from images,
+          enabling table extraction even from non-digital documents.</li>
+        <li><strong>Multiple Extraction Modes:</strong> Choose to extract each table into separate sheets, merge all
+          tables per page, or combine everything into a single sheet based on your needs.</li>
+        <li><strong>Flexible Output Formats:</strong> Export your extracted data as XLSX files for full Excel
+          compatibility or as CSV files for easy data manipulation.</li>
+        <li><strong>Client-Side Processing:</strong> All conversions are performed directly in your browser, ensuring
+          your data remains private and secure without any server uploads.</li>
+      </ul>
+      <h2>How to Use the PDF to Excel Converter</h2>
+      <ol>
+        <li><strong>Upload Your PDF:</strong> Drag and drop your PDF file into the designated area or use the file
+          picker to select your document.</li>
+        <li><strong>Configure Extraction Settings:</strong> Choose whether to enable OCR for scanned documents, select
+          your preferred extraction mode, and specify the output format (XLSX or CSV).</li>
+        <li><strong>Preview Detected Tables:</strong> Use the preview feature to inspect how tables will be extracted
+          from your PDF.</li>
+        <li><strong>Convert and Download:</strong> Click the "Convert PDF to Excel" button to start the extraction
+          process. Once complete, download your Excel or CSV files directly to your device.</li>
+      </ol>
+      <h2>Why Choose RDroidApps Pro?</h2>
+      <p>
+        RDroidApps Pro offers a seamless and efficient solution for converting PDFs to Excel, combining ease of use
+        with powerful features. Our commitment to client-side processing ensures that your sensitive data remains
+        secure, while our advanced algorithms deliver high-quality results. Whether you're a business professional,
+        student, or researcher, our PDF to Excel converter is designed to meet your data extraction needs effectively.
+      </p>
+    </section><br>
+    <a href="/index.html#pdf-tools" class="nav-button home">🏠 Back to PDF Home</a>
+  </div>
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
+  <script>
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+    /* PDF → Excel PRO (client-side)
+       Approach:
+       - Use pdf.js to parse each page and extract text items with positions
+       - Cluster text items by Y coordinate to form rows, then by X for columns (heuristic)
+       - From clusters build 2D cell grid for each detected table group
+       - Offer OCR fallback: render page to canvas and run Tesseract to get text+box info
+       - Export using SheetJS (XLSX) or CSV (multiple files zipped)
+    */
+
+    const pickBtn = document.getElementById('pickBtn'), fileInput = document.getElementById('fileInput'), dropArea = document.getElementById('dropArea');
+    const useOCR = document.getElementById('useOCR'), visualHints = document.getElementById('visualHints');
+    const extractMode = document.getElementById('extractMode'), maxCols = document.getElementById('maxCols');
+    const typeDetect = document.getElementById('typeDetect'), headerHeuristic = document.getElementById('headerHeuristic');
+    const outFormat = document.getElementById('outFormat'), baseName = document.getElementById('baseName');
+    const extractBtn = document.getElementById('extractBtn'), previewFirstBtn = document.getElementById('previewFirstBtn'), clearBtn = document.getElementById('clearBtn');
+    const previewArea = document.getElementById('previewArea'), logEl = document.getElementById('log'), progressWrap = document.getElementById('progressWrap'), progressBar = document.getElementById('progressBar'), infoLabel = document.getElementById('infoLabel'), pageCountEl = document.getElementById('pageCount');
+
+    let pdfDoc = null, pdfBytes = null, pageCount = 0;
+
+    function log(msg) { logEl.textContent += "\\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
+    function clearLog() { logEl.textContent = 'Ready.'; }
+    function setProgress(p) { progressWrap.style.display = p >= 0 ? 'block' : 'none'; progressBar.style.width = ((p || 0) * 100).toFixed(1) + '%'; }
+    function brief(ms = 20) { return new Promise(r => setTimeout(r, ms)); }
+
+    pickBtn.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', e => handleFile(e.target.files && e.target.files[0]));
+    dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.classList.add('dragover'); });
+    dropArea.addEventListener('dragleave', e => dropArea.classList.remove('dragover'));
+    dropArea.addEventListener('drop', e => { e.preventDefault(); dropArea.classList.remove('dragover'); if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]); });
+
+    async function handleFile(file) {
+      if (!file) return;
+      clearLog(); log('Loading PDF: ' + file.name);
+      pdfBytes = await file.arrayBuffer();
+      try {
+        if (!pdfjsLib.GlobalWorkerOptions.workerSrc) {
+          pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+        }
+        pdfDoc = await pdfjsLib.getDocument({ data: pdfBytes }).promise;
+        pageCount = pdfDoc.numPages;
+        pageCountEl.textContent = pageCount;
+        log('PDF loaded: ' + pageCount + ' pages.');
+        infoLabel.textContent = `${(file.size / 1024).toFixed(1)} KB`;
+      } catch (e) {
+        log('Failed to load PDF: ' + (e.message || e));
+        alert('Failed to load PDF.');
+      }
+    }
+
+    // Preview page and run detection; default page 1
+    previewFirstBtn.addEventListener('click', async () => {
+      if (!pdfDoc) { alert('Load a PDF first'); return; }
+      previewArea.innerHTML = 'Detecting tables on page 1...';
+      await detectAndPreviewPage(1);
+    });
+
+    // Main extraction
+    extractBtn.addEventListener('click', async () => {
+      if (!pdfDoc) { alert('Load a PDF first'); return; }
+      extractBtn.disabled = true;
+      setProgress(0);
+      clearLog();
+      log('Starting extraction...');
+      const mode = extractMode.value;
+      const pagesToProcess = pageCount;
+      const extractedTables = []; // {page, tableIndex, grid:[][], bbox}
+      for (let p = 1; p <= pagesToProcess; p++) {
+        log('Processing page ' + p + ' / ' + pagesToProcess);
+        const tables = await detectTablesOnPage(p);
+        log(`Detected ${tables.length} table(s) on page ${p}`);
+        for (let t = 0; t < tables.length; t++) {
+          extractedTables.push({ page: p, tableIndex: t, grid: tables[t].grid, bbox: tables[t].bbox });
+        }
+        setProgress(p / pagesToProcess);
+        await brief(50);
+      }
+
+      // Build workbook according to mode
+      if (extractedTables.length === 0) { alert('No tables detected. Try enabling OCR or manual inspection.'); extractBtn.disabled = false; setProgress(-1); return; }
+      log('Assembling workbook...');
+      const wb = XLSX.utils.book_new();
+      const csvFiles = []; // for CSV per table
+      if (mode === 'perTable') {
+        for (let i = 0; i < extractedTables.length; i++) {
+          const t = extractedTables[i];
+          const wsName = `P${t.page}_T${t.tableIndex + 1}`;
+          const aoa = t.grid;
+          const ws = XLSX.utils.aoa_to_sheet(aoa);
+          XLSX.utils.book_append_sheet(wb, ws, sanitizeSheetName(wsName));
+          if (outFormat.value === 'csv') {
+            const csv = XLSX.utils.sheet_to_csv(ws);
+            csvFiles.push({ name: `${baseName.value || 'extracted'}_${wsName}.csv`, text: csv });
+          }
+        }
+      } else if (mode === 'perPage') {
+        // group tables by page: merge tables side-by-side or stack vertically: we'll stack tables with blank row separator
+        const grouped = {};
+        extractedTables.forEach(t => { grouped[t.page] = grouped[t.page] || []; grouped[t.page].push(t.grid); });
+        for (const pageStr of Object.keys(grouped)) {
+          const arrays = grouped[pageStr];
+          // merge vertically
+          const merged = [];
+          arrays.forEach((grid, idx) => {
+            if (idx > 0) merged.push([]); // blank separator row
+            grid.forEach(r => merged.push(r));
+          });
+          const ws = XLSX.utils.aoa_to_sheet(merged);
+          const wsName = `Page_${pageStr}`;
+          XLSX.utils.book_append_sheet(wb, ws, sanitizeSheetName(wsName));
+          if (outFormat.value === 'csv') {
+            const csv = XLSX.utils.sheet_to_csv(ws);
+            csvFiles.push({ name: `${baseName.value || 'extracted'}_${wsName}.csv`, text: csv });
+          }
+        }
+      } else {
+        // single sheet: combine all tables sequentially with separators
+        const combined = [];
+        extractedTables.forEach((t, idx) => {
+          if (idx > 0) combined.push([]);
+          combined.push([`Page ${t.page} — Table ${t.tableIndex + 1}`]);
+          t.grid.forEach(r => combined.push(r));
+        });
+        const ws = XLSX.utils.aoa_to_sheet(combined);
+        XLSX.utils.book_append_sheet(wb, ws, sanitizeSheetName(baseName.value || 'Sheet1'));
+        if (outFormat.value === 'csv') {
+          const csv = XLSX.utils.sheet_to_csv(ws);
+          csvFiles.push({ name: `${baseName.value || 'extracted'}.csv`, text: csv });
+        }
+      }
+
+      // Write output
+      if (outFormat.value === 'xlsx') {
+        const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+        const blob = new Blob([wbout], { type: 'application/octet-stream' });
+        saveAs(blob, `${baseName.value || 'extracted'}.xlsx`);
+        log('XLSX generated.');
+      } else {
+        // CSV(s) -> zip
+        const zip = new JSZip();
+        for (const f of csvFiles) zip.file(f.name, f.text);
+        const zblob = await zip.generateAsync({ type: 'blob' });
+        saveAs(zblob, `${baseName.value || 'extracted'}.zip`);
+        log('CSV ZIP generated.');
+      }
+
+      setProgress(-1);
+      extractBtn.disabled = false;
+      log('Extraction finished. Tables extracted: ' + extractedTables.length);
+    });
+
+    // Clear
+    clearBtn.addEventListener('click', () => {
+      pdfDoc = null; pdfBytes = null; pageCount = 0; pageCountEl.textContent = '0'; previewArea.innerHTML = 'No preview yet.'; clearLog(); setProgress(-1); infoLabel.textContent = '';
+    });
+
+    // Utility: detect and preview tables on a single page
+    async function detectAndPreviewPage(pageNum) {
+      previewArea.innerHTML = 'Detecting...';
+      const tables = await detectTablesOnPage(pageNum, { renderPreview: true });
+      if (tables.length === 0) { previewArea.innerHTML = 'No tables detected on this page.'; return; }
+      // show first table preview
+      const first = tables[0];
+      const tableHtml = gridToHtml(first.grid);
+      previewArea.innerHTML = `<div><strong>Detected ${tables.length} table(s) — showing first</strong></div>` + tableHtml;
+    }
+
+    // Core: detect tables on page
+    async function detectTablesOnPage(pageNum, opts = { renderPreview: false }) {
+      // two paths:
+      // 1) If useOCR.checked -> render page canvas + Tesseract.getBoxes (words with bbox)
+      // 2) Else -> textContent from pdf.js (items with transform) and use their positions
+      if (useOCR.checked) {
+        log('Using OCR for page ' + pageNum);
+        const canvas = await renderPageToCanvas(pageNum, 2.0); // higher scale for OCR
+        const ocrResult = await Tesseract.recognize(canvas, 'eng', { logger: m => {/*progress*/ } });
+        // Tesseract.js doesn't return box positions easily with high reliability via recognize(); but we can use getWords via .data.words
+        const words = ocrResult.data.words || [];
+        // convert words into items {text, x, y, w, h}
+        const items = words.map(w => ({ str: w.text.trim(), x: w.bbox.x0, y: w.bbox.y0, w: w.bbox.x1 - w.bbox.x0, h: w.bbox.y1 - w.bbox.y0 }));
+        return clusterItemsToTables(items, canvas.width, canvas.height, opts);
+      } else {
+        // pdf.js textContent path
+        const page = await pdfDoc.getPage(pageNum);
+        const viewport = page.getViewport({ scale: 1.5 });
+        const textContent = await page.getTextContent();
+        // each item: {str, transform, width, height, fontName}
+        // compute item positions with transform: [a,b,c,d,e,f] where e,f are x,y
+        const items = textContent.items.map(it => {
+          const tr = it.transform;
+          const x = tr[4];
+          const y = tr[5];
+          // approximate width: use it.width (in em) scaled by fontSize if available
+          const fontSize = Math.hypot(tr[0], tr[1]);
+          const w = (it.width || 0) * fontSize;
+          const h = fontSize;
+          return { str: it.str.trim(), x, y, w, h };
+        }).filter(i => i.str);
+        // Determine page dimensions using viewport
+        const pageWidth = viewport.width, pageHeight = viewport.height;
+        return clusterItemsToTables(items, pageWidth, pageHeight, opts);
+      }
+    }
+
+    // Render page to canvas (scale param)
+    async function renderPageToCanvas(pageNum, scale = 1.5) {
+      const page = await pdfDoc.getPage(pageNum);
+      const vp = page.getViewport({ scale });
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.round(vp.width);
+      canvas.height = Math.round(vp.height);
+      const ctx = canvas.getContext('2d');
+      await page.render({ canvasContext: ctx, viewport: vp }).promise;
+      return canvas;
+    }
+
+    // Cluster text items into table(s) using Y clustering -> rows, then X columns
+    function clusterItemsToTables(items, pageW, pageH, opts) {
+      if (!items || items.length === 0) return [];
+      // normalize coordinates: pdf.js y is baseline from bottom sometimes; items may be in same coordinate. We'll use raw values and cluster by near y.
+      // Build Y clusters (rows)
+      // Sort by y ascending
+      items.sort((a, b) => a.y - b.y);
+      // Compute y gaps to decide row boundaries
+      const rows = [];
+      let current = [];
+      let lastY = null;
+      const yThreshold = estimateYThreshold(items);
+      for (const it of items) {
+        if (lastY === null) { current.push(it); lastY = it.y; continue; }
+        if (Math.abs(it.y - lastY) <= yThreshold) {
+          current.push(it);
+          lastY = (lastY + it.y) / 2;
+        } else {
+          rows.push(current);
+          current = [it];
+          lastY = it.y;
+        }
+      }
+      if (current.length) rows.push(current);
+
+      // For each continuous block of rows that are horizontally aligned (forming table), attempt to detect table groups.
+      // Heuristic: find groups of rows where items x positions are relatively similar (columns)
+      // Build a grid candidate by mapping unique X positions (column centers)
+      const tables = [];
+      // Slide window to find contiguous row groups (tables)
+      let i = 0;
+      while (i < rows.length) {
+        // expand group until gap between row groups > larger threshold -> end table
+        let group = [rows[i]];
+        let j = i + 1;
+        while (j < rows.length) {
+          // check avg y gap
+          const gap = Math.abs(rows[j][0].y - rows[j - 1][0].y);
+          if (gap > yThreshold * 3) { break; } // big gap separates tables
+          group.push(rows[j]);
+          j++;
+        }
+        // From group derive columns by collecting x positions of items and clustering them
+        const colCenters = [];
+        const allItems = [].concat(...group);
+        // compute candidate centers from item.x
+        const xs = allItems.map(it => it.x);
+        xs.sort((a, b) => a - b);
+        // cluster xs with small threshold
+        const xClusters = [];
+        const xThresh = estimateXThreshold(allItems);
+        let currCluster = [xs[0]];
+        for (let k = 1; k < xs.length; k++) {
+          if (Math.abs(xs[k] - xs[k - 1]) <= xThresh) currCluster.push(xs[k]);
+          else { xClusters.push(currCluster); currCluster = [xs[k]]; }
+        }
+        if (currCluster.length) xClusters.push(currCluster);
+        const centers = xClusters.map(c => c.reduce((s, v) => s + v, 0) / c.length);
+        // build grid rows x cols
+        const grid = [];
+        for (const row of group) {
+          // for this row, create columns with nearest center matching or blank
+          const rowCells = new Array(centers.length).fill('');
+          for (const it of row) {
+            // choose nearest center
+            let best = 0; let bestD = Infinity;
+            for (let ci = 0; ci < centers.length; ci++) {
+              const d = Math.abs(it.x - centers[ci]);
+              if (d < bestD) { bestD = d; best = ci; }
+            }
+            // append text to cell (space separated)
+            if (rowCells[best]) rowCells[best] += ' ' + it.str;
+            else rowCells[best] = it.str;
+          }
+          grid.push(rowCells);
+        }
+        // sanitize grid: trim cells and ensure uniform width
+        const maxC = Math.min(parseInt(maxCols.value) || 50, centers.length || (grid[0] ? grid[0].length : 0));
+        for (let r = 0; r < grid.length; r++) {
+          for (let c = 0; c < maxC; c++) {
+            if (!grid[r][c]) grid[r][c] = '';
+            else grid[r][c] = grid[r][c].replace(/\s+/g, ' ').trim();
+          }
+          // if row shorter than maxC, pad
+          while (grid[r].length < maxC) grid[r].push('');
+        }
+        // Heuristic: if grid has at least 2 columns and >=2 rows with some non-empty, treat as table
+        const nonEmptyCount = grid.reduce((s, row) => s + row.filter(x => x).length, 0);
+        if (centers.length >= 2 && grid.length >= 2 && nonEmptyCount >= Math.max(3, grid.length)) {
+          tables.push({ grid, bbox: estimateBBox(group) });
+        } else {
+          // fallback: sometimes single-column lists — ignore unless OCR strong
+          // If OCR used, consider single-column table as well
+          if (useOCR.checked && nonEmptyCount >= 3) {
+            tables.push({ grid, bbox: estimateBBox(group) });
+          }
+        }
+        i = j;
+      }
+
+      // Optionally render preview overlay (boxes)
+      if (opts.renderPreview && visualHints.checked) {
+        // build preview HTML table for each detected table
+        // handled by caller
+      }
+      return tables;
+    }
+
+    // heuristics helpers
+    function estimateYThreshold(items) {
+      if (!items.length) return 5;
+      // median height
+      const hs = items.map(i => i.h || 10).sort((a, b) => a - b);
+      const m = hs[Math.floor(hs.length / 2)] || 10;
+      return Math.max(4, m * 0.8);
+    }
+    function estimateXThreshold(items) {
+      if (!items.length) return 10;
+      const ws = items.map(i => i.w || 20).sort((a, b) => a - b);
+      const m = ws[Math.floor(ws.length / 2)] || 20;
+      return Math.max(8, m * 0.8);
+    }
+    function estimateBBox(rowsGroup) {
+      // rowsGroup is array of rows, each row array of items
+      let minX = Infinity, minY = Infinity, maxX = 0, maxY = 0;
+      rowsGroup.forEach(row => row.forEach(it => {
+        minX = Math.min(minX, it.x);
+        minY = Math.min(minY, it.y);
+        maxX = Math.max(maxX, it.x + (it.w || 0));
+        maxY = Math.max(maxY, it.y + (it.h || 0));
+      }));
+      return { x: minX, y: minY, w: Math.max(0, maxX - minX), h: Math.max(0, maxY - minY) };
+    }
+
+    // convert grid (2D array) to HTML for preview
+    function gridToHtml(grid) {
+      const table = document.createElement('table'); table.className = 'table-preview';
+      const tbody = document.createElement('tbody');
+      grid.forEach((row, ri) => {
+        const tr = document.createElement('tr');
+        row.forEach((cell, ci) => {
+          const td = document.createElement('td');
+          if (ri === 0 && headerHeuristic.checked) td.style.fontWeight = '700';
+          td.textContent = cell;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      return table.outerHTML;
+    }
+
+    // sanitize sheet name
+    function sanitizeSheetName(s) {
+      return s.replace(/[\[\]\*\/\\\?\:]/g, '_').slice(0, 31);
+    }
+
+    // Optional: run quick detection and show list of table previews for a page
+    async function detectAndPreviewAllOnPage(pageNum) {
+      const tables = await detectTablesOnPage(pageNum);
+      if (tables.length === 0) { previewArea.innerHTML = 'No tables detected.'; return; }
+      let html = `<div>Detected ${tables.length} table(s) on page ${pageNum}:</div>`;
+      tables.forEach((t, i) => {
+        html += `<div style="margin-top:8px"><strong>Table ${i + 1}</strong>` + gridToHtml(t.grid) + `</div>`;
+      });
+      previewArea.innerHTML = html;
+    }
+
+    // detect tables and also optionally show preview (used by previewFirstBtn)
+    async function detectAndPreviewPage(pageNum) {
+      const tables = await detectTablesOnPage(pageNum);
+      if (!tables || tables.length === 0) { previewArea.innerHTML = 'No tables detected on this page.'; return; }
+      const htmlParts = [];
+      for (let i = 0; i < tables.length; i++) {
+        htmlParts.push(`<div style="margin-top:8px"><strong>Table ${i + 1}</strong>` + gridToHtml(tables[i].grid) + `</div>`);
+      }
+      previewArea.innerHTML = htmlParts.join('');
+    }
+
+    // Convenience wrapper for detectTablesOnPage with OCR or pdf.js path
+    async function detectTablesOnPage(pageNum, opts = { renderPreview: false }) {
+      try {
+        return await detectTablesOnPage_core(pageNum, opts);
+      } catch (e) {
+        log('Detection failed on page ' + pageNum + ': ' + (e.message || e));
+        return [];
+      }
+    }
+
+    // Core wrapper to allow recursion naming separation
+    async function detectTablesOnPage_core(pageNum, opts) {
+      // If useOCR, call OCR path
+      if (useOCR.checked) {
+        const canvas = await renderPageToCanvas(pageNum, 2.0);
+        // show visual preview canvas if requested
+        if (opts.renderPreview && visualHints.checked) {
+          previewArea.innerHTML = '';
+          const img = document.createElement('img'); img.src = canvas.toDataURL(); img.style.maxWidth = '100%';
+          previewArea.appendChild(img);
+        }
+        // OCR
+        log('Running Tesseract OCR (scanned PDF detected)...');
+        log('Note: OCR may take 30-60 seconds per page depending on image complexity.');
+
+        let ocrStartTime = Date.now();
+        let lastLoggedPercent = -1;
+
+        const res = await Tesseract.recognize(canvas, 'eng', {
+          logger: m => {
+            if (m.status === 'recognizing text') {
+              const progress = m.progress || 0;
+              setProgress(progress);
+
+              const percent = Math.round(progress * 100);
+
+              // फक्त नवीन टक्केवारी आली तर लॉग करा
+              if (percent !== lastLoggedPercent) {
+                const elapsedSeconds = Math.round((Date.now() - ocrStartTime) / 1000);
+
+                if (percent === 0) {
+                  log('Starting text recognition...');
+                } else if (percent === 100) {
+                  log('OCR completed successfully!');
+                } else {
+                  // प्रत्येक 25% वर किंवा प्रत्येक 5 सेकंदांनी लॉग
+                  if (percent % 25 === 0 || elapsedSeconds % 5 === 0) {
+                    log(`OCR: ${percent}% complete (${elapsedSeconds}s elapsed)`);
+                  }
+                }
+
+                lastLoggedPercent = percent;
+              }
+            }
+
+            // इतर status messages देखील लॉग करा
+            if (m.status && m.status !== 'recognizing text') {
+              log(`OCR: ${m.status}`);
+            }
+          }
+        });
+
+        const ocrTime = ((Date.now() - ocrStartTime) / 1000).toFixed(1);
+        log(`OCR finished in ${ocrTime} seconds. Found ${res.data.words?.length || 0} text segments.`);
+        setProgress(-1);
+        const words = res.data.words || [];
+        const items = words.map(w => ({ str: w.text.trim(), x: w.bbox.x0, y: w.bbox.y0, w: w.bbox.x1 - w.bbox.x0, h: w.bbox.y1 - w.bbox.y0 }));
+        return clusterItemsToTables(items, canvas.width, canvas.height, opts);
+      } else {
+        // pdf.js text extraction path
+        const page = await pdfDoc.getPage(pageNum);
+        const viewport = page.getViewport({ scale: 1.5 });
+        const textContent = await page.getTextContent();
+        const items = textContent.items.map(it => {
+          const tr = it.transform;
+          const x = tr[4];
+          const y = tr[5];
+          const fontSize = Math.hypot(tr[0], tr[1]) || 12;
+          const w = (it.width || 0) * fontSize;
+          const h = fontSize;
+          return { str: it.str.trim(), x, y, w, h };
+        }).filter(i => i.str);
+        // Optionally show page snapshot with highlights
+        if (opts.renderPreview && visualHints.checked) {
+          const canvas = await renderPageToCanvas(pageNum, 1.5);
+          const ctx = canvas.getContext('2d');
+          // overlay bounding boxes for each item cluster (coarse)
+          ctx.strokeStyle = 'rgba(10,163,127,0.8)';
+          ctx.lineWidth = 1;
+          const tables = clusterItemsToTables(items, viewport.width, viewport.height, { renderPreview: false });
+          tables.forEach(t => {
+            const b = t.bbox;
+            if (b.w > 0 && b.h > 0) {
+              ctx.strokeRect(b.x, b.y - b.h, b.w, b.h); // pdf.js coordinates might require adjust
+            }
+          });
+          previewArea.innerHTML = ''; const img = document.createElement('img'); img.src = canvas.toDataURL(); img.style.maxWidth = '100%'; previewArea.appendChild(img);
+        }
+        return clusterItemsToTables(items, viewport.width, viewport.height, opts);
+      }
+    }
+
+    // load optional PDFLib for merging if needed (not used heavily here)
+    (async function loadOptionalPDFLib() {
+      try {
+        const src = 'https://unpkg.com/pdf-lib/dist/pdf-lib.min.js';
+        await new Promise((res, rej) => { const s = document.createElement('script'); s.src = src; s.onload = res; s.onerror = rej; document.head.appendChild(s); });
+        log('Optional PDFLib loaded.');
+      } catch (e) {
+        log('PDFLib optional not loaded.');
+      }
+    })();
+
+  </script>
+
+  <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

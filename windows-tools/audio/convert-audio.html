@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Site-wide script -->
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Convert Audio is a web-based tool that allows users to change the sample rate of audio files. It supports various audio formats and provides an easy preview and download option for the converted audio." />
+    <meta name="keywords"
+        content="Convert Audio, Change Audio Sample Rate, Audio File Conversion, Online Audio Converter, RDroid Apps" />
+    <title>Convert Audio — RDroid Apps</title>
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/audio/convert-audio.html" />
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Convert Audio — RDroid Apps" />
+  <meta property="og:description" content="Convert Audio is a web-based tool that allows users to change the sample rate of audio files. It supports various audio formats and provides an easy preview and download option for the converted audio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/audio/convert-audio.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Convert Audio — RDroid Apps" />
+  <meta name="twitter:description" content="Convert Audio is a web-based tool that allows users to change the sample rate of audio files. It supports various audio formats and provides an easy preview and download option for the converted audio." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
+
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Convert Audio — RDroid Apps",
+    "description": "Convert Audio is a web-based tool that allows users to change the sample rate of audio files. It supports various audio formats and provides an easy preview and download option for the converted audio.",
+    "url": "https://rdroidapps.com/windows-tools/audio/convert-audio.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <section class="hero">
+        <h1>Convert Audio</h1>
+        <h3>
+            Convert audio by changing sample rate.<br>
+            <b>Note:</b> Browser exports WAV only (MP3 not supported).
+        </h3>
+    </section>
+    <section class="tool-section">
+        <div class="card">
+            <button class="btn btn-ghost" id="pick"
+                style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload
+                Audio</button>
+            <input type="file" id="file" accept="audio/*" hidden>
+
+            <div class="row">
+                <h3>Input Audio</h3>
+                <pre id="inputInfo">No file loaded.</pre>
+            </div>
+
+            <div class="row">
+                <label>Output Sample Rate</label>
+                <select id="rate">
+                    <option value="44100">44100 Hz (CD)</option>
+                    <option value="48000">48000 Hz (Studio)</option>
+                </select>
+            </div>
+
+            <div class="actions">
+                <button class="btn" id="previewBtn">▶ Preview</button>
+                <button class="btn btn-primary" id="convertBtn" disabled>Convert</button>
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
+                <a id="download" class="btn" style="display:none">Download</a>
+            </div>
+
+            <pre id="status">Upload an audio file.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+            <section class="seo-content">
+                <h2>About Convert Audio Tool</h2>
+                <p>
+                    The Convert Audio tool is a web-based application designed to help users change the sample rate of
+                    their audio files easily. Sample rate conversion is essential for various audio applications,
+                    including music production, podcasting, and general audio playback.
+                </p>
+                <h2>Key Features</h2>
+                <ul>
+                    <li><b>Sample Rate Options:</b> Users can choose from common sample rates such as 44100 Hz (CD
+                        quality) and 48000 Hz (studio quality) to suit their needs.</li>
+                    <li><b>Easy Upload and Preview:</b> The tool allows users to upload audio files quickly and preview
+                        the converted audio before downloading.</li>
+                    <li><b>WAV Export:</b> The tool exports the converted audio in WAV format, ensuring high-quality
+                        output. Note that MP3 export is not supported due to browser limitations.</li>
+                    <li><b>User-Friendly Interface:</b> The intuitive design makes it easy for users of all skill levels
+                        to navigate and use the tool effectively.</li>
+                </ul>
+                <h2>How to Use the Convert Audio Tool</h2>
+                <ol>
+                    <li>Click on the "Upload Audio" button to select an audio file from your device.</li>
+                    <li>Choose the desired output sample rate from the dropdown menu.</li>
+                    <li>Click the "Preview" button to listen to the converted audio.</li>
+                    <li>If satisfied, click the "Convert" button to process the audio.</li>
+                    <li>Once conversion is complete, click the "Download" button to save the converted WAV file to your
+                        device.</li>
+                </ol>
+                <h2>Conclusion</h2>
+                <p>
+                    The Convert Audio tool is a convenient solution for anyone looking to change the sample rate of
+                    their audio files without needing specialized software. Its ease of use and effective functionality
+                    make it a valuable resource for audio enthusiasts and professionals alike.
+                </p>
+            </section>
+        </div><br>
+        <a href="/index.html#audio-tools" class="nav-button home">🏠 Back to Audio Home</a>
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('drawer').classList.toggle('open');
+        }
+        const ctx = new AudioContext();
+        let buffer = null;
+        let previewSrc = null;
+
+        const pick = document.getElementById("pick");
+        const file = document.getElementById("file");
+        const rateSel = document.getElementById("rate");
+        const inputInfo = document.getElementById("inputInfo");
+        const previewBtn = document.getElementById("previewBtn");
+        const convertBtn = document.getElementById("convertBtn");
+        const resetBtn = document.getElementById("resetBtn");
+        const download = document.getElementById("download");
+        const status = document.getElementById("status");
+
+        pick.onclick = () => file.click();
+
+        file.onchange = async () => {
+            status.textContent = "Loading audio…";
+            buffer = await ctx.decodeAudioData(await file.files[0].arrayBuffer());
+
+            inputInfo.textContent =
+                "Duration: " + buffer.duration.toFixed(2) + " sec\n" +
+                "Channels: " + buffer.numberOfChannels + "\n" +
+                "Sample Rate: " + buffer.sampleRate + " Hz";
+
+            convertBtn.disabled = false;
+            status.textContent = "Audio loaded.";
+        };
+
+        previewBtn.onclick = () => {
+            if (!buffer) return alert("Upload audio first");
+            if (previewSrc) previewSrc.stop();
+
+            previewSrc = ctx.createBufferSource();
+            previewSrc.buffer = buffer;
+            previewSrc.connect(ctx.destination);
+            previewSrc.start();
+        };
+
+        convertBtn.onclick = async () => {
+            if (!buffer) return;
+
+            convertBtn.disabled = true;
+            status.textContent = "Converting…";
+
+            const outRate = parseInt(rateSel.value, 10);
+            const newLength = Math.floor(buffer.duration * outRate);
+
+            const off = new OfflineAudioContext(
+                buffer.numberOfChannels,
+                newLength,
+                outRate
+            );
+
+            const src = off.createBufferSource();
+            src.buffer = buffer;
+            src.connect(off.destination);
+            src.start();
+
+            const out = await off.startRendering();
+            const blob = new Blob([audioBufferToWav(out)], { type: "audio/wav" });
+
+            download.href = URL.createObjectURL(blob);
+            download.download = "converted-" + outRate + "Hz.wav";
+            download.style.display = "inline-block";
+
+            status.textContent = "Conversion complete.";
+            convertBtn.disabled = false;
+        };
+
+        resetBtn.onclick = () => {
+            if (previewSrc) previewSrc.stop();
+            buffer = null;
+            inputInfo.textContent = "No file loaded.";
+            status.textContent = "Reset.";
+            convertBtn.disabled = true;
+            download.style.display = "none";
+        };
+
+        function audioBufferToWav(buffer) {
+            const ch = buffer.numberOfChannels;
+            const len = buffer.length * ch * 2 + 44;
+            const view = new DataView(new ArrayBuffer(len));
+            let p = 0;
+            const w = s => { for (let i = 0; i < s.length; i++) view.setUint8(p++, s.charCodeAt(i)); };
+
+            w("RIFF"); view.setUint32(p, 36 + buffer.length * ch * 2, true); p += 4;
+            w("WAVEfmt "); view.setUint32(p, 16, true); p += 4;
+            view.setUint16(p, 1, true); p += 2;
+            view.setUint16(p, ch, true); p += 2;
+            view.setUint32(p, buffer.sampleRate, true); p += 4;
+            view.setUint32(p, buffer.sampleRate * ch * 2, true); p += 4;
+            view.setUint16(p, ch * 2, true); p += 2;
+            view.setUint16(p, 16, true); p += 2;
+            w("data"); view.setUint32(p, buffer.length * ch * 2, true); p += 4;
+
+            for (let i = 0; i < buffer.length; i++) {
+                for (let c = 0; c < ch; c++) {
+                    let s = Math.max(-1, Math.min(1, buffer.getChannelData(c)[i]));
+                    view.setInt16(p, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+                    p += 2;
+                }
+            }
+            return view;
+        }
+    </script>
+    <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

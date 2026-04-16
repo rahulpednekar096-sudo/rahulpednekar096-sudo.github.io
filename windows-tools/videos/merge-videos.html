@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Merge Videos Online – Real FFmpeg.wasm Merger | RDroid Apps</title>
+    <meta name="description"
+        content="Merge multiple video files into one using FFmpeg.wasm – client‑side, no upload, no watermark. Drag‑drop, reorder, auto‑rename." />
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/video/merge-videos.html">
+
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Merge Videos Online – Real FFmpeg.wasm Merger | RDroid Apps" />
+  <meta property="og:description" content="Merge multiple video files into one using FFmpeg.wasm – client‑side, no upload, no watermark. Drag‑drop, reorder, auto‑rename." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/video/merge-videos.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Merge Videos Online – Real FFmpeg.wasm Merger | RDroid Apps" />
+  <meta name="twitter:description" content="Merge multiple video files into one using FFmpeg.wasm – client‑side, no upload, no watermark. Drag‑drop, reorder, auto‑rename." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+    <!-- jQuery for loading components (if you use header/footer) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Your main stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
+
+    <!-- FFmpeg.wasm (UMD build) -->
+
+    <style>
+        /* Additional video‑specific tweaks */
+        .trim-inputs {
+            display: flex;
+            gap: 8px;
+            margin-top: 6px;
+            flex-wrap: wrap;
+        }
+
+        .trim-inputs input {
+            width: 80px;
+            padding: 4px 6px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: var(--panel);
+            color: var(--text);
+        }
+
+        .format-selector {
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .format-selector select {
+            padding: 6px 12px;
+            border-radius: 8px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .file-item .thumb {
+            width: 100px;
+            height: 60px;
+            object-fit: cover;
+            background: #000;
+            border-radius: 6px;
+        }
+
+        /* Progress inside bar */
+        #progressText {
+            margin-left: 8px;
+            font-size: 0.9rem;
+        }
+    </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Merge Videos Online – Real FFmpeg.wasm Merger | RDroid Apps",
+    "description": "Merge multiple video files into one using FFmpeg.wasm – client‑side, no upload, no watermark. Drag‑drop, reorder, auto‑rename.",
+    "url": "https://rdroidapps.com/windows-tools/video/merge-videos.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file – adjust path if needed) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load header/footer components (optional) -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <section class="hero">
+        <h1>Merge Videos — Real FFmpeg.wasm (Client‑Side)</h1>
+        <p class="lead">Drop videos, reorder, choose output format. FFmpeg runs entirely in your browser – no upload, no
+            watermark, free.</p>
+    </section>
+
+    <section class="tool-section">
+        <div class="card">
+            <div class="drop" id="dropArea">Drop videos here or <button class="btn btn-ghost" id="pickBtn">Choose
+                    files</button></div>
+            <input type="file" id="fileInput" accept="video/*" multiple />
+
+            <div class="controls">
+                <div class="format-selector">
+                    <span style="color: var(--text);">Output format:</span>
+                    <select id="outputFormat">
+                        <option value="mp4">MP4 (H.264)</option>
+                        <option value="webm">WebM (VP9)</option>
+                        <option value="avi">AVI (may re‑encode)</option>
+                    </select>
+                    <label style="display:flex;align-items:center;gap:8px; margin-left:auto;">
+                        <input type="checkbox" id="optFastConcat" checked> Fast concat (same codec)
+                    </label>
+                </div>
+                <label style="margin-left:auto" class="muted">Tip: drag items to reorder</label>
+            </div>
+
+            <div class="files-list" id="filesList" aria-live="polite"></div>
+
+            <div style="margin-top:12px; display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+                <button class="btn btn-primary" id="mergeBtn">Merge Videos with FFmpeg</button>
+                <button class="btn btn-ghost" id="clearBtn">Clear</button>
+                <a class="btn" id="downloadLink" style="display:none"></a>
+                <div style="margin-left:auto" id="statusText" class="muted">FFmpeg not loaded yet</div>
+            </div>
+
+            <div class="progress" id="progressWrap" style="display:none;">
+                <div class="bar" id="progressBar" style="width:0%"></div>
+            </div>
+            <div id="progressText" class="muted" style="text-align:center;"></div>
+
+            <pre id="log"
+                style="margin-top:12px;background:#001221a1;padding:12px;border-radius:8px;color:#9fbfb0;max-height:240px;overflow:auto">Initializing FFmpeg.wasm... (first load may take a few seconds)</pre>
+
+            <div class="help">
+                <span class="small">Note: Merging uses FFmpeg.wasm. Large files may be slow or fail due to browser
+                    memory limits. Works best with short clips.</span>
+            </div>
+
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+
+            <!-- SEO Content -->
+            <section class="seo-content">
+                <h2>Real Video Merger with FFmpeg.wasm</h2>
+                <p>This tool uses the actual FFmpeg library compiled to WebAssembly, running 100% in your browser. Your
+                    videos never leave your device – no privacy concerns, no upload time, no watermarks.</p>
+                <h3>How it works:</h3>
+                <ul>
+                    <li>FFmpeg.wasm is loaded once (cached afterwards).</li>
+                    <li>Your videos are read directly into memory and processed locally.</li>
+                    <li>The merged video is downloaded as a new file with an auto‑generated name.</li>
+                </ul>
+                <p>Because it’s real FFmpeg, you get the same quality as command‑line tools. The “fast concat” option
+                    attempts to copy streams without re‑encoding (much faster, but requires identical codec/resolution).
+                    Uncheck it to force a full re‑encode (compatible but slower).</p>
+            </section>
+        </div>
+        <br>
+        <a href="/index.html#video-tools" class="nav-button home">🏠 Back to Video Tools</a>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer-container"></div>
+
+    <div>
+        <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up">Back to Top</i></button>
+    </div>
+
+    <script type="module">
+        // ---------- Real FFmpeg.wasm Video Merger ----------
+        import { FFmpeg } from 'https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/+esm';
+
+        // DOM elements
+        const fileInput = document.getElementById('fileInput');
+        const pickBtn = document.getElementById('pickBtn');
+        const dropArea = document.getElementById('dropArea');
+        const filesList = document.getElementById('filesList');
+        const mergeBtn = document.getElementById('mergeBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const downloadLink = document.getElementById('downloadLink');
+        const progressWrap = document.getElementById('progressWrap');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        const logEl = document.getElementById('log');
+        const statusText = document.getElementById('statusText');
+        const outputFormat = document.getElementById('outputFormat');
+        const optFastConcat = document.getElementById('optFastConcat');
+
+        let filesState = [];          // { file, id, name, thumbDataUrl }
+        let ffmpeg = null;
+
+        // ---------- FFmpeg initialisation ----------
+        async function initFFmpeg() {
+            if (ffmpeg) return ffmpeg;
+            log('Loading FFmpeg.wasm (first time may take 10‑20s)...');
+            statusText.textContent = 'Loading FFmpeg...';
+            try {
+                ffmpeg = new FFmpeg();
+                // Listen to progress events
+                ffmpeg.on('progress', ({ progress, time }) => {
+                    const percent = Math.round(progress * 100);
+                    setProgress(progress);
+                    progressText.textContent = `Processing: ${percent}% (${(time / 1e6).toFixed(1)}s)`;
+                });
+                ffmpeg.on('log', ({ message }) => {
+                    if (message.includes('frame') || message.includes('speed')) return; // too noisy
+                    log(`[ffmpeg] ${message}`);
+                });
+                await ffmpeg.load({
+                    coreURL: "https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.js",
+                    wasmURL: "https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.wasm",
+                    workerURL: "https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd/ffmpeg-core.worker.js"
+                });
+                log('FFmpeg loaded successfully.');
+                statusText.textContent = 'FFmpeg ready.';
+            } catch (err) {
+                log('FFmpeg load error: ' + err.message);
+                statusText.textContent = 'FFmpeg failed to load.';
+                throw err;
+            }
+            return ffmpeg;
+        }
+
+        // ---------- Helper functions ----------
+        function log(msg) { logEl.textContent += msg + '\n'; logEl.scrollTop = logEl.scrollHeight; }
+        function clearLog() { logEl.textContent = ''; }
+        function uid() { return Math.random().toString(36).slice(2, 9); }
+        function setProgress(p) { progressBar.style.width = Math.min(1, Math.max(0, p)) * 100 + '%'; }
+
+        // UI: add files via drop or picker
+        pickBtn.addEventListener('click', () => fileInput.click());
+        dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f'; });
+        dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = '#202426');
+        dropArea.addEventListener('drop', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#202426';
+            if (e.dataTransfer.files.length) addFiles(e.dataTransfer.files);
+        });
+        fileInput.addEventListener('change', () => addFiles(fileInput.files));
+        clearBtn.addEventListener('click', () => { filesState = []; renderList(); downloadLink.style.display = 'none'; log('Cleared'); });
+
+        // Add files and generate thumbnails
+        async function addFiles(fileList) {
+            clearLog();
+            for (const f of fileList) {
+                if (!f.type.startsWith('video/')) { log('Skipped non‑video: ' + f.name); continue; }
+                const id = uid();
+                const entry = { file: f, id, name: f.name, thumbDataUrl: null };
+                filesState.push(entry);
+                renderList();
+                // Generate thumbnail (first frame) – optional but nice
+                generateThumbnail(entry);
+            }
+            renderList();
+            log(`Added ${fileList.length} video(s).`);
+        }
+
+        function generateThumbnail(entry) {
+            const url = URL.createObjectURL(entry.file);
+            const video = document.createElement('video');
+            video.preload = 'metadata';
+            video.onloadeddata = () => {
+                video.currentTime = Math.min(0.5, video.duration / 2);
+            };
+            video.onseeked = () => {
+                const canvas = document.createElement('canvas');
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+                entry.thumbDataUrl = canvas.toDataURL('image/jpeg', 0.5);
+                URL.revokeObjectURL(url);
+                renderList(); // refresh
+            };
+            video.onerror = () => {
+                URL.revokeObjectURL(url);
+            };
+            video.src = url;
+        }
+
+        // Render file list with drag handles and remove buttons
+        function renderList() {
+            filesList.innerHTML = '';
+            filesState.forEach((e) => {
+                const div = document.createElement('div');
+                div.className = 'file-item';
+                div.draggable = true;
+                div.dataset.id = e.id;
+
+                div.addEventListener('dragstart', (ev) => {
+                    ev.dataTransfer.setData('text/plain', e.id);
+                    ev.currentTarget.style.opacity = '0.6';
+                });
+                div.addEventListener('dragend', (ev) => ev.currentTarget.style.opacity = '1');
+                div.addEventListener('dragover', ev => ev.preventDefault());
+                div.addEventListener('drop', (ev) => {
+                    ev.preventDefault();
+                    const fromId = ev.dataTransfer.getData('text/plain');
+                    const toId = e.id;
+                    reorder(fromId, toId);
+                });
+
+                const thumb = document.createElement('img');
+                thumb.className = 'thumb';
+                thumb.src = e.thumbDataUrl || 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAm0lEQVR4nO3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+BoqIAAE99E9dAAAAAElFTkSuQmCC';
+                div.appendChild(thumb);
+
+                const meta = document.createElement('div');
+                meta.className = 'file-meta';
+                meta.innerHTML = `<div><strong>${e.name}</strong></div>`;
+                div.appendChild(meta);
+
+                const actions = document.createElement('div');
+                actions.className = 'file-actions';
+                const dragHandle = document.createElement('div'); dragHandle.className = 'drag-handle muted'; dragHandle.textContent = '☰';
+                const removeBtn = document.createElement('button'); removeBtn.className = 'btn btn-ghost'; removeBtn.textContent = 'Remove';
+                removeBtn.addEventListener('click', () => {
+                    filesState = filesState.filter(x => x.id !== e.id);
+                    renderList();
+                });
+                actions.appendChild(dragHandle);
+                actions.appendChild(removeBtn);
+                div.appendChild(actions);
+                filesList.appendChild(div);
+            });
+        }
+
+        function reorder(fromId, toId) {
+            const fromIndex = filesState.findIndex(x => x.id === fromId);
+            const toIndex = filesState.findIndex(x => x.id === toId);
+            if (fromIndex < 0 || toIndex < 0) return;
+            const [item] = filesState.splice(fromIndex, 1);
+            filesState.splice(toIndex, 0, item);
+            renderList();
+        }
+
+        // ---------- Merge using FFmpeg ----------
+        mergeBtn.addEventListener('click', async () => {
+            if (!filesState.length) { alert('Add video files first'); return; }
+            try {
+                await initFFmpeg(); // ensure loaded
+            } catch (e) {
+                log('FFmpeg not available, cannot merge.');
+                return;
+            }
+
+            clearLog();
+            progressWrap.style.display = 'block';
+            setProgress(0);
+            progressText.textContent = 'Starting...';
+            downloadLink.style.display = 'none';
+            statusText.textContent = 'Merging...';
+
+            try {
+                // Prepare file system: write all input files into MEMFS
+                for (let i = 0; i < filesState.length; i++) {
+                    const entry = filesState[i];
+                    const fileName = `input_${i}.${getExtension(entry.name)}`; // keep original extension? better to use generic .mp4 for concat? we'll keep as original for concat demuxer to detect codec.
+                    // Actually for concat demuxer, file extension doesn't matter, but we keep to help ffmpeg.
+                    const data = new Uint8Array(await entry.file.arrayBuffer());
+                    ffmpeg.FS('writeFile', fileName, data);
+                    log(`Written ${fileName} (${(data.length / 1024 / 1024).toFixed(2)} MB)`);
+                }
+
+                // Build command
+                let outputFileName = `merged.${outputFormat.value}`;
+                let args = [];
+
+                if (optFastConcat.checked) {
+                    // Concat demuxer method (fast, same codec required)
+                    // Create a file list
+                    let listContent = '';
+                    for (let i = 0; i < filesState.length; i++) {
+                        // Use the exact filenames we wrote
+                        listContent += `file 'input_${i}.${getExtension(filesState[i].name)}'\n`;
+                    }
+                    ffmpeg.FS('writeFile', 'concat_list.txt', listContent);
+                    args = ['-f', 'concat', '-safe', '0', '-i', 'concat_list.txt', '-c', 'copy', outputFileName];
+                    log('Using fast concat (copy)');
+                } else {
+                    // Fallback: full re-encode with concat filter (works for any formats, but slower)
+                    // Build filter_complex: concat=n=filesState.length:v=1:a=1
+                    const filter = `concat=n=${filesState.length}:v=1:a=1[outv][outa]`;
+                    // Input files: -i input_0.ext -i input_1.ext ...
+                    for (let i = 0; i < filesState.length; i++) {
+                        args.push('-i', `input_${i}.${getExtension(filesState[i].name)}`);
+                    }
+                    args.push('-filter_complex', filter, '-map', '[outv]', '-map', '[outa]');
+                    // Add some encoding params to keep quality reasonable
+                    if (outputFormat.value === 'mp4') {
+                        args.push('-c:v', 'libx264', '-crf', '23', '-preset', 'fast', '-c:a', 'aac');
+                    } else if (outputFormat.value === 'webm') {
+                        args.push('-c:v', 'libvpx-vp9', '-crf', '30', '-b:v', '0', '-c:a', 'libopus');
+                    } else if (outputFormat.value === 'avi') {
+                        args.push('-c:v', 'mpeg4', '-q:v', '5', '-c:a', 'mp3');
+                    }
+                    args.push(outputFileName);
+                    log('Using re-encode concat (slower but compatible)');
+                }
+
+                // Execute ffmpeg
+                log('Running FFmpeg command: ffmpeg ' + args.join(' '));
+                await ffmpeg.exec(args);
+
+                // Read output file
+                const outputData = ffmpeg.FS('readFile', outputFileName);
+                const blob = new Blob([outputData.buffer], { type: 'video/' + outputFormat.value });
+                const url = URL.createObjectURL(blob);
+
+                // Auto-rename (same as before)
+                const safeName = (name) => {
+                    let s = name.replace(/\.[^/.]+$/, '');
+                    s = s.replace(/[\/\\?%*:|"<>]/g, '');
+                    s = s.replace(/\s+/g, '_');
+                    s = s.replace(/[^a-zA-Z0-9_\-\.]/g, '');
+                    if (s.length > 60) s = s.slice(0, 60);
+                    return s || 'video';
+                };
+                let downloadBase = '';
+                if (filesState.length <= 3) {
+                    const parts = filesState.map(f => safeName(f.name));
+                    downloadBase = parts.join('_');
+                } else {
+                    const first = safeName(filesState[0].name);
+                    downloadBase = `${first}_${filesState.length}clips`;
+                }
+                let finalName = `${downloadBase}_merged.${outputFormat.value}`;
+                if (finalName.length > 100) finalName = finalName.slice(0, 100).replace(/\s+/g, '_');
+
+                downloadLink.href = url;
+                downloadLink.download = finalName;
+                downloadLink.textContent = `Download: ${finalName} (${(blob.size / 1024 / 1024).toFixed(2)} MB)`;
+                downloadLink.style.display = 'inline-block';
+                statusText.textContent = 'Merge complete!';
+                log('Merge finished successfully.');
+                setProgress(1);
+                progressText.textContent = 'Done.';
+            } catch (err) {
+                log('Merge error: ' + err.message);
+                statusText.textContent = 'Merge failed.';
+                progressWrap.style.display = 'none';
+            } finally {
+                // Clean up? maybe not necessary
+            }
+        });
+
+        function getExtension(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            // fallback
+            if (ext === 'mp4' || ext === 'webm' || ext === 'avi' || ext === 'mov' || ext === 'mkv') return ext;
+            return 'mp4'; // default
+        }
+
+        // Preload FFmpeg as soon as page loads (optional)
+        initFFmpeg().catch(e => log('Initial load failed, will retry on merge.'));
+    </script>
+
+    <!-- Fallback for older browsers (optional) -->
+    <script nomodule>alert('Your browser does not support ES modules. Please use a modern browser.')</script>
+</body>
+
+</html>

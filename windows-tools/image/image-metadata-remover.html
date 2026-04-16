@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Site-wide script -->
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description"
+        content="The Image Metadata Remover tool by RDroid Apps allows users to easily strip EXIF metadata from their images directly in the browser. This is particularly useful for those who want to protect their privacy by removing location data and other sensitive information embedded in image files." />
+    <meta name="keywords"
+        content="image metadata remover, remove exif, image tools, rdroid apps, offline image tools, free image tools" />
+    <title>Image Metadata Remover — RDroid Apps</title>
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/image/image-metadata-remover.html" />
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Image Metadata Remover — RDroid Apps" />
+  <meta property="og:description" content="The Image Metadata Remover tool by RDroid Apps allows users to easily strip EXIF metadata from their images directly in the browser. This is particularly useful for those who want to protect their privacy by removing location data and other sensitive information embedded in image files." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/image/image-metadata-remover.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Image Metadata Remover — RDroid Apps" />
+  <meta name="twitter:description" content="The Image Metadata Remover tool by RDroid Apps allows users to easily strip EXIF metadata from their images directly in the browser. This is particularly useful for those who want to protect their privacy by removing location data and other sensitive information embedded in image files." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
+    <!-- exif-js to read orientation if needed -->
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Image Metadata Remover — RDroid Apps",
+    "description": "The Image Metadata Remover tool by RDroid Apps allows users to easily strip EXIF metadata from their images directly in the browser. This is particularly useful for those who want to protect their privacy by removing location data and other sensitive information embedded in image files.",
+    "url": "https://rdroidapps.com/windows-tools/image/image-metadata-remover.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <section class="hero">
+        <h1>Image Metadata Remover</h1>
+        <h3>Strip EXIF metadata by re-encoding the image in the browser. Output forced to PNG (no EXIF).
+        </h3>
+    </section>
+    <section class="tool-section">
+        <div class="card">
+            <label class="drop" id="dropArea"
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
+                <button class="btn btn-ghost" id="pickBtn">Choose file</button>
+            </label>
+            <input type="file" id="fileInput" accept="image/*" />
+            <div style="margin-top:12px;display:flex;gap:8px;">
+                <button class="btn btn-primary" id="stripBtn">Strip metadata</button>
+                <a id="downloadLink" class="btn" style="display:none"></a>
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
+
+            </div>
+            <div id="preview" style="margin-top:12px"></div>
+            <pre id="log">Ready.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+            <section class="seo-content">
+                <h2>Image Metadata Remover Tool</h2>
+                <p>The Image Metadata Remover tool by RDroid Apps is a simple and effective solution for users who want
+                    to
+                    protect their privacy by removing EXIF metadata from their images. EXIF metadata can contain
+                    sensitive
+                    information such as location data, camera settings, and timestamps, which users may not want to
+                    share
+                    when uploading or sharing images online.</p>
+
+                <h2>How It Works</h2>
+                <p>This tool works by re-encoding the uploaded image in the browser, effectively stripping away all EXIF
+                    metadata. The output image is saved in PNG format, which does not support EXIF data, ensuring that
+                    no
+                    metadata is retained.</p>
+
+                <h2>Key Features</h2>
+                <ul>
+                    <li><strong>Privacy Protection:</strong> Remove sensitive metadata to protect your privacy when
+                        sharing
+                        images.</li>
+                    <li><strong>Offline Processing:</strong> All processing is done locally in your browser, ensuring
+                        that
+                        your images are not uploaded to any server.</li>
+                    <li><strong>Easy to Use:</strong> Simple drag-and-drop interface for quick and easy metadata
+                        removal.</li>
+                    <li><strong>Free Tool:</strong> Available for free on RDroid Apps without any registration or
+                        payment.</li>
+                </ul>
+
+                <h2>Use Cases</h2>
+                <p>This tool is ideal for photographers, social media users, and anyone who wants to share images
+                    without
+                    revealing personal information. By removing EXIF metadata, users can ensure that their images are
+                    safe
+                    to share online without compromising their privacy.</p>
+
+            </section>
+        </div><br>
+        <a href="/index.html#image-tools" class="nav-button home">🏠 Back to Image Home</a>
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
+    <script>
+        function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+
+        const pickBtn = document.getElementById('pickBtn');
+        const fileInput = document.getElementById('fileInput');
+        const dropArea = document.getElementById('dropArea');
+        const stripBtn = document.getElementById('stripBtn');
+        const downloadLink = document.getElementById('downloadLink');
+        const preview = document.getElementById('preview');
+        const logEl = document.getElementById('log');
+        const resetBtn = document.getElementById('resetBtn');
+
+        resetBtn.addEventListener('click', () => {
+            fileInput.value = "";
+            preview.innerHTML = "";
+            downloadLink.style.display = "none";
+            logEl.textContent = "Ready.";
+            dropArea.style.borderColor = "#202426";
+        });
+
+
+        pickBtn.addEventListener('click', () => fileInput.click());
+
+        dropArea.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#0aa37f';
+        });
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.style.borderColor = '#202426';
+        });
+        dropArea.addEventListener('drop', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#202426';
+            if (e.dataTransfer.files && e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                fileInput.dispatchEvent(new Event('change'));
+            }
+        });
+
+        fileInput.addEventListener('change', () => {
+            const f = fileInput.files[0];
+            if (!f) return;
+            preview.innerHTML = `<img src="${URL.createObjectURL(f)}" style="max-width:420px;border-radius:8px">`;
+            logEl.textContent = 'Loaded: ' + f.name + '\\n';
+        });
+
+        // helper: read EXIF orientation (returns Promise)
+        function readOrientation(file) {
+            return new Promise((resolve) => {
+                try {
+                    EXIF.getData(file, function () {
+                        const ori = EXIF.getTag(this, 'Orientation') || 1;
+                        resolve(ori);
+                    });
+                } catch (e) {
+                    resolve(1);
+                }
+            });
+        }
+
+        // helper: draw image into canvas with orientation handling
+        function drawImageWithOrientation(img, orientation) {
+            // based on common EXIF orientation values
+            let w = img.naturalWidth, h = img.naturalHeight;
+            let canvas = document.createElement('canvas'), ctx = canvas.getContext('2d');
+
+            // handle rotations that swap width/height
+            if ([5, 6, 7, 8].includes(orientation)) {
+                canvas.width = h;
+                canvas.height = w;
+            } else {
+                canvas.width = w;
+                canvas.height = h;
+            }
+
+            // apply transform
+            switch (orientation) {
+                case 2: // horizontal flip
+                    ctx.translate(canvas.width, 0); ctx.scale(-1, 1); break;
+                case 3: // 180°
+                    ctx.translate(canvas.width, canvas.height); ctx.rotate(Math.PI); break;
+                case 4: // vertical flip
+                    ctx.translate(0, canvas.height); ctx.scale(1, -1); break;
+                case 5: // vertical flip + 90 rotate
+                    ctx.rotate(0.5 * Math.PI); ctx.scale(1, -1); break;
+                case 6: // 90° CW
+                    ctx.rotate(0.5 * Math.PI); ctx.translate(0, -canvas.width); break;
+                case 7: // horizontal flip + 90 rotate
+                    ctx.rotate(0.5 * Math.PI); ctx.translate(0, -canvas.width); ctx.scale(-1, 1); break;
+                case 8: // 90° CCW
+                    ctx.rotate(-0.5 * Math.PI); ctx.translate(-canvas.height, 0); break;
+                default:
+                    // orientation 1 — no transform
+                    break;
+            }
+
+            // for rotated contexts, drawImage must consider transforms applied
+            ctx.drawImage(img, 0, 0);
+            return canvas;
+        }
+
+        stripBtn.addEventListener('click', async () => {
+            const f = fileInput.files[0];
+            if (!f) return alert('कृपया image निवडा');
+
+            logEl.textContent += 'Processing: ' + f.name + '\\n';
+
+            try {
+                // read orientation
+                const orientation = await readOrientation(f);
+
+                // load image
+                const dataUrl = await new Promise((res, rej) => {
+                    const r = new FileReader();
+                    r.onload = () => res(r.result);
+                    r.onerror = rej;
+                    r.readAsDataURL(f);
+                });
+
+                const img = new Image();
+                img.src = dataUrl;
+                await img.decode();
+
+                // draw into canvas with orientation fix
+                const canvas = drawImageWithOrientation(img, orientation);
+                // IMPORTANT: force output to PNG to ensure metadata is stripped
+                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+                const url = URL.createObjectURL(blob);
+
+                preview.innerHTML = `<img src="${url}" style="max-width:420px;border-radius:8px">`;
+                downloadLink.href = url;
+                downloadLink.download = f.name.replace(/\.[^/.]+$/, '') + '-nometa.png';
+                downloadLink.textContent = 'Download (no metadata)';
+                downloadLink.style.display = 'inline-block';
+
+                logEl.textContent += 'Metadata stripped and re-encoded (PNG).\\n';
+            } catch (err) {
+                logEl.textContent += 'Error: ' + (err && err.message ? err.message : err) + '\\n';
+                alert('Error processing image: ' + (err && err.message ? err.message : err));
+            }
+        });
+    </script>
+    <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

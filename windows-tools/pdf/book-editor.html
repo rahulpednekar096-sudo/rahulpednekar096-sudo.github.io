@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/js/script.js"></script>
+    <!-- Google tag (gtag.js) -->
+
+    <meta charset="utf-8" />
+    <title>Book Editor Pro — RDroid System Tools</title>
+    <meta name="description"
+        content="Create and edit multi-page books with chapters. Customize page sizes, format text, and export to professional PDF format using Book Editor Pro." />
+    <meta name="keywords"
+        content="Book Editor, PDF Book Creator, Multi-page Book Editor, Chapter Management, Page Formatting, PDF Export, Book Layout, Text Formatting, Page Size Customization, Book Writing Tool, RDroid Tools" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="author" content="RDroid Apps" />
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/book-editor.html">
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Book Editor Pro — RDroid System Tools" />
+  <meta property="og:description" content="Create and edit multi-page books with chapters. Customize page sizes, format text, and export to professional PDF format using Book Editor Pro." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/pdf/book-editor.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Book Editor Pro — RDroid System Tools" />
+  <meta name="twitter:description" content="Create and edit multi-page books with chapters. Customize page sizes, format text, and export to professional PDF format using Book Editor Pro." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
+    <style>
+        /* ... (keeping all CSS styles exactly as they were) ... */
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <script src="../../assets/fonts/noto-devanagari-base64.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        .section {
+            max-width: 100%;
+        }
+
+        .card {
+            width: auto;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            color: #1e293b;
+            padding: 10px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+        }
+
+        .seo-content {
+            width: auto;
+            margin-top: 60px;
+            border-radius: 16px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+
+        .seo-card {
+            width: auto;
+            border-radius: 14px;
+            padding: 30px;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Card icon spacing */
+        .seo-card .card-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+
+        /* SEO heading */
+        .seo-content>h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--brand);
+        }
+
+        .editor-container {
+            display: grid;
+            grid-template-columns: 300px 1.5fr 1fr;
+            gap: 21px;
+            margin: 25px 0;
+        }
+
+        .sidebar {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            box-shadow: none;
+            border-radius: 12px;
+            padding: 20px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            width: 260px;
+            height: 100vh;
+        }
+
+        .sidebar h3 {
+            color: var(--brand);
+        }
+
+        .sidebar ul li a {
+            color: var(--text);
+            text-shadow: none;
+        }
+
+        .sidebar ul li a:hover,
+        .sidebar ul li a.active {
+            background: #0f52ba;
+            color: #fff;
+        }
+
+        .editor-area {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 100vh;
+            /* 🔥 THIS IS THE KEY */
+        }
+
+        .preview-panel {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 100vh;
+            padding-right: 5px;
+            align-self: start;
+        }
+
+        .page-item {
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border-left-color: var(--brand);
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .page-item:hover {
+            background: #e2e8f0;
+            border-color: rgba(101, 102, 102, 0.2);
+        }
+
+        .page-item.active {
+            background: #dbeafe;
+            border-color: var(--brand);
+        }
+
+        .page-number {
+            font-size: 12px;
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .page-actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        .page-action-btn {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            border-radius: 4px;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .page-action-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text);
+        }
+
+        .editor-toolbar {
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .format-btn {
+            padding: 8px 12px;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            color: var(--text);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .format-btn.active {
+            background: #dbeafe;
+            border-color: var(--brand);
+        }
+
+        .editor-content {
+            flex: 1;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            color: #1e293b;
+            border-radius: 8px;
+            padding: 25px;
+            padding-bottom: 60px;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            overflow-y: auto;
+            overflow-x: hidden;
+            outline: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+
+        }
+
+        .editor-content:focus {
+            border-color: var(--brand);
+        }
+
+        .preview-page {
+            background: #dfe8f8cc;
+            color: #1e293b;
+            border: 1px solid #e2e8f0;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            min-height: 400px;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        .page-header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 40px;
+            width: calc(100% - 80px);
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .book-controls {
+            display: flex;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .book-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            height: fit-content;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 0px 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--brand);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 5px;
+        }
+
+        .page-size-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .size-option {
+            padding: 10px;
+            text-align: center;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .size-option:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .size-option.active {
+            background: #dbeafe;
+            border-color: var(--brand);
+        }
+
+        .size-label {
+            font-size: 14px;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+
+        .size-dimensions {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .chapter-item {
+            padding: 10px 15px;
+            margin: 5px 0;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            border-left: 3px solid transparent;
+            cursor: pointer;
+
+        }
+
+        .chapter-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .chapter-item.active {
+            background: #dbeafe;
+            border-left-color: var(--brand);
+        }
+
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
+        .word-count {
+            bottom: 15px;
+            right: 15px;
+            font-size: 12px;
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 8px;
+            border-radius: 10px;
+        }
+
+        .export-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .export-option {
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .export-option:hover {
+            background: #98c7f7;
+            transform: translateY(-2px);
+        }
+
+        .export-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: var(--brand);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .loading-overlay.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--brand);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Horizontal Cards Layout */
+        .cards-horizontal {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        /* FAQ Items */
+        .faq-item {
+            background: #f8fafc;
+            border-left: 3px solid var(--brand);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .cards-horizontal {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards-horizontal {
+                grid-template-columns: 1fr;
+            }
+
+            .seo-card {
+                padding: 20px;
+            }
+        }
+
+        .faq-item h5 {
+            margin-top: 0;
+        }
+
+        /* Related Tools */
+        .related-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .related-tools .btn.tools {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .cards-horizontal {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards-horizontal {
+                grid-template-columns: 1fr;
+            }
+
+            .seo-card {
+                padding: 20px;
+            }
+        }
+
+        #fontFamily,
+        #fontSize {
+            background-color: #93bdf5;
+            color: #0b1d4a;
+            border: 1px solid #000000;
+        }
+
+        /* dropdown options */
+        #fontFamily option,
+        #fontSize option {
+            background-color: #93bdf5;
+            color: #0b1d4a;
+            border: 1px solid #000000;
+        }
+
+        /* Light-Theme */
+
+        .light-theme .card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            color: var(--text);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        .light-theme .seo-content {
+            background: var(--bg);
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .seo-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+        }
+
+        /* SEO heading */
+        .light-theme .seo-content>h2 {
+            color: var(--brand);
+        }
+
+        .light-theme .sidebar {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            box-shadow: none;
+        }
+
+        .light-theme .sidebar h3 {
+            color: var(--brand);
+        }
+
+        .light-theme .sidebar ul li a {
+            color: var(--text);
+            text-shadow: none;
+        }
+
+        .light-theme .sidebar ul li a:hover,
+        .light-theme .sidebar ul li a.active {
+            background: var(--brand);
+            color: #fff;
+        }
+
+        .light-theme .editor-area {
+            background: var(--panel);
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .preview-panel {
+            background: var(--panel);
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .page-item {
+            border-left-color: var(--brand);
+            background: #2d3748;
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .page-item:hover {
+            background: #334155;
+            border-color: rgba(101, 102, 102, 0.2);
+        }
+
+        .light-theme .page-item.active {
+            background: #2d3748;
+            border-color: var(--brand);
+        }
+
+        .light-theme .page-number {
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .light-theme .page-action-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            color: var(--muted);
+        }
+
+        .light-theme .page-action-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text);
+        }
+
+        .light-theme .editor-toolbar {
+            background: var(--panel);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .light-theme .format-btn {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .light-theme .format-btn.active {
+            background: #2d3748;
+            border-color: var(--brand);
+        }
+
+        .light-theme .editor-content {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .light-theme .editor-content:focus {
+            border-color: var(--brand);
+        }
+
+        .light-theme .preview-page {
+            background: rgba(30, 41, 59, 0.8);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .page-header {
+            text-align: center;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .light-theme .page-footer {
+            color: var(--muted);
+        }
+
+        .light-theme .stat-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .stat-value {
+            color: var(--brand);
+        }
+
+        .light-theme .stat-label {
+            color: var(--muted);
+        }
+
+        .light-theme .size-option {
+            background: var(--panel);
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .size-option:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .light-theme .size-option.active {
+            background: #2d3748;
+            border-color: var(--brand);
+        }
+
+        .light-theme .size-label {
+            color: var(--text);
+        }
+
+        .light-theme .size-dimensions {
+            color: var(--muted);
+        }
+
+        .light-theme .chapter-item {
+            background: #2d3748;
+            border: 1px solid var(--border);
+            border-left: 3px solid transparent;
+        }
+
+        .light-theme .chapter-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .light-theme .chapter-item.active {
+            background: #2d3748;
+            border-left-color: var(--brand);
+        }
+
+        .light-theme .empty-state {
+            color: var(--muted);
+        }
+
+        .light-theme .word-count {
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .light-theme .export-option {
+            background: var(--panel);
+            border: 1px solid var(--border);
+        }
+
+        .light-theme .export-option:hover {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .light-theme .export-icon {
+            color: var(--brand);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .light-theme .loading-overlay {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .light-theme .loading-spinner {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--brand);
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* FAQ Items */
+        .light-theme .faq-item {
+            background: #2d3748;
+            border-left: 3px solid var(--brand);
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .cards-horizontal {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards-horizontal {
+                grid-template-columns: 1fr;
+            }
+
+            .seo-card {
+                padding: 20px;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .cards-horizontal {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards-horizontal {
+                grid-template-columns: 1fr;
+            }
+
+            .seo-card {
+                padding: 20px;
+            }
+        }
+
+        .light-theme #fontFamily,
+        .light-theme #fontSize {
+            background-color: var(--panel);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        /* dropdown options */
+        .light-theme #fontFamily option,
+        .light-theme #fontSize option {
+            background-color: var(--panel);
+            color: var(--text);
+            border: none;
+        }
+    </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Book Editor Pro — RDroid System Tools",
+    "description": "Create and edit multi-page books with chapters. Customize page sizes, format text, and export to professional PDF format using Book Editor Pro.",
+    "url": "https://rdroidapps.com/windows-tools/pdf/book-editor.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+
+            // ✅ FIX: init immediately after DOM ready
+            if (window.bookEditor) {
+                window.bookEditor.init();
+            }
+            document.addEventListener('DOMContentLoaded', () => {
+                window.bookExport = new BookExport();
+            });
+        });
+    </script>
+
+    <section class="hero">
+        <p class="rdroid-blogs-title">
+            <span class="rdroid">Book Editor</span>
+            <span class="blogs">Pro Tools</span>
+        </p>
+        <p style="color: rgb(0, 0, 0);">Create and edit multi-page books with chapters.
+            Customize page sizes, format
+            text,
+            and export to
+            professional PDF format.
+        </p>
+    </section>
+
+    <section class="section" role="main" aria-labelledby="title">
+        <div class="book-controls">
+            <button class="btn btn-primary" id="newBookBtn">New Book</button>
+            <button class="btn" id="addChapterBtn">Add Chapter</button>
+            <button class="btn" id="addPageBtn">Add Page</button>
+            <button class="btn" id="saveBookBtn">Save Book</button>
+            <button class="btn" id="loadBookBtn">Load Book</button>
+            <button class="btn" id="exportPdfBtn">Export PDF</button>
+
+            <div class="stat-card">
+                <div class="stat-value" id="chapterCount">0</div>
+                <div class="stat-label">Chapters</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="pageCount">0</div>
+                <div class="stat-label">Total Pages</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="wordCount">0</div>
+                <div class="stat-label">Words</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="charCount">0</div>
+                <div class="stat-label">Characters</div>
+            </div>
+        </div>
+
+        <div class="editor-container">
+            <!-- Left Sidebar - Pages & Chapters -->
+            <div class="sidebar" id="pagesSidebar">
+                <h3 style="margin-bottom: 15px;">📚 Chapters & Pages</h3>
+                <button class="btn" style="width:100%; margin-bottom:10px; font-size:12px;"
+                    onclick="bookEditor.clearChapterFilter()">
+                    📄 Show All Pages
+                </button>
+
+                <div id="chaptersList">
+                    <div class="empty-state" id="emptyChaptersState">
+                        <div class="empty-state-icon">📄</div>
+                        <div>No chapters yet</div>
+                    </div>
+                </div>
+                <div id="pagesList" style="margin-top: 20px;">
+                    <div class="empty-state" id="emptyPagesState">
+                        <div class="empty-state-icon">📖</div>
+                        <div>Add pages to your book</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center - Editor Area -->
+            <div class="editor-area">
+                <div class="editor-toolbar">
+                    <button class="format-btn" data-command="bold" title="Bold (Ctrl+B)">
+                        <strong>B</strong>
+                    </button>
+                    <button class="format-btn" data-command="italic" title="Italic (Ctrl+I)">
+                        <em>I</em>
+                    </button>
+                    <button class="format-btn" data-command="underline" title="Underline (Ctrl+U)">
+                        <u>U</u>
+                    </button>
+                    <div style="width: 1px; background: rgba(255,255,255,0.1); margin: 0 10px;"></div>
+                    <button class="format-btn" data-block="h1" title="Heading 1">H1</button>
+                    <button class="format-btn" data-block="h2" title="Heading 2">H2</button>
+                    <button class="format-btn" data-block="p" title="Paragraph">¶</button>
+
+                    <div style="width: 1px; background: rgba(255,255,255,0.1); margin: 0 10px;"></div>
+                    <button class="format-btn" data-command="justifyLeft" title="Align Left">
+                        ⎌
+                    </button>
+                    <button class="format-btn" data-command="justifyCenter" title="Center">
+                        ⎈
+                    </button>
+                    <button class="format-btn" data-command="justifyRight" title="Align Right">
+                        ⎋
+                    </button>
+                    <button class="format-btn" data-command="justifyFull" title="Justify">
+                        ⇔
+                    </button>
+                    <div style="flex: 1;"></div>
+                    <button class="format-btn" id="undoBtn" title="Undo (Ctrl+Z)">↶</button>
+                    <button class="format-btn" id="redoBtn" title="Redo (Ctrl+Y)">↷</button>
+                    <select id="fontFamily"
+                        style="border: 1px solid rgba(255, 255, 255, 0.342); color: var(--text); padding: 8px; border-radius: 6px;">
+                        <option value="Georgia">Georgia</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Courier New">Courier New</option>
+                    </select>
+                    <div style="flex: 1;"></div>
+                    <select id="fontSize"
+                        style="border: 1px solid rgba(255, 255, 255, 0.425); color: var(--text); padding: 8px; border-radius: 6px; width: 80px;">
+                        <option value="12">12px</option>
+                        <option value="14">14px</option>
+                        <option value="16" selected>16px</option>
+                        <option value="18">18px</option>
+                        <option value="20">20px</option>
+                        <option value="24">24px</option>
+                    </select>
+
+
+                    <div style="width: 1px; background: rgba(255,255,255,0.1); margin: 0 10px;"></div>
+                </div>
+
+                <div class="editor-content" id="editorContent" contenteditable="true">
+                    <h1>Welcome to Book Editor Pro</h1>
+                    <p>Start writing your book here. You can:</p>
+                    <ul>
+                        <li>Add multiple chapters and pages</li>
+                        <li>Format text using the toolbar above</li>
+                        <li>Rearrange pages using drag & drop</li>
+                        <li>Choose different page sizes</li>
+                        <li>Export to professional PDF</li>
+                    </ul>
+                    <p>First click <strong>Add Chapter</strong>, rename it, and then use <strong>Add Page</strong>
+                        to
+                        start writing your
+                        book.</p>
+
+                </div>
+
+                <div class="word-count" id="wordCounter">Words: 0 | Chars: 0</div>
+                <div class="loading-overlay" id="loadingOverlay">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar - Settings & Preview -->
+            <div class="preview-panel">
+                <h3 style="margin-bottom: 15px;">⚙️ Book Settings</h3>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px;">Book
+                        Title</label>
+                    <input type="text" id="bookTitle" value="My Book"
+                        style="width: 93%; padding: 10px; border-radius: 6px; color: var(--text);">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label
+                        style="display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px;">Author</label>
+                    <input type="text" id="bookAuthor" value="Author Name"
+                        style="width: 93%; padding: 10px; border-radius: 6px; color: var(--text);">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px;">Page
+                        Size</label>
+                    <div class="page-size-options">
+                        <div class="size-option active" data-size="A4">
+                            <div class="size-label">A4</div>
+                            <div class="size-dimensions">210 × 297 mm</div>
+                        </div>
+                        <div class="size-option" data-size="Letter">
+                            <div class="size-label">Letter</div>
+                            <div class="size-dimensions">216 × 279 mm</div>
+                        </div>
+                        <div class="size-option" data-size="A5">
+                            <div class="size-label">A5</div>
+                            <div class="size-dimensions">148 × 210 mm</div>
+                        </div>
+                        <div class="size-option" data-size="Legal">
+                            <div class="size-label">Legal</div>
+                            <div class="size-dimensions">216 × 356 mm</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label
+                        style="display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px;">Orientation</label>
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn-secondary" id="portraitBtn" style="flex: 1;">Portrait</button>
+                        <button class="btn-secondary" id="landscapeBtn" style="flex: 1;">Landscape</button>
+                    </div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px;">Margins
+                        (mm)</label>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                        <div>
+                            <h3 style="font-size: 11px;">Top</h3>
+                            <input type="number" id="marginTop" value="20" min="10" max="50"
+                                style="width: 90%; padding: 8px; border: 1px solid rgba(14, 2, 2, 0.562); border-radius: 6px; color: var(--text);">
+                        </div>
+                        <div>
+                            <h3 style="font-size: 11px;">Bottom</h3>
+                            <input type="number" id="marginBottom" value="20" min="10" max="50"
+                                style="width: 90%; padding: 8px; border: 1px solid rgba(14, 2, 2, 0.562); border-radius: 6px; color: var(--text);">
+                        </div>
+                        <div>
+                            <h3 style="font-size: 11px;">Left</h3>
+                            <input type="number" id="marginLeft" value="25" min="10" max="50"
+                                style="width: 90%; padding: 8px; border: 1px solid rgba(14, 2, 2, 0.562); border-radius: 6px; color: var(--text);">
+                        </div>
+                        <div>
+                            <h3 style="font-size: 11px;">Right</h3>
+                            <input type="number" id="marginRight" value="25" min="10" max="50"
+                                style="width: 90%; padding: 8px; border: 1px solid rgba(14, 2, 2, 0.562); border-radius: 6px; color: var(--text);">
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 30px;">
+                    <h4>📊 Live Preview</h4>
+                    <div class="preview-page" id="pagePreview">
+                        <div class="page-header">
+                            <div style="font-size: 24px; font-weight: bold;" id="previewTitle">My Book</div>
+                            <div style="font-size: 14px; margin-top: 5px;" id="previewAuthor">Author
+                                Name
+                            </div>
+                            <div style="font-size: 12px; color: #999; margin-top: 10px;">Page 1</div>
+                        </div>
+                        <div id="previewContent" style="font-size: 16px; line-height: 1.6;">
+                            <p>This is a preview of how your page will look in the exported PDF.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="export-options" style="margin-top: 30px;">
+            <div class="export-option" id="exportPdfOption">
+                <div class="export-icon">📄</div>
+                <div style="font-weight: bold; color: var(--text);">Export to PDF</div>
+                <div style="font-size: 12px; color: var(--muted); margin-top: 5px;">Professional format for printing
+                </div>
+            </div>
+            <div class="export-option" id="exportDocxOption">
+                <div class="export-icon">📝</div>
+                <div style="font-weight: bold; color: var(--text);">Export to DOCX</div>
+                <div style="font-size: 12px; color: var(--muted); margin-top: 5px;">Microsoft Word compatible</div>
+            </div>
+            <div class="export-option" id="exportEpubOption">
+                <div class="export-icon">📚</div>
+                <div style="font-weight: bold; color: var(--text);">Export to EPUB</div>
+                <div style="font-size: 12px; color: var(--muted); margin-top: 5px;">E-book format for readers</div>
+            </div>
+            <div class="export-option" id="exportHtmlOption">
+                <div class="export-icon">🌐</div>
+                <div style="font-weight: bold; color: var(--text);">Export to HTML</div>
+                <div style="font-size: 12px; color: var(--muted); margin-top: 5px;">Web page format</div>
+            </div>
+        </div>
+
+        <div style="display:flex; gap:12px; align-items:center; margin-top:20px;">
+            <div id="status" class="small">Ready to create your book</div>
+            <div style="margin-left:auto" id="bookStats" class="small">0 pages, 0 words</div>
+        </div>
+
+        <!-- Debug log removed for cleaner UI -->
+
+        <hr style="margin:32px 0">
+
+        <!-- SEO Content Section -->
+        <!-- SEO Content in 3 Horizontal Cards -->
+        <section class="seo-content" itemscope itemtype="https://schema.org/Article">
+            <h2>Complete Guide to Book Editor Pro</h2>
+
+            <div class="cards-horizontal">
+                <!-- Card 1: Introduction & Getting Started -->
+                <div class="card seo-card">
+                    <div class="card-icon">📘</div>
+                    <h3>How Book Editor Pro Is Structured</h3>
+
+                    <p>
+                        Book Editor Pro is designed with a clear and practical structure to help you write,
+                        organize, and export books efficiently. The entire workflow is divided into
+                        <strong>three core sections</strong>, all available on a single page for a smooth
+                        and distraction-free experience.
+                    </p>
+
+                    <ul>
+                        <li><strong>Indexing Panel</strong> – Organize chapters and pages</li>
+                        <li><strong>Editor Area</strong> – Write and format your content</li>
+                        <li><strong>Export Section</strong> – Download your completed book</li>
+                    </ul>
+
+                    <h4>1. Indexing Panel (Chapters & Pages)</h4>
+                    <p>
+                        Proper indexing is one of the most important parts of writing a good book.
+                        Even well-written content can lose its value if chapters and pages are not
+                        structured correctly. Book Editor Pro provides a dedicated indexing panel
+                        to manage this efficiently.
+                    </p>
+
+                    <h5>New Book</h5>
+                    <p>
+                        Clicking the <strong>New Book</strong> button creates a fresh project with a clean
+                        structure, allowing you to start writing from scratch without affecting any
+                        previously saved work.
+                    </p>
+
+                    <h5>Add Chapter</h5>
+                    <p>
+                        Chapters represent higher-level sections of your book.
+                        A single chapter can contain multiple pages.
+                        You can create multiple chapters, assign custom names to them,
+                        and use them to logically divide your book content.
+                    </p>
+
+                    <h5>Add Page</h5>
+                    <p>
+                        Pages are added inside a selected chapter.
+                        Simply select a chapter and click <strong>Add Page</strong> to create the first page
+                        under that chapter. You can add multiple pages, rename them,
+                        or reorder them as needed.
+                    </p>
+
+                    <h4>Important Indexing Rules</h4>
+                    <ul>
+                        <li>
+                            Only pages belonging to the selected chapter are displayed,
+                            keeping the interface clean and focused.
+                        </li>
+                        <li>
+                            If your PC shuts down or power is lost unexpectedly,
+                            your work is automatically saved every 10 seconds,
+                            ensuring minimal data loss.
+                        </li>
+                    </ul>
+
+                    <h5>Save Book</h5>
+                    <p>
+                        While auto-save works silently in the background,
+                        you can manually save your book at any time.
+                        This stores your project safely in local storage
+                        and allows you to download it for backup.
+                    </p>
+
+                    <h5>Load Book</h5>
+                    <p>
+                        Previously saved books can be loaded at any time,
+                        allowing you to continue editing exactly where you left off.
+                    </p>
+
+                    <h5>Export to PDF</h5>
+                    <p>
+                        Once your book is complete, you can export the entire project
+                        as a professionally formatted PDF file, ready for sharing or printing.
+                    </p>
+                    <img src="/assets/images/pdf-image/book-editor-1.webp" onclick="openPreview(this.src)"
+                        alt="Book Editor tool preview – write, edit, and format your book online" loading="lazy"
+                        width="330" height="210">
+                    <br>
+                    <br>
+                    <br>
+                    <div class="card-icon">🚀</div>
+                    <h3>Export Formats</h3>
+
+                    <p>
+                        Once your book is ready, you can export it into different formats
+                        based on your final use.
+                        The editor automatically includes the latest content before export.
+                    </p>
+
+                    <h4>PDF</h4>
+                    <p>
+                        Best choice for final books.
+                        Print-ready layout with correct page size, margins,
+                        page numbers, and full Marathi (Devanagari) support.
+                    </p>
+
+                    <h4>DOCX</h4>
+                    <p>
+                        Editable Word format.
+                        Useful for further editing, proofreading,
+                        or sharing with editors.
+                    </p>
+
+                    <h4>EPUB</h4>
+                    <p>
+                        E-book format for mobile and e-readers.
+                        Optimized for digital reading and flexible screen sizes.
+                    </p>
+
+                    <h4>HTML</h4>
+                    <p>
+                        Web-ready format.
+                        Ideal for publishing your book online
+                        or viewing directly in a browser.
+                    </p>
+                </div>
+
+                <!-- Card 2: Features & Formatting -->
+                <div class="card seo-card">
+                    <div class="card-icon">✍️</div>
+                    <h3>Editor Area – Writing, Formatting & Full Control</h3>
+
+                    <p>
+                        The Editor Area is the heart of Book Editor Pro.
+                        This is where you actually write your book, format content,
+                        and see how each page will look in the final output.
+                        Everything here is designed to feel simple, fast, and distraction-free,
+                        even while offering advanced control.
+                    </p>
+
+                    <h4>Editable Writing Canvas</h4>
+                    <p>
+                        The main writing area is fully editable.
+                        You can click anywhere and start typing immediately.
+                        This editor behaves like a professional document editor,
+                        but runs entirely inside your browser.
+                    </p>
+
+                    <ul>
+                        <li>Write normal paragraphs, headings, or lists</li>
+                        <li>Edit content anytime without restrictions</li>
+                        <li>Each page maintains its own content independently</li>
+                        <li>Content is automatically linked to the selected page</li>
+                    </ul>
+
+                    <h4>Formatting Toolbar – Explained Button by Button</h4>
+                    <p>
+                        The toolbar above the editor gives you full control over text appearance.
+                        Every formatting action works only on the selected text
+                        or at the current cursor position.
+                    </p>
+
+                    <h5>Text Styling Controls</h5>
+                    <ul>
+                        <li><strong>Bold (Ctrl + B):</strong> Used for emphasis, keywords, and headings</li>
+                        <li><strong>Italic (Ctrl + I):</strong> Useful for titles, names, or emphasis</li>
+                        <li><strong>Underline (Ctrl + U):</strong> Highlights important information</li>
+                    </ul>
+
+                    <h5>Block Formatting</h5>
+                    <ul>
+                        <li><strong>H1:</strong> Main headings, usually chapter titles</li>
+                        <li><strong>H2:</strong> Sub-headings inside a chapter</li>
+                        <li><strong>Paragraph (¶):</strong> Normal body text</li>
+                    </ul>
+
+                    <p>
+                        Block formatting ensures your book remains structured and readable.
+                        Proper use of headings also improves professional appearance
+                        and export quality.
+                    </p>
+
+                    <h5>Text Alignment</h5>
+                    <ul>
+                        <li><strong>Left Align:</strong> Default reading alignment</li>
+                        <li><strong>Center:</strong> Titles, quotations, or special content</li>
+                        <li><strong>Right Align:</strong> Author notes or signatures</li>
+                        <li><strong>Justify:</strong> Clean, book-style paragraph alignment</li>
+                    </ul>
+
+                    <h4>Font Controls</h4>
+                    <p>
+                        You can change font family and font size directly from the toolbar.
+                        These settings apply consistently across the book
+                        and are reflected in the live preview.
+                    </p>
+
+                    <ul>
+                        <li>Multiple professional fonts available</li>
+                        <li>Font size range from 12px to 24px</li>
+                        <li>Perfect balance for reading and printing</li>
+                    </ul>
+
+                    <h4>Auto-Save & Data Safety</h4>
+                    <p>
+                        While you focus on writing, Book Editor Pro silently protects your work.
+                        The editor automatically saves your progress every 10 seconds.
+                        Even if your system shuts down unexpectedly,
+                        your work is safely restored when you reopen the tool.
+                    </p>
+
+                    <ul>
+                        <li>Automatic background saving every 10 seconds</li>
+                        <li>No interruption while typing</li>
+                        <li>Maximum data loss limited to a few seconds</li>
+                        <li>Manual save still available for final control</li>
+                    </ul>
+
+                    <h4>Page-Specific Editing</h4>
+                    <p>
+                        Each page is edited independently.
+                        When you select a page from the indexing panel,
+                        its content instantly loads into the editor.
+                        This prevents accidental mixing of content between pages.
+                    </p>
+
+                    <ul>
+                        <li>Edit one page at a time</li>
+                        <li>Switch pages without losing content</li>
+                        <li>Each page maintains its own history and formatting</li>
+                    </ul>
+
+                    <h4>Live Feedback While Writing</h4>
+                    <p>
+                        The editor continuously tracks your writing statistics
+                        and formatting state.
+                        You always know what style you are using
+                        and how much content you have written.
+                    </p>
+
+                    <ul>
+                        <li>Real-time word count</li>
+                        <li>Character count updates instantly</li>
+                        <li>Formatting buttons reflect current selection</li>
+                    </ul>
+
+                    <h4>Designed for Long Writing Sessions</h4>
+                    <p>
+                        Whether you are writing a short document or a full-length book,
+                        the Editor Area is optimized for long sessions.
+                        Smooth scrolling, clean layout, and responsive controls
+                        ensure comfort and focus.
+                    </p>
+
+                    <p>
+                        In short, the Editor Area gives you the power of a professional
+                        book-writing tool without complexity,
+                        allowing you to focus purely on writing quality content.
+                    </p>
+                </div>
+
+                <!-- Card 3: Export & Advanced Features -->
+                <div class="card seo-card">
+                    <div class="card-icon">👁️</div>
+                    <h3>Preview Panel – Live Book Settings & Real-Time Output</h3>
+
+                    <p>
+                        The Preview Panel is the control and visualization area of Book Editor Pro.
+                        Everything you set here directly affects how your book will look
+                        in the final exported file.
+                        This panel works in real time, so you always see the actual result
+                        before exporting.
+                    </p>
+
+                    <h4>Book Title & Author Settings</h4>
+                    <p>
+                        At the top of the Preview Panel, you can define your book’s identity.
+                        These fields are not just labels – they are used across preview,
+                        exports, and file metadata.
+                    </p>
+
+                    <ul>
+                        <li><strong>Book Title:</strong> Displayed on the first page and preview header</li>
+                        <li><strong>Author Name:</strong> Shown below the title in preview and export</li>
+                        <li>Changes apply instantly without reloading</li>
+                        <li>Used in PDF, DOCX, EPUB, and HTML exports</li>
+                    </ul>
+
+                    <h4>Page Size Selection</h4>
+                    <p>
+                        Page size determines the physical dimensions of your book.
+                        This is especially important if you plan to print the book.
+                        You can switch page sizes at any time and preview updates instantly.
+                    </p>
+
+                    <ul>
+                        <li><strong>A4:</strong> Standard for documents and books</li>
+                        <li><strong>Letter:</strong> Common in US printing formats</li>
+                        <li><strong>A5:</strong> Compact book and novel size</li>
+                        <li><strong>Legal:</strong> Large format for reports and manuals</li>
+                    </ul>
+
+                    <h4>Page Orientation</h4>
+                    <p>
+                        Orientation controls whether the page is vertical or horizontal.
+                        This affects layout width, margins, and overall readability.
+                    </p>
+
+                    <ul>
+                        <li><strong>Portrait:</strong> Default book-style vertical layout</li>
+                        <li><strong>Landscape:</strong> Horizontal layout for wide content</li>
+                        <li>Orientation is respected during export</li>
+                    </ul>
+
+                    <h4>Margin Controls (Precision Layout)</h4>
+                    <p>
+                        Margins define the white space around your content.
+                        Proper margins are critical for professional printing and readability.
+                        All margin values are entered in millimeters.
+                    </p>
+
+                    <ul>
+                        <li><strong>Top Margin:</strong> Space above content</li>
+                        <li><strong>Bottom Margin:</strong> Space below content</li>
+                        <li><strong>Left Margin:</strong> Binding-friendly spacing</li>
+                        <li><strong>Right Margin:</strong> Outer page spacing</li>
+                        <li>Recommended minimum: 20mm for printing</li>
+                    </ul>
+
+                    <h4>Live Preview Area</h4>
+                    <p>
+                        The Live Preview shows how the current page will appear
+                        in the exported file.
+                        It updates instantly as you type or change settings.
+                        This preview is not decorative – it reflects real export logic.
+                    </p>
+
+                    <ul>
+                        <li>Displays current page content only</li>
+                        <li>Shows title, author, and page number</li>
+                        <li>Font size and spacing reflect actual output</li>
+                        <li>Helps catch formatting issues early</li>
+                    </ul>
+
+                    <h4>Why Preview Panel Is Important</h4>
+                    <p>
+                        The Preview Panel eliminates guesswork.
+                        Instead of exporting again and again,
+                        you can visually verify everything before final download.
+                        This saves time and prevents formatting mistakes.
+                    </p>
+
+                    <ul>
+                        <li>No trial-and-error exporting</li>
+                        <li>Perfect alignment before final output</li>
+                        <li>Professional results without external tools</li>
+                    </ul>
+
+                    <h4>Best Practices While Using Preview</h4>
+                    <ul>
+                        <li>Always review preview before exporting</li>
+                        <li>Check margins carefully for print-ready books</li>
+                        <li>Verify title and author spelling</li>
+                        <li>Use A5 size for novels, A4 for manuals</li>
+                        <li>Keep consistent margins across all pages</li>
+                    </ul>
+
+                    <p>
+                        In short, the Preview Panel gives you complete confidence
+                        in your final output.
+                        What you see here is exactly what you get in your exported book.
+                    </p>
+
+                    <p>
+                        Don’t forget to check our other tool:
+                        <strong>Click the image below to try Compress PDF ⬇️</strong>
+                    </p>
+
+                    <a href="/windows-tools/pdf/compress-pdf.html">
+                        <img src="/assets/images/pdf-image/compress-pdf.webp"
+                            alt="Compress PDF tool interface showing file drop area and compression options"
+                            loading="lazy" width="330" height="210" style="cursor:pointer;">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <br>
+    </section>
+
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+    <div id="imgPreviewOverlay">
+        <span id="imgPreviewClose" onclick="closePreview()">✕</span>
+        <img id="imgPreviewBox" src="">
+    </div>
+
+    <!-- External JavaScript Files -->
+    <script src="js/book-editor-core.js"></script>
+    <script src="js/book-export.js"></script>
+    <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

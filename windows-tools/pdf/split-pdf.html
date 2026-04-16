@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Site-wide script -->
+  <script src="/js/script.js" defer></script>
+  <!-- Google tag (gtag.js) -->
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description"
+    content="Split PDF by ranges, every N pages, or extract selected pages. Outputs separate PDFs or a ZIP." />
+  <meta name="keywords"
+    content="split pdf, pdf splitter, extract pdf pages, split pdf by ranges, split pdf every n pages, pdf manipulation, pdf-lib, pdf tools, rdroid apps" />
+
+  <title>Split PDF — RDroid Apps</title>
+  <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/split-pdf.html">
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Split PDF — RDroid Apps" />
+  <meta property="og:description" content="Split PDF by ranges, every N pages, or extract selected pages. Outputs separate PDFs or a ZIP." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/pdf/split-pdf.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Split PDF — RDroid Apps" />
+  <meta name="twitter:description" content="Split PDF by ranges, every N pages, or extract selected pages. Outputs separate PDFs or a ZIP." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
+
+  <!-- pdf.js for preview -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <!-- pdf-lib for manipulation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <!-- jszip + filesaver -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+  <!-- Include jQuery for load function -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Split PDF — RDroid Apps",
+    "description": "Split PDF by ranges, every N pages, or extract selected pages. Outputs separate PDFs or a ZIP.",
+    "url": "https://rdroidapps.com/windows-tools/pdf/split-pdf.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <!-- HEADER (loaded from external file) -->
+  <div id="header-container"></div>
+
+  <!-- TOOLS QUICK LINKS (loaded from external file) -->
+  <div id="tools-links-container"></div>
+
+  <!-- MENU DRAWER (loaded from external file) -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load all components -->
+  <script>
+    $(function () {
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
+      $("#footer-container").load("/components/footer.html");
+    });
+  </script>
+
+  <section class="hero">
+    <h1>Split PDF</h1>
+    <p class="lead">Split PDF by ranges, every N pages, or extract selected pages. Outputs separate PDFs or a ZIP.</p>
+  </section>
+  <div class="container">
+    <div class="drop" id="dropArea">Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
+      <input type="file" id="fileInput" accept="application/pdf" style="display:none">
+    </div>
+
+    <div class="controls">
+      <div class="control">
+        <label>Mode</label>
+        <select id="modeSelect">
+          <option value="ranges">Split by page ranges</option>
+          <option value="everyN">Split every N pages</option>
+          <option value="extract">Extract selected pages</option>
+        </select>
+
+        <div id="modeHelp" style="font-size:12px;color:#9fbfb0;margin-top:4px;">
+          <span id="rangesHelp" style="display:block;">
+            • <strong>Page ranges:</strong> Enter specific pages or ranges like 1-3,5,7-9
+          </span>
+          <span id="everyNHelp" style="display:none;">
+            • <strong>Every N pages:</strong> Automatically split after every N pages (e.g., 2 = pairs of pages)
+          </span>
+          <span id="extractHelp" style="display:none;">
+            • <strong>Extract pages:</strong> Select pages from thumbnails below
+          </span>
+        </div>
+
+        <div id="rangesUI" style="margin-top:8px;">
+          <label>Page ranges (e.g., 1-3, 5, 7-9)</label>
+          <input type="text" id="rangesInput" placeholder="Examples: 1-5, 8, 10-15"
+            style="width:100%;padding:8px;margin-top:6px;background:#090b0c;border:1px solid #222;color:#e6eef0;border-radius:6px">
+          <div style="font-size:12px;color:#9fbfb0;margin-top:4px;">
+            Enter page numbers or ranges separated by commas. Example: 1-5 extracts pages 1 through 5, 8 extracts only
+            page 8.
+          </div>
+        </div>
+
+        <div id="everyNUI" style="display:none;margin-top:8px;">
+          <label>Every N pages</label>
+          <input type="number" id="everyN" value="2" min="1"
+            style="width:100%;padding:8px;background:#090b0c;border:1px solid #222;color:#e6eef0;border-radius:6px">
+        </div>
+      </div>
+
+      <div class="control">
+        <label>Output</label>
+        <select id="outType">
+          <option value="zip" selected>ZIP (multiple files)</option>
+          <option value="files">Individual downloads</option>
+        </select>
+        <label style="margin-top:8px">Base name</label>
+        <input type="text" id="outBase" value="split"
+          style="width:100%;padding:8px;background:#090b0c;border:1px solid #222;color:#e6eef0;border-radius:6px">
+      </div>
+
+      <div class="control">
+        <label>Preview / Select Pages</label>
+        <div id="thumbsWrap"></div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+      <button class="btn btn-primary" id="splitBtn">Split PDF</button>
+      <button class="btn" id="clearBtn">Clear</button>
+      <div style="margin-left:auto;color:#9fbfb0" id="pageInfo"></div>
+    </div>
+
+    <div class="progress" id="progressWrap">
+      <div class="bar" id="progressBar"></div>
+    </div>
+    <pre class="log" id="log">Ready.</pre>
+
+    <div id="downloadArea" style="margin-top:12px"></div>
+    <!-- SEO Content -->
+    <hr style="margin:32px 0">
+
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
+    <section class="seo-content">
+      <h2>Split PDF Tool — RDroidApps Pro</h2>
+
+      <p>
+        The Split PDF tool by RDroidApps Pro helps you divide large PDF files into smaller,
+        manageable documents directly in your browser. You can split PDFs by custom page
+        ranges, extract selected pages, or split every N pages — all without uploading your
+        files to any server.
+      </p>
+
+      <h2>Key Features of Split PDF Tool</h2>
+
+      <ul>
+        <li><strong>Split by Page Ranges:</strong> Define custom ranges like 1–3, 4–6, or single pages.</li>
+        <li><strong>Split Every N Pages:</strong> Automatically divide PDFs into equal-sized parts.</li>
+        <li><strong>Extract Selected Pages:</strong> Choose specific pages visually using thumbnails.</li>
+        <li><strong>Preview Pages:</strong> See page thumbnails before splitting for accurate selection.</li>
+        <li><strong>Multiple Output Options:</strong> Download individual PDFs or a ZIP file containing all parts.</li>
+        <li><strong>Client-Side Processing:</strong> All operations happen locally in your browser.</li>
+        <li><strong>Privacy-Focused:</strong> No uploads, no tracking, and no data storage.</li>
+      </ul>
+
+      <h2>How to Split a PDF File</h2>
+
+      <ol>
+        <li><strong>Upload PDF:</strong> Drag and drop your PDF file or click "Choose file".</li>
+        <li><strong>Select Mode:</strong> Choose range-based splitting, every N pages, or page extraction.</li>
+        <li><strong>Adjust Options:</strong> Enter ranges, select pages, and choose output format.</li>
+        <li><strong>Split PDF:</strong> Click the "Split PDF" button to start processing.</li>
+        <li><strong>Download:</strong> Save the generated PDFs or ZIP file instantly.</li>
+      </ol>
+
+      <p>
+        RDroidApps Pro Split PDF tool is ideal for students, professionals, and anyone who
+        needs fast and secure PDF manipulation without installing software.
+      </p>
+    </section><br>
+    <a href="/index.html#pdf-tools" class="nav-button home">🏠 Back to PDF Home</a>
+  </div>
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
+  <script>
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+
+    const pickBtn = document.getElementById('pickBtn'),
+      fileInput = document.getElementById('fileInput'),
+      dropArea = document.getElementById('dropArea');
+    const modeSelect = document.getElementById('modeSelect'),
+      rangesInput = document.getElementById('rangesInput'),
+      everyNUI = document.getElementById('everyNUI');
+    const everyN = document.getElementById('everyN'),
+      rangesUI = document.getElementById('rangesUI');
+    const outType = document.getElementById('outType'),
+      outBase = document.getElementById('outBase');
+    const splitBtn = document.getElementById('splitBtn'),
+      clearBtn = document.getElementById('clearBtn');
+    const thumbsWrap = document.getElementById('thumbsWrap'),
+      logEl = document.getElementById('log'),
+      progressWrap = document.getElementById('progressWrap'),
+      progressBar = document.getElementById('progressBar');
+    const pageInfo = document.getElementById('pageInfo'),
+      downloadArea = document.getElementById('downloadArea');
+
+    let pdfBytes = null, pdfDocJS = null, pageCount = 0, pages = []; // pages: {pageNum, thumb, selected}
+
+    function log(msg) { logEl.textContent += '\n' + msg; logEl.scrollTop = logEl.scrollHeight; }
+    function setProgress(p) { progressWrap.style.display = p >= 0 ? 'block' : 'none'; progressBar.style.width = ((p || 0) * 100).toFixed(1) + '%'; }
+
+    modeSelect.addEventListener('change', () => {
+      const m = modeSelect.value;
+      rangesUI.style.display = m === 'ranges' ? 'block' : 'none';
+      everyNUI.style.display = m === 'everyN' ? 'block' : 'none';
+      // Update help text
+      document.getElementById('rangesHelp').style.display = m === 'ranges' ? 'block' : 'none';
+      document.getElementById('everyNHelp').style.display = m === 'everyN' ? 'block' : 'none';
+      document.getElementById('extractHelp').style.display = m === 'extract' ? 'block' : 'none';
+    });
+
+    pickBtn.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', e => loadFile(e.target.files[0]));
+
+    dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f'; });
+    dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = '#202426');
+    dropArea.addEventListener('drop', e => {
+      e.preventDefault();
+      dropArea.style.borderColor = '#202426';
+      if (e.dataTransfer.files.length) loadFile(e.dataTransfer.files[0]);
+    });
+
+    async function loadFile(file) {
+      if (!file) return;
+      if (file.type !== 'application/pdf') { alert('Please select a PDF'); return; }
+      log('Loading ' + file.name);
+      pdfBytes = await file.arrayBuffer();
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+      pdfDocJS = await pdfjsLib.getDocument({ data: pdfBytes }).promise;
+      pageCount = pdfDocJS.numPages;
+      pages = [];
+      thumbsWrap.innerHTML = '';
+      for (let i = 1; i <= pageCount; i++) {
+        const page = await pdfDocJS.getPage(i);
+        const vp = page.getViewport({ scale: 0.2 });
+        const canvas = document.createElement('canvas');
+        canvas.width = vp.width;
+        canvas.height = vp.height;
+        await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+        const dataURL = canvas.toDataURL('image/png');
+        pages.push({ pageNum: i, thumb: dataURL, selected: true });
+        renderThumbnails();
+        await briefYield(10);
+      }
+      pageInfo.textContent = pageCount + ' pages';
+      log('PDF loaded with ' + pageCount + ' pages');
+    }
+
+    function renderThumbnails() {
+      thumbsWrap.innerHTML = '';
+      pages.forEach((p, idx) => {
+        const div = document.createElement('div');
+        div.className = 'thumb';
+        div.innerHTML = `<img src="${p.thumb}"><div style="color:#9fbfb0">Page ${p.pageNum}</div>
+        <div style="margin-top:6px"><label><input type="checkbox" data-idx="${idx}" ${p.selected ? 'checked' : ''}> Select</label></div>`;
+        thumbsWrap.appendChild(div);
+      });
+      thumbsWrap.querySelectorAll('input[type=checkbox]').forEach(cb => {
+        cb.addEventListener('change', e => { pages[e.target.dataset.idx].selected = e.target.checked; });
+      });
+    }
+
+    splitBtn.addEventListener('click', async () => {
+      if (!pdfBytes) { alert('Load a PDF first'); return; }
+      setProgress(0);
+      downloadArea.innerHTML = ''; // Clear previous downloads
+      log('Starting split...');
+      const mode = modeSelect.value;
+      let tasks = [];
+
+      if (mode === 'ranges') {
+        const raw = rangesInput.value.trim();
+        if (!raw) {
+          alert('Please enter page ranges\n\nExamples:\n• 1-5 (pages 1 through 5)\n• 1,3,5 (pages 1, 3 and 5)\n• 1-3,5,7-9 (pages 1-3, 5, and 7-9)');
+          setProgress(-1);
+          return;
+        }
+        tasks = parseRanges(raw);
+        if (!tasks.length) {
+          // Error already shown by parseRanges function
+          setProgress(-1);
+          return;
+        }
+      } else if (mode === 'everyN') {
+        const n = parseInt(everyN.value) || 1;
+        for (let i = 1; i <= pageCount; i += n) {
+          const end = Math.min(i + n - 1, pageCount);
+          tasks.push({ from: i, to: end });
+        }
+      } else {
+        // extract selected pages into single PDF
+        const sel = pages.filter(p => p.selected).map(p => p.pageNum);
+        if (!sel.length) { alert('Select pages to extract'); setProgress(-1); return; }
+        tasks = sel.map(pn => ({ from: pn, to: pn }));
+      }
+
+      log('Planned ' + tasks.length + ' output files.');
+      const zip = new JSZip();
+
+      const srcPdf = await PDFLib.PDFDocument.load(pdfBytes);
+
+      for (let t = 0; t < tasks.length; t++) {
+        const { from, to } = tasks[t];
+        log('Creating PDF for pages ' + from + ' - ' + to);
+
+        // create new doc and copy pages
+        const newPdf = await PDFLib.PDFDocument.create();
+        for (let p = from; p <= to; p++) {
+          const [copiedPage] = await newPdf.copyPages(srcPdf, [p - 1]);
+          newPdf.addPage(copiedPage);
+        }
+        const outBytes = await newPdf.save();
+        const fname = `${outBase.value || 'split'}_${from}-${to}.pdf`;
+
+        if (outType.value === 'zip') {
+          zip.file(fname, outBytes);
+        } else {
+          // Create download button for individual files
+          const blob = new Blob([outBytes], { type: 'application/pdf' });
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = fname;
+          a.textContent = 'Download ' + fname;
+          a.className = 'btn';
+          a.style.display = 'block';
+          a.style.marginBottom = '8px';
+          downloadArea.appendChild(a);
+        }
+
+        setProgress((t + 1) / tasks.length);
+        await briefYield(40);
+      }
+
+      // For ZIP files, create download button instead of auto-download
+      if (outType.value === 'zip') {
+        log('ZIP file created. Click download button.');
+
+        // Create download button for ZIP
+        const downloadBtn = document.createElement('button');
+        downloadBtn.className = 'btn btn-primary';
+        downloadBtn.textContent = 'Download ZIP File';
+        downloadBtn.style.marginTop = '12px';
+        downloadBtn.style.display = 'block';
+
+        downloadBtn.addEventListener('click', async () => {
+          log('Generating ZIP file...');
+          downloadBtn.disabled = true;
+          downloadBtn.textContent = 'Generating ZIP...';
+
+          try {
+            const blob = await zip.generateAsync({ type: 'blob' });
+            saveAs(blob, (outBase.value || 'split') + '.zip');
+            log('ZIP downloaded successfully.');
+          } catch (error) {
+            log('Error generating ZIP: ' + error.message);
+          } finally {
+            downloadBtn.disabled = false;
+            downloadBtn.textContent = 'Download ZIP File';
+          }
+        });
+
+        downloadArea.appendChild(downloadBtn);
+      } else {
+        log('Files ready for download. Click the buttons above.');
+      }
+
+      setProgress(-1);
+    });
+
+    function parseRanges(text) {
+      const parts = text.split(',').map(s => s.trim()).filter(Boolean);
+      const out = [];
+      const errors = [];
+
+      for (const p of parts) {
+        if (p.includes('-')) {
+          const [a, b] = p.split('-').map(x => parseInt(x.trim())).filter(x => !isNaN(x));
+
+          if (!a || !b) {
+            errors.push(`Invalid range: "${p}" - Please use format like "1-3"`);
+            continue;
+          }
+
+          if (a > b) {
+            errors.push(`Invalid range: "${p}" - Start page (${a}) cannot be greater than end page (${b})`);
+            continue;
+          }
+
+          if (a < 1) {
+            errors.push(`Invalid range: "${p}" - Page numbers must be at least 1`);
+            continue;
+          }
+
+          if (b > pageCount) {
+            errors.push(`Invalid range: "${p}" - Page ${b} does not exist (PDF has only ${pageCount} pages)`);
+            continue;
+          }
+
+          out.push({ from: a, to: b });
+        } else {
+          const n = parseInt(p);
+
+          if (isNaN(n)) {
+            errors.push(`Invalid page number: "${p}" - Please enter a valid number`);
+            continue;
+          }
+
+          if (n < 1) {
+            errors.push(`Invalid page: "${p}" - Page numbers must be at least 1`);
+            continue;
+          }
+
+          if (n > pageCount) {
+            errors.push(`Invalid page: "${p}" - Page ${n} does not exist (PDF has only ${pageCount} pages)`);
+            continue;
+          }
+
+          out.push({ from: n, to: n });
+        }
+      }
+
+      // If there are errors, show them and return empty array
+      if (errors.length > 0) {
+        alert("Please correct the following errors:\n\n" + errors.join("\n"));
+        return [];
+      }
+
+      return out;
+    }
+
+    clearBtn.addEventListener('click', () => {
+      pdfBytes = null;
+      pdfDocJS = null;
+      pageCount = 0;
+      pages = [];
+      thumbsWrap.innerHTML = '';
+      downloadArea.innerHTML = '';
+      logEl.textContent = 'Ready.';
+      setProgress(-1);
+      pageInfo.textContent = '';
+    });
+
+    function briefYield(ms = 10) { return new Promise(r => setTimeout(r, ms)); }
+  </script>
+  <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

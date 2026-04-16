@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Site-wide script -->
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Rotate Image Tool - Rotate images by 90° CW, 180°, 90° CCW, or custom degrees. Flip images horizontally or vertically. Free online tool." />
+    <meta name="keywords"
+        content="Rotate Image, Image Rotator, Rotate Photo, Flip Image, Online Image Tool, Free Image Editor" />
+    <meta name="author" content="RDroid Apps" />
+    <title>Rotate Image — RDroid Apps</title>
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/image/rotate-image.html" />
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Rotate Image — RDroid Apps" />
+  <meta property="og:description" content="Rotate Image Tool - Rotate images by 90° CW, 180°, 90° CCW, or custom degrees. Flip images horizontally or vertically. Free online tool." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/image/rotate-image.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rotate Image — RDroid Apps" />
+  <meta name="twitter:description" content="Rotate Image Tool - Rotate images by 90° CW, 180°, 90° CCW, or custom degrees. Flip images horizontally or vertically. Free online tool." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
+
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Rotate Image — RDroid Apps",
+    "description": "Rotate Image Tool - Rotate images by 90° CW, 180°, 90° CCW, or custom degrees. Flip images horizontally or vertically. Free online tool.",
+    "url": "https://rdroidapps.com/windows-tools/image/rotate-image.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <section class="hero">
+        <h1>Rotate Image</h1>
+        <h3>Rotate by 90° increments or custom degrees.</h3>
+    </section>
+    <section class="tool-section">
+        <div class="card">
+            <label class="drop" id="dropArea"
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image here or
+                <button class="btn btn-ghost" id="pickBtn">Choose
+                    file</button></label>
+            <input type="file" id="fileInput" accept="image/*" />
+
+            <div class="row">
+                <div class="col"><label class="small">Rotate</label>
+                    <select id="preset">
+                        <option value="90">Rotate 90° CW</option>
+                        <option value="180">Rotate 180°</option>
+                        <option value="270">Rotate 90° CCW</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
+                <div class="col" id="customWrap" style="display:none"><label class="small">Degrees</label><input
+                        type="number" id="degInput" value="0"></div>
+                <div class="col"><label class="small">Flip</label><select id="flipSel">
+                        <option value="none">None</option>
+                        <option value="h">Flip Horizontal</option>
+                        <option value="v">Flip Vertical</option>
+                    </select></div>
+            </div>
+
+            <div style="margin-top:12px;display:flex;gap:8px;">
+                <button class="btn btn-primary" id="applyBtn">Apply</button>
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
+                <a id="downloadLink" class="btn" style="display:none"></a>
+            </div>
+            <div id="preview" style="margin-top:12px"></div>
+            <pre id="log">Ready.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+            <section class="seo-content">
+                <h2>What is an Image Rotator Tool?</h2>
+                <p>Using an Image Rotator Tool, you can easily rotate your images by 90° CW, 180°, 90° CCW, or by a
+                    custom degree.
+                    Additionally, you can also flip images horizontally or vertically. This tool is available for direct
+                    use on the web,
+                    so there is no need to download any software.</p>
+
+                <h2>How to Use the Image Rotator Tool?</h2>
+                <ol>
+                    <li>Click the "Choose file" button above or drag and drop your image.</li>
+                    <li>Select a preset rotation (90°, 180°, 270°) or choose "Custom" and enter the desired degree.</li>
+                    <li>If needed, select a flip option (None, Flip Horizontal, Flip Vertical).</li>
+                    <li>Click the "Apply" button and preview your rotated image.</li>
+                    <li>Click the "Download" link to download the rotated image.</li>
+                </ol>
+
+                <h2>Benefits of the Image Rotator Tool</h2>
+                <ul>
+                    <li>Easy to Use: Can be used easily without any technical knowledge.</li>
+                    <li>Web-Based: No need to install any software.</li>
+                    <li>Fast Processing: Quick rotation and flipping options.</li>
+                    <li>Free to Use: Available without any charges.</li>
+                </ul>
+                <p>Try our Image Rotator Tool today to quickly and easily rotate and flip your images as needed!</p>
+            </section>
+        </div><br>
+        <a href="/index.html#image-tools" class="nav-button home">🏠 Back to Image Home</a>
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
+
+
+    <script>
+        function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+
+        // Variables declaration
+        const pickBtn = document.getElementById('pickBtn'),
+            fileInput = document.getElementById('fileInput'),
+            dropArea = document.getElementById('dropArea'),
+            preset = document.getElementById('preset'),
+            degInput = document.getElementById('degInput'),
+            customWrap = document.getElementById('customWrap'),
+            flipSel = document.getElementById('flipSel'),
+            applyBtn = document.getElementById('applyBtn'),
+            resetBtn = document.getElementById('resetBtn'),
+            preview = document.getElementById('preview'),
+            downloadLink = document.getElementById('downloadLink'),
+            logEl = document.getElementById('log');
+
+        let currentFile = null, img = null;
+        let originalImageURL = null;
+        let rotatedImageURL = null;
+
+        // Helper function for logging
+        function log(msg) {
+            logEl.textContent = msg;
+            logEl.scrollTop = logEl.scrollHeight;
+        }
+
+        // Event Listeners
+        pickBtn.addEventListener('click', () => fileInput.click());
+
+        dropArea.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#0aa37f';
+            dropArea.style.background = 'rgba(10, 163, 127, 0.03)';
+        });
+
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+        });
+
+        dropArea.addEventListener('drop', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                handleFile();
+            }
+        });
+
+        fileInput.addEventListener('change', handleFile);
+
+        preset.addEventListener('change', () => {
+            customWrap.style.display = preset.value === 'custom' ? 'block' : 'none';
+        });
+
+        // Handle file function
+        function handleFile() {
+            currentFile = fileInput.files[0];
+            if (!currentFile) return;
+
+            // Release previous image URL
+            if (originalImageURL) {
+                URL.revokeObjectURL(originalImageURL);
+            }
+
+            originalImageURL = URL.createObjectURL(currentFile);
+            img = new Image();
+            img.src = originalImageURL;
+
+            img.onload = () => {
+                preview.innerHTML = `<img id="loaded" src="${originalImageURL}" style="max-width:420px;border-radius:8px">`;
+                log('Image loaded');
+            }
+        }
+
+        // Apply rotation function
+        applyBtn.addEventListener('click', async () => {
+            if (!currentFile) return alert('कृपया image निवडा');
+
+            const reader = new FileReader();
+            reader.onload = async e => {
+                const image = new Image();
+                image.src = e.target.result;
+                await image.decode();
+
+                let degrees = preset.value === 'custom' ? parseFloat(degInput.value || 0) : parseFloat(preset.value);
+                const flip = flipSel.value;
+                const rad = degrees * Math.PI / 180;
+
+                // determine canvas size after rotation
+                const sin = Math.abs(Math.sin(rad)), cos = Math.abs(Math.cos(rad));
+                const w = Math.round(image.naturalWidth * cos + image.naturalHeight * sin);
+                const h = Math.round(image.naturalWidth * sin + image.naturalHeight * cos);
+
+                const canvas = document.createElement('canvas');
+                canvas.width = w;
+                canvas.height = h;
+                const ctx = canvas.getContext('2d');
+
+                ctx.translate(w / 2, h / 2);
+                ctx.rotate(rad);
+
+                // flipping
+                let scaleX = (flip === 'h') ? -1 : 1, scaleY = (flip === 'v') ? -1 : 1;
+                ctx.scale(scaleX, scaleY);
+                ctx.drawImage(image, -image.naturalWidth / 2, -image.naturalHeight / 2);
+
+                canvas.toBlob(b => {
+                    // Release previous rotated image URL
+                    if (rotatedImageURL) {
+                        URL.revokeObjectURL(rotatedImageURL);
+                    }
+
+                    if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+                        URL.revokeObjectURL(downloadLink.href);
+                    }
+
+                    rotatedImageURL = URL.createObjectURL(b);
+                    preview.innerHTML = `<img src="${rotatedImageURL}" style="max-width:420px;border-radius:8px">`;
+
+                    downloadLink.href = rotatedImageURL;
+                    downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-rotated.png';
+                    downloadLink.textContent = 'Download';
+                    downloadLink.style.display = 'inline-block';
+
+                    const flipText = flip === 'none' ? 'No flip' : (flip === 'h' ? 'Horizontal flip' : 'Vertical flip');
+                    log(`Rotated ${degrees}° with ${flipText}`);
+                }, 'image/png');
+            }
+            reader.readAsDataURL(currentFile);
+        });
+
+        // Reset function
+        resetBtn.addEventListener('click', () => {
+            // Reset file input
+            currentFile = null;
+            fileInput.value = '';
+
+            // Reset form controls
+            preset.value = '90';
+            customWrap.style.display = 'none';
+            degInput.value = '0';
+            flipSel.value = 'none';
+
+            // Reset UI elements
+            downloadLink.style.display = 'none';
+            preview.innerHTML = '';
+            log('Ready.');
+            dropArea.style.borderColor = '';
+            dropArea.style.background = '';
+
+            // Release all Object URLs
+            if (originalImageURL) {
+                URL.revokeObjectURL(originalImageURL);
+                originalImageURL = null;
+            }
+
+            if (rotatedImageURL) {
+                URL.revokeObjectURL(rotatedImageURL);
+                rotatedImageURL = null;
+            }
+
+            if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
+                URL.revokeObjectURL(downloadLink.href);
+                downloadLink.href = '#';
+            }
+
+            // Reset image variable
+            img = null;
+        });
+    </script>
+    <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

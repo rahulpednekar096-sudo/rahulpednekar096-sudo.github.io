@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="/js/script.js" defer></script>
+  <!-- Google tag (gtag.js) -->
+
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | RDroid Apps</title>
+  <meta name="description" content="Contact RDroid Apps for feedback, support, or collaboration." />
+  <link rel="canonical" href="https://rdroidapps.com/contact.html" />
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Contact | RDroid Apps" />
+  <meta property="og:description" content="Contact RDroid Apps for feedback, support, or collaboration." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/contact.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact | RDroid Apps" />
+  <meta name="twitter:description" content="Contact RDroid Apps for feedback, support, or collaboration." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
+
+  <!-- Include jQuery for load function -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Contact | RDroid Apps",
+    "description": "Contact RDroid Apps for feedback, support, or collaboration.",
+    "url": "https://rdroidapps.com/contact.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebPage"
+  }
+  </script>
+</head>
+
+<body>
+  <!-- HEADER (loaded from external file) -->
+  <div id="header-container"></div>
+
+  <!-- TOOLS QUICK LINKS (loaded from external file) -->
+  <div id="tools-links-container"></div>
+
+  <!-- MENU DRAWER (loaded from external file) -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load all components -->
+  <script>
+    $(function () {
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
+      $("#footer-container").load("/components/footer.html");
+    });
+  </script>
+
+  <!-- Contact Section -->
+  <div class="wrap" id="contact">
+    <section class="section">
+      <h1>Contact RDroid Apps</h1>
+      <p>We’d love to hear from you — whether it’s feedback, support, or a new idea!</p>
+
+      <div class="contact-box">
+        <h3>📧 Email</h3>
+        <p>
+          <a href="mailto:rdroidapps096@gmail.com" class="btn">rdroidapps096@gmail.com</a>
+        </p>
+
+        <h3>🌐 Social</h3>
+        <p>
+          <a href="#" class="link">Instagram</a> |
+          <a href="#" class="link">Twitter (X)</a> |
+          <a href="#" class="link">YouTube</a>
+        </p>
+
+        <h3>💬 Send a Message</h3>
+        <form class="contact-form" onsubmit="alert('Thanks for your message!'); return false;">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" rows="4" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
+  <script>
+    function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+  </script>
+
+
+  <!-- Firebase v12 Modular SDKs (ES Modules) -->
+
+  <script type="module" src="js/login.js"></script>
+
+  <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

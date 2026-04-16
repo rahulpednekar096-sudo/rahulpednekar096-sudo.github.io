@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Site-wide script -->
+  <script src="/js/script.js" defer></script>
+  <!-- Google tag (gtag.js) -->
+
+  <meta charset="utf-8" />
+  <title>PNG → PDF — RDroid Apps (Upgraded)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description"
+    content="Convert multiple images (PNG/JPG/WEBP) to a single PDF. Reorder, rotate, select page size & scale." />
+  <meta name="keywords"
+    content="png to pdf, images to pdf, convert images to pdf, jpg to pdf, webp to pdf, pdf conversion, pdf tools, rdroid apps, PNG to PDF Converter, Convert PNG to PDF Online, Free PNG to PDF Tool, PNG to PDF High Quality, Image to PDF Converter, Bulk PNG to PDF, PNG to PDF without Losing Quality, Fast PNG to PDF Converter, Secure PNG to PDF, PNG to PDF Document, Combine PNG to PDF, PNG to PDF for Free, Best PNG to PDF Tool, Convert Image to PDF Online, PNG to PDF No Email." />
+  <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/png-to-pdf.html">
+
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="PNG → PDF — RDroid Apps (Upgraded)" />
+  <meta property="og:description" content="Convert multiple images (PNG/JPG/WEBP) to a single PDF. Reorder, rotate, select page size &amp; scale." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/pdf/png-to-pdf.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PNG → PDF — RDroid Apps (Upgraded)" />
+  <meta name="twitter:description" content="Convert multiple images (PNG/JPG/WEBP) to a single PDF. Reorder, rotate, select page size &amp; scale." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Include jQuery for load function -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "PNG → PDF — RDroid Apps (Upgraded)",
+    "description": "Convert multiple images (PNG/JPG/WEBP) to a single PDF. Reorder, rotate, select page size & scale.",
+    "url": "https://rdroidapps.com/windows-tools/pdf/png-to-pdf.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <!-- HEADER (loaded from external file) -->
+  <div id="header-container"></div>
+
+  <!-- TOOLS QUICK LINKS (loaded from external file) -->
+  <div id="tools-links-container"></div>
+
+  <!-- MENU DRAWER (loaded from external file) -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load all components -->
+  <script>
+    $(function () {
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
+      $("#footer-container").load("/components/footer.html");
+    });
+  </script>
+
+  <section class="hero">
+    <h1>PNG → PDF (Upgraded)</h1>
+    <p class="lead">Convert multiple images (PNG/JPG/WEBP) to a single PDF. Reorder, rotate, select page size & scale.
+    </p>
+  </section>
+  <section class="section">
+    <div class="drop" id="dropArea">Drop images here or <button class="btn" id="pickBtn">Choose files</button>
+      <input type="file" id="fileInput" accept="image/*" multiple style="display:none" />
+    </div>
+
+    <div class="controls">
+      <div class="control">
+        <label>Page size</label>
+        <select id="pageSize">
+          <option value="A4" selected>A4</option>
+          <option value="Letter">Letter</option>
+          <option value="Custom">Custom (mm)</option>
+        </select>
+        <div id="customSize" style="display:none;margin-top:8px"><input type="number" id="cw" placeholder="Width (mm)"
+            value="210" /><input type="number" id="ch" placeholder="Height (mm)" value="297" style="margin-top:6px" />
+        </div>
+      </div>
+
+      <div class="control">
+        <label>Orientation</label>
+        <select id="orientation">
+          <option>portrait</option>
+          <option>landscape</option>
+        </select>
+        <label style="margin-top:8px">Margins (mm)</label>
+        <input type="number" id="margin" min="0" value="10" />
+      </div>
+
+      <div class="control">
+        <label>Scale mode</label>
+        <select id="scaleMode">
+          <option value="fit">Fit to page</option>
+          <option value="fill">Fill page</option>
+          <option value="actual">Actual size</option>
+        </select>
+        <label style="margin-top:8px">Embed images as</label>
+        <select id="embedAs">
+          <option value="JPEG" selected>JPEG (smaller)</option>
+          <option value="PNG">PNG (lossless)</option>
+        </select>
+        <label style="margin-top:8px">JPEG quality (%)</label>
+        <input type="number" id="quality" min="10" max="100" value="90" />
+      </div>
+
+      <div class="control">
+        <label>Output filename</label>
+        <input type="text" id="outName" value="images.pdf" />
+        <label style="margin-top:8px">Add page numbers</label>
+        <select id="pageNumbers">
+          <option value="no" selected>No</option>
+          <option value="bottom-center">Bottom — center</option>
+          <option value="bottom-right">Bottom — right</option>
+        </select>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+      <button class="btn btn-primary" id="convertBtn">Covert PNG to PDF</button>
+      <button class="btn" id="clearBtn">Clear</button>
+      <div style="margin-left:auto;color:#9fbfb0" id="sizeInfo"></div>
+    </div>
+
+    <div class="progress" id="progressWrap">
+      <div class="bar" id="progressBar"></div>
+    </div>
+
+    <div id="thumbs" class="thumbs"></div>
+
+    <pre class="log" id="log">Ready.</pre>
+
+    <div id="downloadArea" style="margin-top:12px"></div>
+    <!-- SEO Content -->
+    <pre id="log">Ready.</pre>
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
+
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
+    <section class="seo-content">
+      <h2>PNG to PDF Converter — RDroidApps Pro</h2>
+
+      <p>
+        Looking to convert your PNG images into a single PDF document? Our PNG to PDF converter makes it easy to
+        transform multiple images (including JPG and WEBP formats) into a neatly organized PDF file. Whether you need to
+        compile photos, scans, or graphics, our tool provides a simple solution with advanced features.
+      </p>
+      <h2>Key Features:</h2>
+      <ul>
+        <li><strong>Multiple Image Support:</strong> Easily upload and convert multiple PNG, JPG, or WEBP images into a
+          single PDF document, streamlining your workflow.</li>
+        <li><strong>Customizable Page Settings:</strong> Choose from standard page sizes like A4 and Letter, or set
+          custom dimensions. Adjust margins and orientation to suit your needs.</li>
+        <li><strong>Flexible Scaling Options:</strong> Select how images fit on the page with options to fit, fill, or
+          maintain actual size, ensuring your images look their best.</li>
+        <li><strong>Image Quality Control:</strong> Opt to embed images as JPEG for smaller file sizes or PNG for
+          lossless quality, with adjustable JPEG quality settings.</li>
+        <li><strong>Page Numbering:</strong> Add page numbers to your PDF for easy navigation, with options for
+          placement.</li>
+        <li><strong>User-Friendly Interface:</strong> Our intuitive design makes it easy for users of all skill levels
+          to convert images to PDF quickly and efficiently.</li>
+      </ul>
+      <p>
+        Try our PNG to PDF converter today and experience the convenience of turning your images into professional PDF
+        documents in just a few clicks!
+      </p>
+    </section><br>
+    <a href="/index.html#pdf-tools" class="nav-button home">🏠 Back to PDF Home</a>
+  </section>
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
+  <script>
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+    const pickBtn = document.getElementById('pickBtn'), fileInput = document.getElementById('fileInput'), dropArea = document.getElementById('dropArea');
+    const thumbs = document.getElementById('thumbs'), logEl = document.getElementById('log'), progressWrap = document.getElementById('progressWrap'), progressBar = document.getElementById('progressBar');
+    const pageSizeSel = document.getElementById('pageSize'), customSize = document.getElementById('customSize'), cw = document.getElementById('cw'), ch = document.getElementById('ch');
+    const orientationSel = document.getElementById('orientation'), marginInput = document.getElementById('margin'), scaleMode = document.getElementById('scaleMode');
+    const embedAs = document.getElementById('embedAs'), qualityInput = document.getElementById('quality'), convertBtn = document.getElementById('convertBtn');
+    const clearBtn = document.getElementById('clearBtn'), outName = document.getElementById('outName'), pageNumbers = document.getElementById('pageNumbers'), sizeInfo = document.getElementById('sizeInfo');
+    const downloadArea = document.getElementById('downloadArea');
+
+    let items = []; // {file, dataURL, rotate, id}
+
+    function log(msg) { logEl.textContent += "\\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
+    function clearLog() { logEl.textContent = "Ready."; }
+
+    pickBtn.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', e => handleFiles(e.target.files));
+    dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.classList.add('dragover'); });
+    dropArea.addEventListener('dragleave', () => dropArea.classList.remove('dragover'));
+    dropArea.addEventListener('drop', e => { e.preventDefault(); dropArea.classList.remove('dragover'); if (e.dataTransfer.files.length) handleFiles(e.dataTransfer.files); });
+
+    async function handleFiles(fileList) {
+      const supported = ['image/png', 'image/jpeg', 'image/jpg', 'image/webp'];
+      for (const f of fileList) {
+        if (!supported.includes(f.type)) { log('Skipping: ' + f.name); continue; }
+        const dataURL = await readFileAsDataURL(f);
+        const id = crypto.randomUUID ? crypto.randomUUID() : Date.now() + Math.random();
+        items.push({ file: f, dataURL, rotate: 0, id });
+      }
+      renderThumbs(); updateSizeInfo();
+    }
+
+    function readFileAsDataURL(file) { return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(file); }); }
+
+    function renderThumbs() {
+      thumbs.innerHTML = '';
+      items.forEach((it, idx) => {
+        const d = document.createElement('div'); d.className = 'thumb'; d.dataset.idx = idx;
+        d.innerHTML = `<img src="${it.dataURL}" style="transform:rotate(${it.rotate}deg)"><div class="meta">${escapeHtml(it.file.name)}</div>
+        <div style="margin-top:6px" class="actions"><button class="btn" data-act="up" data-idx="${idx}">↑</button><button class="btn" data-act="down" data-idx="${idx}">↓</button><button class="btn" data-act="rotate" data-idx="${idx}">⟳</button><button class="btn btn-danger" data-act="remove" data-idx="${idx}">✕</button></div>`;
+        thumbs.appendChild(d);
+      });
+      thumbs.querySelectorAll('.actions button').forEach(b => b.addEventListener('click', e => {
+        const idx = parseInt(e.target.dataset.idx), act = e.target.dataset.act;
+        if (act === 'up' && idx > 0) moveItem(idx, idx - 1);
+        if (act === 'down' && idx < items.length - 1) moveItem(idx, idx + 1);
+        if (act === 'rotate') { items[idx].rotate = (items[idx].rotate + 90) % 360; renderThumbs(); }
+        if (act === 'remove') { items.splice(idx, 1); renderThumbs(); updateSizeInfo(); }
+      }));
+    }
+
+    function moveItem(from, to) { const x = items.splice(from, 1)[0]; items.splice(to, 0, x); renderThumbs(); updateSizeInfo(); }
+
+    pageSizeSel.addEventListener('change', () => { customSize.style.display = pageSizeSel.value === 'Custom' ? 'block' : 'none'; });
+
+    clearBtn.addEventListener('click', () => { items = []; renderThumbs(); downloadArea.innerHTML = ''; updateSizeInfo(); clearLog(); setProgress(-1); });
+
+    function updateSizeInfo() { const totalKB = items.reduce((s, i) => s + (i.file.size || 0), 0) / 1024; sizeInfo.textContent = items.length ? `${items.length} images — ${(totalKB).toFixed(1)} KB` : ''; }
+
+    function setProgress(p) { if (p < 0) { progressWrap.style.display = 'none'; return; } progressWrap.style.display = 'block'; progressBar.style.width = (p * 100).toFixed(1) + '%'; }
+
+    convertBtn.addEventListener('click', async () => {
+      if (!items.length) { alert('Add images first'); return; }
+      convertBtn.disabled = true; clearLog(); setProgress(0); downloadArea.innerHTML = '';
+      try {
+        const { jsPDF } = window.jspdf;
+        // page dims
+        let pageWmm = 210, pageHmm = 297;
+        if (pageSizeSel.value === 'A4') { pageWmm = 210; pageHmm = 297; }
+        else if (pageSizeSel.value === 'Letter') { pageWmm = 215.9; pageHmm = 279.4; }
+        else { pageWmm = parseFloat(cw.value) || 210; pageHmm = parseFloat(ch.value) || 297; }
+        const orient = orientationSel.value || 'portrait';
+        const unit = 'mm';
+        const margin = Math.max(0, parseFloat(marginInput.value) || 10);
+        const scale = scaleMode.value;
+        const embed = embedAs.value;
+        const qual = Math.max(10, Math.min(100, parseInt(qualityInput.value) || 90));
+        const pdf = new jsPDF({ orientation: orient, unit: unit, format: [pageWmm, pageHmm] });
+
+        for (let i = 0; i < items.length; i++) {
+          const it = items[i]; log('Processing: ' + it.file.name);
+          const img = await loadImage(it.dataURL, it.rotate);
+          // compute available area
+          const availW = pageWmm - margin * 2, availH = pageHmm - margin * 2;
+          // convert px->mm approx (1px ≈ 0.264583 mm)
+          const pxToMm = 0.264583;
+          const imgWmm = img.width * pxToMm, imgHmm = img.height * pxToMm;
+          let drawW = imgWmm, drawH = imgHmm;
+          if (scale === 'fit') {
+            const r = Math.min(availW / imgWmm, availH / imgHmm);
+            drawW = imgWmm * r; drawH = imgHmm * r;
+          } else if (scale === 'fill') {
+            const r = Math.max(availW / imgWmm, availH / imgHmm);
+            drawW = imgWmm * r; drawH = imgHmm * r;
+          } else if (scale === 'actual') {
+            if (drawW > availW || drawH > availH) {
+              const r = Math.min(availW / drawW, availH / drawH);
+              drawW *= r; drawH *= r;
+            }
+          }
+          const x = margin + (availW - drawW) / 2;
+          const y = margin + (availH - drawH) / 2;
+          // create image data URL with desired embed format
+          const targetPxW = Math.round(drawW / pxToMm), targetPxH = Math.round(drawH / pxToMm);
+          const imgForPdf = await canvasFromImage(img, embed === 'JPEG' ? qual / 100 : 1, targetPxW, targetPxH, embed);
+          if (i > 0) pdf.addPage([pageWmm, pageHmm], orient);
+          pdf.addImage(imgForPdf, embed === 'PNG' ? 'PNG' : 'JPEG', x, y, drawW, drawH, undefined, embed === 'JPEG' ? 'FAST' : undefined);
+          // page number
+          if (pageNumbers.value !== 'no') {
+            pdf.setFontSize(10); pdf.setTextColor(120);
+            const text = `${i + 1}`;
+            if (pageNumbers.value === 'bottom-center') { pdf.text(text, pageWmm / 2, pageHmm - 6, { align: 'center' }); }
+            else { pdf.text(text, pageWmm - margin - 4, pageHmm - 6, { align: 'right' }); }
+          }
+          setProgress((i + 1) / items.length); await briefYield(60);
+        }
+        const blob = pdf.output('blob');
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a'); a.href = url; a.download = (outName.value || 'images.pdf'); a.textContent = 'Download PDF'; a.className = 'btn btn-primary';
+        downloadArea.appendChild(a);
+        log('PDF created.');
+      } catch (e) { log('Error: ' + (e.message || e)); alert('Failed: ' + (e.message || e)); }
+      finally { convertBtn.disabled = false; setProgress(-1); }
+    });
+
+    function loadImage(dataURL, rotate = 0) {
+      return new Promise((res, rej) => {
+        const img = new Image();
+        img.onload = () => {
+          if (rotate % 360 !== 0) {
+            const c = document.createElement('canvas');
+            const ctx = c.getContext('2d');
+            const angle = rotate % 360;
+            const rad = angle * Math.PI / 180;
+            const swap = angle === 90 || angle === 270;
+            c.width = swap ? img.height : img.width;
+            c.height = swap ? img.width : img.height;
+            ctx.translate(c.width / 2, c.height / 2);
+            ctx.rotate(rad);
+            ctx.drawImage(img, -img.width / 2, -img.height / 2);
+            const out = new Image();
+            out.onload = () => res(out);
+            out.onerror = rej;
+            out.src = c.toDataURL('image/png');
+          } else res(img);
+        };
+        img.onerror = rej;
+        img.src = dataURL;
+      });
+    }
+
+    function canvasFromImage(img, quality = 1, targetPxW = null, targetPxH = null, format = 'JPEG') {
+      return new Promise((res, rej) => {
+        const canvas = document.createElement('canvas');
+        canvas.width = targetPxW || img.width;
+        canvas.height = targetPxH || img.height;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        try {
+          const mime = format === 'PNG' ? 'image/png' : 'image/jpeg';
+          const dataURL = canvas.toDataURL(mime, Math.max(0.1, quality));
+          res(dataURL);
+        } catch (e) { rej(e); }
+      });
+    }
+
+    function dataURLToBlob(dataURL) { const arr = dataURL.split(','); const mime = arr[0].match(/:(.*?);/)[1]; const bstr = atob(arr[1]); let n = bstr.length; const u8 = new Uint8Array(n); while (n--) u8[n] = bstr.charCodeAt(n); return new Blob([u8], { type: mime }); }
+
+    function briefYield(ms = 10) { return new Promise(r => setTimeout(r, ms)); }
+  </script>
+
+  <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

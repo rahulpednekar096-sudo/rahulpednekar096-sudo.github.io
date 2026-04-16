@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Site-wide script -->
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Audio Metadata Editor is a web-based tool that allows users to view audio information and remove metadata safely. It supports various audio formats and ensures privacy by stripping metadata during WAV export." />
+    <meta name="keywords"
+        content="Audio Metadata Editor, Remove Audio Metadata, View Audio Info, Clean WAV Export, Audio File Metadata, Online Audio Metadata Tool, RDroid Apps" />
+    <title>Audio Volume Boost — RDroid Apps</title>
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/audio/audio-volume-boost.html" />
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Audio Volume Boost — RDroid Apps" />
+  <meta property="og:description" content="Audio Metadata Editor is a web-based tool that allows users to view audio information and remove metadata safely. It supports various audio formats and ensures privacy by stripping metadata during WAV export." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/audio/audio-volume-boost.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Audio Volume Boost — RDroid Apps" />
+  <meta name="twitter:description" content="Audio Metadata Editor is a web-based tool that allows users to view audio information and remove metadata safely. It supports various audio formats and ensures privacy by stripping metadata during WAV export." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
+
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Audio Volume Boost — RDroid Apps",
+    "description": "Audio Metadata Editor is a web-based tool that allows users to view audio information and remove metadata safely. It supports various audio formats and ensures privacy by stripping metadata during WAV export.",
+    "url": "https://rdroidapps.com/windows-tools/audio/audio-volume-boost.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+    <section class="hero">
+        <h1>Audio Volume Boost</h1>
+        <h3>
+            Increase audio volume safely.<br>
+            <b>Tip:</b> Auto-normalize prevents distortion.
+        </h3>
+    </section>
+    <section class="tool-section">
+        <div class="card">
+            <button class="btn btn-ghost" id="pick"
+                style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload
+                Audio</button>
+            <input type="file" id="file" accept="audio/*" hidden>
+
+            <div class="row">
+                <label>Boost: <b id="gainVal">1.5×</b></label>
+                <input type="range" id="gain" min="0.5" max="3" step="0.1" value="1.5">
+            </div>
+
+            <div class="row">
+                <label>
+                    <input type="checkbox" id="normalize" checked>
+                    Auto normalize (prevent clipping)
+                </label>
+            </div>
+
+            <div class="row">
+                <label>Peak level:</label>
+                <b id="peak">—</b>
+            </div>
+
+            <div class="actions">
+                <button class="btn" id="previewBtn">▶ Preview</button>
+                <button class="btn btn-primary" id="applyBtn">Apply</button>
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
+                <a id="download" class="btn" style="display:none">Download</a>
+            </div>
+
+            <pre id="status">Upload an audio file.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+            <section class="seo-content">
+                <h2>About Audio Volume Boost</h2>
+                <p>
+                    Audio Volume Boost is a web-based tool designed to help users increase the volume of their audio
+                    files safely and effectively. Whether you're dealing with low-volume recordings or simply want to
+                    enhance the listening experience, this tool provides an easy-to-use solution.
+                </p>
+                <h2>Key Features</h2>
+                <ul>
+                    <li><b>Volume Adjustment:</b> Easily boost the volume of your audio files by selecting a desired
+                        gain level.</li>
+                    <li><b>Auto-Normalization:</b> The tool includes an auto-normalization feature that prevents audio
+                        clipping, ensuring that the boosted audio remains clear and distortion-free.</li>
+                    <li><b>Wide Format Support:</b> Supports various audio formats, making it versatile for different
+                        user needs.</li>
+                    <li><b>Preview Functionality:</b> Users can preview the boosted audio before applying changes,
+                        allowing for adjustments as needed.</li>
+                    <li><b>Easy Download:</b> Once satisfied with the adjustments, users can download the modified audio
+                        file directly from the browser.</li>
+                </ul>
+                <h2>How It Works</h2>
+                <p>
+                    Users can upload their audio files through a simple interface. After selecting the desired boost
+                    level and enabling auto-normalization if needed, they can preview the changes. Once satisfied, they
+                    can apply the boost and download the enhanced audio file.
+                </p>
+                <h2>Use Cases</h2>
+                <ul>
+                    <li>Enhancing low-volume recordings for better audibility.</li>
+                    <li>Preparing audio files for presentations or podcasts.</li>
+                    <li>Improving the overall listening experience of music tracks.</li>
+                </ul>
+                <p>
+                    Audio Volume Boost is an essential tool for anyone looking to improve their audio files quickly and
+                    efficiently without needing advanced audio editing software.
+                </p>
+            </section>
+        </div><br>
+        <a href="/index.html#audio-tools" class="nav-button home">🏠 Back to Audio Home</a>
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('drawer').classList.toggle('open');
+        }
+        const ctx = new AudioContext();
+        let buffer = null;
+        let previewSrc = null;
+
+        const pick = document.getElementById("pick");
+        const file = document.getElementById("file");
+        const gainSlider = document.getElementById("gain");
+        const gainVal = document.getElementById("gainVal");
+        const normalize = document.getElementById("normalize");
+        const peakText = document.getElementById("peak");
+        const previewBtn = document.getElementById("previewBtn");
+        const applyBtn = document.getElementById("applyBtn");
+        const resetBtn = document.getElementById("resetBtn");
+        const download = document.getElementById("download");
+        const status = document.getElementById("status");
+
+        gainSlider.oninput = () => {
+            gainVal.textContent = gainSlider.value + "×";
+        };
+
+        pick.onclick = () => file.click();
+
+        file.onchange = async () => {
+            status.textContent = "Loading audio…";
+            buffer = await ctx.decodeAudioData(await file.files[0].arrayBuffer());
+
+            const peak = getPeak(buffer);
+            peakText.textContent = peak.toFixed(2);
+            status.textContent =
+                "Loaded | Duration: " + buffer.duration.toFixed(2) +
+                " sec | Peak: " + peak.toFixed(2);
+        };
+
+        previewBtn.onclick = () => {
+            if (!buffer) return alert("Upload audio first");
+            if (previewSrc) previewSrc.stop();
+
+            const g = ctx.createGain();
+            let gainValue = parseFloat(gainSlider.value);
+
+            if (normalize.checked) {
+                const peak = getPeak(buffer);
+                if (peak * gainValue > 1) {
+                    gainValue = 1 / peak;
+                }
+            }
+
+            g.gain.value = gainValue;
+
+            previewSrc = ctx.createBufferSource();
+            previewSrc.buffer = buffer;
+            previewSrc.connect(g).connect(ctx.destination);
+            previewSrc.start();
+        };
+
+        applyBtn.onclick = async () => {
+            if (!buffer) return alert("Upload audio first");
+
+            applyBtn.disabled = true;
+            status.textContent = "Processing…";
+
+            let gainValue = parseFloat(gainSlider.value);
+            const peak = getPeak(buffer);
+
+            if (normalize.checked && peak * gainValue > 1) {
+                gainValue = 1 / peak;
+            }
+
+            const off = new OfflineAudioContext(
+                buffer.numberOfChannels,
+                buffer.length,
+                buffer.sampleRate
+            );
+
+            const src = off.createBufferSource();
+            const g = off.createGain();
+            g.gain.value = gainValue;
+
+            src.buffer = buffer;
+            src.connect(g).connect(off.destination);
+            src.start();
+
+            const out = await off.startRendering();
+            const blob = new Blob([audioBufferToWav(out)], { type: "audio/wav" });
+
+            download.href = URL.createObjectURL(blob);
+            download.download = "volume-boosted.wav";
+            download.style.display = "inline-block";
+
+            status.textContent =
+                "Done | Applied gain: " + gainValue.toFixed(2) + "×";
+            applyBtn.disabled = false;
+        };
+
+        resetBtn.onclick = () => {
+            if (previewSrc) previewSrc.stop();
+            buffer = null;
+            peakText.textContent = "—";
+            download.style.display = "none";
+            status.textContent = "Reset.";
+        };
+
+        function getPeak(buffer) {
+            let peak = 0;
+            for (let c = 0; c < buffer.numberOfChannels; c++) {
+                const data = buffer.getChannelData(c);
+                for (let i = 0; i < data.length; i++) {
+                    peak = Math.max(peak, Math.abs(data[i]));
+                }
+            }
+            return peak;
+        }
+
+        function audioBufferToWav(buffer) {
+            const ch = buffer.numberOfChannels;
+            const len = buffer.length * ch * 2 + 44;
+            const view = new DataView(new ArrayBuffer(len));
+            let p = 0;
+            const w = s => { for (let i = 0; i < s.length; i++) view.setUint8(p++, s.charCodeAt(i)); };
+
+            w("RIFF"); view.setUint32(p, 36 + buffer.length * ch * 2, true); p += 4;
+            w("WAVEfmt "); view.setUint32(p, 16, true); p += 4;
+            view.setUint16(p, 1, true); p += 2;
+            view.setUint16(p, ch, true); p += 2;
+            view.setUint32(p, buffer.sampleRate, true); p += 4;
+            view.setUint32(p, buffer.sampleRate * ch * 2, true); p += 4;
+            view.setUint16(p, ch * 2, true); p += 2;
+            view.setUint16(p, 16, true); p += 2;
+            w("data"); view.setUint32(p, buffer.length * ch * 2, true); p += 4;
+
+            for (let i = 0; i < buffer.length; i++) {
+                for (let c = 0; c < ch; c++) {
+                    let s = Math.max(-1, Math.min(1, buffer.getChannelData(c)[i]));
+                    view.setInt16(p, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+                    p += 2;
+                }
+            }
+            return view;
+        }
+    </script>
+    <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

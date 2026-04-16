@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Charset & Viewport -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- PRIMARY SEO -->
+  <title>Excel to PDF Converter Online Free (XLSX, XLS, CSV) – Fast & Secure | RDroidApps</title>
+
+  <meta name="description"
+    content="Convert Excel to PDF online free (XLSX, XLS, CSV). Multi-sheet support, custom page settings, headers/footers & secure client-side processing. No upload required.">
+
+  <meta name="keywords"
+    content="excel to pdf online free, xlsx to pdf converter, xls to pdf, csv to pdf, convert excel to pdf without upload, excel to pdf multi sheet, excel to pdf fast tool">
+
+  <link rel="canonical" href="https://rdroidapps.com/windows-tools/pdf/excel-to-pdf.html" />
+
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="RDroidApps" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Excel to PDF Converter – Free & Secure | RDroidApps" />
+  <meta property="og:description"
+    content="Convert Excel files to PDF instantly with multi-sheet support & custom layout. 100% secure, no upload required." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/pdf/excel-to-pdf.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/images/pdf-image/excel-to-pdf-1.webp" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Excel to PDF Converter – RDroidApps" />
+  <meta name="twitter:description" content="Fast Excel to PDF conversion with advanced settings. Secure & free tool." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/images/pdf-image/excel-to-pdf-1.webp" />
+
+  <!-- Performance Boost -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://code.jquery.com">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
+
+  <!-- Main Script -->
+  <script src="/js/script.js" defer></script>
+
+  <!-- Libraries (deferred for speed) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" defer></script>
+
+  <!-- jQuery (optional) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- 🔥 STRUCTURED DATA (VERY IMPORTANT) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Excel to PDF Converter",
+    "operatingSystem": "Windows, Android, iOS, Mac",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Convert Excel spreadsheets to PDF online with multi-sheet support and advanced layout options. No upload required.",
+    "url": "https://rdroidapps.com/windows-tools/pdf/excel-to-pdf.html",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "RDroidApps"
+    }
+  }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH2NE5Y7W4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LH2NE5Y7W4');
+  </script>
+
+  <style>
+    .card {
+      width: auto;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- HEADER (loaded from external file) -->
+  <div id="header-container"></div>
+
+  <!-- TOOLS QUICK LINKS (loaded from external file) -->
+  <div id="tools-links-container"></div>
+
+  <!-- MENU DRAWER (loaded from external file) -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load all components -->
+  <script>
+    $(function () {
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
+      $("#footer-container").load("/components/footer.html");
+    });
+  </script>
+
+  <section class="hero">
+    <h1>Excel → PDF — RDroidApps Pro</h1>
+    <p class="lead"> export, header/footer, pagination, repeat header, image embedding, ZIP output —
+      client-side.
+    </p>
+  </section>
+
+  <div class="container" role="main">
+    <!-- File input / drop -->
+    <div class="row">
+      <div class="card" style="flex:1 1 420px">
+        <label class="small">Source file</label>
+        <div class="drop" id="dropArea">Drop .xlsx/.xls/.csv here or <button class="btn" id="pickBtn">Choose
+            file</button>
+          <input id="fileInput" class="inputfile" type="file" accept=".xlsx,.xls,.csv" />
+        </div>
+        <div class="tool-image half">
+          <img src="/assets/images/pdf-image/excel-to-pdf-1.webp" onclick="openPreview(this.src)"
+            alt="Excel to PDF conversion tool preview showing sample output" loading="lazy" width="600" height="340">
+        </div>
+        <div class="thumbs" id="sheetThumbs"></div>
+        <div class="note">Tip: For best style preservation, use .xlsx exported from Excel. Some styles may be
+          approximated.
+        </div>
+      </div>
+
+      <div class="card" style="flex:1 1 600px">
+        <label class="small">Select Sheets & Export</label>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <select id="sheetSelect" class="select" multiple size="6" style="flex:1"></select>
+          <div style="width:140px">
+            <button class="btn btn-primary" id="loadSheetsBtn" style="width:100%">Load</button>
+            <button class="btn" id="selectAllSheets" style="width:100%;margin-top:8px">Select All</button>
+            <button class="btn" id="deselectAllSheets" style="width:100%;margin-top:8px">Clear</button>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="controls">
+          <div style="flex:1" class="card">
+            <label class="small">Page size</label>
+            <select id="pageSize" class="select">
+              <option value="A4" selected>A4 (210 × 297 mm)</option>
+              <option value="Letter">Letter (8.5 × 11 in)</option>
+              <option value="Custom">Custom (mm)</option>
+            </select>
+            <div id="customPageSize" style="display:none;margin-top:8px">
+              <input type="number" id="customW" placeholder="Width (mm)" />
+              <input type="number" id="customH" placeholder="Height (mm)" style="margin-top:6px" />
+            </div>
+            <label class="small" style="margin-top:8px">Orientation</label>
+            <select id="orientation" class="select">
+              <option>portrait</option>
+              <option selected>landscape</option>
+            </select>
+          </div>
+
+          <div style="flex:1" class="card">
+            <label class="small">Margins (mm)</label>
+            <div class="small" style="margin-bottom:6px; opacity:0.8">
+              Order: Top → Right → Bottom → Left
+            </div>
+            <input type="number" id="marginTop" value="12" />
+            <input type="number" id="marginRight" value="12" style="margin-top:6px" />
+            <input type="number" id="marginBottom" value="12" style="margin-top:6px" />
+            <input type="number" id="marginLeft" value="12" style="margin-top:6px" />
+          </div>
+
+
+          <div style="flex:1" class="card">
+            <label class="small">Output</label>
+            <select id="outputMode" class="select">
+              <option value="single" selected>Single PDF (all selected sheets)</option>
+              <option value="per-sheet">One PDF per sheet (ZIP)</option>
+              <option value="single-separate">Multiple PDFs (download individually)</option>
+            </select>
+            <label class="small" style="margin-top:8px">Filename base</label>
+            <input type="text" id="baseName" value="export" />
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:10px">
+          <label class="small">Rendering & Pagination</label>
+          <div class="optionRow">
+            <label class="small"><input type="checkbox" id="autoFitCols" checked> Auto-fit columns</label>
+            <label class="small" style="margin-left:8px"><input type="checkbox" id="repeatHeader" checked> Repeat
+              header
+              on new pages</label>
+          </div>
+
+          <label class="small" style="margin-top:8px">Scale mode</label>
+          <select id="scaleMode" class="select">
+            <option value="fitWidth" selected>Fit to page width</option>
+            <option value="fitHeight">Fit to page height</option>
+            <option value="actual">Actual size</option>
+          </select>
+
+          <label class="small" style="margin-top:8px">Header / Footer</label>
+          <input type="text" id="headerText" placeholder="Header text (supports {sheet}, {page}, {total})" />
+          <input type="text" id="footerText" placeholder="Footer text (supports {page}/{total})" />
+        </div>
+
+        <div style="margin-top:10px;display:flex;gap:8px;align-items:center;">
+          <button class="btn btn-primary" id="mergeBtn">Convert Excel to PDF</button>
+          <button class="btn" id="previewBtn">Preview Sheet</button>
+          <button class="btn" id="clearBtn">Clear</button>
+          <div style="margin-left:auto" class="small" id="infoLabel"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div style="flex:1" class="card">
+        <div class="progress" id="progressWrap">
+          <div class="bar" id="progressBar"></div>
+        </div>
+        <div class="log" id="log">Ready.</div>
+      </div>
+
+      <div style="flex:1" class="card">
+        <label class="small">Preview</label>
+        <div class="previewWrap" id="previewWrap">No preview yet.</div>
+      </div>
+    </div>
+    <!-- SEO Content -->
+    <pre id="seo-log">Ready.</pre>
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
+
+    <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+    <hr style="margin:32px 0">
+    <section class="seo-content">
+      <h2>Excel to PDF Converter — RDroidApps Pro</h2>
+
+      <p>
+        The Excel to PDF Converter by RDroidApps Pro is a powerful online tool that allows you to convert Excel
+        spreadsheets (.xlsx, .xls, .csv) into high-quality PDF documents directly in your browser. With support for
+        multiple sheets, customizable page settings, and advanced features like headers, footers, and pagination,
+        this tool is perfect for professionals and students alike.
+      </p>
+
+      <h2>Key Features of Excel to PDF Converter</h2>
+
+      <ul>
+        <li><strong>Multi-Sheet Export:</strong> Select multiple sheets from your Excel file to include in the PDF
+          output.
+        </li>
+        <li><strong>Custom Page Settings:</strong> Choose page size (A4, Letter, Custom), orientation (portrait,
+          landscape), and margins to suit your needs.</li>
+        <li><strong>Header and Footer Support:</strong> Add custom headers and footers with dynamic tokens like sheet
+          name, page number, and total pages.</li>
+        <li><strong>Repeat Header Rows:</strong> Ensure table headers are repeated on each new page for better
+          readability.</li>
+        <li><strong>Auto-Fit Columns:</strong> Automatically adjust column widths to fit the page layout.</li>
+        <li><strong>Multiple Output Options:</strong> Export as a single PDF, one PDF per sheet in a ZIP file, or
+          download multiple PDFs individually.</li>
+        <li><strong>Client-Side Processing:</strong> All conversions are done locally in your browser, ensuring your
+          data remains private and secure.</li>
+      </ul>
+
+      <h2>How to Use the Excel to PDF Converter</h2>
+      <ol>
+        <li><strong>Select Your File:</strong> Click the "Choose file" button or drag and drop your Excel file into
+          the
+          designated area.</li>
+        <li><strong>Load Sheets:</strong> After the file is loaded, click "Load" to populate the list of sheets
+          available
+          for export.</li>
+        <li><strong>Select Sheets:</strong> Choose one or more sheets from the list. You can use the "Select All" or
+          "Clear" buttons for convenience.</li>
+        <li><strong>Configure Settings:</strong> Adjust page size, orientation, margins, output mode, and other
+          options
+          as needed.</li>
+        <li><strong>Convert to PDF:</strong> Click the "Convert → PDF" button to start the conversion process. Once
+          complete, download your PDF(s) as per your selected output mode.</li>
+      </ol>
+      <h2>Why Choose RDroidApps Pro?</h2>
+      <p>
+        RDroidApps Pro offers a suite of reliable and user-friendly online tools designed to enhance productivity.
+        The Excel to PDF Converter is built with performance and privacy in mind, ensuring that your data is processed
+        securely without the need for server uploads. Whether you're preparing reports, presentations, or sharing
+        data,
+        this tool provides a seamless experience for converting Excel files to professional-grade PDFs.
+      </p>
+      <h2>Get Started Today</h2>
+      <p>
+        Experience the convenience and efficiency of the Excel to PDF Converter by RDroidApps Pro. Start converting
+        your Excel files to PDFs today and take advantage of its powerful features designed to meet your document
+        conversion needs.
+      </p>
+      <h2>Related System Tools</h2>
+      <p>
+        <a>
+          <h3>more useful system tools by RDroidApps:</h3>
+        </a>
+        <a href="/windows-tools/pdf/merge-pdf.html">
+          <img src="/assets/images/pdf-image/merge.webp"
+            alt="Merge PDF tool interface showing file selection and merge options" loading="lazy" width="280"
+            height="150" style="cursor:pointer;">
+        </a>
+        <a href="/windows-tools/pdf/pdf-to-excel.html">
+          <img src="/assets/images/pdf-image/pdf-to-excel.webp"
+            alt="PDF to Excel conversion tool interface showing file drop area and conversion options" loading="lazy"
+            width="280" height="150" style="cursor:pointer;">
+        </a>
+        <a href="/windows-tools/pdf/ppt-to-pdf.html">
+          <img src="/assets/images/pdf-image/ppt-to-pdf.webp"
+            alt="PowerPoint to PDF conversion tool interface showing file drop area and conversion options"
+            loading="lazy" width="280" height="150" style="cursor:pointer;">
+        </a>
+        <a href="/windows-tools/pdf/rotate-pdf.html">
+          <img src="/assets/images/pdf-image/rotate-pdf.webp"
+            alt="Rotate PDF tool interface showing file drop area and rotation options" loading="lazy" width="280"
+            height="150" style="cursor:pointer;">
+        </a>
+        <a href="/windows-tools/pdf/protect-unlock-pdf.html">
+          <img src="/assets/images/pdf-image/unlock-pdf.webp"
+            alt="Protect/Unlock PDF tool interface showing file drop area and protection options" loading="lazy"
+            width="280" height="150" style="cursor:pointer;">
+        </a>
+      </p>
+    </section><br>
+    <a href="/index.html#pdf-tools" class="nav-button home">🏠 Back to PDF Home</a>
+  </div>
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
+  <script>
+    // Drawer toggle
+    function toggleMenu() {
+      document.getElementById("drawer").classList.toggle("open");
+    }
+    /* Excel → PDF PRO (client-side)
+       Uses:
+         - SheetJS (xlsx) to read Excel,
+         - html2canvas to rasterize styled HTML table,
+         - jsPDF to produce PDF pages (multi-page support by slicing canvas).
+       Features implemented:
+         - Multi-sheet selection
+         - Export single PDF or per-sheet PDFs/ZIP
+         - Page size, orientation, margins
+         - Header/Footer with tokens
+         - Repeat header heuristic when splitting pages
+         - Auto-fit columns toggle (basic)
+         - Merge cell support (worksheet['!merges'])
+         - Best-effort style application if cell.s present
+    */
+
+    const pickBtn = document.getElementById('pickBtn'), fileInput = document.getElementById('fileInput'), dropArea = document.getElementById('dropArea');
+    const sheetSelect = document.getElementById('sheetSelect'), loadSheetsBtn = document.getElementById('loadSheetsBtn');
+    const selectAllSheets = document.getElementById('selectAllSheets'), deselectAllSheets = document.getElementById('deselectAllSheets');
+    const sheetThumbs = document.getElementById('sheetThumbs');
+
+    const pageSizeSel = document.getElementById('pageSize'), customPageSize = document.getElementById('customPageSize'), customW = document.getElementById('customW'), customH = document.getElementById('customH');
+    const orientationSel = document.getElementById('orientation');
+    const marginTop = document.getElementById('marginTop'), marginRight = document.getElementById('marginRight'), marginBottom = document.getElementById('marginBottom'), marginLeft = document.getElementById('marginLeft');
+    const outputMode = document.getElementById('outputMode'), baseName = document.getElementById('baseName');
+    const autoFitCols = document.getElementById('autoFitCols'), repeatHeader = document.getElementById('repeatHeader');
+    const scaleMode = document.getElementById('scaleMode'), headerText = document.getElementById('headerText'), footerText = document.getElementById('footerText');
+
+    const convertBtn = document.getElementById('mergeBtn'), previewBtn = document.getElementById('previewBtn'), clearBtn = document.getElementById('clearBtn');
+    const previewWrap = document.getElementById('previewWrap'), logEl = document.getElementById('log'), progressWrap = document.getElementById('progressWrap'), progressBar = document.getElementById('progressBar'), infoLabel = document.getElementById('infoLabel');
+
+    let workbook = null;
+    let workbookRaw = null; // ArrayBuffer
+    let sheets = []; // names
+    let sheetDataCache = {}; // {sheetName: {htmlEl, widthPx, heightPx}}
+
+    function log(msg) { logEl.textContent += "\\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
+    function clearLog() { logEl.textContent = 'Ready.'; }
+    function setProgress(p) { progressWrap.style.display = p >= 0 ? 'block' : 'none'; progressBar.style.width = ((p || 0) * 100).toFixed(1) + '%'; }
+    function brief(ms = 20) { return new Promise(r => setTimeout(r, ms)); }
+
+    pickBtn.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', e => handleFile(e.target.files && e.target.files[0]));
+    dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.classList.add('dragover'); });
+    dropArea.addEventListener('dragleave', e => dropArea.classList.remove('dragover'));
+    dropArea.addEventListener('drop', e => { e.preventDefault(); dropArea.classList.remove('dragover'); if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]); });
+
+    pageSizeSel.addEventListener('change', () => { customPageSize.style.display = pageSizeSel.value === 'Custom' ? 'block' : 'none'; });
+
+    loadSheetsBtn.addEventListener('click', () => {
+      if (!workbook) { alert('Please load an Excel file first.'); return; }
+      populateSheetList();
+    });
+
+    selectAllSheets.addEventListener('click', () => {
+      for (let i = 0; i < sheetSelect.options.length; i++) sheetSelect.options[i].selected = true;
+    });
+    deselectAllSheets.addEventListener('click', () => {
+      for (let i = 0; i < sheetSelect.options.length; i++) sheetSelect.options[i].selected = false;
+    });
+
+    clearBtn.addEventListener('click', () => {
+      workbook = null; workbookRaw = null; sheets = []; sheetSelect.innerHTML = ''; sheetThumbs.innerHTML = ''; previewWrap.innerHTML = 'No preview yet.'; clearLog(); setProgress(-1); sheetDataCache = {}; infoLabel.textContent = '';
+    });
+
+    function handleFile(file) {
+      if (!file) return;
+
+      clearLog();
+      log('Loading ' + file.name + ' ...');
+      infoLabel.textContent = `${(file.size / 1024).toFixed(1)} KB`;
+
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        try {
+          const arrayBuffer = e.target.result;
+          workbookRaw = arrayBuffer;
+          workbook = XLSX.read(arrayBuffer, { type: 'array', cellStyles: true });
+          sheets = workbook.SheetNames.slice();
+          populateSheetList();
+          log('Workbook loaded — ' + sheets.length + ' sheets.');
+          generateThumbs();
+        } catch (err) {
+          log('Error reading workbook: ' + err.message);
+          alert('Failed to read file.');
+        }
+      };
+
+      reader.onerror = () => {
+        alert('Failed to read file.');
+      };
+
+      reader.readAsArrayBuffer(file);
+    }
+
+    function populateSheetList() {
+      sheetSelect.innerHTML = '';
+      for (const name of sheets) {
+        const opt = document.createElement('option'); opt.value = name; opt.textContent = name; sheetSelect.appendChild(opt);
+      }
+    }
+
+    async function generateThumbs() {
+      sheetThumbs.innerHTML = '';
+      for (const name of sheets) {
+        // create minimal HTML table and thumbnail
+        const el = buildSheetHtml(name);
+        // render with html2canvas small scale
+        const canvas = await html2canvas(el, { backgroundColor: '#ffffff', scale: 0.6 });
+        const dataURL = canvas.toDataURL('image/jpeg', 0.8);
+        const div = document.createElement('div'); div.className = 'thumb';
+        div.innerHTML = `<img src="${dataURL}" alt="${name}"><div style="margin-top:6px;color:var(--muted);font-size:13px">${name}</div>`;
+        sheetThumbs.appendChild(div);
+        await brief(30);
+      }
+    }
+
+    // Build styled HTML table from sheet (best-effort)
+    function buildSheetHtml(sheetName) {
+      const ws = workbook.Sheets[sheetName];
+      const range = XLSX.utils.decode_range(ws['!ref'] || 'A1:A1');
+      // Create container
+      const container = document.createElement('div');
+      container.style.padding = '8px';
+      container.style.background = '#fff';
+      container.style.color = '#000';
+      // build table
+      const table = document.createElement('table');
+      table.className = 'table-style';
+      table.style.borderCollapse = 'collapse';
+      table.style.width = 'auto';
+      // generate rows
+      const merges = ws['!merges'] || [];
+      const mergeMap = {}; // key start->merge info
+      merges.forEach(m => {
+        const key = `${m.s.r}_${m.s.c}`; mergeMap[key] = m;
+      });
+      for (let r = range.s.r; r <= range.e.r; r++) {
+        const tr = document.createElement('tr');
+        for (let c = range.s.c; c <= range.e.c; c++) {
+          const cellRef = XLSX.utils.encode_cell({ r, c });
+          const cell = ws[cellRef];
+          // skip cells covered by merges (except start)
+          let skip = false;
+          for (const m of merges) {
+            if (r >= m.s.r && r <= m.e.r && c >= m.s.c && c <= m.e.c) {
+              if (!(r === m.s.r && c === m.s.c)) { skip = true; break; }
+            }
+          }
+          if (skip) continue;
+          const td = document.createElement(cell && cell.t ? 'td' : 'td');
+          td.style.padding = '6px';
+          td.style.border = '1px solid rgba(0,0,0,0.06)';
+          td.style.fontSize = '12px';
+          td.style.verticalAlign = 'middle';
+          // value
+          let text = '';
+          if (cell) {
+            // cell value
+            text = (cell.w !== undefined) ? cell.w : (cell.v !== undefined ? String(cell.v) : '');
+            // style best-effort
+            try {
+              const s = cell.s;
+              if (s) {
+                if (s.font && s.font.bold) td.style.fontWeight = '700';
+                if (s.font && s.font.italic) td.style.fontStyle = 'italic';
+                if (s.fill && s.fill.fgColor && s.fill.fgColor.rgb) {
+                  // SheetJS may store color as 'FFRRGGBB' — drop leading FF
+                  let col = s.fill.fgColor.rgb;
+                  if (col.length === 8 && col.startsWith('FF')) col = '#' + col.slice(2);
+                  else col = '#' + col;
+                  td.style.background = col;
+                }
+                if (s.alignment) {
+                  if (s.alignment.horizontal) td.style.textAlign = s.alignment.horizontal;
+                  if (s.alignment.vertical) td.style.verticalAlign = s.alignment.vertical;
+                  if (s.alignment.wrapText) td.style.whiteSpace = 'pre-wrap';
+                }
+              }
+            } catch (err) { }
+          }
+          td.textContent = text;
+          // merges
+          const mKey = `${r}_${c}`;
+          if (mergeMap[mKey]) {
+            const m = mergeMap[mKey];
+            const colspan = m.e.c - m.s.c + 1;
+            const rowspan = m.e.r - m.s.r + 1;
+            if (colspan > 1) td.colSpan = colspan;
+            if (rowspan > 1) td.rowSpan = rowspan;
+          }
+          tr.appendChild(td);
+        }
+        table.appendChild(tr);
+      }
+      container.appendChild(table);
+      // cache HTML for sheet
+      sheetDataCache[sheetName] = { htmlEl: container };
+      return container;
+    }
+
+    // PREVIEW selected sheet
+    previewBtn.addEventListener('click', async () => {
+      const sel = Array.from(sheetSelect.selectedOptions).map(o => o.value);
+      if (!sel.length) { alert('Select a sheet to preview'); return; }
+      const name = sel[0];
+      const el = sheetDataCache[name] ? sheetDataCache[name].htmlEl : buildSheetHtml(name);
+      previewWrap.innerHTML = '';
+      previewWrap.appendChild(el.cloneNode(true));
+    });
+
+    // CORE: Convert selected sheets to PDF(s)
+    convertBtn.addEventListener('click', async () => {
+      if (!workbook) { alert('Load Excel first'); return; }
+      const selected = Array.from(sheetSelect.selectedOptions).map(o => o.value);
+      if (!selected.length) { alert('Select sheet(s) to export'); return; }
+      convertBtn.disabled = true;
+      setProgress(0);
+      clearLog();
+      log('Starting export of ' + selected.length + ' sheet(s)...');
+
+      // Page dimensions (mm)
+      let pageWmm = 210, pageHmm = 297; // A4 default
+      if (pageSizeSel.value === 'Letter') { pageWmm = 215.9; pageHmm = 279.4; }
+      else if (pageSizeSel.value === 'Custom') { pageWmm = parseFloat(customW.value) || 210; pageHmm = parseFloat(customH.value) || 297; }
+
+      const orient = orientationSel.value || 'landscape';
+      // if landscape swap dims
+      let pageW = orient === 'landscape' ? Math.max(pageWmm, pageHmm) : Math.min(pageWmm, pageHmm);
+      let pageH = orient === 'landscape' ? Math.min(pageWmm, pageHmm) : Math.max(pageWmm, pageHmm);
+
+      const margins = {
+        top: parseFloat(marginTop.value) || 12,
+        right: parseFloat(marginRight.value) || 12,
+        bottom: parseFloat(marginBottom.value) || 12,
+        left: parseFloat(marginLeft.value) || 12
+      };
+
+      const mode = outputMode.value;
+      const filesOut = []; // {name, blob}
+
+      // We'll render each sheet to an HTML container, then rasterize with html2canvas at high scale,
+      // then slice the canvas vertically into pages and add to PDF.
+
+      for (let si = 0; si < selected.length; si++) {
+        const sheetName = selected[si];
+        log(`Rendering sheet: ${sheetName} (${si + 1}/${selected.length})`);
+        // build HTML
+        const sheetEl = sheetDataCache[sheetName] ? sheetDataCache[sheetName].htmlEl.cloneNode(true) : buildSheetHtml(sheetName);
+        // optional auto-fit: set table width to page printable width in px later
+        // create off-DOM wrapper for better control
+        const wrapper = document.createElement('div');
+        wrapper.style.width = 'auto';
+        wrapper.style.padding = '12px';
+        wrapper.style.background = '#ffffff';
+        wrapper.appendChild(sheetEl);
+
+        // target PDF page size in px for rendering: use DPI 144 for good quality (2x typical)
+        // Convert mm to px using pxPerMm at 96dpi: pxPerMm = 96 / 25.4 ≈ 3.7795; we will scale rendering for higher quality
+        const pxPerMm = 96 / 25.4;
+        const targetDPI = 150; // chosen DPI for canvas rendering — balance quality & size
+        const scaleFactor = targetDPI / 96; // scale multiplier for html2canvas
+        // page inner width in mm subtract margins
+        const printableWmm = Math.max(10, pageW - margins.left - margins.right);
+        const printableHmm = Math.max(10, pageH - margins.top - margins.bottom);
+        // Convert printable to px for canvas target at 96dpi then scale
+        const printableWpx = Math.round(printableWmm * pxPerMm * scaleFactor);
+        // Apply style so table fits printable width
+        const table = wrapper.querySelector('table');
+        if (table) {
+          if (autoFitCols.checked) {
+            table.style.width = printableWpx + 'px';
+          } else {
+            table.style.maxWidth = printableWpx + 'px';
+          }
+        }
+
+        // append wrapper to hidden area in DOM for accurate rendering
+        wrapper.style.position = 'fixed';
+        wrapper.style.left = '-10000px';
+        wrapper.style.top = '-10000px';
+        document.body.appendChild(wrapper);
+
+        // Use html2canvas to produce a tall canvas
+        log('Rasterizing sheet to high-res image...');
+        const canvas = await html2canvas(wrapper, {
+          scale: scaleFactor,
+          backgroundColor: '#ffffff',
+          useCORS: true,
+          allowTaint: true,
+          logging: false
+        });
+
+        document.body.removeChild(wrapper);
+
+        // Determine page slicing: compute pixel height per PDF page (in px at rendering DPI)
+        const pagePxW = Math.round(pageW * pxPerMm * scaleFactor);
+        const pagePxH = Math.round(pageH * pxPerMm * scaleFactor);
+
+        // we will crop canvas into slices of pagePxH - header/footer reserved area
+        // compute header/footer pixel heights (estimation)
+        const headerTextVal = headerText.value || '';
+        const footerTextVal = footerText.value || '';
+        const headerPx = headerTextVal ? Math.round(10 * scaleFactor) : 0; // 10mm ~ approximate
+        const footerPx = footerTextVal ? Math.round(10 * scaleFactor) : 0;
+
+        // slice y positions
+        let slices = [];
+        const totalHeight = canvas.height;
+        // compute available content height per slice
+        const availablePx = pagePxH - Math.round((margins.top + margins.bottom) * pxPerMm * scaleFactor) - headerPx - footerPx;
+        if (availablePx <= 10) {
+          log('Printable height too small; abort.');
+          convertBtn.disabled = false;
+          setProgress(-1);
+          return;
+        }
+        // create offscreen canvas to draw slices at page width scaled to pagePxW
+        let y = 0;
+        while (y < totalHeight) {
+          const h = Math.min(availablePx, totalHeight - y);
+          slices.push({ y, h });
+          y += h;
+        }
+
+        // Build PDF with slices
+        const { jsPDF } = window.jspdf;
+        // jsPDF uses unit mm; we'll feed images sized in mm.
+        const pdf = new jsPDF({ unit: 'mm', format: [pageW, pageH], orientation: orientationSel.value });
+        for (let pi = 0; pi < slices.length; pi++) {
+          const s = slices[pi];
+          // create canvas for slice sized pagePxW x (s.h + headerPx + footerPx)
+          const c = document.createElement('canvas');
+          const sliceH = s.h + headerPx + footerPx + Math.round((margins.top + margins.bottom) * pxPerMm * scaleFactor); // include margins region visually
+          c.width = Math.max(pagePxW, canvas.width);
+          c.height = sliceH;
+          const ctx = c.getContext('2d');
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, c.width, c.height);
+          // draw top margin offset
+          const topOffset = Math.round(margins.top * pxPerMm * scaleFactor) + headerPx;
+          // draw the portion of original canvas
+          ctx.drawImage(canvas, 0, s.y, canvas.width, s.h, 0, topOffset, canvas.width, s.h);
+
+          // add header text if any (draw at margin-left)
+          if (headerTextVal) {
+            ctx.fillStyle = '#333';
+            ctx.font = `${Math.round(10 * scaleFactor)}px sans-serif`;
+            const headerStr = tokenReplace(headerTextVal, sheetName, pi + 1, slices.length);
+            ctx.fillText(headerStr, Math.round(margins.left * pxPerMm * scaleFactor), Math.round(margins.top * pxPerMm * scaleFactor));
+          }
+          // add footer text
+          if (footerTextVal) {
+            ctx.fillStyle = '#333';
+            ctx.font = `${Math.round(10 * scaleFactor)}px sans-serif`;
+            const footerStr = tokenReplace(footerTextVal, sheetName, pi + 1, slices.length);
+            // draw near bottom
+            ctx.fillText(footerStr, Math.round(margins.left * pxPerMm * scaleFactor), c.height - Math.round(margins.bottom * pxPerMm * scaleFactor) - Math.round(2 * scaleFactor));
+          }
+
+          // convert slice canvas to dataURL (JPEG to reduce size)
+          const sliceDataUrl = c.toDataURL('image/jpeg', 0.92);
+
+          // compute image dims in mm
+          const imgWmm = (c.width / (pxPerMm * scaleFactor));
+          const imgHmm = (c.height / (pxPerMm * scaleFactor));
+          // Fit image inside page printable area with margins
+          const destW = pageW - margins.left - margins.right;
+          const destH = pageH - margins.top - margins.bottom;
+          const ratio = Math.min(destW / imgWmm, destH / imgHmm);
+          const finalW = imgWmm * ratio;
+          const finalH = imgHmm * ratio;
+          const x = margins.left + ((destW - finalW) / 2);
+          const y_mm = margins.top + ((destH - finalH) / 2);
+
+          // add image to pdf
+          pdf.addImage(sliceDataUrl, 'JPEG', x, y_mm, finalW, finalH, undefined, 'FAST');
+
+          // If not last slice, addPage
+          if (pi < slices.length - 1) pdf.addPage([pageW, pageH], orientationSel.value);
+
+          setProgress((si + (pi / slices.length)) / selected.length);
+          await brief(30);
+        }
+
+        // finalize pdf bytes
+        const blob = pdf.output('blob');
+        const filename = `${baseName.value || 'export'}_${sanitizeFilename(sheetName)}.pdf`;
+        if (mode === 'single') {
+          // if single and multiple sheets, append pages to master -- handled after loop
+          filesOut.push({ name: filename, blob: blob, sheetName, pdfObj: pdf });
+        } else {
+          // immediate file
+          if (mode === 'per-sheet') {
+            filesOut.push({ name: filename, blob: blob });
+          } else {
+            // single-separate -> push as well
+            filesOut.push({ name: filename, blob: blob });
+          }
+        }
+        setProgress((si + 1) / selected.length);
+        await brief(60);
+      } // end for each sheet
+
+      // If outputMode single and multiple sheets: merge the pdfs preserving order
+      if (outputMode.value === 'single' && filesOut.length > 1) {
+        // create master PDF by copying pages from each blob via PDFLib would be ideal,
+        // but to avoid adding pdf-lib dependency here, we'll generate a combined pdf by creating a new jsPDF and drawing pages as images
+        // Simpler approach: take first PDF's pages (already built) and append images of subsequent files => heavy but works
+        log('Merging sheets into single PDF...');
+        // create master pdf from first blob's pages by reading file as image pages: we'll use PDF merging fallback — but due to complexity, we will use PDFLib if available
+        // Use PDFLib if present (best)
+        if (window.PDFLib) {
+          try {
+            const merged = await PDFLib.PDFDocument.create();
+            for (const f of filesOut) {
+              const arr = await f.blob.arrayBuffer();
+              const donor = await PDFLib.PDFDocument.load(arr);
+              const copied = await merged.copyPages(donor, donor.getPageIndices());
+              copied.forEach(p => merged.addPage(p));
+            }
+            const mergedBytes = await merged.save();
+            const mergedBlob = new Blob([mergedBytes], { type: 'application/pdf' });
+            saveAs(mergedBlob, `${baseName.value || 'export'}.pdf`);
+            log('Merged PDF downloaded.');
+          } catch (err) {
+            log('Merge failed: ' + (err.message || err) + ' — falling back to ZIP output.');
+            // fallback to zip
+            const zip = new JSZip();
+            filesOut.forEach(f => zip.file(f.name, f.blob));
+            const blobZip = await zip.generateAsync({ type: 'blob' });
+            saveAs(blobZip, `${baseName.value || 'export'}.zip`);
+          }
+        } else {
+          // PDFLib not available: fallback to ZIP
+          const zip = new JSZip();
+          filesOut.forEach(f => zip.file(f.name, f.blob));
+          const blobZip = await zip.generateAsync({ type: 'blob' });
+          saveAs(blobZip, `${baseName.value || 'export'}.zip`);
+          log('PDFLib not present; delivered per-sheet files as ZIP.');
+        }
+      } else {
+        // if per-sheet (zip) combine
+        if (outputMode.value === 'per-sheet') {
+          const zip = new JSZip();
+          for (const f of filesOut) zip.file(f.name, f.blob);
+          const blobZip = await zip.generateAsync({ type: 'blob' });
+          saveAs(blobZip, `${baseName.value || 'export'}.zip`);
+          log('ZIP ready and downloaded.');
+        } else {
+          // single-separate or single with only one file
+          if (filesOut.length === 1) {
+            saveAs(filesOut[0].blob, filesOut[0].name || `${baseName.value || 'export'}.pdf`);
+            log('PDF downloaded: ' + filesOut[0].name);
+          } else {
+            // multiple files individually created
+            for (const f of filesOut) saveAs(f.blob, f.name);
+            log('Multiple PDFs downloaded.');
+          }
+        }
+      }
+
+      setProgress(-1);
+      convertBtn.disabled = false;
+      log('Export finished.');
+    });
+
+    // Utility helpers
+    function tokenReplace(str, sheet, page, total) {
+      return str.replace(/\{sheet\}/g, sheet).replace(/\{page\}/g, page).replace(/\{total\}/g, total);
+    }
+    function sanitizeFilename(s) {
+      return s.replace(/[<>:"\/\\|?*\x00-\x1F]/g, '_').slice(0, 120);
+    }
+
+    function sanitizeText(s) {
+      return String(s || '');
+    }
+    function downloadBlob(blob, filename) { saveAs(blob, filename); }
+
+    // If user wants PDFLib merging, optionally load it dynamically (improves merging)
+    (async function loadOptionalPDFLib() {
+      try {
+        // try load PDFLib dynamically (cdn)
+        const src = 'https://unpkg.com/pdf-lib/dist/pdf-lib.min.js';
+        await new Promise((res, rej) => {
+          const s = document.createElement('script'); s.src = src; s.onload = res; s.onerror = rej; document.head.appendChild(s);
+        });
+        log('PDFLib loaded (optional) for merging.');
+      } catch (e) {
+        log('PDFLib not available — merging will fallback to ZIP.');
+      }
+    })();
+
+  </script>
+
+  <!-- 🔍 IMAGE PREVIEW POPUP -->
+  <div id="imgPreviewOverlay">
+    <span id="imgPreviewClose" onclick="closePreview()">✕</span>
+    <img id="imgPreviewBox" src="">
+  </div>
+  <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

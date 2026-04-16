@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create Account — RDroid Apps</title>
+  <meta name="description" content="Sign up for RDroid Apps to access your profile and favorites." />
+  
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Create Account — RDroid Apps" />
+  <meta property="og:description" content="Sign up for RDroid Apps to access your profile and favorites." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/auth/signup.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Create Account — RDroid Apps" />
+  <meta name="twitter:description" content="Sign up for RDroid Apps to access your profile and favorites." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+<link rel="stylesheet" href="../css/auth.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Create Account — RDroid Apps",
+    "description": "Sign up for RDroid Apps to access your profile and favorites.",
+    "url": "https://rdroidapps.com/auth/signup.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebPage"
+  }
+  </script>
+</head>
+
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <!-- Logo -->
+      <div class="logo-center">
+        <img src="../assets/my_brand_icon.png" alt="RDroid Logo" />
+      </div>
+
+      <!-- Title -->
+      <h1>Create Account</h1>
+      <p>Join RDroid Apps to save favorites and access your profile</p>
+
+      <!-- Error Message -->
+      <div class="error-message" id="errorMessage"></div>
+
+      <!-- Signup Form -->
+      <form id="signupForm" onsubmit="handleSignup(event)">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="John Doe" required autocomplete="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="your@email.com" required autocomplete="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="••••••••" required autocomplete="new-password" />
+          <div class="password-hint">Minimum 6 characters</div>
+        </div>
+
+        <button type="submit" class="btn-signup" id="signupBtn">Create Account</button>
+      </form>
+
+      <!-- Divider -->
+      <div class="auth-divider">
+        <span>Already have an account?</span>
+      </div>
+
+      <!-- Footer -->
+      <div class="auth-footer">
+        <p>
+          <a href="login.html">Sign In</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase v12 Modular Scripts -->
+  <script type="module" src="../js/firebase-config.js"></script>
+  <script type="module" src="../js/login.js"></script>
+
+  <!-- Auth Page Script -->
+  <script>
+    function showError(message) {
+      const errorEl = document.getElementById('errorMessage');
+      errorEl.textContent = message;
+      errorEl.classList.add('show');
+      setTimeout(() => {
+        errorEl.classList.remove('show');
+      }, 5000);
+    }
+
+    function hideError() {
+      const errorEl = document.getElementById('errorMessage');
+      errorEl.classList.remove('show');
+    }
+
+    async function handleSignup(event) {
+      event.preventDefault();
+      hideError();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const signupBtn = document.getElementById('signupBtn');
+
+      if (!name || !email || !password) {
+        showError('Please fill in all fields');
+        return;
+      }
+
+      if (password.length < 6) {
+        showError('Password must be at least 6 characters long');
+        return;
+      }
+
+      signupBtn.disabled = true;
+      signupBtn.textContent = 'Creating account...';
+
+      try {
+        await window.rdroidAuth.doSignup(name, email, password);
+        alert('Account created successfully! You can now log in.');
+        window.location.href = 'login.html';
+      } catch (error) {
+        showError(error.message || 'Signup failed. Please try again.');
+      } finally {
+        signupBtn.disabled = false;
+        signupBtn.textContent = 'Create Account';
+      }
+    }
+  </script>
+  <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

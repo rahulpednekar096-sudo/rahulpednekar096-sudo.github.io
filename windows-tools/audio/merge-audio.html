@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Site-wide script -->
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Merge Audio is a web-based tool that allows users to combine multiple audio files into a single track. It supports gap and smooth fade transitions between tracks, providing an easy preview and download option." />
+    <meta name="keywords"
+        content="Merge Audio, Combine Audio Files, Audio File Merging, Gap Between Tracks, Smooth Fade Transitions, Online Audio Merger, RDroid Apps" />
+    <title>Merge Audio — RDroid Apps</title>
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/audio/merge-audio.html" />
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Merge Audio — RDroid Apps" />
+  <meta property="og:description" content="Merge Audio is a web-based tool that allows users to combine multiple audio files into a single track. It supports gap and smooth fade transitions between tracks, providing an easy preview and download option." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/audio/merge-audio.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Merge Audio — RDroid Apps" />
+  <meta name="twitter:description" content="Merge Audio is a web-based tool that allows users to combine multiple audio files into a single track. It supports gap and smooth fade transitions between tracks, providing an easy preview and download option." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
+
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Merge Audio — RDroid Apps",
+    "description": "Merge Audio is a web-based tool that allows users to combine multiple audio files into a single track. It supports gap and smooth fade transitions between tracks, providing an easy preview and download option.",
+    "url": "https://rdroidapps.com/windows-tools/audio/merge-audio.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <section class="hero">
+        <h1>Merge Audio</h1>
+        <h3>
+            Merge multiple audio files in sequence.<br>
+            Supports gap and smooth fade transitions.
+        </h3>
+    </section>
+    <section class="tool-section">
+        <div class="card">
+            <div class="card">
+                <button class="btn btn-ghost" id="pick"
+                    style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload Audio
+                    Files</button>
+                <input type="file" id="file" accept="audio/*" multiple hidden>
+            </div>
+
+            <div class="row">
+                <label>Gap between tracks (seconds):</label>
+                <input type="number" id="gap" min="0" step="0.1" value="0">
+            </div>
+
+            <div class="row">
+                <label>Fade duration (seconds):</label>
+                <input type="number" id="fade" min="0" step="0.1" value="0.5">
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary" id="mergeBtn">Merge</button>
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
+                <a id="download" class="btn" style="display:none">Download</a>
+            </div>
+
+            <pre id="status">Upload audio files.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+            <section class="seo-content">
+                <h2>About Merge Audio Tool</h2>
+                <p>
+                    The Merge Audio tool by RDroid Apps is a convenient web-based application that allows users to
+                    seamlessly combine multiple audio files into a single track. Whether you're creating a playlist,
+                    podcast, or any audio compilation, this tool simplifies the process with user-friendly features.
+                </p>
+                <h2>Key Features:</h2>
+                <ul>
+                    <li><b>Multiple File Support:</b> Upload and merge various audio formats with ease.</li>
+                    <li><b>Customizable Gaps:</b> Set specific time intervals between tracks for smooth transitions.
+                    </li>
+                    <li><b>Smooth Fade Effects:</b> Apply fade-in and fade-out effects to enhance the listening
+                        experience.</li>
+                    <li><b>Preview Before Download:</b> Listen to the merged audio before finalizing your download.</li>
+                    <li><b>High-Quality Output:</b> Export your merged audio in high-quality WAV format.</li>
+                </ul>
+                <h2>How to Use the Merge Audio Tool:</h2>
+                <ol>
+                    <li>Click on the "Upload Audio Files" button to select the audio files you want to merge.</li>
+                    <li>Adjust the gap duration and fade settings according to your preferences.</li>
+                    <li>Click the "Merge" button to combine the audio files.</li>
+                    <li>Preview the merged audio and, if satisfied, click the "Download" button to save it to your
+                        device.
+                    </li>
+                </ol>
+                <h2>Why Choose RDroid Apps?</h2>
+                <ul>
+                    <li><b>User-Friendly Interface:</b> Designed for users of all skill levels, making audio merging
+                        straightforward.</li>
+                    <li><b>No Installation Required:</b> Fully web-based, eliminating the need for software downloads.
+                    </li>
+                    <li><b>Privacy and Security:</b> Your files are processed locally in your browser, ensuring data
+                        privacy.</li>
+                </ul>
+                <p>Experience the ease of merging audio files with RDroid Apps' Merge Audio tool. Perfect for
+                    musicians, podcasters, and audio enthusiasts alike!</p>
+            </section>
+        </div><br>
+        <a href="/index.html#audio-tools" class="nav-button home">🏠 Back to Audio Home</a>
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
+
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('drawer').classList.toggle('open');
+        }
+        const ctx = new AudioContext();
+        let buffers = [];
+
+        const pick = document.getElementById("pick");
+        const file = document.getElementById("file");
+        const gapInput = document.getElementById("gap");
+        const fadeInput = document.getElementById("fade");
+        const mergeBtn = document.getElementById("mergeBtn");
+        const resetBtn = document.getElementById("resetBtn");
+        const download = document.getElementById("download");
+        const status = document.getElementById("status");
+
+        pick.onclick = () => file.click();
+
+        file.onchange = async () => {
+            status.textContent = "Loading audio files…";
+            buffers = [];
+
+            for (const f of file.files) {
+                const buf = await ctx.decodeAudioData(await f.arrayBuffer());
+                buffers.push(buf);
+            }
+
+            status.textContent = buffers.length + " files loaded.";
+        };
+
+        mergeBtn.onclick = async () => {
+            if (buffers.length < 2) {
+                alert("Upload at least 2 audio files");
+                return;
+            }
+
+            const gapSec = parseFloat(gapInput.value);
+            const fadeSec = parseFloat(fadeInput.value);
+
+            const ch = buffers[0].numberOfChannels;
+            const rate = buffers[0].sampleRate;
+
+            let totalLength = 0;
+            buffers.forEach(b => totalLength += b.length);
+            totalLength += gapSec * rate * (buffers.length - 1);
+
+            const out = ctx.createBuffer(ch, totalLength, rate);
+            let offset = 0;
+
+            buffers.forEach((b, index) => {
+                for (let c = 0; c < ch; c++) {
+                    const outCh = out.getChannelData(c);
+                    const inCh = b.getChannelData(c);
+
+                    for (let i = 0; i < b.length; i++) {
+                        let gain = 1;
+
+                        // Fade-in
+                        if (fadeSec > 0 && i < fadeSec * rate)
+                            gain *= i / (fadeSec * rate);
+
+                        // Fade-out
+                        if (fadeSec > 0 && i > b.length - fadeSec * rate)
+                            gain *= (b.length - i) / (fadeSec * rate);
+
+                        outCh[offset + i] = inCh[i] * gain;
+                    }
+                }
+                offset += b.length + gapSec * rate;
+            });
+
+            const blob = new Blob([audioBufferToWav(out)], { type: "audio/wav" });
+            download.href = URL.createObjectURL(blob);
+            download.download = "merged-audio.wav";
+            download.style.display = "inline-block";
+
+            status.textContent = "Merge complete. Download ready.";
+        };
+
+        resetBtn.onclick = () => {
+            buffers = [];
+            download.style.display = "none";
+            status.textContent = "Reset.";
+        };
+
+        function audioBufferToWav(buffer) {
+            const ch = buffer.numberOfChannels;
+            const len = buffer.length * ch * 2 + 44;
+            const view = new DataView(new ArrayBuffer(len));
+            let p = 0;
+            const w = s => { for (let i = 0; i < s.length; i++) view.setUint8(p++, s.charCodeAt(i)); };
+
+            w("RIFF"); view.setUint32(p, 36 + buffer.length * ch * 2, true); p += 4;
+            w("WAVEfmt "); view.setUint32(p, 16, true); p += 4;
+            view.setUint16(p, 1, true); p += 2;
+            view.setUint16(p, ch, true); p += 2;
+            view.setUint32(p, buffer.sampleRate, true); p += 4;
+            view.setUint32(p, buffer.sampleRate * ch * 2, true); p += 4;
+            view.setUint16(p, ch * 2, true); p += 2;
+            view.setUint16(p, 16, true); p += 2;
+            w("data"); view.setUint32(p, buffer.length * ch * 2, true); p += 4;
+
+            for (let i = 0; i < buffer.length; i++) {
+                for (let c = 0; c < ch; c++) {
+                    let s = Math.max(-1, Math.min(1, buffer.getChannelData(c)[i]));
+                    view.setInt16(p, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+                    p += 2;
+                }
+            }
+            return view;
+        }
+    </script>
+    <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

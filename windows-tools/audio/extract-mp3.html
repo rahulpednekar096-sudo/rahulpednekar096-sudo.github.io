@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Site-wide script -->
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Extract Audio is a web-based tool that allows users to extract audio tracks from video files safely. It supports various video formats and provides an easy preview and download option for the extracted audio." />
+    <meta name="keywords"
+        content="Extract Audio, Extract Audio from Video, Video to Audio Extraction, Online Audio Extractor, RDroid Apps" />
+    <title>Extract Audio from Video — RDroid Apps</title>
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/audio/extract-mp3.html" />
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Extract Audio from Video — RDroid Apps" />
+  <meta property="og:description" content="Extract Audio is a web-based tool that allows users to extract audio tracks from video files safely. It supports various video formats and provides an easy preview and download option for the extracted audio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/audio/extract-mp3.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Extract Audio from Video — RDroid Apps" />
+  <meta name="twitter:description" content="Extract Audio is a web-based tool that allows users to extract audio tracks from video files safely. It supports various video formats and provides an easy preview and download option for the extracted audio." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
+
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Extract Audio from Video — RDroid Apps",
+    "description": "Extract Audio is a web-based tool that allows users to extract audio tracks from video files safely. It supports various video formats and provides an easy preview and download option for the extracted audio.",
+    "url": "https://rdroidapps.com/windows-tools/audio/extract-mp3.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <section class="hero">
+        <h1>Extract Audio</h1>
+        <h3>
+            Extract audio track from video file.<br>
+            <b>Note:</b> Browser exports clean WAV (MP3 not supported without ffmpeg).
+        </h3>
+    </section>
+    <section class="tool-section">
+        <div class="card">
+            <button class="btn btn-ghost" id="pick" style="color:#fff0eb; max-width: 100%; background-color: rgba(119, 4, 113, 0.753);">🎬 Upload Video</button>
+            <input type="file" id="file" accept="video/*" hidden>
+
+            <div class="row">
+                <b>Video info:</b>
+                <pre id="info">No file loaded.</pre>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary" id="extractBtn" disabled>Extract Audio</button>
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
+                <a id="download" class="btn" style="display:none">Download</a>
+            </div>
+
+            <pre id="status">Waiting for video…</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+            <section class="seo-content">
+                <h2>Extract Audio from Video Files with RDroid Apps</h2>
+                <p>Looking to extract audio from your video files quickly and easily? RDroid Apps offers a user-friendly
+                    online tool that allows you to extract audio tracks from various video formats without any hassle.
+                    Whether you have a favorite music video, a podcast recording, or any other video content, our tool
+                    makes it simple to get the audio you need.</p>
+
+                <h2>How to Use the Extract Audio Tool</h2>
+                <ol>
+                    <li><b>Upload Your Video:</b> Click on the "Upload Video" button to select the video file from which
+                        you want to extract audio. Our tool supports a wide range of video formats.</li>
+                    <li><b>Extract Audio:</b> Once your video is uploaded, simply click the "Extract Audio" button. The
+                        tool will process the video and extract the audio track for you.</li>
+                    <li><b>Download the Audio:</b> After the extraction is complete, a download link will be provided.
+                        Click on it to save the extracted audio file to your device in WAV format.</li>
+                </ol>
+
+                <h2>Why Choose RDroid Apps?</h2>
+                <ul>
+                    <li><b>Easy to Use:</b> Our intuitive interface ensures that even beginners can extract audio from
+                        videos with ease.</li>
+                    <li><b>Fast Processing:</b> Enjoy quick extraction times without compromising on quality.</li>
+                    <li><b>Privacy Focused:</b> All processing is done in your browser, ensuring that your files remain
+                        private and secure.</li>
+                </ul>
+
+                <p>Start extracting audio from your videos today with RDroid Apps and enjoy high-quality audio files
+                    in just a few clicks!</p>
+            </section>
+        </div><br>
+        <a href="/index.html#audio-tools" class="nav-button home">🏠 Back to Audio Home</a>
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
+
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('drawer').classList.toggle('open');
+        }
+        const ctx = new AudioContext();
+        let videoEl = document.createElement("video");
+        let audioBuffer = null;
+
+        const pick = document.getElementById("pick");
+        const file = document.getElementById("file");
+        const extractBtn = document.getElementById("extractBtn");
+        const resetBtn = document.getElementById("resetBtn");
+        const download = document.getElementById("download");
+        const info = document.getElementById("info");
+        const status = document.getElementById("status");
+
+        pick.onclick = () => file.click();
+
+        file.onchange = async () => {
+            status.textContent = "Loading video…";
+            const url = URL.createObjectURL(file.files[0]);
+            videoEl.src = url;
+            videoEl.muted = true;
+
+            await videoEl.play().catch(() => { }); // allow metadata load
+            videoEl.pause();
+
+            const stream = videoEl.captureStream();
+            const audioTrack = stream.getAudioTracks()[0];
+            if (!audioTrack) {
+                status.textContent = "No audio track found.";
+                return;
+            }
+
+            const mediaStream = new MediaStream([audioTrack]);
+            const source = ctx.createMediaStreamSource(mediaStream);
+            const recorder = ctx.createMediaStreamDestination();
+            source.connect(recorder);
+
+            const rec = new MediaRecorder(recorder.stream);
+            let chunks = [];
+
+            rec.ondataavailable = e => chunks.push(e.data);
+            rec.onstop = async () => {
+                const blob = new Blob(chunks);
+                audioBuffer = await ctx.decodeAudioData(await blob.arrayBuffer());
+
+                info.textContent =
+                    "Duration: " + audioBuffer.duration.toFixed(2) + " sec\n" +
+                    "Channels: " + audioBuffer.numberOfChannels + "\n" +
+                    "Sample Rate: " + audioBuffer.sampleRate + " Hz";
+
+                extractBtn.disabled = false;
+                status.textContent = "Audio ready to export.";
+            };
+
+            rec.start();
+            videoEl.currentTime = 0;
+            videoEl.play();
+            setTimeout(() => rec.stop(), videoEl.duration * 1000);
+        };
+
+        extractBtn.onclick = () => {
+            if (!audioBuffer) return;
+            const wav = audioBufferToWav(audioBuffer);
+            download.href = URL.createObjectURL(new Blob([wav], { type: "audio/wav" }));
+            download.download = "extracted-audio.wav";
+            download.style.display = "inline-block";
+            status.textContent = "Extraction complete.";
+        };
+
+        resetBtn.onclick = () => {
+            audioBuffer = null;
+            info.textContent = "No file loaded.";
+            status.textContent = "Reset.";
+            extractBtn.disabled = true;
+            download.style.display = "none";
+        };
+
+        function audioBufferToWav(buffer) {
+            const ch = buffer.numberOfChannels;
+            const len = buffer.length * ch * 2 + 44;
+            const view = new DataView(new ArrayBuffer(len));
+            let p = 0;
+            const w = s => { for (let i = 0; i < s.length; i++) view.setUint8(p++, s.charCodeAt(i)); };
+
+            w("RIFF"); view.setUint32(p, 36 + buffer.length * ch * 2, true); p += 4;
+            w("WAVEfmt "); view.setUint32(p, 16, true); p += 4;
+            view.setUint16(p, 1, true); p += 2;
+            view.setUint16(p, ch, true); p += 2;
+            view.setUint32(p, buffer.sampleRate, true); p += 4;
+            view.setUint32(p, buffer.sampleRate * ch * 2, true); p += 4;
+            view.setUint16(p, ch * 2, true); p += 2;
+            view.setUint16(p, 16, true); p += 2;
+            w("data"); view.setUint32(p, buffer.length * ch * 2, true); p += 4;
+
+            for (let i = 0; i < buffer.length; i++) {
+                for (let c = 0; c < ch; c++) {
+                    let s = Math.max(-1, Math.min(1, buffer.getChannelData(c)[i]));
+                    view.setInt16(p, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+                    p += 2;
+                }
+            }
+            return view;
+        }
+    </script>
+    <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Site-wide script -->
+  <script src="/js/script.js" defer></script>
+  <!-- Google tag (gtag.js) -->
+
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apps | RDroid Apps</title>
+  <meta name="description"
+    content="Explore privacy-focused Android apps by RDroidApps including Color Mixer, Pocket Music Composer, and Golden Calc." />
+
+  <link rel="canonical" href="https://rdroidapps.com/apps.html" />
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Apps | RDroid Apps" />
+  <meta property="og:description" content="Explore privacy-focused Android apps by RDroidApps including Color Mixer, Pocket Music Composer, and Golden Calc." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/apps.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Apps | RDroid Apps" />
+  <meta name="twitter:description" content="Explore privacy-focused Android apps by RDroidApps including Color Mixer, Pocket Music Composer, and Golden Calc." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
+
+  <!-- Include jQuery for load function -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Apps | RDroid Apps",
+    "description": "Explore privacy-focused Android apps by RDroidApps including Color Mixer, Pocket Music Composer, and Golden Calc.",
+    "url": "https://rdroidapps.com/apps.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebPage"
+  }
+  </script>
+</head>
+
+<body>
+  <!-- HEADER (loaded from external file) -->
+  <div id="header-container"></div>
+
+  <!-- TOOLS QUICK LINKS (loaded from external file) -->
+  <div id="tools-links-container"></div>
+
+  <!-- MENU DRAWER (loaded from external file) -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load all components -->
+  <script>
+    $(function () {
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
+      $("#footer-container").load("/components/footer.html");
+    });
+  </script>
+  <!-- Apps Section -->
+  <div style="max-width: 600px; margin:40px auto; text-align:center;">
+    <h1>Our Featured Apps</h1>
+    <p style="background: rgb(238, 252, 252);">Each app is crafted for performance, privacy, and user delight. Explore
+      what we’ve
+      built 👇</p>
+  </div>
+  <section class="section" style="
+                        display:grid;
+                        grid-template-columns:repeat(auto-fit, minmax(370px, 1fr));
+                        gap: 9px;
+                      ">
+    <!-- ========== COLOR MIXER ========== -->
+    <div class="app-card">
+      <!-- LEFT: IMAGE -->
+      <img alt="Color Mixer App Icon" src="/assets/icons/color-mixer.webp" class="app-thumb" />
+
+      <!-- CENTER: SHORT INFO -->
+      <div class="app-info" a href="/color-mixer.html">
+        <a href="color-mixer.html" class="btn btn-secondary">🎨 Color Mixer</a>
+
+        <p class="app-short-desc">
+          Creative color mixing app with RYB & RGB modes. Works fully offline.
+        </p>
+
+        <div class="app-meta">
+          <span>📱 Android</span>
+          <span>🔒 Privacy-Friendly</span>
+          <span>📴 Offline</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: ACTIONS -->
+      <div class="app-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.rdroid.colormixer" class="btn btn-primary"
+          target="_blank">
+          ▶ Play Store
+        </a>
+      </div>
+    </div>
+    <!-- ========== Pocket Music Composer ========== -->
+    <div class="app-card">
+      <img alt="Pocket Music Composer App Icon" src="/assets/icons/music-composer-icon.webp" class="app-thumb" />
+
+      <div class="app-info">
+        <a href="pocket-music-composer.html" class="btn btn-secondary">🎵 Pocket Music Composer</a>
+
+        <p class="app-short-desc">
+          Simple music creation app to compose melodies using notes and tempo control.
+        </p>
+
+        <div class="app-meta">
+          <span>📱 Android</span>
+          <span>📴 Offline</span>
+          <span>🎶 Music</span>
+        </div>
+      </div>
+
+      <div class="app-actions">
+        <a href="https://github.com/rahulpednekar096-sudo/rahulpednekar096-sudo.github.io/releases/download/v1.5pocket_music_composer/app-release.apk"
+          class="btn btn-primary" target="_blank">
+          ▶ Download
+        </a>
+      </div>
+    </div>
+
+    <!-- ========== GOLDEN CALC ========== -->
+    <div class="app-card">
+      <img alt="Golden Calc App Icon" src="/assets/icons/golden-calc.webp" class="app-thumb" />
+
+      <div class="app-info">
+        <a href="golden-calc.html" class="btn btn-secondary">
+          🧮 Golden Calc
+        </a>
+
+        <p class="app-short-desc">
+          Fast offline calculator with scientific functions and built-in unit converter.
+        </p>
+
+        <div class="app-meta">
+          <span>📱 Android</span>
+          <span>🔢 Calculator</span>
+          <span>📴 Offline</span>
+        </div>
+      </div>
+
+      <div class="app-actions">
+        <a href="https://github.com/rahulpednekar096-sudo/rahulpednekar096-sudo.github.io/releases/download/v1.5_golden_cal/app-release.apk"
+          class="btn btn-primary" target="_blank">
+          ▶ Download
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- 🔍 IMAGE PREVIEW POPUP -->
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
+
+  <script>
+    function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+  </script>
+
+
+  <!-- Firebase v12 Modular SDKs (ES Modules) -->
+
+  <script type="module" src="js/login.js"></script>
+
+
+  <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

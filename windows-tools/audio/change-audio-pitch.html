@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Site-wide script -->
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Audio Volume Boost is a web-based tool that allows users to safely increase audio volume with auto-normalization to prevent distortion. It supports various audio formats and provides an easy preview and download option." />
+    <meta name="keywords"
+        content="Audio Volume Boost, Increase Audio Volume, Safe Audio Boost, Auto Normalize Audio, Audio File Volume Increase, Online Audio Volume Tool, RDroid Apps" />
+    <title>Change Audio Pitch — RDroid Apps</title>
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/audio/change-audio-pitch.html" />
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Change Audio Pitch — RDroid Apps" />
+  <meta property="og:description" content="Audio Volume Boost is a web-based tool that allows users to safely increase audio volume with auto-normalization to prevent distortion. It supports various audio formats and provides an easy preview and download option." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/audio/change-audio-pitch.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Change Audio Pitch — RDroid Apps" />
+  <meta name="twitter:description" content="Audio Volume Boost is a web-based tool that allows users to safely increase audio volume with auto-normalization to prevent distortion. It supports various audio formats and provides an easy preview and download option." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
+
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Change Audio Pitch — RDroid Apps",
+    "description": "Audio Volume Boost is a web-based tool that allows users to safely increase audio volume with auto-normalization to prevent distortion. It supports various audio formats and provides an easy preview and download option.",
+    "url": "https://rdroidapps.com/windows-tools/audio/change-audio-pitch.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <section class="hero">
+        <h1>Change Audio Pitch</h1>
+        <h3>
+            Adjust pitch in semitones.<br>
+            <b>Note:</b> Browser uses approximate pitch shifting (speed may change slightly).
+        </h3>
+    </section>
+    <section class="tool-section">
+        <div class="card">
+            <button class="btn btn-ghost" id="pick" style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload Audio</button>
+            <input type="file" id="file" accept="audio/*" hidden>
+
+            <div class="row">
+                <label>Pitch: <b id="pitchVal">0</b> semitones</label>
+                <input type="range" id="pitch" min="-12" max="12" step="1" value="0">
+            </div>
+
+            <div class="row">
+                <label>Musical note shift: <b id="noteVal">Original</b></label>
+            </div>
+
+            <div class="actions">
+                <button class="btn" id="previewBtn">▶ Preview</button>
+                <button class="btn btn-primary" id="applyBtn">Apply</button>
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
+                <a id="download" class="btn" style="display:none">Download</a>
+            </div>
+
+            <pre id="status">Upload an audio file.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+            <section class="seo-content">
+                <h2>About Change Audio Pitch Tool</h2>
+                <p>The Change Audio Pitch tool is a web-based application designed to help users modify the pitch of
+                    their audio files easily and efficiently. Whether you're a musician looking to experiment with
+                    different tonalities or simply want to adjust the pitch of a recording for personal use, this tool
+                    provides a straightforward solution.</p>
+                <h2>Key Features</h2>
+                <ul>
+                    <li><strong>Easy Upload:</strong> Users can upload audio files in various formats, including MP3,
+                        WAV, and more.</li>
+                    <li><strong>Pitch Adjustment:</strong> The tool allows users to change the pitch in semitones,
+                        providing flexibility for musical experimentation.</li>
+                    <li><strong>Real-Time Preview:</strong> Users can preview the pitch-adjusted audio before finalizing
+                        their changes, ensuring satisfaction with the results.</li>
+                    <li><strong>Downloadable Output:</strong> After applying the desired pitch changes, users can
+                        download the modified audio file directly from the tool.</li>
+                </ul>
+                <h2>How to Use the Tool</h2>
+                <ol>
+                    <li><strong>Upload Audio:</strong> Click the "Upload Audio" button to select an audio file from your
+                        device.</li>
+                    <li><strong>Adjust Pitch:</strong> Use the slider to change the pitch in semitones. The tool
+                        provides real-time feedback on the pitch adjustment.</li>
+                    <li><strong>Preview Changes:</strong> Click the "Preview" button to listen to the audio with the new
+                        pitch before applying the changes.</li>
+                    <li><strong>Apply and Download:</strong> Once satisfied, click the "Apply" button to process the
+                        audio. After processing, a download link will be provided for the modified file.</li>
+                </ol>
+                <h2>Benefits of Using the Change Audio Pitch Tool</h2>
+                <ul>
+                    <li><strong>User-Friendly Interface:</strong> The tool is designed with simplicity in mind, making
+                        it accessible to users of all skill levels.</li>
+                    <li><strong>No Software Installation:</strong> As a web-based tool, there is no need to download or
+                        install any software, making it convenient for quick edits.</li>
+                    <li><strong>Versatile Applications:</strong> Whether for music production, podcast editing, or
+                        personal projects, the Change Audio Pitch tool serves a wide range of audio modification needs.
+                    </li>
+                </ul>
+                <h2>Conclusion</h2>
+                <p>The Change Audio Pitch tool is an invaluable resource for anyone looking to modify the pitch of their
+                    audio files easily. With its user-friendly interface, real-time preview capabilities, and
+                    downloadable output, it offers a comprehensive solution for audio pitch adjustment needs.</p>
+
+            </section>
+        </div><br>
+        <a href="/index.html#audio-tools" class="nav-button home">🏠 Back to Audio Home</a>
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('drawer').classList.toggle('open');
+        }
+        const ctx = new AudioContext();
+        let buffer = null;
+        let previewSrc = null;
+
+        const pick = document.getElementById("pick");
+        const file = document.getElementById("file");
+        const pitch = document.getElementById("pitch");
+        const pitchVal = document.getElementById("pitchVal");
+        const noteVal = document.getElementById("noteVal");
+        const previewBtn = document.getElementById("previewBtn");
+        const applyBtn = document.getElementById("applyBtn");
+        const resetBtn = document.getElementById("resetBtn");
+        const download = document.getElementById("download");
+        const status = document.getElementById("status");
+
+        const NOTES = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+
+        function semitoneToNote(s) {
+            if (s === 0) return "Original";
+            return (s > 0 ? "+" : "") + s + " (" + NOTES[(s + 12) % 12] + ")";
+        }
+
+        pitch.oninput = () => {
+            pitchVal.textContent = pitch.value;
+            noteVal.textContent = semitoneToNote(parseInt(pitch.value));
+        };
+
+        pick.onclick = () => file.click();
+
+        file.onchange = async () => {
+            status.textContent = "Loading audio…";
+            buffer = await ctx.decodeAudioData(await file.files[0].arrayBuffer());
+            status.textContent = "Loaded | Duration: " + buffer.duration.toFixed(2) + " sec";
+        };
+
+        previewBtn.onclick = () => {
+            if (!buffer) return alert("Upload audio first");
+            if (previewSrc) previewSrc.stop();
+
+            previewSrc = ctx.createBufferSource();
+            previewSrc.buffer = buffer;
+            previewSrc.playbackRate.value = Math.pow(2, pitch.value / 12);
+            previewSrc.connect(ctx.destination);
+            previewSrc.start();
+        };
+
+        applyBtn.onclick = async () => {
+            if (!buffer) return alert("Upload audio first");
+
+            applyBtn.disabled = true;
+            status.textContent = "Processing…";
+
+            const ratio = Math.pow(2, pitch.value / 12);
+            const newLen = Math.floor(buffer.length / ratio);
+
+            const off = new OfflineAudioContext(
+                buffer.numberOfChannels,
+                newLen,
+                buffer.sampleRate
+            );
+
+            const src = off.createBufferSource();
+            src.buffer = buffer;
+            src.playbackRate.value = ratio;
+            src.connect(off.destination);
+            src.start();
+
+            const out = await off.startRendering();
+            const blob = new Blob([audioBufferToWav(out)], { type: "audio/wav" });
+
+            download.href = URL.createObjectURL(blob);
+            download.download = "pitch-shifted.wav";
+            download.style.display = "inline-block";
+
+            status.textContent = "Done. Download ready.";
+            applyBtn.disabled = false;
+        };
+
+        resetBtn.onclick = () => {
+            if (previewSrc) previewSrc.stop();
+            buffer = null;
+            download.style.display = "none";
+            pitch.value = 0;
+            pitchVal.textContent = "0";
+            noteVal.textContent = "Original";
+            status.textContent = "Reset.";
+        };
+
+        function audioBufferToWav(buffer) {
+            const ch = buffer.numberOfChannels;
+            const len = buffer.length * ch * 2 + 44;
+            const view = new DataView(new ArrayBuffer(len));
+            let p = 0;
+            const w = s => { for (let i = 0; i < s.length; i++) view.setUint8(p++, s.charCodeAt(i)); };
+
+            w("RIFF"); view.setUint32(p, 36 + buffer.length * ch * 2, true); p += 4;
+            w("WAVEfmt "); view.setUint32(p, 16, true); p += 4;
+            view.setUint16(p, 1, true); p += 2;
+            view.setUint16(p, ch, true); p += 2;
+            view.setUint32(p, buffer.sampleRate, true); p += 4;
+            view.setUint32(p, buffer.sampleRate * ch * 2, true); p += 4;
+            view.setUint16(p, ch * 2, true); p += 2;
+            view.setUint16(p, 16, true); p += 2;
+            w("data"); view.setUint32(p, buffer.length * ch * 2, true); p += 4;
+
+            for (let i = 0; i < buffer.length; i++) {
+                for (let c = 0; c < ch; c++) {
+                    let s = Math.max(-1, Math.min(1, buffer.getChannelData(c)[i]));
+                    view.setInt16(p, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+                    p += 2;
+                }
+            }
+            return view;
+        }
+    </script>
+    <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

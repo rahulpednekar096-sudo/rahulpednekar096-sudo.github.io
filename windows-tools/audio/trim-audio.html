@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Site-wide script -->
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Trim Audio is a web-based tool that allows users to cut audio files by selecting start and end times precisely. It supports various audio formats and provides an easy preview and download option for the trimmed audio." />
+    <meta name="keywords"
+        content="Trim Audio, Cut Audio Files, Select Start and End Time, Audio File Trimming, Online Audio Trimmer, RDroid Apps" />
+    <title>Trim Audio — RDroid Apps</title>
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/audio/trim-audio.html">
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Trim Audio — RDroid Apps" />
+  <meta property="og:description" content="Trim Audio is a web-based tool that allows users to cut audio files by selecting start and end times precisely. It supports various audio formats and provides an easy preview and download option for the trimmed audio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/audio/trim-audio.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Trim Audio — RDroid Apps" />
+  <meta name="twitter:description" content="Trim Audio is a web-based tool that allows users to cut audio files by selecting start and end times precisely. It supports various audio formats and provides an easy preview and download option for the trimmed audio." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
+
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Trim Audio — RDroid Apps",
+    "description": "Trim Audio is a web-based tool that allows users to cut audio files by selecting start and end times precisely. It supports various audio formats and provides an easy preview and download option for the trimmed audio.",
+    "url": "https://rdroidapps.com/windows-tools/audio/trim-audio.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <!-- ===== MAIN TOOL SECTION ===== -->
+    <section class="hero">
+        <h1>Trim Audio</h1>
+        <h3>Select start and end time to cut your audio file precisely.</h3>
+    </section>
+    <section class="tool-section">
+        <div class="card">
+            <button class="btn btn-ghost" id="pickAudio"
+                style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload
+                Audio</button>
+            <input type="file" id="audioFile" accept="audio/*" hidden>
+
+            <div class="row">
+                <label>Total Duration:</label>
+                <span id="totalDur">—</span>
+                <li>sec</li>
+            </div>
+
+            <div class="row">
+                <label>Start (sec)</label>
+                <input type="number" id="startNum" step="0.1" min="0">
+                <input type="range" id="startRange" min="0" step="0.1">
+            </div>
+
+            <div class="row">
+                <label>End (sec)</label>
+                <input type="number" id="endNum" step="0.1" min="0">
+                <input type="range" id="endRange" min="0" step="0.1">
+            </div>
+
+            <div class="row">
+                <label>Selected Length:</label>
+                <span id="selLen">—</span>
+                <li>sec</li>
+            </div>
+
+            <div class="actions">
+                <button class="btn" id="previewBtn" disabled>▶ Preview</button>
+                <button class="btn btn-primary" id="trimBtn" disabled>✂ Trim</button>
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
+                <a id="downloadBtn" class="btn" style="display:none">Download</a>
+            </div>
+            <pre id="status">Upload an audio file.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+            <section class="seo-content">
+                <h2>About Trim Audio Tool</h2>
+                <p>
+                    The Trim Audio tool is a user-friendly web application designed to help users cut and trim audio
+                    files
+                    with precision. Whether you need to remove unwanted sections from a podcast, music track, or any
+                    other
+                    audio recording, this tool provides an easy way to select start and end times for trimming.
+                </p>
+                <h2>Key Features:</h2>
+                <ul>
+                    <li><b>Precise Selection:</b> Users can input exact start and end times or use range sliders to
+                        select
+                        the desired portion of the audio file.</li>
+                    <li><b>Wide Format Support:</b> The tool supports various audio formats, ensuring compatibility with
+                        most
+                        audio files.</li>
+                    <li><b>Preview Functionality:</b> Before finalizing the trim, users can preview the selected audio
+                        segment
+                        to ensure accuracy.</li>
+                    <li><b>Easy Download:</b> After trimming, users can download the new audio file directly from the
+                        browser.</li>
+                </ul>
+                <p>
+                    The Trim Audio tool is perfect for podcasters, musicians, and anyone looking to edit their audio
+                    files
+                    quickly and efficiently. Its intuitive interface makes it accessible for users of all skill levels.
+                </p>
+                <h2>Get Started Now!</h2>
+                <p>Upload your audio file, select the desired start and end times, preview your selection, and download
+                    your
+                    trimmed audio in just a few clicks with RDroid Apps' Trim Audio tool.</p>
+            </section>
+        </div><br>
+        <a href="/index.html#audio-tools" class="nav-button home">🏠 Back to Audio Home</a>
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
+
+    <!-- ===== JS ===== -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('drawer').classList.toggle('open');
+        }
+
+        const ctx = new AudioContext();
+        let buffer = null;
+        let previewSrc = null;
+
+        const pickAudio = document.getElementById("pickAudio");
+        const audioFile = document.getElementById("audioFile");
+
+        const startNum = document.getElementById("startNum");
+        const endNum = document.getElementById("endNum");
+        const startRange = document.getElementById("startRange");
+        const endRange = document.getElementById("endRange");
+
+        const totalDur = document.getElementById("totalDur");
+        const selLen = document.getElementById("selLen");
+
+        const previewBtn = document.getElementById("previewBtn");
+        const trimBtn = document.getElementById("trimBtn");
+        const resetBtn = document.getElementById("resetBtn");
+        const downloadBtn = document.getElementById("downloadBtn");
+        const status = document.getElementById("status");
+
+        pickAudio.onclick = () => audioFile.click();
+
+        audioFile.onchange = async () => {
+            status.textContent = "Loading audio…";
+            buffer = await ctx.decodeAudioData(await audioFile.files[0].arrayBuffer());
+
+            totalDur.textContent = buffer.duration.toFixed(2);
+
+            startRange.max = endRange.max = buffer.duration;
+            startRange.value = startNum.value = 0;
+            endRange.value = endNum.value = buffer.duration.toFixed(2);
+
+            updateSelection();
+            previewBtn.disabled = false;
+            trimBtn.disabled = false;
+            status.textContent = "Audio loaded.";
+        };
+
+        function syncFromRange() {
+            startNum.value = startRange.value;
+            endNum.value = endRange.value;
+            validate();
+        }
+
+        function syncFromNumber() {
+            startRange.value = startNum.value;
+            endRange.value = endNum.value;
+            validate();
+        }
+
+        startRange.oninput = endRange.oninput = syncFromRange;
+        startNum.oninput = endNum.oninput = syncFromNumber;
+
+        function validate() {
+            if (parseFloat(startRange.value) >= parseFloat(endRange.value)) {
+                selLen.textContent = "Invalid range";
+                trimBtn.disabled = true;
+                return;
+            }
+            updateSelection();
+            trimBtn.disabled = false;
+        }
+
+        function updateSelection() {
+            selLen.textContent = (endRange.value - startRange.value).toFixed(2);
+        }
+
+        previewBtn.onclick = () => {
+            if (!buffer) return;
+            if (previewSrc) previewSrc.stop();
+
+            previewSrc = ctx.createBufferSource();
+            previewSrc.buffer = buffer;
+            previewSrc.connect(ctx.destination);
+            previewSrc.start(0, startRange.value, endRange.value - startRange.value);
+        };
+
+        trimBtn.onclick = () => {
+            status.textContent = "Trimming…";
+
+            const s = Math.floor(startRange.value * buffer.sampleRate);
+            const e = Math.floor(endRange.value * buffer.sampleRate);
+
+            const out = ctx.createBuffer(
+                buffer.numberOfChannels,
+                e - s,
+                buffer.sampleRate
+            );
+
+            for (let c = 0; c < buffer.numberOfChannels; c++) {
+                out.getChannelData(c).set(
+                    buffer.getChannelData(c).slice(s, e)
+                );
+            }
+
+            const blob = new Blob([audioBufferToWav(out)], { type: "audio/wav" });
+            downloadBtn.href = URL.createObjectURL(blob);
+            downloadBtn.download = "trimmed.wav";
+            downloadBtn.style.display = "inline-block";
+
+            status.textContent = "Trim complete.";
+        };
+
+        resetBtn.onclick = () => {
+            if (previewSrc) previewSrc.stop();
+            buffer = null;
+            downloadBtn.style.display = "none";
+            status.textContent = "Reset.";
+        };
+
+        function audioBufferToWav(buffer) {
+            const ch = buffer.numberOfChannels;
+            const len = buffer.length * ch * 2 + 44;
+            const view = new DataView(new ArrayBuffer(len));
+            let p = 0;
+            const w = s => { for (let i = 0; i < s.length; i++) view.setUint8(p++, s.charCodeAt(i)); };
+
+            w("RIFF"); view.setUint32(p, 36 + buffer.length * ch * 2, true); p += 4;
+            w("WAVEfmt "); view.setUint32(p, 16, true); p += 4;
+            view.setUint16(p, 1, true); p += 2;
+            view.setUint16(p, ch, true); p += 2;
+            view.setUint32(p, buffer.sampleRate, true); p += 4;
+            view.setUint32(p, buffer.sampleRate * ch * 2, true); p += 4;
+            view.setUint16(p, ch * 2, true); p += 2;
+            view.setUint16(p, 16, true); p += 2;
+            w("data"); view.setUint32(p, buffer.length * ch * 2, true); p += 4;
+
+            for (let i = 0; i < buffer.length; i++) {
+                for (let c = 0; c < ch; c++) {
+                    let s = Math.max(-1, Math.min(1, buffer.getChannelData(c)[i]));
+                    view.setInt16(p, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+                    p += 2;
+                }
+            }
+            return view;
+        }
+    </script>
+    <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reset Password — RDroid Apps</title>
+  <meta name="description" content="Reset your RDroid Apps password." />
+  
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Reset Password — RDroid Apps" />
+  <meta property="og:description" content="Reset your RDroid Apps password." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/auth/reset.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Reset Password — RDroid Apps" />
+  <meta name="twitter:description" content="Reset your RDroid Apps password." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+<link rel="stylesheet" href="../css/auth.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Reset Password — RDroid Apps",
+    "description": "Reset your RDroid Apps password.",
+    "url": "https://rdroidapps.com/auth/reset.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebPage"
+  }
+  </script>
+</head>
+
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <!-- Logo -->
+      <div class="logo-center">
+        <img src="../assets/my_brand_icon.png" alt="RDroid Logo" />
+      </div>
+
+      <!-- Title -->
+      <h1>Reset Password</h1>
+      <p>Enter your email address and we'll send you a password reset link</p>
+
+      <!-- Messages -->
+      <div class="message" id="successMessage"></div>
+      <div class="message" id="errorMessage"></div>
+
+      <!-- Reset Form -->
+      <form id="resetForm" onsubmit="handleReset(event)">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="your@email.com" required autocomplete="email" />
+        </div>
+
+        <button type="submit" class="btn-reset" id="resetBtn">Send Reset Link</button>
+      </form>
+
+      <!-- Footer -->
+      <div class="auth-footer">
+        <p>
+          Remember your password? <a href="login.html">Sign In</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase v12 Modular Scripts -->
+  <script type="module" src="../js/firebase-config.js"></script>
+  <script type="module" src="../js/login.js"></script>
+
+  <!-- Auth Page Script -->
+  <script>
+    function showSuccess(message) {
+      const successEl = document.getElementById('successMessage');
+      successEl.textContent = message;
+      successEl.classList.add('show', 'success');
+      document.getElementById('errorMessage').classList.remove('show');
+    }
+
+    function showError(message) {
+      const errorEl = document.getElementById('errorMessage');
+      errorEl.textContent = message;
+      errorEl.classList.add('show', 'error');
+      document.getElementById('successMessage').classList.remove('show');
+    }
+
+    async function handleReset(event) {
+      event.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const resetBtn = document.getElementById('resetBtn');
+
+      if (!email) {
+        showError('Please enter your email address');
+        return;
+      }
+
+      resetBtn.disabled = true;
+      resetBtn.textContent = 'Sending...';
+
+      try {
+        await window.rdroidAuth.sendReset(email);
+        showSuccess('Check your email for a password reset link. You can now log in with your new password.');
+        document.getElementById('resetForm').reset();
+        setTimeout(() => {
+          window.location.href = 'login.html';
+        }, 3000);
+      } catch (error) {
+        showError(error.message || 'Failed to send reset email. Please try again.');
+      } finally {
+        resetBtn.disabled = false;
+        resetBtn.textContent = 'Send Reset Link';
+      }
+    }
+  </script>
+  <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

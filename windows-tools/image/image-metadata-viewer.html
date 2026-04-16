@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Site-wide script -->
+    <script src="/js/script.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="View EXIF metadata embedded in JPG/HEIC (where supported). Drag & drop supported.">
+    <meta name="keywords"
+        content="Image Metadata Viewer, EXIF Viewer, JPG Metadata, HEIC Metadata, Photo Metadata, EXIF Data, Image Information, RDroid Apps">
+    <title>Image Metadata Viewer — RDroid Apps</title>
+    <link rel="canonical" href="https://rdroidapps.com/windows-tools/image/image-metadata-viewer.html" />
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Image Metadata Viewer — RDroid Apps" />
+  <meta property="og:description" content="View EXIF metadata embedded in JPG/HEIC (where supported). Drag &amp; drop supported." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/windows-tools/image/image-metadata-viewer.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Image Metadata Viewer — RDroid Apps" />
+  <meta name="twitter:description" content="View EXIF metadata embedded in JPG/HEIC (where supported). Drag &amp; drop supported." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/light-theme.css">
+    <!-- exif-js for EXIF reading -->
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+    <!-- Include jQuery for load function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Image Metadata Viewer — RDroid Apps",
+    "description": "View EXIF metadata embedded in JPG/HEIC (where supported). Drag & drop supported.",
+    "url": "https://rdroidapps.com/windows-tools/image/image-metadata-viewer.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebApplication",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+
+<body>
+    <!-- HEADER (loaded from external file) -->
+    <div id="header-container"></div>
+
+    <!-- TOOLS QUICK LINKS (loaded from external file) -->
+    <div id="tools-links-container"></div>
+
+    <!-- MENU DRAWER (loaded from external file) -->
+    <div id="menu-drawer-container"></div>
+
+    <!-- Load all components -->
+    <script>
+        $(function () {
+            $("#header-container").load("/components/header.html");
+            $("#menu-drawer-container").load("/components/menu-drawer.html");
+            $("#tools-links-container").load("/components/tools-quick-links.html");
+            $("#footer-container").load("/components/footer.html");
+        });
+    </script>
+
+    <section class="hero">
+        <h1>Image Metadata Viewer</h1>
+        <h3>View EXIF metadata embedded in JPG/HEIC (where supported). Drag & drop supported.</h3>
+    </section>
+    <section class="tool-section">
+        <div class="card">
+            <label class="drop" id="dropArea"
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
+                <button class="btn btn-ghost" id="pickBtn">Choose file</button>
+            </label>
+            <input type="file" id="fileInput" accept="image/*" />
+
+            <div style="margin-top:12px;" id="preview"></div>
+            <div style="margin-top:12px; display:flex; gap:8px;">
+                <button class="btn btn-ghost" id="resetBtn">Reset</button>
+            </div>
+
+            <pre id="metaOut">No metadata loaded.</pre>
+            <!-- SEO Content -->
+            <div id="warning" style="color:#ffb199; margin-top:8px"></div>
+            <hr style="margin:32px 0">
+            <section class="seo-content">
+                <h2>Image Metadata Viewer Tool</h2>
+                <p>The Image Metadata Viewer is a powerful online tool that allows users to easily view and analyze
+                    metadata embedded within image files, particularly focusing on EXIF data commonly found in JPG and
+                    HEIC formats. This tool is designed for photographers, digital artists, and anyone interested in
+                    understanding the technical details of their images.</p>
+
+                <h2>Key Features</h2>
+                <ul>
+                    <li><strong>Drag & Drop Support:</strong> Users can simply drag and drop their image files into the
+                        designated area for quick access.</li>
+                    <li><strong>Wide Format Compatibility:</strong> Supports popular image formats such as JPG and HEIC,
+                        ensuring versatility for various user needs.</li>
+                    <li><strong>Detailed EXIF Data Display:</strong> Extracts and displays comprehensive EXIF metadata,
+                        including camera settings, date taken, GPS coordinates, and more.</li>
+                    <li><strong>User-Friendly Interface:</strong> The intuitive design makes it easy for users of all
+                        skill levels to navigate and utilize the tool effectively.</li>
+                </ul>
+
+                <h2>How to Use the Tool</h2>
+                <p>To use the Image Metadata Viewer, simply follow these steps:</p>
+                <ol>
+                    <li>Click on the "Choose file" button or drag and drop your image into the specified area.</li>
+                    <li>The tool will automatically process the image and extract the metadata.</li>
+                    <li>View the displayed EXIF data in a structured format for easy analysis.</li>
+                    <li>If needed, use the "Reset" button to clear the current data and upload a new image.</li>
+                </ol>
+
+                <h2>Benefits of Using Image Metadata Viewer</h2>
+                <p>This tool provides several benefits, including:</p>
+                <ul>
+                    <li><strong>Enhanced Understanding:</strong> Gain insights into how images were captured and
+                        processed.</li>
+                    <li><strong>Troubleshooting:</strong> Identify potential issues with camera settings or image
+                        quality.</li>
+                    <li><strong>Privacy Awareness:</strong> Understand what information is stored in your images before
+                        sharing them online.</li>
+                </ul>
+
+                <p>Overall, the Image Metadata Viewer is an essential tool for anyone looking to delve deeper into the
+                    technical aspects of their images and make informed decisions based on the metadata provided.</p>
+
+            </section>
+        </div><br>
+        <a href="/index.html#image-tools" class="nav-button home">🏠 Back to Image Home</a>
+    </section>
+    <!-- FOOTER (loaded from external file) -->
+    <div id="footer-container"></div>
+    <div>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up">Back to Top</i>
+        </button>
+    </div>
+    <script>
+        function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+
+        const pickBtn = document.getElementById('pickBtn');
+        const fileInput = document.getElementById('fileInput');
+        const dropArea = document.getElementById('dropArea');
+        const preview = document.getElementById('preview');
+        const metaOut = document.getElementById('metaOut');
+        const resetBtn = document.getElementById('resetBtn');
+
+        resetBtn.addEventListener('click', () => {
+            fileInput.value = "";
+            preview.innerHTML = "";
+            metaOut.textContent = "No metadata loaded.";
+            dropArea.style.borderColor = "#202426";
+        });
+
+
+        // UI helpers
+        function showPreview(file) {
+            preview.innerHTML = `<img src="${URL.createObjectURL(file)}" style="max-width:420px;border-radius:8px">`;
+        }
+        function showMeta(obj) {
+            metaOut.textContent = JSON.stringify(obj, null, 2);
+        }
+        function clearMeta() {
+            metaOut.textContent = 'No metadata loaded.';
+        }
+
+        // drag & drop UI
+        pickBtn.addEventListener('click', () => fileInput.click());
+
+        dropArea.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#0aa37f';
+        });
+        dropArea.addEventListener('dragleave', () => {
+            dropArea.style.borderColor = '#202426';
+        });
+        dropArea.addEventListener('drop', e => {
+            e.preventDefault();
+            dropArea.style.borderColor = '#202426';
+            if (e.dataTransfer.files && e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                // trigger change so same handler runs
+                fileInput.dispatchEvent(new Event('change'));
+            }
+        });
+
+        // main handler
+        fileInput.addEventListener('change', async () => {
+            clearMeta();
+            const f = fileInput.files[0];
+            if (!f) return;
+            showPreview(f);
+
+            // exif-js works on File objects — wrap in try/catch
+            try {
+                EXIF.getData(f, function () {
+                    // EXIF.getAllTags may be large; only send a trimmed subset? we will show all.
+                    const all = EXIF.getAllTags(this) || {};
+                    showMeta(all);
+                });
+            } catch (err) {
+                metaOut.textContent = 'Failed to read metadata: ' + (err && err.message ? err.message : err);
+            }
+        });
+    </script>
+    <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>

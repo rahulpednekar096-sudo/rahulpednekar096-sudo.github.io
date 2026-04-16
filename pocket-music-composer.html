@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Site-wide script -->
+  <script src="/js/script.js" defer></script>
+  <!-- Google tag (gtag.js) -->
+
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pocket Music Composer | RDroid Apps</title>
+  <meta name="description"
+    content="Pocket Music Composer by RDroidApps is a simple offline Android app for creating melodies using musical notes, basic composition tools, and audio export." />
+  <link rel="canonical" href="https://rdroidapps.com/pocket-music-composer.html" />
+
+  <meta property="og:site_name" content="RDroid Apps" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Pocket Music Composer | RDroid Apps" />
+  <meta property="og:description" content="Pocket Music Composer by RDroidApps is a simple offline Android app for creating melodies using musical notes, basic composition tools, and audio export." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rdroidapps.com/pocket-music-composer.html" />
+  <meta property="og:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pocket Music Composer | RDroid Apps" />
+  <meta name="twitter:description" content="Pocket Music Composer by RDroidApps is a simple offline Android app for creating melodies using musical notes, basic composition tools, and audio export." />
+  <meta name="twitter:image" content="https://rdroidapps.com/assets/icons/android-chrome-512x512.png" />
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/light-theme.css">
+  <!-- Include jQuery for load function -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "name": "Pocket Music Composer | RDroid Apps",
+    "description": "Pocket Music Composer by RDroidApps is a simple offline Android app for creating melodies using musical notes, basic composition tools, and audio export.",
+    "url": "https://rdroidapps.com/pocket-music-composer.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RDroid Apps",
+      "url": "https://rdroidapps.com/"
+    },
+    "@type": "WebPage"
+  }
+  </script>
+</head>
+
+<body>
+  <!-- HEADER (loaded from external file) -->
+  <div id="header-container"></div>
+
+  <!-- TOOLS QUICK LINKS (loaded from external file) -->
+  <div id="tools-links-container"></div>
+
+  <!-- MENU DRAWER (loaded from external file) -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load all components -->
+  <script>
+    $(function () {
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#tools-links-container").load("/components/tools-quick-links.html");
+      $("#footer-container").load("/components/footer.html");
+    });
+  </script>
+
+  <div class="wrap">
+    <!-- App Header Section -->
+    <div class="section" style="margin-top: 30px;">
+      <div style="display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start; margin-bottom: 25px;">
+        <!-- Left: App Icon -->
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+          <img src="/assets/icons/music-composer-icon.webp" alt="Pocket Music Composer Icon"
+            style="width: 120px; height: 120px;">
+          <span
+            style="background: linear-gradient(135deg, #22D3A6, #0ea5e9); color: #000; padding: 6px 16px; border-radius: 20px; font-weight: 600; font-size: 15px; text-align: center;">
+            Free
+          </span>
+        </div>
+
+        <!-- Right: App Title and Info -->
+        <div>
+          <div style="display: flex; align-items: baseline; gap: 15px; flex-wrap: wrap; margin-bottom: 15px;">
+            <h1 style="font-size: 2.8rem; margin: 0;">Pocket Music Composer</h1>
+            <p style="font-size: 1.2rem; color: var(--muted); margin: 0;">for Android</p>
+          </div>
+
+          <div style="color: var(--muted); font-size: 14px; margin-bottom: 10px;">
+            <strong>Information</strong> | <a href="#" style="color: var(--brand); text-decoration: none;">Alternative
+              apps</a>
+          </div>
+
+          <hr style="border: 1px solid rgb(3, 219, 226); margin: 10px 0 20px;" />
+
+          <div style="color: var(--muted); font-size: 15px; margin-bottom: 15px;">
+            <strong>RDroid Apps</strong> · Newly Launch
+            <a href="/pocket-music-composer-user-guide.html" class="btn">User Guide</a>
+          </div>
+        </div>
+      </div>
+
+      <hr style="border: 1px solid rgb(3, 219, 226); margin: 20px 0;" />
+
+      <!-- Screenshots Section -->
+      <div style="margin-top: 30px;">
+        <h3 style="margin-bottom: 15px; color: white;">App Screenshots</h3>
+        <div
+          style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: thin; scrollbar-color: var(--brand) rgba(255, 255, 255, 0.05);">
+          <img src="/assets/images/pocket_music_composer.webp" alt="Pocket Music Composer Screenshot 1"
+            style="width: 180px; height: 320px; border-radius: 12px; border: 2px solid rgba(255, 255, 255, 0.1); cursor: pointer; transition: transform 0.3s ease;"
+            class="screenshot-img" onclick="openImagePreview(this.src)">
+          <img src="/assets/images/music.webp" alt="Pocket Music Composer Screenshot 2"
+            style="width: 180px; height: 320px; border-radius: 12px; border: 2px solid rgba(255, 255, 255, 0.1); cursor: pointer; transition: transform 0.3s ease;"
+            class="screenshot-img" onclick="openImagePreview(this.src)">
+          <img src="/assets/images/pocket_music_composer_3.webp" alt="Pocket Music Composer Screenshot 3"
+            style="width: 180px; height: 320px; border-radius: 12px; border: 2px solid rgba(255, 255, 255, 0.1); cursor: pointer; transition: transform 0.3s ease;"
+            class="screenshot-img" onclick="openImagePreview(this.src)">
+          <img src="/assets/images/pocket_music_composer_2.webp" alt="Pocket Music Composer Screenshot 3"
+            style="width: 500px; height: 320px; border-radius: 12px; border: 2px solid rgba(255, 255, 255, 0.1); cursor: pointer; transition: transform 0.3s ease;"
+            class="screenshot-img" onclick="openImagePreview(this.src)">
+        </div>
+        <p style="color: var(--muted); font-size: 13px; margin-top: 8px; text-align: center;">Click on any screenshot to
+          view larger</p>
+      </div>
+
+      <hr style="border: 1px solid rgb(3, 219, 226); margin: 30px 0 20px;" />
+    </div>
+
+    <!-- Image Preview Modal -->
+    <div id="imgPreviewOverlay" onclick="closeImagePreview()">
+      <span id="imgPreviewClose">&times;</span>
+      <img id="imgPreviewBox" src="" alt="Preview">
+    </div>
+
+    <!-- App Description Section -->
+    <div class="section">
+      <h2>Pocket Music Composer: Simple Note-Based Music Creation</h2>
+      <p style="font-size: 17px; line-height: 1.6; margin-bottom: 20px;">
+        Pocket Music Composer is a beginner-friendly music creation app designed for basic melody
+        composition using individual musical notes. It allows users to experiment with
+        note timing and simple sequencing in a clean, offline environment.
+      </p>
+
+      <div
+        style="background: rgba(3, 134, 103, 0.589); border-left: 4px solid var(--brand); padding: 15px; border-radius: 8px; margin: 25px 0;">
+        <p style="margin: 0; font-size: 16px;">
+          This app is intended for learning, experimentation, and casual music creation,
+          focusing on simplicity rather than advanced or professional audio features.
+        </p>
+      </div>
+
+      <div class="tool-card">
+        <div style="font-size: 24px; margin-bottom: 10px;">🎸</div>
+        <h3 style="margin-bottom: 10px;">Note-Based Composition</h3>
+        <p style="color: var(--muted); font-size: 15px;">Create melodies using musical notes and simple sequencing
+          tools.</p>
+      </div>
+
+      <div class="tool-card">
+        <div style="font-size: 24px; margin-bottom: 10px;">🎚</div>
+        <h3 style="margin-bottom: 10px;">Adjustable Note Duration</h3>
+        <p style="color: var(--muted); font-size: 15px;">Control the duration of individual notes to shape melodies
+          and timing
+          with a simple and intuitive interface.</p>
+      </div>
+
+      <div class="tool-card">
+        <div style="font-size: 24px; margin-bottom: 10px;">🎧</div>
+        <h3 style="margin-bottom: 10px;">Layered Tracks</h3>
+        <p style="color: var(--muted); font-size: 15px;">Create compositions using multiple note layers and structured
+          sequences.</p>
+      </div>
+
+      <div class="tool-card">
+        <div style="font-size: 24px; margin-bottom: 10px;">📂</div>
+        <h3 style="margin-bottom: 10px;">Export & Share</h3>
+        <p style="color: var(--muted); font-size: 15px;">Export your tracks in M4A/WAV format and share with friends.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- FAQ Section -->
+    <div class="section">
+      <h2>Is Pocket Music Composer appropriate for beginners?</h2>
+      <p style="font-size: 17px; line-height: 1.6; margin-bottom: 20px;">
+        Pocket Music Composer is designed for beginners, hobbyists, and learners who want to explore
+        basic music composition in a simple and distraction-free environment.
+      </p>
+
+      <ul style="margin-left: 20px; margin-bottom: 25px;">
+        <li style="margin-bottom: 10px; color: var(--muted);">Music students learning composition</li>
+        <li style="margin-bottom: 10px; color: var(--muted);">Hobbyists creating original music</li>
+        <li style="margin-bottom: 10px; color: var(--muted);">Teachers for classroom demonstrations</li>
+        <li style="color: var(--muted);">Anyone exploring musical creativity</li>
+      </ul>
+    </div>
+
+    <!-- Download & Info Section -->
+    <div class="section">
+      <div class="cta" style="margin-top: 20px; margin-bottom: 30px;">
+        <a href="https://github.com/rahulpednekar096-sudo/rahulpednekar096-sudo.github.io/releases/download/v1.5pocket_music_composer/app-release.apk"
+          class="btn btn-primary" download>
+          📥 Download APK (v1.5)
+        </a>
+        <a href="/pocket-music-composer-privacy-policy.html" class="btn" style="padding: 12px 24px; font-size: 16px;">
+          📄 Privacy Policy
+        </a>
+      </div>
+
+      <!-- APK trust / info block -->
+      <div
+        style="backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            box-shadow: 3px 3px 15px rgb(1, 156, 161); border: 1px solid rgb(3, 141, 196); border-radius: 10px; padding: 20px; margin-top: 20px;">
+        <h3 style="margin-bottom: 15px;
+          color: rgb(129, 150, 192);
+          ">Download Information</h3>
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 15px;">
+          <div>
+            <strong style="color: var(--muted); display: block; font-size: 14px;">Version</strong>
+            <span style="font-size: 16px;">1.5</span>
+          </div>
+          <div>
+            <strong style="color: var(--muted); display: block; font-size: 14px;">File Size</strong>
+            <span style="font-size: 16px;">34.0 MB</span>
+          </div>
+          <div>
+            <strong style="color: var(--muted); display: block; font-size: 14px;">
+              Android Version
+            </strong>
+            <span style="font-size: 16px;">
+              Android 8.0+ (API 26)
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <strong>SHA-256 Hash</strong><br>
+          <code style="font-size: 14px; word-break: break-all; color: #690192;">
+            13C232F44D1A864F3F61DC90A99C42EC72F345119FEB00A98E930F9C050E2E8A
+          </code>
+        </div>
+
+        <div style="
+        
+            background: rgba(3, 134, 103, 0.589);
+            box-shadow: 3px 3px 15px rgb(1, 156, 161);
+            border-left: 4px solid #28dff7;
+            padding: 14px;
+            border-radius: 6px;
+            margin-top: 20px;
+          ">
+          <p style="margin: 0; color: #dfefff; font-size: 14px; line-height: 1.6;">
+            ⚠️ <strong>Important Installation Notes</strong><br><br>
+
+            • This app is <strong>not available on Google Play Store</strong>.<br>
+            • Official download is provided only via <strong>RDroidApps.com</strong>.<br><br>
+
+            <strong>First-time installation steps:</strong><br>
+            1️⃣ Enable <em>Install unknown apps</em> when prompted by Android.<br>
+            2️⃣ Android may perform a standard security scan during installation. This is a normal
+            system behavior.<br>
+            3️⃣ Complete the installation and start using the app normally.<br><br>
+
+            ✅ After installation, no additional permissions or settings are required.
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <!-- Tip Section -->
+    <div class="section" style="margin-top: 30px; border: 1px solid rgb(0, 174, 255);">
+      <h3 style="color: #ff8a00;">🎨 Creative Tip</h3>
+      <p>
+        <strong>Love experimenting with colors?</strong><br>
+        Try <strong>Color Mixer by RDroid Apps</strong> — a creative tool to explore RGB and RYB
+        color combinations and discover how colors blend beautifully.
+      </p>
+
+      <div class="cta" style="margin-top: 15px;">
+        <a href="https://play.google.com/store/apps/details?id=com.rdroid.colormixer" class="btn btn-ghost"
+          target="_blank" style="color: #000;">
+          🎨 Get Color Mixer on Play Store
+        </a>
+      </div>
+
+      <p style="margin-top: 15px; font-size: 14px; color: var(--muted);">
+        Available on Play Store: "Color Mixer"<br>
+        © RDroid Apps
+      </p>
+    </div>
+  </div>
+
+  <!-- FOOTER (loaded from external file) -->
+  <div id="footer-container"></div>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
+
+  <script>
+    function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
+
+    function openImagePreview(src) {
+      document.getElementById('imgPreviewBox').src = src;
+      document.getElementById('imgPreviewOverlay').style.display = 'flex';
+    }
+
+    function closeImagePreview() {
+      document.getElementById('imgPreviewOverlay').style.display = 'none';
+    }
+
+    // Close when clicking the X
+    document.getElementById('imgPreviewClose').onclick = closeImagePreview;
+
+    // Add hover effects to screenshots
+    document.querySelectorAll('.screenshot-img').forEach(img => {
+      img.addEventListener('mouseenter', function () {
+        this.style.transform = 'scale(1.05)';
+        this.style.boxShadow = '0 10px 25px rgba(34, 211, 166, 0.3)';
+      });
+      img.addEventListener('mouseleave', function () {
+        this.style.transform = 'scale(1)';
+        this.style.boxShadow = 'none';
+      });
+    });
+  </script>
+
+  <!-- Firebase v12 Modular SDKs (ES Modules) -->
+
+  <script type="module" src="js/login.js"></script>
+  <script type="module" src="/js/firebase-config.js"></script>
+</body>
+
+</html>
