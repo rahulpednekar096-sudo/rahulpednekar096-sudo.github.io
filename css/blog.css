@@ -11,6 +11,7 @@
   max-width: var(--blog-max);
   margin: 0 auto 2.5rem;
   padding: 2.5rem 1.5rem 2rem;
+  padding-top: 80px;
   text-align: center;
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.35);
@@ -21,6 +22,31 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.65),
     0 20px 50px rgba(5, 80, 50, 0.08);
   animation: blogFadeUp 0.7s ease backwards;
+}
+
+/*
+  Global `header { position: fixed; z-index: 99 }` (style.css) targets every <header>.
+  blog/index.html also uses <header class="blog-list-hero"> for the hero — without an
+  override it becomes a second fixed bar and stacks above the loaded nav. Reset flow here
+  only; do not change style.css (other pages unaffected).
+*/
+.blog-list-page .blog-list-hero {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  z-index: 0;
+  display: block;
+  justify-content: initial;
+  align-items: initial;
+  gap: normal;
+}
+
+/* Loaded site nav above blog glass cards / compositor layers (blog CSS only; not global) */
+.blog-list-page #header-container > header,
+.blog-post-page #header-container > header,
+.blog-handbook-page #header-container > header {
+  z-index: 1000;
 }
 
 .light-theme .blog-list-hero {
@@ -718,4 +744,23 @@ color: #0369a1;
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* 🔥 FINAL HEADER FIX */
+.blog-list-page .blog-list-hero {
+  position: static !important;
+  z-index: 0 !important;
+  display: block !important;
+}
+
+#header-container header {
+  position: fixed !important;
+  z-index: 9999 !important;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+body.blog-list-page {
+  padding-top: 90px;
 }
