@@ -17,8 +17,11 @@
     "description": "Iconic golden stupa in Yangon, one of the most sacred Buddhist sites in Myanmar.",
     "address": "Yangon, Myanmar",
     "image": "https://rdroidapps.com/data/images/shwedagon.webp",
-    "credit": "Photo by Travel Burma (Wikimedia Commons, modified)",
-    "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
+    "author": "Travel Burma",
+    "source": "Wikimedia Commons",
+    "modified": true,
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
   {
     "name": "Temple of the Tooth",
@@ -26,8 +29,11 @@
     "description": "Temple in Kandy housing a relic of the tooth of the Buddha.",
     "address": "Kandy, Sri Lanka",
     "image": "https://rdroidapps.com/data/images/temple_of_tooth.webp",
-    "credit": "Photo by Miyuru Sankalpa (Wikimedia Commons, modified)",
-    "license": "CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)"
+    "author": "Miyuru Sankalpa",
+    "source": "Wikimedia Commons",
+    "modified": true,
+    "license_name": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
   },
   {
     "name": "Borobudur",
@@ -35,8 +41,10 @@
     "description": "Massive 9th-century Mahayana temple in Central Java.",
     "address": "Magelang, Central Java, Indonesia",
     "image": "https://rdroidapps.com/data/images/borobudur.webp",
-    "credit": "Source: Wikimedia Commons, modified",
-    "license": "CC0 (Public Domain)"
+    "source": "Wikimedia Commons",
+    "modified": true,
+    "license_name": "CC0",
+    "license_url": ""
   },
   {
     "name": "Wat Phra Kaew",
@@ -44,8 +52,11 @@
     "description": "Temple of the Emerald Buddha within the Grand Palace complex in Bangkok.",
     "address": "Bangkok, Thailand",
     "image": "https://rdroidapps.com/data/images/wat_phra_kaew.webp",
-    "credit": "Photo by Preecha.MJ (Wikimedia Commons, modified)",
-    "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
+    "author": "Preecha.MJ",
+    "source": "Wikimedia Commons",
+    "modified": true,
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
   {
     "name": "Todai-ji",
@@ -53,8 +64,11 @@
     "description": "Great Buddha Hall in Nara, home to one of the largest bronze Buddha statues.",
     "address": "Nara, Japan",
     "image": "https://rdroidapps.com/data/images/todai-ji.webp",
-    "credit": "Photo by Felix Filnkössl (Wikimedia Commons, modified)",
-    "license": "CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)"
+    "author": "Felix Filnkössl",
+    "source": "Wikimedia Commons",
+    "modified": true,
+    "license_name": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
   },
   {
     "name": "Haeinsa",
@@ -62,8 +76,11 @@
     "description": "Temple preserving the Tripitaka Koreana woodblocks.",
     "address": "Gyeongsangnam-do, South Korea",
     "image": "https://rdroidapps.com/data/images/haeinsa.webp",
-    "credit": "Photo by Arian Zwegers (Wikimedia Commons, modified)",
-    "license": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/)"
+    "author": "Arian Zwegers",
+    "source": "Wikimedia Commons",
+    "modified": true,
+    "license_name": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
   },
   {
     "name": "Dhammagiri",
@@ -71,8 +88,11 @@
     "description": "Vipassana meditation centre associated with the teachings of S. N. Goenka.",
     "address": "Igatpuri, Maharashtra, India",
     "image": "https://rdroidapps.com/data/images/dhammagiri.webp",
-    "credit": "Photo by Rohit Sharma (Wikimedia Commons, modified)",
-    "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
+    "author": "Rohit Sharma",
+    "source": "Wikimedia Commons",
+    "modified": true,
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
   {
     "name": "Sanchi Great Stupa",
@@ -80,8 +100,11 @@
     "description": "Ancient hemispherical stupa with famous carved gateways; one of the oldest stone structures in India and a UNESCO World Heritage Site.",
     "address": "Sanchi, Madhya Pradesh, India",
     "image": "https://rdroidapps.com/data/images/sanchi.webp",
-    "credit": "Photo by AyushDwivedi1947 (Wikimedia Commons, modified)",
-    "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
+    "author": "AyushDwivedi1947",
+    "source": "Wikimedia Commons",
+    "modified": true,
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
   {
     "name": "Dhamek Stupa",
@@ -89,17 +112,22 @@
     "description": "Massive cylindrical stupa at Sarnath marking the Deer Park where the Buddha gave his first sermon on the Four Noble Truths.",
     "address": "Sarnath, Varanasi, Uttar Pradesh, India",
     "image": "https://rdroidapps.com/data/images/dhamek.webp",
-    "credit": "Photo by R. M. Calamar (via Flickr / Wikimedia Commons, modified)",
-    "license": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/)"
-  },
+    "author": "R. M. Calamar",
+    "source": "Flickr / Wikimedia Commons",
+    "modified": true,
+    "license_name": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
   {
     "name": "Parinirvana Temple",
     "country": "India",
     "description": "Temple enshrining a long reclining Buddha statue at the place traditionally identified as the Buddha’s final passing into parinirvana.",
     "address": "Kushinagar, Uttar Pradesh, India",
     "image": "https://rdroidapps.com/data/images/parinirvana.webp",
-    "credit": "Photo by Ronit 255 (Wikimedia Commons, modified)",
-    "license": "CC BY 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
+    "author": "Ronit 255",
+    "source": "Wikimedia Commons",
+    "modified": true,
+    "license_name": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
   },
   {
     "name": "Maya Devi Temple",
@@ -107,8 +135,11 @@
     "description": "Sacred garden and temple at Lumbini surrounding the marker of the Buddha’s birth, with ancient Ashokan evidence nearby.",
     "address": "Lumbini, Lumbini Province, Nepal",
     "image": "https://rdroidapps.com/data/images/maya_devi.webp",
-    "credit": "Photo by Prince Roy (via Flickr / Wikimedia Commons, modified)",
-    "license": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/)"
+    "author": "Prince Roy",
+    "source": "Flickr / Wikimedia Commons",
+    "modified": true,
+    "license_name": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
   },
   {
     "name": "Boudhanath Stupa",
@@ -116,8 +147,11 @@
     "description": "One of the largest spherical stupas in the world and a major center of Tibetan Buddhist practice in the Kathmandu Valley.",
     "address": "Kathmandu, Bagmati Province, Nepal",
     "image": "https://rdroidapps.com/data/images/boudhanath.webp",
-    "credit": "Photo by Gita Dhoj Karki (Wikimedia Commons, modified)",
-    "license": "CC BY 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
+    "author": "Gita Dhoj Karki",
+    "source": "Wikimedia Commons",
+    "modified": true,
+    "license_name": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
   },
   {
     "name": "Swayambhunath",
