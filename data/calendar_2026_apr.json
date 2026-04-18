@@ -1,0 +1,722 @@
+[
+  {
+    "date": "01",
+    "title": "Odisha Day / Utkal Divas",
+    "description": "Celebrates the formation of Odisha as a separate province in 1936. Odisha is home to the Dhauli peace pagoda and the legacy of Emperor Ashoka's transformation through Dhamma.",
+    "category": "event",
+    "year": "1936",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Iran Declared an Islamic Republic",
+    "description": "On April 1, 1979, following a national referendum after the overthrow of Shah Mohammad Reza Pahlavi, Iran was officially proclaimed an Islamic Republic under Ayatollah Ruhollah Khomeini. The Iranian Revolution ended 2,500 years of monarchical rule and reshaped the political landscape of the Middle East.",
+    "category": "event",
+    "year": "1979",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Apple Computer Company Founded",
+    "description": "On April 1, 1976, Steve Jobs, Steve Wozniak, and Ronald Wayne founded Apple Computer Company in a garage in Cupertino, California. The company would go on to revolutionize personal computing, mobile technology, and digital communication, becoming one of the most influential technology companies in history.",
+    "category": "event",
+    "year": "1976",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "World Autism Awareness Day",
+    "description": "A UN day to promote the rights and well-being of persons with autism. Compassion and inclusion of all people, regardless of ability, is a core Dhamma value.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "U.S. Enters World War I",
+    "description": "On April 2, 1917, President Woodrow Wilson addressed a joint session of Congress to request a declaration of war against Germany, bringing the United States into World War I. Wilson declared that 'the world must be made safe for democracy,' marking a turning point in American foreign policy and the global conflict.",
+    "category": "event",
+    "year": "1917",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Argentina Invades the Falkland Islands",
+    "description": "On April 2, 1982, Argentine military forces invaded the British-held Falkland Islands (Islas Malvinas) in the South Atlantic, triggering the Falklands War. The 74-day conflict ended with a British military victory and the restoration of British administration over the islands.",
+    "category": "event",
+    "year": "1982",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Dhamma: Emperor Ashoka",
+    "description": "Emperor Ashoka, after the Kalinga war, embraced Buddhism and spread Dhamma across Asia. His edicts promoting non-violence, tolerance, and welfare remain humanity's earliest human rights charters.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "03",
+    "title": "Bahishkrit Bharat Newspaper Founded",
+    "description": "On 3 April 1927, Dr. B.R. Ambedkar launched 'Bahishkrit Bharat' (Excluded India), a Marathi fortnightly newspaper that became a powerful platform for articulating the demands and sufferings of untouchable communities. Through fearless journalism, he challenged the social order and awakened Bahujan consciousness across Maharashtra.",
+    "category": "event",
+    "year": "1927",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "First Handheld Mobile Phone Call",
+    "description": "On April 3, 1973, Martin Cooper, an engineer at Motorola, made the first handheld cellular mobile phone call from a street in New York City to his rival Joel Engel at Bell Labs. This breakthrough demonstration launched the era of wireless personal communication that would transform how humanity connects across the globe.",
+    "category": "event",
+    "year": "1973",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Dhamma: Mahāvīra Jayanti",
+    "description": "Birth anniversary of Lord Mahavira, the 24th Tirthankara of Jainism. His teachings of ahimsa (non-violence) and anekantavada (many-sidedness) share deep parallels with Buddhist ethics.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "04",
+    "title": "Assassination of Martin Luther King Jr.",
+    "description": "On April 4, 1968, Dr. Martin Luther King Jr. was assassinated by James Earl Ray on the balcony of the Lorraine Motel in Memphis, Tennessee. His death sparked riots in over 100 American cities and galvanized the civil rights movement, leading to the passage of the Civil Rights Act of 1968 just days later.",
+    "category": "event",
+    "year": "1968",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "NATO Established",
+    "description": "On April 4, 1949, twelve nations signed the North Atlantic Treaty in Washington, D.C., establishing the North Atlantic Treaty Organization (NATO). The alliance was formed as a collective defense pact against Soviet expansion during the Cold War and became the cornerstone of Western security architecture.",
+    "category": "event",
+    "year": "1949",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "National Maritime Day",
+    "description": "Commemorating the first voyage of SS Loyalty from Mumbai to London in 1919. India's maritime heritage is ancient — Buddhist monks carried Dhamma across oceans to Southeast Asia.",
+    "category": "event",
+    "year": "1919",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Gandhi Arrives at Dandi — Salt March Completed",
+    "description": "On April 5, 1930, Mahatma Gandhi and his followers completed the historic 240-mile Salt March from Sabarmati Ashram to the coastal village of Dandi in Gujarat. The march was a pivotal act of nonviolent civil disobedience against the oppressive British salt tax, inspiring millions to join the Indian independence movement.",
+    "category": "event",
+    "year": "1930",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "European Discovery of Easter Island",
+    "description": "On April 5, 1722 (Easter Sunday), Dutch explorer Jacob Roggeveen became the first European to reach Easter Island (Rapa Nui) in the southeastern Pacific Ocean. He encountered the island's iconic moai statues and the Rapa Nui civilization, sparking centuries of fascination with one of the most isolated inhabited places on Earth.",
+    "category": "event",
+    "year": "1722",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Dhamma: Anāpānasati (Breath Meditation)",
+    "description": "Anāpānasati — mindfulness of breathing — is the meditation technique most recommended by the Buddha. Simply observing the breath calms the mind and leads to deep insight.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "06",
+    "title": "Gandhi Breaks the Salt Laws at Dandi",
+    "description": "On April 6, 1930, Mahatma Gandhi picked up a lump of natural salt at Dandi beach, symbolically breaking the British salt tax laws and launching a nationwide campaign of civil disobedience. This simple act of defiance against colonial oppression galvanized millions of Indians and drew international attention to the independence movement.",
+    "category": "event",
+    "year": "1930",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Peary and Henson Reach the North Pole",
+    "description": "On April 6, 1909, American explorers Robert Peary and Matthew Henson, along with four Inuit companions, claimed to have reached the geographic North Pole. Henson, an African American explorer, played a crucial role in the expedition despite facing racial discrimination throughout his career, and his contributions were only officially recognized decades later.",
+    "category": "event",
+    "year": "1909",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "World Health Day",
+    "description": "A WHO observance promoting global health equity. The Buddha compared himself to a physician who diagnoses the disease of suffering and prescribes the remedy of the Eightfold Path.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "World Health Organization Established",
+    "description": "On April 7, 1948, the World Health Organization (WHO) was officially established as a specialized agency of the United Nations, with its constitution entering into force. The WHO was founded with the mission of promoting global health, keeping the world safe, and serving the vulnerable, and this date is now commemorated annually as World Health Day.",
+    "category": "event",
+    "year": "1948",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Rwandan Genocide Begins",
+    "description": "On April 7, 1994, the Rwandan genocide began following the assassination of President Juvénal Habyarimana when his plane was shot down. Over approximately 100 days, Hutu extremists systematically murdered an estimated 800,000 Tutsi and moderate Hutu people, making it one of the most horrific episodes of mass violence in modern history.",
+    "category": "event",
+    "year": "1994",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Dhamma: The Eightfold Path",
+    "description": "The Noble Eightfold Path — Right View, Intention, Speech, Action, Livelihood, Effort, Mindfulness, and Concentration — is the Buddha's practical guide to the cessation of suffering.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "08",
+    "title": "Jomo Kenyatta Convicted for Mau Mau Leadership",
+    "description": "On April 8, 1953, Kenyan independence leader Jomo Kenyatta was convicted by a British colonial court for allegedly managing the Mau Mau uprising against colonial rule. Despite his imprisonment, Kenyatta became a symbol of the anti-colonial struggle, and after his release he led Kenya to independence in 1963, becoming its first Prime Minister and later President.",
+    "category": "event",
+    "year": "1953",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Venus de Milo Discovered",
+    "description": "On April 8, 1820, a Greek farmer named Yorgos Kentrotas discovered the ancient marble statue known as the Venus de Milo on the Aegean island of Milos. Dating to approximately 100 BCE, the statue is widely regarded as one of the greatest masterpieces of ancient Greek sculpture and is now one of the most famous works in the Louvre Museum in Paris.",
+    "category": "event",
+    "year": "1820",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Dhamma: Vipassanā Meditation",
+    "description": "Vipassanā means 'seeing things as they really are.' This ancient meditation technique, rediscovered by the Buddha, develops insight into impermanence, suffering, and non-self.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "09",
+    "title": "Lee Surrenders at Appomattox — Civil War Ends",
+    "description": "On April 9, 1865, Confederate General Robert E. Lee surrendered to Union General Ulysses S. Grant at Appomattox Court House in Virginia, effectively ending the American Civil War. The surrender marked the collapse of the Confederacy and paved the way for the abolition of slavery through the Thirteenth Amendment to the U.S. Constitution.",
+    "category": "event",
+    "year": "1865",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Fall of Bataan — Death March Begins",
+    "description": "On April 9, 1942, approximately 75,000 Filipino and American troops on the Bataan Peninsula surrendered to Japanese forces, marking the largest surrender in American military history. The captured soldiers were then forced on the brutal Bataan Death March, a 65-mile trek during which thousands died from starvation, disease, and execution.",
+    "category": "event",
+    "year": "1942",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "World Homeopathy Day",
+    "description": "Birth anniversary of Dr. Samuel Hahnemann, founder of homeopathy. Caring for the health of all beings — physical and mental — is an expression of compassion in Dhamma.",
+    "category": "event",
+    "year": "1755",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Assassination of Emiliano Zapata",
+    "description": "On April 10, 1919, Mexican revolutionary leader Emiliano Zapata was ambushed and killed by government forces in Chinameca, Morelos. Zapata had championed agrarian reform and the rights of indigenous peasant communities under his Plan de Ayala, and his rallying cry 'Tierra y Libertad' (Land and Liberty) continues to inspire social justice movements across Latin America.",
+    "category": "event",
+    "year": "1919",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Good Friday Agreement Signed",
+    "description": "On April 10, 1998, the Good Friday Agreement (Belfast Agreement) was signed in Northern Ireland after years of negotiations, bringing an end to three decades of sectarian conflict known as 'The Troubles.' The agreement established power-sharing institutions and cross-border cooperation, and is considered one of the most significant peace accords of the 20th century.",
+    "category": "event",
+    "year": "1998",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Jyotirao Phule Jayanti",
+    "description": "Birth anniversary of Mahatma Jyotirao Phule, the great social reformer who established schools for women and lower castes, and fought tirelessly against Brahmanical oppression.",
+    "category": "event",
+    "year": "1827",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Civil Rights Act of 1968 Signed",
+    "description": "On April 11, 1968, just one week after the assassination of Martin Luther King Jr., President Lyndon B. Johnson signed the Civil Rights Act of 1968, also known as the Fair Housing Act. The landmark legislation prohibited discrimination in the sale, rental, and financing of housing based on race, religion, national origin, and sex.",
+    "category": "event",
+    "year": "1968",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Trial of Adolf Eichmann Begins",
+    "description": "On April 11, 1961, the trial of Adolf Eichmann, a major architect of the Holocaust, began in Jerusalem after his capture by Israeli Mossad agents in Argentina. The televised trial brought worldwide attention to the horrors of the Holocaust and raised profound questions about individual moral responsibility, famously analyzed by Hannah Arendt as 'the banality of evil.'",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Dhamma: Ānanda — the Devoted Attendant",
+    "description": "Ānanda was the Buddha's devoted attendant for 25 years. His extraordinary memory preserved the Suttas, and he championed the ordination of women into the Sangha.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "12",
+    "title": "Yuri Gagarin — First Human in Space",
+    "description": "On April 12, 1961, Soviet cosmonaut Yuri Gagarin became the first human being to journey into outer space, completing a single orbit of Earth aboard the Vostok 1 spacecraft. His 108-minute flight was a monumental achievement in space exploration and a defining moment of the Space Age, celebrated worldwide as Cosmonautics Day.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "American Civil War Begins at Fort Sumter",
+    "description": "On April 12, 1861, Confederate forces opened fire on the Union-held Fort Sumter in Charleston Harbor, South Carolina, beginning the American Civil War. The four-year conflict would become the deadliest war in American history, ultimately resulting in the preservation of the Union and the abolition of slavery.",
+    "category": "event",
+    "year": "1861",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Baisakhi / Ambedkar Jayanti Eve",
+    "description": "Baisakhi marks the Sikh New Year and the founding of the Khalsa by Guru Gobind Singh. Also celebrated as a harvest festival across Punjab and northern India.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "13",
+    "title": "Jallianwala Bagh Massacre",
+    "description": "On April 13, 1919, British Brigadier General Reginald Dyer ordered troops to fire without warning on thousands of unarmed Indian civilians gathered at Jallianwala Bagh in Amritsar, killing an estimated 379 to over 1,000 people. The massacre became a turning point in the Indian independence movement, transforming public opinion against British colonial rule and inspiring leaders like Bhagat Singh.",
+    "category": "event",
+    "year": "1919",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Apollo 13 Oxygen Tank Explosion",
+    "description": "On April 13, 1970, an oxygen tank aboard NASA's Apollo 13 spacecraft exploded approximately 200,000 miles from Earth, crippling the service module and forcing the crew to abort their lunar landing mission. The successful rescue of astronauts Jim Lovell, Jack Swigert, and Fred Haise through improvised engineering solutions became known as NASA's 'successful failure.'",
+    "category": "event",
+    "year": "1970",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Dr. B.R. Ambedkar Jayanti",
+    "description": "Birth anniversary of Bharat Ratna Dr. Babasaheb Ambedkar — the architect of India's Constitution, champion of social justice, father of modern Indian Buddhism, and emancipator of millions.",
+    "category": "festival",
+    "year": "1891",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Abraham Lincoln Shot at Ford's Theatre",
+    "description": "On the evening of April 14, 1865, President Abraham Lincoln was shot by actor and Confederate sympathizer John Wilkes Booth while attending a play at Ford's Theatre in Washington, D.C. Lincoln, who had led the nation through the Civil War and issued the Emancipation Proclamation, died the following morning, becoming the first U.S. president to be assassinated.",
+    "category": "event",
+    "year": "1865",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Human Genome Project Completed",
+    "description": "On April 14, 2003, the International Human Genome Project announced the successful completion of the mapping of the entire human genome, a 13-year scientific endeavor involving researchers from six countries. The project identified approximately 20,500 human genes and sequenced 3 billion DNA base pairs, revolutionizing medicine, genetics, and our understanding of human biology.",
+    "category": "event",
+    "year": "2003",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Guru Nanak Dev — Universal Message",
+    "description": "Guru Nanak's teaching 'Na koi Hindu, na koi Musalman' (There is no Hindu, no Muslim) echoes the universal spirit of Dhamma — transcending divisions of caste, creed, and religion.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "15",
+    "title": "Abraham Lincoln Dies",
+    "description": "On April 15, 1865, President Abraham Lincoln died at 7:22 a.m. at the Petersen House across from Ford's Theatre, succumbing to the gunshot wound inflicted by John Wilkes Booth the previous evening. His death plunged the nation into mourning and profoundly shaped the course of Reconstruction and the struggle for equality in the aftermath of the Civil War.",
+    "category": "event",
+    "year": "1865",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Jackie Robinson Breaks Baseball's Color Barrier",
+    "description": "On April 15, 1947, Jackie Robinson of the Brooklyn Dodgers became the first African American to play in Major League Baseball in the modern era, breaking the sport's longstanding racial barrier. Facing intense hostility and discrimination, Robinson's courage and exceptional talent paved the way for the integration of professional sports and became a landmark moment in the American civil rights movement.",
+    "category": "event",
+    "year": "1947",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Dhamma: Nalanda University",
+    "description": "Nalanda was the world's first residential university, a great center of Buddhist learning for 800 years. Scholars from China, Korea, Tibet, and Central Asia came to study Dhamma here.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "16",
+    "title": "Slavery Abolished in Washington, D.C.",
+    "description": "On April 16, 1862, President Abraham Lincoln signed the District of Columbia Compensated Emancipation Act, abolishing slavery in the nation's capital and freeing approximately 3,100 enslaved people. It was the first major emancipation legislation of the Civil War era, preceding the Emancipation Proclamation by nine months, and April 16 is still celebrated as Emancipation Day in Washington, D.C.",
+    "category": "event",
+    "year": "1862",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Albert Hofmann Accidentally Discovers LSD Effects",
+    "description": "On April 16, 1943, Swiss chemist Albert Hofmann accidentally absorbed a small quantity of lysergic acid diethylamide (LSD-25) through his fingertips while working at Sandoz Laboratories in Basel, experiencing the first known LSD trip. His subsequent deliberate self-experiment on April 19 (now known as 'Bicycle Day') confirmed the substance's extraordinary psychoactive properties, profoundly influencing neuroscience and psychiatry.",
+    "category": "event",
+    "year": "1943",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "World Haemophilia Day",
+    "description": "A day to raise awareness about bleeding disorders. The Buddha taught that caring for the sick is one of the most meritorious deeds: 'He who would tend me, let him tend the sick.'",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Bay of Pigs Invasion Begins",
+    "description": "On April 17, 1961, approximately 1,400 CIA-trained Cuban exiles launched an amphibious invasion at the Bay of Pigs in an attempt to overthrow Fidel Castro's revolutionary government. The invasion was defeated within three days by Cuban armed forces, becoming a major embarrassment for the United States and strengthening Castro's position and his alliance with the Soviet Union.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Khmer Rouge Captures Phnom Penh",
+    "description": "On April 17, 1975, the Khmer Rouge, led by Pol Pot, captured the Cambodian capital Phnom Penh and immediately began forcibly evacuating its two million residents. This marked the beginning of a brutal regime that over the next four years would cause the deaths of an estimated 1.5 to 2 million Cambodians through execution, forced labor, and starvation.",
+    "category": "event",
+    "year": "1975",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "World Heritage Day",
+    "description": "Celebrates the world's cultural heritage sites. India's Buddhist heritage — Sanchi, Ajanta, Ellora, Sarnath, Bodh Gaya — are treasures of human civilization.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Zimbabwe Gains Independence",
+    "description": "On April 18, 1980, Zimbabwe officially gained independence from Britain, ending nearly a century of colonial rule and the white-minority government of Rhodesia. The independence followed years of armed liberation struggle led by movements such as ZANU and ZAPU, and Robert Mugabe became the nation's first Prime Minister after free elections.",
+    "category": "event",
+    "year": "1980",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Albert Einstein Dies",
+    "description": "On April 18, 1955, Albert Einstein died at Princeton Hospital in New Jersey at the age of 76. His groundbreaking contributions to physics, including the theories of special and general relativity and the photoelectric effect (for which he won the 1921 Nobel Prize), fundamentally transformed humanity's understanding of space, time, energy, and the universe.",
+    "category": "event",
+    "year": "1955",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Dhamma: Sāriputta — Chief Disciple",
+    "description": "Sāriputta was the Buddha's foremost disciple in wisdom. His analytical mind and mastery of the Abhidhamma made him the 'General of the Dhamma.'",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "19",
+    "title": "Battles of Lexington and Concord — American Revolution Begins",
+    "description": "On April 19, 1775, the Battles of Lexington and Concord in Massachusetts marked the first military engagements of the American Revolutionary War. The 'shot heard round the world' began a war for independence that would inspire democratic revolutions across the globe and establish the United States as a sovereign nation.",
+    "category": "event",
+    "year": "1775",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Warsaw Ghetto Uprising Begins",
+    "description": "On April 19, 1943, Jewish resistance fighters in the Warsaw Ghetto rose up against Nazi German forces attempting to deport the remaining residents to extermination camps. Armed with smuggled weapons, the fighters held out for nearly a month against vastly superior forces, making it the largest single act of Jewish armed resistance during the Holocaust and a powerful symbol of courage against oppression.",
+    "category": "event",
+    "year": "1943",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Dhamma: Moggallāna — Chief Disciple",
+    "description": "Moggallāna was the Buddha's foremost disciple in psychic powers. Together with Sāriputta, they formed the two chief disciples who guided the early Sangha.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "20",
+    "title": "Ludlow Massacre",
+    "description": "On April 20, 1914, the Colorado National Guard and company guards attacked a tent colony of striking coal miners and their families at Ludlow, Colorado, killing 21 people including 11 children and 2 women. The massacre of workers demanding fair wages and humane conditions from the Rockefeller-owned Colorado Fuel and Iron Company provoked national outrage and became a landmark event in the American labor movement.",
+    "category": "event",
+    "year": "1914",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Nelson Mandela's 'I Am Prepared to Die' Speech",
+    "description": "On April 20, 1964, Nelson Mandela delivered his famous speech from the dock at the opening of the Rivonia Trial in Pretoria, South Africa, declaring his commitment to a democratic and free society as 'an ideal for which I am prepared to die.' The three-hour speech became one of the most powerful statements against apartheid and racial injustice in the 20th century.",
+    "category": "event",
+    "year": "1964",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Ram Navami",
+    "description": "Celebrates the birth of Lord Rama. In Indian culture, Rama represents dharma, duty, and righteousness — values that resonate across traditions and spiritual paths.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "21",
+    "title": "Battle of San Jacinto — Texas Independence",
+    "description": "On April 21, 1836, Texan forces led by General Sam Houston defeated the Mexican army of General Santa Anna at the Battle of San Jacinto in just 18 minutes. The decisive victory secured the independence of the Republic of Texas from Mexico and ultimately led to Texas joining the United States in 1845.",
+    "category": "event",
+    "year": "1836",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Greek Military Junta Seizes Power",
+    "description": "On April 21, 1967, a group of right-wing Greek military officers led by Colonel Georgios Papadopoulos staged a coup d'état, overthrowing the democratically elected government and establishing a military dictatorship. The junta ruled Greece for seven years, suppressing civil liberties and political opposition until its collapse in 1974 following the Cyprus crisis.",
+    "category": "event",
+    "year": "1967",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Earth Day",
+    "description": "A global event to demonstrate support for environmental protection. The Buddhist principle of interconnectedness teaches that harming nature is harming ourselves.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Pedro Álvares Cabral Reaches Brazil",
+    "description": "On April 22, 1500, Portuguese navigator Pedro Álvares Cabral became the first European to reach the coast of present-day Brazil, landing at Porto Seguro in what is now the state of Bahia. This accidental discovery during a voyage to India claimed a vast territory for the Portuguese Empire and set the stage for centuries of colonization, cultural exchange, and the tragic displacement of Indigenous peoples.",
+    "category": "event",
+    "year": "1500",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "First Large-Scale Chemical Weapons Attack",
+    "description": "On April 22, 1915, during the Second Battle of Ypres in Belgium, German forces released 168 tons of chlorine gas against Allied troops, marking the first large-scale use of chemical weapons in modern warfare. The devastating attack killed thousands of French and Algerian soldiers and opened a terrifying new chapter in the history of warfare, eventually leading to the Geneva Protocol of 1925 banning chemical weapons.",
+    "category": "event",
+    "year": "1915",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "World Book Day",
+    "description": "UNESCO's World Book Day promotes reading and publishing. The Tipitaka, the Pali Canon, is one of the largest and oldest collections of religious literature in the world.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Turkish Grand National Assembly Established",
+    "description": "On April 23, 1920, the Turkish Grand National Assembly was established in Ankara under the leadership of Mustafa Kemal Atatürk, marking the beginning of Turkey's War of Independence against the occupying Allied powers. This act of political defiance laid the foundation for the modern Republic of Turkey and is celebrated annually as National Sovereignty and Children's Day.",
+    "category": "event",
+    "year": "1920",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "First YouTube Video Uploaded",
+    "description": "On April 23, 2005, Jawed Karim, co-founder of YouTube, uploaded the platform's first video titled 'Me at the zoo,' a 19-second clip filmed at the San Diego Zoo. This modest beginning launched what would become the world's largest video-sharing platform, fundamentally transforming how information, entertainment, and culture are created and shared globally.",
+    "category": "event",
+    "year": "2005",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "National Panchayati Raj Day",
+    "description": "Marks the constitutional mandate for local self-governance in India. Decentralized governance empowers grassroots democracy — a vision Dr. Ambedkar worked towards.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Armenian Genocide Begins",
+    "description": "On April 24, 1915, Ottoman authorities arrested and deported approximately 235 Armenian intellectuals and community leaders from Constantinople, marking the beginning of the Armenian Genocide. Over the following years, an estimated 1.5 million Armenians were systematically killed through mass executions, death marches, and forced starvation, making it one of the first modern genocides.",
+    "category": "event",
+    "year": "1915",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Hubble Space Telescope Launched",
+    "description": "On April 24, 1990, NASA's Hubble Space Telescope was launched into low Earth orbit aboard the Space Shuttle Discovery. After an initial optics correction in 1993, Hubble became one of the most transformative scientific instruments in history, producing breathtaking images of distant galaxies, nebulae, and exoplanets that fundamentally expanded our understanding of the universe.",
+    "category": "event",
+    "year": "1990",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "World Malaria Day",
+    "description": "A day to highlight the need for continued investment in malaria prevention. Public health and the welfare of the poorest are central concerns of social justice.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Watson and Crick Publish DNA Double Helix Structure",
+    "description": "On April 25, 1953, James Watson and Francis Crick published their landmark paper in the journal Nature describing the double helix structure of DNA, the molecule that carries genetic information in all living organisms. Built upon critical X-ray crystallography work by Rosalind Franklin and Maurice Wilkins, this discovery revolutionized biology and laid the foundation for modern genetics and molecular medicine.",
+    "category": "event",
+    "year": "1953",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Carnation Revolution in Portugal",
+    "description": "On April 25, 1974, a military coup led by the Armed Forces Movement (MFA) overthrew the authoritarian Estado Novo regime in Portugal, ending nearly five decades of dictatorship. The largely peaceful revolution, named for the carnation flowers that soldiers and civilians placed in the muzzles of rifles, restored democracy and ended Portugal's colonial wars in Africa.",
+    "category": "event",
+    "year": "1974",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Dhamma: Dhammacakkappavattana Sutta",
+    "description": "The first sermon delivered by the Buddha at Sarnath to the five ascetics — setting in motion the Wheel of Dhamma. Here he taught the Middle Way and the Four Noble Truths.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "26",
+    "title": "Chernobyl Nuclear Disaster",
+    "description": "On April 26, 1986, Reactor No. 4 at the Chernobyl Nuclear Power Plant in Soviet Ukraine suffered a catastrophic explosion during a safety test, releasing massive amounts of radioactive material into the atmosphere. The disaster, the worst nuclear accident in history, contaminated vast areas of Europe, displaced hundreds of thousands of people, and profoundly impacted global nuclear energy policy and safety standards.",
+    "category": "event",
+    "year": "1986",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Guernica Bombed During Spanish Civil War",
+    "description": "On April 26, 1937, Nazi Germany's Luftwaffe, acting in support of Francisco Franco's Nationalist forces, bombed the Basque town of Guernica in northern Spain, killing an estimated 150 to 1,600 civilians. The attack on a defenseless civilian population shocked the world and inspired Pablo Picasso's iconic anti-war painting 'Guernica,' which became a universal symbol of the horrors of war.",
+    "category": "event",
+    "year": "1937",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Dhamma: Sarnath — Where Dhamma Began",
+    "description": "Sarnath (Isipatana) is where the Buddha delivered his first discourse. The Dhamek Stupa and Ashoka Pillar at Sarnath mark this sacred site of the first turning of the Dhamma wheel.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "27",
+    "title": "South Africa's First Democratic Elections",
+    "description": "On April 27, 1994, South Africa held its first fully democratic elections in which citizens of all races could vote, effectively ending the apartheid system of racial segregation. Nelson Mandela cast his ballot for the first time in his life at age 75, and the African National Congress won a decisive victory, leading to Mandela's inauguration as South Africa's first Black president. This date is celebrated annually as Freedom Day.",
+    "category": "event",
+    "year": "1994",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Sierra Leone Gains Independence",
+    "description": "On April 27, 1961, Sierra Leone gained independence from British colonial rule after more than 150 years of colonization, with Sir Milton Margai becoming its first Prime Minister. The West African nation's path to independence was part of the broader wave of African decolonization movements that swept the continent in the late 1950s and 1960s.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Workers' Memorial Day",
+    "description": "Remembering workers killed or injured on the job. Dr. Ambedkar fought for labor rights, including the 8-hour workday, minimum wages, and safe working conditions.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Mutiny on the Bounty",
+    "description": "On April 28, 1789, Fletcher Christian and a group of discontented crew members seized control of HMS Bounty from Captain William Bligh in the South Pacific. The mutiny, sparked by harsh conditions and Bligh's authoritarian command, became one of the most famous acts of maritime rebellion in history. Bligh and 18 loyalists were cast adrift in a small boat and remarkably survived a 3,600-mile voyage to Timor.",
+    "category": "event",
+    "year": "1789",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Kon-Tiki Expedition Departs",
+    "description": "On April 28, 1947, Norwegian explorer Thor Heyerdahl and five crew members departed from Callao, Peru, on the balsa wood raft Kon-Tiki to demonstrate that ancient South Americans could have settled Polynesia by sea. After a 101-day, 4,300-mile journey across the Pacific Ocean, they reached the Tuamotu Archipelago, proving the voyage was possible and challenging prevailing theories of Pacific migration.",
+    "category": "event",
+    "year": "1947",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "International Dance Day",
+    "description": "Celebrating dance as a universal art form. Indian classical dance traditions — Bharatanatyam, Odissi, Kathak — often depict stories of Buddhist and Hindu heritage.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Liberation of Dachau Concentration Camp",
+    "description": "On April 29, 1945, American forces of the 42nd and 45th Infantry Divisions liberated the Dachau concentration camp in southern Germany, the first concentration camp established by the Nazi regime in 1933. The liberating soldiers found over 30,000 survivors in horrific conditions, along with thousands of unburied corpses, bearing witness to the full extent of Nazi atrocities.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Los Angeles Riots Begin",
+    "description": "On April 29, 1992, widespread riots erupted across Los Angeles following the acquittal of four police officers charged with the brutal beating of African American motorist Rodney King, which had been captured on video. The six days of unrest resulted in 63 deaths, over 2,000 injuries, and approximately $1 billion in property damage, exposing deep racial tensions and systemic injustice in American society.",
+    "category": "event",
+    "year": "1992",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Dhamma: Bodhisatta Ideal",
+    "description": "The Bodhisatta is one who aspires to Buddhahood for the benefit of all beings, perfecting virtues over countless lifetimes. This ideal of selfless compassion inspires millions.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "30",
+    "title": "Fall of Saigon — End of the Vietnam War",
+    "description": "On April 30, 1975, North Vietnamese forces captured Saigon, the capital of South Vietnam, marking the end of the Vietnam War and the reunification of Vietnam under communist rule. The iconic image of helicopters evacuating people from the U.S. Embassy rooftop became a defining symbol of the war's conclusion and America's longest military engagement of the 20th century.",
+    "category": "event",
+    "year": "1975",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "George Washington Inaugurated as First U.S. President",
+    "description": "On April 30, 1789, George Washington was inaugurated as the first President of the United States on the balcony of Federal Hall in New York City. His presidency established many precedents for the office, including the two-term tradition, and his leadership was instrumental in transforming the ideals of the American Revolution into a functioning democratic republic.",
+    "category": "event",
+    "year": "1789",
+    "isSymbolic": false
+  }
+]

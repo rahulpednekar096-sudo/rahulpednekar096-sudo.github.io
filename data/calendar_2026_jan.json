@@ -1,0 +1,746 @@
+[
+  {
+    "date": "01",
+    "title": "New Year 2026",
+    "description": "The beginning of a new year. A time for reflection on the path of Dhamma and setting intentions for wisdom, compassion, and social justice.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Bhima Koregaon Vijay Diwas",
+    "description": "On 1 January 1818, Mahar soldiers of the British East India Company defeated the Peshwa's forces at the Battle of Bhima Koregaon. This historic victory became a powerful symbol of Dalit valor, courage, and resistance against caste tyranny. Millions gather annually at the Jaystambh (Victory Pillar) to honor this legacy of Bahujan bravery.",
+    "category": "event",
+    "year": "1818",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Emancipation Proclamation Takes Effect",
+    "description": "On 1 January 1863, President Abraham Lincoln's Emancipation Proclamation took effect, declaring all enslaved people in Confederate states to be forever free. Though it did not immediately free all enslaved people, it fundamentally transformed the Civil War into a fight for human freedom and paved the way for the Thirteenth Amendment abolishing slavery entirely.",
+    "category": "event",
+    "year": "1863",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Savitribai Phule Jayanti",
+    "description": "Birth anniversary of Savitribai Phule, India's first female teacher and a pioneering social reformer who fought for women's education and against caste discrimination.",
+    "category": "event",
+    "year": "1831",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Fall of Granada – End of Moorish Rule in Spain",
+    "description": "On 2 January 1492, Muhammad XII of Granada surrendered the Emirate of Granada to Ferdinand and Isabella of Castile, ending nearly 800 years of Moorish Muslim rule in the Iberian Peninsula. This momentous political upheaval reshaped the religious and cultural landscape of Europe and set the stage for Spain's colonial expansion.",
+    "category": "event",
+    "year": "1492",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Soviet Union Launches Luna 1",
+    "description": "On 2 January 1959, the Soviet Union launched Luna 1, the first spacecraft to reach the vicinity of the Moon and the first to be placed in heliocentric orbit. Though it missed the Moon by about 6,000 km, it confirmed the absence of a lunar magnetic field and detected the solar wind, marking a pioneering milestone in space exploration.",
+    "category": "event",
+    "year": "1959",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Dhamma: Dāna (Generosity)",
+    "description": "Dāna is the first of the Ten Perfections (Pāramitā). The Buddha taught that generosity purifies the mind, reduces attachment, and creates conditions for spiritual growth.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "03",
+    "title": "Savitribai Phule Opens First Girls' School",
+    "description": "On 3 January 1848, Savitribai and Jyotirao Phule opened the first school for girls in India at Bhidewada, Pune. Defying violent opposition from orthodox society, Savitribai walked to school daily despite being pelted with stones and dung — laying the foundation for women's education and the Bahujan awakening in India.",
+    "category": "event",
+    "year": "1848",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Birth of Lucretia Mott, Women's Rights Pioneer",
+    "description": "On 3 January 1793, Lucretia Mott was born in Nantucket, Massachusetts. A Quaker abolitionist and tireless advocate for women's suffrage, she co-organized the Seneca Falls Convention of 1848 — the first women's rights convention in the United States. Her lifelong activism against slavery and gender inequality made her one of the most influential reformers of the 19th century.",
+    "category": "event",
+    "year": "1793",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "World Braille Day",
+    "description": "Birth anniversary of Louis Braille, inventor of the Braille script. A reminder that access to knowledge is a fundamental right for all, including the visually impaired.",
+    "category": "event",
+    "year": "1809",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Birth of Isaac Newton",
+    "description": "On 4 January 1643 (New Style), Isaac Newton was born in Woolsthorpe, England. His groundbreaking work on the laws of motion, universal gravitation, and calculus laid the foundation for modern physics and mathematics. His masterpiece, Principia Mathematica, remains one of the most influential scientific works in human history.",
+    "category": "event",
+    "year": "1643",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Myanmar Independence Day",
+    "description": "On 4 January 1948, Burma (now Myanmar) gained independence from the British Empire after decades of colonial rule and a determined anti-colonial struggle led by figures like Aung San. The country became a sovereign republic, marking the end of over a century of British domination in Southeast Asia.",
+    "category": "event",
+    "year": "1948",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Dhamma: Right View (Sammā Diṭṭhi)",
+    "description": "Right View is the first factor of the Noble Eightfold Path. It means understanding the Four Noble Truths and seeing reality as it truly is — impermanent, unsatisfactory, and without a fixed self.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "05",
+    "title": "Public Degradation of Alfred Dreyfus",
+    "description": "On 5 January 1895, French Army Captain Alfred Dreyfus was publicly stripped of his military rank in a humiliating ceremony at the École Militaire in Paris, after being wrongfully convicted of treason on fabricated evidence rooted in anti-Semitism. The Dreyfus Affair became one of the most notorious miscarriages of justice in modern history and galvanized movements for civil liberties and human rights across Europe.",
+    "category": "event",
+    "year": "1895",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "X-Ray Discovery Publicly Reported",
+    "description": "On 5 January 1896, the Austrian newspaper Die Presse published the first press report about Wilhelm Conrad Röntgen's discovery of X-rays, electrifying the scientific world and the general public. Röntgen had discovered the mysterious rays on 8 November 1895, and the public announcement revolutionized medicine by enabling physicians to see inside the human body without surgery.",
+    "category": "event",
+    "year": "1896",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Guru Gobind Singh Jayanti",
+    "description": "Birth anniversary of Guru Gobind Singh Ji, the tenth Sikh Guru who stood for justice, equality, and the rights of the oppressed.",
+    "category": "event",
+    "year": "1666",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Samuel Morse Demonstrates the Telegraph",
+    "description": "On 6 January 1838, Samuel Morse gave the first public demonstration of his electric telegraph at the Speedwell Ironworks in Morristown, New Jersey. This invention revolutionized long-distance communication, enabling messages to travel across continents in seconds rather than days. The telegraph transformed commerce, journalism, and diplomacy, laying the groundwork for the modern connected world.",
+    "category": "event",
+    "year": "1838",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "FDR's Four Freedoms Speech",
+    "description": "On 6 January 1941, President Franklin D. Roosevelt delivered his landmark State of the Union address to the US Congress, articulating the Four Freedoms essential to human dignity: freedom of speech, freedom of worship, freedom from want, and freedom from fear. This speech became a defining statement of democratic values and later inspired the Universal Declaration of Human Rights.",
+    "category": "event",
+    "year": "1941",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Dhamma: Sīla (Moral Conduct)",
+    "description": "Sīla — ethical conduct — is the foundation of the Buddhist path. The Five Precepts guide lay followers to abstain from killing, stealing, sexual misconduct, false speech, and intoxicants.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "07",
+    "title": "Galileo Discovers Jupiter's Moons",
+    "description": "On 7 January 1610, Galileo Galilei pointed his improved telescope at Jupiter and observed three bright points of light near the planet, which he initially mistook for fixed stars. Over the following nights, he realized they were moons orbiting Jupiter — the first observation of celestial bodies orbiting another planet, providing powerful evidence for the Copernican heliocentric model.",
+    "category": "event",
+    "year": "1610",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Fall of Phnom Penh – End of the Khmer Rouge",
+    "description": "On 7 January 1979, Vietnamese forces captured Phnom Penh, toppling the genocidal Khmer Rouge regime of Pol Pot. The Khmer Rouge had killed an estimated 1.5 to 2 million Cambodians through executions, forced labor, and starvation during its nearly four-year reign of terror. This day is observed in Cambodia as Victory over Genocide Day.",
+    "category": "event",
+    "year": "1979",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "African National Congress Founded",
+    "description": "The ANC was founded in 1912 to fight racial discrimination in South Africa. A global reminder that struggles for equality and human dignity transcend borders.",
+    "category": "event",
+    "year": "1912",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Death of Galileo Galilei",
+    "description": "On 8 January 1642, Galileo Galilei died in Arcetri, Italy, while under house arrest for his support of heliocentrism. Often called the 'father of modern observational astronomy' and the 'father of modern physics,' his pioneering use of the telescope, discovery of Jupiter's moons, and defence of the Copernican system transformed humanity's understanding of the universe.",
+    "category": "event",
+    "year": "1642",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Birth of Stephen Hawking",
+    "description": "On 8 January 1942, Stephen William Hawking was born in Oxford, England — exactly 300 years after the death of Galileo. Despite being diagnosed with motor neurone disease at age 21, Hawking became one of the most celebrated physicists of the 20th century, making groundbreaking contributions to cosmology, black hole radiation, and our understanding of the origins of the universe.",
+    "category": "event",
+    "year": "1942",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Rahul Sankrityayan Jayanti",
+    "description": "Birth anniversary of Mahapandit Rahul Sankrityayan, a renowned polyglot scholar, historian, travel writer, and freedom fighter who championed rational thought and social reform.",
+    "category": "event",
+    "year": "1893",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Bloody Sunday in St. Petersburg",
+    "description": "On 9 January 1905, a peaceful march of workers led by Father Georgy Gapon approached the Winter Palace in St. Petersburg to petition Tsar Nicholas II for better working conditions and political reform. Imperial guards opened fire on the unarmed crowd, killing and wounding hundreds. This massacre shattered public faith in the Tsar and ignited the Russian Revolution of 1905.",
+    "category": "event",
+    "year": "1905",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Daguerreotype Photography Announced",
+    "description": "On 9 January 1839, the French Academy of Sciences officially announced the daguerreotype process, invented by Louis Daguerre, to the world. This was the first practical photographic process, producing sharp images on silver-plated copper sheets. The announcement revolutionized visual recording and laid the foundation for modern photography.",
+    "category": "event",
+    "year": "1839",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "World Hindi Day",
+    "description": "Commemorating the first World Hindi Conference held in Nagpur in 1975. Hindi connects millions across India and is a vehicle for literature, reform, and cultural identity.",
+    "category": "event",
+    "year": "1975",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Thomas Paine Publishes 'Common Sense'",
+    "description": "On 10 January 1776, Thomas Paine published his pamphlet 'Common Sense,' which argued powerfully and plainly for American independence from British rule. Selling over 500,000 copies in its first year, it was the most widely read pamphlet of the American Revolution and is credited with turning public opinion decisively in favor of independence.",
+    "category": "event",
+    "year": "1776",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "League of Nations Established",
+    "description": "On 10 January 1920, the League of Nations officially came into existence with the ratification of the Treaty of Versailles. It was the first worldwide intergovernmental organization dedicated to maintaining world peace through collective security, disarmament, and dispute resolution. Though it ultimately failed to prevent World War II, it laid the groundwork for the United Nations.",
+    "category": "event",
+    "year": "1920",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Lal Bahadur Shastri Punyatithi",
+    "description": "Remembrance of former PM Lal Bahadur Shastri, who gave the slogan 'Jai Jawan Jai Kisan.' He stood for simplicity, integrity, and the welfare of farmers and soldiers.",
+    "category": "event",
+    "year": "1966",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "First Insulin Treatment for Diabetes",
+    "description": "On 11 January 1922, at Toronto General Hospital, 14-year-old Leonard Thompson became the first human to receive an injection of insulin to treat diabetes. Developed by Frederick Banting, Charles Best, James Collip, and John Macleod, insulin transformed diabetes from a death sentence into a manageable condition, saving millions of lives worldwide.",
+    "category": "event",
+    "year": "1922",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "US Surgeon General Report on Smoking",
+    "description": "On 11 January 1964, US Surgeon General Luther Terry released a landmark report officially linking cigarette smoking to lung cancer, chronic bronchitis, and other diseases. This groundbreaking public health report led to sweeping tobacco regulations, mandatory warning labels, and a fundamental shift in how governments worldwide addressed preventable disease.",
+    "category": "event",
+    "year": "1964",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Swami Vivekananda Jayanti",
+    "description": "Birth anniversary of Swami Vivekananda, celebrated as National Youth Day. His 1893 Chicago speech introduced India's spiritual heritage to the world and inspired a generation.",
+    "category": "festival",
+    "year": "1863",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Zanzibar Revolution",
+    "description": "On 12 January 1964, the mainly African Afro-Shirazi Party led a revolution that overthrew the Sultan of Zanzibar and the predominantly Arab government in a swift uprising. The revolution ended centuries of Arab dominance and the oppression of the African majority population. Zanzibar later merged with Tanganyika to form the United Republic of Tanzania.",
+    "category": "event",
+    "year": "1964",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Hattie Caraway – First Woman Elected to US Senate",
+    "description": "On 12 January 1932, Hattie Wyatt Caraway of Arkansas became the first woman elected to the United States Senate, winning a special election to fill the seat left vacant by her late husband. She went on to win re-election in her own right and served until 1945, breaking barriers for women in American politics.",
+    "category": "event",
+    "year": "1932",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Dhamma: Mettā (Loving-kindness)",
+    "description": "Mettā is the practice of radiating unconditional goodwill towards all beings. The Karaniya Metta Sutta teaches: 'May all beings be happy, may all beings be safe.'",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "13",
+    "title": "Émile Zola Publishes 'J'Accuse...!'",
+    "description": "On 13 January 1898, French novelist Émile Zola published his famous open letter 'J'Accuse...!' on the front page of the newspaper L'Aurore, denouncing the French military's wrongful conviction of Captain Alfred Dreyfus on fabricated espionage charges rooted in anti-Semitism. The letter electrified France, divided the nation, and became one of the most powerful acts of intellectual protest against institutional injustice in modern history.",
+    "category": "event",
+    "year": "1898",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Galileo Discovers Callisto, Fourth Moon of Jupiter",
+    "description": "On 13 January 1610, Galileo Galilei observed and identified Callisto, the fourth and outermost of Jupiter's large Galilean moons, completing his discovery of all four major satellites. These discoveries provided the first direct evidence that not all celestial bodies orbit the Earth, fundamentally challenging the geocentric model that had dominated astronomy for over a millennium.",
+    "category": "event",
+    "year": "1610",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Makar Sankranti",
+    "description": "Festival marking the sun's transition into Makara rashi. Celebrated across India with diverse traditions symbolizing harvest, gratitude, and the triumph of light.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "14",
+    "title": "Treaty of Paris Ratified – American Revolution Ends",
+    "description": "On 14 January 1784, the United States Congress ratified the Treaty of Paris, formally ending the American Revolutionary War with Great Britain. The treaty recognized American independence and established the boundaries of the new nation. It marked the triumph of a colonial uprising against imperial rule and inspired revolutionary movements worldwide.",
+    "category": "event",
+    "year": "1784",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Huygens Probe Lands on Titan",
+    "description": "On 14 January 2005, the European Space Agency's Huygens probe successfully landed on Titan, Saturn's largest moon, after a seven-year journey aboard NASA's Cassini spacecraft. It was the first landing ever accomplished in the outer solar system and revealed a world with methane lakes, icy landscapes, and a thick atmosphere — expanding humanity's understanding of planetary science.",
+    "category": "event",
+    "year": "2005",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Indian Army Day",
+    "description": "Marks the day Lt. Gen. K.M. Cariappa became the first Indian Commander-in-Chief of the Indian Army in 1949. Honors the bravery and sacrifice of India's armed forces.",
+    "category": "festival",
+    "year": "1949",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Martin Luther King Jr. Birthday",
+    "description": "Birth anniversary of Dr. Martin Luther King Jr. (1929–1968), the leader of the American civil rights movement who fought racial segregation through non-violent resistance. His dream of equality, justice, and brotherhood mirrors the Ambedkarite vision of a casteless, discrimination-free society. His legacy reminds us that the struggle for human dignity is universal.",
+    "category": "event",
+    "year": "1929",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Wikipedia Launched",
+    "description": "On 15 January 2001, Jimmy Wales and Larry Sanger launched Wikipedia, a free, open-content encyclopedia that anyone can edit. It grew to become the largest and most widely used reference work in human history, available in over 300 languages. Wikipedia represents a revolutionary democratization of knowledge, making information freely accessible to people across the globe.",
+    "category": "event",
+    "year": "2001",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Dhamma: Right Intention (Sammā Saṅkappa)",
+    "description": "Right Intention means cultivating thoughts of renunciation, goodwill, and harmlessness. It is the mental resolve to walk the path of liberation and compassion.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "16",
+    "title": "Prohibition Begins in the United States",
+    "description": "On 16 January 1920, the Eighteenth Amendment to the US Constitution went into effect, banning the manufacture, sale, and transportation of alcoholic beverages nationwide. Born from the temperance movement — largely driven by women activists and social reformers — Prohibition represented one of the most sweeping social experiments in American history, though it was later repealed in 1933.",
+    "category": "event",
+    "year": "1920",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Jan Palach's Self-Immolation in Prague",
+    "description": "On 16 January 1969, Czech student Jan Palach set himself on fire in Wenceslas Square, Prague, to protest the Soviet-led invasion of Czechoslovakia and the suppression of the Prague Spring reforms. He died three days later, becoming a symbol of resistance against totalitarian oppression. His sacrifice inspired generations of Czechs and Slovaks in their struggle for freedom and democracy.",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Dhamma: Khanti (Patience)",
+    "description": "Khanti — patience and forbearance — is one of the Ten Perfections. The Buddha endured insults and hardships with equanimity, teaching that patience is the highest austerity.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "17",
+    "title": "Rohith Vemula Punyatithi",
+    "description": "Remembrance of Rohith Vemula (1989–2016), the Dalit PhD scholar at the University of Hyderabad whose institutional persecution and tragic death on 17 January 2016 exposed the deep-rooted caste discrimination in Indian academia. His last letter — 'My birth is my fatal accident' — ignited a nationwide movement for justice in education and became a rallying cry against caste oppression.",
+    "category": "event",
+    "year": "2016",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Birth of Benjamin Franklin",
+    "description": "On 17 January 1706, Benjamin Franklin was born in Boston, Massachusetts. A polymath, scientist, inventor, writer, and statesman, Franklin's experiments with electricity, invention of the lightning rod and bifocal glasses, and key role in drafting the US Declaration of Independence and Constitution made him one of the most consequential figures of the Enlightenment.",
+    "category": "event",
+    "year": "1706",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Dhamma: Anicca (Impermanence)",
+    "description": "All conditioned things are impermanent. Understanding Anicca frees the mind from clinging and leads to the direct realization of Nibbāna. 'Sabbe saṅkhārā aniccā.'",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "18",
+    "title": "Warsaw Ghetto Uprising Begins",
+    "description": "On 18 January 1943, Jewish resistance fighters in the Warsaw Ghetto mounted the first armed resistance against Nazi deportations. When German troops entered the ghetto to resume mass deportations to the Treblinka extermination camp, they were met with gunfire from the Jewish Combat Organization (ŻOB). This courageous stand delayed deportations and inspired the larger Warsaw Ghetto Uprising of April 1943.",
+    "category": "event",
+    "year": "1943",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Paris Peace Conference Opens at Versailles",
+    "description": "On 18 January 1919, the Paris Peace Conference opened at the Palace of Versailles to negotiate the terms of peace following World War I. Delegates from over 30 nations gathered to redraw the map of Europe and the world, resulting in the Treaty of Versailles and the creation of the League of Nations. The conference fundamentally reshaped the global political order of the 20th century.",
+    "category": "event",
+    "year": "1919",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Dhamma: Right Speech (Sammā Vācā)",
+    "description": "Right Speech means abstaining from false speech, divisive speech, harsh words, and idle chatter. Words have the power to heal or harm — choose them wisely.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "19",
+    "title": "Birth of James Watt",
+    "description": "On 19 January 1736, James Watt was born in Greenock, Scotland. His revolutionary improvements to the steam engine — including the separate condenser — dramatically increased its efficiency and powered the Industrial Revolution. Watt's engineering genius transformed manufacturing, transportation, and mining, and his name lives on as the SI unit of power.",
+    "category": "event",
+    "year": "1736",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Indira Gandhi Becomes Prime Minister of India",
+    "description": "On 19 January 1966, Indira Gandhi was sworn in as the Prime Minister of India, becoming the first woman to hold the office. As the daughter of Jawaharlal Nehru, she went on to serve as PM for a combined 15 years, shaping India's domestic and foreign policies during a transformative era. Her rise to power was a landmark moment for women's political leadership in the world's largest democracy.",
+    "category": "event",
+    "year": "1966",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Dhamma: Nekkhamma (Renunciation)",
+    "description": "Nekkhamma is the perfection of renunciation — letting go of sensual desires and worldly attachments. True freedom comes not from acquiring more, but from needing less.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "20",
+    "title": "Barack Obama Inaugurated as First African American President",
+    "description": "On 20 January 2009, Barack Hussein Obama was inaugurated as the 44th President of the United States, becoming the first African American to hold the nation's highest office. His election was a historic milestone in the long struggle for racial equality in America, just decades after the civil rights movement fought to dismantle segregation and secure voting rights for Black Americans.",
+    "category": "event",
+    "year": "2009",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "First English Parliament Convened",
+    "description": "On 20 January 1265, Simon de Montfort convened what is widely regarded as the first representative English Parliament at Westminster. Unlike previous assemblies limited to nobles and clergy, de Montfort's Parliament included elected burgesses from towns and knights from shires, establishing the principle of popular representation that became the foundation of parliamentary democracy worldwide.",
+    "category": "event",
+    "year": "1265",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Tripitaka Day",
+    "description": "A symbolic observance honoring the Tripitaka — the three baskets of Buddhist scripture: Vinaya Pitaka, Sutta Pitaka, and Abhidhamma Pitaka — the complete teaching of the Buddha.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "21",
+    "title": "Execution of Louis XVI – French Revolution",
+    "description": "On 21 January 1793, King Louis XVI of France was executed by guillotine at the Place de la Révolution in Paris, marking one of the most dramatic moments of the French Revolution. His execution symbolized the decisive end of absolute monarchy in France and sent shockwaves across Europe, inspiring both revolutionary fervor and royalist backlash throughout the continent.",
+    "category": "event",
+    "year": "1793",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "USS Nautilus – First Nuclear-Powered Submarine Launched",
+    "description": "On 21 January 1954, the USS Nautilus (SSN-571) was launched at Groton, Connecticut, becoming the world's first nuclear-powered submarine. Powered by a nuclear reactor, it could remain submerged for months without refueling. In 1958, it completed the first submarine transit beneath the North Pole, demonstrating the revolutionary potential of nuclear propulsion for naval exploration.",
+    "category": "event",
+    "year": "1954",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Dhamma: Upekkhā (Equanimity)",
+    "description": "Upekkhā is balanced, even-minded awareness in all circumstances. Neither elated by gain nor dejected by loss — the mind rests in perfect equilibrium.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "22",
+    "title": "Battle of Isandlwana – Zulu Resistance",
+    "description": "On 22 January 1879, a Zulu army of 20,000 warriors under King Cetshwayo decisively defeated a British imperial force at the Battle of Isandlwana in South Africa. Over 1,300 British and allied troops were killed in one of the worst defeats suffered by the British Army against an indigenous force. The battle stands as a powerful symbol of African resistance against European colonialism.",
+    "category": "event",
+    "year": "1879",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Roe v. Wade – Landmark Reproductive Rights Decision",
+    "description": "On 22 January 1973, the US Supreme Court ruled 7-2 in Roe v. Wade that the Constitution protects a woman's right to have an abortion, striking down many state laws restricting the procedure. The decision was a watershed moment for women's reproductive rights and bodily autonomy, sparking decades of legal, political, and social debate that continues to shape American politics.",
+    "category": "event",
+    "year": "1973",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Netaji Jayanti",
+    "description": "Birth anniversary of Subhas Chandra Bose, the fearless freedom fighter who formed the Indian National Army and gave the call 'Give me blood, and I shall give you freedom.'",
+    "category": "event",
+    "year": "1897",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Elizabeth Blackwell – First Woman to Earn a Medical Degree in the US",
+    "description": "On 23 January 1849, Elizabeth Blackwell graduated from Geneva Medical College in New York, becoming the first woman in the United States to earn a Doctor of Medicine degree. Despite facing rejection from numerous medical schools and widespread discrimination, she persevered and went on to found the New York Infirmary for Women and Children, opening doors for generations of women in medicine.",
+    "category": "event",
+    "year": "1849",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Trieste Reaches the Deepest Point in the Ocean",
+    "description": "On 23 January 1960, Swiss oceanographer Jacques Piccard and US Navy Lieutenant Don Walsh descended to the Challenger Deep in the Mariana Trench aboard the bathyscaphe Trieste, reaching a depth of 10,916 meters (35,814 feet) — the deepest point in Earth's oceans. This unprecedented scientific feat revealed that life exists even at extreme ocean depths and remained unmatched for over 50 years.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "National Girl Child Day",
+    "description": "A day to raise awareness about the rights of the girl child, promote education for girls, and fight discrimination. Inspired by the values of equality championed by Dr. Ambedkar.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "California Gold Rush Begins",
+    "description": "On 24 January 1848, James W. Marshall discovered gold nuggets at Sutter's Mill in Coloma, California, sparking the California Gold Rush. The discovery drew over 300,000 people from around the world and transformed California from a sparsely populated territory into a booming state, while also causing devastating displacement and violence against Native American and Mexican communities.",
+    "category": "event",
+    "year": "1848",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Voyager 2 Closest Approach to Uranus",
+    "description": "On 24 January 1986, NASA's Voyager 2 spacecraft made its closest approach to Uranus, passing within 81,500 km of the planet's cloud tops. It was the first and, to this day, only spacecraft to visit Uranus, discovering 10 new moons, two new rings, and revealing the planet's unusual tilted magnetic field. The data transformed our understanding of the ice giant planets.",
+    "category": "event",
+    "year": "1986",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "National Voters' Day",
+    "description": "Established in 2011 to encourage young voters to participate in democracy. Dr. Ambedkar said: 'Political democracy cannot last unless there lies at its base social democracy.'",
+    "category": "festival",
+    "year": "2011",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Egyptian Revolution Begins – Arab Spring",
+    "description": "On 25 January 2011, hundreds of thousands of Egyptians took to the streets in mass protests against President Hosni Mubarak's authoritarian rule, police brutality, and economic inequality. Beginning in Cairo's Tahrir Square, this uprising — part of the broader Arab Spring — led to Mubarak's resignation on 11 February after 18 days of sustained popular resistance against three decades of dictatorship.",
+    "category": "event",
+    "year": "2011",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "First Transcontinental Telephone Call",
+    "description": "On 25 January 1915, Alexander Graham Bell in New York made the first transcontinental telephone call to his former assistant Thomas Watson in San Francisco. Bell repeated his famous words, 'Mr. Watson, come here, I want you,' but this time across 3,400 miles of copper wire. This technological feat demonstrated the power of long-distance communication and opened a new era in telecommunications.",
+    "category": "event",
+    "year": "1915",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Republic Day",
+    "description": "India adopted its Constitution on this day in 1950, drafted under the chairmanship of Dr. B.R. Ambedkar. A celebration of democracy, equality, and the sovereign republic.",
+    "category": "festival",
+    "year": "1950",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Purna Swaraj – Declaration of Indian Independence",
+    "description": "On 26 January 1930, the Indian National Congress, under the presidency of Jawaharlal Nehru, declared 'Purna Swaraj' (complete independence) from British colonial rule at its Lahore session. This historic declaration of sovereignty became the basis for India's freedom struggle and the reason January 26 was later chosen as Republic Day when the Constitution came into effect in 1950.",
+    "category": "event",
+    "year": "1930",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Mahdist Forces Capture Khartoum",
+    "description": "On 26 January 1885, Mahdist Sudanese forces led by Muhammad Ahmad stormed and captured Khartoum, killing British General Charles Gordon and ending the Anglo-Egyptian siege. The fall of Khartoum was a stunning blow to British imperial power in Africa and a dramatic assertion of Sudanese resistance against foreign domination. The Mahdist state that followed governed Sudan until the British reconquest in 1898.",
+    "category": "event",
+    "year": "1885",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Holocaust Remembrance Day",
+    "description": "International day commemorating the victims of the Holocaust. A solemn reminder that hatred and bigotry must be opposed everywhere, in every form.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Thomas Edison Patents the Electric Lamp",
+    "description": "On 27 January 1880, Thomas Alva Edison was granted US Patent No. 223,898 for his incandescent electric lamp using a carbon filament. After testing thousands of materials, Edison's practical and long-lasting light bulb made electric illumination viable for homes and businesses, fundamentally transforming daily life and ushering in the age of electricity.",
+    "category": "event",
+    "year": "1880",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Paris Peace Accords – End of US Involvement in Vietnam War",
+    "description": "On 27 January 1973, the Paris Peace Accords were signed by the United States, North Vietnam, South Vietnam, and the Viet Cong, officially ending direct US military involvement in the Vietnam War. The agreement called for a ceasefire, withdrawal of American forces, and the release of prisoners of war. The war had claimed millions of lives and profoundly shaped the global anti-war movement.",
+    "category": "event",
+    "year": "1973",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Lala Lajpat Rai Jayanti",
+    "description": "Birth anniversary of Lala Lajpat Rai, the 'Lion of Punjab,' a fearless freedom fighter and social reformer who was fatally injured during a peaceful protest against the Simon Commission.",
+    "category": "event",
+    "year": "1865",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Space Shuttle Challenger Disaster",
+    "description": "On 28 January 1986, the Space Shuttle Challenger broke apart 73 seconds after launch from Cape Canaveral, killing all seven crew members, including schoolteacher Christa McAuliffe. The disaster was caused by the failure of an O-ring seal in a solid rocket booster. It led to a 32-month halt in the shuttle program and a complete overhaul of NASA's safety protocols and organizational culture.",
+    "category": "event",
+    "year": "1986",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "First Commercial Telephone Exchange Opens",
+    "description": "On 28 January 1878, the world's first commercial telephone exchange began operations in New Haven, Connecticut, with just 21 subscribers. Operated by the District Telephone Company, this exchange marked the transition of the telephone from a novel invention to a practical communication tool for businesses and households, launching the telecommunications industry that would connect the modern world.",
+    "category": "event",
+    "year": "1878",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Dhamma: Karuṇā (Compassion)",
+    "description": "Karuṇā is the wish for all beings to be free from suffering. The Buddha's entire mission was driven by compassion — seeing the suffering of the world and offering a path to liberation.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "29",
+    "title": "Karl Benz Patents the First Automobile",
+    "description": "On 29 January 1886, Karl Benz of Mannheim, Germany, filed a patent for his Benz Patent-Motorwagen, widely regarded as the first true automobile powered by an internal combustion engine. This three-wheeled vehicle, capable of reaching speeds of 16 km/h, marked the birth of the automotive industry and set in motion a transportation revolution that would transform societies across the globe.",
+    "category": "event",
+    "year": "1886",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Kansas Admitted as a Free State",
+    "description": "On 29 January 1861, Kansas was admitted to the United States as the 34th state and, crucially, as a free state that prohibited slavery. This followed years of violent conflict known as 'Bleeding Kansas,' where pro-slavery and anti-slavery settlers clashed in a prelude to the Civil War. Kansas's admission as a free state represented a hard-won victory for the abolitionist movement.",
+    "category": "event",
+    "year": "1861",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Martyrs' Day",
+    "description": "Remembrance of Mahatma Gandhi's assassination in 1948. A day to reflect on non-violence, truth, and the ongoing pursuit of peace and harmony.",
+    "category": "event",
+    "year": "1948",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Execution of Charles I – English Revolution",
+    "description": "On 30 January 1649, King Charles I of England was beheaded at Whitehall in London after being found guilty of high treason by a Parliamentary court. His execution, following years of civil war between Royalists and Parliamentarians, ended the doctrine of the divine right of kings in England and led to the establishment of the Commonwealth under Oliver Cromwell — a watershed moment in the history of democracy.",
+    "category": "event",
+    "year": "1649",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Bloody Sunday in Derry, Northern Ireland",
+    "description": "On 30 January 1972, British soldiers from the Parachute Regiment opened fire on unarmed civil rights marchers in the Bogside area of Derry, Northern Ireland, killing 13 people and fatally wounding another. The marchers had been protesting internment without trial. Bloody Sunday became one of the most significant events of the Troubles and galvanized the civil rights movement in Northern Ireland.",
+    "category": "event",
+    "year": "1972",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Dhamma: Sati (Mindfulness)",
+    "description": "Sati — mindfulness — is the heart of Buddhist meditation. To be mindful is to be fully present, aware of body, feelings, mind, and mental objects without judgment.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "31",
+    "title": "Mooknayak: Voice of the Voiceless",
+    "description": "On 31 January 1920, Dr. B.R. Ambedkar launched 'Mooknayak' (Leader of the Voiceless), his first newspaper. Through Mooknayak, he gave a powerful voice to the oppressed and marginalized communities, exposing the injustices of caste and demanding social equality — marking the birth of Dalit journalism in India.",
+    "category": "event",
+    "year": "1920",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "US House Passes Thirteenth Amendment Abolishing Slavery",
+    "description": "On 31 January 1865, the United States House of Representatives passed the Thirteenth Amendment to the Constitution, abolishing slavery and involuntary servitude throughout the nation. After a fierce legislative battle, the amendment passed with a vote of 119 to 56 — just barely achieving the required two-thirds majority. It was ratified by the states on 6 December 1865, ending centuries of institutionalized slavery in America.",
+    "category": "event",
+    "year": "1865",
+    "isSymbolic": false
+  }
+]

@@ -1,0 +1,722 @@
+[
+  {
+    "date": "01",
+    "title": "Karnataka Rajyotsava",
+    "description": "Celebrates the formation of Karnataka state in 1956. Karnataka is home to ancient Buddhist sites at Sannati, Banavasi, and Aihole — testaments to the state's rich Buddhist heritage.",
+    "category": "event",
+    "year": "1956",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Algerian War of Independence Begins",
+    "description": "On November 1, 1954, the Front de Libération Nationale (FLN) launched coordinated attacks across Algeria, marking the beginning of the Algerian War of Independence against French colonial rule. The conflict lasted nearly eight years and became a defining symbol of anti-colonial resistance, resulting in Algeria's independence in 1962.",
+    "category": "event",
+    "year": "1954",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "First Hydrogen Bomb Detonated (Ivy Mike)",
+    "description": "On November 1, 1952, the United States detonated the world's first thermonuclear weapon, code-named Ivy Mike, at Enewetak Atoll in the Pacific Ocean. The blast yielded 10.4 megatons, approximately 700 times more powerful than the Hiroshima bomb, ushering in a terrifying new era of nuclear weaponry.",
+    "category": "event",
+    "year": "1952",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Dhamma: Loy Krathong / Thadingyut",
+    "description": "Buddhist cultures in Thailand and Myanmar celebrate festivals of lights around this time, honoring the Buddha's descent from Tavatimsa heaven after teaching the Abhidhamma to his mother.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "02",
+    "title": "Balfour Declaration Issued",
+    "description": "On November 2, 1917, British Foreign Secretary Arthur Balfour issued a letter declaring British support for the establishment of a national home for the Jewish people in Palestine. This declaration profoundly shaped the political landscape of the Middle East and remains one of the most consequential diplomatic documents of the 20th century.",
+    "category": "event",
+    "year": "1917",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "BBC Television Service Begins Regular Broadcasts",
+    "description": "On November 2, 1936, the BBC launched the world's first regular public television service from Alexandra Palace in London. This pioneering broadcast marked the dawn of the television age, fundamentally transforming mass communication and entertainment for generations to come.",
+    "category": "event",
+    "year": "1936",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Dhamma: Right Understanding Reflection",
+    "description": "Right Understanding sees the world through the lens of the Four Noble Truths. It is the beginning and the culmination of the path — wisdom that transforms every aspect of life.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "03",
+    "title": "Sputnik 2 Launched with Laika",
+    "description": "On November 3, 1957, the Soviet Union launched Sputnik 2 carrying Laika, a stray dog from the streets of Moscow, making her the first living creature to orbit the Earth. The mission provided crucial data on the effects of spaceflight on living organisms, paving the way for human space exploration.",
+    "category": "event",
+    "year": "1957",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Panama Declares Independence from Colombia",
+    "description": "On November 3, 1903, Panama declared its independence from Colombia with the strategic backing of the United States, which sought to build a canal through the isthmus. This political upheaval led directly to the construction of the Panama Canal, one of the greatest engineering feats of the 20th century.",
+    "category": "event",
+    "year": "1903",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Dhamma: Dīpavaṃsa & Mahāvaṃsa",
+    "description": "The Dīpavaṃsa and Mahāvaṃsa are ancient Sri Lankan chronicles recording the history of Buddhism on the island. They trace lineages from Emperor Ashoka to the present day.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "04",
+    "title": "Dr. Ambedkar Presented Draft Constitution",
+    "description": "On 4 November 1948, Dr. B.R. Ambedkar, as Chairman of the Drafting Committee, presented the Draft Constitution of India to the Constituent Assembly. In his landmark speech, he explained the principles of justice, liberty, equality, and fraternity enshrined in the document — laying the foundation for the world's largest democracy.",
+    "category": "event",
+    "year": "1948",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Barack Obama Elected First African American President",
+    "description": "On November 4, 2008, Barack Obama was elected as the 44th President of the United States, becoming the first African American to hold the nation's highest office. His election was a historic milestone in the long struggle for racial equality, inspiring millions worldwide and marking a transformative moment in American democracy.",
+    "category": "event",
+    "year": "2008",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "World Tsunami Awareness Day",
+    "description": "A UN day promoting tsunami preparedness. The Buddhist teaching of impermanence (Anicca) reminds us that nature's forces are unpredictable — preparedness is wisdom in action.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Gunpowder Plot Discovered",
+    "description": "On November 5, 1605, Guy Fawkes was discovered guarding 36 barrels of gunpowder beneath the House of Lords in London, foiling a Catholic conspiracy to blow up Parliament and King James I. The failed plot led to severe anti-Catholic persecution in England and is commemorated annually on Guy Fawkes Night.",
+    "category": "event",
+    "year": "1605",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "British and French Forces Invade Egypt During Suez Crisis",
+    "description": "On November 5, 1956, British and French paratroopers landed in Egypt to seize control of the Suez Canal, which President Nasser had nationalized. The invasion, widely condemned internationally, ended in a humiliating withdrawal and marked a decisive shift in global power from European colonial powers to the United States and Soviet Union.",
+    "category": "event",
+    "year": "1956",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Dhamma: Mahāyāna Buddhism",
+    "description": "Mahāyāna ('Great Vehicle') Buddhism emphasizes the Bodhisattva ideal — aspiring to enlightenment for the benefit of all beings. It spread widely across East and Central Asia.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "06",
+    "title": "Abraham Lincoln Elected President",
+    "description": "On November 6, 1860, Abraham Lincoln was elected as the 16th President of the United States on an anti-slavery expansion platform. His election triggered the secession of Southern states and the American Civil War, ultimately leading to the abolition of slavery through the Thirteenth Amendment.",
+    "category": "event",
+    "year": "1860",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Gandhi Arrested During Indian Miners' March in South Africa",
+    "description": "On November 6, 1913, Mohandas Gandhi was arrested while leading a march of over 2,000 Indian miners protesting discriminatory laws in South Africa. This act of nonviolent resistance was a key moment in the development of Gandhi's satyagraha philosophy, which would later inspire civil rights movements around the world.",
+    "category": "event",
+    "year": "1913",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Infant Protection Day",
+    "description": "A day dedicated to child welfare and protection. The Buddha's compassion extended to all beings, including children. Education and protection of children is a sacred duty.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Bolshevik Revolution (October Revolution)",
+    "description": "On November 7, 1917 (October 25 by the old Russian calendar), the Bolsheviks led by Vladimir Lenin stormed the Winter Palace in Petrograd and overthrew the Provisional Government. This revolution established the world's first socialist state and fundamentally reshaped global politics for the remainder of the 20th century.",
+    "category": "event",
+    "year": "1917",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Marie Curie Born",
+    "description": "On November 7, 1867, Maria Skłodowska (later Marie Curie) was born in Warsaw, Poland. She became the first woman to win a Nobel Prize and remains the only person to win Nobel Prizes in two different sciences — Physics (1903) and Chemistry (1911) — for her groundbreaking research on radioactivity.",
+    "category": "event",
+    "year": "1867",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Dhamma: Theravāda Buddhism",
+    "description": "Theravāda ('Way of the Elders') preserves the oldest form of Buddhism based on the Pāli Canon. Practiced in Sri Lanka, Myanmar, Thailand, Cambodia, and Laos, it emphasizes liberation through insight.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "08",
+    "title": "Wilhelm Röntgen Discovers X-Rays",
+    "description": "On November 8, 1895, German physicist Wilhelm Conrad Röntgen accidentally discovered X-rays while experimenting with cathode rays at the University of Würzburg. This revolutionary discovery transformed medical diagnostics and earned Röntgen the first Nobel Prize in Physics in 1901.",
+    "category": "event",
+    "year": "1895",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Beer Hall Putsch in Munich",
+    "description": "On November 8, 1923, Adolf Hitler and the Nazi Party attempted to seize power through a coup d'état beginning at the Bürgerbräukeller beer hall in Munich. The putsch failed and Hitler was arrested, but during his subsequent imprisonment he wrote Mein Kampf, laying the ideological groundwork for the Nazi regime.",
+    "category": "event",
+    "year": "1923",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Legal Services Day",
+    "description": "Commemorates the Legal Services Authorities Act. Dr. Ambedkar ensured free legal aid was a constitutional directive — access to justice must not depend on one's wealth.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Fall of the Berlin Wall",
+    "description": "On November 9, 1989, the East German government announced that citizens could freely cross the Berlin Wall, leading to jubilant crowds dismantling the barrier that had divided Berlin for 28 years. The fall of the Wall symbolized the end of the Cold War and paved the way for German reunification and the collapse of communist regimes across Eastern Europe.",
+    "category": "event",
+    "year": "1989",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Kristallnacht — Night of Broken Glass",
+    "description": "On the night of November 9–10, 1938, Nazi paramilitary forces and civilians carried out a coordinated pogrom against Jewish communities across Germany and Austria, destroying synagogues, businesses, and homes. Kristallnacht marked a dramatic escalation of Nazi antisemitic persecution and is widely considered a turning point toward the Holocaust.",
+    "category": "event",
+    "year": "1938",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Dhamma: Vajrayāna Buddhism",
+    "description": "Vajrayāna ('Diamond Vehicle') incorporates tantric practices, mantras, and visualization. Practiced primarily in Tibet, Nepal, Bhutan, and Mongolia, it offers an accelerated path to awakening.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "10",
+    "title": "Henry Stanley Finds David Livingstone",
+    "description": "On November 10, 1871, Welsh-American journalist Henry Morton Stanley found the missing Scottish missionary Dr. David Livingstone in Ujiji, on the shores of Lake Tanganyika in present-day Tanzania. Stanley's famous greeting, \"Dr. Livingstone, I presume?\" became one of the most celebrated quotes in the history of exploration.",
+    "category": "event",
+    "year": "1871",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "End of Communist Rule in Bulgaria",
+    "description": "On November 10, 1989, just one day after the fall of the Berlin Wall, Bulgarian communist leader Todor Zhivkov was ousted from power after 35 years of authoritarian rule. This peaceful transition was part of the wave of anti-communist revolutions that swept through Eastern Europe in 1989, leading to Bulgaria's transition to democracy.",
+    "category": "event",
+    "year": "1989",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "National Education Day",
+    "description": "Birth anniversary of Maulana Abul Kalam Azad, India's first Education Minister. Education was central to both Azad's and Dr. Ambedkar's vision for an empowered, equal India.",
+    "category": "festival",
+    "year": "1888",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "World War I Armistice Signed",
+    "description": "On November 11, 1918, at 11:00 AM, the Armistice ending World War I took effect, bringing to a close over four years of devastating conflict that had claimed approximately 20 million lives. This date is commemorated worldwide as Armistice Day, Veterans Day, or Remembrance Day, honoring the sacrifices of those who served.",
+    "category": "event",
+    "year": "1918",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Nat Turner Executed",
+    "description": "On November 11, 1831, Nat Turner, the enslaved preacher who led the most significant slave rebellion in American history, was executed by hanging in Jerusalem, Virginia. Turner's August 1831 uprising sent shockwaves through the slaveholding South and intensified the national debate over the institution of slavery.",
+    "category": "event",
+    "year": "1831",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Diwali — Festival of Lights",
+    "description": "Diwali celebrates the triumph of light over darkness and knowledge over ignorance. For Buddhists, it also marks Emperor Ashoka's embrace of Dhamma after the horrors of the Kalinga war.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "12",
+    "title": "Leon Trotsky Expelled from Soviet Communist Party",
+    "description": "On November 12, 1927, Leon Trotsky was expelled from the Soviet Communist Party as Joseph Stalin consolidated his grip on power, ending a bitter factional struggle over the direction of the Russian Revolution. Trotsky's expulsion marked the triumph of Stalin's doctrine of 'socialism in one country' and foreshadowed the authoritarian transformation of the Soviet state.",
+    "category": "event",
+    "year": "1927",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Space Shuttle Columbia Becomes First Reused Crewed Spacecraft (STS-2)",
+    "description": "On November 12, 1981, the Space Shuttle Columbia launched on its second mission (STS-2), becoming the first crewed orbital spacecraft to be reused. This achievement validated NASA's revolutionary concept of a reusable space transportation system and demonstrated that spacecraft could be flown, recovered, and reflown — dramatically changing the economics of space access.",
+    "category": "event",
+    "year": "1981",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Dhamma: Ashoka & the Kalinga War",
+    "description": "The brutal Kalinga War transformed Emperor Ashoka from a conqueror into a Dhamma king. Witnessing the carnage, he renounced violence and dedicated his life to spreading peace and compassion.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "13",
+    "title": "Supreme Court Rules Bus Segregation Unconstitutional (Browder v. Gayle)",
+    "description": "On November 13, 1956, the United States Supreme Court affirmed the lower court's ruling in Browder v. Gayle, declaring racial segregation on Montgomery, Alabama buses unconstitutional. This landmark decision was a direct result of the Montgomery Bus Boycott led by Rosa Parks and Martin Luther King Jr., marking a crucial victory in the American Civil Rights Movement.",
+    "category": "event",
+    "year": "1956",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Mariner 9 Becomes First Spacecraft to Orbit Another Planet",
+    "description": "On November 13, 1971, NASA's Mariner 9 became the first spacecraft to successfully orbit another planet when it entered orbit around Mars. The probe transmitted over 7,000 images of the Martian surface, revealing volcanoes, canyons, and evidence of wind and water erosion that transformed our understanding of the Red Planet.",
+    "category": "event",
+    "year": "1971",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Children's Day / Nehru Jayanti",
+    "description": "Birth anniversary of Jawaharlal Nehru, celebrated as Children's Day. Nehru's love for children and his vision of a modern, scientific India shaped the nation's institutions.",
+    "category": "festival",
+    "year": "1889",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Ruby Bridges Desegregates William Frantz Elementary School",
+    "description": "On November 14, 1960, six-year-old Ruby Bridges became the first African American child to attend the all-white William Frantz Elementary School in New Orleans, Louisiana, escorted by federal marshals past angry mobs. Her extraordinary courage became an iconic moment of the Civil Rights Movement and was immortalized in Norman Rockwell's painting 'The Problem We All Live With.'",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "BBC Begins Daily Radio Broadcasting",
+    "description": "On November 14, 1922, the British Broadcasting Company (later Corporation) began its first regular daily radio broadcasts from station 2LO at Marconi House in London. This marked the birth of the BBC as a broadcasting institution, which would become one of the most influential media organizations in history, shaping public discourse worldwide.",
+    "category": "event",
+    "year": "1922",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Birsa Munda Jayanti / Janjatiya Gaurav Divas",
+    "description": "Birth anniversary of Birsa Munda, the legendary Adivasi leader who led the Munda rebellion against British exploitation. Observed as Tribal Pride Day in India.",
+    "category": "event",
+    "year": "1875",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Brazil Proclaimed a Republic",
+    "description": "On November 15, 1889, a military coup led by Marshal Deodoro da Fonseca overthrew Emperor Pedro II and proclaimed Brazil a federal republic, ending over 67 years of monarchical rule. The transition abolished the last vestiges of imperial governance in Brazil and established the foundation for modern Brazilian democracy.",
+    "category": "event",
+    "year": "1889",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Intel Releases First Commercial Microprocessor (Intel 4004)",
+    "description": "On November 15, 1971, Intel released the Intel 4004, the world's first commercially available single-chip microprocessor, designed by Federico Faggin, Ted Hoff, and Stanley Mazor. This tiny chip, containing 2,300 transistors, revolutionized computing and launched the microprocessor revolution that would transform every aspect of modern life.",
+    "category": "event",
+    "year": "1971",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "International Day for Tolerance",
+    "description": "A UNESCO day promoting mutual respect among cultures. Emperor Ashoka's 12th Rock Edict on religious tolerance is one of history's earliest declarations of interfaith harmony.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Louis Riel Executed for Leading Northwest Rebellion",
+    "description": "On November 16, 1885, Métis leader Louis Riel was executed in Regina for his role in leading the Northwest Rebellion against the Canadian government, fighting for the rights of Métis and Indigenous peoples. His execution remains one of the most controversial events in Canadian history, and Riel is now recognized as a Father of Manitoba and a champion of minority rights.",
+    "category": "event",
+    "year": "1885",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "UNESCO Established",
+    "description": "On November 16, 1945, the United Nations Educational, Scientific and Cultural Organization (UNESCO) was founded in London with the mission of building peace through international cooperation in education, science, and culture. Born from the devastation of two world wars, UNESCO has since worked to protect world heritage, promote literacy, and advance scientific understanding across the globe.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "National Epilepsy Day",
+    "description": "A day to raise awareness about epilepsy. The Buddhist approach to illness combines compassion with rational understanding — supporting both medical treatment and mental well-being.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Athens Polytechnic Uprising Against Greek Military Junta",
+    "description": "On November 17, 1973, students at the Athens Polytechnic staged a massive uprising against the ruling Greek military junta, setting up a radio station broadcasting calls for resistance. The junta responded by sending a tank crashing through the polytechnic gates, killing dozens of students and civilians, but the uprising fatally undermined the regime's legitimacy and contributed to the restoration of democracy in 1974.",
+    "category": "event",
+    "year": "1973",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Suez Canal Officially Opens",
+    "description": "On November 17, 1869, the Suez Canal was officially opened in a grand ceremony attended by dignitaries from across the world, connecting the Mediterranean Sea to the Red Sea. This 193-kilometer engineering marvel, built over ten years, revolutionized global maritime trade by eliminating the need to navigate around the entire continent of Africa.",
+    "category": "event",
+    "year": "1869",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Dhamma: Zen Buddhism",
+    "description": "Zen (Chan) Buddhism emphasizes direct experience over textual study. 'What is the sound of one hand clapping?' — Zen koans challenge the intellect to transcend conceptual thinking.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "18",
+    "title": "Latvia Declares Independence",
+    "description": "On November 18, 1918, the Latvian People's Council proclaimed the independence of the Republic of Latvia, breaking free from centuries of foreign domination by Germany and Russia. This declaration came amid the collapse of empires following World War I and is celebrated annually as Latvia's Independence Day.",
+    "category": "event",
+    "year": "1918",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Jonestown Massacre",
+    "description": "On November 18, 1978, over 900 members of the Peoples Temple, led by cult leader Jim Jones, died in a mass murder-suicide at their compound in Jonestown, Guyana, after U.S. Congressman Leo Ryan and others were killed at a nearby airstrip. This tragedy, the largest deliberate loss of American civilian life before September 11, exposed the dangers of authoritarian cult leadership.",
+    "category": "event",
+    "year": "1978",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Indira Gandhi Jayanti",
+    "description": "Birth anniversary of Indira Gandhi, India's first female Prime Minister. Her leadership during the 1971 war and Green Revolution shaped modern India, though her legacy remains debated.",
+    "category": "event",
+    "year": "1917",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Abraham Lincoln Delivers Gettysburg Address",
+    "description": "On November 19, 1863, President Abraham Lincoln delivered his famous Gettysburg Address during the dedication of the Soldiers' National Cemetery in Gettysburg, Pennsylvania. In just 272 words, Lincoln redefined the purpose of the Civil War as a struggle for equality and democracy, creating one of the most powerful speeches in American history.",
+    "category": "event",
+    "year": "1863",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Apollo 12 Lands on the Moon",
+    "description": "On November 19, 1969, Apollo 12 astronauts Charles 'Pete' Conrad and Alan Bean landed on the Moon's Ocean of Storms, achieving the second crewed lunar landing. The mission demonstrated NASA's ability to perform precision landings and retrieved parts from the Surveyor 3 probe, advancing scientific understanding of the lunar surface.",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Africa Industrialization Day",
+    "description": "A UN day for sustainable industrialization in Africa. Dr. Ambedkar believed that industrialization and economic development were essential for the upliftment of oppressed communities.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Nuremberg Trials Begin",
+    "description": "On November 20, 1945, the International Military Tribunal at Nuremberg began proceedings against 24 major Nazi war criminals, establishing the precedent that individuals could be held accountable for crimes against humanity under international law. The trials represented a watershed moment in the development of international justice and human rights law.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Mexican Revolution Begins",
+    "description": "On November 20, 1910, Francisco Madero's call to arms against the decades-long dictatorship of Porfirio Díaz launched the Mexican Revolution, one of the first major political and social revolutions of the 20th century. The decade-long conflict claimed over one million lives and resulted in sweeping land reforms, labor rights, and a new constitution that reshaped Mexican society.",
+    "category": "event",
+    "year": "1910",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "World Television Day",
+    "description": "A UN day recognizing television's role in public awareness. Media can be a powerful tool for spreading the messages of peace, equality, and Dhamma to millions.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Thomas Edison Announces the Phonograph",
+    "description": "On November 21, 1877, Thomas Edison announced his invention of the phonograph, the first device capable of recording and reproducing sound. This revolutionary invention earned Edison the nickname 'The Wizard of Menlo Park' and laid the foundation for the entire modern music and audio recording industry.",
+    "category": "event",
+    "year": "1877",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Bloody Sunday in Ireland",
+    "description": "On November 21, 1920, during the Irish War of Independence, British forces opened fire on spectators at a Gaelic football match in Croke Park, Dublin, killing 14 civilians, in retaliation for the IRA's assassination of British intelligence agents earlier that morning. This day of bloodshed, known as Bloody Sunday, galvanized Irish public opinion against British rule and escalated the conflict toward Irish independence.",
+    "category": "event",
+    "year": "1920",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Dhamma: Pure Land Buddhism",
+    "description": "Pure Land Buddhism, widespread in East Asia, centers on devotion to Amitābha Buddha and the aspiration to be reborn in his Pure Land — a realm of perfect conditions for enlightenment.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "22",
+    "title": "Assassination of President John F. Kennedy",
+    "description": "On November 22, 1963, President John F. Kennedy was assassinated while riding in a motorcade through Dealey Plaza in Dallas, Texas, shocking the nation and the world. The assassination of the 35th President remains one of the most traumatic events in American history and profoundly altered the course of U.S. politics and culture.",
+    "category": "event",
+    "year": "1963",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Lebanon Gains Independence from France",
+    "description": "On November 22, 1943, Lebanon achieved independence from the French Mandate after Lebanese leaders, imprisoned for abolishing French colonial provisions in the constitution, were released under intense international pressure. This date is celebrated as Lebanese Independence Day, marking the end of over two decades of French mandatory rule in the Levant.",
+    "category": "event",
+    "year": "1943",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Sathya Sai Baba Jayanti",
+    "description": "Birth anniversary of Sathya Sai Baba, a spiritual leader whose educational and service institutions continue to serve communities. His message: 'Love All, Serve All.'",
+    "category": "event",
+    "year": "1926",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "French Bombardment of Haiphong",
+    "description": "On November 23, 1946, French naval forces bombarded the Vietnamese port city of Haiphong, killing an estimated 6,000 civilians in an effort to reassert colonial control over Indochina. This brutal attack precipitated the First Indochina War, a pivotal anti-colonial conflict that would eventually lead to Vietnam's independence from French rule.",
+    "category": "event",
+    "year": "1946",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Blue Origin Achieves First Successful Vertical Rocket Landing",
+    "description": "On November 23, 2015, Blue Origin's New Shepard rocket became the first rocket to successfully launch to space and land vertically back at its launch site in West Texas. This milestone in reusable rocket technology marked a breakthrough in reducing the cost of space access and accelerated the commercial space industry.",
+    "category": "event",
+    "year": "2015",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Guru Tegh Bahadur Martyrdom Day",
+    "description": "Remembrance of Guru Tegh Bahadur, the ninth Sikh Guru, who sacrificed his life to protect religious freedom. His martyrdom is a supreme example of standing for the rights of others.",
+    "category": "event",
+    "year": "1675",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Charles Darwin Publishes 'On the Origin of Species'",
+    "description": "On November 24, 1859, Charles Darwin published 'On the Origin of Species by Means of Natural Selection,' revolutionizing the biological sciences. The entire first print run of 1,250 copies sold out on the first day, and Darwin's theory of evolution through natural selection became the foundational framework of modern biology.",
+    "category": "event",
+    "year": "1859",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Abel Tasman Reaches Tasmania",
+    "description": "On November 24, 1642, Dutch explorer Abel Tasman became the first known European to sight the island he named Van Diemen's Land, later renamed Tasmania. This voyage of discovery, commissioned by the Dutch East India Company, significantly expanded European knowledge of the southern Pacific and the Australian continent.",
+    "category": "event",
+    "year": "1642",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "International Day for Elimination of Violence Against Women",
+    "description": "A UN day to combat violence against women. The Buddha's establishment of the Bhikkhunī Sangha was a revolutionary step towards women's dignity and spiritual equality.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Assassination of the Mirabal Sisters",
+    "description": "On November 25, 1960, the three Mirabal sisters — Patria, Minerva, and María Teresa — were brutally assassinated by agents of Dominican Republic dictator Rafael Trujillo for their courageous opposition to his regime. Their murder sparked widespread outrage and contributed to Trujillo's downfall; the United Nations designated this date as the International Day for the Elimination of Violence Against Women in their honor.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Einstein Presents General Theory of Relativity",
+    "description": "On November 25, 1915, Albert Einstein presented his field equations of general relativity to the Prussian Academy of Sciences in Berlin, fundamentally transforming our understanding of gravity, space, and time. This theory, describing gravity as the curvature of spacetime caused by mass and energy, has been confirmed by numerous experiments and remains one of the pillars of modern physics.",
+    "category": "event",
+    "year": "1915",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Constitution Day (Samvidhan Divas)",
+    "description": "On 26 November 1949, the Constituent Assembly adopted the Indian Constitution, drafted under Dr. Ambedkar's leadership. The Constitution is India's sacred Dhamma of governance.",
+    "category": "festival",
+    "year": "1949",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Mumbai Terrorist Attacks (26/11)",
+    "description": "On November 26, 2008, ten members of the Pakistan-based terrorist organization Lashkar-e-Taiba carried out coordinated shooting and bombing attacks across Mumbai, targeting the Taj Mahal Palace Hotel, Oberoi Trident Hotel, and Chhatrapati Shivaji Terminus. The attacks, lasting four days, killed 166 people and wounded over 300, prompting a major overhaul of India's national security infrastructure.",
+    "category": "event",
+    "year": "2008",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Howard Carter Enters Tutankhamun's Tomb",
+    "description": "On November 26, 1922, British archaeologist Howard Carter and his patron Lord Carnarvon entered the tomb of Pharaoh Tutankhamun in the Valley of the Kings, Egypt, discovering the most intact royal tomb ever found. When asked if he could see anything, Carter famously replied, 'Yes, wonderful things,' revealing treasures that transformed our understanding of ancient Egyptian civilization.",
+    "category": "event",
+    "year": "1922",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Dhamma: Bodhi Day Reflection",
+    "description": "Bodhi Day commemorates the day Siddhartha Gautama attained enlightenment under the Bodhi tree. It is a time for meditation, reflection, and renewed commitment to the path of awakening.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "27",
+    "title": "Alfred Nobel Signs Will Establishing Nobel Prizes",
+    "description": "On November 27, 1895, Alfred Nobel, the Swedish inventor of dynamite, signed his last will and testament in Paris, bequeathing the majority of his fortune to establish prizes for outstanding contributions in physics, chemistry, medicine, literature, and peace. The Nobel Prizes, first awarded in 1901, became the world's most prestigious recognition of intellectual and humanitarian achievement.",
+    "category": "event",
+    "year": "1895",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Assassination of Harvey Milk",
+    "description": "On November 27, 1978, Harvey Milk, one of the first openly gay elected officials in the United States, was assassinated along with San Francisco Mayor George Moscone by former city supervisor Dan White. Milk's life and tragic death became a powerful catalyst for the LGBTQ+ rights movement, and he was posthumously awarded the Presidential Medal of Freedom in 2009.",
+    "category": "event",
+    "year": "1978",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Jyotirao Phule Punyatithi",
+    "description": "Remembrance of Mahatma Jyotirao Phule, the great social revolutionary who died in 1890. His lifelong fight for education, women's rights, and caste annihilation paved the way for reform.",
+    "category": "event",
+    "year": "1890",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "New Zealand Women Exercise Right to Vote for First Time",
+    "description": "On November 28, 1893, women in New Zealand voted in a general election for the first time, making New Zealand the first self-governing country where all women had the right to vote. This historic milestone, achieved through the tireless campaigning of Kate Sheppard and other suffragists, inspired women's suffrage movements around the world.",
+    "category": "event",
+    "year": "1893",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "NASA Launches Mariner 4 Toward Mars",
+    "description": "On November 28, 1964, NASA launched the Mariner 4 spacecraft toward Mars, which would become the first spacecraft to successfully fly by another planet and return close-up images. The 21 photographs transmitted by Mariner 4 in July 1965 revealed a cratered surface, fundamentally changing scientific expectations about the possibility of life on Mars.",
+    "category": "event",
+    "year": "1964",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Dhamma: Sangha Unity",
+    "description": "The Buddha emphasized harmony within the Sangha. The six conditions of communal living — sharing, common moral training, and mutual respect — ensure the community thrives in peace.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "29",
+    "title": "United Nations Votes to Partition Palestine",
+    "description": "On November 29, 1947, the United Nations General Assembly passed Resolution 181, recommending the partition of British-mandate Palestine into separate Jewish and Arab states with an international zone for Jerusalem. This resolution triggered immediate conflict between Arab and Jewish communities and led directly to the establishment of the State of Israel and the broader Arab-Israeli conflict.",
+    "category": "event",
+    "year": "1947",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Richard Byrd Flies Over the South Pole",
+    "description": "On November 29, 1929, American explorer Richard E. Byrd and his crew completed the first flight over the South Pole in a Ford Trimotor aircraft named Floyd Bennett. This pioneering polar flight, covering approximately 1,600 miles in 19 hours, was a landmark achievement in the history of exploration and aviation.",
+    "category": "event",
+    "year": "1929",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Guru Nanak Jayanti",
+    "description": "Birth anniversary of Guru Nanak Dev Ji, the founder of Sikhism. His message of one God, equality, honest living, and sharing with the needy resonates with the spirit of Dhamma.",
+    "category": "festival",
+    "year": "1469",
+    "isSymbolic": true
+  },
+  {
+    "date": "30",
+    "title": "Barbados Gains Independence from the United Kingdom",
+    "description": "On November 30, 1966, Barbados achieved independence from the United Kingdom after over 300 years of British colonial rule, with Errol Barrow becoming the first Prime Minister. The island's path to independence was marked by a growing labor movement and demands for self-governance, making it a significant moment in Caribbean decolonization.",
+    "category": "event",
+    "year": "1966",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Galileo Makes First Telescopic Observations of the Moon",
+    "description": "On November 30, 1609, Galileo Galilei turned his improved telescope toward the Moon and made detailed observations of its surface, discovering that it was not a smooth sphere but covered with mountains and craters. These observations, published in 'Sidereus Nuncius' in 1610, fundamentally challenged the prevailing Aristotelian view of the cosmos and helped launch the Scientific Revolution.",
+    "category": "event",
+    "year": "1609",
+    "isSymbolic": false
+  }
+]

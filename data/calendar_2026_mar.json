@@ -1,0 +1,746 @@
+[
+  {
+    "date": "01",
+    "title": "Zero Discrimination Day",
+    "description": "A UNAIDS initiative to fight discrimination in all forms. Dr. Ambedkar's lifelong battle against caste discrimination embodies this spirit of equality.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "March First Movement in Korea",
+    "description": "On 1 March 1919, Korean activists publicly read a declaration of independence, igniting a massive nationwide uprising against Japanese colonial rule. An estimated two million Koreans participated in over 1,500 demonstrations, making it one of the earliest and largest anti-colonial movements in East Asia. The brutal Japanese crackdown killed thousands but strengthened Korean national identity.",
+    "category": "event",
+    "year": "1919",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Henri Becquerel Discovers Radioactivity",
+    "description": "On 1 March 1896, French physicist Henri Becquerel discovered spontaneous radioactivity when he found that uranium salts had exposed photographic plates stored in a dark drawer without any external energy source. This accidental discovery overturned the understanding of atomic stability and opened the door to nuclear physics. Becquerel shared the 1903 Nobel Prize in Physics with Marie and Pierre Curie.",
+    "category": "event",
+    "year": "1896",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Dhamma: The Five Precepts",
+    "description": "The Pañcasīla — five ethical guidelines for lay Buddhists: abstain from killing, stealing, sexual misconduct, false speech, and intoxicants. The foundation of a moral life.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "02",
+    "title": "Kalaram Temple Entry Satyagraha",
+    "description": "On 2 March 1930, Dr. B.R. Ambedkar launched the Kalaram Temple Satyagraha in Nashik, demanding the right of Dalits to enter Hindu temples. Thousands of untouchables marched peacefully to the temple gates, asserting their equal right to worship. This historic struggle exposed the hypocrisy of a religion that denied its own people access to sacred spaces.",
+    "category": "event",
+    "year": "1930",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "U.S. Congress Bans the Slave Trade",
+    "description": "On 2 March 1807, President Thomas Jefferson signed the Act Prohibiting Importation of Slaves, banning the transatlantic slave trade to the United States effective 1 January 1808. While it did not end slavery itself, the law was a significant step in the long struggle against the institution. Illegal smuggling continued for decades, but the act marked an important moral and legal precedent.",
+    "category": "event",
+    "year": "1807",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "World Wildlife Day",
+    "description": "A UN observance celebrating the world's wild animals and plants. The Buddha's compassion extended to all sentient beings — 'all tremble at violence, all fear death.'",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Emancipation of the Serfs in Russia",
+    "description": "On 3 March 1861, Tsar Alexander II signed the Emancipation Manifesto, freeing over 23 million serfs from bondage in the Russian Empire. This was one of the most sweeping social reforms in European history, ending a system of near-slavery that had existed for centuries. Though the terms of emancipation were imperfect, it marked a turning point in Russian society and inspired further demands for justice.",
+    "category": "event",
+    "year": "1861",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Women's Suffrage March on Washington",
+    "description": "On 3 March 1913, over 5,000 women marched down Pennsylvania Avenue in Washington, D.C., demanding the right to vote, one day before Woodrow Wilson's presidential inauguration. Organized by Alice Paul and the National American Woman Suffrage Association, the marchers faced hostile crowds and physical attacks. The event drew national attention and energized the movement that led to the 19th Amendment in 1920.",
+    "category": "event",
+    "year": "1913",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "National Safety Day",
+    "description": "India's National Safety Day promotes awareness of safety measures in workplaces and daily life. Protecting workers' rights was central to Dr. Ambedkar's labor reforms.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Abraham Lincoln Inaugurated as President",
+    "description": "On 4 March 1861, Abraham Lincoln was inaugurated as the 16th President of the United States, inheriting a nation on the brink of civil war. Seven southern states had already seceded over the issue of slavery. Lincoln's presidency would steer the nation through its bloodiest conflict and culminate in the abolition of slavery through the 13th Amendment.",
+    "category": "event",
+    "year": "1861",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Franklin D. Roosevelt Inaugurated During Great Depression",
+    "description": "On 4 March 1933, Franklin D. Roosevelt was inaugurated as the 32nd President, declaring 'the only thing we have to fear is fear itself' as the nation reeled from the worst economic crisis in its history. Millions were unemployed and banks were failing across the country. Roosevelt launched the New Deal, a sweeping set of reforms that transformed American government and provided relief to the working class.",
+    "category": "event",
+    "year": "1933",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Dhamma: Samādhi (Concentration)",
+    "description": "Samādhi is one-pointed concentration of mind. Through sustained meditative practice, the mind becomes calm, focused, and capable of penetrating insight into the nature of reality.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "05",
+    "title": "The Boston Massacre",
+    "description": "On 5 March 1770, British soldiers fired into a crowd of American colonists in Boston, killing five people including Crispus Attucks, a man of African and Native American descent often regarded as the first casualty of the American Revolution. The massacre inflamed anti-British sentiment throughout the colonies and became a rallying point for the independence movement.",
+    "category": "event",
+    "year": "1770",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Death of Joseph Stalin",
+    "description": "On 5 March 1953, Soviet dictator Joseph Stalin died in Moscow after suffering a stroke. His death ended nearly three decades of totalitarian rule marked by mass purges, forced collectivization, and the Gulag system that imprisoned millions. Stalin's passing triggered a power struggle within the Soviet leadership and eventually led to Khrushchev's policy of de-Stalinization.",
+    "category": "event",
+    "year": "1953",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Dhamma: Kamma (Action & Consequence)",
+    "description": "Kamma teaches that intentional actions have consequences. Wholesome actions lead to happiness, unwholesome actions lead to suffering. We are the heirs of our own deeds.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "06",
+    "title": "Dred Scott Decision",
+    "description": "On 6 March 1857, the U.S. Supreme Court ruled in Dred Scott v. Sandford that African Americans, whether enslaved or free, were not citizens and had no right to sue in federal court. Chief Justice Roger Taney declared that Black people had 'no rights which the white man was bound to respect.' The decision intensified the national crisis over slavery and hastened the coming of the Civil War.",
+    "category": "event",
+    "year": "1857",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Aspirin Registered as a Trademark",
+    "description": "On 6 March 1899, the German pharmaceutical company Bayer registered Aspirin as a trademark, making it one of the first mass-marketed drugs in history. The active compound, acetylsalicylic acid, had been synthesized by Felix Hoffmann in 1897. Aspirin went on to become the world's most widely used medication and remains a cornerstone of modern medicine for pain relief, fever reduction, and cardiovascular protection.",
+    "category": "event",
+    "year": "1899",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Dhamma: Right Effort (Sammā Vāyāma)",
+    "description": "Right Effort has four aspects: prevent unwholesome states from arising, abandon those that have arisen, cultivate wholesome states, and maintain those already present.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "07",
+    "title": "Bloody Sunday in Selma, Alabama",
+    "description": "On 7 March 1965, about 600 civil rights marchers attempting to walk from Selma to Montgomery, Alabama, were brutally attacked by state troopers with tear gas, clubs, and whips on the Edmund Pettus Bridge. The televised violence shocked the nation and galvanized support for the Voting Rights Act of 1965. Leaders including John Lewis suffered fractured skulls but continued the fight for equal voting rights.",
+    "category": "event",
+    "year": "1965",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Alexander Graham Bell Patents the Telephone",
+    "description": "On 7 March 1876, Alexander Graham Bell was granted U.S. Patent No. 174,465 for the telephone, one of the most transformative inventions in human history. The patent was controversially awarded just hours before a rival filing by Elisha Gray. Bell's invention revolutionized human communication, collapsing distances and fundamentally changing how societies, businesses, and governments operate.",
+    "category": "event",
+    "year": "1876",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "International Women's Day",
+    "description": "A global day celebrating the achievements of women. Savitribai Phule, Pandita Ramabai, and countless others broke barriers to bring education and justice to Indian women.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "February Revolution Begins in Russia",
+    "description": "On 8 March 1917 (23 February Old Style), women textile workers in Petrograd went on strike demanding bread and an end to World War I, sparking the February Revolution. Within days, mass demonstrations engulfed the city and soldiers began refusing orders to fire on protesters. The uprising led to the abdication of Tsar Nicholas II and ended over 300 years of Romanov dynasty rule.",
+    "category": "event",
+    "year": "1917",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "First U.S. Combat Troops Arrive in Vietnam",
+    "description": "On 8 March 1965, 3,500 United States Marines came ashore at Da Nang, South Vietnam, becoming the first American combat troops deployed in the Vietnam War. This marked a dramatic escalation from the advisory role the U.S. had previously maintained. The deployment began a massive military buildup that would eventually see over 500,000 American troops in Vietnam.",
+    "category": "event",
+    "year": "1965",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Dhamma: Dukkha (Suffering)",
+    "description": "The First Noble Truth: life involves suffering — birth, aging, illness, death, and separation from the loved. Recognizing Dukkha is the starting point of the path to liberation.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "09",
+    "title": "Amistad Case Decided by Supreme Court",
+    "description": "On 9 March 1841, the U.S. Supreme Court ruled in United States v. Amistad that the enslaved Africans who had seized control of the Spanish slave ship La Amistad were free individuals who had been illegally kidnapped. Former President John Quincy Adams argued on behalf of the captives before the court. The decision was a landmark victory for the abolitionist movement and affirmed the right of enslaved people to fight for their freedom.",
+    "category": "event",
+    "year": "1841",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Battle of the Ironclads: Monitor vs. Virginia",
+    "description": "On 9 March 1862, the USS Monitor and CSS Virginia clashed at Hampton Roads, Virginia, in the first battle between ironclad warships in history. The engagement ended in a tactical draw but revolutionized naval warfare forever, rendering wooden warships obsolete overnight. This technological breakthrough ushered in a new era of steel-hulled, armored naval vessels across the world's navies.",
+    "category": "event",
+    "year": "1862",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Savitribai Phule Punyatithi",
+    "description": "Remembrance of Savitribai Phule, who died of plague in 1897 while caring for patients. Her selfless service and pioneering work for women's education remain an enduring inspiration.",
+    "category": "event",
+    "year": "1897",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Alexander Graham Bell Makes First Telephone Call",
+    "description": "On 10 March 1876, Alexander Graham Bell made the first successful telephone call, speaking the famous words 'Mr. Watson, come here — I want to see you' to his assistant Thomas Watson in the next room. This moment marked the birth of voice telecommunications, a breakthrough that would transform human civilization. Within decades, telephones connected homes, businesses, and nations across the globe.",
+    "category": "event",
+    "year": "1876",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Tibetan Uprising Against Chinese Rule",
+    "description": "On 10 March 1959, tens of thousands of Tibetans surrounded the Norbulingka Palace in Lhasa, fearing that Chinese authorities intended to arrest the Dalai Lama. The uprising quickly spread across the city as Tibetans demanded independence from Chinese occupation. The Chinese military responded with overwhelming force, killing thousands of Tibetans and forcing the Dalai Lama to flee into exile in India.",
+    "category": "event",
+    "year": "1959",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Dhamma: The Dhammapada",
+    "description": "'Mind is the forerunner of all actions. All deeds are led by mind, created by mind.' — Dhammapada, verse 1. A timeless guide to ethical living and mental discipline.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "11",
+    "title": "Lithuania Declares Independence from Soviet Union",
+    "description": "On 11 March 1990, Lithuania became the first Soviet republic to declare independence, passing the Act of the Re-Establishment of the State of Lithuania. This courageous act defied Moscow's authority and inspired independence movements across the Baltic states and the wider Soviet bloc. The declaration set in motion events that contributed to the eventual dissolution of the Soviet Union in 1991.",
+    "category": "event",
+    "year": "1990",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Fukushima Nuclear Disaster",
+    "description": "On 11 March 2011, a massive 9.0-magnitude earthquake and tsunami struck northeastern Japan, triggering a catastrophic meltdown at the Fukushima Daiichi Nuclear Power Plant. It was the worst nuclear disaster since Chernobyl in 1986, forcing the evacuation of over 150,000 people. The disaster prompted a worldwide reassessment of nuclear energy safety and led several countries to phase out nuclear power.",
+    "category": "event",
+    "year": "2011",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Dhamma: Sutta Piṭaka",
+    "description": "The Sutta Piṭaka contains the Buddha's discourses delivered over 45 years. It preserves dialogues, parables, and teachings that guide millions on the path to awakening.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "12",
+    "title": "Gandhi Begins the Salt March",
+    "description": "On 12 March 1930, Mahatma Gandhi set out from Sabarmati Ashram in Ahmedabad with 78 followers on a 240-mile march to the coastal village of Dandi to protest the British monopoly on salt. The Salt March became one of the most iconic acts of nonviolent civil disobedience in history, drawing worldwide attention to India's independence movement. It inspired millions of Indians to join the struggle against colonial rule.",
+    "category": "event",
+    "year": "1930",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Truman Doctrine Announced",
+    "description": "On 12 March 1947, President Harry S. Truman addressed the U.S. Congress and announced the Truman Doctrine, pledging American support for nations resisting communist expansion. The policy initially provided military and economic aid to Greece and Turkey. The Truman Doctrine marked the beginning of the Cold War strategy of containment and fundamentally shaped American foreign policy for the next four decades.",
+    "category": "event",
+    "year": "1947",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Dhamma: Noble Silence",
+    "description": "In Vipassana meditation, noble silence is observed — abstaining from speech, gestures, and written communication. Silence allows the mind to turn inward and observe its own nature.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "13",
+    "title": "William Herschel Discovers Uranus",
+    "description": "On 13 March 1781, German-born British astronomer William Herschel observed a celestial object that he initially believed to be a comet but later confirmed as the planet Uranus. This was the first planet discovered using a telescope and the first discovered in modern history, doubling the known size of the solar system. Herschel's discovery earned him the position of King's Astronomer and reshaped humanity's understanding of the cosmos.",
+    "category": "event",
+    "year": "1781",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Kapp Putsch Defeated by Workers' General Strike",
+    "description": "On 13 March 1920, right-wing nationalists led by Wolfgang Kapp attempted to overthrow the Weimar Republic in Germany, seizing government buildings in Berlin. The legitimate government fled but called for a general strike, and millions of German workers responded by shutting down the country. Within four days, the putsch collapsed entirely, demonstrating the power of organized labor to defend democracy against authoritarian threats.",
+    "category": "event",
+    "year": "1920",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Holi — Festival of Colors",
+    "description": "Holi celebrates the victory of good over evil and the arrival of spring. A joyous festival of colors, music, and community, transcending barriers of caste and class.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "14",
+    "title": "Albert Einstein Born",
+    "description": "On 14 March 1879, Albert Einstein was born in Ulm, Germany. He would go on to develop the theory of relativity, explain the photoelectric effect, and fundamentally transform our understanding of space, time, energy, and gravity. Einstein's work earned him the 1921 Nobel Prize in Physics and made him the most celebrated scientist of the 20th century.",
+    "category": "event",
+    "year": "1879",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Eli Whitney Patents the Cotton Gin",
+    "description": "On 14 March 1794, Eli Whitney received a U.S. patent for the cotton gin, a machine that rapidly separated cotton fibers from seeds. While the invention revolutionized cotton production and became a landmark of the Industrial Revolution, it had a devastating unintended consequence: by making cotton enormously profitable, it dramatically increased the demand for enslaved labor across the American South.",
+    "category": "event",
+    "year": "1794",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Kanshi Ram Jayanti",
+    "description": "Birth anniversary of Kanshi Ram, founder of the Bahujan Samaj Party. He dedicated his life to the political empowerment of Dalits, Adivasis, and marginalized communities.",
+    "category": "event",
+    "year": "1934",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Tsar Nicholas II Abdicates the Russian Throne",
+    "description": "On 15 March 1917 (2 March Old Style), Tsar Nicholas II abdicated the Russian throne following the February Revolution, ending over 300 years of Romanov dynastic rule. The abdication came as mass protests, military mutinies, and strikes paralyzed the empire. This event opened the way for the provisional government and ultimately the October Revolution that brought the Bolsheviks to power.",
+    "category": "event",
+    "year": "1917",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "President Johnson Addresses Congress on Voting Rights",
+    "description": "On 15 March 1965, President Lyndon B. Johnson addressed a joint session of Congress in the wake of Bloody Sunday in Selma, calling for passage of comprehensive voting rights legislation. In his historic speech, Johnson declared 'We shall overcome,' invoking the anthem of the civil rights movement. The address built overwhelming public support for the Voting Rights Act of 1965, which dismantled barriers to Black voter registration across the South.",
+    "category": "event",
+    "year": "1965",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "National Vaccination Day",
+    "description": "Commemorating India's pulse polio immunization program. Public health is a collective responsibility — the Buddha emphasized caring for the sick as a meritorious act.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Robert Goddard Launches First Liquid-Fueled Rocket",
+    "description": "On 16 March 1926, American physicist Robert H. Goddard successfully launched the world's first liquid-fueled rocket from a farm in Auburn, Massachusetts. The rocket flew for only 2.5 seconds, reaching an altitude of 41 feet, but the achievement laid the foundation for all modern rocketry and space exploration. Goddard, once ridiculed for his theories, is now recognized as the father of modern rocket propulsion.",
+    "category": "event",
+    "year": "1926",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "My Lai Massacre in Vietnam",
+    "description": "On 16 March 1968, U.S. Army soldiers killed between 347 and 504 unarmed Vietnamese civilians in the village of My Lai during the Vietnam War. The victims included women, children, and elderly people. When the massacre was exposed a year later, it provoked worldwide outrage and became a turning point in American public opinion against the war, intensifying the anti-war movement.",
+    "category": "event",
+    "year": "1968",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Dhamma: Vinaya Piṭaka",
+    "description": "The Vinaya Piṭaka contains the rules of monastic discipline established by the Buddha. It governs the Sangha's communal life, ensuring harmony and ethical conduct.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "17",
+    "title": "British Evacuation of Boston",
+    "description": "On 17 March 1776, British forces under General William Howe evacuated Boston after George Washington's Continental Army fortified Dorchester Heights with cannons captured at Fort Ticonderoga. The British withdrawal was the first major American victory of the Revolutionary War, ending an eleven-month siege. The event is still commemorated as Evacuation Day in Boston.",
+    "category": "event",
+    "year": "1776",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Golda Meir Becomes Prime Minister of Israel",
+    "description": "On 17 March 1969, Golda Meir was elected Prime Minister of Israel, becoming only the third woman in the modern world to lead a nation. A former teacher and labor activist from Milwaukee, Meir had been instrumental in Israel's founding and served as Foreign Minister before her premiership. She led Israel through the turbulent period of the Yom Kippur War in 1973.",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Dhamma: Right Mindfulness (Sammā Sati)",
+    "description": "Right Mindfulness is the seventh factor of the Noble Eightfold Path. The Satipaṭṭhāna Sutta teaches four foundations: body, feelings, mind, and mental objects.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "18",
+    "title": "Paris Commune Established",
+    "description": "On 18 March 1871, the people of Paris rose against the French government and established the Paris Commune, a radical socialist and revolutionary government that ruled the city for 72 days. Workers, women, and the poor governed through direct democracy, implementing progressive reforms including free education, separation of church and state, and the remission of rents. The Commune was violently suppressed but became an enduring symbol of working-class revolution.",
+    "category": "event",
+    "year": "1871",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "First Spacewalk by Alexei Leonov",
+    "description": "On 18 March 1965, Soviet cosmonaut Alexei Leonov became the first human to walk in space, floating outside the Voskhod 2 spacecraft for approximately 12 minutes. Leonov nearly died when his spacesuit inflated in the vacuum, making it impossible to re-enter the airlock until he released some pressure. The achievement was a major milestone in the Space Race and demonstrated that humans could survive and work outside a spacecraft.",
+    "category": "event",
+    "year": "1965",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Dhamma: Nibbāna (Liberation)",
+    "description": "Nibbāna is the ultimate goal of Buddhist practice — the complete cessation of craving, aversion, and delusion. It is the unconditioned state beyond suffering and rebirth.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "19",
+    "title": "Lumière Brothers Film First Motion Picture",
+    "description": "On 19 March 1895, Auguste and Louis Lumière filmed 'Workers Leaving the Lumière Factory' in Lyon, France — widely considered the first true motion picture in history. The 46-second film captured workers leaving their factory at the end of the day. This pioneering achievement in cinematography launched the era of moving pictures and gave birth to the global film industry.",
+    "category": "event",
+    "year": "1895",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Algerian War Ceasefire Takes Effect",
+    "description": "On 19 March 1962, the ceasefire from the Evian Accords took effect, ending the brutal eight-year Algerian War of Independence against French colonial rule. The war had cost an estimated 1.5 million Algerian lives and involved widespread use of torture by French forces. Algeria's independence, formally declared on 5 July 1962, became a landmark victory for anti-colonial movements across Africa and the developing world.",
+    "category": "event",
+    "year": "1962",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "World Sparrow Day",
+    "description": "A day to raise awareness about the declining house sparrow population. The Buddha's compassion encompassed all beings — birds, animals, and every form of life.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Mahad Satyagraha (Chavdar Tale)",
+    "description": "On 20 March 1927, Dr. B.R. Ambedkar led thousands of Dalits to drink water from the Chavdar Tale (public tank) in Mahad, Maharashtra — asserting the fundamental right of untouchables to access public water. This was the first major civil rights struggle led by Ambedkar and a turning point in the Bahujan liberation movement.",
+    "category": "event",
+    "year": "1927",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Uncle Tom's Cabin Published",
+    "description": "On 20 March 1852, Harriet Beecher Stowe's novel 'Uncle Tom's Cabin' was published as a complete book, having previously been serialized in an abolitionist newspaper. The novel depicted the brutal realities of slavery and became the best-selling book of the 19th century after the Bible. It profoundly shaped public opinion in the North against slavery and is credited by many historians with helping to precipitate the American Civil War.",
+    "category": "event",
+    "year": "1852",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "World Forestry Day",
+    "description": "International Day of Forests. The Buddha attained enlightenment under the Bodhi tree in a forest grove. Forests were central to monastic life and meditation practice.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Sharpeville Massacre in South Africa",
+    "description": "On 21 March 1960, South African police opened fire on a crowd of unarmed Black protesters in Sharpeville who were demonstrating against the oppressive pass laws of the apartheid regime. At least 69 people were killed and 180 wounded, many shot in the back as they fled. The massacre drew worldwide condemnation, led to the banning of the ANC and PAC, and marked a turning point in the anti-apartheid struggle.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Selma to Montgomery March Begins",
+    "description": "On 21 March 1965, approximately 3,200 civil rights marchers led by Dr. Martin Luther King Jr. set out from Selma, Alabama, on a 54-mile march to the state capital of Montgomery to demand voting rights for Black Americans. Protected by federalized National Guard troops after two previous attempts were blocked, the marchers arrived in Montgomery on 25 March. The march directly led to the passage of the Voting Rights Act of 1965.",
+    "category": "event",
+    "year": "1965",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "World Water Day",
+    "description": "A UN observance highlighting the importance of clean water. Access to water is a fundamental right — Dr. Ambedkar fought for Dalits' right to access public water sources.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "British Parliament Passes the Stamp Act",
+    "description": "On 22 March 1765, the British Parliament passed the Stamp Act, imposing a direct tax on the American colonies for the first time, requiring stamped paper for legal documents, newspapers, and playing cards. The act provoked fierce resistance under the cry 'no taxation without representation' and united the colonies in opposition to British authority. It was repealed in 1766 but set the stage for the American Revolution.",
+    "category": "event",
+    "year": "1765",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Equal Rights Amendment Passed by U.S. Congress",
+    "description": "On 22 March 1972, the U.S. Senate approved the Equal Rights Amendment, which stated that 'equality of rights under the law shall not be denied or abridged on account of sex.' The ERA was then sent to the states for ratification. Though it ultimately fell short of the required number of state ratifications by its deadline, the ERA campaign galvanized the women's rights movement and advanced gender equality in American law.",
+    "category": "event",
+    "year": "1972",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Bhagat Singh, Rajguru & Sukhdev Martyrdom",
+    "description": "On this day in 1931, Bhagat Singh, Rajguru, and Sukhdev were hanged for their role in the freedom struggle. Their sacrifice at young ages ignited the spirit of revolution across India.",
+    "category": "event",
+    "year": "1931",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Patrick Henry's 'Give Me Liberty, or Give Me Death!' Speech",
+    "description": "On 23 March 1775, American patriot Patrick Henry delivered his legendary speech at the Second Virginia Convention in Richmond, declaring 'Give me liberty, or give me death!' His passionate call to arms persuaded the Virginia delegates to organize military forces against British rule. The speech became one of the most famous rallying cries in the history of the American Revolution.",
+    "category": "event",
+    "year": "1775",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Mir Space Station Deorbited",
+    "description": "On 23 March 2001, the Russian space station Mir was deliberately deorbited and plunged into the South Pacific Ocean after 15 years in space. Mir had been the first modular space station and hosted 125 cosmonauts and astronauts from 12 nations during its operational life. The station's legacy of long-duration spaceflight research was critical to the development of the International Space Station.",
+    "category": "event",
+    "year": "2001",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "World TB Day",
+    "description": "A global awareness day for tuberculosis. Health equity was a concern of Dr. Ambedkar, who advocated for public health infrastructure accessible to all communities.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Robert Koch Announces Discovery of Tuberculosis Bacterium",
+    "description": "On 24 March 1882, German physician Robert Koch presented his discovery of Mycobacterium tuberculosis, the bacterium that causes tuberculosis, to the Berlin Physiological Society. TB was the leading cause of death in Europe at the time, killing one in seven people. Koch's discovery revolutionized the understanding of infectious disease, established the germ theory of disease, and earned him the 1905 Nobel Prize in Physiology or Medicine.",
+    "category": "event",
+    "year": "1882",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Military Coup in Argentina Begins the Dirty War",
+    "description": "On 24 March 1976, the Argentine military overthrew President Isabel Perón in a coup, establishing a brutal military dictatorship that lasted until 1983. During the 'Dirty War,' the junta systematically kidnapped, tortured, and killed an estimated 30,000 people — students, workers, intellectuals, and activists — who were labeled as subversives. The Mothers of the Plaza de Mayo became a symbol of resistance, marching weekly to demand answers about their disappeared children.",
+    "category": "event",
+    "year": "1976",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Dhamma: Bodhi Tree Reflection",
+    "description": "Under the Bodhi tree at Bodh Gaya, Siddhartha Gautama attained supreme enlightenment and became the Buddha. The Bodhi tree remains a symbol of awakening for millions.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "25",
+    "title": "Abolition of the Slave Trade in the British Empire",
+    "description": "On 25 March 1807, the British Parliament passed the Slave Trade Act, abolishing the transatlantic slave trade throughout the British Empire. The act was the result of decades of campaigning by abolitionists including William Wilberforce, Olaudah Equiano, and Granville Sharp. While it did not free those already enslaved — full emancipation came in 1833 — it was a pivotal moment in the global fight against the institution of slavery.",
+    "category": "event",
+    "year": "1807",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Triangle Shirtwaist Factory Fire",
+    "description": "On 25 March 1911, a fire broke out at the Triangle Shirtwaist Factory in New York City, killing 146 garment workers — mostly young immigrant women — who were trapped behind locked doors and inadequate fire escapes. The tragedy exposed the horrific working conditions in American sweatshops and became a catalyst for sweeping labor reforms, workplace safety laws, and the growth of the International Ladies' Garment Workers' Union.",
+    "category": "event",
+    "year": "1911",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Bangladesh Liberation Day",
+    "description": "Commemorating Bangladesh's declaration of independence in 1971. A reminder of the universal human yearning for freedom, dignity, and self-determination.",
+    "category": "event",
+    "year": "1971",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Jonas Salk Announces Successful Polio Vaccine",
+    "description": "On 26 March 1953, American virologist Jonas Salk announced on national radio that he had successfully tested a vaccine against poliomyelitis on a small group of adults and children. Polio had been one of the most feared diseases of the 20th century, paralyzing thousands of children each year. Salk famously refused to patent the vaccine, saying 'Could you patent the sun?' — making it freely available to the world.",
+    "category": "event",
+    "year": "1953",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Egypt-Israel Peace Treaty Signed",
+    "description": "On 26 March 1979, Egyptian President Anwar Sadat and Israeli Prime Minister Menachem Begin signed the Egypt-Israel Peace Treaty at the White House, witnessed by U.S. President Jimmy Carter. It was the first peace agreement between Israel and an Arab nation, ending 31 years of hostility. The treaty was a landmark of diplomacy, though it cost Sadat his life — he was assassinated in 1981 by opponents of the peace deal.",
+    "category": "event",
+    "year": "1979",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "World Theatre Day",
+    "description": "Celebrating the art of theatre. Bharata Muni's Natyashastra and folk theatre traditions have long been vehicles for social commentary and cultural expression in India.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Wilhelm Röntgen Born — Discoverer of X-Rays",
+    "description": "On 27 March 1845, Wilhelm Conrad Röntgen was born in Lennep, Prussia. In 1895, he discovered X-rays — a form of electromagnetic radiation capable of passing through the human body — revolutionizing medicine by enabling doctors to see inside patients without surgery. Röntgen received the first Nobel Prize in Physics in 1901 and refused to patent his discovery, believing it should benefit all of humanity.",
+    "category": "event",
+    "year": "1845",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "U.S. Congress Authorizes the Creation of a Navy",
+    "description": "On 27 March 1794, President George Washington signed the Naval Act of 1794, authorizing the construction of six frigates and establishing the foundation of the United States Navy. The act was passed in response to threats from Barbary pirates who were capturing American merchant ships and enslaving their crews. This legislation marked the birth of a permanent American naval force that would become one of the most powerful in the world.",
+    "category": "event",
+    "year": "1794",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Dhamma: Abhidhamma Piṭaka",
+    "description": "The Abhidhamma Piṭaka is the philosophical and psychological analysis of the Buddha's teaching. It maps the mind in extraordinary detail — the earliest systematic psychology.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "28",
+    "title": "Three Mile Island Nuclear Accident",
+    "description": "On 28 March 1979, a partial meltdown occurred at the Three Mile Island nuclear power plant near Harrisburg, Pennsylvania, becoming the worst nuclear accident in American history. A combination of equipment failure and human error led to the release of radioactive gases. The incident triggered widespread public fear, led to major reforms in nuclear safety regulation, and effectively halted the expansion of nuclear power in the United States for decades.",
+    "category": "event",
+    "year": "1979",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Spanish Civil War Ends with Fall of Madrid",
+    "description": "On 28 March 1939, General Francisco Franco's Nationalist forces captured Madrid, effectively ending the Spanish Civil War that had raged since 1936. The war killed an estimated 500,000 people and displaced hundreds of thousands more. Franco's victory established a fascist dictatorship that lasted until his death in 1975, crushing democratic institutions, regional autonomy, and civil liberties for nearly four decades.",
+    "category": "event",
+    "year": "1939",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Dhamma: The Jātaka Tales",
+    "description": "The Jātaka Tales narrate the previous lives of the Buddha as a Bodhisatta, illustrating how he perfected virtues like generosity, patience, and wisdom over countless lifetimes.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "29",
+    "title": "Mangal Pandey's Revolt Against the British",
+    "description": "On 29 March 1857, sepoy Mangal Pandey of the 34th Bengal Native Infantry attacked British officers at the garrison in Barrackpore, near Calcutta, in a defiant act of rebellion against colonial rule. His revolt was triggered by the use of animal-fat-greased cartridges that violated Hindu and Muslim religious practices. Pandey's act of resistance is widely regarded as the spark that ignited the Indian Rebellion of 1857, the first major uprising against British rule in India.",
+    "category": "event",
+    "year": "1857",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Last U.S. Combat Troops Leave Vietnam",
+    "description": "On 29 March 1973, the last United States combat troops departed South Vietnam, marking the end of direct American military involvement in the Vietnam War. The withdrawal followed the Paris Peace Accords signed in January 1973. The war had claimed the lives of over 58,000 American soldiers and an estimated 2 to 3 million Vietnamese, and it left lasting scars on both nations.",
+    "category": "event",
+    "year": "1973",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Rajasthan Day",
+    "description": "Celebrates the formation of the state of Rajasthan in 1949 through the merger of princely states. A testament to India's unity in diversity.",
+    "category": "event",
+    "year": "1949",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "First Use of Ether Anesthesia in Surgery",
+    "description": "On 30 March 1842, American physician Dr. Crawford Long used diethyl ether as an anesthetic during a surgical operation for the first time, painlessly removing a tumor from a patient's neck in Jefferson, Georgia. This breakthrough freed surgery from the agony that had accompanied it throughout human history. Long's pioneering use of anesthesia is regarded as one of the greatest humanitarian advances in the history of medicine.",
+    "category": "event",
+    "year": "1842",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "United States Purchases Alaska from Russia",
+    "description": "On 30 March 1867, U.S. Secretary of State William Seward signed a treaty to purchase Alaska from Russia for $7.2 million — roughly two cents per acre. The deal was widely mocked at the time as 'Seward's Folly,' but Alaska proved immensely valuable for its natural resources, strategic location, and eventual statehood in 1959. The purchase doubled the geographic area of the United States.",
+    "category": "event",
+    "year": "1867",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Dhamma: Right Concentration (Sammā Samādhi)",
+    "description": "Right Concentration is the eighth factor of the Noble Eightfold Path. Through jhāna (meditative absorption), the mind achieves profound stillness and clarity.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "31",
+    "title": "Eiffel Tower Inaugurated in Paris",
+    "description": "On 31 March 1889, the Eiffel Tower was officially inaugurated in Paris when Gustave Eiffel ascended the 1,665 steps to plant the French tricolor flag at its summit. Built for the 1889 World's Fair to commemorate the centennial of the French Revolution, the 300-meter iron tower was the tallest man-made structure in the world at the time. Initially criticized as an eyesore, it became the enduring symbol of Paris and a triumph of engineering.",
+    "category": "event",
+    "year": "1889",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Dalai Lama Flees Tibet to India",
+    "description": "On 31 March 1959, the 14th Dalai Lama, Tenzin Gyatso, crossed the border into India after a harrowing two-week journey from Lhasa, escaping the Chinese military crackdown on the Tibetan uprising. He was granted asylum by Indian Prime Minister Jawaharlal Nehru and established a government-in-exile in Dharamsala. The Dalai Lama's exile became a symbol of Tibet's struggle for autonomy and cultural preservation.",
+    "category": "event",
+    "year": "1959",
+    "isSymbolic": false
+  }
+]

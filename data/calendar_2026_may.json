@@ -1,0 +1,746 @@
+[
+  {
+    "date": "01",
+    "title": "International Workers' Day",
+    "description": "May Day celebrates the labor movement worldwide. Dr. Ambedkar championed workers' rights — introducing labor reforms, factory safety laws, and maternity benefits in India.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Haymarket Affair General Strike",
+    "description": "On May 1, 1886, over 300,000 workers across the United States went on a general strike demanding an eight-hour workday. The movement was centered in Chicago, where clashes between police and workers escalated into the infamous Haymarket tragedy days later. This strike became the origin of International Workers' Day celebrated worldwide.",
+    "category": "event",
+    "year": "1886",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "U-2 Spy Plane Incident",
+    "description": "On May 1, 1960, an American U-2 reconnaissance aircraft piloted by Francis Gary Powers was shot down over Soviet airspace. The incident caused a major diplomatic crisis between the United States and the Soviet Union, collapsing a planned Paris summit between Eisenhower and Khrushchev. It became one of the most dramatic episodes of the Cold War.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Dhamma: Bodh Gaya — Place of Awakening",
+    "description": "Bodh Gaya in Bihar is where Siddhartha Gautama attained enlightenment under the Bodhi tree. The Mahabodhi Temple is a UNESCO World Heritage Site and the holiest Buddhist pilgrimage.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "02",
+    "title": "Dos de Mayo Uprising in Madrid",
+    "description": "On May 2, 1808, the people of Madrid rose up against the French occupation forces of Napoleon Bonaparte. Spanish civilians armed with knives and improvised weapons fought French soldiers in the streets, sparking the broader Peninsular War. The uprising became a powerful symbol of popular resistance against foreign imperialism across Europe.",
+    "category": "event",
+    "year": "1808",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "First Commercial Jet Airliner Service",
+    "description": "On May 2, 1952, the de Havilland Comet became the world's first commercial jet airliner to enter scheduled passenger service, flying from London to Johannesburg for BOAC. This revolutionary aircraft cut travel times in half and ushered in the jet age of commercial aviation. It represented a landmark in aerospace engineering and transformed global travel forever.",
+    "category": "event",
+    "year": "1952",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "World Press Freedom Day",
+    "description": "A UNESCO observance defending press freedom. Dr. Ambedkar founded newspapers like Mooknayak and Bahishkrit Bharat to give voice to the voiceless and challenge injustice.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Polish Constitution of May 3",
+    "description": "On May 3, 1791, Poland adopted the Constitution of May 3 — the first modern constitution in Europe and the second in the world after the United States Constitution. It sought to reform the Polish-Lithuanian Commonwealth by establishing popular sovereignty, separation of powers, and political equality. Neighboring empires saw it as a revolutionary threat, contributing to Poland's partitions.",
+    "category": "event",
+    "year": "1791",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Japan's Post-War Constitution Takes Effect",
+    "description": "On May 3, 1947, the new Constitution of Japan came into effect, replacing the Meiji Constitution and fundamentally transforming Japan into a pacifist democracy. Article 9 famously renounced war and the maintenance of armed forces for aggression. The constitution guaranteed fundamental human rights, popular sovereignty, and gender equality — principles that reshaped Japanese society.",
+    "category": "event",
+    "year": "1947",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Dhamma: Kushinagar — Mahaparinirvana",
+    "description": "Kushinagar is where the Buddha attained Mahaparinirvana. His final words: 'All conditioned things are subject to decay. Strive with diligence.' (Vayadhammā saṅkhārā, appamādena sampādetha.)",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "04",
+    "title": "May Fourth Movement in China",
+    "description": "On May 4, 1919, thousands of Chinese students marched in Beijing to protest the Treaty of Versailles, which had transferred German concessions in Shandong to Japan rather than returning them to China. The movement grew into a nationwide wave of political and cultural reform, challenging imperialism, feudalism, and traditional Confucian hierarchy. It is considered the birth of modern Chinese nationalism and political consciousness.",
+    "category": "event",
+    "year": "1919",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Kent State Shootings",
+    "description": "On May 4, 1970, Ohio National Guard troops opened fire on unarmed students protesting the Vietnam War at Kent State University, killing four and wounding nine. The students had been demonstrating against President Nixon's expansion of the war into Cambodia. The massacre shocked the nation, galvanized the anti-war movement, and became a defining moment of American political dissent.",
+    "category": "event",
+    "year": "1970",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Buddha Purnima Eve / Vesak Eve",
+    "description": "The eve of the most sacred Buddhist festival. Communities worldwide prepare to celebrate the birth, enlightenment, and parinirvana of Gautama Buddha on the full moon of Vesak.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "05",
+    "title": "Karl Marx Birthday",
+    "description": "Birth anniversary of Karl Marx (1818–1883), the philosopher and revolutionary whose analysis of class struggle, exploitation, and economic inequality influenced liberation movements worldwide. Dr. Ambedkar engaged deeply with Marxist thought while arguing that caste — not merely class — was the fundamental unit of Indian oppression.",
+    "category": "event",
+    "year": "1818",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Alan Shepard — First American in Space",
+    "description": "On May 5, 1961, astronaut Alan Shepard became the first American to travel into space aboard the Freedom 7 capsule during a suborbital flight lasting 15 minutes and 28 seconds. The mission was part of NASA's Project Mercury and came just 23 days after Yuri Gagarin's orbital flight. Shepard's achievement reinvigorated the U.S. space program and set the stage for President Kennedy's Moon landing pledge.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Rabindranath Tagore Jayanti",
+    "description": "Birth anniversary of Rabindranath Tagore, Nobel laureate, poet, and composer of India's national anthem. His vision of universal humanism aligns with the spirit of Dhamma.",
+    "category": "event",
+    "year": "1861",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Chhatrapati Shahu Maharaj Punyatithi",
+    "description": "Remembrance of Chhatrapati Shahu Maharaj of Kolhapur (1874–1922), who died on 6 May 1922. He was among the first Indian rulers to implement reservations for backward classes, sponsor the education of Dalits (including young Bhimrao Ambedkar), and ban untouchability in his kingdom. His legacy as a Bahujan benefactor remains unparalleled.",
+    "category": "event",
+    "year": "1922",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Chinese Exclusion Act Signed",
+    "description": "On May 6, 1882, U.S. President Chester A. Arthur signed the Chinese Exclusion Act, the first significant law restricting immigration of an entire ethnic group into the United States. The act barred Chinese laborers from entering the country for ten years and denied citizenship to those already present. It stood as a symbol of institutionalized racial discrimination and was not fully repealed until 1943.",
+    "category": "event",
+    "year": "1882",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Dhamma: Lumbini — Birthplace of Buddha",
+    "description": "Lumbini in Nepal is where Prince Siddhartha was born. The Ashoka Pillar erected here in 249 BCE confirms the site. A UNESCO World Heritage Site and a place of pilgrimage.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "07",
+    "title": "Sinking of the RMS Lusitania",
+    "description": "On May 7, 1915, a German U-boat torpedoed and sank the British ocean liner RMS Lusitania off the coast of Ireland, killing 1,198 passengers and crew, including 128 Americans. The tragedy shifted American public opinion against Germany and became a pivotal factor in the United States' eventual entry into World War I in 1917.",
+    "category": "event",
+    "year": "1915",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Germany Surrenders Unconditionally to Allies",
+    "description": "On May 7, 1945, General Alfred Jodl signed the unconditional surrender of all German forces at Allied headquarters in Reims, France, effectively ending World War II in Europe. The signing took place in the early hours of the morning, and the following day was declared Victory in Europe (V-E) Day. The surrender brought an end to six years of devastating conflict that had claimed tens of millions of lives.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "World Red Cross Day",
+    "description": "Honoring the humanitarian work of the Red Cross. Compassionate service to the suffering — regardless of identity — embodies the Buddhist teaching of universal Mettā.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Victory in Europe Day (V-E Day)",
+    "description": "On May 8, 1945, the Allied nations formally celebrated the unconditional surrender of Nazi Germany, marking the end of World War II in Europe. Celebrations erupted across the world as millions rejoiced at the defeat of fascism. The day stands as a reminder of the immense sacrifices made to preserve freedom and human dignity against totalitarian tyranny.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "WHO Declares Smallpox Eradicated",
+    "description": "On May 8, 1980, the World Health Organization officially declared that smallpox had been eradicated worldwide — the first and only human disease to be completely eliminated through a deliberate vaccination campaign. Smallpox had killed an estimated 300 million people in the 20th century alone. The eradication stands as one of humanity's greatest scientific and public health achievements.",
+    "category": "event",
+    "year": "1980",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Dhamma: Three Jewels (Tiratana)",
+    "description": "Buddhists take refuge in the Three Jewels: the Buddha (the teacher), the Dhamma (the teaching), and the Sangha (the community). 'Buddhaṃ saraṇaṃ gacchāmi.'",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "09",
+    "title": "Romania Declares Independence",
+    "description": "On May 9, 1877, Romania proclaimed its independence from the Ottoman Empire after centuries of suzerainty. The declaration came during the Russo-Turkish War, in which Romanian forces fought alongside Russia against Ottoman rule. Romania's independence was formally recognized by the Treaty of Berlin in 1878, establishing it as a sovereign nation.",
+    "category": "event",
+    "year": "1877",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Watergate Impeachment Hearings Begin",
+    "description": "On May 9, 1974, the House Judiciary Committee opened formal impeachment hearings against President Richard Nixon over the Watergate scandal. The proceedings examined charges of obstruction of justice, abuse of power, and contempt of Congress related to the cover-up of the 1972 break-in at Democratic Party headquarters. Nixon resigned on August 9, 1974, becoming the first U.S. president to do so.",
+    "category": "event",
+    "year": "1974",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "First Indian War of Independence",
+    "description": "On this day in 1857, Indian soldiers rose against British rule in Meerut, sparking the First War of Independence. A turning point in India's struggle for freedom.",
+    "category": "event",
+    "year": "1857",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "First Transcontinental Railroad Completed",
+    "description": "On May 10, 1869, the Central Pacific and Union Pacific railroads met at Promontory Summit, Utah, where a ceremonial golden spike was driven to complete the first transcontinental railroad across the United States. The achievement was built largely by Chinese immigrant and Irish laborers under grueling conditions. It revolutionized American commerce, migration, and communication by connecting the Atlantic and Pacific coasts.",
+    "category": "event",
+    "year": "1869",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Nelson Mandela Inaugurated as President",
+    "description": "On May 10, 1994, Nelson Mandela was inaugurated as South Africa's first Black president, marking the triumphant end of decades of apartheid and racial oppression. Mandela had spent 27 years in prison for his role in the anti-apartheid struggle before leading the African National Congress to victory in the country's first fully democratic elections. His inauguration symbolized reconciliation and the birth of a new, multiracial South Africa.",
+    "category": "event",
+    "year": "1994",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "National Technology Day",
+    "description": "Marks India's successful nuclear tests at Pokhran in 1998. Scientific progress, guided by ethics and compassion, can uplift humanity — a principle aligned with Dhamma.",
+    "category": "event",
+    "year": "1998",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Pullman Strike Begins",
+    "description": "On May 11, 1894, workers at the Pullman Palace Car Company near Chicago went on strike to protest severe wage cuts and high rents in the company town, while the company continued to pay dividends to shareholders. The strike, led by Eugene V. Debs and the American Railway Union, soon spread into a nationwide railroad boycott involving over 250,000 workers. It was one of the most significant labor uprisings in American history and led to the federal establishment of Labor Day.",
+    "category": "event",
+    "year": "1894",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Deep Blue Defeats World Chess Champion",
+    "description": "On May 11, 1997, IBM's Deep Blue supercomputer defeated world chess champion Garry Kasparov in a six-game match, becoming the first computer system to beat a reigning world champion under standard tournament conditions. The victory was a watershed moment in artificial intelligence and computer science. It demonstrated that machines could surpass human expertise in complex strategic reasoning.",
+    "category": "event",
+    "year": "1997",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Buddha Purnima / Vesak",
+    "description": "The most sacred day in Buddhism — celebrating the birth, enlightenment, and Mahaparinirvana of Gautama Buddha. A day for meditation, Dana, Sila, and spreading loving-kindness.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "12",
+    "title": "Florence Nightingale Born — International Nurses Day",
+    "description": "On May 12, 1820, Florence Nightingale was born in Florence, Italy. She revolutionized nursing during the Crimean War by introducing sanitary practices that dramatically reduced death rates among wounded soldiers. Her pioneering use of statistical analysis in healthcare and her founding of professional nursing training at St Thomas' Hospital in London established nursing as a respected medical profession.",
+    "category": "event",
+    "year": "1820",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Soviet Union Lifts the Berlin Blockade",
+    "description": "On May 12, 1949, the Soviet Union lifted its blockade of West Berlin after 318 days, ending one of the first major crises of the Cold War. The Western Allies had sustained the city's 2.5 million residents through the Berlin Airlift, flying in over 2.3 million tons of food, fuel, and supplies. The blockade's failure demonstrated the resolve of democratic nations and led directly to the formation of NATO.",
+    "category": "event",
+    "year": "1949",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Dhamma: Kapilavastu — Buddha's Homeland",
+    "description": "Kapilavastu was the city where Prince Siddhartha grew up as a royal heir. His encounter with old age, sickness, death, and an ascetic led him to renounce the palace and seek truth.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "13",
+    "title": "Brazil Abolishes Slavery — Lei Áurea",
+    "description": "On May 13, 1888, Princess Isabel of Brazil signed the Lei Áurea (Golden Law), abolishing slavery throughout the Brazilian Empire. Brazil was the last country in the Western Hemisphere to end legal slavery, freeing approximately 700,000 enslaved people. The abolition was the culmination of decades of resistance by enslaved Africans and a growing abolitionist movement, though the formerly enslaved received no reparations or land.",
+    "category": "event",
+    "year": "1888",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Churchill's 'Blood, Toil, Tears and Sweat' Speech",
+    "description": "On May 13, 1940, newly appointed British Prime Minister Winston Churchill addressed the House of Commons for the first time, delivering his famous speech declaring he had 'nothing to offer but blood, toil, tears and sweat.' With Nazi Germany rapidly conquering Western Europe, Churchill rallied the British people to resist totalitarianism. The speech galvanized a nation on the brink of its greatest existential crisis.",
+    "category": "event",
+    "year": "1940",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Dhamma: The Great Renunciation",
+    "description": "Prince Siddhartha left behind his palace, wife, and newborn son at age 29 to seek the truth of suffering. This Great Renunciation marks the beginning of the path to Buddhahood.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "14",
+    "title": "Edward Jenner Administers First Smallpox Vaccination",
+    "description": "On May 14, 1796, English physician Edward Jenner inoculated eight-year-old James Phipps with material from a cowpox lesion, demonstrating that cowpox infection could protect against smallpox. This experiment laid the foundation for the science of immunology and the development of vaccines. Jenner's discovery would eventually lead to the complete eradication of smallpox, saving hundreds of millions of lives.",
+    "category": "event",
+    "year": "1796",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "State of Israel Declared",
+    "description": "On May 14, 1948, David Ben-Gurion proclaimed the establishment of the State of Israel, just hours before the British Mandate over Palestine was set to expire. The declaration followed a United Nations resolution to partition Palestine into Jewish and Arab states. The proclamation immediately triggered the first Arab-Israeli War and set the course for decades of conflict in the region.",
+    "category": "event",
+    "year": "1948",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Sukhdev Thapar Jayanti",
+    "description": "Birth anniversary of Sukhdev Thapar, a revolutionary freedom fighter who was hanged alongside Bhagat Singh and Rajguru in 1931 for their role in the independence struggle.",
+    "category": "event",
+    "year": "1907",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Annihilation of Caste — Dr. Ambedkar",
+    "description": "In May 1936, Dr. B.R. Ambedkar wrote 'Annihilation of Caste' — his most powerful and revolutionary treatise — for a conference that ultimately cancelled his speech. He published it himself, arguing that caste cannot be reformed but must be destroyed. This text remains the most incisive critique of the caste system ever written.",
+    "category": "event",
+    "year": "1936",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Virginia Resolution for Independence",
+    "description": "On May 15, 1776, the Virginia Convention unanimously passed a resolution instructing its delegates to the Continental Congress to propose independence from Great Britain. This was the first official action by any colony calling for a formal break with the British Crown. The Virginia Resolution directly led to Richard Henry Lee's motion in Congress and ultimately to the Declaration of Independence on July 4, 1776.",
+    "category": "event",
+    "year": "1776",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Dhamma: Ajanta Caves",
+    "description": "The Ajanta Caves in Maharashtra contain exquisite Buddhist rock-cut paintings and sculptures spanning the 2nd century BCE to 6th century CE — a masterpiece of Buddhist art.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "16",
+    "title": "Chinese Cultural Revolution Begins",
+    "description": "On May 16, 1966, the Chinese Communist Party issued the 'May 16 Notification,' officially launching Mao Zedong's Cultural Revolution. The decade-long campaign sought to purge capitalist and traditional elements from Chinese society through mass mobilization of youth as Red Guards. The revolution led to widespread persecution, destruction of cultural heritage, and political upheaval that profoundly reshaped Chinese society.",
+    "category": "event",
+    "year": "1966",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "First Working Laser Demonstrated",
+    "description": "On May 16, 1960, physicist Theodore Maiman successfully operated the first working laser at Hughes Research Laboratories in Malibu, California, using a synthetic ruby crystal. The laser — Light Amplification by Stimulated Emission of Radiation — was based on theoretical work by Albert Einstein and Charles Townes. This breakthrough revolutionized fields from medicine and communications to manufacturing and scientific research.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "World Telecommunications Day",
+    "description": "Celebrates global connectivity. Just as the Buddha sent his disciples to spread Dhamma in all directions, modern technology can carry messages of peace and wisdom worldwide.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Brown v. Board of Education",
+    "description": "On May 17, 1954, the United States Supreme Court unanimously ruled in Brown v. Board of Education that racial segregation in public schools was unconstitutional, overturning the 'separate but equal' doctrine established by Plessy v. Ferguson in 1896. Chief Justice Earl Warren declared that separate educational facilities were 'inherently unequal.' The landmark decision became the legal cornerstone of the American civil rights movement.",
+    "category": "event",
+    "year": "1954",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "WHO Removes Homosexuality from Disease Classification",
+    "description": "On May 17, 1990, the World Health Organization removed homosexuality from its International Classification of Diseases (ICD), formally declassifying it as a mental disorder. This historic decision reflected decades of scientific research and advocacy by LGBTQ+ communities worldwide. The date is now observed annually as the International Day Against Homophobia, Biphobia, and Transphobia (IDAHOBIT).",
+    "category": "event",
+    "year": "1990",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Dhamma: Ellora Caves",
+    "description": "The Ellora Caves near Aurangabad feature Buddhist, Hindu, and Jain rock-cut temples — a testament to India's religious pluralism and the rich Buddhist artistic heritage.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "18",
+    "title": "Gwangju Uprising Begins",
+    "description": "On May 18, 1980, citizens of Gwangju, South Korea rose up against the martial law government of General Chun Doo-hwan in a pro-democracy uprising. For ten days, students and civilians controlled the city before the military brutally suppressed the movement, killing hundreds. The Gwangju Uprising became a defining moment in South Korea's democratization movement and is honored as a national memorial day.",
+    "category": "event",
+    "year": "1980",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Napoleon Proclaimed Emperor of France",
+    "description": "On May 18, 1804, the French Senate proclaimed Napoleon Bonaparte as Emperor of the French, transforming the French Republic born of the Revolution into an empire. Napoleon's rise represented one of the most dramatic political transformations in modern history, as a Corsican artillery officer ascended from revolutionary general to absolute ruler. His reign would redraw the map of Europe and spread revolutionary legal and administrative reforms across the continent.",
+    "category": "event",
+    "year": "1804",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Dhamma: Deer Park — First Sangha",
+    "description": "At the Deer Park in Sarnath, the first five disciples attained enlightenment after hearing the Buddha's first sermon, forming the first Buddhist Sangha in history.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "19",
+    "title": "Turkish War of Independence Begins",
+    "description": "On May 19, 1919, Mustafa Kemal Atatürk landed in Samsun on the Black Sea coast, marking the beginning of the Turkish War of Independence against Allied occupation following World War I. He organized a national resistance movement that would overthrow the Ottoman sultanate and defeat occupying forces. The revolution culminated in the establishment of the Republic of Turkey in 1923 and transformed the country with sweeping secular reforms.",
+    "category": "event",
+    "year": "1919",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "José Martí Killed in Cuban Independence Struggle",
+    "description": "On May 19, 1895, Cuban poet, writer, and revolutionary leader José Martí was killed at the Battle of Dos Ríos during the Cuban War of Independence against Spain. Martí had spent years in exile organizing the independence movement and founding the Cuban Revolutionary Party. He is revered as the 'Apostle of Cuban Independence' and remains one of Latin America's most celebrated figures of liberation.",
+    "category": "event",
+    "year": "1895",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Dhamma: Mahākassapa — Preserver of Dhamma",
+    "description": "Mahākassapa was the great elder who convened the First Buddhist Council at Rājagaha after the Buddha's parinirvana, ensuring the Dhamma and Vinaya were accurately preserved.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "20",
+    "title": "Iyothee Thass Pandithar Jayanti",
+    "description": "Birth anniversary of Pandit C. Iyothee Thass (1845–1914), the pioneering Tamil Buddhist revivalist who founded the Sakya Buddhist Society in 1898. He argued that Tamil Dalits were originally Buddhists dispossessed by Brahmanical forces, and worked tirelessly to restore Buddhist identity among oppressed communities in South India.",
+    "category": "event",
+    "year": "1845",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Amelia Earhart Begins Solo Transatlantic Flight",
+    "description": "On May 20, 1932, Amelia Earhart departed from Harbour Grace, Newfoundland, in her single-engine Lockheed Vega to become the first woman to fly solo across the Atlantic Ocean. She landed near Londonderry, Northern Ireland, approximately 15 hours later, covering over 2,000 miles. The achievement shattered gender barriers in aviation and cemented Earhart as one of the most iconic figures in the history of flight.",
+    "category": "event",
+    "year": "1932",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Anti-Terrorism Day",
+    "description": "Observed on the death anniversary of Rajiv Gandhi. A day to reaffirm commitment to non-violence and to reject terrorism and all forms of violent extremism.",
+    "category": "event",
+    "year": "1991",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Lindbergh Completes First Solo Transatlantic Flight",
+    "description": "On May 21, 1927, Charles Lindbergh landed his monoplane Spirit of St. Louis at Le Bourget Aerodrome near Paris, completing the first solo nonstop transatlantic flight from New York. The 33.5-hour journey across 3,600 miles electrified the world and earned Lindbergh instant global fame. The achievement demonstrated the potential of long-distance aviation and accelerated the development of commercial air travel.",
+    "category": "event",
+    "year": "1927",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "American Red Cross Founded",
+    "description": "On May 21, 1881, Clara Barton and a circle of acquaintances founded the American Red Cross in Washington, D.C., modeled after the International Red Cross established in Geneva. Barton, a nurse who had tended soldiers during the American Civil War, led the organization for over two decades. The American Red Cross grew into one of the nation's foremost humanitarian organizations, providing disaster relief and emergency services.",
+    "category": "event",
+    "year": "1881",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "International Day for Biological Diversity",
+    "description": "A UN day celebrating biodiversity. The Buddhist teaching of interconnectedness reminds us that every species plays a vital role in the web of life.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Wright Brothers Granted Airplane Patent",
+    "description": "On May 22, 1906, Orville and Wilbur Wright were granted U.S. Patent No. 821,393 for their 'Flying Machine,' covering their pioneering method of three-axis aircraft control. This patent formalized the brothers' groundbreaking invention that had achieved the first powered, sustained, and controlled heavier-than-air flight at Kitty Hawk in 1903. Their innovation in wing-warping for lateral control became the foundation of all subsequent aircraft design.",
+    "category": "event",
+    "year": "1906",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Apollo 10 Approaches the Moon",
+    "description": "On May 22, 1969, the Apollo 10 lunar module 'Snoopy,' crewed by Thomas Stafford and Eugene Cernan, descended to within 8.4 nautical miles (15.6 km) of the Moon's surface — the closest approach before the actual Moon landing. The mission served as the full dress rehearsal for Apollo 11, testing every aspect of the lunar landing procedure except the landing itself. It was a critical scientific and engineering milestone in humanity's journey to the Moon.",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Dhamma: Sangha Day Reflection",
+    "description": "The Sangha — the noble community of monks, nuns, and lay followers — is the living embodiment of the Dhamma. Supporting and honoring the Sangha is a great source of merit.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "23",
+    "title": "Defenestration of Prague",
+    "description": "On May 23, 1618, Protestant Bohemian nobles threw two Catholic imperial governors and their secretary out of a window of Prague Castle in protest against religious persecution by the Habsburg monarchy. The three men survived the 70-foot fall, but the incident triggered the Bohemian Revolt and ignited the Thirty Years' War — one of the most devastating conflicts in European history. The event became a symbol of popular resistance against religious and political oppression.",
+    "category": "event",
+    "year": "1618",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Federal Republic of Germany Established",
+    "description": "On May 23, 1949, the Basic Law (Grundgesetz) was promulgated, establishing the Federal Republic of Germany (West Germany) as a democratic state from the ruins of the Nazi dictatorship. The constitution enshrined fundamental rights, the rule of law, and human dignity as inviolable principles. It laid the foundation for West Germany's remarkable transformation into a peaceful, prosperous democracy and eventually for German reunification in 1990.",
+    "category": "event",
+    "year": "1949",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Dhamma: Sanchi Stupa",
+    "description": "The Great Stupa at Sanchi, built by Emperor Ashoka, is one of the oldest stone structures in India. Its elaborate gateways depict scenes from the Buddha's life and Jātaka tales.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "24",
+    "title": "Samuel Morse Sends First Telegraph Message",
+    "description": "On May 24, 1844, Samuel F.B. Morse transmitted the message 'What hath God wrought' from the U.S. Capitol in Washington, D.C., to his assistant in Baltimore, Maryland, using his electromagnetic telegraph system. This first long-distance electronic communication revolutionized the speed of information exchange across vast distances. The telegraph became the foundation of modern telecommunications and transformed commerce, journalism, and diplomacy.",
+    "category": "event",
+    "year": "1844",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Brooklyn Bridge Opens",
+    "description": "On May 24, 1883, the Brooklyn Bridge was opened to the public, connecting Manhattan and Brooklyn across the East River in New York City. Designed by John Augustus Roebling and completed by his son Washington Roebling, it was the longest suspension bridge in the world at the time, spanning 1,595 feet. The bridge was an engineering marvel that required 14 years of construction and pioneered the use of steel wire cables in bridge design.",
+    "category": "event",
+    "year": "1883",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Dhamma: Rājagaha — First Council",
+    "description": "Rājagaha (modern Rajgir) was where the First Buddhist Council was held. It was also the capital of King Bimbisāra, one of the Buddha's earliest royal supporters.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "25",
+    "title": "Organization of African Unity Founded — Africa Day",
+    "description": "On May 25, 1963, leaders of 32 newly independent African nations gathered in Addis Ababa, Ethiopia, to establish the Organization of African Unity (OAU), dedicated to promoting solidarity, ending colonialism, and defending sovereignty across the continent. The date is celebrated annually as Africa Day. The OAU was succeeded in 2002 by the African Union, continuing the mission of pan-African unity and liberation.",
+    "category": "event",
+    "year": "1963",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "JFK Announces Moon Landing Goal",
+    "description": "On May 25, 1961, President John F. Kennedy delivered a special message to the U.S. Congress, declaring the ambitious goal of 'landing a man on the Moon and returning him safely to the Earth' before the end of the decade. The speech launched the Apollo program, one of the greatest scientific undertakings in human history. Just eight years later, on July 20, 1969, Apollo 11 fulfilled Kennedy's vision.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Dhamma: Vesāli — Second Council",
+    "description": "The Second Buddhist Council was held at Vesāli (Vaishali) about 100 years after the Buddha's parinirvana to resolve disputes about monastic discipline and the Vinaya rules.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "26",
+    "title": "Guyana Gains Independence",
+    "description": "On May 26, 1966, Guyana gained independence from British colonial rule, becoming the first English-speaking South American nation to achieve sovereignty. The independence movement was led by Cheddi Jagan and Forbes Burnham, who fought against the exploitative colonial plantation system. Guyana's independence was a significant milestone in the broader wave of decolonization across the Caribbean and South America.",
+    "category": "event",
+    "year": "1966",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Last Confederate Army Surrenders",
+    "description": "On May 26, 1865, the Trans-Mississippi Department under General Edmund Kirby Smith became the last major Confederate army to surrender, effectively ending the American Civil War. The surrender came more than six weeks after Robert E. Lee's capitulation at Appomattox Court House. The war's conclusion brought the abolition of slavery through the 13th Amendment and began the long struggle for civil rights and racial equality in America.",
+    "category": "event",
+    "year": "1865",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Jawaharlal Nehru Punyatithi",
+    "description": "Remembrance of India's first Prime Minister Jawaharlal Nehru, who guided the nation through its formative years. Children's Day (Nov 14) celebrates his birthday.",
+    "category": "event",
+    "year": "1964",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Golden Gate Bridge Opens",
+    "description": "On May 27, 1937, the Golden Gate Bridge was opened to pedestrian traffic in San Francisco, California, with an estimated 200,000 people crossing on the first day. Chief engineer Joseph Strauss and architect Irving Morrow created an Art Deco masterpiece spanning 4,200 feet across the Golden Gate strait. At the time of its completion, it was the longest and tallest suspension bridge in the world, and it remains one of the most recognized engineering achievements.",
+    "category": "event",
+    "year": "1937",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Rachel Carson Born — Pioneer of Environmental Science",
+    "description": "On May 27, 1907, marine biologist and writer Rachel Carson was born in Springdale, Pennsylvania. Her groundbreaking 1962 book 'Silent Spring' exposed the devastating environmental effects of pesticides like DDT, challenging the powerful chemical industry. Carson's work is credited with sparking the modern environmental movement and directly leading to the creation of the U.S. Environmental Protection Agency.",
+    "category": "event",
+    "year": "1907",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Dhamma: Veer Savarkar & Social Reform",
+    "description": "Reflection on the importance of social reform movements in modern India. The dismantling of caste barriers is essential for a just society rooted in Dhamma and constitutional values.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "28",
+    "title": "Amnesty International Founded",
+    "description": "On May 28, 1961, British lawyer Peter Benenson published an article titled 'The Forgotten Prisoners' in The Observer newspaper, launching the organization that became Amnesty International. The article called for global action to defend political prisoners and uphold human rights. Amnesty International grew into one of the world's most influential human rights organizations, winning the Nobel Peace Prize in 1977.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "First Primates Survive Spaceflight",
+    "description": "On May 28, 1959, two primates — a rhesus monkey named Able and a squirrel monkey named Miss Baker — were launched aboard a Jupiter rocket and became the first living beings to survive spaceflight and return safely to Earth. They reached an altitude of 300 miles and experienced nine minutes of weightlessness during the 16-minute flight. The mission was a critical step in demonstrating that living organisms could survive the rigors of space travel, paving the way for human spaceflight.",
+    "category": "event",
+    "year": "1959",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "International Day of UN Peacekeepers",
+    "description": "Honoring UN peacekeepers who serve in conflict zones. Peace is the highest goal of Dhamma — 'Sukho viveko tuṭṭhassa' (Happy is the detached one who has learned the Dhamma).",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Edmund Hillary and Tenzing Norgay Summit Everest",
+    "description": "On May 29, 1953, New Zealand mountaineer Sir Edmund Hillary and Nepali Sherpa Tenzing Norgay became the first confirmed climbers to reach the summit of Mount Everest, the world's highest peak at 29,032 feet. They reached the top at 11:30 a.m. as part of a British expedition led by Colonel John Hunt. Their achievement remains one of the greatest feats of human endurance and exploration in history.",
+    "category": "event",
+    "year": "1953",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Fall of Constantinople",
+    "description": "On May 29, 1453, Ottoman Sultan Mehmed II captured Constantinople after a 53-day siege, ending the 1,100-year Byzantine Empire. The fall of this strategically vital city at the crossroads of Europe and Asia marked the end of the Roman imperial legacy and reshaped the political map of the Eastern Mediterranean. Historians consider it one of the most significant turning points in world history, spurring European exploration and the Renaissance.",
+    "category": "event",
+    "year": "1453",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Goa Statehood Day",
+    "description": "Celebrates the formation of Goa as a full state of India in 1987. Goa's rich Buddhist past includes ancient rock-cut caves and connections to the Mauryan Buddhist era.",
+    "category": "event",
+    "year": "1987",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Joan of Arc Executed",
+    "description": "On May 30, 1431, nineteen-year-old Joan of Arc was burned at the stake in Rouen, France, after being convicted of heresy by an English-allied ecclesiastical court. Joan, a peasant girl who claimed divine guidance, had led French armies to crucial victories during the Hundred Years' War and helped secure the coronation of King Charles VII. She was canonized as a saint in 1920 and remains a powerful symbol of courage and resistance against oppression.",
+    "category": "event",
+    "year": "1431",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Kansas-Nebraska Act Signed",
+    "description": "On May 30, 1854, President Franklin Pierce signed the Kansas-Nebraska Act, which repealed the Missouri Compromise and allowed settlers in new territories to decide whether to permit slavery through 'popular sovereignty.' The act inflamed tensions between the North and South, led to violent conflict in 'Bleeding Kansas,' and directly contributed to the formation of the Republican Party. It set the nation on an irreversible path toward the Civil War.",
+    "category": "event",
+    "year": "1854",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "World No-Tobacco Day",
+    "description": "A WHO observance against tobacco use. The Fifth Precept — abstaining from intoxicants — teaches that substances that cloud the mind obstruct the path to wisdom.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "South Africa Becomes a Republic",
+    "description": "On May 31, 1961, South Africa withdrew from the British Commonwealth and became a republic under the apartheid government of Prime Minister Hendrik Verwoerd. The move was driven by increasing international criticism of apartheid and the country's desire to maintain its system of racial segregation without Commonwealth interference. This deepened South Africa's isolation and intensified the anti-apartheid struggle led by Nelson Mandela and the ANC.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Treaty of Vereeniging Ends Second Boer War",
+    "description": "On May 31, 1902, the Treaty of Vereeniging was signed, ending the Second Boer War between the British Empire and the Boer republics of the Transvaal and Orange Free State in Southern Africa. The war, marked by Britain's use of scorched-earth tactics and concentration camps that killed over 26,000 Boer civilians and thousands of Black Africans, remains one of the most controversial chapters of colonial history. The treaty placed the Boer territories under British sovereignty but laid groundwork for the eventual Union of South Africa.",
+    "category": "event",
+    "year": "1902",
+    "isSymbolic": false
+  }
+]

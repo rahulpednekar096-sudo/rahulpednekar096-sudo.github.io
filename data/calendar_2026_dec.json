@@ -1,0 +1,746 @@
+[
+  {
+    "date": "01",
+    "title": "World AIDS Day",
+    "description": "A global day to raise awareness about HIV/AIDS. Compassion for the sick, without stigma or discrimination, is a fundamental teaching of the Buddha.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Rosa Parks and the Montgomery Bus Boycott",
+    "description": "On 1 December 1955, Rosa Parks refused to give up her bus seat to a white passenger in Montgomery, Alabama, sparking the Montgomery Bus Boycott and the American civil rights movement. Her quiet act of defiance against racial segregation echoes the spirit of Dr. Ambedkar's struggles against caste-based discrimination in India.",
+    "category": "event",
+    "year": "1955",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Antarctic Treaty Signed",
+    "description": "On 1 December 1959, twelve nations signed the Antarctic Treaty in Washington, D.C., designating Antarctica as a scientific preserve and banning military activity on the continent. It was one of the first major arms control agreements of the Cold War and established a model for peaceful international cooperation in science.",
+    "category": "event",
+    "year": "1959",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "National Pollution Control Day",
+    "description": "Commemorating the Bhopal Gas Tragedy victims (1984). Environmental justice and the protection of the most vulnerable are duties aligned with Dhamma and constitutional values.",
+    "category": "event",
+    "year": "1984",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "First Controlled Nuclear Chain Reaction",
+    "description": "On 2 December 1942, physicist Enrico Fermi and his team achieved the world's first self-sustaining nuclear chain reaction at Chicago Pile-1, beneath the stands of the University of Chicago's Stagg Field. This breakthrough in nuclear physics was a pivotal moment in the Manhattan Project and ushered in the atomic age.",
+    "category": "event",
+    "year": "1942",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Execution of John Brown",
+    "description": "On 2 December 1859, abolitionist John Brown was executed by hanging in Charles Town, Virginia, for leading the raid on the federal armory at Harpers Ferry in an attempt to ignite a slave uprising. Though his raid failed, Brown's martyrdom galvanized the anti-slavery movement in the North and deepened the divisions that led to the American Civil War.",
+    "category": "event",
+    "year": "1859",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "World Day of Persons with Disabilities",
+    "description": "A UN day promoting the rights and dignity of persons with disabilities. Dr. Ambedkar ensured constitutional provisions for the welfare and inclusion of all marginalized groups.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "First Human Heart Transplant",
+    "description": "On 3 December 1967, Dr. Christiaan Barnard performed the world's first successful human-to-human heart transplant at Groote Schuur Hospital in Cape Town, South Africa. The patient, Louis Washkansky, received the heart of a young woman killed in a car accident and survived for 18 days, marking a revolutionary milestone in surgical medicine.",
+    "category": "event",
+    "year": "1967",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Malta Summit: End of the Cold War Declared",
+    "description": "On 2–3 December 1989, U.S. President George H. W. Bush and Soviet leader Mikhail Gorbachev met aboard ships in the harbor of Malta and jointly declared that the Cold War was coming to an end. The summit, held just weeks after the fall of the Berlin Wall, signaled a new era of East-West cooperation and the winding down of decades of nuclear tension.",
+    "category": "event",
+    "year": "1989",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Indian Navy Day",
+    "description": "Commemorates Operation Trident during the 1971 war. The Indian Navy's bravery and strategic excellence secured victory and protected the nation's maritime sovereignty.",
+    "category": "event",
+    "year": "1971",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Abolition of Sati in India",
+    "description": "On 4 December 1829, British Governor-General Lord William Bentinck enacted Regulation XVII, banning the practice of sati — the immolation of widows on their husband's funeral pyre — throughout British India. This landmark social reform was driven by the relentless campaigning of Raja Ram Mohan Roy and marked one of the earliest legislative victories against oppressive customs targeting women.",
+    "category": "event",
+    "year": "1829",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Gemini 7 Launched",
+    "description": "On 4 December 1965, NASA launched Gemini 7 carrying astronauts Frank Borman and Jim Lovell on a mission that would set an endurance record of nearly 14 days in orbit. The mission demonstrated that humans could survive in space long enough for a round trip to the Moon, providing critical data for the Apollo program.",
+    "category": "event",
+    "year": "1965",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "International Volunteer Day",
+    "description": "A UN day honoring volunteers worldwide. Selfless service (sevā) to others without expectation of reward is the essence of Dāna — the first perfection in Buddhist practice.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Prohibition Repealed — 21st Amendment Ratified",
+    "description": "On 5 December 1933, the 21st Amendment to the United States Constitution was ratified, repealing the 18th Amendment and ending the nationwide prohibition of alcohol that had been in effect since 1920. It remains the only constitutional amendment to repeal a previous one, marking a significant reversal in American social policy after years of widespread bootlegging and organized crime.",
+    "category": "event",
+    "year": "1933",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Great Smog of London Begins",
+    "description": "On 5 December 1952, a thick layer of smog descended upon London, caused by cold weather, windless conditions, and massive coal burning. The Great Smog lasted five days and killed an estimated 4,000 to 12,000 people, making it one of the worst air pollution disasters in history and leading directly to the Clean Air Act of 1956.",
+    "category": "event",
+    "year": "1952",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Mahaparinirvana Diwas",
+    "description": "Dr. B.R. Ambedkar attained Mahaparinirvana on 6 December 1956. Millions gather at Chaityabhoomi in Mumbai to pay homage to the architect of the Constitution and father of Indian Buddhism.",
+    "category": "festival",
+    "year": "1956",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "13th Amendment Ratified — Abolition of Slavery in the United States",
+    "description": "On 6 December 1865, the 13th Amendment to the United States Constitution was ratified, formally abolishing slavery and involuntary servitude throughout the nation. This amendment was the culmination of decades of abolitionist struggle, a devastating civil war, and the sacrifices of millions of enslaved African Americans who fought for their freedom.",
+    "category": "event",
+    "year": "1865",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Finland Declares Independence",
+    "description": "On 6 December 1917, the Finnish Parliament declared independence from Russia, taking advantage of the turmoil caused by the Russian Revolution. After centuries of Swedish and then Russian rule, Finland emerged as a sovereign republic, and this date is celebrated annually as Finnish Independence Day.",
+    "category": "event",
+    "year": "1917",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Indian Armed Forces Flag Day",
+    "description": "A day to honor the armed forces and collect funds for the welfare of veterans and their families. Gratitude and service to those who protect us is a noble virtue.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Attack on Pearl Harbor",
+    "description": "On 7 December 1941, the Imperial Japanese Navy launched a surprise military strike against the United States naval base at Pearl Harbor, Hawaii, destroying much of the Pacific Fleet and killing over 2,400 Americans. The attack prompted the United States to enter World War II the following day, fundamentally altering the course of the war and world history.",
+    "category": "event",
+    "year": "1941",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Apollo 17 Launched — Last Crewed Moon Mission",
+    "description": "On 7 December 1972, NASA launched Apollo 17, the final mission of the Apollo program and the last time humans traveled to the Moon. Astronauts Eugene Cernan and Harrison Schmitt spent over three days on the lunar surface conducting extensive geological surveys, while Schmitt became the first professional scientist to walk on the Moon.",
+    "category": "event",
+    "year": "1972",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Bodhi Day",
+    "description": "Bodhi Day celebrates the day Siddhartha Gautama attained supreme enlightenment under the Bodhi tree at Bodh Gaya. A day for deep meditation and renewed dedication to the path.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "08",
+    "title": "American Federation of Labor Founded",
+    "description": "On 8 December 1886, the American Federation of Labor (AFL) was founded in Columbus, Ohio, with Samuel Gompers as its first president. The AFL organized skilled workers into craft unions and fought for higher wages, shorter hours, and safer working conditions, becoming the most powerful labor organization in the United States for decades.",
+    "category": "event",
+    "year": "1886",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Belavezha Accords — Dissolution of the Soviet Union",
+    "description": "On 8 December 1991, the leaders of Russia, Ukraine, and Belarus met at Belavezha Forest and signed the accords that declared the Soviet Union effectively dissolved and established the Commonwealth of Independent States (CIS) in its place. This agreement marked the formal end of the world's largest communist state after nearly seven decades of existence.",
+    "category": "event",
+    "year": "1991",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "International Anti-Corruption Day",
+    "description": "A UN day fighting corruption worldwide. A just society free from corruption was Dr. Ambedkar's vision — the Constitution provides the framework to achieve it.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Tanganyika Gains Independence",
+    "description": "On 9 December 1961, Tanganyika gained independence from British colonial rule, with Julius Nyerere becoming its first Prime Minister. Nyerere led a peaceful independence movement and later championed African socialism and Pan-African unity; Tanganyika merged with Zanzibar in 1964 to form the United Republic of Tanzania.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Global Commission Certifies Smallpox Eradication",
+    "description": "On 9 December 1979, a commission of scientists convened by the World Health Organization certified that smallpox had been eradicated worldwide, making it the first and only human disease to be completely eliminated through vaccination. This monumental achievement, the result of a decades-long global campaign, saved hundreds of millions of lives and stands as one of the greatest triumphs of modern medicine.",
+    "category": "event",
+    "year": "1979",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Human Rights Day",
+    "description": "Marks the adoption of the Universal Declaration of Human Rights in 1948. Dr. Ambedkar ensured that India's Fundamental Rights enshrine human dignity, equality, and freedom for all.",
+    "category": "festival",
+    "year": "1948",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "First Nobel Prizes Awarded",
+    "description": "On 10 December 1901, the first Nobel Prizes were awarded in Stockholm and Christiania (Oslo), honoring outstanding contributions in Physics, Chemistry, Medicine, Literature, and Peace, as stipulated by Alfred Nobel's will. The prizes were established from Nobel's fortune and have since become the world's most prestigious recognition of intellectual and humanitarian achievement.",
+    "category": "event",
+    "year": "1901",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Desmond Tutu Receives Nobel Peace Prize",
+    "description": "On 10 December 1984, Archbishop Desmond Tutu was awarded the Nobel Peace Prize for his nonviolent campaign against the apartheid system in South Africa. As a Black clergyman, Tutu used his moral authority to draw global attention to the brutality of racial segregation, advocating economic sanctions and peaceful resistance in the spirit of justice and human dignity.",
+    "category": "event",
+    "year": "1984",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "International Mountain Day",
+    "description": "A UN day celebrating mountain ecosystems. The Himalayas sheltered Buddhist monasteries for millennia — from Ladakh to Sikkim, mountains have been sanctuaries of Dhamma practice.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "UNICEF Established",
+    "description": "On 11 December 1946, the United Nations International Children's Emergency Fund (UNICEF) was created by the UN General Assembly to provide emergency food and healthcare to children in countries devastated by World War II. UNICEF has since become the world's leading organization for children's welfare, working in over 190 countries to protect the rights of every child.",
+    "category": "event",
+    "year": "1946",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Apollo 17 Lands on the Moon",
+    "description": "On 11 December 1972, the Apollo 17 Lunar Module 'Challenger' touched down in the Taurus-Littrow valley on the Moon, carrying astronauts Eugene Cernan and Harrison Schmitt for the last crewed lunar landing to date. Their three-day exploration collected a record 110 kilograms of lunar samples and produced some of the most scientifically valuable data of the Apollo program.",
+    "category": "event",
+    "year": "1972",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Dhamma: Ajanta Cave Paintings",
+    "description": "The Ajanta cave paintings (2nd century BCE – 6th century CE) are masterworks of Buddhist art depicting the Buddha's lives, teachings, and the beauty of the Dhamma through visual storytelling.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "12",
+    "title": "Marconi Receives First Transatlantic Radio Signal",
+    "description": "On 12 December 1901, Guglielmo Marconi successfully received the first transatlantic radio signal — the Morse code letter 'S' — transmitted from Poldhu, Cornwall, to St. John's, Newfoundland, across over 3,500 kilometers of ocean. This groundbreaking experiment proved that radio waves could follow the curvature of the Earth and launched the era of global wireless communication.",
+    "category": "event",
+    "year": "1901",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Kenya Gains Independence",
+    "description": "On 12 December 1963, Kenya gained independence from British colonial rule after decades of struggle, including the Mau Mau uprising of the 1950s in which thousands of Kenyans fought and died resisting colonial oppression. Jomo Kenyatta, who had been imprisoned by the British, became the nation's first Prime Minister and later its first President.",
+    "category": "event",
+    "year": "1963",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Dhamma: Chaityabhoomi Pilgrimage",
+    "description": "Every December, millions gather at Chaityabhoomi in Mumbai to honor Dr. Ambedkar. This annual pilgrimage is one of the largest peaceful gatherings in the world — a testament to his legacy.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "13",
+    "title": "Nanjing Massacre Begins",
+    "description": "On 13 December 1937, Japanese Imperial forces captured the Chinese capital of Nanjing and began a six-week campaign of mass murder, rape, and destruction that killed an estimated 200,000 to 300,000 Chinese civilians and prisoners of war. The Nanjing Massacre remains one of the most horrific atrocities of the 20th century and is commemorated annually in China as a National Memorial Day.",
+    "category": "event",
+    "year": "1937",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Abel Tasman Sights New Zealand",
+    "description": "On 13 December 1642, Dutch navigator Abel Tasman became the first known European to sight the coast of New Zealand during his voyage of exploration through the southern Pacific and Indian Oceans. Tasman's expedition, commissioned by the Dutch East India Company, also led to the European discovery of Tasmania, Fiji, and Tonga.",
+    "category": "event",
+    "year": "1642",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "National Energy Conservation Day",
+    "description": "A day promoting energy efficiency and sustainability. Moderation and non-waste are Buddhist principles — the Middle Way teaches balanced consumption rather than excess.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Max Planck Presents Quantum Theory",
+    "description": "On 14 December 1900, German physicist Max Planck presented his groundbreaking paper to the German Physical Society, proposing that energy is emitted in discrete packets called 'quanta' rather than as a continuous wave. This radical idea overturned classical physics and laid the foundation for quantum mechanics, one of the most revolutionary scientific frameworks of the 20th century.",
+    "category": "event",
+    "year": "1900",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Roald Amundsen Reaches the South Pole",
+    "description": "On 14 December 1911, Norwegian explorer Roald Amundsen and his team became the first humans to reach the geographic South Pole, winning the fierce race against British rival Robert Falcon Scott. Amundsen's meticulous planning, use of sled dogs, and mastery of polar conditions allowed him to achieve this historic feat and return safely, while Scott's party tragically perished on their return journey.",
+    "category": "event",
+    "year": "1911",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Dhamma: Sārnāth Museum",
+    "description": "The Sarnath Museum houses the famous Ashoka Lion Capital — India's national emblem — and exquisite Buddhist sculptures from the Maurya, Kushana, and Gupta periods.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "15",
+    "title": "United States Bill of Rights Ratified",
+    "description": "On 15 December 1791, the first ten amendments to the United States Constitution, known as the Bill of Rights, were ratified by the required three-fourths of state legislatures. These amendments guaranteed fundamental liberties including freedom of speech, religion, and the press, the right to bear arms, protection against unreasonable searches, and the right to a fair trial.",
+    "category": "event",
+    "year": "1791",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Venera 7 Lands on Venus",
+    "description": "On 15 December 1970, the Soviet spacecraft Venera 7 became the first human-made object to successfully land on another planet and transmit data back to Earth from Venus's surface. Despite the crushing atmospheric pressure and extreme temperatures of over 470°C, the probe transmitted data for 23 minutes, confirming the hostile conditions on Venus and marking a major milestone in planetary exploration.",
+    "category": "event",
+    "year": "1970",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Vijay Diwas",
+    "description": "Commemorates India's victory in the 1971 war that led to the liberation of Bangladesh. A day to honor the courage and sacrifice of the Indian armed forces.",
+    "category": "festival",
+    "year": "1971",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Boston Tea Party",
+    "description": "On 16 December 1773, American colonists disguised as Mohawk Indians boarded three British ships in Boston Harbor and dumped 342 chests of East India Company tea into the water to protest taxation without representation. The Boston Tea Party was a pivotal act of defiance that escalated tensions between Britain and its American colonies, leading directly to the American Revolution.",
+    "category": "event",
+    "year": "1773",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Kazakhstan Declares Independence",
+    "description": "On 16 December 1991, Kazakhstan became the last of the Soviet republics to declare independence, formally dissolving the final ties of the USSR. Under President Nursultan Nazarbayev, the newly sovereign nation inherited the world's fourth-largest nuclear arsenal, which it subsequently renounced, becoming a powerful symbol of nuclear disarmament.",
+    "category": "event",
+    "year": "1991",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Dhamma: Ambedkar's 'The Buddha and His Dhamma'",
+    "description": "Dr. Ambedkar's magnum opus 'The Buddha and His Dhamma' presents Buddhism as a rational, ethical religion of freedom, equality, and compassion — a guide for modern life.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "17",
+    "title": "Wright Brothers' First Powered Flight",
+    "description": "On 17 December 1903, Orville and Wilbur Wright achieved the first sustained, controlled, powered heavier-than-air flight at Kill Devil Hills near Kitty Hawk, North Carolina. Orville piloted the first flight lasting 12 seconds over 36 meters, and by the fourth flight that day, Wilbur flew for 59 seconds over 260 meters, inaugurating the age of aviation.",
+    "category": "event",
+    "year": "1903",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Mohamed Bouazizi's Self-Immolation Sparks the Arab Spring",
+    "description": "On 17 December 2010, Tunisian street vendor Mohamed Bouazizi set himself on fire in front of a government building in Sidi Bouzid to protest police corruption, humiliation, and lack of economic opportunity. His desperate act ignited massive protests across Tunisia that toppled President Ben Ali and sparked the Arab Spring — a wave of pro-democracy uprisings across the Middle East and North Africa.",
+    "category": "event",
+    "year": "2010",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "International Migrants Day",
+    "description": "A UN day honoring the contributions of migrants. The Buddha himself was a wandering teacher, and his Dhamma spread across Asia through the movement of monks, scholars, and traders.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Project SCORE — First Communications Satellite Launched",
+    "description": "On 18 December 1958, the United States launched Project SCORE (Signal Communication by Orbiting Relay Equipment), the world's first communications satellite, aboard an Atlas rocket. The satellite broadcast a pre-recorded Christmas message from President Eisenhower, becoming the first human voice transmitted from space and demonstrating the feasibility of satellite-based global communication.",
+    "category": "event",
+    "year": "1958",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "United Kingdom Permanently Abolishes the Death Penalty",
+    "description": "On 18 December 1969, the British House of Lords voted to make permanent the abolition of capital punishment for murder in the United Kingdom, which had been suspended since 1965 under the Murder (Abolition of Death Penalty) Act. This decision made Britain one of the early Western nations to permanently end the death penalty, reflecting a growing global movement toward the protection of the right to life.",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Goa Liberation Day",
+    "description": "Celebrates the liberation of Goa from Portuguese rule in 1961 through Operation Vijay. After 451 years of colonial rule, Goa became part of the Indian republic.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "First Indochina War Begins — Vietnamese Resistance",
+    "description": "On 19 December 1946, Ho Chi Minh and the Viet Minh launched a large-scale attack against French forces in Hanoi, marking the beginning of the First Indochina War. This armed resistance against French colonial rule lasted eight years and culminated in the decisive Vietnamese victory at Dien Bien Phu in 1954, ending nearly a century of French colonialism in Southeast Asia.",
+    "category": "event",
+    "year": "1946",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Sino-British Joint Declaration on Hong Kong Signed",
+    "description": "On 19 December 1984, British Prime Minister Margaret Thatcher and Chinese Premier Zhao Ziyang signed the Sino-British Joint Declaration in Beijing, agreeing that sovereignty over Hong Kong would be transferred from Britain to China on 1 July 1997. The agreement stipulated that Hong Kong's capitalist system and way of life would remain unchanged for 50 years under the 'one country, two systems' principle.",
+    "category": "event",
+    "year": "1984",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "International Human Solidarity Day",
+    "description": "A UN day celebrating unity in diversity. The Buddha's Sangha was open to all — kings and outcasts, men and women, rich and poor — united by the common pursuit of liberation.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Louisiana Purchase Transfer",
+    "description": "On 20 December 1803, France officially transferred the Louisiana Territory to the United States in a ceremony at the Cabildo in New Orleans, completing the Louisiana Purchase. The acquisition of approximately 828,000 square miles of territory from Napoleon Bonaparte for $15 million doubled the size of the young American republic and opened the vast interior of North America to westward expansion.",
+    "category": "event",
+    "year": "1803",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Macau Returned to China",
+    "description": "On 20 December 1999, Portugal formally transferred sovereignty of Macau to the People's Republic of China, ending over 440 years of Portuguese colonial administration — the longest European colonial presence in East Asia. The handover, following the return of Hong Kong in 1997, marked the end of European colonialism in Asia.",
+    "category": "event",
+    "year": "1999",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Dhamma: Winter Solstice Reflection",
+    "description": "The shortest day of the year. Just as light returns after the solstice, the Dhamma offers hope in the darkest times — the path from ignorance to wisdom, from suffering to freedom.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "21",
+    "title": "Apollo 8 Launched — First Humans to Orbit the Moon",
+    "description": "On 21 December 1968, NASA launched Apollo 8 carrying astronauts Frank Borman, Jim Lovell, and William Anders on the first crewed mission to orbit the Moon. During their lunar orbit on Christmas Eve, the crew captured the iconic 'Earthrise' photograph and broadcast a live television message to the largest audience in history, profoundly changing humanity's perspective of its place in the cosmos.",
+    "category": "event",
+    "year": "1968",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Alma-Ata Protocol — Soviet Union Formally Dissolved",
+    "description": "On 21 December 1991, leaders of eleven former Soviet republics signed the Alma-Ata Protocol in the Kazakh capital, formally establishing the Commonwealth of Independent States and declaring that the Soviet Union had ceased to exist. This agreement finalized the dissolution of the world's first and largest communist superpower, reshaping the global political order after 69 years.",
+    "category": "event",
+    "year": "1991",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "National Mathematics Day",
+    "description": "Birth anniversary of Srinivasa Ramanujan, the self-taught mathematical genius. His extraordinary intuition and the beauty of mathematics reflect the Buddhist ideal of profound insight.",
+    "category": "event",
+    "year": "1887",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Romanian Revolution — Ceaușescu Overthrown",
+    "description": "On 22 December 1989, the Romanian Revolution reached its climax as dictator Nicolae Ceaușescu and his wife Elena fled Bucharest by helicopter after a popular uprising that began in Timișoara days earlier. Romania was the only Eastern Bloc country where the transition from communism to democracy turned violent, with over 1,000 people killed during the revolution; Ceaușescu was captured and executed on 25 December.",
+    "category": "event",
+    "year": "1989",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Discovery of the Coelacanth — A Living Fossil",
+    "description": "On 22 December 1938, museum curator Marjorie Courtenay-Latimer discovered a living coelacanth among the catch of a fishing trawler off the coast of South Africa, stunning the scientific world. The coelacanth had been believed extinct for 66 million years since the Cretaceous period, and its discovery was hailed as one of the most important zoological finds of the 20th century.",
+    "category": "event",
+    "year": "1938",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Kisan Diwas (Farmers' Day)",
+    "description": "Birth anniversary of former PM Chaudhary Charan Singh. Dr. Ambedkar advocated for farmers' rights, land reform, and the economic empowerment of agricultural communities.",
+    "category": "event",
+    "year": "1902",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Transistor Demonstrated at Bell Labs",
+    "description": "On 23 December 1947, physicists John Bardeen and Walter Brattain demonstrated the first working transistor at Bell Telephone Laboratories in Murray Hill, New Jersey, with William Shockley contributing key theoretical insights. The invention of the transistor revolutionized electronics, replacing bulky vacuum tubes and paving the way for modern computers, smartphones, and the entire digital age.",
+    "category": "event",
+    "year": "1947",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Voyager Completes First Non-Stop Around-the-World Flight",
+    "description": "On 23 December 1986, the experimental aircraft Voyager, piloted by Dick Rutan and Jeana Yeager, completed the first non-stop, non-refueled flight around the world after nine days in the air covering over 42,000 kilometers. The lightweight aircraft, designed by Burt Rutan, landed at Edwards Air Force Base in California with only a few gallons of fuel remaining.",
+    "category": "event",
+    "year": "1986",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Periyar E.V. Ramasamy Punyatithi",
+    "description": "Remembrance of Periyar, the great Tamil rationalist and social reformer who died in 1973. His Self-Respect Movement fought against Brahmanical supremacy and caste oppression.",
+    "category": "event",
+    "year": "1973",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Christmas Truce of World War I",
+    "description": "On 24 December 1914, along sections of the Western Front, German and Allied soldiers spontaneously laid down their arms and emerged from their trenches to exchange greetings, sing carols, and even play football in no man's land. The Christmas Truce was an extraordinary moment of shared humanity amid the horrors of World War I, though commanders on both sides ensured it would not be repeated in subsequent years.",
+    "category": "event",
+    "year": "1914",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Apollo 8 Crew Photographs Earthrise",
+    "description": "On 24 December 1968, during their fourth orbit of the Moon, Apollo 8 astronaut William Anders captured the iconic 'Earthrise' photograph showing Earth rising above the lunar horizon. The image, showing a fragile blue planet suspended in the blackness of space, became one of the most influential photographs in history and is credited with inspiring the modern environmental movement.",
+    "category": "event",
+    "year": "1968",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Christmas / Good Governance Day",
+    "description": "Christmas celebrates the birth of Jesus Christ — his message of love, forgiveness, and service to the poor resonates with the Buddhist values of compassion and selfless giving.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Manusmriti Dahan Din",
+    "description": "On 25 December 1927, during the Mahad Satyagraha, Dr. B.R. Ambedkar publicly burned copies of the Manusmriti — the ancient text that codified caste hierarchy and justified the subjugation of Shudras and women. This act of defiance was a declaration of war against caste oppression and a demand for human dignity, equality, and social justice.",
+    "category": "event",
+    "year": "1927",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Birth of Isaac Newton",
+    "description": "On 25 December 1642, Isaac Newton was born in Woolsthorpe Manor, Lincolnshire, England. Newton's discoveries in mathematics, optics, and physics — including the laws of motion, universal gravitation, and the development of calculus — fundamentally transformed humanity's understanding of the natural world and laid the foundation for modern science.",
+    "category": "event",
+    "year": "1642",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Veer Bal Diwas",
+    "description": "Honors the martyrdom of Sahibzada Zorawar Singh and Sahibzada Fateh Singh, the young sons of Guru Gobind Singh, who chose death over renouncing their faith — supreme courage.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Marie and Pierre Curie Announce Discovery of Radium",
+    "description": "On 26 December 1898, Marie and Pierre Curie announced to the French Academy of Sciences that they had discovered a new radioactive element, which they named radium, extracted from pitchblende ore. This discovery earned Marie Curie her second Nobel Prize (in Chemistry, 1911) and opened entirely new fields in nuclear physics and cancer treatment through radiation therapy.",
+    "category": "event",
+    "year": "1898",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Soviet Union Formally Dissolved",
+    "description": "On 26 December 1991, the Soviet of the Republics of the Supreme Soviet of the USSR voted to formally dissolve the Soviet Union, bringing to an end the 69-year-old superpower that had shaped 20th-century geopolitics. The red hammer-and-sickle flag was lowered over the Kremlin for the last time, and the Russian tricolor was raised in its place, marking the definitive end of the Cold War era.",
+    "category": "event",
+    "year": "1991",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Dhamma: Year-End Reflection",
+    "description": "As the year draws to a close, reflect on the Dhamma practiced throughout the year. What wholesome seeds were planted? What unwholesome habits were reduced? Every step on the path matters.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "27",
+    "title": "Charles Darwin Begins Voyage on HMS Beagle",
+    "description": "On 27 December 1831, the HMS Beagle set sail from Plymouth, England, carrying the young naturalist Charles Darwin on a five-year voyage of scientific exploration around the world. Darwin's observations of geological formations, fossils, and diverse species — particularly the finches of the Galápagos Islands — would eventually lead him to formulate the theory of evolution by natural selection, transforming biology forever.",
+    "category": "event",
+    "year": "1831",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Birth of Louis Pasteur",
+    "description": "On 27 December 1822, Louis Pasteur was born in Dole, France. His groundbreaking work in microbiology and chemistry led to the germ theory of disease, the development of pasteurization, and vaccines for rabies and anthrax, saving countless millions of lives and establishing the foundations of modern medicine and public health.",
+    "category": "event",
+    "year": "1822",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Dhamma: Gratitude Practice",
+    "description": "Gratitude (kataññutā) is praised by the Buddha as a quality of the wise. Reflect with gratitude on parents, teachers, and all who have supported your journey on the path of Dhamma.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "28",
+    "title": "Indian National Congress Founded",
+    "description": "On 28 December 1885, the Indian National Congress was founded at Gokuldas Tejpal Sanskrit College in Bombay by 72 delegates from across India, with Allan Octavian Hume as its organizing secretary. The Congress became the principal vehicle of Indian nationalism and the independence movement, eventually leading India to freedom from British colonial rule in 1947.",
+    "category": "event",
+    "year": "1885",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Lumière Brothers Hold First Public Film Screening",
+    "description": "On 28 December 1895, Auguste and Louis Lumière held the world's first public commercial film screening at the Salon Indien du Grand Café in Paris, showing ten short films to a paying audience. Their invention of the Cinématographe — a combined camera, projector, and film printer — launched the motion picture industry and a new art form that would transform culture worldwide.",
+    "category": "event",
+    "year": "1895",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Dhamma: Resolve for the New Year",
+    "description": "The Buddha encouraged his followers to set firm intentions (adhiṭṭhāna). As the year ends, resolve to deepen your practice of Sīla, Samādhi, and Paññā in the year ahead.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "29",
+    "title": "Wounded Knee Massacre",
+    "description": "On 29 December 1890, U.S. Army soldiers of the 7th Cavalry massacred an estimated 250 to 300 Lakota men, women, and children at Wounded Knee Creek on the Pine Ridge Reservation in South Dakota. The massacre, which occurred during an attempt to disarm the Lakota, marked the tragic end of the American Indian Wars and remains a powerful symbol of the injustice and violence inflicted upon Indigenous peoples.",
+    "category": "event",
+    "year": "1890",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Sun Yat-sen Elected First President of the Republic of China",
+    "description": "On 29 December 1911, Sun Yat-sen was elected the first provisional president of the Republic of China by delegates from provinces that had declared independence during the Xinhai Revolution. The revolution overthrew the Qing dynasty, ending over two thousand years of imperial rule in China and establishing Asia's first republic.",
+    "category": "event",
+    "year": "1911",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Dhamma: Impermanence of the Year",
+    "description": "Another year passes — a vivid reminder of Anicca. Each moment is precious and unrepeatable. The Dhamma urges us: 'Appamādena sampādetha' — strive with diligence, heedfulness is the path.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "30",
+    "title": "All India Muslim League Founded",
+    "description": "On 30 December 1906, the All India Muslim League was founded in Dhaka by a group of Muslim leaders led by Nawab Khwaja Salimullah to protect the political rights and interests of Muslims in British India. The League would later play a decisive role in the partition of India and the creation of Pakistan in 1947 under the leadership of Muhammad Ali Jinnah.",
+    "category": "event",
+    "year": "1906",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Soviet Union Established",
+    "description": "On 30 December 1922, the Treaty on the Creation of the USSR was signed, formally establishing the Union of Soviet Socialist Republics by uniting Soviet Russia, Ukraine, Byelorussia, and the Transcaucasian Federation into a single federal state. The Soviet Union would grow to become one of the world's two superpowers, profoundly shaping global politics, economics, and ideology throughout the 20th century.",
+    "category": "event",
+    "year": "1922",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "New Year's Eve — Dhamma Reflection",
+    "description": "The last day of 2026. May the year end with peace, wisdom, and compassion in your heart. 'Sabbe sattā sukhī hontu' — May all beings be happy. Walk the path of Dhamma with joy.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "31",
+    "title": "British East India Company Chartered",
+    "description": "On 31 December 1600, Queen Elizabeth I granted a royal charter to the 'Governor and Company of Merchants of London Trading into the East Indies,' establishing the British East India Company. What began as a trading venture would grow into the most powerful commercial enterprise in history, eventually conquering and ruling the Indian subcontinent for nearly two centuries.",
+    "category": "event",
+    "year": "1600",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Edison Demonstrates the Incandescent Light Bulb",
+    "description": "On 31 December 1879, Thomas Edison publicly demonstrated his perfected incandescent electric light bulb at his Menlo Park laboratory in New Jersey, illuminating a street and several buildings for an amazed crowd of onlookers. Edison's practical, long-lasting light bulb transformed human civilization by making electric lighting commercially viable and ending humanity's age-old dependence on fire for illumination.",
+    "category": "event",
+    "year": "1879",
+    "isSymbolic": false
+  }
+]
