@@ -5,8 +5,11 @@
     "description": "UNESCO site at Bodh Gaya where the Buddha is said to have attained enlightenment under the Bodhi tree.",
     "address": "Bodh Gaya, Bihar, India",
     "image": "https://rdroidapps.com/data/images/mahabodhi.webp",
-    "credit": "Photo by WeeKeeEditor (Wikimedia Commons, modified)",
-    "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
+    "author": "WeeKeeEditor",
+    "source": "Wikimedia Commons",
+    "modified": true,
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
   {
     "name": "Shwedagon Pagoda",
