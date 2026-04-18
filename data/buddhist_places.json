@@ -48,7 +48,10 @@
     "name": "Todai-ji",
     "country": "Japan",
     "description": "Great Buddha Hall in Nara, home to one of the largest bronze Buddha statues.",
-    "address": "Nara, Japan"
+    "address": "Nara, Japan",
+    "image": "https://rdroidapps.com/data/images/todai-ji.webp",
+    "credit": "Photo by Felix Filnkössl (Wikimedia Commons, modified)",
+    "license": "CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)"
   },
   {
     "name": "Haeinsa",
