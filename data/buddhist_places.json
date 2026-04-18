@@ -67,7 +67,7 @@
     "country": "India",
     "description": "Vipassana meditation centre associated with the teachings of S. N. Goenka.",
     "address": "Igatpuri, Maharashtra, India",
-    "image": "https://rdroidapps.com/data/images/dhammagiri.webp",
+    "image": "https://rdroidapps.com/data/images/dhamma_giri.webp",
     "credit": "Photo by Rohit Sharma (Wikimedia Commons, modified)",
     "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
   },
@@ -75,31 +75,46 @@
     "name": "Sanchi Great Stupa",
     "country": "India",
     "description": "Ancient hemispherical stupa with famous carved gateways; one of the oldest stone structures in India and a UNESCO World Heritage Site.",
-    "address": "Sanchi, Madhya Pradesh, India"
+    "address": "Sanchi, Madhya Pradesh, India",
+    "image": "https://rdroidapps.com/data/images/sanchi.webp",
+    "credit": "Photo by AyushDwivedi1947 (Wikimedia Commons, modified)",
+    "license": "CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
   },
   {
     "name": "Dhamek Stupa",
     "country": "India",
     "description": "Massive cylindrical stupa at Sarnath marking the Deer Park where the Buddha gave his first sermon on the Four Noble Truths.",
-    "address": "Sarnath, Varanasi, Uttar Pradesh, India"
+    "address": "Sarnath, Varanasi, Uttar Pradesh, India",
+    "image": "https://rdroidapps.com/data/images/dhamek.webp",
+    "credit": "Photo by R. M. Calamar (via Flickr / Wikimedia Commons, modified)",
+    "license": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/)"
   },
   {
     "name": "Parinirvana Temple",
     "country": "India",
     "description": "Temple enshrining a long reclining Buddha statue at the place traditionally identified as the Buddha’s final passing into parinirvana.",
-    "address": "Kushinagar, Uttar Pradesh, India"
+    "address": "Kushinagar, Uttar Pradesh, India",
+    "image": "https://rdroidapps.com/data/images/parinirvana.webp",
+    "credit": "Photo by Ronit 255 (Wikimedia Commons, modified)",
+    "license": "CC BY 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
   },
   {
     "name": "Maya Devi Temple",
     "country": "Nepal",
     "description": "Sacred garden and temple at Lumbini surrounding the marker of the Buddha’s birth, with ancient Ashokan evidence nearby.",
-    "address": "Lumbini, Lumbini Province, Nepal"
+    "address": "Lumbini, Lumbini Province, Nepal",
+    "image": "https://rdroidapps.com/data/images/maya_devi.webp",
+    "credit": "Photo by Prince Roy (via Flickr / Wikimedia Commons, modified)"
+    "license": "CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/)"
   },
   {
     "name": "Boudhanath Stupa",
     "country": "Nepal",
     "description": "One of the largest spherical stupas in the world and a major center of Tibetan Buddhist practice in the Kathmandu Valley.",
-    "address": "Kathmandu, Bagmati Province, Nepal"
+    "address": "Kathmandu, Bagmati Province, Nepal",
+    "image": "https://rdroidapps.com/data/images/boudhanath.webp",
+    "credit": "Photo by Gita Dhoj Karki (Wikimedia Commons, modified)",
+    "license": "CC BY 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)"
   },
   {
     "name": "Swayambhunath",
