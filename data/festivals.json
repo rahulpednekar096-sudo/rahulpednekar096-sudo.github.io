@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "festivals": [
+    {
+      "month": 1,
+      "day": 1,
+      "title": "New Year 2026",
+      "description": "The beginning of a new year...",
+      "category": "festival",
+      "year": null,
+      "isSymbolic": false
+    },
+    {
+      "month": 1,
+      "day": 12,
+      "title": "Swami Vivekananda Jayanti",
+      "description": "Birth anniversary...",
+      "category": "festival",
+      "year": "1863",
+      "isSymbolic": false
+    },
+    {
+      "month": 1,
+      "day": 14,
+      "title": "Makar Sankranti",
+      "description": "Festival marking the sun's transition...",
+      "category": "festival",
+      "year": null,
+      "isSymbolic": true
+    },
+    {
+      "month": 1,
+      "day": 15,
+      "title": "Indian Army Day",
+      "description": "Marks the day Lt. Gen...",
+      "category": "festival",
+      "year": "1949",
+      "isSymbolic": false
+    },
+    {
+      "month": 1,
+      "day": 24,
+      "title": "National Girl Child Day",
+      "description": "A day to raise awareness...",
+      "category": "festival",
+      "year": null,
+      "isSymbolic": false
+    },
+    {
+      "month": 1,
+      "day": 25,
+      "title": "National Voters' Day",
+      "description": "Established in 2011...",
+      "category": "festival",
+      "year": "2011",
+      "isSymbolic": false
+    },
+    {
+      "month": 1,
+      "day": 26,
+      "title": "Republic Day",
+      "description": "India adopted its Constitution...",
+      "category": "festival",
+      "year": "1950",
+      "isSymbolic": false
+    },
+    {
+      "month": 2,
+      "day": 11,
+      "title": "Magha Puja",
+      "description": "An important Buddhist festival...",
+      "category": "festival",
+      "year": null,
+      "isSymbolic": true
+    },
+    {
+      "month": 2,
+      "day": 12,
+      "title": "Sant Ravidas Jayanti",
+      "description": "Birth anniversary...",
+      "category": "festival",
+      "year": null,
+      "isSymbolic": true
+    },
+    {
+      "month": 2,
+      "day": 14,
+      "title": "Maitri Diwas",
+      "description": "A day to celebrate universal love...",
+      "category": "festival",
+      "year": null,
+      "isSymbolic": true
+    }
+  ]
+}
