@@ -1,0 +1,8 @@
+{
+  "notification": {
+    "enabled": true,
+    "title": "🎨 Try a New Color Today!",
+    "message": "Mix, match, and discover your perfect shade in seconds.",
+    "interval_days": 3
+  }
+}
