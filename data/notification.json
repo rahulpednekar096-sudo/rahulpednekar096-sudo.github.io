@@ -1,8 +1,8 @@
 {
-  "notification": {
-    "enabled": true,
-    "title": "🎨 Try a New Color Today!",
-    "message": "Mix, match, and discover your perfect shade in seconds.",
-    "interval_days": 3
-  }
+"notification": {
+"enabled": true,
+"title": "🚀 Big ColorMixer Update Coming!",
+"message": "New color families, smarter paint matching, improved accuracy & powerful new features are arriving soon 🎨",
+"interval_days": 3
+}
 }
