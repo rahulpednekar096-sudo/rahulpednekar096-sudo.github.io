@@ -1,8 +1,10 @@
+```json
 {
-"notification": {
-"enabled": true,
-"title": "🚀 Big ColorMixer Update Coming!",
-"message": "New color families, smarter paint matching, improved accuracy & powerful new features are arriving now 🎨",
-"interval_days": 3
+  "notification": {
+    "enabled": true,
+    "title": "🎨 Massive ColorMixer Update is Here!",
+    "message": "Discover new color families, smarter Real Paint matching, improved mix accuracy, CMYK/HSL upgrades & powerful creative tools 🚀",
+    "interval_days": 3
+  }
 }
-}
+```
