@@ -584,102 +584,204 @@
     "name": "City of Ten Thousand Buddhas",
     "country": "United States",
     "description": "Large Chan monastery and community in Mendocino County founded by Ven. Hsuan Hua with many halls and statues.",
-    "address": "4951 Bodhi Way, Talmage, CA 95481, United States"
+    "address": "4951 Bodhi Way, Talmage, CA 95481, United States",
+    "image": "https://rdroidapps.com/data/images/ten_thousand_buddhas.webp",
+    "author": "Kungming2",
+    "source": "https://en.wikipedia.org/",
+    "modified": true,
+    "license_name": "Public Domain",
+    "license_url": "Free"
   },
   {
     "name": "Zen Mountain Monastery",
     "country": "United States",
     "description": "Zen training monastery in the Catskills affiliated with the Mountains and Rivers Order and Dharma communications.",
-    "address": "Mount Tremper, NY 12457, United States"
+    "address": "Mount Tremper, NY 12457, United States",
+    "image": "https://rdroidapps.com/data/images/zen_mountain.webp",
+    "author": "simplytaty",
+    "source": "https://commons.wikimedia.org/wiki/File:Zen_Mountain_Monastery_3.jpg",
+    "modified": true,
+    "license_name": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
   },
   {
     "name": "Nan Tien Temple",
     "country": "Australia",
     "description": "Southern Hemisphere’s largest Buddhist temple complex, Fo Guang Shan branch south of Sydney.",
-    "address": "Pioneer Road, Berkeley, Wollongong, NSW 2506, Australia"
+    "address": "Pioneer Road, Berkeley, Wollongong, NSW 2506, Australia",
+    "image": "https://rdroidapps.com/data/images/nan_tien.webp",
+    "author": "julian",
+    "source": "https://commons.wikimedia.org/wiki/Flickr, https://www.flickr.com/photos/7203666@N07/2111054589",
+    "modified": true,
+    "license_name": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
   },
   {
     "name": "Brickfields Buddhist Maha Vihara",
     "country": "Malaysia",
     "description": "Historic Theravāda temple in Kuala Lumpur serving Sri Lankan and Malaysian Buddhists since the late 19th century.",
-    "address": "123 Jalan Berhala, Brickfields, 50470 Kuala Lumpur, Malaysia"
+    "address": "123 Jalan Berhala, Brickfields, 50470 Kuala Lumpur, Malaysia",
+    "image": "https://rdroidapps.com/data/images/brickfields.webp",
+    "author": "Kawaputra",
+    "source": "https://commons.wikimedia.org/wiki/File:Mahavihara_brickfields.jpg",
+    "modified": true,
+    "license_name": "Public Domain",
+    "license_url": "Free"
   },
   {
     "name": "Thuparamaya",
     "country": "Sri Lanka",
     "description": "First dagoba built in Sri Lanka after the introduction of Buddhism, holding relics of the Buddha’s hair and collarbone.",
-    "address": "Anuradhapura, North Central Province, Sri Lanka"
+    "address": "Anuradhapura, North Central Province, Sri Lanka",
+    "image": "https://rdroidapps.com/data/images/thuparamaya.webp",
+    "author": "A.Savin",
+    "source": "https://commons.wikimedia.org/wiki/File:SL_Anuradhapura_asv2020-01_img34_Thuparamaya_Stupa.jpg",
+    "modified": true,
+    "license_name": "Free Art License",
+    "license_url": "https://artlibre.org/licence/lal/en/"
   },
   {
     "name": "Shitenno-ji",
     "country": "Japan",
     "description": "Traditionally counted among Japan’s oldest Buddhist temples, dedicated to the Four Heavenly Kings near Osaka.",
-    "address": "Tennoji-ku, Osaka, Japan"
+    "address": "Tennoji-ku, Osaka, Japan",
+    "image": "https://rdroidapps.com/data/images/shitenno-ji.webp",
+    "author": "Kusakabe Kimbei (1841–)",
+    "source": "https://commons.wikimedia.org/wiki/File:Shitenn%C5%8D-ji_main_hall_and_pagoda.png",
+    "modified": true,
+    "license_name": "Public Domain",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/"
   },
   {
     "name": "Baoguo Temple (Mount Emei)",
     "country": "China",
     "description": "Ancient temple on Mount Emei, one of China’s four sacred Buddhist mountains and a UNESCO World Heritage landscape.",
-    "address": "Emeishan City, Leshan, Sichuan, China"
+    "address": "Emeishan City, Leshan, Sichuan, China",
+    "image": "https://rdroidapps.com/data/images/baoguo.webp",
+    "author": "Siyuwj",
+    "source": "https://commons.wikimedia.org/wiki/File:Baoguo_Temple,_Emei,_2017-09-19_01.jpg",
+    "modified": true,
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
   {
     "name": "Mount Jiuhua (Zhiyuan Temple area)",
     "country": "China",
     "description": "Sacred mountain in Anhui associated with Kṣitigarbha bodhisattva, dotted with monasteries and pilgrimage paths.",
-    "address": "Qingyang County, Chizhou, Anhui, China"
+    "address": "Qingyang County, Chizhou, Anhui, China",
+    "image": "https://rdroidapps.com/data/images/jiuhua.webp",
+    "author": "江上清风1961",
+    "source": "https://web.archive.org/web/20161017161244/http://www.panoramio.com/photo/42310866",
+    "modified": true,
+    "license_name": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/"
   },
   {
     "name": "Phimai Historical Park",
     "country": "Thailand",
     "description": "Khmer-era Mahayana Buddhist sanctuary in northeast Thailand, among the best-preserved Angkorian-style monuments in the country.",
-    "address": "Phimai District, Nakhon Ratchasima, Thailand"
+    "address": "Phimai District, Nakhon Ratchasima, Thailand",
+    "image": "https://rdroidapps.com/data/images/phimai.webp",
+    "author": "Supanut Arunoprayote",
+    "source": "https://commons.wikimedia.org/wiki/File:Phimai_(III).jpg",
+    "modified": true,
+    "license_name": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
   },
   {
     "name": "Kek Lok Si Temple",
     "country": "Malaysia",
     "description": "Hilltop temple complex on Penang Island with a towering statue of Guanyin and extensive prayer halls.",
-    "address": "Air Itam, George Town, Penang, Malaysia"
+    "address": "Air Itam, George Town, Penang, Malaysia",
+    "image": "https://rdroidapps.com/data/images/kek_lok_si.webp",
+    "author": "Supanut Arunoprayote.",
+    "source": "https://commons.wikimedia.org/wiki/File:Kek_Lok_Si_Temple_%28I%29.jpg",
+    "modified": true,
+    "license_name": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
   },
   {
     "name": "Tsurphu Monastery",
     "country": "China",
     "description": "Traditional seat of the Karma Kagyu lineage in the Tolung Valley, a major center of Tibetan Buddhist practice.",
-    "address": "Doilungdeqen District, Lhasa, Tibet Autonomous Region, China"
+    "address": "Doilungdeqen District, Lhasa, Tibet Autonomous Region, China",
+    "image": "https://rdroidapps.com/data/images/tsurphu_monastery.webp",
+    "author": "reurinkjan",
+    "source": "https://commons.wikimedia.org/wiki/Flickr, https://www.flickr.com/photos/15470975@N03/1788877706",
+    "modified": true,
+    "license_name": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/"
   },
   {
     "name": "Diskit Monastery",
     "country": "India",
     "description": "Nubra Valley monastery in Ladakh with a tall Maitreya statue overlooking the Shyok river basin.",
-    "address": "Diskit, Leh District, Ladakh, India"
+    "address": "Diskit, Leh District, Ladakh, India",
+    "image": "https://rdroidapps.com/data/images/diskit_monastery.webp",
+    "author": "KennyOMG",
+    "source": "https://commons.wikimedia.org/wiki/File:Diskit_Gompa_2.jpg",
+    "modified": true,
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
   {
     "name": "Asura Cave (Pharping)",
     "country": "Nepal",
     "description": "Sacred meditation cave south of Kathmandu linked to Padmasambhava and still used by Tibetan Buddhist practitioners.",
-    "address": "Pharping, Dakshinkali, Bagmati Province, Nepal"
+    "address": "Pharping, Dakshinkali, Bagmati Province, Nepal",
+    "image": "https://rdroidapps.com/data/images/asura_cave.webp",
+    "author": "Gerd Eichmann",
+    "source": "https://commons.wikimedia.org/wiki/File:Pharping-16-Felder-2007-gje.jpg",
+    "modified": true,
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
   {
     "name": "Hsi Lai Temple",
     "country": "United States",
     "description": "North American branch monastery of Fo Guang Shan in Greater Los Angeles, with museum, gardens, and large assembly halls.",
-    "address": "3456 Glenmark Drive, Hacienda Heights, CA 91745, United States"
+    "address": "3456 Glenmark Drive, Hacienda Heights, CA 91745, United States",
+    "image": "https://rdroidapps.com/data/images/hsi_lai.webp",
+    "author": "Aaron Logan",
+    "source": "http://www.lightmatter.net/gallery/albums.php",
+    "modified": true,
+    "license_name": "CC BY 1.0",
+    "license_url": "https://creativecommons.org/licenses/by/1.0/"
   },
   {
     "name": "Wat Phra Singh",
     "country": "Thailand",
     "description": "Historic Lanna temple in Chiang Mai housing the revered Phra Singh Buddha image and classic northern Thai architecture.",
-    "address": "Mueang Chiang Mai District, Chiang Mai, Thailand"
+    "address": "Mueang Chiang Mai District, Chiang Mai, Thailand",
+    "image": "https://rdroidapps.com/data/images/wat_phra_sing.webp",
+    "author": "Supanut Arunoprayote",
+    "source": "https://commons.wikimedia.org/wiki/File:Wat_Phra_Sing,_Chiang_Mai_(I).jpg"
+    "modified": true,
+    "license_name": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
   },
   {
     "name": "Chion-in",
     "country": "Japan",
     "description": "Head temple of Jōdo-shū Pure Land Buddhism in Kyoto, with massive Sanmon gate and vast wooden halls.",
-    "address": "Higashiyama-ku, Kyoto, Japan"
+    "address": "Higashiyama-ku, Kyoto, Japan",
+    "image": "https://rdroidapps.com/data/images/chion_in.webp",
+    "author": "Basile Morin",
+    "source": "https://commons.wikimedia.org/wiki/File:Chion-in%27s_main_hall_Mieido_front_view_behind_an_incense_altar_in_Kyoto_Japan.jpg",
+    "modified": true,
+    "license_name": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
   },
   {
     "name": "Shanti Stupa (Rajgir)",
     "country": "India",
     "description": "Japanese-built peace pagoda on Ratnagiri hill near Rajgir, overlooking the valley associated with early Buddhist councils.",
-    "address": "Rajgir, Nalanda District, Bihar, India"
+    "address": "Rajgir, Nalanda District, Bihar, India",
+    "image": "https://rdroidapps.com/data/images/shanthi.webp",
+    "author": "Vyacheslav Argenberg",
+    "source": "https://commons.wikimedia.org/wiki/File:Leh,_Shanti_Stupa,_Ladakh,_India.jpg",
+    "modified": true,
+    "license_name": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
   }
 ]
