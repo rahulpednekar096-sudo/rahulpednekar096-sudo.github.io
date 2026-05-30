@@ -1,0 +1,8 @@
+{
+    "notification": {
+        "enabled": true,
+        "title": "🙏 Dhamma Darshan 2026",
+        "message": "Explore Buddhist events, observances and sacred places.",
+        "interval_days": 3
+    }
+}
