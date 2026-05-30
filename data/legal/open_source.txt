@@ -1,0 +1,23 @@
+This application uses open-source software and libraries, including:
+
+- AndroidX Libraries
+License: Apache License 2.0
+
+- Google Material Components
+License: Apache License 2.0
+
+- Gson
+License: Apache License 2.0
+
+- OkHttp
+License: Apache License 2.0
+
+- Coil
+License: Apache License 2.0
+
+- PhotoView
+License: Apache License 2.0
+
+The respective copyright owners retain ownership of their software.
+
+Full license texts and project information are available from the official project websites.

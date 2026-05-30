@@ -1,0 +1,30 @@
+Data Safety Information
+
+Dhamma Darshan 2026 is designed to minimize data collection.
+
+Information that may be collected automatically:
+
+- Anonymous analytics data
+- App interaction events
+- Device performance information
+- Advertising performance information
+
+Data is used only for:
+
+- App improvement
+- Feature optimization
+- Performance monitoring
+- Advertisement management
+
+The application does not provide user accounts and does not require users to submit personal information for normal operation.
+
+Data is not sold to third parties.
+
+Some information may be processed by trusted service providers including:
+
+- Google Firebase Analytics
+- Google AdMob
+
+The Buddhist Places feature may access online resources to retrieve updated content.
+
+Most calendar and event information remains available offline.

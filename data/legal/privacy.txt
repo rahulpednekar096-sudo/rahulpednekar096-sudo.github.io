@@ -1,0 +1,37 @@
+Last Updated: 2026
+
+Your privacy is important to us.
+
+Dhamma Darshan 2026 does not require user registration or account creation. Most features work without collecting personally identifiable information.
+
+Information We May Collect:
+
+- Anonymous analytics information through Firebase Analytics
+- Basic app usage statistics
+- Device and performance information provided by Google services
+- Advertising-related information through Google AdMob
+
+How Information Is Used:
+
+- To improve app performance and stability
+- To understand feature usage and user engagement
+- To monitor technical issues and app reliability
+- To improve future versions of the application
+
+Advertising:
+
+This application displays advertisements provided by Google AdMob. AdMob may collect and process information according to Google Privacy Policy.
+
+Remote Content:
+
+The Buddhist Places section may retrieve information from online resources maintained by the publisher. An internet connection may be required for these features.
+
+Children Privacy Information:
+
+The application is intended for a general audience and does not knowingly collect personal information from children.
+
+Contact:
+
+If you have questions regarding this Privacy Policy, please contact:
+
+rdroidapps096@gmail.com

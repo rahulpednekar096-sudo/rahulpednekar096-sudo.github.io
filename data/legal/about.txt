@@ -1,0 +1,15 @@
+Dhamma Darshan 2026 is a Buddhist calendar and reference application designed to help users explore important Buddhist observances, historical events, lunar events, and sacred Buddhist places throughout the year 2026.
+
+Features include:
+
+- Daily Buddhist events and historical anniversaries
+- Monthly calendar view for the year 2026
+- Detailed descriptions of important Buddhist dates
+- Buddhist pilgrimage and heritage places
+- Lunar observances including Full Moon, New Moon, Ashtami, and eclipse-related events
+- Offline access to calendar information
+- Modern, easy-to-use interface optimized for Android devices
+
+The application is intended for educational, cultural, and informational purposes. While every effort is made to provide accurate information, users are encouraged to verify important dates and historical details from trusted sources.
+
+Dhamma Darshan 2026 is developed and maintained by RDroid Apps.
