@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "templates": [
+    {
+      "id": "meditation_morning",
+      "type": "meditation",
+      "title": "Morning Meditation",
+      "default_hour": 6,
+      "default_minute": 0,
+      "message": "Time for your daily meditation practice.",
+      "repeat": "daily"
+    },
+    {
+      "id": "uposatha_reminder",
+      "type": "uposatha",
+      "title": "Uposatha Reminder",
+      "default_hour": 6,
+      "default_minute": 0,
+      "message": "Today is Uposatha — a day for observance and practice.",
+      "repeat": "uposatha"
+    },
+    {
+      "id": "temple_visit",
+      "type": "temple_visit",
+      "title": "Temple Visit",
+      "default_hour": 9,
+      "default_minute": 0,
+      "message": "Reminder for your scheduled temple visit.",
+      "repeat": "weekly"
+    },
+    {
+      "id": "holiday_reminder",
+      "type": "holiday",
+      "title": "Buddhist Holiday",
+      "default_hour": 7,
+      "default_minute": 0,
+      "message": "An important Buddhist holiday is approaching.",
+      "repeat": "holiday"
+    },
+    {
+      "id": "wake_up",
+      "type": "daily",
+      "title": "Wake Up Alarm",
+      "default_hour": 5,
+      "default_minute": 30,
+      "message": "Good morning — begin the day with mindfulness.",
+      "repeat": "daily"
+    }
+  ]
+}
