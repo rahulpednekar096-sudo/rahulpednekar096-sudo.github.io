@@ -2,66 +2,1366 @@
   "version": 1,
   "holidays": [
     {
-      "id": "vesak",
-      "name": "Vesak",
+      "id": "magha_puja",
+      "name": "Magha Puja",
       "type": "major",
-      "description": "Commemorates the birth, enlightenment, and parinirvana of the Buddha.",
-      "countries": ["th", "lk", "mm", "kh", "la", "in"],
+      "description": "Commemorates spontaneous gathering of 1,250 arahants.",
+      "countries": [
+        "th",
+        "lk",
+        "mm",
+        "kh",
+        "la"
+      ],
       "reminder_default_days_before": 1,
       "dates": [
-        { "year": 2026, "month": 5, "day": 1, "calendar": "gregorian", "note": "UN observance" },
-        { "year": 2026, "month": 5, "day": 12, "calendar": "gregorian", "country": "th", "note": "Thailand" },
-        { "year": 2026, "month": 5, "day": 12, "calendar": "gregorian", "country": "lk", "note": "Sri Lanka" },
-        { "year": 2027, "month": 5, "day": 20, "calendar": "gregorian" },
-        { "year": 2028, "month": 5, "day": 8, "calendar": "gregorian" }
+        {
+          "year": 2026,
+          "month": 3,
+          "day": 3,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2027,
+          "month": 2,
+          "day": 21,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2028,
+          "month": 2,
+          "day": 10,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2029,
+          "month": 2,
+          "day": 28,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2030,
+          "month": 2,
+          "day": 18,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2026,
+          "month": 3,
+          "day": 3,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2027,
+          "month": 2,
+          "day": 21,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2028,
+          "month": 2,
+          "day": 10,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2029,
+          "month": 2,
+          "day": 28,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2030,
+          "month": 2,
+          "day": 18,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2026,
+          "month": 3,
+          "day": 3,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2027,
+          "month": 2,
+          "day": 21,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2028,
+          "month": 2,
+          "day": 10,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2029,
+          "month": 2,
+          "day": 28,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2030,
+          "month": 2,
+          "day": 18,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2026,
+          "month": 3,
+          "day": 3,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2027,
+          "month": 2,
+          "day": 21,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2028,
+          "month": 2,
+          "day": 10,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2029,
+          "month": 2,
+          "day": 28,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2030,
+          "month": 2,
+          "day": 18,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2026,
+          "month": 3,
+          "day": 3,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2027,
+          "month": 2,
+          "day": 21,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2028,
+          "month": 2,
+          "day": 10,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2029,
+          "month": 2,
+          "day": 28,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2030,
+          "month": 2,
+          "day": 18,
+          "calendar": "gregorian",
+          "country": "la"
+        }
+      ]
+    },
+    {
+      "id": "vesak",
+      "name": "Vesak / Visakha Puja",
+      "type": "major",
+      "description": "Birth, enlightenment, and parinibbana of the Buddha.",
+      "countries": [
+        "th",
+        "lk",
+        "mm",
+        "kh",
+        "la",
+        "in"
+      ],
+      "reminder_default_days_before": 1,
+      "dates": [
+        {
+          "year": 2026,
+          "month": 5,
+          "day": 31,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2027,
+          "month": 5,
+          "day": 20,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2028,
+          "month": 5,
+          "day": 9,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2029,
+          "month": 5,
+          "day": 28,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2030,
+          "month": 5,
+          "day": 17,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2026,
+          "month": 5,
+          "day": 30,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2027,
+          "month": 5,
+          "day": 20,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2028,
+          "month": 5,
+          "day": 23,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2029,
+          "month": 5,
+          "day": 12,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2030,
+          "month": 5,
+          "day": 31,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2026,
+          "month": 5,
+          "day": 31,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2027,
+          "month": 5,
+          "day": 20,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2028,
+          "month": 5,
+          "day": 9,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2029,
+          "month": 5,
+          "day": 28,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2030,
+          "month": 5,
+          "day": 17,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2026,
+          "month": 5,
+          "day": 31,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2027,
+          "month": 5,
+          "day": 20,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2028,
+          "month": 5,
+          "day": 9,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2029,
+          "month": 5,
+          "day": 28,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2030,
+          "month": 5,
+          "day": 17,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2026,
+          "month": 5,
+          "day": 31,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2027,
+          "month": 5,
+          "day": 20,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2028,
+          "month": 5,
+          "day": 9,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2029,
+          "month": 5,
+          "day": 28,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2030,
+          "month": 5,
+          "day": 17,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2026,
+          "month": 5,
+          "day": 1,
+          "calendar": "gregorian",
+          "country": "in"
+        },
+        {
+          "year": 2027,
+          "month": 5,
+          "day": 20,
+          "calendar": "gregorian",
+          "country": "in"
+        },
+        {
+          "year": 2028,
+          "month": 5,
+          "day": 8,
+          "calendar": "gregorian",
+          "country": "in"
+        },
+        {
+          "year": 2029,
+          "month": 5,
+          "day": 28,
+          "calendar": "gregorian",
+          "country": "in"
+        },
+        {
+          "year": 2030,
+          "month": 5,
+          "day": 17,
+          "calendar": "gregorian",
+          "country": "in"
+        }
       ]
     },
     {
       "id": "asalha_puja",
       "name": "Asalha Puja",
       "type": "major",
-      "description": "First teaching of the Buddha; beginning of the rains retreat.",
-      "countries": ["th", "lk", "mm", "kh", "la"],
+      "description": "First sermon; start of rains retreat season.",
+      "countries": [
+        "th",
+        "lk",
+        "mm",
+        "kh",
+        "la"
+      ],
       "reminder_default_days_before": 1,
       "dates": [
-        { "year": 2026, "month": 7, "day": 21, "calendar": "gregorian" },
-        { "year": 2027, "month": 7, "day": 10, "calendar": "gregorian" },
-        { "year": 2028, "month": 7, "day": 29, "calendar": "gregorian" }
+        {
+          "year": 2026,
+          "month": 7,
+          "day": 29,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2027,
+          "month": 7,
+          "day": 18,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2028,
+          "month": 7,
+          "day": 7,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2029,
+          "month": 7,
+          "day": 25,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2030,
+          "month": 7,
+          "day": 15,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2026,
+          "month": 7,
+          "day": 29,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2027,
+          "month": 7,
+          "day": 18,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2028,
+          "month": 7,
+          "day": 7,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2029,
+          "month": 7,
+          "day": 25,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2030,
+          "month": 7,
+          "day": 15,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2026,
+          "month": 7,
+          "day": 29,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2027,
+          "month": 7,
+          "day": 18,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2028,
+          "month": 7,
+          "day": 7,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2029,
+          "month": 7,
+          "day": 25,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2030,
+          "month": 7,
+          "day": 15,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2026,
+          "month": 7,
+          "day": 29,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2027,
+          "month": 7,
+          "day": 18,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2028,
+          "month": 7,
+          "day": 7,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2029,
+          "month": 7,
+          "day": 25,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2030,
+          "month": 7,
+          "day": 15,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2026,
+          "month": 7,
+          "day": 29,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2027,
+          "month": 7,
+          "day": 18,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2028,
+          "month": 7,
+          "day": 7,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2029,
+          "month": 7,
+          "day": 25,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2030,
+          "month": 7,
+          "day": 15,
+          "calendar": "gregorian",
+          "country": "la"
+        }
       ]
     },
     {
-      "id": "magha_puja",
-      "name": "Magha Puja",
-      "type": "major",
-      "description": "Spontaneous gathering of 1,250 enlightened disciples.",
-      "countries": ["th", "lk", "kh", "la"],
+      "id": "khao_phansa",
+      "name": "Khao Phansa (Rains Retreat Entry)",
+      "type": "seasonal",
+      "description": "Day after Asalha Puja; beginning of vassa.",
+      "countries": [
+        "th",
+        "mm",
+        "kh",
+        "la"
+      ],
       "reminder_default_days_before": 1,
       "dates": [
-        { "year": 2026, "month": 2, "day": 13, "calendar": "gregorian" },
-        { "year": 2027, "month": 2, "day": 2, "calendar": "gregorian" },
-        { "year": 2028, "month": 2, "day": 21, "calendar": "gregorian" }
+        {
+          "year": 2026,
+          "month": 7,
+          "day": 30,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2027,
+          "month": 7,
+          "day": 19,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2028,
+          "month": 7,
+          "day": 8,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2029,
+          "month": 7,
+          "day": 26,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2030,
+          "month": 7,
+          "day": 16,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2026,
+          "month": 7,
+          "day": 30,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2027,
+          "month": 7,
+          "day": 19,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2028,
+          "month": 7,
+          "day": 8,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2029,
+          "month": 7,
+          "day": 26,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2030,
+          "month": 7,
+          "day": 16,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2026,
+          "month": 7,
+          "day": 30,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2027,
+          "month": 7,
+          "day": 19,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2028,
+          "month": 7,
+          "day": 8,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2029,
+          "month": 7,
+          "day": 26,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2030,
+          "month": 7,
+          "day": 16,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2026,
+          "month": 7,
+          "day": 30,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2027,
+          "month": 7,
+          "day": 19,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2028,
+          "month": 7,
+          "day": 8,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2029,
+          "month": 7,
+          "day": 26,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2030,
+          "month": 7,
+          "day": 16,
+          "calendar": "gregorian",
+          "country": "la"
+        }
+      ]
+    },
+    {
+      "id": "ok_phansa",
+      "name": "Ok Phansa (End of Rains Retreat)",
+      "type": "seasonal",
+      "description": "End of Buddhist Lent; kathina season follows.",
+      "countries": [
+        "th",
+        "mm",
+        "kh",
+        "la"
+      ],
+      "reminder_default_days_before": 1,
+      "dates": [
+        {
+          "year": 2026,
+          "month": 10,
+          "day": 26,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2027,
+          "month": 10,
+          "day": 15,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2028,
+          "month": 10,
+          "day": 3,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2029,
+          "month": 10,
+          "day": 22,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2030,
+          "month": 10,
+          "day": 11,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2026,
+          "month": 10,
+          "day": 26,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2027,
+          "month": 10,
+          "day": 15,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2028,
+          "month": 10,
+          "day": 3,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2029,
+          "month": 10,
+          "day": 22,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2030,
+          "month": 10,
+          "day": 11,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2026,
+          "month": 10,
+          "day": 26,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2027,
+          "month": 10,
+          "day": 15,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2028,
+          "month": 10,
+          "day": 3,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2029,
+          "month": 10,
+          "day": 22,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2030,
+          "month": 10,
+          "day": 11,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2026,
+          "month": 10,
+          "day": 26,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2027,
+          "month": 10,
+          "day": 15,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2028,
+          "month": 10,
+          "day": 3,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2029,
+          "month": 10,
+          "day": 22,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2030,
+          "month": 10,
+          "day": 11,
+          "calendar": "gregorian",
+          "country": "la"
+        }
+      ]
+    },
+    {
+      "id": "poson",
+      "name": "Poson Poya",
+      "type": "major",
+      "description": "Arrival of Buddhism in Sri Lanka (Mahinda at Mihintale).",
+      "countries": [
+        "lk"
+      ],
+      "reminder_default_days_before": 1,
+      "dates": [
+        {
+          "year": 2026,
+          "month": 6,
+          "day": 29,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2027,
+          "month": 6,
+          "day": 19,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2028,
+          "month": 6,
+          "day": 7,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2029,
+          "month": 6,
+          "day": 26,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2030,
+          "month": 6,
+          "day": 15,
+          "calendar": "gregorian",
+          "country": "lk"
+        }
+      ]
+    },
+    {
+      "id": "unduvap",
+      "name": "Unduvap Poya",
+      "type": "major",
+      "description": "Arrival of Sanghamitta with Bodhi sapling in Sri Lanka.",
+      "countries": [
+        "lk"
+      ],
+      "reminder_default_days_before": 1,
+      "dates": [
+        {
+          "year": 2026,
+          "month": 12,
+          "day": 23,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2027,
+          "month": 12,
+          "day": 12,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2028,
+          "month": 12,
+          "day": 1,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2029,
+          "month": 12,
+          "day": 20,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2030,
+          "month": 12,
+          "day": 9,
+          "calendar": "gregorian",
+          "country": "lk"
+        }
       ]
     },
     {
       "id": "kathina",
       "name": "Kathina",
       "type": "seasonal",
-      "description": "Offering of robes to the monastic community after the rains retreat.",
-      "countries": ["th", "lk", "mm", "kh", "la"],
-      "reminder_default_days_before": 7,
+      "description": "Robe offering season after vassa; local temple dates vary within month after Ok Phansa.",
+      "countries": [
+        "th",
+        "lk",
+        "mm",
+        "kh",
+        "la"
+      ],
+      "reminder_default_days_before": 1,
       "dates": [
-        { "year": 2026, "month": 10, "day": 20, "calendar": "gregorian", "note": "Season begins — local dates vary" }
+        {
+          "year": 2026,
+          "month": 11,
+          "day": 4,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2027,
+          "month": 10,
+          "day": 24,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2028,
+          "month": 10,
+          "day": 12,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2029,
+          "month": 11,
+          "day": 1,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2030,
+          "month": 10,
+          "day": 21,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2026,
+          "month": 11,
+          "day": 3,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2027,
+          "month": 10,
+          "day": 23,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2028,
+          "month": 10,
+          "day": 11,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2029,
+          "month": 10,
+          "day": 31,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2030,
+          "month": 10,
+          "day": 20,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2026,
+          "month": 11,
+          "day": 4,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2027,
+          "month": 10,
+          "day": 24,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2028,
+          "month": 10,
+          "day": 12,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2029,
+          "month": 11,
+          "day": 1,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2030,
+          "month": 10,
+          "day": 21,
+          "calendar": "gregorian",
+          "country": "mm"
+        },
+        {
+          "year": 2026,
+          "month": 11,
+          "day": 4,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2027,
+          "month": 10,
+          "day": 24,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2028,
+          "month": 10,
+          "day": 12,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2029,
+          "month": 11,
+          "day": 1,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2030,
+          "month": 10,
+          "day": 21,
+          "calendar": "gregorian",
+          "country": "kh"
+        },
+        {
+          "year": 2026,
+          "month": 11,
+          "day": 4,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2027,
+          "month": 10,
+          "day": 24,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2028,
+          "month": 10,
+          "day": 12,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2029,
+          "month": 11,
+          "day": 1,
+          "calendar": "gregorian",
+          "country": "la"
+        },
+        {
+          "year": 2030,
+          "month": 10,
+          "day": 21,
+          "calendar": "gregorian",
+          "country": "la"
+        }
+      ]
+    },
+    {
+      "id": "loi_krathong",
+      "name": "Loi Krathong",
+      "type": "seasonal",
+      "description": "Festival of lights on full moon of 12th lunar month (Thailand).",
+      "countries": [
+        "th"
+      ],
+      "reminder_default_days_before": 1,
+      "dates": [
+        {
+          "year": 2026,
+          "month": 11,
+          "day": 5,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2027,
+          "month": 10,
+          "day": 25,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2028,
+          "month": 11,
+          "day": 12,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2029,
+          "month": 11,
+          "day": 1,
+          "calendar": "gregorian",
+          "country": "th"
+        },
+        {
+          "year": 2030,
+          "month": 11,
+          "day": 20,
+          "calendar": "gregorian",
+          "country": "th"
+        }
+      ]
+    },
+    {
+      "id": "buddha_purnima",
+      "name": "Buddha Purnima",
+      "type": "major",
+      "description": "Indian national holiday marking Buddha birth (full moon Vaisakha).",
+      "countries": [
+        "in"
+      ],
+      "reminder_default_days_before": 1,
+      "dates": [
+        {
+          "year": 2026,
+          "month": 5,
+          "day": 1,
+          "calendar": "gregorian",
+          "country": "in"
+        },
+        {
+          "year": 2027,
+          "month": 5,
+          "day": 20,
+          "calendar": "gregorian",
+          "country": "in"
+        },
+        {
+          "year": 2028,
+          "month": 5,
+          "day": 8,
+          "calendar": "gregorian",
+          "country": "in"
+        },
+        {
+          "year": 2029,
+          "month": 5,
+          "day": 28,
+          "calendar": "gregorian",
+          "country": "in"
+        },
+        {
+          "year": 2030,
+          "month": 5,
+          "day": 17,
+          "calendar": "gregorian",
+          "country": "in"
+        }
+      ]
+    },
+    {
+      "id": "atthami_puja",
+      "name": "Atthami Puja",
+      "type": "major",
+      "description": "Sri Lanka observance related to Buddha's visit traditions.",
+      "countries": [
+        "lk"
+      ],
+      "reminder_default_days_before": 1,
+      "dates": [
+        {
+          "year": 2026,
+          "month": 6,
+          "day": 6,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2027,
+          "month": 5,
+          "day": 27,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2028,
+          "month": 5,
+          "day": 15,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2029,
+          "month": 6,
+          "day": 3,
+          "calendar": "gregorian",
+          "country": "lk"
+        },
+        {
+          "year": 2030,
+          "month": 5,
+          "day": 23,
+          "calendar": "gregorian",
+          "country": "lk"
+        }
       ]
     },
     {
       "id": "uposatha",
       "name": "Uposatha",
       "type": "recurring",
-      "description": "Observance days on full and new moon — precepts and temple practice.",
-      "countries": ["th", "lk", "mm", "kh", "la", "in"],
-      "reminder_default_days_before": 0,
-      "recurrence": "lunar_full_new_moon",
-      "dates": []
+      "description": "Observance on full and new moon — precepts and temple practice.",
+      "countries": [
+        "th",
+        "lk",
+        "mm",
+        "kh",
+        "la",
+        "in"
+      ],
+      "reminder_default_days_before": 1,
+      "dates": [],
+      "recurrence": "lunar_full_new_moon"
     }
   ]
 }

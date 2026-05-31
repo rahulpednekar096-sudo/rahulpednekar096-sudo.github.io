@@ -2,54 +2,454 @@
   "version": 1,
   "chants": [
     {
-      "id": "triple_gem",
-      "title": "Triple Gem (Refuge)",
+      "id": "triple_gem_first",
+      "title": "Going for Refuge (First Time)",
       "category": "refuge",
       "order": 1,
       "text_pali": "Buddham saranam gacchami.\nDhammam saranam gacchami.\nSangham saranam gacchami.",
       "text_translation": "To the Buddha I go for refuge.\nTo the Dhamma I go for refuge.\nTo the Sangha I go for refuge.",
-      "audio_path": "chants/triple_gem.mp3",
-      "duration_sec": 45
+      "audio_path": "chants/triple_gem_first.mp3",
+      "duration_sec": 30,
+      "tags": [
+        "refuge",
+        "daily"
+      ]
+    },
+    {
+      "id": "triple_gem_second",
+      "title": "Going for Refuge (Second Time)",
+      "category": "refuge",
+      "order": 2,
+      "text_pali": "Dutiyampi Buddham saranam gacchami.\nDutiyampi Dhammam saranam gacchami.\nDutiyampi Sangham saranam gacchami.",
+      "text_translation": "For the second time, to the Buddha I go for refuge.\nFor the second time, to the Dhamma I go for refuge.\nFor the second time, to the Sangha I go for refuge.",
+      "audio_path": "chants/triple_gem_second.mp3",
+      "duration_sec": 35,
+      "tags": [
+        "refuge"
+      ]
+    },
+    {
+      "id": "triple_gem_third",
+      "title": "Going for Refuge (Third Time)",
+      "category": "refuge",
+      "order": 3,
+      "text_pali": "Tatiyampi Buddham saranam gacchami.\nTatiyampi Dhammam saranam gacchami.\nTatiyampi Sangham saranam gacchami.",
+      "text_translation": "For the third time, to the Buddha I go for refuge.\nFor the third time, to the Dhamma I go for refuge.\nFor the third time, to the Sangha I go for refuge.",
+      "audio_path": "chants/triple_gem_third.mp3",
+      "duration_sec": 35,
+      "tags": [
+        "refuge"
+      ]
     },
     {
       "id": "five_precepts",
       "title": "Five Precepts",
       "category": "precepts",
-      "order": 2,
-      "text_pali": "Panatipata veramani sikkhapadam samadiyami...",
+      "order": 4,
+      "text_pali": "Panatipata veramani sikkhapadam samadiyami.\nAdinnadana veramani sikkhapadam samadiyami.\nKamesu micchacara veramani sikkhapadam samadiyami.\nMusavada veramani sikkhapadam samadiyami.\nSuramerayamajjapamadatthana veramani sikkhapadam samadiyami.",
       "text_translation": "I undertake the training rule to abstain from taking life.\nI undertake the training rule to abstain from taking what is not given.\nI undertake the training rule to abstain from sexual misconduct.\nI undertake the training rule to abstain from false speech.\nI undertake the training rule to abstain from intoxicants that cause heedlessness.",
       "audio_path": "chants/five_precepts.mp3",
-      "duration_sec": 90
+      "duration_sec": 90,
+      "tags": [
+        "precepts",
+        "uposatha"
+      ]
     },
     {
-      "id": "metta_sutta",
-      "title": "Metta Sutta",
-      "category": "sutta",
-      "order": 3,
-      "text_pali": "Karaniyamattha kusalena...",
-      "text_translation": "Let none deceive another, nor despise any being in any state. Let none through anger or ill-will wish harm upon another.",
-      "audio_path": "chants/metta_sutta.mp3",
-      "duration_sec": 300
+      "id": "eight_precepts",
+      "title": "Eight Precepts",
+      "category": "precepts",
+      "order": 5,
+      "text_pali": "Panatipata veramani sikkhapadam samadiyami.\nAdinnadana veramani sikkhapadam samadiyami.\nAbrahmacariya veramani sikkhapadam samadiyami.\nMusavada veramani sikkhapadam samadiyami.\nSuramerayamajjapamadatthana veramani sikkhapadam samadiyami.\nVikala bhojana veramani sikkhapadam samadiyami.\nNacca gita vadita visuka dassana veramani sikkhapadam samadiyami.\nUccasayana mahasayana veramani sikkhapadam samadiyami.",
+      "text_translation": "I undertake to abstain from taking life, from stealing, from sexual activity, from false speech, from intoxicants, from eating at the wrong time, from entertainment and adornments, and from high and luxurious beds.",
+      "audio_path": "chants/eight_precepts.mp3",
+      "duration_sec": 120,
+      "tags": [
+        "precepts",
+        "uposatha"
+      ]
+    },
+    {
+      "id": "homage_buddha",
+      "title": "Homage to the Buddha",
+      "category": "devotional",
+      "order": 6,
+      "text_pali": "Itipi so Bhagava araham sammasambuddho\nVijjacaranasampanno sugato lokavidu\nAnuttaro purisadammasarathi sattha devamanussanam\nBuddho Bhagava.",
+      "text_translation": "Such indeed is the Blessed One, worthy, fully enlightened, endowed with knowledge and conduct, well-gone, knower of worlds, incomparable trainer of persons, teacher of gods and humans, the Buddha, the Blessed One.",
+      "audio_path": "chants/homage_buddha.mp3",
+      "duration_sec": 60,
+      "tags": [
+        "devotional",
+        "vandana"
+      ]
+    },
+    {
+      "id": "homage_dhamma",
+      "title": "Homage to the Dhamma",
+      "category": "devotional",
+      "order": 7,
+      "text_pali": "Svakkhato Bhagavata dhammo sanditthiko akaliko ehipassiko opanayiko paccattam veditabbo vinnuhi.",
+      "text_translation": "Well expounded is the Dhamma by the Blessed One, directly visible, immediate, inviting investigation, leading onward, to be experienced individually by the wise.",
+      "audio_path": "chants/homage_dhamma.mp3",
+      "duration_sec": 45,
+      "tags": [
+        "devotional",
+        "vandana"
+      ]
+    },
+    {
+      "id": "homage_sangha",
+      "title": "Homage to the Sangha",
+      "category": "devotional",
+      "order": 8,
+      "text_pali": "Supatipanno Bhagavato savakasangho\nUju patipanno Bhagavato savakasangho\nNyaya patipanno Bhagavato savakasangho\nSamici patipanno Bhagavato savakasangho\nYadidam cattari purisayugani attha purisapuggala esa Bhagavato savakasangho ahuneyyo pahuneyyo dakkhineyyo anjalikaraniyo anuttaram punyakkhettam lokassa.",
+      "text_translation": "Of good conduct is the Sangha of the Blessed One's disciples, of upright conduct, of wise conduct, of dutiful conduct — the four pairs of persons, the eight kinds of individuals — this Sangha is worthy of gifts, hospitality, offerings, salutation, and is the supreme field of merit for the world.",
+      "audio_path": "chants/homage_sangha.mp3",
+      "duration_sec": 75,
+      "tags": [
+        "devotional",
+        "vandana"
+      ]
+    },
+    {
+      "id": "metta_sutta_opening",
+      "title": "Karaniya Metta Sutta (Opening)",
+      "category": "paritta",
+      "order": 9,
+      "text_pali": "Karaniyamattha kusalena yanta santam padam abhisamecca\nSakko uju ca suju ca suvaco c'assa mudu anatimani.",
+      "text_translation": "He who is skilled in goodness and wishes to attain that state of peace should act thus: able, upright, perfectly upright, obedient, gentle, and humble.",
+      "audio_path": "chants/metta_sutta_opening.mp3",
+      "duration_sec": 45,
+      "tags": [
+        "metta",
+        "paritta",
+        "sutta"
+      ]
+    },
+    {
+      "id": "metta_sutta_verses",
+      "title": "Metta Sutta (Core Verses)",
+      "category": "paritta",
+      "order": 10,
+      "text_pali": "Mata yatha niyam puttam ayusa ekaputtam anurakkhe\nEvampi sabba bhutesu manasam bhavaye aparimanam\nMettan ca sabba lokasmim manasam bhavaye aparimanam\nUddham adho ca tiriyam sabbadhi sabbattataya santimettam.",
+      "text_translation": "Just as a mother would protect her only child at the risk of her own life, even so let one cultivate a boundless heart toward all beings. Let loving-kindness pervade the whole world — above, below, and across — without obstruction.",
+      "audio_path": "chants/metta_sutta_verses.mp3",
+      "duration_sec": 90,
+      "tags": [
+        "metta",
+        "paritta"
+      ]
     },
     {
       "id": "mangala_sutta",
-      "title": "Mangala Sutta",
-      "category": "sutta",
-      "order": 4,
-      "text_pali": "Bahum sahassam...",
-      "text_translation": "Not to associate with the foolish, but to associate with the wise — this is the greatest blessing.",
+      "title": "Mangala Sutta (Blessings)",
+      "category": "paritta",
+      "order": 11,
+      "text_pali": "Bahum sahassam abhinimmita vo\nRattim gahantam viharam upagato\nDevata namassam anupubbena\nNatthi manussesu ito visesam.",
+      "text_translation": "Many deities and humans, having considered what is auspicious, have come to pay homage. Among humans there is nothing higher than these blessings.",
       "audio_path": "chants/mangala_sutta.mp3",
-      "duration_sec": 240
+      "duration_sec": 240,
+      "tags": [
+        "mangala",
+        "paritta",
+        "blessings"
+      ]
     },
     {
       "id": "ratana_sutta",
-      "title": "Ratana Sutta",
+      "title": "Ratana Sutta (Jewels)",
       "category": "paritta",
-      "order": 5,
-      "text_pali": "Yanidha bhuta ni vaso...",
-      "text_translation": "Whatever beings are assembled here, may they be peaceful. The Buddha jewel is excellent.",
+      "order": 12,
+      "text_pali": "Yanidha bhutani samagatani\nBhummani va yani va antalikkhe\nSabbeva bhuta sumanas bhavantu\nAthopi sabbabhutabhavam sada sotthi te hotu niccam.",
+      "text_translation": "Whatever beings are assembled here, on earth or in the sky, may all beings be happy. May the Buddha jewel bring you safety always.",
       "audio_path": "chants/ratana_sutta.mp3",
-      "duration_sec": 180
+      "duration_sec": 180,
+      "tags": [
+        "ratana",
+        "paritta"
+      ]
+    },
+    {
+      "id": "bojjhanga_sutta",
+      "title": "Bojjhanga Paritta",
+      "category": "paritta",
+      "order": 13,
+      "text_pali": "Buddho me natho dhammo me natho sangho me natho\nSatipatthana me natho samadhi me natho viriya me natho panna me natho.",
+      "text_translation": "The Buddha is my protector, the Dhamma is my protector, the Sangha is my protector. Mindfulness, concentration, energy, and wisdom are my protectors.",
+      "audio_path": "chants/bojjhanga_sutta.mp3",
+      "duration_sec": 120,
+      "tags": [
+        "bojjhanga",
+        "paritta",
+        "healing"
+      ]
+    },
+    {
+      "id": "atitaya_paritta",
+      "title": "Atitaya Paritta",
+      "category": "paritta",
+      "order": 14,
+      "text_pali": "Akantam ca kananam ca phusanam ca mahabbhayam\nAntarayam ca dukkham ca dukkham me na upatissati.",
+      "text_translation": "May the disagreeable, the forest, contact with danger, obstacles and suffering not befall me.",
+      "audio_path": "chants/atitaya_paritta.mp3",
+      "duration_sec": 60,
+      "tags": [
+        "paritta",
+        "protection"
+      ]
+    },
+    {
+      "id": "dhammapada_verse_183",
+      "title": "Dhammapada 183 (Training)",
+      "category": "devotional",
+      "order": 15,
+      "text_pali": "Sabbapapassa akaranam kusalassa upasampada\nSacittapariyodapanam etam buddhana sasanam.",
+      "text_translation": "To abstain from all evil, to cultivate good, and to purify one's mind — this is the teaching of the Buddhas.",
+      "audio_path": "chants/dhammapada_183.mp3",
+      "duration_sec": 30,
+      "tags": [
+        "dhammapada",
+        "ethics"
+      ]
+    },
+    {
+      "id": "anicca_chant",
+      "title": "Three Characteristics",
+      "category": "devotional",
+      "order": 16,
+      "text_pali": "Anicca vata sankhara uppada vaya dhammino\nUppajjitva nirujjhanti tesam vupasamo sukho.",
+      "text_translation": "Impermanent indeed are formations; they arise and cease. Having arisen, they cease; their calming is bliss.",
+      "audio_path": "chants/anicca_chant.mp3",
+      "duration_sec": 40,
+      "tags": [
+        "impermanence",
+        "funeral"
+      ]
+    },
+    {
+      "id": "morning_offering",
+      "title": "Morning Offering Chant",
+      "category": "morning",
+      "order": 17,
+      "text_pali": "Suprabhatam bhante, suprabhatam bhante, suprabhatam bhante.",
+      "text_translation": "A very good morning, venerable sir (three times).",
+      "audio_path": "chants/morning_offering.mp3",
+      "duration_sec": 20,
+      "tags": [
+        "morning",
+        "monastic"
+      ]
+    },
+    {
+      "id": "evening_paritta",
+      "title": "Evening Paritta Closing",
+      "category": "evening",
+      "order": 18,
+      "text_pali": "Sabbe satta sukhi hontu, sabbe satta avera hontu\nSabbe satta abyapajjha hontu, sabbe satta anigha hontu\nSabbe satta sukhi attanam pariharantu.",
+      "text_translation": "May all beings be happy, free from enmity, free from mental suffering, free from bodily suffering, and may they look after themselves with ease.",
+      "audio_path": "chants/evening_paritta.mp3",
+      "duration_sec": 45,
+      "tags": [
+        "evening",
+        "metta"
+      ]
+    },
+    {
+      "id": "funeral_anicca",
+      "title": "Funeral Anicca Verses",
+      "category": "funeral",
+      "order": 19,
+      "text_pali": "Anicca vata sankhara, uppada vaya dhammino\nUppajjitva nirujjhanti, tesam vupasamo sukho.",
+      "text_translation": "Impermanent are all formations; their nature is to arise and pass away. Having arisen, they cease; peace in their stilling is happiness.",
+      "audio_path": "chants/funeral_anicca.mp3",
+      "duration_sec": 50,
+      "tags": [
+        "funeral",
+        "impermanence"
+      ]
+    },
+    {
+      "id": "sharing_merit",
+      "title": "Sharing of Merit",
+      "category": "devotional",
+      "order": 20,
+      "text_pali": "Idam no natinam hotu sukhita hontu natayo\nIdam vo natinam hotu sukhita hontu natayo.",
+      "text_translation": "May this merit reach our relatives; may our relatives be happy. May this merit reach your relatives; may your relatives be happy.",
+      "audio_path": "chants/sharing_merit.mp3",
+      "duration_sec": 35,
+      "tags": [
+        "merit",
+        "dana"
+      ]
+    },
+    {
+      "id": "meal_blessing",
+      "title": "Meal Blessing",
+      "category": "devotional",
+      "order": 21,
+      "text_pali": "Bhojanam paccayam patiganhama.",
+      "text_translation": "We accept this food as support.",
+      "audio_path": "chants/meal_blessing.mp3",
+      "duration_sec": 15,
+      "tags": [
+        "meal",
+        "monastic"
+      ]
+    },
+    {
+      "id": "suffusion_metta",
+      "title": "Suffusion with Metta",
+      "category": "paritta",
+      "order": 22,
+      "text_pali": "Sabbe satta bhavantu sukhitatta.",
+      "text_translation": "May all beings be happy in themselves.",
+      "audio_path": "chants/suffusion_metta.mp3",
+      "duration_sec": 10,
+      "tags": [
+        "metta",
+        "short"
+      ]
+    },
+    {
+      "id": "patimokkha_ending",
+      "title": "Patimokkha Closing",
+      "category": "devotional",
+      "order": 23,
+      "text_pali": "Svakkhato Bhagavata dhammo, sanditthiko akaliko ehipassiko opanayiko paccattam veditabbo vinnuhi.",
+      "text_translation": "Well proclaimed is the Dhamma by the Blessed One — visible here and now, timeless, inviting inspection, onward-leading, to be known by the wise for themselves.",
+      "audio_path": "chants/patimokkha_ending.mp3",
+      "duration_sec": 40,
+      "tags": [
+        "monastic",
+        "uposatha"
+      ]
+    },
+    {
+      "id": "jaya_mangala_gatha",
+      "title": "Jaya Mangala Gatha",
+      "category": "devotional",
+      "order": 24,
+      "text_pali": "Bahum sahassam abhinimmita vo\nRattim gahantam viharam upagato.",
+      "text_translation": "Having created a thousand-fold manifestation, the devas came to the monastery at night.",
+      "audio_path": "chants/jaya_mangala_gatha.mp3",
+      "duration_sec": 90,
+      "tags": [
+        "devotional",
+        "blessings"
+      ]
+    },
+    {
+      "id": "tisarana_full",
+      "title": "Full Tisarana with Pali and Response",
+      "category": "refuge",
+      "order": 25,
+      "text_pali": "Namo tassa Bhagavato Arahato Sammasambuddhassa\nNamo tassa Bhagavato Arahato Sammasambuddhassa\nNamo tassa Bhagavato Arahato Sammasambuddhassa.",
+      "text_translation": "Homage to the Blessed One, the Worthy One, the Fully Enlightened Buddha (three times).",
+      "audio_path": "chants/tisarana_full.mp3",
+      "duration_sec": 40,
+      "tags": [
+        "refuge",
+        "opening"
+      ]
+    },
+    {
+      "id": "dependent_origination",
+      "title": "Dependent Origination (Brief)",
+      "category": "devotional",
+      "order": 26,
+      "text_pali": "Avijjapaccaya sankhara, sankharapaccaya vinnanam, vinnanapaccaya namarupam, namarupapaccaya salayatanam, salayatanapaccaya phasso, phassapaccaya vedana, vedanapaccaya tanha, tanhapaccaya upadanam, upadanapaccaya bhavo, bhavapaccaya jati, jatipaccaya jaramaranam.",
+      "text_translation": "From ignorance come formations; from formations, consciousness; from consciousness, name-and-form; from name-and-form, the six sense bases; from the six sense bases, contact; from contact, feeling; from feeling, craving; from craving, clinging; from clinging, becoming; from becoming, birth; from birth, aging and death.",
+      "audio_path": "chants/dependent_origination.mp3",
+      "duration_sec": 90,
+      "tags": [
+        "dhamma",
+        "teaching"
+      ]
+    },
+    {
+      "id": "girimananda_sutta",
+      "title": "Girimananda Sutta (Bojjhanga)",
+      "category": "paritta",
+      "order": 27,
+      "text_pali": "Sati bojjhango, dhammavicaya bojjhango, viriya bojjhango, piti bojjhango, passaddhi bojjhango, samadhi bojjhango, upekkha bojjhango.",
+      "text_translation": "The enlightenment factors are mindfulness, investigation of phenomena, energy, rapture, tranquility, concentration, and equanimity.",
+      "audio_path": "chants/girimananda_sutta.mp3",
+      "duration_sec": 60,
+      "tags": [
+        "bojjhanga",
+        "healing"
+      ]
+    },
+    {
+      "id": "dhajagga_paritta",
+      "title": "Dhajagga Paritta",
+      "category": "paritta",
+      "order": 28,
+      "text_pali": "Etam buddhana sasanam, etam buddhana sasanam, etam buddhana sasanam.",
+      "text_translation": "This is the teaching of the Buddhas (repeated).",
+      "audio_path": "chants/dhajagga_paritta.mp3",
+      "duration_sec": 25,
+      "tags": [
+        "paritta",
+        "protection"
+      ]
+    },
+    {
+      "id": "morning_dedication",
+      "title": "Morning Dedication",
+      "category": "morning",
+      "order": 29,
+      "text_pali": "Aham avero homi, abyapajjho homi, anigho homi, sukhi attanam pariharami.",
+      "text_translation": "May I be free from enmity, free from affliction, free from anxiety, and may I maintain myself with ease.",
+      "audio_path": "chants/morning_dedication.mp3",
+      "duration_sec": 30,
+      "tags": [
+        "morning",
+        "protection"
+      ]
+    },
+    {
+      "id": "evening_dedication",
+      "title": "Evening Dedication",
+      "category": "evening",
+      "order": 30,
+      "text_pali": "Handa mayam bhante viharam, handa mayam bhante viharam.",
+      "text_translation": "Venerable sir, let us now dwell in meditation (twice).",
+      "audio_path": "chants/evening_dedication.mp3",
+      "duration_sec": 25,
+      "tags": [
+        "evening",
+        "meditation"
+      ]
+    },
+    {
+      "id": "funeral_metta",
+      "title": "Funeral Metta",
+      "category": "funeral",
+      "order": 31,
+      "text_pali": "Sabbe satta sada hontu avera sukhi jivino\nKatam punna phalam mayham sabbe bhagi bhavantu te.",
+      "text_translation": "May all beings always live happily, free from enmity. May all share in the merit of this good deed.",
+      "audio_path": "chants/funeral_metta.mp3",
+      "duration_sec": 40,
+      "tags": [
+        "funeral",
+        "metta",
+        "merit"
+      ]
+    },
+    {
+      "id": "vandana_buddha",
+      "title": "Buddha Vandana",
+      "category": "devotional",
+      "order": 32,
+      "text_pali": "Buddham namassami, Dhammam namassami, Sangham namassami.",
+      "text_translation": "I pay homage to the Buddha, the Dhamma, and the Sangha.",
+      "audio_path": "chants/vandana_buddha.mp3",
+      "duration_sec": 25,
+      "tags": [
+        "devotional",
+        "vandana"
+      ]
     }
   ]
 }
