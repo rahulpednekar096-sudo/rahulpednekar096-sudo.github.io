@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "refresh_interval_hours": 6,
+  "widgets": [
+    {
+      "id": "today_buddhist_date",
+      "title": "Today's Buddhist Date",
+      "refresh_hours": 6,
+      "data_sources": ["countries", "calendar"]
+    },
+    {
+      "id": "next_holiday",
+      "title": "Next Holiday",
+      "refresh_hours": 12,
+      "data_sources": ["buddhist_holidays", "countries"]
+    },
+    {
+      "id": "moon_phase",
+      "title": "Moon Phase & Uposatha",
+      "refresh_hours": 12,
+      "data_sources": ["moon_phases", "tithi"]
+    },
+    {
+      "id": "next_alarm",
+      "title": "Next Alarm",
+      "refresh_hours": 1,
+      "data_sources": ["alarms"]
+    },
+    {
+      "id": "buddhist_clock",
+      "title": "Buddhist Clock",
+      "refresh_hours": 1,
+      "data_sources": ["countries", "buddhist_holidays", "moon_phases", "alarms"]
+    }
+  ]
+}

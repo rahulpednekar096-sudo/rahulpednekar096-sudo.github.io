@@ -29,6 +29,21 @@
     { "name": "reminders.json", "version": 1 },
     { "name": "widgets.json", "version": 1 },
     { "name": "planner.json", "version": 1 },
-    { "name": "statistics.json", "version": 1 }
+    { "name": "statistics.json", "version": 1 },
+    { "name": "calendar_years.json", "version": 1 },
+    { "name": "calendar_2027_jan.json", "version": 1 },
+    { "name": "calendar_2027_feb.json", "version": 1 },
+    { "name": "calendar_2027_mar.json", "version": 1 },
+    { "name": "calendar_2027_apr.json", "version": 1 },
+    { "name": "calendar_2027_may.json", "version": 1 },
+    { "name": "calendar_2027_jun.json", "version": 1 },
+    { "name": "calendar_2027_jul.json", "version": 1 },
+    { "name": "calendar_2027_aug.json", "version": 1 },
+    { "name": "calendar_2027_sep.json", "version": 1 },
+    { "name": "calendar_2027_oct.json", "version": 1 },
+    { "name": "calendar_2027_nov.json", "version": 1 },
+    { "name": "calendar_2027_dec.json", "version": 1 },
+    { "name": "moon_phases_2027.json", "version": 1 },
+    { "name": "tithi_2027.json", "version": 1 }
   ]
 }

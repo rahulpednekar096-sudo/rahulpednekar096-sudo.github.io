@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "lunar": [
+    { "month": 1, "day": 13, "type": "FULL_MOON", "description": "Paush Purnima — the full moon of the Paush month. A day of charity, holy bathing, and spiritual merit." },
+    { "month": 1, "day": 21, "type": "KRISHNA_ASHTAMI", "description": "Krishna Ashtami of Paush. A day for fasting and devotion in the waning phase of the moon." },
+    { "month": 1, "day": 29, "type": "NEW_MOON", "description": "Mauni Amavasya — observed with silence, meditation, and holy dips. An auspicious new moon of Magh month." },
+
+    { "month": 2, "day": 6, "type": "SHUKLA_ASHTAMI", "description": "Magh Shukla Ashtami. A day for worship and fasting in the waxing phase of the moon." },
+    { "month": 2, "day": 12, "type": "FULL_MOON", "description": "Magh Purnima — the full moon of Magh. Associated with spiritual bathing at the Triveni Sangam." },
+    { "month": 2, "day": 17, "type": "SOLAR_ECLIPSE", "description": "Annular Solar Eclipse — visible from parts of the Southern Hemisphere. The moon covers the sun's center, leaving a ring of fire." },
+    { "month": 2, "day": 20, "type": "KRISHNA_ASHTAMI", "description": "Krishna Ashtami of Magh. A day of fasting in the waning fortnight." },
+    { "month": 2, "day": 27, "type": "NEW_MOON", "description": "Phalguna Amavasya — new moon marking the transition into the Phalguna month." },
+
+    { "month": 3, "day": 3, "type": "LUNAR_ECLIPSE", "description": "Total Lunar Eclipse — the full shadow of the Earth covers the moon." },
+    { "month": 3, "day": 7, "type": "SHUKLA_ASHTAMI", "description": "Phalguna Shukla Ashtami. A day for devotional observances in the waxing phase." },
+    { "month": 3, "day": 14, "type": "FULL_MOON", "description": "Phalguna Purnima — Holi Purnima." },
+    { "month": 3, "day": 22, "type": "KRISHNA_ASHTAMI", "description": "Krishna Ashtami of Phalguna." },
+    { "month": 3, "day": 29, "type": "NEW_MOON", "description": "Chaitra Amavasya." },
+
+    { "month": 4, "day": 6, "type": "SHUKLA_ASHTAMI", "description": "Chaitra Shukla Ashtami — Ram Navami eve." },
+    { "month": 4, "day": 12, "type": "FULL_MOON", "description": "Chaitra Purnima — Hanuman Jayanti." },
+    { "month": 4, "day": 20, "type": "KRISHNA_ASHTAMI", "description": "Krishna Ashtami of Chaitra." },
+    { "month": 4, "day": 27, "type": "NEW_MOON", "description": "Vaishakha Amavasya." },
+
+    { "month": 5, "day": 5, "type": "SHUKLA_ASHTAMI", "description": "Vaishakha Shukla Ashtami." },
+    { "month": 5, "day": 12, "type": "FULL_MOON", "description": "Vaishakha Purnima — Buddha Purnima / Vesak." },
+    { "month": 5, "day": 20, "type": "KRISHNA_ASHTAMI", "description": "Krishna Ashtami of Vaishakha." },
+    { "month": 5, "day": 26, "type": "NEW_MOON", "description": "Jyeshtha Amavasya." },
+
+    { "month": 6, "day": 3, "type": "SHUKLA_ASHTAMI", "description": "Jyeshtha Shukla Ashtami." },
+    { "month": 6, "day": 11, "type": "FULL_MOON", "description": "Jyeshtha Purnima — Vat Purnima / Kabeer Jayanti." },
+    { "month": 6, "day": 19, "type": "KRISHNA_ASHTAMI", "description": "Krishna Ashtami of Jyeshtha." },
+    { "month": 6, "day": 25, "type": "NEW_MOON", "description": "Ashadha Amavasya." },
+
+    { "month": 7, "day": 3, "type": "SHUKLA_ASHTAMI", "description": "Ashadha Shukla Ashtami." },
+    { "month": 7, "day": 10, "type": "FULL_MOON", "description": "Ashadha Purnima — Guru Purnima / Dhamma Chakka Day." },
+    { "month": 7, "day": 18, "type": "KRISHNA_ASHTAMI", "description": "Krishna Ashtami of Ashadha." },
+    { "month": 7, "day": 24, "type": "NEW_MOON", "description": "Shravana Amavasya." },
+
+    { "month": 8, "day": 1, "type": "SHUKLA_ASHTAMI", "description": "Shravana Shukla Ashtami." },
+    { "month": 8, "day": 8, "type": "FULL_MOON", "description": "Shravana Purnima — Raksha Bandhan." },
+    { "month": 8, "day": 12, "type": "SOLAR_ECLIPSE", "description": "Partial Solar Eclipse — the moon partially obscures the sun." },
+    { "month": 8, "day": 16, "type": "KRISHNA_ASHTAMI", "description": "Krishna Janmashtami." },
+    { "month": 8, "day": 23, "type": "NEW_MOON", "description": "Bhadrapada Amavasya." },
+    { "month": 8, "day": 28, "type": "LUNAR_ECLIPSE", "description": "Penumbral Lunar Eclipse." },
+    { "month": 8, "day": 31, "type": "SHUKLA_ASHTAMI", "description": "Bhadrapada Shukla Ashtami — Durga Ashtami." },
+
+    { "month": 9, "day": 7, "type": "FULL_MOON", "description": "Bhadrapada Purnima." },
+    { "month": 9, "day": 15, "type": "KRISHNA_ASHTAMI", "description": "Krishna Ashtami of Bhadrapada." },
+    { "month": 9, "day": 21, "type": "NEW_MOON", "description": "Ashwin Amavasya — Mahalaya." },
+    { "month": 9, "day": 29, "type": "SHUKLA_ASHTAMI", "description": "Ashwin Shukla Ashtami — Maha Ashtami." },
+
+    { "month": 10, "day": 7, "type": "FULL_MOON", "description": "Ashwin Purnima — Sharad Purnima." },
+    { "month": 10, "day": 15, "type": "KRISHNA_ASHTAMI", "description": "Krishna Ashtami of Ashwin." },
+    { "month": 10, "day": 21, "type": "NEW_MOON", "description": "Kartik Amavasya — Diwali." },
+    { "month": 10, "day": 29, "type": "SHUKLA_ASHTAMI", "description": "Kartik Shukla Ashtami — Gopashtami." },
+
+    { "month": 11, "day": 5, "type": "FULL_MOON", "description": "Kartik Purnima — Dev Diwali." },
+    { "month": 11, "day": 13, "type": "KRISHNA_ASHTAMI", "description": "Krishna Ashtami of Kartik." },
+    { "month": 11, "day": 19, "type": "NEW_MOON", "description": "Margashirsha Amavasya." },
+    { "month": 11, "day": 27, "type": "SHUKLA_ASHTAMI", "description": "Margashirsha Shukla Ashtami." },
+
+    { "month": 12, "day": 5, "type": "FULL_MOON", "description": "Margashirsha Purnima — Dattatreya Jayanti." },
+    { "month": 12, "day": 13, "type": "KRISHNA_ASHTAMI", "description": "Krishna Ashtami of Margashirsha." },
+    { "month": 12, "day": 19, "type": "NEW_MOON", "description": "Paush Amavasya." },
+    { "month": 12, "day": 27, "type": "SHUKLA_ASHTAMI", "description": "Paush Shukla Ashtami." }
+  ]
+}
