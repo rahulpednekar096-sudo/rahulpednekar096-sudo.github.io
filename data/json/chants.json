@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "chants": [
+    {
+      "id": "triple_gem",
+      "title": "Triple Gem (Refuge)",
+      "category": "refuge",
+      "order": 1,
+      "text_pali": "Buddham saranam gacchami.\nDhammam saranam gacchami.\nSangham saranam gacchami.",
+      "text_translation": "To the Buddha I go for refuge.\nTo the Dhamma I go for refuge.\nTo the Sangha I go for refuge.",
+      "audio_path": "chants/triple_gem.mp3",
+      "duration_sec": 45
+    },
+    {
+      "id": "five_precepts",
+      "title": "Five Precepts",
+      "category": "precepts",
+      "order": 2,
+      "text_pali": "Panatipata veramani sikkhapadam samadiyami...",
+      "text_translation": "I undertake the training rule to abstain from taking life.\nI undertake the training rule to abstain from taking what is not given.\nI undertake the training rule to abstain from sexual misconduct.\nI undertake the training rule to abstain from false speech.\nI undertake the training rule to abstain from intoxicants that cause heedlessness.",
+      "audio_path": "chants/five_precepts.mp3",
+      "duration_sec": 90
+    },
+    {
+      "id": "metta_sutta",
+      "title": "Metta Sutta",
+      "category": "sutta",
+      "order": 3,
+      "text_pali": "Karaniyamattha kusalena...",
+      "text_translation": "Let none deceive another, nor despise any being in any state. Let none through anger or ill-will wish harm upon another.",
+      "audio_path": "chants/metta_sutta.mp3",
+      "duration_sec": 300
+    },
+    {
+      "id": "mangala_sutta",
+      "title": "Mangala Sutta",
+      "category": "sutta",
+      "order": 4,
+      "text_pali": "Bahum sahassam...",
+      "text_translation": "Not to associate with the foolish, but to associate with the wise — this is the greatest blessing.",
+      "audio_path": "chants/mangala_sutta.mp3",
+      "duration_sec": 240
+    },
+    {
+      "id": "ratana_sutta",
+      "title": "Ratana Sutta",
+      "category": "paritta",
+      "order": 5,
+      "text_pali": "Yanidha bhuta ni vaso...",
+      "text_translation": "Whatever beings are assembled here, may they be peaceful. The Buddha jewel is excellent.",
+      "audio_path": "chants/ratana_sutta.mp3",
+      "duration_sec": 180
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "lunar": [
+    { "year": 2026, "month": 1, "day": 3, "type": "FULL_MOON", "description": "Purnima — Uposatha observance" },
+    { "year": 2026, "month": 1, "day": 17, "type": "NEW_MOON", "description": "Amavasya" },
+    { "year": 2026, "month": 2, "day": 1, "type": "FULL_MOON", "description": "Magha Purnima — Magha Puja season" },
+    { "year": 2026, "month": 2, "day": 16, "type": "NEW_MOON", "description": "Amavasya" },
+    { "year": 2026, "month": 3, "day": 2, "type": "FULL_MOON", "description": "Uposatha" },
+    { "year": 2026, "month": 3, "day": 18, "type": "NEW_MOON", "description": "Amavasya" },
+    { "year": 2026, "month": 4, "day": 1, "type": "FULL_MOON", "description": "Uposatha" },
+    { "year": 2026, "month": 4, "day": 16, "type": "NEW_MOON", "description": "Amavasya" },
+    { "year": 2026, "month": 5, "day": 1, "type": "FULL_MOON", "description": "Vesak full moon (many countries)" },
+    { "year": 2026, "month": 5, "day": 12, "type": "FULL_MOON", "description": "Vesak — alternate Theravada date" },
+    { "year": 2026, "month": 5, "day": 15, "type": "NEW_MOON", "description": "Amavasya" },
+    { "year": 2026, "month": 6, "day": 21, "type": "FULL_MOON", "description": "Asalha Puja — Dhamma Day full moon" },
+    { "year": 2026, "month": 6, "day": 14, "type": "NEW_MOON", "description": "Amavasya" },
+    { "year": 2026, "month": 7, "day": 10, "type": "SHUKLA_ASHTAMI", "description": "Waxing half-moon observance" },
+    { "year": 2026, "month": 7, "day": 24, "type": "FULL_MOON", "description": "Uposatha" },
+    { "year": 2026, "month": 8, "day": 1, "type": "FULL_MOON", "description": "Uposatha during Vassa" },
+    { "year": 2026, "month": 8, "day": 15, "type": "NEW_MOON", "description": "Amavasya" },
+    { "year": 2026, "month": 9, "day": 17, "type": "FULL_MOON", "description": "Pavarana season full moon" },
+    { "year": 2026, "month": 10, "day": 20, "type": "FULL_MOON", "description": "Kathina season" },
+    { "year": 2026, "month": 11, "day": 15, "type": "FULL_MOON", "description": "Loy Krathong season (Thailand)" },
+    { "year": 2026, "month": 12, "day": 8, "type": "FULL_MOON", "description": "Rohatsu / Bodhi Day period" },
+    { "year": 2027, "month": 1, "day": 2, "type": "FULL_MOON", "description": "Purnima — Uposatha" },
+    { "year": 2027, "month": 5, "day": 20, "type": "FULL_MOON", "description": "Vesak 2027 (approximate)" },
+    { "year": 2028, "month": 1, "day": 11, "type": "FULL_MOON", "description": "Purnima — Uposatha" },
+    { "year": 2028, "month": 5, "day": 8, "type": "FULL_MOON", "description": "Vesak 2028 (approximate)" }
+  ]
+}

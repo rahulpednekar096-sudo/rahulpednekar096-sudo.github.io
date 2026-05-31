@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "id": "birth",
+      "title": "Birth of Siddhartha Gautama",
+      "be_year": -624,
+      "gregorian_note": "c. 563 BCE (traditional Theravada dating varies)",
+      "order": 1,
+      "description": "Born in Lumbini (modern Nepal) as Prince Siddhartha.",
+      "image_path": "history/birth_lumbini.webp"
+    },
+    {
+      "id": "enlightenment",
+      "title": "Enlightenment under the Bodhi Tree",
+      "be_year": -589,
+      "gregorian_note": "c. 528 BCE",
+      "order": 2,
+      "description": "Attained Buddhahood at Bodh Gaya after overcoming Mara.",
+      "image_path": "history/bodhi_tree.webp"
+    },
+    {
+      "id": "first_sermon",
+      "title": "First Sermon — Dhammacakkappavattana",
+      "be_year": -588,
+      "order": 3,
+      "description": "Set in motion the Wheel of Dhamma at Deer Park, Sarnath.",
+      "image_path": "history/sarnath.webp"
+    },
+    {
+      "id": "mahaparinirvana",
+      "title": "Mahaparinirvana",
+      "be_year": -544,
+      "gregorian_note": "c. 483 BCE",
+      "order": 4,
+      "description": "Final passing of the Buddha at Kushinagar.",
+      "image_path": "history/kushinagar.webp"
+    },
+    {
+      "id": "council_1",
+      "title": "First Buddhist Council",
+      "be_year": -544,
+      "order": 5,
+      "description": "Recitation of the Buddha's teachings at Rajagaha under Mahakassapa.",
+      "image_path": null
+    },
+    {
+      "id": "council_2",
+      "title": "Second Buddhist Council",
+      "be_year": -444,
+      "order": 6,
+      "description": "Held at Vaishali — early monastic discipline discussions.",
+      "image_path": null
+    },
+    {
+      "id": "council_3",
+      "title": "Third Buddhist Council",
+      "be_year": -308,
+      "order": 7,
+      "description": "Patronized by Emperor Ashoka at Pataliputra.",
+      "image_path": "history/ashoka_pillar.webp"
+    }
+  ]
+}

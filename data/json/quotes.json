@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "quotes": [
+    {
+      "id": "q001",
+      "text": "Hatred is never appeased by hatred. By non-hatred alone is hatred appeased. This is an eternal law.",
+      "source": "Dhammapada 5",
+      "language": "en",
+      "tags": ["peace", "ethics"]
+    },
+    {
+      "id": "q002",
+      "text": "All conditioned things are impermanent. Strive on with diligence.",
+      "source": "Mahaparinibbana Sutta (last words of the Buddha)",
+      "language": "en",
+      "tags": ["impermanence", "practice"]
+    },
+    {
+      "id": "q003",
+      "text": "You yourself must strive. The Buddhas only point the way.",
+      "source": "Dhammapada 276",
+      "language": "en",
+      "tags": ["effort", "path"]
+    },
+    {
+      "id": "q004",
+      "text": "Just as a mother would protect her only child at the risk of her own life, cultivate a boundless heart toward all beings.",
+      "source": "Karaniya Metta Sutta",
+      "language": "en",
+      "tags": ["metta", "compassion"]
+    },
+    {
+      "id": "q005",
+      "text": "Health is the greatest gift, contentment the greatest wealth, faithfulness the best relationship.",
+      "source": "Dhammapada 204",
+      "language": "en",
+      "tags": ["contentment", "wellbeing"]
+    },
+    {
+      "id": "q006",
+      "text": "Three things cannot be long hidden: the sun, the moon, and the truth.",
+      "source": "Traditional Buddhist teaching (popular attribution)",
+      "language": "en",
+      "tags": ["truth"],
+      "attribution_note": "Often quoted in Buddhist contexts; verify primary source for publication."
+    },
+    {
+      "id": "q007",
+      "text": "Peace comes from within. Do not seek it without.",
+      "source": "Modern Buddhist teaching (popular)",
+      "language": "en",
+      "tags": ["peace", "mindfulness"],
+      "attribution_note": "Commonly attributed; use with attribution note in app."
+    },
+    {
+      "id": "q008",
+      "text": "Radiate boundless love toward the entire world — above, below, and across — unhindered, without ill will or enmity.",
+      "source": "Karaniya Metta Sutta",
+      "language": "en",
+      "tags": ["metta"]
+    }
+  ]
+}

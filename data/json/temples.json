@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "temples": [
+    {
+      "id": "t001",
+      "name": "Mahabodhi Temple",
+      "country_id": "in",
+      "city": "Bodh Gaya",
+      "lat": 24.6959,
+      "lng": 84.9914,
+      "address": "Bodh Gaya, Bihar 824231, India",
+      "description": "Marks the place of the Buddha's enlightenment. UNESCO World Heritage Site.",
+      "image": "https://rdroidapps.com/data/images/temples/mahabodhi.webp",
+      "search_tags": ["bodh gaya", "bodhi", "bihar", "enlightenment", "unesco"],
+      "place_type": "temple",
+      "related_place_name": "Mahabodhi Temple Complex"
+    },
+    {
+      "id": "t002",
+      "name": "Temple of the Sacred Tooth Relic",
+      "country_id": "lk",
+      "city": "Kandy",
+      "lat": 7.2936,
+      "lng": 80.6413,
+      "address": "Sri Dalada Veediya, Kandy, Sri Lanka",
+      "description": "Houses the relic of the tooth of the Buddha; major pilgrimage site.",
+      "image": "https://rdroidapps.com/data/images/temples/kandy_tooth.webp",
+      "search_tags": ["kandy", "tooth relic", "dalada", "sri lanka"],
+      "place_type": "temple"
+    },
+    {
+      "id": "t003",
+      "name": "Wat Phra Kaew",
+      "country_id": "th",
+      "city": "Bangkok",
+      "lat": 13.7512,
+      "lng": 100.4926,
+      "address": "Na Phra Lan Rd, Phra Borom Maha Ratchawang, Phra Nakhon, Bangkok",
+      "description": "Temple of the Emerald Buddha within the Grand Palace complex.",
+      "image": "https://rdroidapps.com/data/images/temples/wat_phra_kaew.webp",
+      "search_tags": ["bangkok", "emerald buddha", "grand palace", "thailand"],
+      "place_type": "temple"
+    },
+    {
+      "id": "t004",
+      "name": "Shwedagon Pagoda",
+      "country_id": "mm",
+      "city": "Yangon",
+      "lat": 16.7984,
+      "lng": 96.1495,
+      "address": "Yangon, Myanmar",
+      "description": "Golden pagoda enshrining relics of four Buddhas; landmark of Myanmar.",
+      "image": "https://rdroidapps.com/data/images/temples/shwedagon.webp",
+      "search_tags": ["yangon", "myanmar", "pagoda", "golden"],
+      "place_type": "pagoda"
+    },
+    {
+      "id": "t005",
+      "name": "Angkor Wat",
+      "country_id": "kh",
+      "city": "Siem Reap",
+      "lat": 13.4125,
+      "lng": 103.8670,
+      "address": "Siem Reap Province, Cambodia",
+      "description": "Originally a Mahayana Buddhist then Hindu temple; now a Buddhist site of national significance.",
+      "image": "https://rdroidapps.com/data/images/temples/angkor_wat.webp",
+      "search_tags": ["angkor", "cambodia", "siem reap", "khmer"],
+      "place_type": "temple",
+      "attribution_note": "Use licensed images only on production CDN."
+    }
+  ]
+}

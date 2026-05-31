@@ -1,0 +1,26 @@
+[
+  {
+    "date": "08",
+    "title": "Bodhi Day (Rohatsu)",
+    "description": "Enlightenment of the Buddha — intensive meditation in Zen traditions. (Gregorian 2027)",
+    "category": "festival",
+    "year": "Bodhi Day",
+    "isSymbolic": true
+  },
+  {
+    "date": "25",
+    "title": "Christmas — Interfaith Metta",
+    "description": "Practice loving-kindness toward all beings regardless of tradition. (Gregorian 2027)",
+    "category": "thought",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Year-End Reflection",
+    "description": "Review the year with gratitude and set a gentle intention for practice. (Gregorian 2027)",
+    "category": "thought",
+    "year": null,
+    "isSymbolic": false
+  }
+]

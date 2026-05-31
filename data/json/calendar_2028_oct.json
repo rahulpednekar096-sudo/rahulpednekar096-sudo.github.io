@@ -1,0 +1,18 @@
+[
+  {
+    "date": "02",
+    "title": "Gandhi Jayanti",
+    "description": "Non-violence and compassion — values shared with Buddhist ethics. (Gregorian 2028)",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "20",
+    "title": "Kathina Season",
+    "description": "Offering of robe cloth to the Sangha after Vassa. (Gregorian 2028)",
+    "category": "festival",
+    "year": "Kathina",
+    "isSymbolic": true
+  }
+]

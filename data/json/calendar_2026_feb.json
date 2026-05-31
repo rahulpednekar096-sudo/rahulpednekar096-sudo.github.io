@@ -1,0 +1,18 @@
+[
+  {
+    "date": "08",
+    "title": "Nirvana Day (Mahayana)",
+    "description": "Marks the parinirvana of the Buddha in some Mahayana calendars. (Gregorian 2026)",
+    "category": "festival",
+    "year": "Parinirvana",
+    "isSymbolic": true
+  },
+  {
+    "date": "15",
+    "title": "Parinirvana Remembrance",
+    "description": "A day to reflect on impermanence and the Buddha's final teaching. (Gregorian 2026)",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  }
+]

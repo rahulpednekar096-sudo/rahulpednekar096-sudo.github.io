@@ -1,0 +1,18 @@
+[
+  {
+    "date": "13",
+    "title": "Songkran (Thailand)",
+    "description": "Thai New Year; water blessings at temples and merit-making. (Gregorian 2026)",
+    "category": "festival",
+    "year": "Songkran",
+    "isSymbolic": true
+  },
+  {
+    "date": "18",
+    "title": "Theravada New Year",
+    "description": "Celebrated in several Southeast Asian countries after Songkran. (Gregorian 2026)",
+    "category": "festival",
+    "year": "Theravada New Year",
+    "isSymbolic": true
+  }
+]

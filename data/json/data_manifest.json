@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "updated_at": "2026-05-31",
+  "json_base_url": "https://rdroidapps.com/data/json/",
+  "images_base_url": "https://rdroidapps.com/data/images/",
+  "audio_base_url": "https://rdroidapps.com/data/audio/",
+  "min_app_version": "1.2",
+  "files": [
+    { "name": "calendar_meta.json", "version": 1, "required": true },
+    { "name": "tithi.json", "version": 1, "required": true },
+    { "name": "festivals.json", "version": 1, "required": true },
+    { "name": "buddhist_holidays.json", "version": 1, "required": false },
+    { "name": "countries.json", "version": 1, "required": false },
+    { "name": "quotes.json", "version": 1, "required": false },
+    { "name": "chants.json", "version": 1, "required": false },
+    { "name": "history.json", "version": 1, "required": false },
+    { "name": "temples.json", "version": 1, "required": false },
+    { "name": "panchsheel.json", "version": 1, "required": false },
+    { "name": "reminder_templates.json", "version": 1, "required": false },
+    { "name": "meditation_config.json", "version": 1, "required": false }
+  ],
+  "notes": "Calendar month files (calendar_{year}_{mon}.json) are versioned via calendar_meta.json calendar_data_version, not listed individually here."
+}

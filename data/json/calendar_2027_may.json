@@ -1,0 +1,26 @@
+[
+  {
+    "date": "01",
+    "title": "Vesak — Buddha Day",
+    "description": "Birth, enlightenment, and parinirvana of the Buddha. Major global observance. (Gregorian 2027)",
+    "category": "festival",
+    "year": "Vesak",
+    "isSymbolic": true
+  },
+  {
+    "date": "12",
+    "title": "Vesak (alternate date)",
+    "description": "Some countries observe Vesak on this date when lunar calendar differs. (Gregorian 2027)",
+    "category": "festival",
+    "year": "Vesak",
+    "isSymbolic": true
+  },
+  {
+    "date": "26",
+    "title": "Buddha Day — Full Moon",
+    "description": "Full-moon Uposatha aligned with Vesak season in several traditions. (Gregorian 2027)",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  }
+]

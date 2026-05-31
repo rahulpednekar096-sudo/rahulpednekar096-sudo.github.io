@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "festivals": [
+    {
+      "year": 2026,
+      "month": 5,
+      "day": 1,
+      "title": "Vesak (UN observance)",
+      "description": "United Nations Day of Vesak — birth, enlightenment, and passing of the Buddha.",
+      "category": "festival",
+      "isSymbolic": true
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "day": 12,
+      "title": "Vesak (Thailand / Sri Lanka)",
+      "description": "Full-moon Uposatha marking Vesak in many Theravada countries.",
+      "category": "festival",
+      "isSymbolic": true
+    },
+    {
+      "year": 2026,
+      "month": 7,
+      "day": 21,
+      "title": "Asalha Puja",
+      "description": "First turning of the Dhamma wheel; start of the annual rains retreat.",
+      "category": "festival",
+      "isSymbolic": true
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "day": 13,
+      "title": "Magha Puja",
+      "description": "Fourfold assembly of arahants; candlelight circumambulation at temples.",
+      "category": "festival",
+      "isSymbolic": true
+    },
+    {
+      "year": 2027,
+      "month": 5,
+      "day": 20,
+      "title": "Vesak (2027)",
+      "description": "Vesak observance for 2027 — verify local lunar date for your country.",
+      "category": "festival",
+      "isSymbolic": true
+    },
+    {
+      "year": 2028,
+      "month": 5,
+      "day": 8,
+      "title": "Vesak (2028)",
+      "description": "Vesak observance for 2028 — verify local lunar date for your country.",
+      "category": "festival",
+      "isSymbolic": true
+    }
+  ]
+}

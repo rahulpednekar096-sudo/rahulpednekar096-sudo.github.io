@@ -1,0 +1,18 @@
+[
+  {
+    "date": "05",
+    "title": "Vassa Ends (approx.)",
+    "description": "End of rains retreat in many Theravada calendars (varies by year). (Gregorian 2028)",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "17",
+    "title": "Pavarana Day",
+    "description": "End of Vassa — invitation for admonition among monastics. (Gregorian 2028)",
+    "category": "festival",
+    "year": "Pavarana",
+    "isSymbolic": true
+  }
+]

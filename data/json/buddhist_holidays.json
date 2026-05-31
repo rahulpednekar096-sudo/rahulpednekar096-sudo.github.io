@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "holidays": [
+    {
+      "id": "vesak",
+      "name": "Vesak",
+      "type": "major",
+      "description": "Commemorates the birth, enlightenment, and parinirvana of the Buddha.",
+      "countries": ["th", "lk", "mm", "kh", "la", "in"],
+      "reminder_default_days_before": 1,
+      "dates": [
+        { "year": 2026, "month": 5, "day": 1, "calendar": "gregorian", "note": "UN observance" },
+        { "year": 2026, "month": 5, "day": 12, "calendar": "gregorian", "country": "th", "note": "Thailand" },
+        { "year": 2026, "month": 5, "day": 12, "calendar": "gregorian", "country": "lk", "note": "Sri Lanka" },
+        { "year": 2027, "month": 5, "day": 20, "calendar": "gregorian" },
+        { "year": 2028, "month": 5, "day": 8, "calendar": "gregorian" }
+      ]
+    },
+    {
+      "id": "asalha_puja",
+      "name": "Asalha Puja",
+      "type": "major",
+      "description": "First teaching of the Buddha; beginning of the rains retreat.",
+      "countries": ["th", "lk", "mm", "kh", "la"],
+      "reminder_default_days_before": 1,
+      "dates": [
+        { "year": 2026, "month": 7, "day": 21, "calendar": "gregorian" },
+        { "year": 2027, "month": 7, "day": 10, "calendar": "gregorian" },
+        { "year": 2028, "month": 7, "day": 29, "calendar": "gregorian" }
+      ]
+    },
+    {
+      "id": "magha_puja",
+      "name": "Magha Puja",
+      "type": "major",
+      "description": "Spontaneous gathering of 1,250 enlightened disciples.",
+      "countries": ["th", "lk", "kh", "la"],
+      "reminder_default_days_before": 1,
+      "dates": [
+        { "year": 2026, "month": 2, "day": 13, "calendar": "gregorian" },
+        { "year": 2027, "month": 2, "day": 2, "calendar": "gregorian" },
+        { "year": 2028, "month": 2, "day": 21, "calendar": "gregorian" }
+      ]
+    },
+    {
+      "id": "kathina",
+      "name": "Kathina",
+      "type": "seasonal",
+      "description": "Offering of robes to the monastic community after the rains retreat.",
+      "countries": ["th", "lk", "mm", "kh", "la"],
+      "reminder_default_days_before": 7,
+      "dates": [
+        { "year": 2026, "month": 10, "day": 20, "calendar": "gregorian", "note": "Season begins — local dates vary" }
+      ]
+    },
+    {
+      "id": "uposatha",
+      "name": "Uposatha",
+      "type": "recurring",
+      "description": "Observance days on full and new moon — precepts and temple practice.",
+      "countries": ["th", "lk", "mm", "kh", "la", "in"],
+      "reminder_default_days_before": 0,
+      "recurrence": "lunar_full_new_moon",
+      "dates": []
+    }
+  ]
+}

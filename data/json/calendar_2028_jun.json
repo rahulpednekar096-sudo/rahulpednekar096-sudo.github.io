@@ -1,0 +1,18 @@
+[
+  {
+    "date": "21",
+    "title": "Asalha Puja",
+    "description": "First sermon at Deer Park; beginning of the rains retreat in many traditions. (Gregorian 2028)",
+    "category": "festival",
+    "year": "Asalha Puja",
+    "isSymbolic": true
+  },
+  {
+    "date": "22",
+    "title": "Rains Retreat Begins",
+    "description": "Vassa — three-month monastic retreat period. (Gregorian 2028)",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  }
+]

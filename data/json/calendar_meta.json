@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "default_year": 2026,
+  "supported_years": [2026, 2027, 2028],
+  "month_file_pattern": "calendar_{year}_{month}.json",
+  "months": ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"],
+  "calendar_data_version": 1
+}
