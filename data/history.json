@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "id": "buddha_birth",
+      "title": "Birth of the Buddha",
+      "year_be": -623,
+      "year_ce": -563,
+      "description": "Siddhartha Gautama was born in Lumbini (present-day Nepal) as a prince of the Shakya clan.",
+      "category": "life_of_buddha",
+      "order": 1
+    },
+    {
+      "id": "buddha_enlightenment",
+      "title": "Enlightenment (Bodhi)",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "At age 35, Siddhartha attained enlightenment under the Bodhi tree at Bodh Gaya, becoming the Buddha.",
+      "category": "life_of_buddha",
+      "order": 2
+    },
+    {
+      "id": "first_sermon",
+      "title": "First Sermon (Dhammacakkappavattana)",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "The Buddha delivered his first teaching at Deer Park in Sarnath, setting the Wheel of Dhamma in motion.",
+      "category": "life_of_buddha",
+      "order": 3
+    },
+    {
+      "id": "mahaparinirvana",
+      "title": "Mahaparinirvana",
+      "year_be": -544,
+      "year_ce": -483,
+      "description": "The Buddha passed away at Kushinagar at age 80, entering final nirvana.",
+      "category": "life_of_buddha",
+      "order": 4
+    },
+    {
+      "id": "first_council",
+      "title": "First Buddhist Council",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "Held at Rajagaha under King Ajatasattu, presided by Mahakassapa. The Vinaya and Suttas were recited.",
+      "category": "council",
+      "order": 5
+    },
+    {
+      "id": "second_council",
+      "title": "Second Buddhist Council",
+      "year_be": -443,
+      "year_ce": -383,
+      "description": "Held at Vesali to address disputes over monastic rules.",
+      "category": "council",
+      "order": 6
+    },
+    {
+      "id": "third_council",
+      "title": "Third Buddhist Council",
+      "year_be": -307,
+      "year_ce": -247,
+      "description": "Held at Pataliputra under Emperor Ashoka, led by Moggaliputta Tissa.",
+      "category": "council",
+      "order": 7
+    }
+  ]
+}

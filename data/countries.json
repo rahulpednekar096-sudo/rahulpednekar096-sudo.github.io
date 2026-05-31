@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "countries": [
+    {
+      "code": "IN",
+      "name": "India",
+      "name_local": "India",
+      "buddhist_era_offset": 543,
+      "calendar_system": "BE",
+      "default_timezone": "Asia/Kolkata",
+      "holiday_region": "IN"
+    },
+    {
+      "code": "TH",
+      "name": "Thailand",
+      "name_local": "ประเทศไทย",
+      "buddhist_era_offset": 543,
+      "calendar_system": "BE",
+      "default_timezone": "Asia/Bangkok",
+      "holiday_region": "TH"
+    },
+    {
+      "code": "LK",
+      "name": "Sri Lanka",
+      "name_local": "ශ්‍රී ලංකා",
+      "buddhist_era_offset": 543,
+      "calendar_system": "BE",
+      "default_timezone": "Asia/Colombo",
+      "holiday_region": "LK"
+    },
+    {
+      "code": "MM",
+      "name": "Myanmar",
+      "name_local": "Myanmar",
+      "buddhist_era_offset": 543,
+      "calendar_system": "BE",
+      "default_timezone": "Asia/Yangon",
+      "holiday_region": "MM"
+    },
+    {
+      "code": "KH",
+      "name": "Cambodia",
+      "name_local": "កម្ពុជា",
+      "buddhist_era_offset": 543,
+      "calendar_system": "BE",
+      "default_timezone": "Asia/Phnom_Penh",
+      "holiday_region": "KH"
+    },
+    {
+      "code": "LA",
+      "name": "Laos",
+      "name_local": "ລາວ",
+      "buddhist_era_offset": 543,
+      "calendar_system": "BE",
+      "default_timezone": "Asia/Vientiane",
+      "holiday_region": "LA"
+    }
+  ]
+}

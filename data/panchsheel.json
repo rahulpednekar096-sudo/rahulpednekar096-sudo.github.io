@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "precepts": [
+    {
+      "number": 1,
+      "pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi",
+      "english": "I undertake the training rule to abstain from taking life.",
+      "explanation": "Refrain from killing any living being."
+    },
+    {
+      "number": 2,
+      "pali": "Adinnādānā veramaṇī sikkhāpadaṃ samādiyāmi",
+      "english": "I undertake the training rule to abstain from taking what is not given.",
+      "explanation": "Refrain from stealing or taking what belongs to others without permission."
+    },
+    {
+      "number": 3,
+      "pali": "Kāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi",
+      "english": "I undertake the training rule to abstain from sexual misconduct.",
+      "explanation": "Refrain from harmful or exploitative sexual behavior."
+    },
+    {
+      "number": 4,
+      "pali": "Musāvādā veramaṇī sikkhāpadaṃ samādiyāmi",
+      "english": "I undertake the training rule to abstain from false speech.",
+      "explanation": "Refrain from lying, deceiving, or harmful speech."
+    },
+    {
+      "number": 5,
+      "pali": "Surāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi",
+      "english": "I undertake the training rule to abstain from intoxicants causing heedlessness.",
+      "explanation": "Refrain from alcohol and substances that cloud the mind."
+    }
+  ]
+}

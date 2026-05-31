@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "quotes": [
+    {
+      "id": "q001",
+      "text": "Hatred is never appeased by hatred in this world. By non-hatred alone is hatred appeased. This is an eternal law.",
+      "source": "Dhammapada 5",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q002",
+      "text": "All conditioned things are impermanent. When one sees this with wisdom, one turns away from suffering.",
+      "source": "Dhammapada 277",
+      "language": "en",
+      "tags": ["impermanence", "daily"]
+    },
+    {
+      "id": "q003",
+      "text": "You yourself must strive. The Buddhas only point the way.",
+      "source": "Dhammapada 276",
+      "language": "en",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q004",
+      "text": "Just as a solid rock is not shaken by the wind, so the wise are not moved by praise or blame.",
+      "source": "Dhammapada 81",
+      "language": "en",
+      "tags": ["equanimity", "daily"]
+    },
+    {
+      "id": "q005",
+      "text": "Health is the greatest gift, contentment the greatest wealth, faithfulness the best relationship.",
+      "source": "Dhammapada 204",
+      "language": "en",
+      "tags": ["contentment", "daily"]
+    }
+  ]
+}

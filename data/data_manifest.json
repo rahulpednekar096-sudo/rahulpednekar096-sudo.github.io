@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "last_updated": "2026-05-31",
+  "sync_interval_hours": 168,
+  "files": [
+    { "name": "calendar_2026_jan.json", "version": 1 },
+    { "name": "calendar_2026_feb.json", "version": 1 },
+    { "name": "calendar_2026_mar.json", "version": 1 },
+    { "name": "calendar_2026_apr.json", "version": 1 },
+    { "name": "calendar_2026_may.json", "version": 1 },
+    { "name": "calendar_2026_jun.json", "version": 1 },
+    { "name": "calendar_2026_jul.json", "version": 1 },
+    { "name": "calendar_2026_aug.json", "version": 1 },
+    { "name": "calendar_2026_sep.json", "version": 1 },
+    { "name": "calendar_2026_oct.json", "version": 1 },
+    { "name": "calendar_2026_nov.json", "version": 1 },
+    { "name": "calendar_2026_dec.json", "version": 1 },
+    { "name": "tithi.json", "version": 1 },
+    { "name": "festivals.json", "version": 1 },
+    { "name": "buddhist_places.json", "version": 1 },
+    { "name": "countries.json", "version": 1 },
+    { "name": "buddhist_holidays.json", "version": 1 },
+    { "name": "moon_phases.json", "version": 1 },
+    { "name": "quotes.json", "version": 1 },
+    { "name": "history.json", "version": 1 },
+    { "name": "panchsheel.json", "version": 1 }
+  ]
+}
