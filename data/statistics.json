@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "monthly_report_title": "Your Buddhist Practice Report",
+  "sections": [
+    { "id": "meditation", "title": "Meditation", "enabled": true },
+    { "id": "planner", "title": "Daily Planner", "enabled": true },
+    { "id": "uposatha", "title": "Uposatha", "enabled": true },
+    { "id": "reminders", "title": "Reminders", "enabled": true },
+    { "id": "quotes", "title": "Favorite Quotes", "enabled": true }
+  ],
+  "streak_milestones": [7, 14, 30, 60, 100]
+}

@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "templates": [
+    {
+      "id": "morning_meditation",
+      "type": "meditation",
+      "title": "Morning Meditation",
+      "default_hour": 6,
+      "default_minute": 0,
+      "suggested_note": "Sit quietly for 10–20 minutes with mindful breathing."
+    },
+    {
+      "id": "evening_meditation",
+      "type": "meditation",
+      "title": "Evening Meditation",
+      "default_hour": 19,
+      "default_minute": 0,
+      "suggested_note": "End the day with calm reflection."
+    },
+    {
+      "id": "temple_visit",
+      "type": "temple",
+      "title": "Temple Visit",
+      "default_hour": 9,
+      "default_minute": 0,
+      "suggested_note": "Offer flowers, light incense, or listen to a Dhamma talk."
+    },
+    {
+      "id": "evening_chanting",
+      "type": "chanting",
+      "title": "Evening Chanting",
+      "default_hour": 18,
+      "default_minute": 30,
+      "suggested_note": "Recite Triple Gem, Five Precepts, or Paritta."
+    },
+    {
+      "id": "panchsheel_review",
+      "type": "practice",
+      "title": "Review Five Precepts",
+      "default_hour": 7,
+      "default_minute": 0,
+      "suggested_note": "Reflect on the Panchsheel and renew your commitment."
+    },
+    {
+      "id": "uposatha_observance",
+      "type": "uposatha",
+      "title": "Uposatha Observance",
+      "default_hour": 6,
+      "default_minute": 0,
+      "suggested_note": "Observe the eight precepts or extra practice on this Uposatha day."
+    },
+    {
+      "id": "dhamma_reading",
+      "type": "goal",
+      "title": "Dhamma Reading",
+      "default_hour": 20,
+      "default_minute": 0,
+      "suggested_note": "Read one teaching or sutta passage."
+    },
+    {
+      "id": "kindness_practice",
+      "type": "goal",
+      "title": "Metta Practice",
+      "default_hour": 12,
+      "default_minute": 0,
+      "suggested_note": "Practice loving-kindness for yourself and others."
+    }
+  ],
+  "goal_suggestions": [
+    "Meditate 10 minutes daily",
+    "Chant once every evening",
+    "Visit a temple this week",
+    "Read one Buddhist quote mindfully",
+    "Observe Uposatha with extra precepts"
+  ]
+}

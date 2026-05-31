@@ -26,6 +26,9 @@
     { "name": "panchsheel.json", "version": 1 },
     { "name": "chants.json", "version": 1 },
     { "name": "audio.json", "version": 1 },
-    { "name": "reminders.json", "version": 1 }
+    { "name": "reminders.json", "version": 1 },
+    { "name": "widgets.json", "version": 1 },
+    { "name": "planner.json", "version": 1 },
+    { "name": "statistics.json", "version": 1 }
   ]
 }
