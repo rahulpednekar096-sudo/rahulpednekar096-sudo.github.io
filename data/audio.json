@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "tracks": [
+    {
+      "id": "audio_triple_gem",
+      "title": "Triple Gem Chanting",
+      "url": "https://rdroidapps.com/data/audio/triple_gem.mp3",
+      "duration_seconds": 90,
+      "type": "chant",
+      "downloadable": true
+    },
+    {
+      "id": "audio_five_precepts",
+      "title": "Five Precepts Chanting",
+      "url": "https://rdroidapps.com/data/audio/five_precepts.mp3",
+      "duration_seconds": 120,
+      "type": "chant",
+      "downloadable": true
+    },
+    {
+      "id": "audio_metta_sutta",
+      "title": "Metta Sutta",
+      "url": "https://rdroidapps.com/data/audio/metta_sutta.mp3",
+      "duration_seconds": 300,
+      "type": "chant",
+      "downloadable": true
+    },
+    {
+      "id": "audio_mangala_sutta",
+      "title": "Mangala Sutta",
+      "url": "https://rdroidapps.com/data/audio/mangala_sutta.mp3",
+      "duration_seconds": 240,
+      "type": "chant",
+      "downloadable": true
+    },
+    {
+      "id": "audio_ratana_sutta",
+      "title": "Ratana Sutta",
+      "url": "https://rdroidapps.com/data/audio/ratana_sutta.mp3",
+      "duration_seconds": 360,
+      "type": "chant",
+      "downloadable": true
+    },
+    {
+      "id": "bell_soft",
+      "title": "Soft Meditation Bell",
+      "url": "https://rdroidapps.com/data/audio/bell_soft.mp3",
+      "duration_seconds": 5,
+      "type": "bell",
+      "downloadable": true
+    },
+    {
+      "id": "bell_medium",
+      "title": "Medium Meditation Bell",
+      "url": "https://rdroidapps.com/data/audio/bell_medium.mp3",
+      "duration_seconds": 6,
+      "type": "bell",
+      "downloadable": true
+    },
+    {
+      "id": "bell_deep",
+      "title": "Deep Meditation Bell",
+      "url": "https://rdroidapps.com/data/audio/bell_deep.mp3",
+      "duration_seconds": 8,
+      "type": "bell",
+      "downloadable": true
+    }
+  ]
+}

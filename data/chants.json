@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "chants": [
+    {
+      "id": "triple_gem",
+      "title": "Triple Gem (Ti-Ratana)",
+      "category": "refuge",
+      "text_pali": "Buddhaṃ saraṇaṃ gacchāmi.\nDhammaṃ saraṇaṃ gacchāmi.\nSaṅghaṃ saraṇaṃ gacchāmi.\n\nDutiyampi Buddhaṃ saraṇaṃ gacchāmi.\nDutiyampi Dhammaṃ saraṇaṃ gacchāmi.\nDutiyampi Saṅghaṃ saraṇaṃ gacchāmi.\n\nTatiyampi Buddhaṃ saraṇaṃ gacchāmi.\nTatiyampi Dhammaṃ saraṇaṃ gacchāmi.\nTatiyampi Saṅghaṃ saraṇaṃ gacchāmi.",
+      "text_english": "I go to the Buddha for refuge.\nI go to the Dhamma for refuge.\nI go to the Sangha for refuge.\n\nFor the second time, I go to the Buddha for refuge.\nFor the second time, I go to the Dhamma for refuge.\nFor the second time, I go to the Sangha for refuge.\n\nFor the third time, I go to the Buddha for refuge.\nFor the third time, I go to the Dhamma for refuge.\nFor the third time, I go to the Sangha for refuge.",
+      "audio_id": "audio_triple_gem"
+    },
+    {
+      "id": "five_precepts",
+      "title": "Five Precepts (Pañca Sīla)",
+      "category": "precepts",
+      "text_pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi.\nAdinnādānā veramaṇī sikkhāpadaṃ samādiyāmi.\nKāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi.\nMusāvādā veramaṇī sikkhāpadaṃ samādiyāmi.\nSurāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi.",
+      "text_english": "I undertake the training rule to abstain from taking life.\nI undertake the training rule to abstain from taking what is not given.\nI undertake the training rule to abstain from sexual misconduct.\nI undertake the training rule to abstain from false speech.\nI undertake the training rule to abstain from intoxicants causing heedlessness.",
+      "audio_id": "audio_five_precepts"
+    },
+    {
+      "id": "metta_sutta",
+      "title": "Metta Sutta (Loving-Kindness)",
+      "category": "paritta",
+      "text_pali": "Karaṇīyam-atthakusalena\nYanta santaṃ padaṃ abhisamecca:\nSakko ujū ca suhujū ca,\nSūvaco cassa mudu anatimānī.",
+      "text_english": "This is what should be done by one who is skilled in goodness,\nWho has understood the path of peace:\nLet them be able and upright, straightforward and gentle in speech,\nHumble and not conceited.",
+      "audio_id": "audio_metta_sutta"
+    },
+    {
+      "id": "mangala_sutta",
+      "title": "Mangala Sutta (Blessings)",
+      "category": "paritta",
+      "text_pali": "Bāhuṃ sahassaṃ abhinimmita vo,\nDvādasakaraṃ saṭṭhi ca vālam-ajjhuṃ;\nEkena saccena suvatthi hotu.",
+      "text_english": "Though one may create a thousand arms and eleven heads,\nMay prosperity be yours through one word of truth.",
+      "audio_id": "audio_mangala_sutta"
+    },
+    {
+      "id": "ratana_sutta",
+      "title": "Ratana Sutta (Jewels)",
+      "category": "paritta",
+      "text_pali": "Yānīdha bhūtāni samāgatāni,\nBhummāni vā yāni va antalikkhe;\nSabbeva bhūtā sumanā bhavantu,\nAthopi sakkacca suṇantu bhāsitaṃ.",
+      "text_english": "Whatever beings have gathered here,\nOn earth or in the sky,\nMay all beings be happy,\nAnd listen carefully to what is spoken.",
+      "audio_id": "audio_ratana_sutta"
+    }
+  ]
+}

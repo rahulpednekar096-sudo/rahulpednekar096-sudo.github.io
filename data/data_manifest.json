@@ -23,6 +23,8 @@
     { "name": "moon_phases.json", "version": 1 },
     { "name": "quotes.json", "version": 1 },
     { "name": "history.json", "version": 1 },
-    { "name": "panchsheel.json", "version": 1 }
+    { "name": "panchsheel.json", "version": 1 },
+    { "name": "chants.json", "version": 1 },
+    { "name": "audio.json", "version": 1 }
   ]
 }
