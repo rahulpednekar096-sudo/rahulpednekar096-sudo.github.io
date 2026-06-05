@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "events": [
     {
       "id": "buddha_birth",
@@ -11,58 +11,13 @@
       "order": 1
     },
     {
-      "id": "buddha_enlightenment",
-      "title": "Enlightenment (Bodhi)",
-      "year_be": -588,
-      "year_ce": -528,
-      "description": "At age 35, Siddhartha attained enlightenment under the Bodhi tree at Bodh Gaya, becoming the Buddha.",
+      "id": "buddha_childhood_name",
+      "title": "Childhood as Siddhartha",
+      "year_be": -613,
+      "year_ce": -553,
+      "description": "The young prince was named Siddhartha, meaning one who has accomplished his aim, and was raised in luxury at Kapilavastu.",
       "category": "life_of_buddha",
       "order": 2
-    },
-    {
-      "id": "first_sermon",
-      "title": "First Sermon (Dhammacakkappavattana)",
-      "year_be": -588,
-      "year_ce": -528,
-      "description": "The Buddha delivered his first teaching at Deer Park in Sarnath, setting the Wheel of Dhamma in motion.",
-      "category": "life_of_buddha",
-      "order": 3
-    },
-    {
-      "id": "mahaparinirvana",
-      "title": "Mahaparinirvana",
-      "year_be": -544,
-      "year_ce": -483,
-      "description": "The Buddha passed away at Kushinagar at age 80, entering final nirvana.",
-      "category": "life_of_buddha",
-      "order": 4
-    },
-    {
-      "id": "first_council",
-      "title": "First Buddhist Council",
-      "year_be": -543,
-      "year_ce": -483,
-      "description": "Held at Rajagaha under King Ajatasattu, presided by Mahakassapa. The Vinaya and Suttas were recited.",
-      "category": "council",
-      "order": 5
-    },
-    {
-      "id": "second_council",
-      "title": "Second Buddhist Council",
-      "year_be": -443,
-      "year_ce": -383,
-      "description": "Held at Vesali to address disputes over monastic rules.",
-      "category": "council",
-      "order": 6
-    },
-    {
-      "id": "third_council",
-      "title": "Third Buddhist Council",
-      "year_be": -307,
-      "year_ce": -247,
-      "description": "Held at Pataliputra under Emperor Ashoka, led by Moggaliputta Tissa.",
-      "category": "council",
-      "order": 7
     },
     {
       "id": "great_renunciation",
@@ -71,16 +26,124 @@
       "year_ce": -534,
       "description": "At age 29, Prince Siddhartha left the palace, his family, and royal life to seek liberation from suffering.",
       "category": "life_of_buddha",
+      "order": 3
+    },
+    {
+      "id": "buddha_marriage_yasodhara",
+      "title": "Marriage to Princess Yasodhara",
+      "year_be": -593,
+      "year_ce": -533,
+      "description": "At age 16, Siddhartha married Yasodhara, daughter of King Suppabuddha, and lived the life of a royal prince.",
+      "category": "life_of_buddha",
+      "order": 4
+    },
+    {
+      "id": "study_with_alara_kalama",
+      "title": "Study with Alara Kalama",
+      "year_be": -593,
+      "year_ce": -533,
+      "description": "Siddhartha studied meditation under the ascetic Alara Kalama and mastered the realm of nothingness.",
+      "category": "life_of_buddha",
+      "order": 5
+    },
+    {
+      "id": "birth_of_rahula",
+      "title": "Birth of Rahula",
+      "year_be": -592,
+      "year_ce": -532,
+      "description": "Siddhartha and Yasodhara had a son named Rahula, born shortly before the Great Renunciation.",
+      "category": "life_of_buddha",
+      "order": 6
+    },
+    {
+      "id": "study_with_udaka_ramaputta",
+      "title": "Study with Uddaka Ramaputta",
+      "year_be": -592,
+      "year_ce": -532,
+      "description": "Siddhartha then studied under Uddaka Ramaputta, attaining the realm of neither perception nor non-perception.",
+      "category": "life_of_buddha",
+      "order": 7
+    },
+    {
+      "id": "four_great_sights",
+      "title": "The Four Great Sights",
+      "year_be": -591,
+      "year_ce": -531,
+      "description": "Siddhartha encountered an old man, a sick person, a corpse, and an ascetic, awakening him to the reality of suffering.",
+      "category": "life_of_buddha",
       "order": 8
+    },
+    {
+      "id": "six_years_austerities",
+      "title": "Six Years of Austerities",
+      "year_be": -591,
+      "year_ce": -531,
+      "description": "Siddhartha practiced extreme asceticism with five companions near Uruvela, nearly starving himself before abandoning harsh penance.",
+      "category": "life_of_buddha",
+      "order": 9
+    },
+    {
+      "id": "sujata_offering",
+      "title": "Sujata's Offering of Milk-Rice",
+      "year_be": -589,
+      "year_ce": -529,
+      "description": "A village woman named Sujata offered milk-rice to the ascetic, restoring his strength on the eve of enlightenment.",
+      "category": "life_of_buddha",
+      "order": 10
+    },
+    {
+      "id": "buddha_enlightenment",
+      "title": "Enlightenment (Bodhi)",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "At age 35, Siddhartha attained enlightenment under the Bodhi tree at Bodh Gaya, becoming the Buddha.",
+      "category": "life_of_buddha",
+      "order": 11
+    },
+    {
+      "id": "mara_confrontation",
+      "title": "Mara's Temptation",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "On the night of enlightenment, the Buddha overcame the temptations and fears personified as Mara, the lord of illusion.",
+      "category": "life_of_buddha",
+      "order": 12
+    },
+    {
+      "id": "first_sermon",
+      "title": "First Sermon (Dhammacakkappavattana)",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "The Buddha delivered his first teaching at Deer Park in Sarnath, setting the Wheel of Dhamma in motion.",
+      "category": "life_of_buddha",
+      "order": 13
     },
     {
       "id": "ordination_of_first_monks",
       "title": "Ordination of the First Monks",
       "year_be": -588,
       "year_ce": -528,
-      "description": "The Buddha established the bhikkhu sangha when he ordained the first five disciples with the simple formula 'Come, monk.'",
+      "description": "The Buddha established the bhikkhu sangha when he ordained the first five disciples with the simple formula Come, monk.",
       "category": "sangha",
-      "order": 9
+      "order": 14
+    },
+    {
+      "id": "buddhism_india_bodhi_tree_tradition",
+      "title": "Bodhi Tree Tradition at Bodh Gaya",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "The Bodhi tree at Bodh Gaya has been venerated since the Buddha's enlightenment, with saplings carried to Sri Lanka and beyond.",
+      "category": "india_buddhism",
+      "order": 15
+    },
+    {
+      "id": "buddha_meets_bimbisara",
+      "title": "Buddha Meets King Bimbisara",
+      "year_be": -587,
+      "year_ce": -527,
+      "description": "King Bimbisara of Magadha became a devoted lay supporter and donated Veluvana monastery to the sangha.",
+      "category": "life_of_buddha",
+      "order": 16
     },
     {
       "id": "first_rains_retreat",
@@ -89,7 +152,79 @@
       "year_ce": -527,
       "description": "The Buddha and his disciples observed the first annual three-month rains retreat at Varanasi, establishing the vassa tradition.",
       "category": "sangha",
-      "order": 10
+      "order": 17
+    },
+    {
+      "id": "jetavana_monastery",
+      "title": "Jetavana Monastery Gifted",
+      "year_be": -586,
+      "year_ce": -526,
+      "description": "The wealthy lay disciple Anathapindika purchased and donated Jetavana grove near Savatthi, a major center of teaching.",
+      "category": "sangha",
+      "order": 18
+    },
+    {
+      "id": "buddha_visits_kapilavastu",
+      "title": "Buddha Visits Kapilavastu",
+      "year_be": -585,
+      "year_ce": -525,
+      "description": "The Buddha returned to his homeland and ordained his son Rahula, half-brother Nanda, and cousin Ananda.",
+      "category": "life_of_buddha",
+      "order": 19
+    },
+    {
+      "id": "subduing_nalagiri_elephant",
+      "title": "Subduing the Mad Elephant Nalagiri",
+      "year_be": -584,
+      "year_ce": -524,
+      "description": "The Buddha calmed a raging elephant sent to attack him through the power of loving-kindness and composure.",
+      "category": "life_of_buddha",
+      "order": 20
+    },
+    {
+      "id": "buddhism_india_taxila",
+      "title": "Buddhist Learning at Taxila",
+      "year_be": -560,
+      "year_ce": -500,
+      "description": "Taxila in Gandhara was an ancient center of learning where Buddhist philosophy and medicine were studied alongside other sciences.",
+      "category": "india_buddhism",
+      "order": 21
+    },
+    {
+      "id": "buddha_teaches_devadatta_schism",
+      "title": "Devadatta's Schism Attempt",
+      "year_be": -550,
+      "year_ce": -490,
+      "description": "The Buddha's cousin Devadatta sought to split the sangha and proposed stricter rules, but the community remained united.",
+      "category": "sangha",
+      "order": 22
+    },
+    {
+      "id": "mahaparinirvana",
+      "title": "Mahaparinirvana",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "The Buddha passed away at Kushinagar at age 80, entering final nirvana.",
+      "category": "life_of_buddha",
+      "order": 23
+    },
+    {
+      "id": "first_council",
+      "title": "First Buddhist Council",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "Held at Rajagaha under King Ajatasattu, presided by Mahakassapa. The Vinaya and Suttas were recited.",
+      "category": "council",
+      "order": 24
+    },
+    {
+      "id": "buddhism_india_buddha_relics",
+      "title": "Buddha Relics Enshrined Across India",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "After the Buddha's parinirvana, his relics were distributed among eight kingdoms and enshrined in stupas across India.",
+      "category": "india_buddhism",
+      "order": 25
     },
     {
       "id": "ordination_of_nuns",
@@ -98,52 +233,223 @@
       "year_ce": -481,
       "description": "Mahapajapati Gotami and other women received ordination, founding the order of Buddhist nuns under the Eight Garudhammas.",
       "category": "sangha",
-      "order": 11
+      "order": 26
+    },
+    {
+      "id": "second_council",
+      "title": "Second Buddhist Council",
+      "year_be": 160,
+      "year_ce": -383,
+      "description": "Held at Vesali to address disputes over monastic rules.",
+      "category": "council",
+      "order": 27
+    },
+    {
+      "id": "schism_mahasanghika",
+      "title": "Schism of the Mahasanghika",
+      "year_be": 160,
+      "year_ce": -383,
+      "description": "Disputes after the Second Council led to the first major schism, giving rise to the Mahasanghika school.",
+      "category": "council",
+      "order": 28
+    },
+    {
+      "id": "theravada_emergence",
+      "title": "Theravada School Takes Shape",
+      "year_be": 193,
+      "year_ce": -350,
+      "description": "The Sthavira lineage developed into what later became known as Theravada, emphasizing the earliest recorded teachings.",
+      "category": "sangha",
+      "order": 29
+    },
+    {
+      "id": "rise_of_sarvastivada",
+      "title": "Rise of the Sarvastivada School",
+      "year_be": 243,
+      "year_ce": -300,
+      "description": "The Sarvastivada school flourished in northwest India, producing extensive Abhidharma literature.",
+      "category": "sangha",
+      "order": 30
     },
     {
       "id": "ashoka_conversion",
       "title": "Ashoka's Conversion to Buddhism",
-      "year_be": -323,
+      "year_be": 280,
       "year_ce": -263,
       "description": "After the Kalinga war, Emperor Ashoka embraced Buddhism and resolved to govern by Dhamma rather than conquest.",
       "category": "ashoka",
-      "order": 12
+      "order": 31
+    },
+    {
+      "id": "maurya_buddhist_patronage",
+      "title": "Mauryan Royal Patronage of Buddhism",
+      "year_be": 283,
+      "year_ce": -260,
+      "description": "Beyond Ashoka, the Mauryan court supported monasteries and missionary activity across the Indian subcontinent.",
+      "category": "india_buddhism",
+      "order": 32
+    },
+    {
+      "id": "buddhism_india_dhamma_vijay",
+      "title": "Ashoka's Dhamma-Vijaya Policy",
+      "year_be": 283,
+      "year_ce": -260,
+      "description": "Ashoka replaced military conquest with Dhamma-vijaya — victory through righteousness — as the guiding principle of his empire.",
+      "category": "india_buddhism",
+      "order": 33
     },
     {
       "id": "ashoka_dhamma_letters",
       "title": "Ashoka's Dhamma Edicts",
-      "year_be": -317,
+      "year_be": 286,
       "year_ce": -257,
       "description": "Ashoka inscribed moral and religious teachings on pillars and rocks across his empire, spreading Buddhist ethics widely.",
       "category": "ashoka",
-      "order": 13
+      "order": 34
+    },
+    {
+      "id": "buddhism_india_rock_edicts",
+      "title": "Rock Edicts Across the Subcontinent",
+      "year_be": 286,
+      "year_ce": -257,
+      "description": "Ashoka's rock edicts at Dhauli, Girnar, and Kalsi spread Buddhist ethical teachings in Prakrit across diverse regions of India.",
+      "category": "india_buddhism",
+      "order": 35
+    },
+    {
+      "id": "compilation_abhidhamma",
+      "title": "Compilation of Abhidhamma Texts",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "Systematic philosophical texts analyzing mind, matter, and ethics were compiled, later central to Theravada scholarship.",
+      "category": "sangha",
+      "order": 36
+    },
+    {
+      "id": "ashoka_sends_missionaries",
+      "title": "Ashoka Sends Buddhist Missionaries",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "Ashoka dispatched monks to Sri Lanka, Kashmir, Gandhara, and beyond to spread the Dhamma.",
+      "category": "ashoka",
+      "order": 37
+    },
+    {
+      "id": "buddhism_india_sarnath_lion_capital",
+      "title": "Sarnath Lion Capital",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "Ashoka's Lion Capital at Sarnath, with its four lions and Dhamma wheel, became India's national emblem.",
+      "category": "india_buddhism",
+      "order": 38
+    },
+    {
+      "id": "buddhism_india_maurya_stupas",
+      "title": "Mauryan Buddhist Stupas",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "Ashoka and his successors expanded and built stupas at Sanchi, Bharhut, and other sites across the Mauryan empire.",
+      "category": "india_buddhism",
+      "order": 39
+    },
+    {
+      "id": "buddhism_india_ashoka_pillars",
+      "title": "Ashoka Pillars Erected Across India",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "Ashoka erected polished sandstone pillars with Dhamma inscriptions from Afghanistan to Karnataka across his empire.",
+      "category": "india_buddhism",
+      "order": 40
+    },
+    {
+      "id": "third_council",
+      "title": "Third Buddhist Council",
+      "year_be": 296,
+      "year_ce": -247,
+      "description": "Held at Pataliputra under Emperor Ashoka, led by Moggaliputta Tissa.",
+      "category": "council",
+      "order": 41
     },
     {
       "id": "mahinda_sri_lanka",
       "title": "Buddhism Arrives in Sri Lanka",
-      "year_be": -307,
+      "year_be": 296,
       "year_ce": -247,
       "description": "Emperor Ashoka sent his son Mahinda to Sri Lanka, where King Devanampiya Tissa received the Dhamma at Mihintale.",
       "category": "spread_of_buddhism",
-      "order": 14
+      "order": 42
     },
     {
       "id": "sanghamitta_bodhi_tree",
       "title": "Bodhi Tree Sapling to Sri Lanka",
-      "year_be": -306,
+      "year_be": 297,
       "year_ce": -246,
       "description": "Ashoka's daughter Sanghamitta brought a sapling of the original Bodhi tree to Anuradhapura, where it remains revered today.",
       "category": "spread_of_buddhism",
-      "order": 15
+      "order": 43
+    },
+    {
+      "id": "greco_buddhist_art_gandhara",
+      "title": "Greco-Buddhist Art in Gandhara",
+      "year_be": 343,
+      "year_ce": -200,
+      "description": "Buddhist sculpture in Gandhara blended Greek artistic forms with Buddhist themes, producing the first iconic Buddha images.",
+      "category": "spread_of_buddhism",
+      "order": 44
+    },
+    {
+      "id": "buddhism_india_sunga_art",
+      "title": "Sunga Dynasty Buddhist Art",
+      "year_be": 393,
+      "year_ce": -150,
+      "description": "The Sunga period saw flourishing Buddhist stupa decoration at Sanchi and Bharhut, narrating Jataka tales in stone.",
+      "category": "india_buddhism",
+      "order": 45
+    },
+    {
+      "id": "rise_of_mahayana",
+      "title": "Rise of Mahayana Buddhism",
+      "year_be": 443,
+      "year_ce": -100,
+      "description": "New sutras and the bodhisattva ideal expanded Buddhism beyond monastic arhatship toward universal liberation.",
+      "category": "mahayana",
+      "order": 46
+    },
+    {
+      "id": "kushan_empire_buddhism",
+      "title": "Buddhism Under the Kushan Empire",
+      "year_be": 443,
+      "year_ce": -100,
+      "description": "Kushan rulers patronized Buddhism across Gandhara and Mathura, fostering trade-route monasteries and art.",
+      "category": "india_buddhism",
+      "order": 47
+    },
+    {
+      "id": "buddhism_india_barhut_stupa",
+      "title": "Bharhut Stupa Reliefs",
+      "year_be": 443,
+      "year_ce": -100,
+      "description": "The Bharhut stupa reliefs in Madhya Pradesh preserve some of the earliest narrative depictions of the Buddha's life.",
+      "category": "india_buddhism",
+      "order": 48
     },
     {
       "id": "fourth_council_sri_lanka",
       "title": "Fourth Buddhist Council (Sri Lanka)",
-      "year_be": 515,
+      "year_be": 514,
       "year_ce": -29,
       "description": "Theravada monks in Sri Lanka committed the Pali Tipitaka to writing at Aluvihara to preserve the teachings in a time of famine.",
       "category": "council",
-      "order": 16
+      "order": 49
+    },
+    {
+      "id": "buddhism_india_jataka_literature",
+      "title": "Jataka Tales Compiled in India",
+      "year_be": 543,
+      "year_ce": 0,
+      "description": "Collections of Jataka tales recounting the Buddha's past lives were compiled in Pali and Sanskrit, spreading moral teachings across Asia.",
+      "category": "india_buddhism",
+      "order": 50
     },
     {
       "id": "buddhism_china",
@@ -152,7 +458,7 @@
       "year_ce": 68,
       "description": "Emperor Ming of Han welcomed Buddhist monks and scriptures from India, marking the formal beginning of Buddhism in China.",
       "category": "spread_of_buddhism",
-      "order": 17
+      "order": 51
     },
     {
       "id": "fourth_council_kashmir",
@@ -161,7 +467,106 @@
       "year_ce": 78,
       "description": "Under King Kanishka, scholars of the Sarvastivada school systematized their Abhidharma texts in Kashmir.",
       "category": "council",
-      "order": 18
+      "order": 52
+    },
+    {
+      "id": "lotus_sutra_composition",
+      "title": "Lotus Sutra Gains Prominence",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "The Saddharmapundarika Sutra became one of the most influential Mahayana scriptures across East Asia.",
+      "category": "mahayana",
+      "order": 53
+    },
+    {
+      "id": "buddhism_india_mathura_art",
+      "title": "Buddhist Art School of Mathura",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "Mathura in northern India produced distinctive early Buddha images that influenced Buddhist art across Asia.",
+      "category": "india_buddhism",
+      "order": 54
+    },
+    {
+      "id": "buddhism_india_cave_monasteries",
+      "title": "Buddhist Cave Monasteries of the Deccan",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "Rock-cut cave monasteries at Bhaja, Bedsa, Karla, and later Ajanta and Ellora housed thousands of monks across centuries.",
+      "category": "india_buddhism",
+      "order": 55
+    },
+    {
+      "id": "buddhism_india_women_patrons",
+      "title": "Women Patrons of Indian Buddhism",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "Lay women such as Visakha and Queen Mallika supported the sangha, building monasteries and funding the Buddha's missions.",
+      "category": "india_buddhism",
+      "order": 56
+    },
+    {
+      "id": "nagarjuna_madhyamaka",
+      "title": "Nagarjuna and the Madhyamaka School",
+      "year_be": 693,
+      "year_ce": 150,
+      "description": "The philosopher Nagarjuna articulated the Middle Way philosophy of emptiness (shunyata), reshaping Mahayana thought.",
+      "category": "mahayana",
+      "order": 57
+    },
+    {
+      "id": "buddhism_vietnam",
+      "title": "Buddhism Introduced to Vietnam",
+      "year_be": 732,
+      "year_ce": 189,
+      "description": "Buddhist teachings reached Vietnam through both Chinese Mahayana and Indian maritime trade routes.",
+      "category": "spread_of_buddhism",
+      "order": 58
+    },
+    {
+      "id": "buddhism_central_asia",
+      "title": "Buddhism Along the Silk Road",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "Monasteries and cave temples along Central Asian trade routes carried Buddhist teachings between India and China.",
+      "category": "spread_of_buddhism",
+      "order": 59
+    },
+    {
+      "id": "buddhism_india_kanheri_caves",
+      "title": "Kanheri Buddhist Caves",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "The Kanheri caves near Mumbai served as a major Buddhist monastic and educational center for over a millennium.",
+      "category": "india_buddhism",
+      "order": 60
+    },
+    {
+      "id": "buddhism_india_amaravati",
+      "title": "Amaravati Stupa",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "The Great Stupa at Amaravati in Andhra Pradesh was a magnificent center of Buddhist art and pilgrimage in ancient India.",
+      "category": "india_buddhism",
+      "order": 61
+    },
+    {
+      "id": "buddhism_india_sanskrit_mahayana",
+      "title": "Sanskrit Mahayana Sutras in India",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "New Mahayana sutras composed in Sanskrit in India spread to China, Tibet, and Southeast Asia, reshaping Buddhist practice.",
+      "category": "india_buddhism",
+      "order": 62
+    },
+    {
+      "id": "dunhuang_mogao_caves",
+      "title": "Mogao Caves at Dunhuang",
+      "year_be": 909,
+      "year_ce": 366,
+      "description": "Buddhist cave temples at Dunhuang in China became a vast repository of art, manuscripts, and meditation practice.",
+      "category": "spread_of_buddhism",
+      "order": 63
     },
     {
       "id": "buddhism_korea",
@@ -170,7 +575,7 @@
       "year_ce": 372,
       "description": "Buddhist scriptures and monks reached the kingdom of Goguryeo, beginning a long and influential Korean Buddhist tradition.",
       "category": "spread_of_buddhism",
-      "order": 19
+      "order": 64
     },
     {
       "id": "faxian_pilgrimage",
@@ -179,16 +584,52 @@
       "year_ce": 399,
       "description": "Chinese monk Faxian traveled to India and Sri Lanka to obtain Vinaya texts and record the state of Buddhist sites.",
       "category": "pilgrimage",
-      "order": 20
+      "order": 65
+    },
+    {
+      "id": "vasubandhu_yogacara",
+      "title": "Vasubandhu and the Yogacara School",
+      "year_be": 943,
+      "year_ce": 400,
+      "description": "The philosopher Vasubandhu developed Yogacara teachings on consciousness, deeply influencing Mahayana meditation theory.",
+      "category": "mahayana",
+      "order": 66
+    },
+    {
+      "id": "buddhism_india_gupta_golden_age",
+      "title": "Gupta Golden Age of Buddhist Art",
+      "year_be": 943,
+      "year_ce": 400,
+      "description": "The Gupta period produced refined Buddha images at Sarnath and Nalanda, considered the classical ideal of Buddhist sculpture.",
+      "category": "india_buddhism",
+      "order": 67
+    },
+    {
+      "id": "kumarajiva_translations",
+      "title": "Kumarajiva Translates Buddhist Texts",
+      "year_be": 944,
+      "year_ce": 401,
+      "description": "The monk Kumarajiva translated key Mahayana sutras into Chinese, shaping East Asian Buddhism for centuries.",
+      "category": "east_asia",
+      "order": 68
+    },
+    {
+      "id": "pure_land_school_china",
+      "title": "Pure Land School Develops in China",
+      "year_be": 945,
+      "year_ce": 402,
+      "description": "Devotional practices centered on Amitabha Buddha developed into the Pure Land school, later widespread across East Asia.",
+      "category": "mahayana",
+      "order": 69
     },
     {
       "id": "buddhaghosa_visuddhimagga",
       "title": "Buddhaghosa Composes Visuddhimagga",
-      "year_be": 947,
+      "year_be": 948,
       "year_ce": 405,
       "description": "Scholar-monk Buddhaghosa wrote the Path of Purification in Sri Lanka, systematizing Theravada meditation and doctrine.",
       "category": "sangha",
-      "order": 21
+      "order": 70
     },
     {
       "id": "nalanda_founded",
@@ -197,16 +638,34 @@
       "year_ce": 427,
       "description": "The great monastic university at Nalanda in Bihar became a renowned center of Buddhist philosophy, logic, and meditation.",
       "category": "university",
-      "order": 22
+      "order": 71
+    },
+    {
+      "id": "buddhism_nepal_licchavi",
+      "title": "Buddhism in the Nepal Valley",
+      "year_be": 1007,
+      "year_ce": 464,
+      "description": "Buddhist stupas and monasteries flourished in the Kathmandu Valley under Licchavi and later dynasties.",
+      "category": "spread_of_buddhism",
+      "order": 72
     },
     {
       "id": "white_huns_persecution",
       "title": "Decline of Buddhism in Northwest India",
-      "year_be": 1004,
+      "year_be": 1008,
       "year_ce": 465,
       "description": "Huna invasions and loss of royal patronage weakened Buddhist monasteries in Gandhara and northwest India.",
-      "category": "spread_of_buddhism",
-      "order": 23
+      "category": "india_buddhism",
+      "order": 73
+    },
+    {
+      "id": "sri_lanka_mahavamsa",
+      "title": "Mahavamsa Chronicle Composed",
+      "year_be": 1043,
+      "year_ce": 500,
+      "description": "The Mahavamsa chronicle in Sri Lanka recorded Buddhist history and royal patronage, preserving Theravada heritage.",
+      "category": "sangha",
+      "order": 74
     },
     {
       "id": "bodhidharma_china",
@@ -214,8 +673,17 @@
       "year_be": 1063,
       "year_ce": 520,
       "description": "The Indian patriarch Bodhidharma is traditionally credited with transmitting Chan (Zen) meditation to the Shaolin monastery in China.",
-      "category": "spread_of_buddhism",
-      "order": 24
+      "category": "east_asia",
+      "order": 75
+    },
+    {
+      "id": "odantapuri_founded",
+      "title": "Odantapuri Mahavihara Founded",
+      "year_be": 1093,
+      "year_ce": 550,
+      "description": "The monastic university at Odantapuri in Bihar became a major center of Buddhist learning under Pala patronage.",
+      "category": "university",
+      "order": 76
     },
     {
       "id": "buddhism_japan",
@@ -224,7 +692,43 @@
       "year_ce": 552,
       "description": "Buddhist images and texts were presented to the Japanese court from Korea, initiating Buddhism as a major force in Japan.",
       "category": "spread_of_buddhism",
-      "order": 25
+      "order": 77
+    },
+    {
+      "id": "tiantai_school_china",
+      "title": "Tiantai School Founded",
+      "year_be": 1118,
+      "year_ce": 575,
+      "description": "Zhiyi founded the Tiantai school in China, systematizing meditation and the Lotus Sutra as central teachings.",
+      "category": "east_asia",
+      "order": 78
+    },
+    {
+      "id": "wonhyo_korean_buddhism",
+      "title": "Wonhyo Unifies Korean Buddhist Thought",
+      "year_be": 1143,
+      "year_ce": 600,
+      "description": "The Korean monk Wonhyo harmonized competing Buddhist schools, making the Dhamma accessible to common people.",
+      "category": "east_asia",
+      "order": 79
+    },
+    {
+      "id": "buddhism_india_ellora_caves",
+      "title": "Ellora Buddhist Caves",
+      "year_be": 1143,
+      "year_ce": 600,
+      "description": "Buddhist cave temples at Ellora in Maharashtra were carved alongside Hindu and Jain monuments, showcasing religious coexistence.",
+      "category": "india_buddhism",
+      "order": 80
+    },
+    {
+      "id": "shotoku_taishi_japan",
+      "title": "Prince Shotoku Promotes Buddhism",
+      "year_be": 1147,
+      "year_ce": 604,
+      "description": "Prince Shotoku Taishi of Japan promoted Buddhist governance, built temples, and sent missions to China.",
+      "category": "east_asia",
+      "order": 81
     },
     {
       "id": "xuanzang_pilgrimage",
@@ -233,7 +737,25 @@
       "year_ce": 629,
       "description": "The Chinese pilgrim Xuanzang spent sixteen years in India studying at Nalanda and brought back hundreds of Sanskrit texts.",
       "category": "pilgrimage",
-      "order": 26
+      "order": 82
+    },
+    {
+      "id": "buddhism_india_harsha_patronage",
+      "title": "King Harsha Patronizes Buddhism",
+      "year_be": 1173,
+      "year_ce": 630,
+      "description": "Emperor Harsha of Kannauj was a generous patron of Buddhism, hosting the Chinese pilgrim Xuanzang and supporting monasteries.",
+      "category": "india_buddhism",
+      "order": 83
+    },
+    {
+      "id": "buddhism_india_hiuen_tsang_record",
+      "title": "Xuanzang Records Nalanda's Glory",
+      "year_be": 1178,
+      "year_ce": 635,
+      "description": "The Chinese pilgrim Xuanzang described Nalanda as having thousands of students and hundreds of teachers at its peak.",
+      "category": "india_buddhism",
+      "order": 84
     },
     {
       "id": "buddhism_tibet",
@@ -241,8 +763,53 @@
       "year_be": 1184,
       "year_ce": 641,
       "description": "King Songtsen Gampo married Buddhist princesses and promoted the Dhamma, laying foundations for Tibetan Buddhism.",
+      "category": "tibet",
+      "order": 85
+    },
+    {
+      "id": "yi_jing_pilgrimage",
+      "title": "Yijing's Pilgrimage to India",
+      "year_be": 1214,
+      "year_ce": 671,
+      "description": "The Chinese monk Yijing spent twenty-five years in India and Southeast Asia, documenting monastic life and Vinaya practice.",
+      "category": "pilgrimage",
+      "order": 86
+    },
+    {
+      "id": "huayan_school_china",
+      "title": "Huayan School Founded",
+      "year_be": 1243,
+      "year_ce": 700,
+      "description": "The Huayan (Flower Garland) school synthesized Mahayana sutras into a philosophy of interconnected reality.",
+      "category": "mahayana",
+      "order": 87
+    },
+    {
+      "id": "buddhism_india_vajrayana_origins",
+      "title": "Vajrayana Buddhism Emerges in India",
+      "year_be": 1243,
+      "year_ce": 700,
+      "description": "Tantric Buddhist practices developed at Nalanda and Vikramashila, later transmitted to Tibet, Nepal, and East Asia.",
+      "category": "india_buddhism",
+      "order": 88
+    },
+    {
+      "id": "buddhism_bhutan",
+      "title": "Buddhism Becomes State Religion of Bhutan",
+      "year_be": 1290,
+      "year_ce": 747,
+      "description": "Buddhist teachings took root in Bhutan under Tibetan influence, later becoming the foundation of national identity.",
       "category": "spread_of_buddhism",
-      "order": 27
+      "order": 89
+    },
+    {
+      "id": "pala_dynasty_buddhism",
+      "title": "Pala Dynasty Patronage of Buddhism",
+      "year_be": 1293,
+      "year_ce": 750,
+      "description": "The Pala kings of Bengal and Bihar became great patrons of Nalanda, Vikramashila, and Buddhist scholarship in India.",
+      "category": "india_buddhism",
+      "order": 90
     },
     {
       "id": "buddhism_indonesia",
@@ -251,7 +818,16 @@
       "year_ce": 760,
       "description": "Srivijaya and other kingdoms in Sumatra and the Malay world supported Mahayana and Vajrayana learning and trade-route Buddhism.",
       "category": "spread_of_buddhism",
-      "order": 28
+      "order": 91
+    },
+    {
+      "id": "buddhism_india_santarakshita",
+      "title": "Shantarakshita Establishes Buddhism in Tibet from India",
+      "year_be": 1306,
+      "year_ce": 763,
+      "description": "The Indian scholar Shantarakshita traveled to Tibet at the invitation of King Trisong Detsen, founding Samye Monastery.",
+      "category": "india_buddhism",
+      "order": 92
     },
     {
       "id": "samye_monastery",
@@ -259,8 +835,8 @@
       "year_be": 1318,
       "year_ce": 775,
       "description": "The first Buddhist monastery in Tibet was established at Samye under King Trisong Detsen and Guru Padmasambhava.",
-      "category": "spread_of_buddhism",
-      "order": 29
+      "category": "tibet",
+      "order": 93
     },
     {
       "id": "mongol_buddhism",
@@ -268,53 +844,224 @@
       "year_be": 1323,
       "year_ce": 780,
       "description": "Tibetan Buddhism gained imperial patronage under Kublai Khan, linking Mongol rule with Tibetan lamas and monastic institutions.",
-      "category": "spread_of_buddhism",
-      "order": 30
+      "category": "tibet",
+      "order": 94
+    },
+    {
+      "id": "vikramashila_founded",
+      "title": "Vikramashila Mahavihara Founded",
+      "year_be": 1343,
+      "year_ce": 800,
+      "description": "The great monastic university at Vikramashila in Bihar rivaled Nalanda as a center of tantric and philosophical learning.",
+      "category": "university",
+      "order": 95
+    },
+    {
+      "id": "buddhism_india_ratnagiri_monastery",
+      "title": "Ratnagiri Buddhist Monastery",
+      "year_be": 1343,
+      "year_ce": 800,
+      "description": "The monastery at Ratnagiri in Odisha was a major tantric Buddhist center under Pala dynasty patronage.",
+      "category": "india_buddhism",
+      "order": 96
+    },
+    {
+      "id": "buddhism_india_pala_somapura",
+      "title": "Somapura Mahavihara",
+      "year_be": 1343,
+      "year_ce": 800,
+      "description": "The Pala dynasty built Somapura Mahavihara in present-day Bangladesh, a vast monastic complex and UNESCO World Heritage Site.",
+      "category": "india_buddhism",
+      "order": 97
+    },
+    {
+      "id": "saicho_tendai_japan",
+      "title": "Saicho Founds Tendai School in Japan",
+      "year_be": 1349,
+      "year_ce": 806,
+      "description": "The monk Saicho established the Tendai school on Mount Hiei after studying Tiantai teachings in China.",
+      "category": "east_asia",
+      "order": 98
+    },
+    {
+      "id": "padmasambhava_vajrayana",
+      "title": "Padmasambhava Establishes Vajrayana in Tibet",
+      "year_be": 1353,
+      "year_ce": 810,
+      "description": "Guru Padmasambhava is credited with subduing obstacles and establishing tantric Buddhist practice in Tibet.",
+      "category": "tibet",
+      "order": 99
+    },
+    {
+      "id": "kukai_shingon_japan",
+      "title": "Kukai Founds Shingon Buddhism",
+      "year_be": 1359,
+      "year_ce": 816,
+      "description": "The monk Kukai returned from China and established Shingon esoteric Buddhism, building temples across Japan.",
+      "category": "east_asia",
+      "order": 100
     },
     {
       "id": "borobudur_built",
       "title": "Borobudur Temple Completed",
-      "year_be": 1363,
+      "year_be": 1368,
       "year_ce": 825,
       "description": "The massive Mahayana monument in Java was completed, embodying the path to enlightenment in stone reliefs and stupas.",
       "category": "spread_of_buddhism",
-      "order": 31
+      "order": 101
+    },
+    {
+      "id": "buddhism_india_ladakh",
+      "title": "Buddhism in Ladakh",
+      "year_be": 1543,
+      "year_ce": 1000,
+      "description": "Tibetan Buddhism flourished in Ladakh, building monasteries such as Hemis, Thiksey, and Diskit across the Himalayan region.",
+      "category": "india_buddhism",
+      "order": 102
+    },
+    {
+      "id": "atisha_tibet",
+      "title": "Atisha Revives Buddhism in Tibet",
+      "year_be": 1585,
+      "year_ce": 1042,
+      "description": "The Indian master Atisha Dipankara spent twelve years in Tibet, reforming monastic discipline and inspiring the Kadampa tradition.",
+      "category": "tibet",
+      "order": 103
+    },
+    {
+      "id": "buddhism_india_dipankara_atisha",
+      "title": "Atisha's Mission from India to Tibet",
+      "year_be": 1585,
+      "year_ce": 1042,
+      "description": "The Bengali master Atisha Dipankara, trained at Nalanda, spent his final years reviving Buddhism in Tibet.",
+      "category": "india_buddhism",
+      "order": 104
+    },
+    {
+      "id": "buddhism_bagan_myanmar",
+      "title": "Buddhist Temple Building in Bagan",
+      "year_be": 1593,
+      "year_ce": 1050,
+      "description": "The kingdom of Bagan in Myanmar built thousands of stupas and temples, creating one of the world's great Buddhist landscapes.",
+      "category": "spread_of_buddhism",
+      "order": 105
     },
     {
       "id": "buddhism_myanmar",
       "title": "Theravada Buddhism in Myanmar",
-      "year_be": 1601,
+      "year_be": 1600,
       "year_ce": 1057,
       "description": "King Anawrahta unified Burma and made Theravada Buddhism the state religion after receiving scriptures from Sri Lanka.",
       "category": "spread_of_buddhism",
-      "order": 32
+      "order": 106
+    },
+    {
+      "id": "buddhism_india_sen_dynasty",
+      "title": "Buddhism Under the Sena Dynasty",
+      "year_be": 1643,
+      "year_ce": 1100,
+      "description": "The Sena rulers of Bengal initially supported Buddhism before the tradition declined in eastern India.",
+      "category": "india_buddhism",
+      "order": 107
+    },
+    {
+      "id": "buddhism_india_bengal_survival",
+      "title": "Last Buddhist Strongholds in Bengal",
+      "year_be": 1643,
+      "year_ce": 1100,
+      "description": "Buddhist monasteries in Bengal and Bihar persisted under Pala patronage until the twelfth century invasions.",
+      "category": "india_buddhism",
+      "order": 108
     },
     {
       "id": "angkor_wat_buddhist",
       "title": "Angkor Wat as Buddhist Temple",
-      "year_be": 1654,
+      "year_be": 1656,
       "year_ce": 1113,
       "description": "The Khmer temple of Angkor Wat, originally dedicated to Vishnu, became a major center of Theravada Buddhist worship in Cambodia.",
       "category": "spread_of_buddhism",
-      "order": 33
+      "order": 109
+    },
+    {
+      "id": "eisai_zen_japan",
+      "title": "Eisai Introduces Rinzai Zen to Japan",
+      "year_be": 1734,
+      "year_ce": 1191,
+      "description": "The monk Eisai brought Rinzai Zen from China and founded Kenninji, establishing Zen as a major Japanese tradition.",
+      "category": "east_asia",
+      "order": 110
     },
     {
       "id": "nalanda_destroyed",
       "title": "Destruction of Nalanda",
-      "year_be": 1741,
+      "year_be": 1740,
       "year_ce": 1197,
       "description": "Turkic invaders under Bakhtiyar Khalji sacked Nalanda, ending centuries of monastic learning and marking a major decline in Indian Buddhism.",
-      "category": "university",
-      "order": 34
+      "category": "india_buddhism",
+      "order": 111
+    },
+    {
+      "id": "vikramashila_destroyed",
+      "title": "Destruction of Vikramashila",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "Vikramashila Mahavihara was destroyed by Turkic invasions, further devastating Buddhist institutions in eastern India.",
+      "category": "india_buddhism",
+      "order": 112
+    },
+    {
+      "id": "buddhism_decline_eastern_india",
+      "title": "Final Decline of Buddhism in Eastern India",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "Loss of monastic universities, shifting patronage, and invasions led to the near disappearance of Buddhism from its Indian heartland.",
+      "category": "india_buddhism",
+      "order": 113
+    },
+    {
+      "id": "jinul_korean_seon",
+      "title": "Jinul Reforms Korean Seon Buddhism",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "The monk Jinul integrated Seon meditation with doctrinal study, shaping Korean Buddhism for centuries.",
+      "category": "east_asia",
+      "order": 114
+    },
+    {
+      "id": "buddhism_india_muslim_conquest_impact",
+      "title": "Impact of Delhi Sultanate on Indian Buddhism",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "The establishment of the Delhi Sultanate accelerated the decline of already weakened Buddhist institutions in northern India.",
+      "category": "india_buddhism",
+      "order": 115
     },
     {
       "id": "sri_lanka_vinaya_reform",
       "title": "Kandyan Vinaya Reform",
-      "year_be": 1754,
+      "year_be": 1756,
       "year_ce": 1213,
       "description": "Sri Lankan monks under Parakramabahu I held a council to restore higher ordination and unify monastic practice on the island.",
       "category": "council",
-      "order": 35
+      "order": 116
+    },
+    {
+      "id": "dogen_zen_japan",
+      "title": "Dogen Founds Soto Zen in Japan",
+      "year_be": 1766,
+      "year_ce": 1223,
+      "description": "The monk Dogen brought Soto Zen from China and emphasized zazen meditation as the essence of Buddhist practice.",
+      "category": "east_asia",
+      "order": 117
+    },
+    {
+      "id": "nichiren_buddhism",
+      "title": "Nichiren Buddhism Founded",
+      "year_be": 1796,
+      "year_ce": 1253,
+      "description": "The monk Nichiren founded a tradition centered on devotion to the Lotus Sutra and social reform in Japan.",
+      "category": "east_asia",
+      "order": 118
     },
     {
       "id": "buddhism_thailand",
@@ -323,7 +1070,115 @@
       "year_ce": 1292,
       "description": "King Ramkhamhaeng of Sukhothai promoted Theravada Buddhism, strengthening its role in Thai culture and governance.",
       "category": "spread_of_buddhism",
-      "order": 36
+      "order": 119
+    },
+    {
+      "id": "buddhism_laos",
+      "title": "Buddhism in the Lao Kingdoms",
+      "year_be": 1893,
+      "year_ce": 1350,
+      "description": "Theravada Buddhism became the dominant religion across Lao kingdoms, shaping culture, art, and monastic life.",
+      "category": "spread_of_buddhism",
+      "order": 120
+    },
+    {
+      "id": "buddhism_cambodia_theravada",
+      "title": "Theravada Buddhism in Cambodia",
+      "year_be": 1893,
+      "year_ce": 1350,
+      "description": "Theravada Buddhism replaced Mahayana as the dominant tradition in Cambodia, centered on Angkor and later Phnom Penh.",
+      "category": "spread_of_buddhism",
+      "order": 121
+    },
+    {
+      "id": "tsongkhapa_gelug",
+      "title": "Tsongkhapa Founds Gelug School",
+      "year_be": 1952,
+      "year_ce": 1409,
+      "description": "The Tibetan master Tsongkhapa founded Ganden Monastery and the Gelug school, emphasizing rigorous study and ethics.",
+      "category": "tibet",
+      "order": 122
+    },
+    {
+      "id": "buddhism_mongolia_16th",
+      "title": "Buddhism Revived in Mongolia",
+      "year_be": 2121,
+      "year_ce": 1578,
+      "description": "Altan Khan of Mongolia conferred the title Dalai Lama on Sonam Gyatso, linking Mongolia and Tibet in Buddhist alliance.",
+      "category": "tibet",
+      "order": 123
+    },
+    {
+      "id": "buddhism_kalmykia",
+      "title": "Buddhism in Kalmykia",
+      "year_be": 2143,
+      "year_ce": 1600,
+      "description": "Kalmyk Mongols brought Tibetan Buddhism to the North Caucasus region of Russia.",
+      "category": "spread_of_buddhism",
+      "order": 124
+    },
+    {
+      "id": "buddhism_sikkim",
+      "title": "Buddhism in Sikkim and the Himalayas",
+      "year_be": 2185,
+      "year_ce": 1642,
+      "description": "Tibetan Buddhism became the state religion of Sikkim under the Namgyal dynasty.",
+      "category": "tibet",
+      "order": 125
+    },
+    {
+      "id": "buddhism_buryatia",
+      "title": "Buddhism Spreads to Buryatia",
+      "year_be": 2243,
+      "year_ce": 1700,
+      "description": "Tibetan Buddhism reached Buryat peoples of Siberia through Mongol and Tibetan missionary activity.",
+      "category": "spread_of_buddhism",
+      "order": 126
+    },
+    {
+      "id": "buddhism_india_arunachal",
+      "title": "Buddhism in Arunachal Pradesh",
+      "year_be": 2243,
+      "year_ce": 1700,
+      "description": "Tibetan Buddhist monasteries such as Tawang Gompa were established across Arunachal Pradesh in the Himalayas.",
+      "category": "india_buddhism",
+      "order": 127
+    },
+    {
+      "id": "buddhism_india_ajanta_caves",
+      "title": "Ajanta Cave Paintings Recognized",
+      "year_be": 2362,
+      "year_ce": 1819,
+      "description": "British officers rediscovered the Ajanta cave paintings, revealing masterpieces of ancient Indian Buddhist art to the world.",
+      "category": "india_buddhism",
+      "order": 128
+    },
+    {
+      "id": "buddhist_archaeology_india",
+      "title": "Rediscovery of Buddhist Sites in India",
+      "year_be": 2373,
+      "year_ce": 1830,
+      "description": "British and Indian archaeologists uncovered Sarnath, Sanchi, and other ancient Buddhist sites, sparking renewed interest in India's Buddhist heritage.",
+      "category": "india_buddhism",
+      "order": 129
+    },
+    {
+      "id": "buddhism_australia",
+      "title": "Buddhism Established in Australia",
+      "year_be": 2393,
+      "year_ce": 1850,
+      "description": "Chinese and Sri Lankan immigrants brought Buddhist practice to Australia, later joined by Tibetan and Vietnamese communities.",
+      "category": "spread_of_buddhism",
+      "order": 130
+    },
+    {
+      "id": "thai_reform_mongkut",
+      "title": "King Mongkut Reforms Thai Buddhism",
+      "year_be": 2394,
+      "year_ce": 1851,
+      "description": "King Mongkut of Thailand founded the Dhammayutika order, emphasizing strict Vinaya and Pali scholarship.",
+      "category": "spread_of_buddhism",
+      "order": 131
     },
     {
       "id": "pali_canon_chiang_mai",
@@ -332,7 +1187,52 @@
       "year_ce": 1871,
       "description": "Theravada monks in Mandalay recited and inscribed the Pali Canon on marble slabs during the Fifth Buddhist Council in Myanmar.",
       "category": "council",
-      "order": 37
+      "order": 132
+    },
+    {
+      "id": "buddhism_west_19th",
+      "title": "Buddhism Reaches the Western World",
+      "year_be": 1422,
+      "year_ce": 1879,
+      "description": "Edwin Arnold's The Light of Asia and early translations introduced Buddhist ideas to Europe and America.",
+      "category": "modern_buddhism",
+      "order": 133
+    },
+    {
+      "id": "buddhism_new_zealand",
+      "title": "Buddhism in New Zealand",
+      "year_be": 1423,
+      "year_ce": 1880,
+      "description": "Chinese gold miners and later Asian immigrants brought Buddhist traditions to New Zealand.",
+      "category": "spread_of_buddhism",
+      "order": 134
+    },
+    {
+      "id": "buddhism_india_bodh_gaya_restoration",
+      "title": "Restoration of Bodh Gaya Temple",
+      "year_be": 1423,
+      "year_ce": 1880,
+      "description": "Anagarika Dharmapala campaigned to restore Buddhist control of the Mahabodhi Temple at Bodh Gaya, the site of enlightenment.",
+      "category": "india_buddhism",
+      "order": 135
+    },
+    {
+      "id": "pali_text_society",
+      "title": "Pali Text Society Founded",
+      "year_be": 1424,
+      "year_ce": 1881,
+      "description": "T. W. Rhys Davids founded the Pali Text Society in London, publishing critical editions of the Tipitaka for global scholarship.",
+      "category": "revival",
+      "order": 136
+    },
+    {
+      "id": "buddhism_hawaii",
+      "title": "Buddhism in Hawaii",
+      "year_be": 1432,
+      "year_ce": 1889,
+      "description": "Japanese immigrants established Jodo Shinshu and other Buddhist temples across the Hawaiian islands.",
+      "category": "spread_of_buddhism",
+      "order": 137
     },
     {
       "id": "maha_bodhi_society",
@@ -340,8 +1240,62 @@
       "year_be": 1434,
       "year_ce": 1891,
       "description": "Anagarika Dharmapala founded the Maha Bodhi Society to restore Bodh Gaya and revive Buddhism in India and worldwide.",
-      "category": "revival",
-      "order": 38
+      "category": "india_buddhism",
+      "order": 138
+    },
+    {
+      "id": "buddhism_south_africa",
+      "title": "Buddhism in South Africa",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "Buddhist communities formed in South Africa through Asian immigration and later through Western convert traditions.",
+      "category": "spread_of_buddhism",
+      "order": 139
+    },
+    {
+      "id": "buddhism_singapore",
+      "title": "Buddhism in Singapore",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "Chinese, Thai, and Sri Lankan Buddhist communities built temples and schools, making Singapore a diverse Buddhist hub.",
+      "category": "spread_of_buddhism",
+      "order": 140
+    },
+    {
+      "id": "buddhism_malaysia",
+      "title": "Buddhism in Malaysia",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "Chinese and Thai Buddhist traditions flourished in Malaysia alongside Theravada communities of Malaysian Siamese people.",
+      "category": "spread_of_buddhism",
+      "order": 141
+    },
+    {
+      "id": "buddhism_canada",
+      "title": "Buddhism in Canada",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "Chinese, Japanese, and later Vietnamese and Tibetan Buddhist communities established temples across Canada.",
+      "category": "spread_of_buddhism",
+      "order": 142
+    },
+    {
+      "id": "buddhism_germany",
+      "title": "Buddhism in Germany",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "German scholars and practitioners founded Buddhist societies, translating sutras and establishing meditation groups.",
+      "category": "modern_buddhism",
+      "order": 143
+    },
+    {
+      "id": "buddhism_india_sarnath_restoration",
+      "title": "Restoration of Sarnath",
+      "year_be": 1448,
+      "year_ce": 1905,
+      "description": "The Archaeological Survey of India and Maha Bodhi Society restored Sarnath, where the Buddha gave his first sermon.",
+      "category": "india_buddhism",
+      "order": 144
     },
     {
       "id": "buddhist_revival_movement",
@@ -350,7 +1304,70 @@
       "year_ce": 1911,
       "description": "Reform and revival movements across Asia emphasized meditation, social ethics, and renewed study of original scriptures.",
       "category": "revival",
-      "order": 39
+      "order": 145
+    },
+    {
+      "id": "buddhism_india_sanchi_restoration",
+      "title": "Sanchi Stupa Restoration",
+      "year_be": 1455,
+      "year_ce": 1912,
+      "description": "Sir John Marshall led restoration of the Great Stupa at Sanchi, one of India's oldest and finest Buddhist monuments.",
+      "category": "india_buddhism",
+      "order": 146
+    },
+    {
+      "id": "buddhism_india_nalanda_excavation",
+      "title": "Nalanda Archaeological Excavation",
+      "year_be": 1458,
+      "year_ce": 1915,
+      "description": "Systematic excavation of Nalanda revealed the layout of the ancient university, inspiring modern revival efforts.",
+      "category": "india_buddhism",
+      "order": 147
+    },
+    {
+      "id": "buddhism_uk",
+      "title": "Buddhism in the United Kingdom",
+      "year_be": 1467,
+      "year_ce": 1924,
+      "description": "The London Buddhist Society and Theravada missions introduced organized Buddhist practice to Britain.",
+      "category": "modern_buddhism",
+      "order": 148
+    },
+    {
+      "id": "buddhism_france",
+      "title": "Buddhism in France",
+      "year_be": 1472,
+      "year_ce": 1929,
+      "description": "French colonial contact with Vietnam and Cambodia, and later Tibetan refugees, brought Buddhist practice to France.",
+      "category": "modern_buddhism",
+      "order": 149
+    },
+    {
+      "id": "first_zen_center_usa",
+      "title": "First Zen Center in America",
+      "year_be": 1473,
+      "year_ce": 1930,
+      "description": "Zen Buddhist practice groups formed in the United States, beginning the spread of meditation traditions in the West.",
+      "category": "modern_buddhism",
+      "order": 150
+    },
+    {
+      "id": "buddhism_philippines",
+      "title": "Buddhism in the Philippines",
+      "year_be": 1473,
+      "year_ce": 1930,
+      "description": "Chinese and later Tibetan and Zen Buddhist communities established practice centers across the Philippines.",
+      "category": "spread_of_buddhism",
+      "order": 151
+    },
+    {
+      "id": "ambedkar_discovers_buddhism",
+      "title": "Dr. Ambedkar Discovers Buddhism",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Dr. B. R. Ambedkar, architect of India's Constitution, turned to Buddhism as a path of liberty, equality, and fraternity beyond caste oppression.",
+      "category": "india_buddhism",
+      "order": 152
     },
     {
       "id": "international_buddhist_flag",
@@ -359,7 +1376,52 @@
       "year_ce": 1950,
       "description": "The World Fellowship of Buddhists adopted the six-colored Buddhist flag as a symbol of unity among traditions worldwide.",
       "category": "modern_buddhism",
-      "order": 40
+      "order": 153
+    },
+    {
+      "id": "buddhism_brazil",
+      "title": "Buddhism in Brazil and Latin America",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Japanese, Chinese, and Tibetan Buddhist traditions took root across Brazil and Latin America in the twentieth century.",
+      "category": "spread_of_buddhism",
+      "order": 154
+    },
+    {
+      "id": "buddhism_taiwan",
+      "title": "Buddhism Flourishes in Taiwan",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Humanistic Buddhism movements in Taiwan promoted education, charity, and meditation, making Taiwan a major center of Chinese Buddhism.",
+      "category": "east_asia",
+      "order": 155
+    },
+    {
+      "id": "buddhism_scandinavia",
+      "title": "Buddhism in Scandinavia",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Tibetan refugees and Western practitioners established Buddhist centers across Denmark, Norway, and Sweden.",
+      "category": "modern_buddhism",
+      "order": 156
+    },
+    {
+      "id": "buddhism_india_constitution",
+      "title": "Buddhist Values in the Indian Constitution",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Dr. B. R. Ambedkar embedded principles of liberty, equality, and fraternity — drawn from his Buddhist vision — into India's Constitution.",
+      "category": "india_buddhism",
+      "order": 157
+    },
+    {
+      "id": "india_buddha_purnima_holiday",
+      "title": "Buddha Purnima as National Holiday in India",
+      "year_be": 1495,
+      "year_ce": 1952,
+      "description": "India declared Buddha Purnima a national holiday, honoring the Buddha's birth, enlightenment, and parinirvana.",
+      "category": "india_buddhism",
+      "order": 158
     },
     {
       "id": "sixth_buddhist_council",
@@ -368,7 +1430,7 @@
       "year_ce": 1954,
       "description": "Theravada monks from many countries gathered in Yangon, Myanmar, to recite and authenticate the Pali Tipitaka.",
       "category": "council",
-      "order": 41
+      "order": 159
     },
     {
       "id": "ambedkar_buddhist_conversion_movement",
@@ -376,26 +1438,143 @@
       "year_be": 1498,
       "year_ce": 1955,
       "description": "Dr. B. R. Ambedkar publicly declared his intention to convert to Buddhism, rejecting caste inequality and embracing the Buddha's path.",
+      "category": "india_buddhism",
+      "order": 160
+    },
+    {
+      "id": "beat_generation_buddhism",
+      "title": "Beat Generation Embraces Buddhism",
+      "year_be": 1498,
+      "year_ce": 1955,
+      "description": "Writers such as Jack Kerouac and Allen Ginsberg popularized Buddhist ideas in American literature and counterculture.",
       "category": "modern_buddhism",
-      "order": 42
+      "order": 161
     },
     {
       "id": "ambedkar_deekshabhoomi",
       "title": "Ambedkar's Mass Conversion at Deekshabhoomi",
       "year_be": 1499,
       "year_ce": 1956,
-      "description": "Dr. B. R. Ambedkar and hundreds of thousands of followers embraced Buddhism at Nagpur, affirming liberty, equality, and fraternity.",
-      "category": "modern_buddhism",
-      "order": 43
+      "description": "Dr. B. R. Ambedkar and hundreds of thousands of followers embraced Buddhism at Nagpur on Vijayadashami, affirming liberty, equality, and fraternity.",
+      "category": "india_buddhism",
+      "order": 162
+    },
+    {
+      "id": "neo_buddhist_movement_india",
+      "title": "Neo-Buddhist Movement in India",
+      "year_be": 1499,
+      "year_ce": 1956,
+      "description": "Following Ambedkar's conversion, millions of Dalits across Maharashtra and India embraced Buddhism, creating a vibrant new Buddhist community.",
+      "category": "india_buddhism",
+      "order": 163
+    },
+    {
+      "id": "buddhism_india_chaitya_bhoomi",
+      "title": "Chaitya Bhoomi Memorial",
+      "year_be": 1499,
+      "year_ce": 1956,
+      "description": "Chaitya Bhoomi in Mumbai became the memorial and pilgrimage site where Dr. B. R. Ambedkar was cremated after his Buddhist conversion.",
+      "category": "india_buddhism",
+      "order": 164
+    },
+    {
+      "id": "ambedkar_buddha_and_his_dhamma",
+      "title": "Ambedkar Publishes The Buddha and His Dhamma",
+      "year_be": 1500,
+      "year_ce": 1957,
+      "description": "Dr. B. R. Ambedkar wrote The Buddha and His Dhamma, presenting the Buddha's life and teachings as a rational, egalitarian philosophy for modern India.",
+      "category": "india_buddhism",
+      "order": 165
+    },
+    {
+      "id": "buddhism_india_ambedkar_jayanti",
+      "title": "Ambedkar Jayanti as Public Observance",
+      "year_be": 1500,
+      "year_ce": 1957,
+      "description": "April 14, Dr. Ambedkar's birth anniversary, became widely observed by Indian Buddhists as a day of reflection and community gathering.",
+      "category": "india_buddhism",
+      "order": 166
     },
     {
       "id": "dalai_lama_exile",
       "title": "Dalai Lama in Exile",
-      "year_be": 1503,
+      "year_be": 1502,
       "year_ce": 1959,
       "description": "The 14th Dalai Lama fled Tibet and established a government-in-exile in India, preserving Tibetan Buddhist culture and teachings.",
+      "category": "tibet",
+      "order": 167
+    },
+    {
+      "id": "buddhism_india_dalai_lama_dharamsala",
+      "title": "Dharamsala as Tibetan Buddhist Center",
+      "year_be": 1503,
+      "year_ce": 1960,
+      "description": "The Tibetan government-in-exile established its seat in Dharamsala, India, making it a global center of Tibetan Buddhist study.",
+      "category": "india_buddhism",
+      "order": 168
+    },
+    {
+      "id": "buddhism_india_waghala",
+      "title": "Waghala Buddhist Vihara Movement",
+      "year_be": 1503,
+      "year_ce": 1960,
+      "description": "New Buddhist viharas and schools were built across Maharashtra and India, nurturing Ambedkarite Buddhist community life.",
+      "category": "india_buddhism",
+      "order": 169
+    },
+    {
+      "id": "buddhism_india_tibetan_settlements",
+      "title": "Tibetan Buddhist Settlements in India",
+      "year_be": 1503,
+      "year_ce": 1960,
+      "description": "India welcomed Tibetan refugees, establishing settlements at Bylakuppe, Mundgod, and Dharamsala with monasteries and schools.",
+      "category": "india_buddhism",
+      "order": 170
+    },
+    {
+      "id": "buddhism_india_maharashtra_growth",
+      "title": "Buddhist Population Growth in Maharashtra",
+      "year_be": 1504,
+      "year_ce": 1961,
+      "description": "Census records showed a significant rise in Buddhist population in Maharashtra following Ambedkar's mass conversion movement.",
+      "category": "india_buddhism",
+      "order": 171
+    },
+    {
+      "id": "thich_nhat_hanh_engaged",
+      "title": "Thich Nhat Hanh and Engaged Buddhism",
+      "year_be": 1508,
+      "year_ce": 1965,
+      "description": "Vietnamese monk Thich Nhat Hanh coined Engaged Buddhism, linking mindfulness practice with peace activism and social justice.",
       "category": "modern_buddhism",
-      "order": 44
+      "order": 172
+    },
+    {
+      "id": "master_hsing_yun_foguang",
+      "title": "Fo Guang Shan Humanistic Buddhism",
+      "year_be": 1510,
+      "year_ce": 1967,
+      "description": "Master Hsing Yun founded Fo Guang Shan in Taiwan, spreading Humanistic Buddhism emphasizing education and social engagement worldwide.",
+      "category": "east_asia",
+      "order": 173
+    },
+    {
+      "id": "buddhism_indonesia_modern",
+      "title": "Buddhist Revival in Indonesia",
+      "year_be": 1513,
+      "year_ce": 1970,
+      "description": "After centuries of decline, Buddhist communities in Indonesia experienced revival through study groups and temple restoration.",
+      "category": "spread_of_buddhism",
+      "order": 174
+    },
+    {
+      "id": "buddhism_india_global_diaspora",
+      "title": "Indian Buddhist Diaspora Worldwide",
+      "year_be": 1513,
+      "year_ce": 1970,
+      "description": "Indian Buddhists, especially from the Ambedkarite community, established temples and cultural centers across the world.",
+      "category": "india_buddhism",
+      "order": 175
     },
     {
       "id": "vipassana_global_spread",
@@ -404,25 +1583,232 @@
       "year_ce": 1971,
       "description": "S. N. Goenka began teaching Vipassana meditation internationally, drawing on the Burmese tradition of Sayagyi U Ba Khin.",
       "category": "revival",
-      "order": 45
+      "order": 176
+    },
+    {
+      "id": "buddhism_india_sikkim_state",
+      "title": "Sikkim Joins India as Buddhist State",
+      "year_be": 1518,
+      "year_ce": 1975,
+      "description": "Sikkim became part of India while preserving its rich Tibetan Buddhist monastic heritage and pilgrimage sites.",
+      "category": "india_buddhism",
+      "order": 177
+    },
+    {
+      "id": "buddhism_india_vipassana_dhammagiri",
+      "title": "Dhammagiri Vipassana Center",
+      "year_be": 1519,
+      "year_ce": 1976,
+      "description": "S. N. Goenka established the Dhammagiri Vipassana center at Igatpuri, Maharashtra, one of the world's largest meditation centers.",
+      "category": "india_buddhism",
+      "order": 178
+    },
+    {
+      "id": "buddhism_india_triratna",
+      "title": "Triratna Buddhist Community in India",
+      "year_be": 1521,
+      "year_ce": 1978,
+      "description": "The Triratna Buddhist Order expanded in India, offering Dhamma teaching and community development inspired by Ambedkar's vision.",
+      "category": "india_buddhism",
+      "order": 179
+    },
+    {
+      "id": "mindfulness_mbsr",
+      "title": "Mindfulness-Based Stress Reduction",
+      "year_be": 1522,
+      "year_ce": 1979,
+      "description": "Dr. Jon Kabat-Zinn developed MBSR at the University of Massachusetts, bringing Buddhist mindfulness into modern healthcare.",
+      "category": "modern_buddhism",
+      "order": 180
+    },
+    {
+      "id": "thai_forest_tradition_global",
+      "title": "Thai Forest Tradition Spreads Globally",
+      "year_be": 1523,
+      "year_ce": 1980,
+      "description": "Ajahn Chah and disciples established forest monasteries worldwide, teaching austere meditation practice rooted in the Thai forest tradition.",
+      "category": "revival",
+      "order": 181
+    },
+    {
+      "id": "buddhism_china_cultural_revival",
+      "title": "Buddhist Revival in Post-Mao China",
+      "year_be": 1523,
+      "year_ce": 1980,
+      "description": "Temples reopened and Buddhist practice revived across China after the Cultural Revolution period of suppression.",
+      "category": "east_asia",
+      "order": 182
+    },
+    {
+      "id": "plum_village_founded",
+      "title": "Plum Village Monastery Founded",
+      "year_be": 1525,
+      "year_ce": 1982,
+      "description": "Thich Nhat Hanh founded Plum Village in France, becoming Europe's largest Buddhist monastery and center of Engaged Buddhism.",
+      "category": "modern_buddhism",
+      "order": 183
+    },
+    {
+      "id": "buddhism_science_dialogue",
+      "title": "Buddhism and Science Dialogue",
+      "year_be": 1530,
+      "year_ce": 1987,
+      "description": "The Mind and Life Institute began dialogues between the Dalai Lama and Western scientists on consciousness and well-being.",
+      "category": "modern_buddhism",
+      "order": 184
+    },
+    {
+      "id": "dalai_lama_nobel_peace",
+      "title": "Dalai Lama Awarded Nobel Peace Prize",
+      "year_be": 1532,
+      "year_ce": 1989,
+      "description": "The 14th Dalai Lama received the Nobel Peace Prize for his nonviolent struggle for the liberation of Tibet and promotion of compassion.",
+      "category": "modern_buddhism",
+      "order": 185
+    },
+    {
+      "id": "buddhism_environmental_movement",
+      "title": "Buddhist Environmental Movement",
+      "year_be": 1533,
+      "year_ce": 1990,
+      "description": "Buddhist leaders worldwide began advocating for ecological protection rooted in interdependence and compassion for all life.",
+      "category": "modern_buddhism",
+      "order": 186
+    },
+    {
+      "id": "buddhism_women_ordination",
+      "title": "Global Movement for Bhikkhuni Ordination",
+      "year_be": 1539,
+      "year_ce": 1996,
+      "description": "Theravada communities in Sri Lanka and beyond revived full ordination for women, continuing the legacy of Mahapajapati Gotami.",
+      "category": "sangha",
+      "order": 187
     },
     {
       "id": "un_vesak_day",
       "title": "UN Recognition of Vesak",
-      "year_be": 1543,
+      "year_be": 1542,
       "year_ce": 1999,
       "description": "The United Nations recognized Vesak as an international day of observance, honoring the birth, enlightenment, and passing of the Buddha.",
       "category": "modern_buddhism",
-      "order": 46
+      "order": 188
+    },
+    {
+      "id": "buddhism_online_dharma",
+      "title": "Buddhist Teachings Go Online",
+      "year_be": 1543,
+      "year_ce": 2000,
+      "description": "Monasteries, teachers, and scholars worldwide began sharing Dhamma talks, sutras, and meditation guidance through the internet.",
+      "category": "modern_buddhism",
+      "order": 189
+    },
+    {
+      "id": "bamiyan_buddhas_destroyed",
+      "title": "Destruction of Bamiyan Buddhas",
+      "year_be": 1544,
+      "year_ce": 2001,
+      "description": "The Taliban destroyed the giant Buddha statues at Bamiyan, Afghanistan, shocking the world and highlighting the fragility of Buddhist heritage.",
+      "category": "modern_buddhism",
+      "order": 190
+    },
+    {
+      "id": "buddhism_india_diksha_ceremonies",
+      "title": "Mass Buddhist Initiation Ceremonies in India",
+      "year_be": 1544,
+      "year_ce": 2001,
+      "description": "Large-scale diksha ceremonies continued across India as millions embraced Buddhism inspired by Dr. Ambedkar's legacy.",
+      "category": "india_buddhism",
+      "order": 191
     },
     {
       "id": "buddha_birthplace_unesco",
       "title": "Lumbini UNESCO World Heritage",
-      "year_be": 1546,
+      "year_be": 1545,
       "year_ce": 2002,
       "description": "The birthplace of the Buddha at Lumbini was inscribed as a UNESCO World Heritage Site, protecting a key pilgrimage destination.",
       "category": "modern_buddhism",
-      "order": 47
+      "order": 192
+    },
+    {
+      "id": "buddhism_sri_lanka_civil_war",
+      "title": "Buddhist Peace Efforts in Sri Lanka",
+      "year_be": 1545,
+      "year_ce": 2002,
+      "description": "Monks and lay Buddhists in Sri Lanka worked for peace and reconciliation during and after the civil war.",
+      "category": "modern_buddhism",
+      "order": 193
+    },
+    {
+      "id": "buddhism_india_bodh_gaya_unesco",
+      "title": "Mahabodhi Temple UNESCO Heritage",
+      "year_be": 1545,
+      "year_ce": 2002,
+      "description": "The Mahabodhi Temple at Bodh Gaya was inscribed as a UNESCO World Heritage Site, recognizing its global spiritual significance.",
+      "category": "india_buddhism",
+      "order": 194
+    },
+    {
+      "id": "buddhism_india_bodh_gaya_summit",
+      "title": "International Buddhist Conclave at Bodh Gaya",
+      "year_be": 1547,
+      "year_ce": 2004,
+      "description": "India hosted international Buddhist conferences at Bodh Gaya, reaffirming the site's role as a global pilgrimage center.",
+      "category": "india_buddhism",
+      "order": 195
+    },
+    {
+      "id": "buddhism_myanmar_saffron",
+      "title": "Saffron Revolution in Myanmar",
+      "year_be": 1550,
+      "year_ce": 2007,
+      "description": "Buddhist monks led mass protests in Myanmar calling for democracy and human rights, demonstrating Engaged Buddhism in action.",
+      "category": "modern_buddhism",
+      "order": 196
+    },
+    {
+      "id": "buddhism_india_nagaloka",
+      "title": "Nagaloka Buddhist Training Center",
+      "year_be": 1550,
+      "year_ce": 2007,
+      "description": "The Nagaloka center in Nagpur was established to train a new generation of Indian Buddhists in meditation, study, and social transformation.",
+      "category": "india_buddhism",
+      "order": 197
+    },
+    {
+      "id": "nalanda_university_revived",
+      "title": "Nalanda University Revived",
+      "year_be": 1557,
+      "year_ce": 2014,
+      "description": "India re-established Nalanda University in Bihar as an international institution, symbolizing the revival of India's Buddhist scholarly heritage.",
+      "category": "india_buddhism",
+      "order": 198
+    },
+    {
+      "id": "buddhism_india_kushinagar_development",
+      "title": "Kushinagar Buddhist Circuit Development",
+      "year_be": 1559,
+      "year_ce": 2016,
+      "description": "India developed Kushinagar, where the Buddha attained parinirvana, as a major pilgrimage and heritage destination.",
+      "category": "india_buddhism",
+      "order": 199
+    },
+    {
+      "id": "buddhism_india_modern_pilgrimage",
+      "title": "Buddhist Circuit Pilgrimage in Modern India",
+      "year_be": 1559,
+      "year_ce": 2016,
+      "description": "India launched the Buddhist Circuit initiative connecting Lumbini, Bodh Gaya, Sarnath, and Kushinagar for international pilgrims.",
+      "category": "india_buddhism",
+      "order": 200
+    },
+    {
+      "id": "covid_buddhist_online_practice",
+      "title": "Buddhist Communities Adapt During COVID-19",
+      "year_be": 1563,
+      "year_ce": 2020,
+      "description": "Temples and meditation centers worldwide shifted to online teachings and virtual sangha gatherings during the global pandemic.",
+      "category": "modern_buddhism",
+      "order": 201
     },
     {
       "id": "global_buddhist_summit",
@@ -431,7 +1817,7 @@
       "year_ce": 2023,
       "description": "Leaders and scholars from Buddhist traditions worldwide met in New Delhi to discuss peace, compassion, and shared responsibility.",
       "category": "modern_buddhism",
-      "order": 48
+      "order": 202
     }
   ]
 }

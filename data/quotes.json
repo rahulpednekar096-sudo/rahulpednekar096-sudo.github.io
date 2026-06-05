@@ -35,6 +35,664 @@
       "source": "Dhammapada 204",
       "language": "en",
       "tags": ["contentment", "daily"]
+    },
+    {
+      "id": "q006",
+      "text": "Better than a thousand hollow words is one word that brings peace.",
+      "source": "Dhammapada 100",
+      "language": "en",
+      "tags": ["speech", "daily"]
+    },
+    {
+      "id": "q007",
+      "text": "Conquer anger with non-anger. Conquer badness with goodness. Conquer meanness with generosity. Conquer dishonesty with truth.",
+      "source": "Dhammapada 223",
+      "language": "en",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q008",
+      "text": "The mind is the forerunner of all actions. All deeds are led by mind, created by mind.",
+      "source": "Dhammapada 1",
+      "language": "en",
+      "tags": ["mind", "daily"]
+    },
+    {
+      "id": "q009",
+      "text": "As a mother would protect her only child, even at the risk of her own life, cultivate a boundless love toward all beings.",
+      "source": "Metta Sutta",
+      "language": "en",
+      "tags": ["loving-kindness", "daily"]
+    },
+    {
+      "id": "q010",
+      "text": "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["mindfulness", "daily"]
+    },
+    {
+      "id": "q011",
+      "text": "Holding on to anger is like grasping a hot coal with the intent of throwing it at someone else; you are the one who gets burned.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["anger", "daily"]
+    },
+    {
+      "id": "q012",
+      "text": "No one saves us but ourselves. No one can and no one may. We ourselves must walk the path.",
+      "source": "Dhammapada 165",
+      "language": "en",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q013",
+      "text": "In the sky, there is no distinction of east and west; people create distinctions out of their own minds and then believe them to be true.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q014",
+      "text": "Three things cannot be long hidden: the sun, the moon, and the truth.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["truth", "daily"]
+    },
+    {
+      "id": "q015",
+      "text": "Peace comes from within. Do not seek it without.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["peace", "daily"]
+    },
+    {
+      "id": "q016",
+      "text": "The root of suffering is attachment.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["attachment", "daily"]
+    },
+    {
+      "id": "q017",
+      "text": "You will not be punished for your anger; you will be punished by your anger.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["anger", "daily"]
+    },
+    {
+      "id": "q018",
+      "text": "Thousands of candles can be lighted from a single candle, and the life of the candle will not be shortened. Happiness never decreases by being shared.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["compassion", "daily"]
+    },
+    {
+      "id": "q019",
+      "text": "If you light a lamp for somebody, it will also brighten your path.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["compassion", "daily"]
+    },
+    {
+      "id": "q020",
+      "text": "The tongue like a sharp knife kills without drawing blood.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["speech", "daily"]
+    },
+    {
+      "id": "q021",
+      "text": "A jug fills drop by drop.",
+      "source": "Dhammapada 122",
+      "language": "en",
+      "tags": ["patience", "daily"]
+    },
+    {
+      "id": "q022",
+      "text": "Even as a solid rock is unshaken by the wind, so are the wise unshaken by praise and blame.",
+      "source": "Dhammapada 81",
+      "language": "en",
+      "tags": ["equanimity", "daily"]
+    },
+    {
+      "id": "q023",
+      "text": "Whatever is not yours, let go of it. Your letting go will be for your long-term happiness.",
+      "source": "Majjhima Nikaya",
+      "language": "en",
+      "tags": ["letting-go", "daily"]
+    },
+    {
+      "id": "q024",
+      "text": "Radiate boundless love towards the entire world.",
+      "source": "Metta Sutta",
+      "language": "en",
+      "tags": ["loving-kindness", "daily"]
+    },
+    {
+      "id": "q025",
+      "text": "To keep the body in good health is a duty, otherwise we shall not be able to keep our mind strong and clear.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["health", "daily"]
+    },
+    {
+      "id": "q026",
+      "text": "There is no path to happiness. Happiness is the path.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["happiness", "daily"]
+    },
+    {
+      "id": "q027",
+      "text": "The way is not in the sky. The way is in the heart.",
+      "source": "Dhammapada 254",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q028",
+      "text": "Every morning we are born again. What we do today is what matters most.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["present-moment", "daily"]
+    },
+    {
+      "id": "q029",
+      "text": "If we could see the miracle of a single flower clearly, our whole life would change.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["mindfulness", "daily"]
+    },
+    {
+      "id": "q030",
+      "text": "Nothing is permanent. Everything is subject to change. Being is always becoming.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["impermanence", "daily"]
+    },
+    {
+      "id": "q031",
+      "text": "A disciplined mind brings happiness.",
+      "source": "Dhammapada 35",
+      "language": "en",
+      "tags": ["mind", "daily"]
+    },
+    {
+      "id": "q032",
+      "text": "Arise! Sit up! Train yourself strenuously for peace.",
+      "source": "Dhammapada 144",
+      "language": "en",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q033",
+      "text": "The wise are controlled in body, controlled in speech, and controlled in mind. They are truly well controlled.",
+      "source": "Dhammapada 234",
+      "language": "en",
+      "tags": ["self-control", "daily"]
+    },
+    {
+      "id": "q034",
+      "text": "Let none find fault with others; let none see the omissions and commissions of others. But let one see one's own acts, done and undone.",
+      "source": "Dhammapada 50",
+      "language": "en",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q035",
+      "text": "As rain breaks through an ill-thatched house, passion will break through an unreflecting mind.",
+      "source": "Dhammapada 13",
+      "language": "en",
+      "tags": ["mind", "daily"]
+    },
+    {
+      "id": "q036",
+      "text": "As rain does not break through a well-thatched house, passion will not break through a well-reflecting mind.",
+      "source": "Dhammapada 14",
+      "language": "en",
+      "tags": ["mind", "daily"]
+    },
+    {
+      "id": "q037",
+      "text": "The one in whom no longer exist the craving and thirst that perpetuate becoming; how could you track that Awakened one, trackless, and of limitless range?",
+      "source": "Dhammapada 180",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q038",
+      "text": "Better it is to live one day seeing the rise and fall of things than to live a hundred years without ever seeing the rise and fall of things.",
+      "source": "Dhammapada 113",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q039",
+      "text": "If you knew what I know about the power of giving, you would not let a single meal pass without sharing it in some way.",
+      "source": "Buddha",
+      "language": "en",
+      "tags": ["generosity", "daily"]
+    },
+    {
+      "id": "q040",
+      "text": "Give, even if you only have a little.",
+      "source": "Dhammapada 224",
+      "language": "en",
+      "tags": ["generosity", "daily"]
+    },
+    {
+      "id": "q041",
+      "text": "Should a person do good, let him do it again and again. Let him find pleasure therein, for blissful is the accumulation of good.",
+      "source": "Dhammapada 118",
+      "language": "en",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q042",
+      "text": "Should a person commit evil, let him not do it again and again. Let him not find pleasure therein, for painful is the accumulation of evil.",
+      "source": "Dhammapada 117",
+      "language": "en",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q043",
+      "text": "Like a beautiful flower full of color but without fragrance, fine words are fruitless in a person who does not act in accordance with them.",
+      "source": "Dhammapada 51",
+      "language": "en",
+      "tags": ["action", "daily"]
+    },
+    {
+      "id": "q044",
+      "text": "Like a beautiful flower, full of color but also fragrant, are the fine and fruitful words of one who acts accordingly.",
+      "source": "Dhammapada 52",
+      "language": "en",
+      "tags": ["action", "daily"]
+    },
+    {
+      "id": "q045",
+      "text": "The fragrance of flowers blows with the wind. The fragrance of virtue blows against the wind. The virtuous man pervades every direction.",
+      "source": "Dhammapada 54",
+      "language": "en",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q046",
+      "text": "As a bee gathering nectar does not harm or disturb the color and fragrance of the flower, so do the wise move through the world.",
+      "source": "Dhammapada 49",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q047",
+      "text": "Not by passing arbitrary judgments does a man become just; a wise man is he who investigates both right and wrong.",
+      "source": "Dhammapada 256",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q048",
+      "text": "He who does not rouse himself when it is time to rise, who, though young and strong, is full of sloth, whose will and thought are weak — that lazy and idle man will never find the way to wisdom.",
+      "source": "Dhammapada 280",
+      "language": "en",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q049",
+      "text": "Watchfulness is the path of immortality; unwatchfulness is the path of death. The watchful do not die; the unwatchful are as if dead already.",
+      "source": "Dhammapada 21",
+      "language": "en",
+      "tags": ["mindfulness", "daily"]
+    },
+    {
+      "id": "q050",
+      "text": "Those who are ever vigilant, who train day and night, and are ever intent upon Nirvana, their passions pass away.",
+      "source": "Dhammapada 226",
+      "language": "en",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q051",
+      "text": "There is no fire like lust, no grip like hate, no net like delusion, no river like craving.",
+      "source": "Dhammapada 251",
+      "language": "en",
+      "tags": ["craving", "daily"]
+    },
+    {
+      "id": "q052",
+      "text": "Easily seen is the fault of others, but one's own fault is difficult to see. Like chaff one winnows another's faults, but hides one's own.",
+      "source": "Dhammapada 252",
+      "language": "en",
+      "tags": ["self-reflection", "daily"]
+    },
+    {
+      "id": "q053",
+      "text": "The faults of others are easier to see than one's own; the faults of others are easily seen, for they are sifted out like chaff, but one's own faults are hard to see.",
+      "source": "Dhammapada 253",
+      "language": "en",
+      "tags": ["self-reflection", "daily"]
+    },
+    {
+      "id": "q054",
+      "text": "If a man speaks or acts with an evil thought, pain follows him, as the wheel follows the foot of the ox that draws the carriage.",
+      "source": "Dhammapada 1",
+      "language": "en",
+      "tags": ["karma", "daily"]
+    },
+    {
+      "id": "q055",
+      "text": "If a man speaks or acts with a pure thought, happiness follows him, like a shadow that never leaves him.",
+      "source": "Dhammapada 2",
+      "language": "en",
+      "tags": ["karma", "daily"]
+    },
+    {
+      "id": "q056",
+      "text": "He abused me, he struck me, he overpowered me, he robbed me. Those who harbor such thoughts do not still their hatred.",
+      "source": "Dhammapada 3",
+      "language": "en",
+      "tags": ["forgiveness", "daily"]
+    },
+    {
+      "id": "q057",
+      "text": "He abused me, he struck me, he overpowered me, he robbed me. Those who do not harbor such thoughts still their hatred.",
+      "source": "Dhammapada 4",
+      "language": "en",
+      "tags": ["forgiveness", "daily"]
+    },
+    {
+      "id": "q058",
+      "text": "For hatred does not cease by hatred at any time; hatred ceases by love. This is an unalterable law.",
+      "source": "Dhammapada 5",
+      "language": "en",
+      "tags": ["loving-kindness", "daily"]
+    },
+    {
+      "id": "q059",
+      "text": "Many do not know that we are here in this world to live in harmony. Those who know it and those who follow it, their quarrels are soon ended.",
+      "source": "Dhammapada 6",
+      "language": "en",
+      "tags": ["harmony", "daily"]
+    },
+    {
+      "id": "q060",
+      "text": "As a solid rock is not shaken by the wind, wise people falter not amidst blame and praise.",
+      "source": "Dhammapada 81",
+      "language": "en",
+      "tags": ["equanimity", "daily"]
+    },
+    {
+      "id": "q061",
+      "text": "Like a beautiful flower, bright and perfumed, but fruitless, are the beautiful but empty words of one who does not act accordingly.",
+      "source": "Dhammapada 51",
+      "language": "en",
+      "tags": ["action", "daily"]
+    },
+    {
+      "id": "q062",
+      "text": "The wise man, who by watchfulness conquers thoughtlessness, is as one free from sorrows, and ascends to the palace of wisdom.",
+      "source": "Dhammapada 36",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q063",
+      "text": "The wise man, who by watchfulness conquers thoughtlessness, is as one free from sorrows, and ascends to the palace of wisdom.",
+      "source": "Dhammapada 37",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q064",
+      "text": "When the wise man drives out selfishness by wisdom, as one drives out the most impure thing, then, being free from sorrow, he ascends to the palace of wisdom.",
+      "source": "Dhammapada 39",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q065",
+      "text": "The fool who knows his foolishness is wise at least so far. But a fool who thinks himself wise, he is called a fool indeed.",
+      "source": "Dhammapada 63",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q066",
+      "text": "Though month after month for a hundred years one should offer sacrifices by the thousands, yet if only for a moment one should worship those of perfect mind, that worship is indeed better.",
+      "source": "Dhammapada 106",
+      "language": "en",
+      "tags": ["devotion", "daily"]
+    },
+    {
+      "id": "q067",
+      "text": "If one man conquers in battle a thousand times a thousand men, and another conquers himself, he is the greatest of conquerors.",
+      "source": "Dhammapada 103",
+      "language": "en",
+      "tags": ["self-mastery", "daily"]
+    },
+    {
+      "id": "q068",
+      "text": "One's own self conquered is better than all other people; not even a god, a Gandharva, or Mara with Brahma, can change into defeat the victory of a man who has vanquished himself.",
+      "source": "Dhammapada 104",
+      "language": "en",
+      "tags": ["self-mastery", "daily"]
+    },
+    {
+      "id": "q069",
+      "text": "Better than a thousand verses where no profit is derived from hearing them, is one verse on hearing which a man is pacified.",
+      "source": "Dhammapada 101",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q070",
+      "text": "Better than a hundred years in the life of a man who is idle and inactive, is a day in the life of a man who is strenuous and active.",
+      "source": "Dhammapada 112",
+      "language": "en",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q071",
+      "text": "If by sacrificing a limited pleasure one sees a great pleasure, let the wise man sacrifice the limited pleasure, looking to the great pleasure.",
+      "source": "Dhammapada 290",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q072",
+      "text": "Let none find fault with others; let none see the commissions and omissions of others. But let one see one's own acts, done and undone.",
+      "source": "Dhammapada 50",
+      "language": "en",
+      "tags": ["self-reflection", "daily"]
+    },
+    {
+      "id": "q073",
+      "text": "Like a beautiful flower, bright and perfumed, but fruitless, are the beautiful but empty words of one who does not act accordingly.",
+      "source": "Dhammapada 51",
+      "language": "en",
+      "tags": ["action", "daily"]
+    },
+    {
+      "id": "q074",
+      "text": "As from a heap of flowers many a garland can be made, even so many good deeds should be done by one born a mortal.",
+      "source": "Dhammapada 53",
+      "language": "en",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q075",
+      "text": "Not the perversities of others, not their sins of commission or omission, but one's own misdeeds and negligences should one regard.",
+      "source": "Dhammapada 50",
+      "language": "en",
+      "tags": ["self-reflection", "daily"]
+    },
+    {
+      "id": "q076",
+      "text": "The scent of flowers does not travel against the wind, but the odor of good people travels even against the wind; a good man pervades every place.",
+      "source": "Dhammapada 54",
+      "language": "en",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q077",
+      "text": "Of all the fragrances — sandalwood, tagara, blue lotus, or jasmine — the fragrance of virtue is by far the sweetest.",
+      "source": "Dhammapada 55",
+      "language": "en",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q078",
+      "text": "Faint is the fragrance of tagara and sandalwood, but the fragrance of the virtuous is the sweetest; it spreads even to the abodes of the gods.",
+      "source": "Dhammapada 56",
+      "language": "en",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q079",
+      "text": "The good shine from afar, like the snowy mountains; the bad are not seen, like arrows shot at night.",
+      "source": "Dhammapada 304",
+      "language": "en",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q080",
+      "text": "He who sits alone, rests alone, walks alone, resolute, who in himself has become tranquil, will find delight in the forest.",
+      "source": "Dhammapada 305",
+      "language": "en",
+      "tags": ["solitude", "daily"]
+    },
+    {
+      "id": "q081",
+      "text": "Delight in meditation, delight in solitude, delight in the Dhamma, the Awakened One's disciples delight.",
+      "source": "Dhammapada 373",
+      "language": "en",
+      "tags": ["meditation", "daily"]
+    },
+    {
+      "id": "q082",
+      "text": "The one who has conquered himself is a far greater hero than he who has defeated a thousand times a thousand men.",
+      "source": "Dhammapada 103",
+      "language": "en",
+      "tags": ["self-mastery", "daily"]
+    },
+    {
+      "id": "q083",
+      "text": "Train yourself in doing good which remains with you always. There is nothing so good as the practice of Dhamma.",
+      "source": "Dhammapada 289",
+      "language": "en",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q084",
+      "text": "The wise man who is restrained in body, restrained in speech, restrained in mind, who is at peace, who has rejected the baits of the world, is called a sage.",
+      "source": "Dhammapada 391",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q085",
+      "text": "He who has no attachment whatsoever for the mind and body, who does not grieve for what he has not — he is truly called a monk.",
+      "source": "Dhammapada 367",
+      "language": "en",
+      "tags": ["non-attachment", "daily"]
+    },
+    {
+      "id": "q086",
+      "text": "He who lives in the Dhamma, delights in the Dhamma, meditates on the Dhamma, and bears the Dhamma well in mind — he does not fall away from the sublime Dhamma.",
+      "source": "Dhammapada 364",
+      "language": "en",
+      "tags": ["dhamma", "daily"]
+    },
+    {
+      "id": "q087",
+      "text": "The scent of flowers blows with the wind. The scent of virtue blows against the wind. The virtuous man pervades every direction.",
+      "source": "Dhammapada 54",
+      "language": "en",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q088",
+      "text": "As the jasmine creeper sheds its withered flowers, even so should one shed passion and hatred.",
+      "source": "Dhammapada 377",
+      "language": "en",
+      "tags": ["letting-go", "daily"]
+    },
+    {
+      "id": "q089",
+      "text": "Calm in mind, calm in speech, calm in deed, who rightly knowing is wholly freed, perfectly peaceful and equipoised.",
+      "source": "Dhammapada 378",
+      "language": "en",
+      "tags": ["peace", "daily"]
+    },
+    {
+      "id": "q090",
+      "text": "The man who is without blind faith, who knows the uncreated, who has severed all ties, removed all temptations, renounced all desires — he is the greatest of men.",
+      "source": "Dhammapada 97",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q091",
+      "text": "In a hamlet or in a forest, on land or on sea, wherever venerable persons dwell, that place is delightful.",
+      "source": "Dhammapada 98",
+      "language": "en",
+      "tags": ["community", "daily"]
+    },
+    {
+      "id": "q092",
+      "text": "Forest leaves are pleasant; so is the forest. But the forest holds no delight for those who have not tasted the bliss of Dhamma.",
+      "source": "Dhammapada 99",
+      "language": "en",
+      "tags": ["dhamma", "daily"]
+    },
+    {
+      "id": "q093",
+      "text": "Better than a thousand hollow verses is one verse that brings peace.",
+      "source": "Dhammapada 100",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q094",
+      "text": "Though one should live a hundred years immoral and uncontrolled, yet better, indeed, is a life of one day, moral and meditative.",
+      "source": "Dhammapada 110",
+      "language": "en",
+      "tags": ["meditation", "daily"]
+    },
+    {
+      "id": "q095",
+      "text": "Though one should live a hundred years, not seeing the rise and fall of things, yet better, indeed, is a life of one day, seeing the rise and fall of things.",
+      "source": "Dhammapada 113",
+      "language": "en",
+      "tags": ["impermanence", "daily"]
+    },
+    {
+      "id": "q096",
+      "text": "If by renouncing a lesser happiness one may realize a greater happiness, let the wise man renounce the lesser, having regard for the greater.",
+      "source": "Dhammapada 290",
+      "language": "en",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q097",
+      "text": "Let one not neglect one's own welfare for the sake of another, however great. Clearly understanding one's own welfare, let one be intent upon the good.",
+      "source": "Dhammapada 166",
+      "language": "en",
+      "tags": ["self-care", "daily"]
+    },
+    {
+      "id": "q098",
+      "text": "Let none find fault with others; let none see the omissions and commissions of others. But let one see one's own acts, done and undone.",
+      "source": "Dhammapada 50",
+      "language": "en",
+      "tags": ["self-reflection", "daily"]
+    },
+    {
+      "id": "q099",
+      "text": "All tremble at violence; all fear death. Putting oneself in the place of another, one should not kill nor cause another to kill.",
+      "source": "Dhammapada 129",
+      "language": "en",
+      "tags": ["compassion", "daily"]
     }
   ]
 }
