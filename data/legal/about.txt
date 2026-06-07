@@ -1,15 +1,56 @@
-Dhamma Darshan 2026 is a Buddhist calendar and reference application designed to help users explore important Buddhist observances, historical events, lunar events, and sacred Buddhist places throughout the year 2026.
+ABOUT THE APP
 
-Features include:
+Last Updated: June 2026
 
-- Daily Buddhist events and historical anniversaries
-- Monthly calendar view for the year 2026
-- Detailed descriptions of important Buddhist dates
-- Buddhist pilgrimage and heritage places
-- Lunar observances including Full Moon, New Moon, Ashtami, and eclipse-related events
-- Offline access to calendar information
-- Modern, easy-to-use interface optimized for Android devices
+Buddhist Calendar (also referred to as "Dhamma Darshan") is a Buddhist calendar and lifestyle reference application developed and maintained by RDroid Apps.
 
-The application is intended for educational, cultural, and informational purposes. While every effort is made to provide accurate information, users are encouraged to verify important dates and historical details from trusted sources.
+The App is designed to help users explore Buddhist observances, festivals, lunar events, historical references, sacred places, daily practice tools, and personal planning features in one place.
 
-Dhamma Darshan 2026 is developed and maintained by RDroid Apps.
+Main Features
+
+Calendar and Events
+- Buddhist calendar with daily events, festivals, and historical anniversaries
+- Monthly calendar views with support for multiple calendar years where available
+- Detailed date information including lunar and astronomical observances
+- All Events list and date detail screens
+- Offline access to much of the calendar and reference content after initial load
+
+Reference and Learning
+- Buddhist Places with descriptions and images
+- Daily Quotes
+- Buddhist History
+- Five Precepts (Panchsheel)
+- Chanting and Paritta texts with detail pages
+- Chant audio and meditation sound playback, including optional import of audio from your device
+
+Practice and Personal Tools
+- Meditation timer with session history
+- Daily Planner for tasks, notes, and optional reminders
+- Alarms and Reminders for daily, weekly, and practice-related schedules
+- Statistics for meditation and planner progress
+- Tools and converters including Buddhist Era conversion
+- Home screen widgets for date, holidays, moon phase, alarms, and related information
+
+App Experience
+- Modern Android interface with navigation drawer and related feature links
+- Optional background music and sound effects (user configurable)
+- User Guide and in-app legal information
+- App update checks through Google Play when available
+
+Online and Offline Use
+
+Many core calendar and reference features work offline after content has been cached on your device. Some features require an internet connection, including content updates, certain images, server-hosted audio, advertisements, analytics, and online legal page loading.
+
+Purpose
+
+The App is intended for educational, cultural, devotional, and informational purposes only. It is not a substitute for guidance from qualified teachers, monastic communities, or official religious authorities.
+
+While every effort is made to provide useful and accurate information, users should independently verify important dates, observances, and historical details from trusted sources when required.
+
+Developer
+
+RDroid Apps
+Email: rdroidapps096@gmail.com
+Website: https://www.rdroidapps.com
+
+For privacy-related information, please see the Privacy Policy and Data Safety information available in the App and on our website.

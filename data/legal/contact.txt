@@ -1,15 +1,44 @@
+CONTACT AND SUPPORT
+
+Last Updated: June 2026
+
+Thank you for using Buddhist Calendar (also referred to as "Dhamma Darshan").
+
+Developer
 RDroid Apps
 
-Thank you for using Dhamma Darshan 2026.
+Website
+https://www.rdroidapps.com
 
-For questions, suggestions, bug reports, content corrections, or technical support, please contact:
-
-Email:
+Email
 rdroidapps096@gmail.com
 
-Developer:
-RDroid Apps
+We welcome questions, suggestions, bug reports, content corrections, feature feedback, and technical support requests related to the App.
 
-We appreciate feedback that helps improve the application and its content.
+You may also contact us regarding:
+- Privacy Policy questions
+- Data Safety inquiries
+- Content accuracy concerns
+- Legal or licensing questions
 
-Response times may vary depending on inquiry volume.
+Please include the following information when reporting a technical issue, if possible:
+- Device model and Android version
+- App version (shown in Google Play or app settings)
+- A brief description of the issue
+- Steps to reproduce the problem, if applicable
+
+Response times may vary depending on inquiry volume. We appreciate feedback that helps improve the application and its content.
+
+Legal Documents
+
+Privacy Policy:
+https://www.rdroidapps.com/data/legal/privacy.txt
+
+Data Safety Information:
+https://www.rdroidapps.com/data/legal/data_safety.txt
+
+Disclaimer:
+https://www.rdroidapps.com/data/legal/disclaimer.txt
+
+About the App:
+https://www.rdroidapps.com/data/legal/about.txt

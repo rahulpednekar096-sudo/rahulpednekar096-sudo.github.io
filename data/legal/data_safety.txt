@@ -1,30 +1,109 @@
-Data Safety Information
+DATA SAFETY INFORMATION
 
-Dhamma Darshan 2026 is designed to minimize data collection.
+Last Updated: June 2026
 
-Information that may be collected automatically:
+This Data Safety summary describes how Buddhist Calendar (also referred to as "Dhamma Darshan") handles data. It is intended to align with our Privacy Policy and Google Play Data Safety disclosures.
 
-- Anonymous analytics data
-- App interaction events
-- Device performance information
-- Advertising performance information
+Developer: RDroid Apps
+Contact: rdroidapps096@gmail.com
+Privacy Policy: https://www.rdroidapps.com/data/legal/privacy.txt
 
-Data is used only for:
+1. Summary
 
-- App improvement
-- Feature optimization
-- Performance monitoring
-- Advertisement management
+Buddhist Calendar is designed to minimize data collection. The App does not require user registration or account creation for normal use.
 
-The application does not provide user accounts and does not require users to submit personal information for normal operation.
+Most user-created content (such as alarms, planner tasks, notes, meditation history, and app settings) is stored locally on your device and is not uploaded to RDroid Apps servers.
+
+2. Data That May Be Collected Automatically
+
+The following types of data may be collected automatically through the App and integrated third-party services:
+
+App activity and interactions
+- Screens viewed, feature usage, navigation events, and similar anonymous usage events through Google Firebase Analytics
+
+Device and other identifiers
+- Device-related identifiers and diagnostic information used by Google Firebase Analytics and Google AdMob for analytics, app functionality, and advertising
+
+Device or other diagnostic data
+- App version, operating system version, language, performance information, and technical logs that may be processed by Google services
+
+Advertising data
+- Ad impressions, interactions, and related measurement data through Google AdMob
+
+Approximate location
+- May be inferred from IP address by Google advertising/analytics services according to their policies
+
+Crash and performance data
+- May be processed by Google services where applicable
+
+3. Data Stored Locally on Your Device (Not Uploaded to Our Servers)
+
+The App stores the following information on your device to provide functionality:
+
+- Alarms and reminder settings
+- Daily Planner tasks, notes, and completion status
+- Meditation session history and timer preferences
+- Favorite quotes and app preferences
+- References to audio files you manually select from your device
+- Cached calendar, event, chant, quote, and related content
+- Widget display data
+
+This locally stored information is generally not transmitted to RDroid Apps servers.
+
+4. How Data Is Used
+
+Collected and processed data is used for:
+
+- App functionality and feature delivery
+- App improvement and feature optimization
+- Analytics and understanding user engagement
+- Performance monitoring and stability
+- Advertising display and measurement through Google AdMob
+- Checking for app updates through Google Play services
+
+5. Data Sharing
 
 Data is not sold to third parties.
 
-Some information may be processed by trusted service providers including:
+Some data may be processed by trusted service providers, including:
 
 - Google Firebase Analytics
 - Google AdMob
+- Google Play services (including app update services)
 
-The Buddhist Places feature may access online resources to retrieve updated content.
+These providers process data under their own privacy policies.
 
-Most calendar and event information remains available offline.
+6. Security Practices
+
+Data transmitted to third-party services is handled using industry-standard protections provided by those services and secure network connections where applicable.
+
+Most personal app content remains on your device and is protected by your device security settings.
+
+7. Data Deletion and User Choice
+
+You can delete locally stored app data by:
+
+- Uninstalling the App, or
+- Clearing app storage/data in Android Settings
+
+You may also manage notification permissions, ad personalization settings, and optional file import choices through your device and Google account settings.
+
+8. Children's Privacy
+
+The App is intended for a general audience and does not knowingly collect personal information from children under 13 (or the minimum age required in your country).
+
+9. Optional Online Features
+
+Internet access may be used for content updates, images, audio, legal pages, analytics, advertising, and app update checks.
+
+Most calendar and event information remains available offline after content has been cached on the device.
+
+10. Policy Alignment
+
+This Data Safety summary should be read together with our full Privacy Policy. If there is any inconsistency, the Privacy Policy governs.
+
+Contact
+
+RDroid Apps
+Email: rdroidapps096@gmail.com
+Website: https://www.rdroidapps.com

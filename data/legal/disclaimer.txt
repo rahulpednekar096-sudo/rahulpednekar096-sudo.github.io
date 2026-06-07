@@ -1,11 +1,61 @@
-The information provided in Dhamma Darshan 2026 is intended for educational, cultural, historical, and informational purposes only.
+DISCLAIMER
 
-While reasonable efforts are made to ensure accuracy, the publisher does not guarantee that all dates, historical references, religious interpretations, or observance details are complete, current, or free from errors.
+Last Updated: June 2026
 
-Buddhist traditions, observance dates, lunar calculations, and regional practices may vary between countries, communities, and schools of practice.
+The information, tools, and features provided in Buddhist Calendar (also referred to as "Dhamma Darshan") are intended for educational, cultural, historical, devotional, and general informational purposes only.
 
-Users should independently verify important dates and religious information when required.
+Information Accuracy
 
-The developer and publisher shall not be liable for any direct, indirect, incidental, or consequential loss arising from the use of information contained within this application.
+While reasonable efforts are made to ensure accuracy, RDroid Apps does not guarantee that all dates, festival listings, historical references, lunar calculations, place descriptions, chant texts, quotes, translations, religious interpretations, or observance details are complete, current, universally accepted, or free from errors.
 
-Use of the application constitutes acceptance of this disclaimer.
+Buddhist traditions, observance dates, lunar calculations, regional holidays, temple practices, and community customs may vary between countries, cultures, languages, and schools of practice.
+
+Users should independently verify important religious, cultural, and calendar information from trusted sources when making personal, travel, ceremonial, or legal decisions.
+
+Not Professional Advice
+
+The App does not provide medical, psychological, legal, financial, or religious authority services.
+
+Meditation timers, chanting content, quotes, reminders, alarms, and planner features are provided for general personal use only. They are not medical treatment, therapy, crisis support, or a substitute for qualified instruction from teachers, monastics, healthcare professionals, or counselors.
+
+If you have health concerns, mental health needs, or questions about religious practice, seek appropriate professional or qualified community guidance.
+
+Alarms, Reminders, and Notifications
+
+Alarms, reminders, planner notifications, and widget updates depend on your device settings, battery optimization, operating system behavior, permissions, and network conditions. RDroid Apps does not guarantee that alarms or reminders will always trigger at the exact intended time or under all device conditions.
+
+Third-Party Content and Services
+
+The App may display or access content from online resources, image providers, audio sources, Google AdMob advertisements, Google Firebase Analytics, Google Play services, and other third-party services.
+
+RDroid Apps is not responsible for the availability, accuracy, policies, or practices of third-party websites, services, or content providers.
+
+Advertising
+
+The App may display advertisements provided by third parties. RDroid Apps is not responsible for the content of third-party ads or external destinations opened from advertisements.
+
+User-Selected Files
+
+If you choose to import audio or other files from your device, you are responsible for ensuring that you have the right to use those files for your intended purpose.
+
+Limitation of Liability
+
+To the fullest extent permitted by applicable law, RDroid Apps, its developer, and its publisher shall not be liable for any direct, indirect, incidental, special, consequential, or punitive loss or damage arising from:
+
+- Use of or reliance on information in the App
+- Missed, delayed, or failed alarms or reminders
+- Offline/online content availability or synchronization issues
+- Third-party services, advertisements, or linked content
+- Device malfunction, permission restrictions, or operating system changes
+
+Use of the App is at your own risk.
+
+Acceptance
+
+By installing or using the App, you acknowledge that you have read and understood this Disclaimer and agree to its terms.
+
+Contact
+
+RDroid Apps
+Email: rdroidapps096@gmail.com
+Website: https://www.rdroidapps.com

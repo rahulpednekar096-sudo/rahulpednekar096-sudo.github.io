@@ -1,23 +1,61 @@
-This application uses open-source software and libraries, including:
+OPEN SOURCE LICENSES
 
-- AndroidX Libraries
+Last Updated: June 2026
+
+Buddhist Calendar (Dhamma Darshan) uses open-source software, libraries, and components. The respective copyright holders retain ownership of their software.
+
+Major third-party components include:
+
+AndroidX Libraries
+(including Core KTX, AppCompat, Activity, Lifecycle, RecyclerView, DrawerLayout, WorkManager, and Room)
 License: Apache License 2.0
 
-- Google Material Components
+Google Material Components for Android
 License: Apache License 2.0
 
-- Gson
+Kotlin and Kotlin Coroutines
 License: Apache License 2.0
 
-- OkHttp
+Gson (Google)
 License: Apache License 2.0
 
-- Coil
+OkHttp (Square)
 License: Apache License 2.0
 
-- PhotoView
+Coil
 License: Apache License 2.0
 
-The respective copyright owners retain ownership of their software.
+PhotoView (Chris Banes)
+License: Apache License 2.0
 
-Full license texts and project information are available from the official project websites.
+Android Desugar JDK Libraries
+License: Apache License 2.0
+
+Google Play services libraries
+(including Play services Ads and Play In-App Update libraries)
+License: Google terms and applicable open-source notices bundled with the SDK
+
+Firebase Android SDK
+(including Firebase Analytics via Firebase BOM)
+License: Apache License 2.0 (subject to Firebase/Google SDK terms and notices)
+
+Additional open-source components may be included as transitive dependencies of the libraries above.
+
+License Texts
+
+Full license texts and project information are available from the official project repositories and websites, including:
+
+- https://www.apache.org/licenses/LICENSE-2.0
+- https://developer.android.com/jetpack/androidx
+- https://firebase.google.com/terms
+- https://developers.google.com/admob/terms
+
+Attribution
+
+This application is developed by RDroid Apps. Open-source software is used in accordance with the license terms of each respective project.
+
+Contact
+
+RDroid Apps
+Email: rdroidapps096@gmail.com
+Website: https://www.rdroidapps.com
