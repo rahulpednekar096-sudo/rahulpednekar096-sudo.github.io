@@ -2,7 +2,7 @@ OPEN SOURCE LICENSES
 
 Last Updated: June 2026
 
-Buddhist Calendar (Dhamma Darshan) uses open-source software, libraries, and components. The respective copyright holders retain ownership of their software.
+Buddhist Calendar uses open-source software, libraries, and components. The respective copyright holders retain ownership of their software.
 
 Major third-party components include:
 

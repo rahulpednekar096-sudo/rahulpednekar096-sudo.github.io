@@ -2,7 +2,7 @@ PRIVACY POLICY
 
 Last Updated: June 2026
 
-This Privacy Policy describes how RDroid Apps ("we", "us", or "our") collects, uses, stores, and shares information when you use the Buddhist Calendar mobile application (also referred to as "Dhamma Darshan"), available on Android devices (the "App").
+This Privacy Policy describes how RDroid Apps ("we", "us", or "our") collects, uses, stores, and shares information when you use the Buddhist Calendar mobile application (the "App"), available on Android devices under the application ID com.rdroid.dhammadarshan.
 
 By installing or using the App, you agree to the practices described in this Privacy Policy. If you do not agree, please do not use the App.
 

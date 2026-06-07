@@ -2,7 +2,7 @@ ABOUT THE APP
 
 Last Updated: June 2026
 
-Buddhist Calendar (also referred to as "Dhamma Darshan") is a Buddhist calendar and lifestyle reference application developed and maintained by RDroid Apps.
+Buddhist Calendar is a Buddhist calendar and lifestyle reference application developed and maintained by RDroid Apps.
 
 The App is designed to help users explore Buddhist observances, festivals, lunar events, historical references, sacred places, daily practice tools, and personal planning features in one place.
 

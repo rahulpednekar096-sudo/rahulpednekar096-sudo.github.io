@@ -2,7 +2,9 @@ DATA SAFETY INFORMATION
 
 Last Updated: June 2026
 
-This Data Safety summary describes how Buddhist Calendar (also referred to as "Dhamma Darshan") handles data. It is intended to align with our Privacy Policy and Google Play Data Safety disclosures.
+This Data Safety summary describes how Buddhist Calendar handles data. It is intended to align with our Privacy Policy and Google Play Data Safety disclosures.
+
+Application ID (package name): com.rdroid.dhammadarshan
 
 Developer: RDroid Apps
 Contact: rdroidapps096@gmail.com
