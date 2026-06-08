@@ -718,6 +718,38 @@ strong {
     border: 1px solid var(--border);
 }
 
+.light-theme .batch-file-item.active {
+    border-color: var(--accent, #0aa37f);
+    box-shadow: 0 0 0 1px rgba(10, 163, 127, 0.25);
+}
+
+.light-theme .batch-summary {
+    color: var(--muted);
+}
+
+.light-theme .batch-download-panel {
+    background: var(--panel);
+    border-color: var(--border);
+}
+
+.light-theme .batch-download-title {
+    color: var(--muted);
+}
+
+.light-theme .batch-limit-warning {
+    background: rgba(245, 158, 11, 0.15);
+    color: #d97706;
+}
+
+.light-theme .batch-limit-cap {
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+}
+
+.light-theme .batch-limit-note {
+    color: var(--muted);
+}
+
 /* ======================================== */
 /* LIGHT THEME – LOGIN BOX */
 /* ======================================== */
