@@ -32,7 +32,8 @@
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/windows-tools/js/batch-files.js"></script>
 
   <script type="application/ld+json">
   {
@@ -85,10 +86,11 @@
     <section class="tool-section">
         <div class="card">
             <label class="drop" id="dropArea"
-                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
-                <button class="btn btn-ghost" id="pickBtn">Choose file</button>
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop images or
+                <button class="btn btn-ghost" id="pickBtn">Choose files</button>
             </label>
-            <input type="file" id="fileInput" accept="image/*" />
+            <input type="file" id="fileInput" accept="image/*" multiple />
+            <div class="files-list" id="filesList" aria-live="polite"></div>
 
             <div class="row">
                 <div class="col">
@@ -178,7 +180,6 @@
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
 
-        // Variables declaration
         const fileInput = document.getElementById('fileInput'),
             pickBtn = document.getElementById('pickBtn'),
             dropArea = document.getElementById('dropArea'),
@@ -193,177 +194,120 @@
             keepAspect = document.getElementById('keepAspect'),
             info = document.getElementById('info');
 
-        let currentFile = null, imgEl = null;
-        let originalImageURL = null;
-        let resizedImageURL = null;
+        let previewImageURL = null;
 
-        // Helper functions
         function log(msg) {
             logEl.textContent += msg + '\n';
             logEl.scrollTop = logEl.scrollHeight;
         }
 
-        function clearLog() {
-            logEl.textContent = '';
+        function revokePreviewURL() {
+            if (previewImageURL) {
+                URL.revokeObjectURL(previewImageURL);
+                previewImageURL = null;
+            }
         }
 
-        // Event Listeners
-        pickBtn.addEventListener('click', () => fileInput.click());
-
-        dropArea.addEventListener('dragover', e => {
-            e.preventDefault();
-            dropArea.style.borderColor = '#0aa37f';
-            dropArea.style.background = 'rgba(10, 163, 127, 0.03)';
-        });
-
-        dropArea.addEventListener('dragleave', () => {
-            dropArea.style.borderColor = '';
-            dropArea.style.background = '';
-        });
-
-        dropArea.addEventListener('drop', e => {
-            e.preventDefault();
-            dropArea.style.borderColor = '';
-            dropArea.style.background = '';
-
-            if (e.dataTransfer.files.length) {
-                fileInput.files = e.dataTransfer.files;
-                handleFile();
-            }
-        });
-
-        fileInput.addEventListener('change', handleFile);
-
-        // Handle file function
-        function handleFile() {
-            clearLog();
-            currentFile = fileInput.files[0];
-            if (!currentFile) return;
-
-            // Release previous image URL
-            if (originalImageURL) {
-                URL.revokeObjectURL(originalImageURL);
-            }
-
-            originalImageURL = URL.createObjectURL(currentFile);
-            preview.innerHTML = `<img id="loadedImg" src="${originalImageURL}" style="max-width:420px;border-radius:8px">`;
-            imgEl = document.getElementById('loadedImg');
-
+        function loadPreview(file) {
+            revokePreviewURL();
+            previewImageURL = URL.createObjectURL(file);
+            const imgEl = new Image();
+            imgEl.src = previewImageURL;
             imgEl.onload = () => {
+                preview.innerHTML = `<img src="${previewImageURL}" style="max-width:420px;border-radius:8px">`;
                 info.textContent = `Original: ${imgEl.naturalWidth}×${imgEl.naturalHeight}`;
-                log('Image loaded.');
-                // Auto-fill width and height with original dimensions
                 widthInput.placeholder = imgEl.naturalWidth;
                 heightInput.placeholder = imgEl.naturalHeight;
-            }
+                logEl.textContent = `Loaded: ${file.name}\n`;
+            };
         }
 
-        // Resize Function
-        startBtn.addEventListener('click', async () => {
-            if (!currentFile) return alert('कृपया image निवडा');
-            clearLog();
-            log('Resizing...');
-
-            const reader = new FileReader();
-            reader.onload = async e => {
-                const img = new Image();
-                img.src = e.target.result;
-                await img.decode();
-
-                let targetW = parseInt(widthInput.value) || null;
-                let targetH = parseInt(heightInput.value) || null;
-
-                // Handle percent mode
-                if (mode.value === 'percent') {
-                    if (targetW) targetW = Math.max(1, Math.round(img.naturalWidth * (targetW / 100)));
-                    if (targetH) targetH = Math.max(1, Math.round(img.naturalHeight * (targetH / 100)));
+        const fileQueue = new BatchFileQueue({
+            fileInput, dropArea, pickBtn,
+            listContainer: document.getElementById('filesList'),
+            accept: 'image/*',
+            showThumbnails: true,
+            interactive: true,
+            onActiveChange: (entry) => {
+                if (entry) loadPreview(entry.file);
+                else {
+                    revokePreviewURL();
+                    preview.innerHTML = '';
+                    info.textContent = '';
                 }
-
-                if (!targetW && !targetH) {
-                    alert('किमान width किंवा height द्या');
-                    return;
-                }
-
-                // Preserve aspect ratio
-                if (keepAspect.checked) {
-                    if (!targetW) targetW = Math.round(img.naturalWidth * (targetH / img.naturalHeight));
-                    if (!targetH) targetH = Math.round(img.naturalHeight * (targetW / img.naturalWidth));
-                }
-
-                const canvas = document.createElement('canvas');
-                canvas.width = targetW;
-                canvas.height = targetH;
-                const ctx = canvas.getContext('2d');
-                ctx.drawImage(img, 0, 0, targetW, targetH);
-
-                canvas.toBlob(blob => {
-                    // Release previous resized image URL
-                    if (resizedImageURL) {
-                        URL.revokeObjectURL(resizedImageURL);
-                    }
-
-                    if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
-                        URL.revokeObjectURL(downloadLink.href);
-                    }
-
-                    resizedImageURL = URL.createObjectURL(blob);
-                    downloadLink.href = resizedImageURL;
-                    downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-resized.png';
-                    downloadLink.textContent = 'Download';
-                    downloadLink.style.display = 'inline-block';
-
-                    preview.innerHTML = `<img src="${resizedImageURL}" style="max-width:420px;border-radius:8px">`;
-
-                    // Update info with new dimensions
-                    info.textContent = `Resized: ${targetW}×${targetH}`;
-                    log(`Resized to: ${targetW}×${targetH}`);
-                    log('Done.');
-                }, 'image/png');
             }
-            reader.readAsDataURL(currentFile);
         });
 
-        // Reset Function
-        resetBtn.addEventListener('click', () => {
-            // Reset file input
-            currentFile = null;
-            fileInput.value = '';
+        async function loadImage(file) {
+            const dataUrl = await new Promise((res, rej) => {
+                const r = new FileReader();
+                r.onload = () => res(r.result);
+                r.onerror = rej;
+                r.readAsDataURL(file);
+            });
+            const img = new Image();
+            img.src = dataUrl;
+            await img.decode();
+            return img;
+        }
 
-            // Reset form inputs
+        async function processOneFile(file) {
+            const img = await loadImage(file);
+            let targetW = parseInt(widthInput.value) || null;
+            let targetH = parseInt(heightInput.value) || null;
+            if (mode.value === 'percent') {
+                if (targetW) targetW = Math.max(1, Math.round(img.naturalWidth * (targetW / 100)));
+                if (targetH) targetH = Math.max(1, Math.round(img.naturalHeight * (targetH / 100)));
+            }
+            if (!targetW && !targetH) throw new Error('Width or height required');
+            if (keepAspect.checked) {
+                if (!targetW) targetW = Math.round(img.naturalWidth * (targetH / img.naturalHeight));
+                if (!targetH) targetH = Math.round(img.naturalHeight * (targetW / img.naturalWidth));
+            }
+            const canvas = document.createElement('canvas');
+            canvas.width = targetW;
+            canvas.height = targetH;
+            canvas.getContext('2d').drawImage(img, 0, 0, targetW, targetH);
+            const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+            return { blob, filename: file.name.replace(/\.[^/.]+$/, '') + '-resized.png' };
+        }
+
+        startBtn.addEventListener('click', async () => {
+            const files = fileQueue.files;
+            if (!files.length) return alert('कृपया image निवडा');
+            let targetW = parseInt(widthInput.value) || null;
+            let targetH = parseInt(heightInput.value) || null;
+            if (!targetW && !targetH) return alert('किमान width किंवा height द्या');
+            startBtn.disabled = true;
+            downloadLink.style.display = 'none';
+            logEl.textContent = 'Resizing...\n';
+            const { results, errors } = await BatchProcessor.run(files, processOneFile, {
+                queue: fileQueue,
+                onProgress: (c, t, f) => log(`Processing ${c}/${t}: ${f.name}`)
+            });
+            if (results.length) BatchProcessor.deliver(results);
+            if (errors.length) log(`Errors: ${errors.length}`);
+            log('Done.');
+            startBtn.disabled = false;
+        });
+
+        resetBtn.addEventListener('click', () => {
+            fileQueue.clear();
             mode.value = 'pixels';
             widthInput.value = '';
             widthInput.placeholder = 'auto';
             heightInput.value = '';
             heightInput.placeholder = 'auto';
             keepAspect.checked = true;
-
-            // Reset UI elements
             downloadLink.style.display = 'none';
             info.textContent = '';
+            revokePreviewURL();
             preview.innerHTML = '';
-            clearLog();
-            log('Ready.');
-            dropArea.style.borderColor = '';
-            dropArea.style.background = '';
-
-            // Release all Object URLs
-            if (originalImageURL) {
-                URL.revokeObjectURL(originalImageURL);
-                originalImageURL = null;
-            }
-
-            if (resizedImageURL) {
-                URL.revokeObjectURL(resizedImageURL);
-                resizedImageURL = null;
-            }
-
+            logEl.textContent = 'Ready.';
             if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
                 URL.revokeObjectURL(downloadLink.href);
                 downloadLink.href = '#';
             }
-
-            // Reset variables
-            imgEl = null;
         });
     </script>
     <script type="module" src="/js/firebase-config.js"></script>

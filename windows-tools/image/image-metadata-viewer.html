@@ -32,7 +32,8 @@
     <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/windows-tools/js/batch-files.js"></script>
 
   <script type="application/ld+json">
   {
@@ -85,13 +86,15 @@
     <section class="tool-section">
         <div class="card">
             <label class="drop" id="dropArea"
-                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
-                <button class="btn btn-ghost" id="pickBtn">Choose file</button>
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop images or
+                <button class="btn btn-ghost" id="pickBtn">Choose files</button>
             </label>
-            <input type="file" id="fileInput" accept="image/*" />
+            <input type="file" id="fileInput" accept="image/*" multiple />
+            <div class="files-list" id="filesList" aria-live="polite"></div>
 
             <div style="margin-top:12px;" id="preview"></div>
             <div style="margin-top:12px; display:flex; gap:8px;">
+                <button class="btn btn-primary" id="exportBtn">Export all metadata</button>
                 <button class="btn btn-ghost" id="resetBtn">Reset</button>
             </div>
 
@@ -161,63 +164,79 @@
         const preview = document.getElementById('preview');
         const metaOut = document.getElementById('metaOut');
         const resetBtn = document.getElementById('resetBtn');
+        const exportBtn = document.getElementById('exportBtn');
+
+        let previewImageURL = null;
+
+        function revokePreviewURL() {
+            if (previewImageURL) {
+                URL.revokeObjectURL(previewImageURL);
+                previewImageURL = null;
+            }
+        }
+
+        function readMetadata(file) {
+            return new Promise((resolve) => {
+                try {
+                    EXIF.getData(file, function () {
+                        resolve(EXIF.getAllTags(this) || {});
+                    });
+                } catch (err) {
+                    resolve({ error: err && err.message ? err.message : String(err) });
+                }
+            });
+        }
+
+        async function showFileMeta(file) {
+            revokePreviewURL();
+            previewImageURL = URL.createObjectURL(file);
+            preview.innerHTML = `<img src="${previewImageURL}" style="max-width:420px;border-radius:8px">`;
+            const meta = await readMetadata(file);
+            metaOut.textContent = JSON.stringify(meta, null, 2);
+        }
+
+        const fileQueue = new BatchFileQueue({
+            fileInput, dropArea, pickBtn,
+            listContainer: document.getElementById('filesList'),
+            accept: 'image/*',
+            showThumbnails: true,
+            interactive: true,
+            onActiveChange: (entry) => {
+                if (entry) showFileMeta(entry.file);
+                else {
+                    revokePreviewURL();
+                    preview.innerHTML = '';
+                    metaOut.textContent = 'No metadata loaded.';
+                }
+            }
+        });
+
+        async function processOneFile(file) {
+            const meta = await readMetadata(file);
+            const json = JSON.stringify({ filename: file.name, metadata: meta }, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const base = file.name.replace(/\.[^/.]+$/, '');
+            return { blob, filename: base + '-metadata.json' };
+        }
+
+        exportBtn.addEventListener('click', async () => {
+            const files = fileQueue.files;
+            if (!files.length) return alert('कृपया image निवडा');
+            exportBtn.disabled = true;
+            const { results, errors } = await BatchProcessor.run(files, processOneFile, {
+                queue: fileQueue,
+                onProgress: () => {}
+            });
+            if (results.length) BatchProcessor.deliver(results);
+            if (errors.length) alert('Some files failed to export metadata.');
+            exportBtn.disabled = false;
+        });
 
         resetBtn.addEventListener('click', () => {
-            fileInput.value = "";
-            preview.innerHTML = "";
-            metaOut.textContent = "No metadata loaded.";
-            dropArea.style.borderColor = "#202426";
-        });
-
-
-        // UI helpers
-        function showPreview(file) {
-            preview.innerHTML = `<img src="${URL.createObjectURL(file)}" style="max-width:420px;border-radius:8px">`;
-        }
-        function showMeta(obj) {
-            metaOut.textContent = JSON.stringify(obj, null, 2);
-        }
-        function clearMeta() {
+            fileQueue.clear();
+            revokePreviewURL();
+            preview.innerHTML = '';
             metaOut.textContent = 'No metadata loaded.';
-        }
-
-        // drag & drop UI
-        pickBtn.addEventListener('click', () => fileInput.click());
-
-        dropArea.addEventListener('dragover', e => {
-            e.preventDefault();
-            dropArea.style.borderColor = '#0aa37f';
-        });
-        dropArea.addEventListener('dragleave', () => {
-            dropArea.style.borderColor = '#202426';
-        });
-        dropArea.addEventListener('drop', e => {
-            e.preventDefault();
-            dropArea.style.borderColor = '#202426';
-            if (e.dataTransfer.files && e.dataTransfer.files.length) {
-                fileInput.files = e.dataTransfer.files;
-                // trigger change so same handler runs
-                fileInput.dispatchEvent(new Event('change'));
-            }
-        });
-
-        // main handler
-        fileInput.addEventListener('change', async () => {
-            clearMeta();
-            const f = fileInput.files[0];
-            if (!f) return;
-            showPreview(f);
-
-            // exif-js works on File objects — wrap in try/catch
-            try {
-                EXIF.getData(f, function () {
-                    // EXIF.getAllTags may be large; only send a trimmed subset? we will show all.
-                    const all = EXIF.getAllTags(this) || {};
-                    showMeta(all);
-                });
-            } catch (err) {
-                metaOut.textContent = 'Failed to read metadata: ' + (err && err.message ? err.message : err);
-            }
         });
     </script>
     <script type="module" src="/js/firebase-config.js"></script>

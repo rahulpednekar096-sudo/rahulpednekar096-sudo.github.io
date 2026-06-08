@@ -86,8 +86,9 @@
     </section>
     <section class="tool-section">
         <div class="card">
-            <button class="btn btn-ghost" id="pick" style="color:#fff0eb; max-width: 100%; background-color: rgba(119, 4, 113, 0.753);">🎬 Upload Video</button>
-            <input type="file" id="file" accept="video/*" hidden>
+            <button class="btn btn-ghost" id="pick" style="color:#fff0eb; max-width: 100%; background-color: rgba(119, 4, 113, 0.753);">🎬 Upload Video Files</button>
+            <input type="file" id="file" accept="video/*" multiple hidden>
+            <div id="filesList" class="files-list batch-files-list" style="display:none"></div>
 
             <div class="row">
                 <b>Video info:</b>
@@ -97,10 +98,9 @@
             <div class="actions">
                 <button class="btn btn-primary" id="extractBtn" disabled>Extract Audio</button>
                 <button class="btn btn-ghost" id="resetBtn">Reset</button>
-                <a id="download" class="btn" style="display:none">Download</a>
             </div>
 
-            <pre id="status">Waiting for video…</pre>
+            <pre id="status">Upload video files.</pre>
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
@@ -145,83 +145,127 @@
     </div>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/windows-tools/js/batch-files.js"></script>
     <script>
         function toggleMenu() {
             document.getElementById('drawer').classList.toggle('open');
         }
         const ctx = new AudioContext();
-        let videoEl = document.createElement("video");
-        let audioBuffer = null;
 
         const pick = document.getElementById("pick");
         const file = document.getElementById("file");
         const extractBtn = document.getElementById("extractBtn");
         const resetBtn = document.getElementById("resetBtn");
-        const download = document.getElementById("download");
         const info = document.getElementById("info");
         const status = document.getElementById("status");
 
-        pick.onclick = () => file.click();
-
-        file.onchange = async () => {
-            status.textContent = "Loading video…";
-            const url = URL.createObjectURL(file.files[0]);
-            videoEl.src = url;
-            videoEl.muted = true;
-
-            await videoEl.play().catch(() => { }); // allow metadata load
-            videoEl.pause();
-
-            const stream = videoEl.captureStream();
-            const audioTrack = stream.getAudioTracks()[0];
-            if (!audioTrack) {
-                status.textContent = "No audio track found.";
-                return;
-            }
-
-            const mediaStream = new MediaStream([audioTrack]);
-            const source = ctx.createMediaStreamSource(mediaStream);
-            const recorder = ctx.createMediaStreamDestination();
-            source.connect(recorder);
-
-            const rec = new MediaRecorder(recorder.stream);
-            let chunks = [];
-
-            rec.ondataavailable = e => chunks.push(e.data);
-            rec.onstop = async () => {
-                const blob = new Blob(chunks);
-                audioBuffer = await ctx.decodeAudioData(await blob.arrayBuffer());
-
-                info.textContent =
-                    "Duration: " + audioBuffer.duration.toFixed(2) + " sec\n" +
-                    "Channels: " + audioBuffer.numberOfChannels + "\n" +
-                    "Sample Rate: " + audioBuffer.sampleRate + " Hz";
-
+        const fileQueue = new BatchFileQueue({
+            fileInput: file,
+            pickBtn: pick,
+            listContainer: document.getElementById("filesList"),
+            accept: "video/*",
+            onChange: (files) => {
+                if (!files.length) {
+                    info.textContent = "No files loaded.";
+                    extractBtn.disabled = true;
+                    status.textContent = "Upload video files.";
+                    return;
+                }
+                info.textContent = files.length + " video file(s) ready for extraction.";
                 extractBtn.disabled = false;
-                status.textContent = "Audio ready to export.";
+                status.textContent = files.length + " file(s) ready.";
+            }
+        });
+
+        function extractAudioFromVideo(videoFile) {
+            return new Promise((resolve, reject) => {
+                const videoEl = document.createElement("video");
+                const url = URL.createObjectURL(videoFile);
+                videoEl.src = url;
+                videoEl.muted = true;
+
+                videoEl.onloadedmetadata = async () => {
+                    try {
+                        await videoEl.play().catch(() => {});
+                        videoEl.pause();
+
+                        const stream = videoEl.captureStream();
+                        const audioTrack = stream.getAudioTracks()[0];
+                        if (!audioTrack) {
+                            URL.revokeObjectURL(url);
+                            reject(new Error("No audio track"));
+                            return;
+                        }
+
+                        const mediaStream = new MediaStream([audioTrack]);
+                        const source = ctx.createMediaStreamSource(mediaStream);
+                        const recorder = ctx.createMediaStreamDestination();
+                        source.connect(recorder);
+
+                        const rec = new MediaRecorder(recorder.stream);
+                        const chunks = [];
+
+                        rec.ondataavailable = e => chunks.push(e.data);
+                        rec.onstop = async () => {
+                            URL.revokeObjectURL(url);
+                            try {
+                                const blob = new Blob(chunks);
+                                const audioBuffer = await ctx.decodeAudioData(await blob.arrayBuffer());
+                                resolve(audioBuffer);
+                            } catch (e) {
+                                reject(e);
+                            }
+                        };
+
+                        rec.start();
+                        videoEl.currentTime = 0;
+                        videoEl.play();
+                        setTimeout(() => rec.stop(), Math.ceil(videoEl.duration * 1000) + 100);
+                    } catch (e) {
+                        URL.revokeObjectURL(url);
+                        reject(e);
+                    }
+                };
+
+                videoEl.onerror = () => {
+                    URL.revokeObjectURL(url);
+                    reject(new Error("Failed to load video"));
+                };
+            });
+        }
+
+        async function processOneFile(f) {
+            const audioBuffer = await extractAudioFromVideo(f);
+            const base = f.name.replace(/\.[^.]+$/, "");
+            return {
+                blob: new Blob([audioBufferToWav(audioBuffer)], { type: "audio/wav" }),
+                filename: base + "-extracted.wav"
             };
+        }
 
-            rec.start();
-            videoEl.currentTime = 0;
-            videoEl.play();
-            setTimeout(() => rec.stop(), videoEl.duration * 1000);
-        };
+        extractBtn.onclick = async () => {
+            if (!fileQueue.count) return alert("Upload video first");
 
-        extractBtn.onclick = () => {
-            if (!audioBuffer) return;
-            const wav = audioBufferToWav(audioBuffer);
-            download.href = URL.createObjectURL(new Blob([wav], { type: "audio/wav" }));
-            download.download = "extracted-audio.wav";
-            download.style.display = "inline-block";
-            status.textContent = "Extraction complete.";
+            extractBtn.disabled = true;
+            status.textContent = "Extracting audio…";
+
+            const { results, errors } = await BatchProcessor.run(fileQueue.files, processOneFile, { queue: fileQueue });
+            if (results.length) {
+                BatchProcessor.deliver(results);
+                status.textContent = results.length + " file(s) extracted.";
+            } else {
+                status.textContent = "Extraction failed.";
+            }
+            if (errors.length) status.textContent += " " + errors.length + " error(s).";
+            extractBtn.disabled = !fileQueue.count;
         };
 
         resetBtn.onclick = () => {
-            audioBuffer = null;
-            info.textContent = "No file loaded.";
+            fileQueue.clear();
+            info.textContent = "No files loaded.";
             status.textContent = "Reset.";
             extractBtn.disabled = true;
-            download.style.display = "none";
         };
 
         function audioBufferToWav(buffer) {

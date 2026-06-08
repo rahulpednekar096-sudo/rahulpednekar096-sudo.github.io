@@ -31,7 +31,8 @@
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/windows-tools/js/batch-files.js"></script>
 
   <script type="application/ld+json">
   {
@@ -83,9 +84,10 @@
     </section>
     <section class="tool-section">
         <div class="card">
-            <div class="drop" id="dropArea">Drop image or <button class="btn btn-ghost" id="pickBtn">Choose
-                    file</button></div>
-            <input type="file" id="fileInput" accept="image/*" />
+            <div class="drop" id="dropArea">Drop images or <button class="btn btn-ghost" id="pickBtn">Choose
+                    files</button></div>
+            <input type="file" id="fileInput" accept="image/*" multiple />
+            <div class="files-list" id="filesList" aria-live="polite"></div>
             <div class="row">
                 <div class="col"><label class="small">Format</label><select id="outFormat">
                         <option value="jpeg">JPEG</option>
@@ -159,7 +161,6 @@
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
 
-        // Variables declaration
         const pickBtn = document.getElementById('pickBtn'),
             fileInput = document.getElementById('fileInput'),
             dropArea = document.getElementById('dropArea'),
@@ -173,130 +174,96 @@
             sizeInfo = document.getElementById('sizeInfo'),
             logEl = document.getElementById('log');
 
-        let currentFile = null;
-        let originalImageURL = null;
-        let compressedImageURL = null;
+        let previewImageURL = null;
 
-        // Event Listeners
-        pickBtn.addEventListener('click', () => fileInput.click());
+        function log(msg) { logEl.textContent += msg + '\n'; }
 
-        dropArea.addEventListener('dragover', e => {
-            e.preventDefault();
-            dropArea.style.borderColor = '#0aa37f';
-        });
+        function revokePreviewURL() {
+            if (previewImageURL) {
+                URL.revokeObjectURL(previewImageURL);
+                previewImageURL = null;
+            }
+        }
 
-        dropArea.addEventListener('dragleave', () => {
-            dropArea.style.borderColor = '';
-        });
+        function loadPreview(file) {
+            revokePreviewURL();
+            previewImageURL = URL.createObjectURL(file);
+            preview.innerHTML = `<img src="${previewImageURL}" style="max-width:420px;border-radius:8px">`;
+            logEl.textContent = `Loaded: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        }
 
-        dropArea.addEventListener('drop', e => {
-            e.preventDefault();
-            if (e.dataTransfer.files.length) {
-                fileInput.files = e.dataTransfer.files;
-                fileInput.dispatchEvent(new Event('change'));
+        const fileQueue = new BatchFileQueue({
+            fileInput, dropArea, pickBtn,
+            listContainer: document.getElementById('filesList'),
+            accept: 'image/*',
+            showThumbnails: true,
+            interactive: true,
+            onActiveChange: (entry) => {
+                if (entry) loadPreview(entry.file);
+                else { revokePreviewURL(); preview.innerHTML = ''; }
             }
         });
 
         quality.addEventListener('input', () => qVal.textContent = quality.value);
 
-        fileInput.addEventListener('change', () => {
-            if (fileInput.files.length === 0) return;
+        async function loadImage(file) {
+            const dataUrl = await new Promise((res, rej) => {
+                const r = new FileReader();
+                r.onload = () => res(r.result);
+                r.onerror = rej;
+                r.readAsDataURL(file);
+            });
+            const img = new Image();
+            img.src = dataUrl;
+            await img.decode();
+            return img;
+        }
 
-            currentFile = fileInput.files[0];
+        async function processOneFile(file) {
+            const img = await loadImage(file);
+            const canvas = document.createElement('canvas');
+            canvas.width = img.naturalWidth;
+            canvas.height = img.naturalHeight;
+            canvas.getContext('2d').drawImage(img, 0, 0);
+            const fmt = outFormat.value;
+            const q = parseInt(quality.value) / 100;
+            const mime = fmt === 'jpeg' ? 'image/jpeg' : (fmt === 'webp' ? 'image/webp' : 'image/png');
+            const blob = await new Promise(resolve => canvas.toBlob(resolve, mime, fmt === 'png' ? undefined : q));
+            const ext = fmt === 'jpeg' ? 'jpg' : fmt;
+            return { blob, filename: file.name.replace(/\.[^/.]+$/, '') + '-compressed.' + ext };
+        }
 
-            // Release previous image URL
-            if (originalImageURL) {
-                URL.revokeObjectURL(originalImageURL);
-            }
-
-            originalImageURL = URL.createObjectURL(currentFile);
-            preview.innerHTML = `<img src="${originalImageURL}" style="max-width:420px;border-radius:8px">`;
-            logEl.textContent = `Loaded: ${currentFile.name} (${(currentFile.size / 1024).toFixed(1)} KB)`;
+        startBtn.addEventListener('click', async () => {
+            const files = fileQueue.files;
+            if (!files.length) return alert('कृपया image निवडा');
+            startBtn.disabled = true;
+            downloadLink.style.display = 'none';
+            sizeInfo.textContent = '';
+            logEl.textContent = 'Processing...\n';
+            const { results, errors } = await BatchProcessor.run(files, processOneFile, {
+                queue: fileQueue,
+                onProgress: (c, t, f) => log(`Processing ${c}/${t}: ${f.name}`)
+            });
+            if (results.length) BatchProcessor.deliver(results);
+            if (errors.length) log(`Errors: ${errors.length}`);
+            log('Done.');
+            startBtn.disabled = false;
         });
 
-        // Reset Function
         resetBtn.addEventListener('click', () => {
-            // Reset file input
-            currentFile = null;
-            fileInput.value = '';
-
-            // Reset format and quality
+            fileQueue.clear();
             outFormat.value = 'jpeg';
             quality.value = 75;
             qVal.textContent = '75';
-
-            // Reset UI elements
             downloadLink.style.display = 'none';
             sizeInfo.textContent = '';
+            revokePreviewURL();
             preview.innerHTML = '';
             logEl.textContent = 'Ready.';
-            dropArea.style.borderColor = '';
-
-            // Release all Object URLs
-            if (originalImageURL) {
-                URL.revokeObjectURL(originalImageURL);
-                originalImageURL = null;
-            }
-
-            if (compressedImageURL) {
-                URL.revokeObjectURL(compressedImageURL);
-                compressedImageURL = null;
-            }
-
             if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
                 URL.revokeObjectURL(downloadLink.href);
                 downloadLink.href = '#';
             }
-        });
-
-        // Compress Function
-        startBtn.addEventListener('click', async () => {
-            if (!currentFile) return alert('कृपया image निवडा');
-
-            const reader = new FileReader();
-            reader.onload = async e => {
-                const img = new Image();
-                img.src = e.target.result;
-                await img.decode();
-
-                const canvas = document.createElement('canvas');
-                canvas.width = img.naturalWidth;
-                canvas.height = img.naturalHeight;
-                const ctx = canvas.getContext('2d');
-                ctx.drawImage(img, 0, 0);
-
-                const fmt = outFormat.value;
-                const q = parseInt(quality.value) / 100;
-                const mime = fmt === 'jpeg' ? 'image/jpeg' : (fmt === 'webp' ? 'image/webp' : 'image/png');
-
-                canvas.toBlob(b => {
-                    // Release previous compressed image URL
-                    if (compressedImageURL) {
-                        URL.revokeObjectURL(compressedImageURL);
-                    }
-
-                    compressedImageURL = URL.createObjectURL(b);
-                    preview.innerHTML = `<img src="${compressedImageURL}" style="max-width:420px;border-radius:8px">`;
-
-                    // Release previous download link URL
-                    if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
-                        URL.revokeObjectURL(downloadLink.href);
-                    }
-
-                    downloadLink.href = compressedImageURL;
-                    downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-compressed.' + (fmt === 'jpeg' ? 'jpg' : fmt);
-                    downloadLink.textContent = 'Download';
-                    downloadLink.style.display = 'inline-block';
-
-                    const originalSize = currentFile.size / 1024;
-                    const compressedSize = b.size / 1024;
-                    const reduction = ((1 - (compressedSize / originalSize)) * 100).toFixed(1);
-
-                    sizeInfo.textContent = `Output: ${compressedSize.toFixed(1)} KB`;
-                    logEl.textContent = `Original: ${originalSize.toFixed(1)} KB\nCompressed: ${compressedSize.toFixed(1)} KB\nReduction: ${reduction}%`;
-                }, mime, fmt === 'png' ? undefined : q);
-            }
-            reader.readAsDataURL(currentFile);
         });
     </script>
     <script type="module" src="/js/firebase-config.js"></script>

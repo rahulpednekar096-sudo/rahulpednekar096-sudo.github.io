@@ -37,6 +37,7 @@
 
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/windows-tools/js/batch-files.js"></script>
 
 
   <script type="application/ld+json">
@@ -89,9 +90,10 @@
       otherwise a text-based slide image is generated.</p>
   </section>
   <section class="section">
-    <div class="drop" id="dropArea">Drop PPTX here or <button class="btn" id="pickBtn">Choose file</button>
-      <input type="file" id="fileInput" accept=".pptx" style="display:none" />
+    <div class="drop" id="dropArea">Drop PPTX files here or <button class="btn" id="pickBtn">Choose files</button>
+      <input type="file" id="fileInput" accept=".pptx" multiple style="display:none" />
     </div>
+    <div class="files-list" id="filesList" aria-live="polite"></div>
 
     <div class="controls">
       <div class="control">
@@ -219,7 +221,24 @@
     const downloadArea = document.getElementById('downloadArea');
 
     let zipFile = null;
-    let slides = []; // {id, imageBlob (optional), text (optional), thumbDataUrl, selected}
+    let slides = [];
+    const slidesStateMap = new Map();
+
+    const fileQueue = new BatchFileQueue({
+      fileInput, dropArea, pickBtn,
+      listContainer: document.getElementById('filesList'),
+      accept: '.pptx',
+      interactive: true,
+      onActiveChange: async (entry) => {
+        if (!entry) { slides = []; thumbs.innerHTML = ''; return; }
+        if (slidesStateMap.has(entry.id)) {
+          slides = slidesStateMap.get(entry.id).slice();
+          renderThumbs();
+          return;
+        }
+        await handleFile(entry.file, entry.id);
+      }
+    });
 
     function log(msg) {
       logEl.textContent += "\n" + msg;
@@ -245,26 +264,8 @@
       downloadArea.style.display = "none";
     }
 
-    pickBtn.addEventListener('click', () => fileInput.click());
-    fileInput.addEventListener('change', e => handleFile(e.target.files[0]));
-
-    dropArea.addEventListener('dragover', e => {
-      e.preventDefault();
-      dropArea.classList.add('dragover');
-    });
-
-    dropArea.addEventListener('dragleave', () => dropArea.classList.remove('dragover'));
-
-    dropArea.addEventListener('drop', e => {
-      e.preventDefault();
-      dropArea.classList.remove('dragover');
-      if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
-    });
-
-    async function handleFile(file) {
+    async function handleFile(file, entryId) {
       if (!file) return;
-
-      clearAll();
       log('Loading PPTX: ' + file.name);
 
       try {
@@ -367,6 +368,7 @@
 
         log('✓ Prepared ' + slides.length + ' slides for export.');
         hideDownloadArea();
+        if (entryId) slidesStateMap.set(entryId, slides.map(s => ({ ...s })));
 
       } catch (error) {
         log('✗ Error loading PPTX: ' + error.message);
@@ -450,24 +452,7 @@
       ctx.fillText(line, x, y);
     }
 
-    convertBtn.addEventListener('click', async () => {
-      if (!slides.length) {
-        alert('Please load a PPTX file first.');
-        return;
-      }
-
-      const selectedSlides = slides.filter(s => s.selected);
-      if (!selectedSlides.length) {
-        alert('Please select at least one slide to convert.');
-        return;
-      }
-
-      convertBtn.disabled = true;
-      setProgress(0);
-      log('Creating PDF...');
-      hideDownloadArea();
-
-      try {
+    async function createPdfFromSlides(selectedSlides, filename) {
         const { jsPDF } = window.jspdf;
         // determine page size
         let pdf;
@@ -527,83 +512,54 @@
           await briefYield(50);
         }
 
-        // Generate PDF blob
         const pdfBlob = pdf.output('blob');
-        const pdfSize = (pdfBlob.size / (1024 * 1024)).toFixed(2);
-        const filename = outName.value.trim() || 'presentation.pdf';
+        return { blob: pdfBlob, filename: filename || 'presentation.pdf' };
+    }
 
-        // Show download area with nice UI
-        const successHTML = `
-            <div style="background:#0a1a1a; padding:15px; border-radius:8px; border:1px solid #1a3a2e;">
-              <h3 style="margin-top:0; color:#0aa37f; font-size:18px; margin-bottom:15px;">Conversion Complete</h3>
-              <div style="background:#0a2a1e; color:#9fbfb0; padding:15px; border-radius:8px; margin-top:10px;">
-                <strong style="color:#0aa37f; display:block; margin-bottom:8px;">✓ PDF Created Successfully!</strong>
-                <p>${selectedSlides.length} slides converted to PDF document.</p>
-                <p style="color:#0aa37f; font-size:14px; margin-top:10px;">
-                  <strong>File name:</strong> ${filename}<br>
-                  <strong>File size:</strong> ${pdfSize} MB<br>
-                  <small>Click the button below to download your PDF.</small>
-                </p>
-                <div style="margin-top:15px; text-align:center;">
-                  <button id="downloadPdfBtn" class="btn btn-primary" style="padding:12px 24px; font-size:16px; font-weight:bold;">
-                    📥 Download PDF File
-                  </button>
-                </div>
-                <div style="margin-top:15px; padding:10px; background:#1a3a2e; border-radius:5px;">
-                  <small style="color:#9fbfb0;">
-                    <strong>Tip:</strong> If the file doesn't download automatically:<br>
-                    1. Check your browser's downloads folder<br>
-                    2. Look for pop-up blockers<br>
-                    3. Try using Chrome or Firefox for best results
-                  </small>
-                </div>
-              </div>
-            </div>
-          `;
+    async function processOneFile(file, entryId) {
+      let slideList = [];
+      if (entryId && slidesStateMap.has(entryId)) {
+        slideList = slidesStateMap.get(entryId).filter(s => s.selected);
+      }
+      if (!slideList.length) {
+        await handleFile(file, entryId);
+        slideList = slides.filter(s => s.selected);
+      }
+      if (!slideList.length) throw new Error('No slides selected');
+      const fname = file.name.replace(/\.pptx$/i, '.pdf');
+      return createPdfFromSlides(slideList, fname);
+    }
 
-        downloadArea.innerHTML = successHTML;
-        showDownloadArea();
-
-        // Add event listener to the download button
-        document.getElementById('downloadPdfBtn').addEventListener('click', () => {
-          const url = URL.createObjectURL(pdfBlob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = filename;
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          setTimeout(() => URL.revokeObjectURL(url), 100);
-
-          log('✓ PDF file downloaded');
+    convertBtn.addEventListener('click', async () => {
+      const files = fileQueue.files;
+      if (!files.length) { alert('Please add PPTX file(s) first.'); return; }
+      if (fileQueue.activeEntry) slidesStateMap.set(fileQueue.activeEntry.id, slides.map(s => ({ ...s })));
+      convertBtn.disabled = true;
+      setProgress(0);
+      log('Creating PDF(s)...');
+      hideDownloadArea();
+      try {
+        const { results, errors } = await BatchProcessor.run(files, processOneFile, {
+          queue: fileQueue,
+          onProgress: (c, t) => setProgress(c / t)
         });
-
-        log(`✓ PDF created successfully! ${selectedSlides.length} slides, ${pdfSize} MB`);
-        setProgress(-1);
-
+        if (results.length) {
+          BatchProcessor.deliver(results, { container: downloadArea });
+          showDownloadArea();
+          log('✓ Done — ' + results.length + ' PDF(s).');
+        }
+        if (errors.length) log('Errors: ' + errors.length);
       } catch (error) {
         log('✗ Error creating PDF: ' + error.message);
-        alert('Failed to create PDF. Please try again with a different file or settings.');
       } finally {
         convertBtn.disabled = false;
         setProgress(-1);
       }
     });
 
-    function loadImage(src) {
-      return new Promise((res, rej) => {
-        const img = new Image();
-        img.onload = () => res(img);
-        img.onerror = rej;
-        img.src = src;
-      });
-    }
-
-    function briefYield(ms = 20) {
-      return new Promise(r => setTimeout(r, ms));
-    }
-
     function clearAll() {
+      fileQueue.clear();
+      slidesStateMap.clear();
       slides = [];
       zipFile = null;
       thumbs.innerHTML = '';

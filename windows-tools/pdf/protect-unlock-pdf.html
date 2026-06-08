@@ -35,6 +35,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script src="/windows-tools/js/batch-files.js"></script>
 
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -89,9 +90,10 @@
     <p class="lead">PDF To lock or unlock practical tool. (Browser-side Limitations — Please read the Notes below.)</p>
   </section>
   <div class="container">
-    <div class="drop" id="dropArea">Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
-      <input type="file" id="fileInput" accept="application/pdf" style="display:none">
+    <div class="drop" id="dropArea">Drop PDFs here or <button class="btn" id="pickBtn">Choose files</button>
+      <input type="file" id="fileInput" accept="application/pdf" multiple style="display:none">
     </div>
+    <div class="files-list" id="filesList" aria-live="polite"></div>
 
     <div class="controls">
       <div class="control">
@@ -215,11 +217,24 @@
     const runBtn = document.getElementById('runBtn'), clearBtn = document.getElementById('clearBtn');
     const logEl = document.getElementById('log'), progressWrap = document.getElementById('progressWrap'), progressBar = document.getElementById('progressBar');
     const previewWrap = document.getElementById('previewWrap'), outName = document.getElementById('outName'), addWatermark = document.getElementById('addWatermark');
-    let currentFile = null, pdfDoc = null;
+    let pdfDoc = null;
+
+    const fileQueue = new BatchFileQueue({
+      fileInput, dropArea, pickBtn,
+      listContainer: document.getElementById('filesList'),
+      accept: 'application/pdf',
+      interactive: true,
+      onActiveChange: async (entry) => {
+        previewWrap.innerHTML = '';
+        document.getElementById('meta').textContent = '';
+        if (!entry) return;
+        await previewFile(entry.file);
+      }
+    });
 
     function log(msg) { logEl.textContent += '\\n' + msg; logEl.scrollTop = logEl.scrollHeight; }
     function setProgress(p) { progressWrap.style.display = p >= 0 ? 'block' : 'none'; progressBar.style.width = ((p || 0) * 100).toFixed(1) + '%'; }
-    function clearAll() { currentFile = null; pdfDoc = null; previewWrap.innerHTML = ''; logEl.textContent = 'Ready.'; setProgress(-1); }
+    function clearAll() { fileQueue.clear(); pdfDoc = null; previewWrap.innerHTML = ''; logEl.textContent = 'Ready.'; setProgress(-1); }
 
     // UI mode switch
     modeSel.addEventListener('change', () => {
@@ -227,25 +242,12 @@
       else { protectOptions.style.display = 'none'; unlockOptions.style.display = 'block'; }
     });
 
-    pickBtn.addEventListener('click', () => fileInput.click());
-    fileInput.addEventListener('change', e => handleFile(e.target.files[0]));
-
-    dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f'; });
-    dropArea.addEventListener('dragleave', e => dropArea.style.borderColor = '#202426');
-    dropArea.addEventListener('drop', e => { e.preventDefault(); dropArea.style.borderColor = '#202426'; if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]); });
-
-    async function handleFile(file) {
-      if (!file) return;
-      if (file.type !== 'application/pdf') { alert('Please pick a PDF'); return; }
-      currentFile = file;
-      previewWrap.innerHTML = '';
+    async function previewFile(file) {
       log('Selected: ' + file.name + ' (' + (file.size / 1024).toFixed(1) + ' KB)');
-      // try to load with pdf.js without password first (will fail if encrypted)
       try {
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
-        pdfDoc = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
-        log('PDF loaded. Pages: ' + pdfDoc.numPages);
-        // render small thumb for first page
+        const pwd = modeSel.value === 'unlock' ? (pdfPwd.value || '') : undefined;
+        pdfDoc = await pdfjsLib.getDocument({ data: await file.arrayBuffer(), password: pwd }).promise;
         const page = await pdfDoc.getPage(1);
         const vp = page.getViewport({ scale: 0.2 });
         const canvas = document.createElement('canvas'); canvas.width = vp.width; canvas.height = vp.height;
@@ -254,8 +256,6 @@
         const d = document.createElement('div'); d.className = 'thumb'; d.appendChild(img); previewWrap.appendChild(d);
         document.getElementById('meta').textContent = 'Pages: ' + pdfDoc.numPages;
       } catch (err) {
-        // possibly password protected — show instruction
-        log('PDF load failed without password (may be encrypted). Use Unlock mode and provide password.');
         pdfDoc = null;
         document.getElementById('meta').textContent = 'Encrypted or unreadable (try Unlock with password).';
       }
@@ -263,100 +263,85 @@
 
     clearBtn.addEventListener('click', clearAll);
 
-    // Run logic
-    runBtn.addEventListener('click', async () => {
-      if (!currentFile) { alert('Please select a PDF first'); return; }
+    async function processOneFile(file) {
       if (modeSel.value === 'protect') {
-        // Protect via password-protected ZIP
         const pwd = (zipPwd.value || '').trim();
-        if (!pwd) { if (!confirm('No password entered — create ZIP without password? Press OK to continue.')) return; }
-        log('Preparing password-protected ZIP (AES) ...');
-        setProgress(0);
-        try {
-          const zip = new JSZip();
-          zip.file(currentFile.name, await currentFile.arrayBuffer());
-          if (pwd) {
-            // generate encrypted zip using JSZip generateAsync with compression/encryption is not native in JSZip.
-            // Workaround: create regular zip and then password-protect using a simple AES wrapper is non-trivial.
-            // So we will create a .zip and then create a small password-protected "container" via workaround: create Blob -> use sjcl? (not included)
-            // Practical approach: create a normal zip but name it .zip and also create a password-hint file — OR rely on WebCrypto to create encrypted blob manually.
-            // We'll implement AES-GCM encryption of the PDF bytes and store as .enc in zip together with a small README that explains how to decrypt (user must use the tool).
-            const fileBytes = await currentFile.arrayBuffer();
-            // AES-GCM encryption
-            const encKey = await crypto.subtle.importKey('raw', new TextEncoder().encode(pwd.padEnd(32).slice(0, 32)), 'AES-GCM', false, ['encrypt']);
-            const iv = crypto.getRandomValues(new Uint8Array(12));
-            const cipher = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, encKey, fileBytes);
-            zip.file(currentFile.name + '.enc', new Uint8Array(cipher));
-            zip.file('README.txt', 'This archive contains AES-GCM encrypted PDF. Use the same password with the RDroidApps "Unlock (from ZIP)" feature to decrypt.');
-            const blob = await zip.generateAsync({ type: 'blob' });
-            saveAs(blob, (outName.value || 'protected') + '.zip');
-            log('Encrypted package (AES-GCM) created and downloaded as ZIP. Note: This is a secure client-side container (PDF itself unchanged).');
-          } else {
-            const blob = await zip.generateAsync({ type: 'blob' });
-            saveAs(blob, (outName.value || 'protected') + '.zip');
-          }
-        } catch (e) {
-          log('Protect failed: ' + (e.message || e));
-          alert('Protect failed: ' + (e.message || e));
-        } finally {
-          setProgress(-1);
+        const zip = new JSZip();
+        const fileBytes = await file.arrayBuffer();
+        if (pwd) {
+          const encKey = await crypto.subtle.importKey('raw', new TextEncoder().encode(pwd.padEnd(32).slice(0, 32)), 'AES-GCM', false, ['encrypt']);
+          const iv = crypto.getRandomValues(new Uint8Array(12));
+          const cipher = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, encKey, fileBytes);
+          zip.file(file.name + '.enc', new Uint8Array(cipher));
+          zip.file('README.txt', 'AES-GCM encrypted PDF. Use the same password with RDroidApps Unlock feature.');
+        } else {
+          zip.file(file.name, fileBytes);
         }
-      } else {
-        // Unlock mode: attempt to open with provided password via pdf.js and then re-create unlocked PDF (image-based)
-        const pwd = pdfPwd.value || '';
-        if (!pwd) { if (!confirm('No password entered. If PDF is encrypted you must provide correct password. Continue without password?')) { } }
-        log('Attempting to open PDF with provided password...');
-        setProgress(0);
-        try {
-          // pdf.js supports password callback by passing password option
-          let pdfDocLocal;
-          try {
-            const arr = await currentFile.arrayBuffer();
-            pdfDocLocal = await pdfjsLib.getDocument({ data: arr, password: pwd }).promise;
-          } catch (err) {
-            log('Failed to open PDF with given password: ' + (err.message || err));
-            alert('Failed to open PDF. Check password.');
-            setProgress(-1);
-            return;
-          }
-          log('PDF opened. Rendering pages to reconstruct unlocked PDF (image-based). This preserves visual fidelity but text will not be selectable.');
-          const pagesToProcess = pdfDocLocal.numPages;
-          const newPdfDoc = await PDFLib.PDFDocument.create();
-          for (let i = 1; i <= pagesToProcess; i++) {
-            log('Rendering page ' + i + ' / ' + pagesToProcess);
-            const page = await pdfDocLocal.getPage(i);
-            const viewport = page.getViewport({ scale: 1.5 }); // higher scale for better quality
-            const canvas = document.createElement('canvas');
-            canvas.width = Math.round(viewport.width);
-            canvas.height = Math.round(viewport.height);
-            const ctx = canvas.getContext('2d');
-            await page.render({ canvasContext: ctx, viewport }).promise;
-            // optional watermark
-            if (addWatermark.checked) {
-              ctx.fillStyle = 'rgba(255,0,0,0.08)';
-              ctx.font = '48px sans-serif';
-              ctx.translate(canvas.width / 2, canvas.height / 2);
-              ctx.rotate(-0.6);
-              ctx.fillText('PROTECTED', -200, 0);
-              ctx.setTransform(1, 0, 0, 1, 0, 0);
-            }
-            const dataUrl = canvas.toDataURL('image/jpeg', 0.95);
-            const imgBytes = dataURLToUint8Array(dataUrl);
-            const img = await newPdfDoc.embedJpg(imgBytes);
-            const dims = img.scale(1);
-            const pageObj = newPdfDoc.addPage([dims.width, dims.height]);
-            pageObj.drawImage(img, { x: 0, y: 0, width: dims.width, height: dims.height });
-            setProgress(i / pagesToProcess);
-            await new Promise(r => setTimeout(r, 20));
-          }
-          const outBytes = await newPdfDoc.save();
-          const outBlob = new Blob([outBytes], { type: 'application/pdf' });
-          saveAs(outBlob, (outName.value || 'unlocked') + '.pdf');
-          log('Unlocked PDF created (image-based). Download started.');
-        } catch (e) {
-          log('Unlock failed: ' + (e.message || e));
-          alert('Unlock failed: ' + (e.message || e));
-        } finally { setProgress(-1); }
+        const blob = await zip.generateAsync({ type: 'blob' });
+        return { blob, filename: file.name.replace(/\.pdf$/i, '') + '-protected.zip' };
+      }
+      const pwd = pdfPwd.value || '';
+      const arr = await file.arrayBuffer();
+      const pdfDocLocal = await pdfjsLib.getDocument({ data: arr, password: pwd }).promise;
+      const newPdfDoc = await PDFLib.PDFDocument.create();
+      for (let i = 1; i <= pdfDocLocal.numPages; i++) {
+        const page = await pdfDocLocal.getPage(i);
+        const viewport = page.getViewport({ scale: 1.5 });
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.round(viewport.width);
+        canvas.height = Math.round(viewport.height);
+        const ctx = canvas.getContext('2d');
+        await page.render({ canvasContext: ctx, viewport }).promise;
+        if (addWatermark.checked) {
+          ctx.fillStyle = 'rgba(255,0,0,0.08)';
+          ctx.font = '48px sans-serif';
+          ctx.translate(canvas.width / 2, canvas.height / 2);
+          ctx.rotate(-0.6);
+          ctx.fillText('PROTECTED', -200, 0);
+          ctx.setTransform(1, 0, 0, 1, 0, 0);
+        }
+        const imgBytes = dataURLToUint8Array(canvas.toDataURL('image/jpeg', 0.95));
+        const img = await newPdfDoc.embedJpg(imgBytes);
+        const dims = img.scale(1);
+        const pageObj = newPdfDoc.addPage([dims.width, dims.height]);
+        pageObj.drawImage(img, { x: 0, y: 0, width: dims.width, height: dims.height });
+      }
+      const outBytes = await newPdfDoc.save();
+      return {
+        blob: new Blob([outBytes], { type: 'application/pdf' }),
+        filename: file.name.replace(/\.pdf$/i, '_unlocked.pdf')
+      };
+    }
+
+    runBtn.addEventListener('click', async () => {
+      const files = fileQueue.files;
+      if (!files.length) { alert('Please select PDF file(s) first'); return; }
+      const pwd = modeSel.value === 'protect' ? (zipPwd.value || '').trim() : (pdfPwd.value || '');
+      if (modeSel.value === 'protect' && !pwd) {
+        if (!confirm('No password entered — create ZIP without encryption?')) return;
+      }
+      log('Processing ' + files.length + ' PDF(s) with same password settings...');
+      setProgress(0);
+      runBtn.disabled = true;
+      try {
+        const { results, errors } = await BatchProcessor.run(files, processOneFile, {
+          queue: fileQueue,
+          onProgress: (c, t) => setProgress(c / t)
+        });
+        if (results.length) {
+          BatchProcessor.deliver(results);
+          log('Done — ' + results.length + ' file(s).');
+        }
+        if (errors.length) {
+          log('Errors: ' + errors.length + ' (check password for encrypted PDFs).');
+          alert('Some files failed. Ensure the same password works for all encrypted PDFs.');
+        }
+      } catch (e) {
+        log('Failed: ' + (e.message || e));
+        alert('Operation failed: ' + (e.message || e));
+      } finally {
+        runBtn.disabled = false;
+        setProgress(-1);
       }
     });
 

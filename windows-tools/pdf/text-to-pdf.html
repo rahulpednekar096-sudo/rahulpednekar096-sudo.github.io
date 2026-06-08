@@ -34,6 +34,8 @@
 
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="/windows-tools/js/batch-files.js"></script>
 
 
   <!-- Font Awesome for icons -->
@@ -205,16 +207,11 @@
       <div id="successMessage" class="success-message"></div>
 
       <!-- File Upload -->
-      <div class="feature-control">
-        <label>Upload TXT File:</label>
-        <div class="file-upload">
-          <input type="file" id="fileInput" accept=".txt" style="display: none;">
-          <label for="fileInput" class="file-upload-label">
-            <i class="fas fa-upload"></i> Choose TXT File
-          </label>
-          <span id="fileName" style="margin-left: 10px;">No file chosen</span>
-        </div>
+      <div class="drop" id="dropArea">Drop TXT files or <button class="btn" id="pickBtn">Choose files</button>
+        <input type="file" id="fileInput" accept=".txt" multiple style="display:none">
       </div>
+      <div class="files-list" id="filesList" aria-live="polite"></div>
+      <span id="fileName" class="muted small" style="display:block;margin:8px 0">Or type/paste text below</span>
 
       <textarea id="txt" placeholder="Enter your text here..."></textarea>
 
@@ -347,7 +344,22 @@
     const logEl = document.getElementById("log");
     const download = document.getElementById("download");
     const fileInput = document.getElementById("fileInput");
+    const pickBtn = document.getElementById("pickBtn");
+    const dropArea = document.getElementById("dropArea");
     const fileName = document.getElementById("fileName");
+
+    const fileQueue = new BatchFileQueue({
+      fileInput, dropArea, pickBtn,
+      listContainer: document.getElementById('filesList'),
+      accept: '.txt',
+      interactive: true,
+      onActiveChange: async (entry) => {
+        if (!entry) { txt.value = ''; fileName.textContent = 'Or type/paste text below'; return; }
+        fileName.textContent = entry.file.name;
+        txt.value = await entry.file.text();
+        generatePreview();
+      }
+    });
     const previewContainer = document.getElementById("previewContainer");
     const previewContent = document.getElementById("previewContent");
     const errorMessage = document.getElementById("errorMessage");
@@ -449,37 +461,11 @@
       previewContainer.style.display = 'block';
     }
 
-    // File upload handling
-    fileInput.addEventListener('change', function (e) {
-      const file = e.target.files[0];
-      if (!file) return;
-
-      if (!file.name.toLowerCase().endsWith('.txt')) {
-        showError('Please select a .txt file');
-        return;
-      }
-
-      fileName.textContent = file.name;
-
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        txt.value = e.target.result;
-        generatePreview();
-        showSuccess('File loaded successfully!');
-      };
-
-      reader.onerror = function () {
-        showError('Error reading file');
-      };
-
-      reader.readAsText(file);
-    });
-
     // Clear all button
     document.getElementById("clearBtn").onclick = function () {
+      fileQueue.clear();
       txt.value = '';
-      fileInput.value = '';
-      fileName.textContent = 'No file chosen';
+      fileName.textContent = 'Or type/paste text below';
       document.getElementById("header").value = '';
       document.getElementById("footer").value = '';
       previewContainer.style.display = 'none';
@@ -505,9 +491,88 @@
     // Add input event for textarea for real-time preview
     txt.addEventListener('input', generatePreview);
 
-    // Main conversion function
+    async function buildPdfBlob(content) {
+      const { jsPDF } = window.jspdf;
+      const size = document.getElementById("pageSize").value === "A4" ? "a4" : "letter";
+      const orient = document.getElementById("orientation").value === "p" ? "portrait" : "landscape";
+      const margin = parseFloat(document.getElementById("margin").value) || 10;
+      const fs = parseFloat(document.getElementById("fontSize").value) || 12;
+      const gap = parseFloat(document.getElementById("lineGap").value) || 6;
+      const fontFamily = document.getElementById("fontFamily").value;
+      const header = document.getElementById("header").value;
+      const footer = document.getElementById("footer").value;
+      const autoPageNumbers = document.getElementById("autoPageNumbers").checked;
+      const pdf = new jsPDF({ unit: "mm", format: size, orientation: orient });
+      if (fontFamily === 'notosansdevanagari') {
+        pdf.addFileToVFS('NotoSansDevanagari-Regular.ttf', notoSansDevanagariBase64);
+        pdf.addFont('NotoSansDevanagari-Regular.ttf', 'NotoSansDevanagari', 'normal');
+        pdf.setFont('NotoSansDevanagari');
+      } else pdf.setFont('helvetica');
+      pdf.setFontSize(fs);
+      let y = margin, pageNum = 1;
+      const processedContent = processTextWithTabs(content);
+      const lines = processedContent.split("\n");
+      function addPageFooter(cn, tn) {
+        let ft = footer;
+        if (autoPageNumbers) ft = ft ? `${ft} | Page ${cn} of ${tn}` : `Page ${cn} of ${tn}`;
+        if (ft) pdf.text(ft, margin, pdf.internal.pageSize.getHeight() - 6);
+      }
+      let tempY = margin, tempPageCount = 1;
+      for (let i = 0; i < lines.length; i++) {
+        if (tempY === margin && header) tempY += fs + 3;
+        const wrapped = pdf.splitTextToSize(lines[i], pdf.internal.pageSize.getWidth() - margin * 2);
+        for (let j = 0; j < wrapped.length; j++) {
+          tempY += fs + gap;
+          if (tempY > pdf.internal.pageSize.getHeight() - margin) { tempPageCount++; tempY = margin; if (header) tempY += fs + 3; }
+        }
+      }
+      const totalPages = tempPageCount;
+      for (let i = 0; i < lines.length; i++) {
+        if (y === margin && header) { pdf.text(header, margin, y); y += fs + 3; }
+        const wrapped = pdf.splitTextToSize(lines[i], pdf.internal.pageSize.getWidth() - margin * 2);
+        wrapped.forEach(line => {
+          if (y > pdf.internal.pageSize.getHeight() - margin) {
+            addPageFooter(pageNum, totalPages);
+            pdf.addPage(); pageNum++; y = margin;
+            if (header) { pdf.text(header, margin, y); y += fs + 3; }
+          }
+          pdf.text(line, margin, y); y += fs + gap;
+        });
+      }
+      addPageFooter(pageNum, totalPages);
+      return pdf.output("blob");
+    }
+
+    async function processOneFile(file) {
+      const content = await file.text();
+      if (!content.trim()) throw new Error('Empty file');
+      return { blob: await buildPdfBlob(content), filename: file.name.replace(/\.txt$/i, '.pdf') };
+    }
+
     document.getElementById("convertBtn").onclick = async () => {
       if (isConverting) return;
+      const files = fileQueue.files;
+      if (files.length > 1 || (files.length === 1 && !txt.value.trim())) {
+        isConverting = true;
+        convertText.style.display = 'none';
+        convertSpinner.style.display = 'inline-block';
+        progressContainer.style.display = 'block';
+        try {
+          const { results, errors } = await BatchProcessor.run(files, processOneFile, {
+            queue: fileQueue,
+            onProgress: (c, t) => updateProgress((c / t) * 100, `Converting ${c}/${t}...`, c, t)
+          });
+          if (results.length) BatchProcessor.deliver(results);
+          if (errors.length) showError('Some files failed: ' + errors.length);
+          else showSuccess('Batch conversion complete!');
+        } finally {
+          isConverting = false;
+          convertText.style.display = 'inline';
+          convertSpinner.style.display = 'none';
+          progressContainer.style.display = 'none';
+        }
+        return;
+      }
 
       const content = txt.value.trim();
       if (!content) {
@@ -539,113 +604,10 @@
 
         updateProgress(30, "Setting up document...", 1, 1);
 
-        // Create PDF
-        const pdf = new jsPDF({ unit: "mm", format: size, orientation: orient });
-
-        // Set font based on selection
-        if (fontFamily === 'notosansdevanagari') {
-          // Use Noto Sans Devanagari font
-          pdf.addFileToVFS('NotoSansDevanagari-Regular.ttf', notoSansDevanagariBase64);
-          pdf.addFont('NotoSansDevanagari-Regular.ttf', 'NotoSansDevanagari', 'normal');
-          pdf.setFont('NotoSansDevanagari');
-        } else {
-          pdf.setFont('helvetica');
-        }
-
-        pdf.setFontSize(fs);
-
-        let y = margin;
+        updateProgress(50, "Building PDF...", 1, 1);
+        const blob = await buildPdfBlob(content);
         let pageNum = 1;
-        const processedContent = processTextWithTabs(content);
-        const lines = processedContent.split("\n");
-
-        updateProgress(50, "Adding content to PDF...", pageNum, 1);
-
-        // Function to add page number to footer
-        function addPageFooter(currentPageNum, totalPagesNum) {
-          let footerText = footer;
-          if (autoPageNumbers) {
-            const pageText = `Page ${currentPageNum} of ${totalPagesNum}`;
-            footerText = footerText ? `${footerText} | ${pageText}` : pageText;
-          }
-          if (footerText) {
-            pdf.text(footerText, margin, pdf.internal.pageSize.getHeight() - 6);
-          }
-        }
-
-        // First pass to count total pages
-        updateProgress(60, "Calculating total pages...", pageNum, 1);
-        let tempY = margin;
-        let tempPageCount = 1;
-
-        for (let i = 0; i < lines.length; i++) {
-          if (tempY === margin && header) {
-            tempY += fs + 3;
-          }
-
-          const wrapped = pdf.splitTextToSize(lines[i], pdf.internal.pageSize.getWidth() - margin * 2);
-
-          for (let j = 0; j < wrapped.length; j++) {
-            tempY += fs + gap;
-
-            if (tempY > pdf.internal.pageSize.getHeight() - margin) {
-              tempPageCount++;
-              tempY = margin;
-              if (header) {
-                tempY += fs + 3;
-              }
-            }
-          }
-        }
-
-        totalPages = tempPageCount;
-
-        updateProgress(70, `Processing ${lines.length} lines...`, pageNum, totalPages);
-
-        // Second pass to actually create PDF
-        for (let i = 0; i < lines.length; i++) {
-          // Add header on new page
-          if (y === margin && header) {
-            pdf.text(header, margin, y);
-            y += fs + 3;
-          }
-
-          const wrapped = pdf.splitTextToSize(lines[i], pdf.internal.pageSize.getWidth() - margin * 2);
-
-          wrapped.forEach(line => {
-            // Check if we need a new page
-            if (y > pdf.internal.pageSize.getHeight() - margin) {
-              // Add footer to current page
-              addPageFooter(pageNum, totalPages);
-
-              // Add new page
-              pdf.addPage();
-              pageNum++;
-              y = margin;
-
-              // Update progress
-              updateProgress(70 + (i / lines.length * 20), `Processing page ${pageNum}...`, pageNum, totalPages);
-
-              // Add header to new page
-              if (header) {
-                pdf.text(header, margin, y);
-                y += fs + 3;
-              }
-            }
-
-            // Add text line
-            pdf.text(line, margin, y);
-            y += fs + gap;
-          });
-        }
-
-        // Add footer to last page
-        addPageFooter(pageNum, totalPages);
-
-        updateProgress(95, "Finalizing PDF...", pageNum, totalPages);
-
-        // Create download link
-        const blob = pdf.output("blob");
+        updateProgress(95, "Finalizing PDF...", pageNum, 1);
         const a = document.createElement("a");
         a.href = URL.createObjectURL(blob);
         a.download = "text-converted.pdf";

@@ -36,6 +36,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
   <!-- FileSaver -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="/windows-tools/js/batch-files.js"></script>
 
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -91,9 +93,10 @@
       — lossless.</p>
   </section>
   <div class="container">
-    <div class="drop" id="dropArea">Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
-      <input type="file" id="fileInput" accept="application/pdf" style="display:none">
+    <div class="drop" id="dropArea">Drop PDFs here or <button class="btn" id="pickBtn">Choose files</button>
+      <input type="file" id="fileInput" accept="application/pdf" multiple style="display:none">
     </div>
+    <div class="files-list" id="filesList" aria-live="polite"></div>
 
     <div class="controls">
       <div class="control">
@@ -215,8 +218,32 @@
     const successStatus = document.getElementById('successStatus');
     const clearBtn = document.getElementById('clearBtn');
 
-    let srcBytes = null, pdfDocJS = null, pageCount = 0, perPageRotation = []; // rotation degrees 0/90/180/270
+    let srcBytes = null, pdfDocJS = null, pageCount = 0, perPageRotation = [];
     let processedBlob = null;
+    const rotationStateMap = new Map();
+
+    const fileQueue = new BatchFileQueue({
+      fileInput, dropArea, pickBtn,
+      listContainer: document.getElementById('filesList'),
+      accept: 'application/pdf',
+      interactive: true,
+      onActiveChange: async (entry) => {
+        if (!entry) {
+          srcBytes = null; pdfDocJS = null; pageCount = 0; perPageRotation = [];
+          thumbsWrap.innerHTML = ''; downloadBtn.style.display = 'none'; hideAllStatus();
+          return;
+        }
+        if (rotationStateMap.has(entry.id)) {
+          const s = rotationStateMap.get(entry.id);
+          srcBytes = s.srcBytes; pdfDocJS = s.pdfDocJS; pageCount = s.pageCount;
+          perPageRotation = s.perPageRotation.slice();
+          outName.value = entry.file.name.replace(/\.pdf$/i, '_rotated.pdf');
+          await renderThumbs();
+          return;
+        }
+        await loadFile(entry.file, entry.id);
+      }
+    });
 
     function log(msg) { logEl.textContent += '\n' + msg; logEl.scrollTop = logEl.scrollHeight; }
 
@@ -266,8 +293,8 @@
       downloadBtn.disabled = true;
       hideAllStatus();
 
-      // Reset file input
-      fileInput.value = '';
+      fileQueue.clear();
+      rotationStateMap.clear();
 
       // Reset drop area style
       dropArea.style.borderColor = '#202426';
@@ -287,38 +314,29 @@
     downloadBtn.disabled = true;
     hideAllStatus();
 
-    pickBtn.addEventListener('click', () => fileInput.click());
-    fileInput.addEventListener('change', e => loadFile(e.target.files[0]));
-
-    // All Clear button event
     clearBtn.addEventListener('click', clearAll);
 
-    dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f'; });
-    dropArea.addEventListener('dragleave', () => dropArea.style.borderColor = '#202426');
-    dropArea.addEventListener('drop', e => {
-      e.preventDefault();
-      dropArea.style.borderColor = '#202426';
-      if (e.dataTransfer.files.length) loadFile(e.dataTransfer.files[0]);
-    });
+    function saveRotationState(entryId) {
+      if (!entryId || !srcBytes) return;
+      rotationStateMap.set(entryId, {
+        srcBytes, pdfDocJS, pageCount,
+        perPageRotation: perPageRotation.slice()
+      });
+    }
 
-    async function loadFile(file) {
+    async function loadFile(file, entryId) {
       if (!file) return;
-      if (file.type !== 'application/pdf') { alert('Select a PDF'); return; }
       log('Loading ' + file.name);
       hideAllStatus();
       srcBytes = await file.arrayBuffer();
-      // Set output filename based on input
       outName.value = file.name.replace(/\.pdf$/i, '_rotated.pdf');
-
-      // load pdf.js to render thumbnails
       pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
       pdfDocJS = await pdfjsLib.getDocument({ data: srcBytes }).promise;
       pageCount = pdfDocJS.numPages;
       perPageRotation = new Array(pageCount).fill(0);
-      renderThumbs();
+      if (entryId) saveRotationState(entryId);
+      await renderThumbs();
       log('Loaded pages: ' + pageCount);
-
-      // Hide download button when new file is loaded (until apply is clicked)
       downloadBtn.style.display = 'none';
       downloadBtn.disabled = true;
     }
@@ -339,7 +357,11 @@
         const actions = document.createElement('div'); actions.style.marginTop = '8px';
         ['0', '90', '180', '270'].forEach(a => {
           const b = document.createElement('button'); b.className = 'btn'; b.textContent = a + '°'; b.style.marginRight = '6px';
-          b.addEventListener('click', () => { perPageRotation[i - 1] = parseInt(a); log('Page ' + i + ' rotation set to ' + a + '°'); });
+          b.addEventListener('click', () => {
+            perPageRotation[i - 1] = parseInt(a);
+            log('Page ' + i + ' rotation set to ' + a + '°');
+            if (fileQueue.activeEntry) saveRotationState(fileQueue.activeEntry.id);
+          });
           actions.appendChild(b);
         });
         div.appendChild(actions);
@@ -347,57 +369,72 @@
       }
     }
 
-    applyBtn.addEventListener('click', async () => {
-      if (!srcBytes) { alert('Load a PDF first'); return; }
+    async function rotateOneFile(file, entryId) {
+      let bytes, rotations, pc;
+      if (entryId && rotationStateMap.has(entryId)) {
+        const s = rotationStateMap.get(entryId);
+        bytes = s.srcBytes;
+        rotations = s.perPageRotation.slice();
+        pc = s.pageCount;
+      } else {
+        bytes = await file.arrayBuffer();
+        const tmp = await PDFLib.PDFDocument.load(bytes);
+        pc = tmp.getPageCount();
+        rotations = new Array(pc).fill(0);
+      }
       const chosenAngle = parseInt(angleSel.value);
       const doAll = actionSel.value === 'rotateAll';
-
-      // Show processing status
-      showProcessing();
-      log('Applying rotation...');
-      setProgress(0.3);
-
-      try {
-        const pdfLibDoc = await PDFLib.PDFDocument.load(srcBytes);
-        const pages = pdfLibDoc.getPages();
-
-        setProgress(0.5);
-
-        if (doAll) {
-          for (let i = 0; i < pages.length; i++) {
-            const page = pages[i];
-            // compute new rotation
-            const currentRot = (perPageRotation[i] || 0);
-            const newRot = (currentRot + chosenAngle) % 360;
-            page.setRotation(PDFLib.degrees(newRot));
-          }
-        } else {
-          // apply per-page specified rotation degrees + chosenAngle to pages which have been set via perPageRotation (non-zero)
-          for (let i = 0; i < pages.length; i++) {
-            const specified = perPageRotation[i] || 0;
-            if (specified !== 0) {
-              const newRot = (specified + chosenAngle) % 360;
-              pages[i].setRotation(PDFLib.degrees(newRot));
-            }
+      const pdfLibDoc = await PDFLib.PDFDocument.load(bytes);
+      const pdfPages = pdfLibDoc.getPages();
+      if (doAll) {
+        for (let i = 0; i < pdfPages.length; i++) {
+          const newRot = ((rotations[i] || 0) + chosenAngle) % 360;
+          pdfPages[i].setRotation(PDFLib.degrees(newRot));
+        }
+      } else {
+        for (let i = 0; i < pdfPages.length; i++) {
+          const specified = rotations[i] || 0;
+          if (specified !== 0) {
+            pdfPages[i].setRotation(PDFLib.degrees((specified + chosenAngle) % 360));
           }
         }
+      }
+      const outBytes = await pdfLibDoc.save();
+      return {
+        blob: new Blob([outBytes], { type: 'application/pdf' }),
+        filename: file.name.replace(/\.pdf$/i, '_rotated.pdf')
+      };
+    }
 
-        setProgress(0.8);
-        const outBytes = await pdfLibDoc.save();
-        processedBlob = new Blob([outBytes], { type: 'application/pdf' });
-
-        // Show success status and download button
-        showSuccess();
-
-        // Show and enable download button after apply
-        downloadBtn.style.display = 'block';
-        downloadBtn.disabled = false;
-        downloadBtn.onclick = () => saveAs(processedBlob, outName.value || 'rotated.pdf');
-        log('Rotation applied. Click Download to save.');
+    applyBtn.addEventListener('click', async () => {
+      const files = fileQueue.files;
+      if (!files.length) { alert('Add PDF files first'); return; }
+      if (fileQueue.activeEntry) saveRotationState(fileQueue.activeEntry.id);
+      showProcessing();
+      log('Applying rotation to ' + files.length + ' PDF(s)...');
+      applyBtn.disabled = true;
+      try {
+        const { results, errors } = await BatchProcessor.run(files, async (file, idx) => {
+          const entry = fileQueue.entries.find(e => e.file === file);
+          return rotateOneFile(file, entry ? entry.id : null);
+        }, { queue: fileQueue, onProgress: (c, t, f) => setProgress(c / t) });
+        if (results.length) {
+          const mode = BatchProcessor.deliver(results);
+          if (mode === 'single') {
+            processedBlob = results[0].blob;
+            downloadBtn.style.display = 'block';
+            downloadBtn.disabled = false;
+            downloadBtn.onclick = () => saveAs(processedBlob, results[0].filename);
+          }
+          showSuccess();
+          log('Rotation applied — ' + results.length + ' file(s) ready.');
+        }
+        if (errors.length) { hideAllStatus(); log('Errors: ' + errors.length); }
       } catch (e) {
         hideAllStatus();
         log('Rotation failed: ' + (e.message || e));
-        alert('Rotation failed: ' + (e.message || e));
+      } finally {
+        applyBtn.disabled = false;
       }
     });
   </script>

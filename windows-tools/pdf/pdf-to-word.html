@@ -41,6 +41,8 @@
 
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="/windows-tools/js/batch-files.js"></script>
 
 
   <script type="application/ld+json">
@@ -93,9 +95,10 @@
   </section>
   <section class="section">
     <div class="drop" id="dropArea">
-      Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
-      <input type="file" id="fileInput" accept="application/pdf" style="display:none">
+      Drop PDFs here or <button class="btn" id="pickBtn">Choose files</button>
+      <input type="file" id="fileInput" accept="application/pdf" multiple style="display:none">
     </div>
+    <div class="files-list" id="filesList" aria-live="polite"></div>
 
     <label><input type="checkbox" id="enableOCR"> Enable OCR (slower, better accuracy)</label>
 
@@ -180,28 +183,27 @@
     const download = document.getElementById("download");
     const enableOCR = document.getElementById("enableOCR");
     let currentPDF = null;
-    let docxLib = null; // We'll store the docx library here
+    let docxLib = null;
 
-    /* Utility */
+    const fileQueue = new BatchFileQueue({
+      fileInput, dropArea, pickBtn,
+      listContainer: document.getElementById('filesList'),
+      accept: 'application/pdf',
+      interactive: true,
+      onActiveChange: async (entry) => {
+        if (!entry) { currentPDF = null; thumbs.innerHTML = ''; return; }
+        await loadPDF(entry.file);
+      }
+    });
+
     function log(msg) { logEl.textContent += "\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
-    function clear() { logEl.textContent = "Ready."; thumbs.innerHTML = ""; download.innerHTML = ""; currentPDF = null; }
+    function clear() { fileQueue.clear(); logEl.textContent = "Ready."; thumbs.innerHTML = ""; download.innerHTML = ""; currentPDF = null; }
     function setProgress(p) { progressWrap.style.display = p >= 0 ? "block" : "none"; progressBar.style.width = (p * 100) + "%"; }
-
-    /* File select */
-    pickBtn.onclick = () => fileInput.click();
-    fileInput.onchange = e => loadPDF(e.target.files[0]);
-
-    dropArea.ondragover = e => { e.preventDefault(); dropArea.style.borderColor = "#0aa37f"; }
-    dropArea.ondragleave = () => dropArea.style.borderColor = "#222";
-    dropArea.ondrop = e => {
-      e.preventDefault(); dropArea.style.borderColor = "#222";
-      loadPDF(e.dataTransfer.files[0]);
-    };
 
     /* Load PDF */
     async function loadPDF(file) {
       if (!file) return;
-      clear();
+      download.innerHTML = "";
       log("Loading PDF...");
       const buf = await file.arrayBuffer();
       pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
@@ -239,21 +241,15 @@
       return docxLib;
     }
 
-    /* Convert to DOCX - Beautiful download button */
-    convertBtn.onclick = async () => {
-      if (!currentPDF) { alert("Select a PDF first"); return; }
-      log("Extracting text...");
-      setProgress(0);
-
+    async function processOneFile(file) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
+      const pdfDoc = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
       let wordContent = "";
       const doOCR = enableOCR.checked;
-
-      for (let i = 1; i <= currentPDF.numPages; i++) {
-        const page = await currentPDF.getPage(i);
+      for (let i = 1; i <= pdfDoc.numPages; i++) {
+        const page = await pdfDoc.getPage(i);
         let text = "";
-
         if (doOCR) {
-          log("OCR page " + i + "...");
           const vp = page.getViewport({ scale: 1 });
           const canvas = document.createElement("canvas");
           canvas.width = vp.width; canvas.height = vp.height;
@@ -261,108 +257,43 @@
           const ocr = await Tesseract.recognize(canvas, "eng");
           text = ocr.data.text;
         } else {
-          log("Extracting text from page " + i);
           const content = await page.getTextContent();
           text = content.items.map(item => item.str).join(" ");
         }
-
         wordContent += `--- Page ${i} ---\n${text}\n\n`;
-        setProgress(i / currentPDF.numPages);
-        await new Promise(r => setTimeout(r, 20));
       }
-
-      log("Building DOCX file...");
-
-      // Create a simple Word document (XML format)
       const xmlContent = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <?mso-application progid="Word.Document"?>
 <w:wordDocument xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml">
-  <w:body>
-    <w:p>
-      <w:r>
-        <w:t>${wordContent.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\n/g, '&#10;')}</w:t>
-      </w:r>
-    </w:p>
-  </w:body>
+  <w:body><w:p><w:r><w:t>${wordContent.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/\n/g, '&#10;')}</w:t></w:r></w:p></w:body>
 </w:wordDocument>`;
+      return {
+        blob: new Blob([xmlContent], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' }),
+        filename: file.name.replace(/\.pdf$/i, '.docx')
+      };
+    }
 
-      const blob = new Blob([xmlContent], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
-      const url = URL.createObjectURL(blob);
-
-      // Create nice download box with button
-      download.innerHTML = `
-        <div class="download-box" style="
-            margin-top: 20px;
-            padding: 20px;
-            background: linear-gradient(135deg, #0a2a1e 0%, #083525 100%);
-            border-radius: 10px;
-            border: 2px solid #0aa37f;
-            box-shadow: 0 4px 12px rgba(10, 163, 127, 0.2);
-        ">
-            <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                <div style="
-                    width: 40px;
-                    height: 40px;
-                    background: #0aa37f;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin-right: 15px;
-                    font-size: 20px;
-                ">✓</div>
-                <div>
-                    <h3 style="margin: 0; color: #0aa37f; font-size: 18px;">Conversion Successful!</h3>
-                    <p style="margin: 5px 0 0 0; color: #9fbfb0; font-size: 14px;">Your Word file is ready</p>
-                </div>
-            </div>
-
-            <div style="
-                background: rgba(10, 163, 127, 0.1);
-                padding: 15px;
-                border-radius: 8px;
-                margin-bottom: 15px;
-                border: 1px solid rgba(10, 163, 127, 0.3);
-            ">
-                <div style="color: #9fbfb0; font-size: 14px; margin-bottom: 5px;">File Details:</div>
-                <div style="color: white; font-family: monospace; font-size: 13px;">
-                    <div>File: <strong>converted.docx</strong></div>
-                    <div>Pages: <strong>${currentPDF.numPages}</strong></div>
-                    <div>Size: <strong>${Math.round(blob.size / 1024)} KB</strong></div>
-                </div>
-            </div>
-
-            <a href="${url}" download="converted.docx" class="btn-primary" style="
-                display: inline-block;
-                padding: 12px 24px;
-                background: linear-gradient(135deg, #0aa37f 0%, #08946e 100%);
-                color: white;
-                border: none;
-                border-radius: 6px;
-                font-size: 16px;
-                font-weight: bold;
-                text-decoration: none;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                box-shadow: 0 4px 8px rgba(10, 163, 127, 0.3);
-            " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 12px rgba(10, 163, 127, 0.4)';"
-            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 8px rgba(10, 163, 127, 0.3)';">
-                📥 Download Word File
-            </a>
-
-            <div style="margin-top: 10px; color: #9fbfb0; font-size: 13px;">
-                Click the button above to download your converted document
-            </div>
-        </div>
-    `;
-
-      log("Done. Your file is ready for download.");
-      setProgress(-1);
-
-      // Clean up URL object when page is unloaded
-      window.addEventListener('beforeunload', () => {
-        URL.revokeObjectURL(url);
-      });
+    convertBtn.onclick = async () => {
+      const files = fileQueue.files;
+      if (!files.length) { alert("Select PDF file(s) first"); return; }
+      log("Extracting text...");
+      setProgress(0);
+      download.innerHTML = "";
+      convertBtn.disabled = true;
+      try {
+        const { results, errors } = await BatchProcessor.run(files, processOneFile, {
+          queue: fileQueue,
+          onProgress: (c, t, f) => { log(`Converting ${c}/${t}: ${f.name}`); setProgress(c / t); }
+        });
+        if (results.length) {
+          BatchProcessor.deliver(results);
+          log("Done — " + results.length + " file(s) ready.");
+        }
+        if (errors.length) log("Errors: " + errors.length);
+      } finally {
+        convertBtn.disabled = false;
+        setProgress(-1);
+      }
     };
 
     document.getElementById("clearBtn").onclick = clear;

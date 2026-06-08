@@ -84,9 +84,10 @@
     <section class="tool-section">
         <div class="card">
             <button class="btn btn-ghost" id="pickAudio"
-                style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload
-                Audio</button>
-            <input type="file" id="audioFile" accept="audio/*" hidden>
+                style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload Audio
+                Files</button>
+            <input type="file" id="audioFile" accept="audio/*" multiple hidden>
+            <div id="filesList" class="files-list batch-files-list" style="display:none"></div>
 
             <div class="row">
                 <label>Total Duration:</label>
@@ -116,9 +117,8 @@
                 <button class="btn" id="previewBtn" disabled>▶ Preview</button>
                 <button class="btn btn-primary" id="trimBtn" disabled>✂ Trim</button>
                 <button class="btn btn-ghost" id="resetBtn">Reset</button>
-                <a id="downloadBtn" class="btn" style="display:none">Download</a>
             </div>
-            <pre id="status">Upload an audio file.</pre>
+            <pre id="status">Upload audio files. Click a file to set trim range.</pre>
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
@@ -167,6 +167,8 @@
     </div>
 
     <!-- ===== JS ===== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/windows-tools/js/batch-files.js"></script>
     <script>
         function toggleMenu() {
             document.getElementById('drawer').classList.toggle('open');
@@ -190,26 +192,45 @@
         const previewBtn = document.getElementById("previewBtn");
         const trimBtn = document.getElementById("trimBtn");
         const resetBtn = document.getElementById("resetBtn");
-        const downloadBtn = document.getElementById("downloadBtn");
         const status = document.getElementById("status");
 
-        pickAudio.onclick = () => audioFile.click();
-
-        audioFile.onchange = async () => {
-            status.textContent = "Loading audio…";
-            buffer = await ctx.decodeAudioData(await audioFile.files[0].arrayBuffer());
-
+        async function loadActiveFile(f) {
+            if (!f) {
+                buffer = null;
+                totalDur.textContent = "—";
+                selLen.textContent = "—";
+                previewBtn.disabled = true;
+                trimBtn.disabled = true;
+                return;
+            }
+            status.textContent = "Loading " + f.name + "…";
+            buffer = await ctx.decodeAudioData(await f.arrayBuffer());
             totalDur.textContent = buffer.duration.toFixed(2);
-
             startRange.max = endRange.max = buffer.duration;
             startRange.value = startNum.value = 0;
             endRange.value = endNum.value = buffer.duration.toFixed(2);
-
             updateSelection();
             previewBtn.disabled = false;
             trimBtn.disabled = false;
-            status.textContent = "Audio loaded.";
-        };
+            status.textContent = "Active: " + f.name;
+        }
+
+        const fileQueue = new BatchFileQueue({
+            fileInput: audioFile,
+            pickBtn: pickAudio,
+            listContainer: document.getElementById("filesList"),
+            accept: "audio/*",
+            interactive: true,
+            onChange: (files) => {
+                if (!files.length) {
+                    loadActiveFile(null);
+                    status.textContent = "Upload audio files.";
+                }
+            },
+            onActiveChange: async (entry) => {
+                if (entry) await loadActiveFile(entry.file);
+            }
+        });
 
         function syncFromRange() {
             startNum.value = startRange.value;
@@ -233,7 +254,7 @@
                 return;
             }
             updateSelection();
-            trimBtn.disabled = false;
+            trimBtn.disabled = !fileQueue.count;
         }
 
         function updateSelection() {
@@ -250,36 +271,52 @@
             previewSrc.start(0, startRange.value, endRange.value - startRange.value);
         };
 
-        trimBtn.onclick = () => {
-            status.textContent = "Trimming…";
+        async function processOneFile(f) {
+            const buf = await ctx.decodeAudioData(await f.arrayBuffer());
+            const startSec = Math.max(0, Math.min(parseFloat(startRange.value), buf.duration));
+            const endSec = Math.max(startSec, Math.min(parseFloat(endRange.value), buf.duration));
 
-            const s = Math.floor(startRange.value * buffer.sampleRate);
-            const e = Math.floor(endRange.value * buffer.sampleRate);
+            const s = Math.floor(startSec * buf.sampleRate);
+            const e = Math.floor(endSec * buf.sampleRate);
 
-            const out = ctx.createBuffer(
-                buffer.numberOfChannels,
-                e - s,
-                buffer.sampleRate
-            );
-
-            for (let c = 0; c < buffer.numberOfChannels; c++) {
-                out.getChannelData(c).set(
-                    buffer.getChannelData(c).slice(s, e)
-                );
+            const out = ctx.createBuffer(buf.numberOfChannels, e - s, buf.sampleRate);
+            for (let c = 0; c < buf.numberOfChannels; c++) {
+                out.getChannelData(c).set(buf.getChannelData(c).slice(s, e));
             }
 
-            const blob = new Blob([audioBufferToWav(out)], { type: "audio/wav" });
-            downloadBtn.href = URL.createObjectURL(blob);
-            downloadBtn.download = "trimmed.wav";
-            downloadBtn.style.display = "inline-block";
+            const base = f.name.replace(/\.[^.]+$/, "");
+            return {
+                blob: new Blob([audioBufferToWav(out)], { type: "audio/wav" }),
+                filename: base + "-trimmed.wav"
+            };
+        }
 
-            status.textContent = "Trim complete.";
+        trimBtn.onclick = async () => {
+            if (!fileQueue.count) return alert("Upload audio first");
+            if (parseFloat(startRange.value) >= parseFloat(endRange.value)) return;
+
+            trimBtn.disabled = true;
+            status.textContent = "Trimming " + fileQueue.count + " file(s)…";
+
+            const { results, errors } = await BatchProcessor.run(fileQueue.files, processOneFile, { queue: fileQueue });
+            if (results.length) {
+                BatchProcessor.deliver(results);
+                status.textContent = results.length + " file(s) trimmed.";
+            } else {
+                status.textContent = "Trim failed.";
+            }
+            if (errors.length) status.textContent += " " + errors.length + " error(s).";
+            trimBtn.disabled = !fileQueue.count;
         };
 
         resetBtn.onclick = () => {
             if (previewSrc) previewSrc.stop();
+            fileQueue.clear();
             buffer = null;
-            downloadBtn.style.display = "none";
+            totalDur.textContent = "—";
+            selLen.textContent = "—";
+            previewBtn.disabled = true;
+            trimBtn.disabled = true;
             status.textContent = "Reset.";
         };
 

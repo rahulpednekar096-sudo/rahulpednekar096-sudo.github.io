@@ -29,7 +29,8 @@
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/windows-tools/js/batch-files.js"></script>
 
   <script type="application/ld+json">
   {
@@ -82,10 +83,11 @@
     <section class="tool-section">
         <div class="card">
             <label class="drop" id="dropArea"
-                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
-                <button class="btn btn-ghost" id="pickBtn">Choose file</button>
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop JPG images or
+                <button class="btn btn-ghost" id="pickBtn">Choose files</button>
             </label>
-            <input type="file" id="fileInput" accept="image/jpeg,image/jpg" />
+            <input type="file" id="fileInput" accept="image/jpeg,image/jpg" multiple />
+            <div class="files-list" id="filesList" aria-live="polite"></div>
             <div class="row">
                 <div class="col"><label class="small">Quality</label><input type="range" id="quality" min="10" max="95"
                         value="80">
@@ -158,7 +160,6 @@
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
 
-        // Variables declaration
         const pickBtn = document.getElementById('pickBtn'),
             fileInput = document.getElementById('fileInput'),
             dropArea = document.getElementById('dropArea'),
@@ -170,130 +171,86 @@
             preview = document.getElementById('preview'),
             logEl = document.getElementById('log');
 
-        let currentFile = null;
-        let originalImageURL = null;
-        let webpImageURL = null;
+        let previewImageURL = null;
 
-        // Event Listeners
-        pickBtn.addEventListener('click', () => fileInput.click());
+        function log(msg) { logEl.textContent += msg + '\n'; }
 
-        dropArea.addEventListener('dragover', e => {
-            e.preventDefault();
-            dropArea.style.borderColor = '#0aa37f';
-            dropArea.style.background = 'rgba(10, 163, 127, 0.03)';
-        });
+        function revokePreviewURL() {
+            if (previewImageURL) {
+                URL.revokeObjectURL(previewImageURL);
+                previewImageURL = null;
+            }
+        }
 
-        dropArea.addEventListener('dragleave', () => {
-            dropArea.style.borderColor = '';
-            dropArea.style.background = '';
-        });
+        function loadPreview(file) {
+            revokePreviewURL();
+            previewImageURL = URL.createObjectURL(file);
+            preview.innerHTML = `<img src="${previewImageURL}" style="max-width:420px;border-radius:8px">`;
+            logEl.textContent = `Loaded: ${file.name} (${(file.size / 1024).toFixed(1)} KB)\n`;
+        }
 
-        dropArea.addEventListener('drop', e => {
-            e.preventDefault();
-            dropArea.style.borderColor = '';
-            dropArea.style.background = '';
-
-            if (e.dataTransfer.files.length) {
-                fileInput.files = e.dataTransfer.files;
-                fileInput.dispatchEvent(new Event('change'));
+        const fileQueue = new BatchFileQueue({
+            fileInput, dropArea, pickBtn,
+            listContainer: document.getElementById('filesList'),
+            accept: 'image/jpeg,image/jpg,.jpg,.jpeg',
+            showThumbnails: true,
+            interactive: true,
+            onSkip: () => alert('कृपया फक्त JPG फाईल निवडा'),
+            onActiveChange: (entry) => {
+                if (entry) loadPreview(entry.file);
+                else { revokePreviewURL(); preview.innerHTML = ''; }
             }
         });
 
         quality.addEventListener('input', () => qVal.textContent = quality.value);
 
-        fileInput.addEventListener('change', () => {
-            if (fileInput.files.length === 0) return;
+        async function loadImage(file) {
+            const dataUrl = await new Promise((res, rej) => {
+                const r = new FileReader();
+                r.onload = () => res(r.result);
+                r.onerror = rej;
+                r.readAsDataURL(file);
+            });
+            const img = new Image();
+            img.src = dataUrl;
+            await img.decode();
+            return img;
+        }
 
-            currentFile = fileInput.files[0];
+        async function processOneFile(file) {
+            const img = await loadImage(file);
+            const canvas = document.createElement('canvas');
+            canvas.width = img.naturalWidth;
+            canvas.height = img.naturalHeight;
+            canvas.getContext('2d').drawImage(img, 0, 0);
+            const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/webp', parseInt(quality.value) / 100));
+            return { blob, filename: file.name.replace(/\.[^/.]+$/, '') + '.webp' };
+        }
 
-            // Check if file is JPG
-            if (!currentFile.type.match('image/jpeg') && !currentFile.type.match('image/jpg')) {
-                alert('कृपया फक्त JPG फाईल निवडा');
-                fileInput.value = '';
-                return;
-            }
-
-            // Release previous image URL
-            if (originalImageURL) {
-                URL.revokeObjectURL(originalImageURL);
-            }
-
-            originalImageURL = URL.createObjectURL(currentFile);
-            preview.innerHTML = `<img src="${originalImageURL}" style="max-width:420px;border-radius:8px">`;
-            logEl.textContent = `Loaded: ${currentFile.name} (${(currentFile.size / 1024).toFixed(1)} KB)`;
+        startBtn.addEventListener('click', async () => {
+            const files = fileQueue.files;
+            if (!files.length) return alert('कृपया JPG निवडा');
+            startBtn.disabled = true;
+            downloadLink.style.display = 'none';
+            logEl.textContent = 'Processing...\n';
+            const { results, errors } = await BatchProcessor.run(files, processOneFile, {
+                queue: fileQueue,
+                onProgress: (c, t, f) => log(`Processing ${c}/${t}: ${f.name}`)
+            });
+            if (results.length) BatchProcessor.deliver(results);
+            if (errors.length) log(`Errors: ${errors.length}`);
+            log('Done.');
+            startBtn.disabled = false;
         });
 
-        // Convert Function
-        startBtn.addEventListener('click', () => {
-            if (!currentFile) return alert('कृपया JPG निवडा');
-
-            const reader = new FileReader();
-            reader.onload = async e => {
-                const img = new Image();
-                img.src = e.target.result;
-                await img.decode();
-
-                const canvas = document.createElement('canvas');
-                canvas.width = img.naturalWidth;
-                canvas.height = img.naturalHeight;
-                canvas.getContext('2d').drawImage(img, 0, 0);
-
-                canvas.toBlob(b => {
-                    // Release previous WebP image URL
-                    if (webpImageURL) {
-                        URL.revokeObjectURL(webpImageURL);
-                    }
-
-                    if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
-                        URL.revokeObjectURL(downloadLink.href);
-                    }
-
-                    webpImageURL = URL.createObjectURL(b);
-                    preview.innerHTML = `<img src="${webpImageURL}" style="max-width:420px;border-radius:8px">`;
-
-                    downloadLink.href = webpImageURL;
-                    downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '.webp';
-                    downloadLink.textContent = 'Download';
-                    downloadLink.style.display = 'inline-block';
-
-                    const originalSize = currentFile.size / 1024;
-                    const webpSize = b.size / 1024;
-                    const reduction = ((1 - (webpSize / originalSize)) * 100).toFixed(1);
-
-                    logEl.textContent = `Original JPG: ${originalSize.toFixed(1)} KB\nConverted WebP: ${webpSize.toFixed(1)} KB\nSize Reduction: ${reduction}%`;
-                }, 'image/webp', parseInt(quality.value) / 100);
-            }
-            reader.readAsDataURL(currentFile);
-        });
-
-        // Reset Function
         resetBtn.addEventListener('click', () => {
-            // Reset file input
-            currentFile = null;
-            fileInput.value = '';
-
-            // Reset quality slider
+            fileQueue.clear();
             quality.value = 80;
             qVal.textContent = '80';
-
-            // Reset UI elements
             downloadLink.style.display = 'none';
+            revokePreviewURL();
             preview.innerHTML = '';
             logEl.textContent = 'Ready.';
-            dropArea.style.borderColor = '';
-            dropArea.style.background = '';
-
-            // Release all Object URLs
-            if (originalImageURL) {
-                URL.revokeObjectURL(originalImageURL);
-                originalImageURL = null;
-            }
-
-            if (webpImageURL) {
-                URL.revokeObjectURL(webpImageURL);
-                webpImageURL = null;
-            }
-
             if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
                 URL.revokeObjectURL(downloadLink.href);
                 downloadLink.href = '#';

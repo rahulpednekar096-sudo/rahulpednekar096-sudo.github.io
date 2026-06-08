@@ -55,6 +55,7 @@
 
   <!-- jQuery (optional) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/windows-tools/js/batch-files.js"></script>
 
   <!-- 🔥 STRUCTURED DATA (VERY IMPORTANT) -->
   <script type="application/ld+json">
@@ -128,9 +129,10 @@
       <div class="card" style="flex:1 1 420px">
         <label class="small">Source file</label>
         <div class="drop" id="dropArea">Drop .xlsx/.xls/.csv here or <button class="btn" id="pickBtn">Choose
-            file</button>
-          <input id="fileInput" class="inputfile" type="file" accept=".xlsx,.xls,.csv" />
+            files</button>
+          <input id="fileInput" class="inputfile" type="file" accept=".xlsx,.xls,.csv" multiple />
         </div>
+        <div class="files-list" id="filesList" aria-live="polite"></div>
         <div class="tool-image half">
           <img src="/assets/images/pdf-image/excel-to-pdf-1.webp" onclick="openPreview(this.src)"
             alt="Excel to PDF conversion tool preview showing sample output" loading="lazy" width="600" height="340">
@@ -382,20 +384,30 @@
     const previewWrap = document.getElementById('previewWrap'), logEl = document.getElementById('log'), progressWrap = document.getElementById('progressWrap'), progressBar = document.getElementById('progressBar'), infoLabel = document.getElementById('infoLabel');
 
     let workbook = null;
-    let workbookRaw = null; // ArrayBuffer
-    let sheets = []; // names
-    let sheetDataCache = {}; // {sheetName: {htmlEl, widthPx, heightPx}}
+    let workbookRaw = null;
+    let sheets = [];
+    let sheetDataCache = {};
+
+    const fileQueue = new BatchFileQueue({
+      fileInput, dropArea, pickBtn,
+      listContainer: document.getElementById('filesList'),
+      accept: '.xlsx,.xls,.csv',
+      interactive: true,
+      onActiveChange: async (entry) => {
+        if (!entry) {
+          workbook = null; workbookRaw = null; sheets = []; sheetSelect.innerHTML = '';
+          sheetThumbs.innerHTML = ''; sheetDataCache = {}; infoLabel.textContent = '';
+          return;
+        }
+        await loadWorkbookFromFile(entry.file);
+      }
+    });
 
     function log(msg) { logEl.textContent += "\\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
     function clearLog() { logEl.textContent = 'Ready.'; }
     function setProgress(p) { progressWrap.style.display = p >= 0 ? 'block' : 'none'; progressBar.style.width = ((p || 0) * 100).toFixed(1) + '%'; }
     function brief(ms = 20) { return new Promise(r => setTimeout(r, ms)); }
 
-    pickBtn.addEventListener('click', () => fileInput.click());
-    fileInput.addEventListener('change', e => handleFile(e.target.files && e.target.files[0]));
-    dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.classList.add('dragover'); });
-    dropArea.addEventListener('dragleave', e => dropArea.classList.remove('dragover'));
-    dropArea.addEventListener('drop', e => { e.preventDefault(); dropArea.classList.remove('dragover'); if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]); });
 
     pageSizeSel.addEventListener('change', () => { customPageSize.style.display = pageSizeSel.value === 'Custom' ? 'block' : 'none'; });
 
@@ -412,38 +424,29 @@
     });
 
     clearBtn.addEventListener('click', () => {
-      workbook = null; workbookRaw = null; sheets = []; sheetSelect.innerHTML = ''; sheetThumbs.innerHTML = ''; previewWrap.innerHTML = 'No preview yet.'; clearLog(); setProgress(-1); sheetDataCache = {}; infoLabel.textContent = '';
+      fileQueue.clear();
+      workbook = null; workbookRaw = null; sheets = []; sheetSelect.innerHTML = '';
+      sheetThumbs.innerHTML = ''; previewWrap.innerHTML = 'No preview yet.';
+      clearLog(); setProgress(-1); sheetDataCache = {}; infoLabel.textContent = '';
     });
 
-    function handleFile(file) {
+    async function loadWorkbookFromFile(file) {
       if (!file) return;
-
       clearLog();
       log('Loading ' + file.name + ' ...');
       infoLabel.textContent = `${(file.size / 1024).toFixed(1)} KB`;
-
-      const reader = new FileReader();
-
-      reader.onload = function (e) {
-        try {
-          const arrayBuffer = e.target.result;
-          workbookRaw = arrayBuffer;
-          workbook = XLSX.read(arrayBuffer, { type: 'array', cellStyles: true });
-          sheets = workbook.SheetNames.slice();
-          populateSheetList();
-          log('Workbook loaded — ' + sheets.length + ' sheets.');
-          generateThumbs();
-        } catch (err) {
-          log('Error reading workbook: ' + err.message);
-          alert('Failed to read file.');
-        }
-      };
-
-      reader.onerror = () => {
-        alert('Failed to read file.');
-      };
-
-      reader.readAsArrayBuffer(file);
+      try {
+        const arrayBuffer = await file.arrayBuffer();
+        workbookRaw = arrayBuffer;
+        workbook = XLSX.read(arrayBuffer, { type: 'array', cellStyles: true });
+        sheets = workbook.SheetNames.slice();
+        sheetDataCache = {};
+        populateSheetList();
+        log('Workbook loaded — ' + sheets.length + ' sheets.');
+        await generateThumbs();
+      } catch (err) {
+        log('Error reading workbook: ' + err.message);
+      }
     }
 
     function populateSheetList() {
@@ -562,260 +565,124 @@
       previewWrap.appendChild(el.cloneNode(true));
     });
 
-    // CORE: Convert selected sheets to PDF(s)
+    async function exportWorkbookToResults(wb, fileBaseName, selectedSheetNames) {
+      const savedWb = workbook, savedCache = sheetDataCache;
+      workbook = wb;
+      sheetDataCache = {};
+      wb.SheetNames.forEach(n => buildSheetHtml(n));
+      const filesOut = [];
+      const mode = outputMode.value;
+      for (let si = 0; si < selectedSheetNames.length; si++) {
+        const sheetName = selectedSheetNames[si];
+        const blob = await renderSheetToPdfBlob(sheetName, si, selectedSheetNames.length);
+        const filename = `${baseName.value || 'export'}_${sanitizeFilename(fileBaseName)}_${sanitizeFilename(sheetName)}.pdf`;
+        filesOut.push({ name: filename, blob });
+      }
+      workbook = savedWb;
+      sheetDataCache = savedCache;
+      if (mode === 'single' && filesOut.length > 1 && window.PDFLib) {
+        const merged = await PDFLib.PDFDocument.create();
+        for (const f of filesOut) {
+          const donor = await PDFLib.PDFDocument.load(await f.blob.arrayBuffer());
+          const copied = await merged.copyPages(donor, donor.getPageIndices());
+          copied.forEach(p => merged.addPage(p));
+        }
+        const mergedBytes = await merged.save();
+        return [{ blob: new Blob([mergedBytes], { type: 'application/pdf' }), filename: `${baseName.value || 'export'}_${sanitizeFilename(fileBaseName)}.pdf` }];
+      }
+      return filesOut.map(f => ({ blob: f.blob, filename: f.name }));
+    }
+
+    async function renderSheetToPdfBlob(sheetName, si, total) {
+      let pageWmm = 210, pageHmm = 297;
+      if (pageSizeSel.value === 'Letter') { pageWmm = 215.9; pageHmm = 279.4; }
+      else if (pageSizeSel.value === 'Custom') { pageWmm = parseFloat(customW.value) || 210; pageHmm = parseFloat(customH.value) || 297; }
+      const orient = orientationSel.value || 'landscape';
+      let pageW = orient === 'landscape' ? Math.max(pageWmm, pageHmm) : Math.min(pageWmm, pageHmm);
+      let pageH = orient === 'landscape' ? Math.min(pageWmm, pageHmm) : Math.max(pageWmm, pageHmm);
+      const margins = { top: parseFloat(marginTop.value) || 12, right: parseFloat(marginRight.value) || 12, bottom: parseFloat(marginBottom.value) || 12, left: parseFloat(marginLeft.value) || 12 };
+      const sheetEl = sheetDataCache[sheetName] ? sheetDataCache[sheetName].htmlEl.cloneNode(true) : buildSheetHtml(sheetName);
+      const wrapper = document.createElement('div');
+      wrapper.style.cssText = 'position:fixed;left:-10000px;top:-10000px;padding:12px;background:#fff';
+      wrapper.appendChild(sheetEl);
+      document.body.appendChild(wrapper);
+      const pxPerMm = 96 / 25.4;
+      const scaleFactor = 150 / 96;
+      const printableWmm = Math.max(10, pageW - margins.left - margins.right);
+      const printableWpx = Math.round(printableWmm * pxPerMm * scaleFactor);
+      const table = wrapper.querySelector('table');
+      if (table) table.style.width = (autoFitCols.checked ? printableWpx + 'px' : 'auto');
+      const canvas = await html2canvas(wrapper, { scale: scaleFactor, backgroundColor: '#ffffff', useCORS: true, logging: false });
+      document.body.removeChild(wrapper);
+      const pagePxH = Math.round(pageH * pxPerMm * scaleFactor);
+      const headerPx = headerText.value ? Math.round(10 * scaleFactor) : 0;
+      const footerPx = footerText.value ? Math.round(10 * scaleFactor) : 0;
+      const availablePx = pagePxH - Math.round((margins.top + margins.bottom) * pxPerMm * scaleFactor) - headerPx - footerPx;
+      const slices = [];
+      let y = 0;
+      while (y < canvas.height) { slices.push({ y, h: Math.min(availablePx, canvas.height - y) }); y += availablePx; }
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF({ unit: 'mm', format: [pageW, pageH], orientation: orientationSel.value });
+      for (let pi = 0; pi < slices.length; pi++) {
+        const s = slices[pi];
+        const c = document.createElement('canvas');
+        c.width = canvas.width;
+        c.height = s.h + headerPx + footerPx + Math.round((margins.top + margins.bottom) * pxPerMm * scaleFactor);
+        const ctx = c.getContext('2d');
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(0, 0, c.width, c.height);
+        const topOffset = Math.round(margins.top * pxPerMm * scaleFactor) + headerPx;
+        ctx.drawImage(canvas, 0, s.y, canvas.width, s.h, 0, topOffset, canvas.width, s.h);
+        const sliceDataUrl = c.toDataURL('image/jpeg', 0.92);
+        const imgWmm = c.width / (pxPerMm * scaleFactor);
+        const imgHmm = c.height / (pxPerMm * scaleFactor);
+        const destW = pageW - margins.left - margins.right;
+        const destH = pageH - margins.top - margins.bottom;
+        const ratio = Math.min(destW / imgWmm, destH / imgHmm);
+        pdf.addImage(sliceDataUrl, 'JPEG', margins.left, margins.top, imgWmm * ratio, imgHmm * ratio, undefined, 'FAST');
+        if (pi < slices.length - 1) pdf.addPage([pageW, pageH], orientationSel.value);
+        setProgress((si + (pi / slices.length)) / total);
+        await brief(10);
+      }
+      return pdf.output('blob');
+    }
+
     convertBtn.addEventListener('click', async () => {
-      if (!workbook) { alert('Load Excel first'); return; }
-      const selected = Array.from(sheetSelect.selectedOptions).map(o => o.value);
-      if (!selected.length) { alert('Select sheet(s) to export'); return; }
+      const files = fileQueue.files;
+      if (!files.length) { alert('Add Excel file(s) first'); return; }
       convertBtn.disabled = true;
       setProgress(0);
       clearLog();
-      log('Starting export of ' + selected.length + ' sheet(s)...');
-
-      // Page dimensions (mm)
-      let pageWmm = 210, pageHmm = 297; // A4 default
-      if (pageSizeSel.value === 'Letter') { pageWmm = 215.9; pageHmm = 279.4; }
-      else if (pageSizeSel.value === 'Custom') { pageWmm = parseFloat(customW.value) || 210; pageHmm = parseFloat(customH.value) || 297; }
-
-      const orient = orientationSel.value || 'landscape';
-      // if landscape swap dims
-      let pageW = orient === 'landscape' ? Math.max(pageWmm, pageHmm) : Math.min(pageWmm, pageHmm);
-      let pageH = orient === 'landscape' ? Math.min(pageWmm, pageHmm) : Math.max(pageWmm, pageHmm);
-
-      const margins = {
-        top: parseFloat(marginTop.value) || 12,
-        right: parseFloat(marginRight.value) || 12,
-        bottom: parseFloat(marginBottom.value) || 12,
-        left: parseFloat(marginLeft.value) || 12
-      };
-
-      const mode = outputMode.value;
-      const filesOut = []; // {name, blob}
-
-      // We'll render each sheet to an HTML container, then rasterize with html2canvas at high scale,
-      // then slice the canvas vertically into pages and add to PDF.
-
-      for (let si = 0; si < selected.length; si++) {
-        const sheetName = selected[si];
-        log(`Rendering sheet: ${sheetName} (${si + 1}/${selected.length})`);
-        // build HTML
-        const sheetEl = sheetDataCache[sheetName] ? sheetDataCache[sheetName].htmlEl.cloneNode(true) : buildSheetHtml(sheetName);
-        // optional auto-fit: set table width to page printable width in px later
-        // create off-DOM wrapper for better control
-        const wrapper = document.createElement('div');
-        wrapper.style.width = 'auto';
-        wrapper.style.padding = '12px';
-        wrapper.style.background = '#ffffff';
-        wrapper.appendChild(sheetEl);
-
-        // target PDF page size in px for rendering: use DPI 144 for good quality (2x typical)
-        // Convert mm to px using pxPerMm at 96dpi: pxPerMm = 96 / 25.4 ≈ 3.7795; we will scale rendering for higher quality
-        const pxPerMm = 96 / 25.4;
-        const targetDPI = 150; // chosen DPI for canvas rendering — balance quality & size
-        const scaleFactor = targetDPI / 96; // scale multiplier for html2canvas
-        // page inner width in mm subtract margins
-        const printableWmm = Math.max(10, pageW - margins.left - margins.right);
-        const printableHmm = Math.max(10, pageH - margins.top - margins.bottom);
-        // Convert printable to px for canvas target at 96dpi then scale
-        const printableWpx = Math.round(printableWmm * pxPerMm * scaleFactor);
-        // Apply style so table fits printable width
-        const table = wrapper.querySelector('table');
-        if (table) {
-          if (autoFitCols.checked) {
-            table.style.width = printableWpx + 'px';
-          } else {
-            table.style.maxWidth = printableWpx + 'px';
-          }
-        }
-
-        // append wrapper to hidden area in DOM for accurate rendering
-        wrapper.style.position = 'fixed';
-        wrapper.style.left = '-10000px';
-        wrapper.style.top = '-10000px';
-        document.body.appendChild(wrapper);
-
-        // Use html2canvas to produce a tall canvas
-        log('Rasterizing sheet to high-res image...');
-        const canvas = await html2canvas(wrapper, {
-          scale: scaleFactor,
-          backgroundColor: '#ffffff',
-          useCORS: true,
-          allowTaint: true,
-          logging: false
-        });
-
-        document.body.removeChild(wrapper);
-
-        // Determine page slicing: compute pixel height per PDF page (in px at rendering DPI)
-        const pagePxW = Math.round(pageW * pxPerMm * scaleFactor);
-        const pagePxH = Math.round(pageH * pxPerMm * scaleFactor);
-
-        // we will crop canvas into slices of pagePxH - header/footer reserved area
-        // compute header/footer pixel heights (estimation)
-        const headerTextVal = headerText.value || '';
-        const footerTextVal = footerText.value || '';
-        const headerPx = headerTextVal ? Math.round(10 * scaleFactor) : 0; // 10mm ~ approximate
-        const footerPx = footerTextVal ? Math.round(10 * scaleFactor) : 0;
-
-        // slice y positions
-        let slices = [];
-        const totalHeight = canvas.height;
-        // compute available content height per slice
-        const availablePx = pagePxH - Math.round((margins.top + margins.bottom) * pxPerMm * scaleFactor) - headerPx - footerPx;
-        if (availablePx <= 10) {
-          log('Printable height too small; abort.');
-          convertBtn.disabled = false;
-          setProgress(-1);
-          return;
-        }
-        // create offscreen canvas to draw slices at page width scaled to pagePxW
-        let y = 0;
-        while (y < totalHeight) {
-          const h = Math.min(availablePx, totalHeight - y);
-          slices.push({ y, h });
-          y += h;
-        }
-
-        // Build PDF with slices
-        const { jsPDF } = window.jspdf;
-        // jsPDF uses unit mm; we'll feed images sized in mm.
-        const pdf = new jsPDF({ unit: 'mm', format: [pageW, pageH], orientation: orientationSel.value });
-        for (let pi = 0; pi < slices.length; pi++) {
-          const s = slices[pi];
-          // create canvas for slice sized pagePxW x (s.h + headerPx + footerPx)
-          const c = document.createElement('canvas');
-          const sliceH = s.h + headerPx + footerPx + Math.round((margins.top + margins.bottom) * pxPerMm * scaleFactor); // include margins region visually
-          c.width = Math.max(pagePxW, canvas.width);
-          c.height = sliceH;
-          const ctx = c.getContext('2d');
-          ctx.fillStyle = '#ffffff';
-          ctx.fillRect(0, 0, c.width, c.height);
-          // draw top margin offset
-          const topOffset = Math.round(margins.top * pxPerMm * scaleFactor) + headerPx;
-          // draw the portion of original canvas
-          ctx.drawImage(canvas, 0, s.y, canvas.width, s.h, 0, topOffset, canvas.width, s.h);
-
-          // add header text if any (draw at margin-left)
-          if (headerTextVal) {
-            ctx.fillStyle = '#333';
-            ctx.font = `${Math.round(10 * scaleFactor)}px sans-serif`;
-            const headerStr = tokenReplace(headerTextVal, sheetName, pi + 1, slices.length);
-            ctx.fillText(headerStr, Math.round(margins.left * pxPerMm * scaleFactor), Math.round(margins.top * pxPerMm * scaleFactor));
-          }
-          // add footer text
-          if (footerTextVal) {
-            ctx.fillStyle = '#333';
-            ctx.font = `${Math.round(10 * scaleFactor)}px sans-serif`;
-            const footerStr = tokenReplace(footerTextVal, sheetName, pi + 1, slices.length);
-            // draw near bottom
-            ctx.fillText(footerStr, Math.round(margins.left * pxPerMm * scaleFactor), c.height - Math.round(margins.bottom * pxPerMm * scaleFactor) - Math.round(2 * scaleFactor));
-          }
-
-          // convert slice canvas to dataURL (JPEG to reduce size)
-          const sliceDataUrl = c.toDataURL('image/jpeg', 0.92);
-
-          // compute image dims in mm
-          const imgWmm = (c.width / (pxPerMm * scaleFactor));
-          const imgHmm = (c.height / (pxPerMm * scaleFactor));
-          // Fit image inside page printable area with margins
-          const destW = pageW - margins.left - margins.right;
-          const destH = pageH - margins.top - margins.bottom;
-          const ratio = Math.min(destW / imgWmm, destH / imgHmm);
-          const finalW = imgWmm * ratio;
-          const finalH = imgHmm * ratio;
-          const x = margins.left + ((destW - finalW) / 2);
-          const y_mm = margins.top + ((destH - finalH) / 2);
-
-          // add image to pdf
-          pdf.addImage(sliceDataUrl, 'JPEG', x, y_mm, finalW, finalH, undefined, 'FAST');
-
-          // If not last slice, addPage
-          if (pi < slices.length - 1) pdf.addPage([pageW, pageH], orientationSel.value);
-
-          setProgress((si + (pi / slices.length)) / selected.length);
-          await brief(30);
-        }
-
-        // finalize pdf bytes
-        const blob = pdf.output('blob');
-        const filename = `${baseName.value || 'export'}_${sanitizeFilename(sheetName)}.pdf`;
-        if (mode === 'single') {
-          // if single and multiple sheets, append pages to master -- handled after loop
-          filesOut.push({ name: filename, blob: blob, sheetName, pdfObj: pdf });
-        } else {
-          // immediate file
-          if (mode === 'per-sheet') {
-            filesOut.push({ name: filename, blob: blob });
-          } else {
-            // single-separate -> push as well
-            filesOut.push({ name: filename, blob: blob });
-          }
-        }
-        setProgress((si + 1) / selected.length);
-        await brief(60);
-      } // end for each sheet
-
-      // If outputMode single and multiple sheets: merge the pdfs preserving order
-      if (outputMode.value === 'single' && filesOut.length > 1) {
-        // create master PDF by copying pages from each blob via PDFLib would be ideal,
-        // but to avoid adding pdf-lib dependency here, we'll generate a combined pdf by creating a new jsPDF and drawing pages as images
-        // Simpler approach: take first PDF's pages (already built) and append images of subsequent files => heavy but works
-        log('Merging sheets into single PDF...');
-        // create master pdf from first blob's pages by reading file as image pages: we'll use PDF merging fallback — but due to complexity, we will use PDFLib if available
-        // Use PDFLib if present (best)
-        if (window.PDFLib) {
+      log('Starting batch export of ' + files.length + ' file(s)...');
+      const allResults = [];
+      try {
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          const entry = fileQueue.entries.find(e => e.file === file);
+          if (entry) fileQueue.setStatus(entry.id, 'processing', (i + 1) + '/' + files.length);
           try {
-            const merged = await PDFLib.PDFDocument.create();
-            for (const f of filesOut) {
-              const arr = await f.blob.arrayBuffer();
-              const donor = await PDFLib.PDFDocument.load(arr);
-              const copied = await merged.copyPages(donor, donor.getPageIndices());
-              copied.forEach(p => merged.addPage(p));
-            }
-            const mergedBytes = await merged.save();
-            const mergedBlob = new Blob([mergedBytes], { type: 'application/pdf' });
-            saveAs(mergedBlob, `${baseName.value || 'export'}.pdf`);
-            log('Merged PDF downloaded.');
+            const arrayBuffer = await file.arrayBuffer();
+            const wb = XLSX.read(arrayBuffer, { type: 'array', cellStyles: true });
+            const fileBase = file.name.replace(/\.[^/.]+$/, '');
+            const selected = Array.from(sheetSelect.selectedOptions).map(o => o.value);
+            const sheetNames = (selected.length && files.length === 1) ? selected : wb.SheetNames.slice();
+            const outputs = await exportWorkbookToResults(wb, fileBase, sheetNames);
+            const folder = files.length > 1 ? sanitizeFilename(fileBase) + '/' : '';
+            outputs.forEach(o => allResults.push({ blob: o.blob, filename: folder + o.filename }));
+            if (entry) fileQueue.setStatus(entry.id, 'done', outputs.length + ' PDF(s)');
           } catch (err) {
-            log('Merge failed: ' + (err.message || err) + ' — falling back to ZIP output.');
-            // fallback to zip
-            const zip = new JSZip();
-            filesOut.forEach(f => zip.file(f.name, f.blob));
-            const blobZip = await zip.generateAsync({ type: 'blob' });
-            saveAs(blobZip, `${baseName.value || 'export'}.zip`);
+            if (entry) fileQueue.setStatus(entry.id, 'error', err.message || 'Failed');
           }
-        } else {
-          // PDFLib not available: fallback to ZIP
-          const zip = new JSZip();
-          filesOut.forEach(f => zip.file(f.name, f.blob));
-          const blobZip = await zip.generateAsync({ type: 'blob' });
-          saveAs(blobZip, `${baseName.value || 'export'}.zip`);
-          log('PDFLib not present; delivered per-sheet files as ZIP.');
+          setProgress((i + 1) / files.length);
         }
-      } else {
-        // if per-sheet (zip) combine
-        if (outputMode.value === 'per-sheet') {
-          const zip = new JSZip();
-          for (const f of filesOut) zip.file(f.name, f.blob);
-          const blobZip = await zip.generateAsync({ type: 'blob' });
-          saveAs(blobZip, `${baseName.value || 'export'}.zip`);
-          log('ZIP ready and downloaded.');
-        } else {
-          // single-separate or single with only one file
-          if (filesOut.length === 1) {
-            saveAs(filesOut[0].blob, filesOut[0].name || `${baseName.value || 'export'}.pdf`);
-            log('PDF downloaded: ' + filesOut[0].name);
-          } else {
-            // multiple files individually created
-            for (const f of filesOut) saveAs(f.blob, f.name);
-            log('Multiple PDFs downloaded.');
-          }
+        if (allResults.length) {
+          BatchProcessor.deliver(allResults, { container: document.getElementById('downloadArea') || undefined });
         }
+        log('Export finished — ' + allResults.length + ' PDF(s).');
+      } finally {
+        setProgress(-1);
+        convertBtn.disabled = false;
       }
-
-      setProgress(-1);
-      convertBtn.disabled = false;
-      log('Export finished.');
     });
 
     // Utility helpers

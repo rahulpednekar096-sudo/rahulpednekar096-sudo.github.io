@@ -32,7 +32,8 @@
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/windows-tools/js/batch-files.js"></script>
 
   <script type="application/ld+json">
   {
@@ -85,10 +86,11 @@
     <section class="tool-section">
         <div class="card">
             <label class="drop" id="dropArea"
-                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image here or
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop images here or
                 <button class="btn btn-ghost" id="pickBtn">Choose
-                    file</button></label>
-            <input type="file" id="fileInput" accept="image/*" />
+                    files</button></label>
+            <input type="file" id="fileInput" accept="image/*" multiple />
+            <div class="files-list" id="filesList" aria-live="polite"></div>
 
             <div class="row">
                 <div class="col"><label class="small">Rotate</label>
@@ -159,7 +161,6 @@
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
 
-        // Variables declaration
         const pickBtn = document.getElementById('pickBtn'),
             fileInput = document.getElementById('fileInput'),
             dropArea = document.getElementById('dropArea'),
@@ -173,161 +174,107 @@
             downloadLink = document.getElementById('downloadLink'),
             logEl = document.getElementById('log');
 
-        let currentFile = null, img = null;
-        let originalImageURL = null;
-        let rotatedImageURL = null;
+        let previewImageURL = null;
 
-        // Helper function for logging
         function log(msg) {
-            logEl.textContent = msg;
+            logEl.textContent += msg + '\n';
             logEl.scrollTop = logEl.scrollHeight;
         }
 
-        // Event Listeners
-        pickBtn.addEventListener('click', () => fileInput.click());
+        function revokePreviewURL() {
+            if (previewImageURL) {
+                URL.revokeObjectURL(previewImageURL);
+                previewImageURL = null;
+            }
+        }
 
-        dropArea.addEventListener('dragover', e => {
-            e.preventDefault();
-            dropArea.style.borderColor = '#0aa37f';
-            dropArea.style.background = 'rgba(10, 163, 127, 0.03)';
-        });
+        function loadPreview(file) {
+            revokePreviewURL();
+            previewImageURL = URL.createObjectURL(file);
+            preview.innerHTML = `<img src="${previewImageURL}" style="max-width:420px;border-radius:8px">`;
+            logEl.textContent = `Loaded: ${file.name}\n`;
+        }
 
-        dropArea.addEventListener('dragleave', () => {
-            dropArea.style.borderColor = '';
-            dropArea.style.background = '';
-        });
-
-        dropArea.addEventListener('drop', e => {
-            e.preventDefault();
-            dropArea.style.borderColor = '';
-            dropArea.style.background = '';
-
-            if (e.dataTransfer.files.length) {
-                fileInput.files = e.dataTransfer.files;
-                handleFile();
+        const fileQueue = new BatchFileQueue({
+            fileInput, dropArea, pickBtn,
+            listContainer: document.getElementById('filesList'),
+            accept: 'image/*',
+            showThumbnails: true,
+            interactive: true,
+            onActiveChange: (entry) => {
+                if (entry) loadPreview(entry.file);
+                else { revokePreviewURL(); preview.innerHTML = ''; }
             }
         });
-
-        fileInput.addEventListener('change', handleFile);
 
         preset.addEventListener('change', () => {
             customWrap.style.display = preset.value === 'custom' ? 'block' : 'none';
         });
 
-        // Handle file function
-        function handleFile() {
-            currentFile = fileInput.files[0];
-            if (!currentFile) return;
-
-            // Release previous image URL
-            if (originalImageURL) {
-                URL.revokeObjectURL(originalImageURL);
-            }
-
-            originalImageURL = URL.createObjectURL(currentFile);
-            img = new Image();
-            img.src = originalImageURL;
-
-            img.onload = () => {
-                preview.innerHTML = `<img id="loaded" src="${originalImageURL}" style="max-width:420px;border-radius:8px">`;
-                log('Image loaded');
-            }
+        async function loadImage(file) {
+            const dataUrl = await new Promise((res, rej) => {
+                const r = new FileReader();
+                r.onload = () => res(r.result);
+                r.onerror = rej;
+                r.readAsDataURL(file);
+            });
+            const img = new Image();
+            img.src = dataUrl;
+            await img.decode();
+            return img;
         }
 
-        // Apply rotation function
+        async function processOneFile(file) {
+            const image = await loadImage(file);
+            const degrees = preset.value === 'custom' ? parseFloat(degInput.value || 0) : parseFloat(preset.value);
+            const flip = flipSel.value;
+            const rad = degrees * Math.PI / 180;
+            const sin = Math.abs(Math.sin(rad)), cos = Math.abs(Math.cos(rad));
+            const w = Math.round(image.naturalWidth * cos + image.naturalHeight * sin);
+            const h = Math.round(image.naturalWidth * sin + image.naturalHeight * cos);
+            const canvas = document.createElement('canvas');
+            canvas.width = w;
+            canvas.height = h;
+            const ctx = canvas.getContext('2d');
+            ctx.translate(w / 2, h / 2);
+            ctx.rotate(rad);
+            const scaleX = (flip === 'h') ? -1 : 1, scaleY = (flip === 'v') ? -1 : 1;
+            ctx.scale(scaleX, scaleY);
+            ctx.drawImage(image, -image.naturalWidth / 2, -image.naturalHeight / 2);
+            const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+            return { blob, filename: file.name.replace(/\.[^/.]+$/, '') + '-rotated.png' };
+        }
+
         applyBtn.addEventListener('click', async () => {
-            if (!currentFile) return alert('कृपया image निवडा');
-
-            const reader = new FileReader();
-            reader.onload = async e => {
-                const image = new Image();
-                image.src = e.target.result;
-                await image.decode();
-
-                let degrees = preset.value === 'custom' ? parseFloat(degInput.value || 0) : parseFloat(preset.value);
-                const flip = flipSel.value;
-                const rad = degrees * Math.PI / 180;
-
-                // determine canvas size after rotation
-                const sin = Math.abs(Math.sin(rad)), cos = Math.abs(Math.cos(rad));
-                const w = Math.round(image.naturalWidth * cos + image.naturalHeight * sin);
-                const h = Math.round(image.naturalWidth * sin + image.naturalHeight * cos);
-
-                const canvas = document.createElement('canvas');
-                canvas.width = w;
-                canvas.height = h;
-                const ctx = canvas.getContext('2d');
-
-                ctx.translate(w / 2, h / 2);
-                ctx.rotate(rad);
-
-                // flipping
-                let scaleX = (flip === 'h') ? -1 : 1, scaleY = (flip === 'v') ? -1 : 1;
-                ctx.scale(scaleX, scaleY);
-                ctx.drawImage(image, -image.naturalWidth / 2, -image.naturalHeight / 2);
-
-                canvas.toBlob(b => {
-                    // Release previous rotated image URL
-                    if (rotatedImageURL) {
-                        URL.revokeObjectURL(rotatedImageURL);
-                    }
-
-                    if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
-                        URL.revokeObjectURL(downloadLink.href);
-                    }
-
-                    rotatedImageURL = URL.createObjectURL(b);
-                    preview.innerHTML = `<img src="${rotatedImageURL}" style="max-width:420px;border-radius:8px">`;
-
-                    downloadLink.href = rotatedImageURL;
-                    downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-rotated.png';
-                    downloadLink.textContent = 'Download';
-                    downloadLink.style.display = 'inline-block';
-
-                    const flipText = flip === 'none' ? 'No flip' : (flip === 'h' ? 'Horizontal flip' : 'Vertical flip');
-                    log(`Rotated ${degrees}° with ${flipText}`);
-                }, 'image/png');
-            }
-            reader.readAsDataURL(currentFile);
+            const files = fileQueue.files;
+            if (!files.length) return alert('कृपया image निवडा');
+            applyBtn.disabled = true;
+            downloadLink.style.display = 'none';
+            logEl.textContent = 'Processing...\n';
+            const { results, errors } = await BatchProcessor.run(files, processOneFile, {
+                queue: fileQueue,
+                onProgress: (c, t, f) => log(`Processing ${c}/${t}: ${f.name}`)
+            });
+            if (results.length) BatchProcessor.deliver(results);
+            if (errors.length) log(`Errors: ${errors.length}`);
+            log('Done.');
+            applyBtn.disabled = false;
         });
 
-        // Reset function
         resetBtn.addEventListener('click', () => {
-            // Reset file input
-            currentFile = null;
-            fileInput.value = '';
-
-            // Reset form controls
+            fileQueue.clear();
             preset.value = '90';
             customWrap.style.display = 'none';
             degInput.value = '0';
             flipSel.value = 'none';
-
-            // Reset UI elements
             downloadLink.style.display = 'none';
+            revokePreviewURL();
             preview.innerHTML = '';
-            log('Ready.');
-            dropArea.style.borderColor = '';
-            dropArea.style.background = '';
-
-            // Release all Object URLs
-            if (originalImageURL) {
-                URL.revokeObjectURL(originalImageURL);
-                originalImageURL = null;
-            }
-
-            if (rotatedImageURL) {
-                URL.revokeObjectURL(rotatedImageURL);
-                rotatedImageURL = null;
-            }
-
+            logEl.textContent = 'Ready.';
             if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
                 URL.revokeObjectURL(downloadLink.href);
                 downloadLink.href = '#';
             }
-
-            // Reset image variable
-            img = null;
         });
     </script>
     <script type="module" src="/js/firebase-config.js"></script>

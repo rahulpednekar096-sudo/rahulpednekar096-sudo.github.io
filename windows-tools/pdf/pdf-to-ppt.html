@@ -40,6 +40,8 @@
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/windows-tools/js/batch-files.js"></script>
 
 
   <script type="application/ld+json">
@@ -92,8 +94,9 @@
     </section>
     <section class="section">
         <div class="drop" id="dropArea">
-            Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
-            <input type="file" id="fileInput" accept="application/pdf" style="display:none" />
+            Drop PDFs here or <button class="btn" id="pickBtn">Choose files</button>
+            <input type="file" id="fileInput" accept="application/pdf" multiple style="display:none" />
+            <div class="files-list" id="filesList" aria-live="polite"></div>
         </div>
 
         <div class="controls">
@@ -250,7 +253,18 @@
 
 
         let pdfDoc = null;
-        let pages = []; // {pageNum, thumbDataUrl, selected}
+        let pages = [];
+
+        const fileQueue = new BatchFileQueue({
+            fileInput, dropArea, pickBtn,
+            listContainer: document.getElementById('filesList'),
+            accept: 'application/pdf',
+            interactive: true,
+            onActiveChange: async (entry) => {
+                if (!entry) { pdfDoc = null; pages = []; thumbs.innerHTML = ''; pageInfo.textContent = ''; return; }
+                await handleFile(entry.file);
+            }
+        });
 
         // Log function
         function log(msg) {
@@ -278,36 +292,8 @@
             qualityValue.textContent = this.value + '%';
         });
 
-        // File picker
-        pickBtn.addEventListener('click', () => fileInput.click());
-        fileInput.addEventListener('change', e => handleFile(e.target.files[0]));
-
-        // Drag and drop
-        dropArea.addEventListener('dragover', e => {
-            e.preventDefault();
-            dropArea.classList.add('dragover');
-        });
-
-        dropArea.addEventListener('dragleave', () => {
-            dropArea.classList.remove('dragover');
-        });
-
-        dropArea.addEventListener('drop', e => {
-            e.preventDefault();
-            dropArea.classList.remove('dragover');
-            if (e.dataTransfer.files.length) {
-                handleFile(e.dataTransfer.files[0]);
-            }
-        });
-
-        // Handle PDF file with better error handling
         async function handleFile(file) {
-            if (!file || file.type !== 'application/pdf') {
-                alert('Please select a valid PDF file.');
-                return;
-            }
-
-            clearAll();
+            if (!file || file.type !== 'application/pdf') return;
             clearLog();
             log('Loading PDF: ' + file.name);
 
@@ -464,6 +450,7 @@
 
         // Clear all
         function clearAll() {
+            fileQueue.clear();
             pdfDoc = null;
             pages = [];
             thumbs.innerHTML = '';
@@ -477,8 +464,67 @@
 
         clearBtn.addEventListener('click', clearAll);
 
-        // Convert to PPTX with memory management
+        async function buildPptxBlob(selectedPages) {
+            const pptx = new PptxGenJS();
+            if (slideSize.value === '16x9') {
+                pptx.defineLayout({ name: 'WIDESCREEN', width: 13.33, height: 7.5 });
+                pptx.layout = 'WIDESCREEN';
+            } else pptx.layout = 'LAYOUT_4x3';
+            let pixelsPerInch = resolution.value === 'low' ? 150 : resolution.value === 'high' ? 300 : 200;
+            const format = imgFormat.value;
+            const quality = parseInt(jpgQuality.value) / 100;
+            const MAX_WIDTH = 1920, MAX_HEIGHT = 1080;
+            for (const p of selectedPages) {
+                const page = await pdfDoc.getPage(p.pageNum);
+                const viewport = page.getViewport({ scale: 1 });
+                let scale = pixelsPerInch / 72;
+                if (viewport.width * scale > MAX_WIDTH || viewport.height * scale > MAX_HEIGHT) {
+                    scale = Math.min(MAX_WIDTH / viewport.width, MAX_HEIGHT / viewport.height);
+                }
+                const finalViewport = page.getViewport({ scale });
+                const canvas = document.createElement('canvas');
+                canvas.width = Math.min(finalViewport.width, MAX_WIDTH);
+                canvas.height = Math.min(finalViewport.height, MAX_HEIGHT);
+                const ctx = canvas.getContext('2d');
+                ctx.fillStyle = 'white';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                await page.render({ canvasContext: ctx, viewport: finalViewport, intent: 'print' }).promise;
+                const dataURL = format === 'jpeg' ? canvas.toDataURL('image/jpeg', quality) : canvas.toDataURL('image/png');
+                const slide = pptx.addSlide();
+                slide.addImage({ data: dataURL, x: 0, y: 0, w: '100%', h: '100%', sizing: { type: 'contain', w: '100%', h: '100%' } });
+                if (addNotes.checked) slide.addNotes('Page ' + p.pageNum);
+            }
+            return await pptx.write({ outputType: 'blob' });
+        }
+
         convertBtn.addEventListener('click', async () => {
+            const queueFiles = fileQueue.files;
+            if (queueFiles.length > 1) {
+                convertBtn.disabled = true;
+                setProgress(0);
+                log('Batch converting ' + queueFiles.length + ' PDF(s)...');
+                const results = [];
+                for (let i = 0; i < queueFiles.length; i++) {
+                    const file = queueFiles[i];
+                    const entry = fileQueue.entries.find(e => e.file === file);
+                    if (entry) fileQueue.setStatus(entry.id, 'processing', (i + 1) + '/' + queueFiles.length);
+                    try {
+                        await handleFile(file);
+                        pages.forEach(p => p.selected = true);
+                        const blob = await buildPptxBlob(pages.filter(p => p.selected));
+                        results.push({ blob, filename: file.name.replace(/\.pdf$/i, '.pptx') });
+                        if (entry) fileQueue.setStatus(entry.id, 'done', 'Done');
+                    } catch (e) {
+                        if (entry) fileQueue.setStatus(entry.id, 'error', e.message || 'Failed');
+                    }
+                    setProgress((i + 1) / queueFiles.length);
+                }
+                if (results.length) BatchProcessor.deliver(results, { container: downloadArea });
+                convertBtn.disabled = false;
+                setProgress(-1);
+                return;
+            }
+
             if (!pdfDoc || pages.length === 0) {
                 alert('Please load a PDF first.');
                 return;

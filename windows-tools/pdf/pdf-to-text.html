@@ -37,6 +37,8 @@
 
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="/windows-tools/js/batch-files.js"></script>
 
 
 
@@ -91,9 +93,10 @@
   </section>
   <section class="section">
     <div class="drop" id="dropArea">
-      Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
-      <input type="file" id="fileInput" accept="application/pdf" style="display:none">
+      Drop PDFs here or <button class="btn" id="pickBtn">Choose files</button>
+      <input type="file" id="fileInput" accept="application/pdf" multiple style="display:none">
     </div>
+    <div class="files-list" id="filesList" aria-live="polite"></div>
 
     <label style="display:block;margin-top:10px">
       <input type="checkbox" id="enableOCR"> Enable OCR (for scanned pages)
@@ -228,6 +231,18 @@
 
     let pdf = null;
     let extractedText = "";
+    const pageStateMap = new Map();
+
+    const fileQueue = new BatchFileQueue({
+      fileInput, dropArea, pickBtn,
+      listContainer: document.getElementById('filesList'),
+      accept: 'application/pdf',
+      interactive: true,
+      onActiveChange: async (entry) => {
+        if (!entry) { pdf = null; thumbs.innerHTML = ''; return; }
+        await loadPDF(entry.file, entry.id);
+      }
+    });
 
     function log(msg) {
       logEl.textContent += "\n" + msg;
@@ -253,43 +268,18 @@
       downloadArea.style.display = "none";
     }
 
-    pickBtn.onclick = () => fileInput.click();
-    fileInput.onchange = e => loadPDF(e.target.files[0]);
-
-    dropArea.ondragover = e => {
-      e.preventDefault();
-      dropArea.style.borderColor = "#0aa37f";
-    }
-
-    dropArea.ondragleave = () => dropArea.style.borderColor = "#222";
-
-    dropArea.ondrop = e => {
-      e.preventDefault();
-      dropArea.style.borderColor = "#222";
-      loadPDF(e.dataTransfer.files[0]);
-    };
-
-    async function loadPDF(file) {
+    async function loadPDF(file, entryId) {
       if (!file) return;
       logEl.textContent = "Loading PDF...";
       hideDownloadArea();
-      output.style.display = "none";
-
-      // Reset
-      pdf = null;
-      thumbs.innerHTML = "";
-      output.value = "";
-      extractedText = "";
-
       pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
-
       try {
         pdf = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
         log("PDF loaded successfully. Pages: " + pdf.numPages);
         await loadThumbnails();
+        if (entryId) pageStateMap.set(entryId, { selectedPages: null });
       } catch (error) {
         log("Error loading PDF: " + error.message);
-        alert("Failed to load PDF. Please try a different file.");
       }
     }
 
@@ -310,67 +300,69 @@
       }
     }
 
-    extractBtn.onclick = async () => {
-      if (!pdf) {
-        alert("Please load a PDF file first.");
-        return;
+    async function processOneFile(file, entryId) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
+      const pdfDoc = await pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
+      let selected = null;
+      if (entryId === fileQueue.activeEntry?.id && fileQueue.count === 1) {
+        selected = [...document.querySelectorAll(".pageSel:checked")].map(x => parseInt(x.dataset.id));
       }
+      if (!selected || !selected.length) {
+        selected = Array.from({ length: pdfDoc.numPages }, (_, i) => i + 1);
+      }
+      let text = "";
+      for (const pageNum of selected) {
+        const page = await pdfDoc.getPage(pageNum);
+        if (enableOCR.checked) {
+          const vp = page.getViewport({ scale: 2 });
+          const c = document.createElement("canvas");
+          c.width = vp.width; c.height = vp.height;
+          await page.render({ canvasContext: c.getContext("2d"), viewport: vp }).promise;
+          try {
+            const ocr = await Tesseract.recognize(c, "eng");
+            text += `\n\n--- Page ${pageNum} ---\n` + ocr.data.text;
+          } catch (e) {
+            const content = await page.getTextContent();
+            text += `\n\n--- Page ${pageNum} ---\n` + content.items.map(it => it.str).join(" ");
+          }
+        } else {
+          const content = await page.getTextContent();
+          text += `\n\n--- Page ${pageNum} ---\n` + content.items.map(it => it.str).join(" ");
+        }
+      }
+      return {
+        blob: new Blob([text], { type: "text/plain;charset=utf-8" }),
+        filename: file.name.replace(/\.pdf$/i, '.txt')
+      };
+    }
 
-      output.value = "";
+    extractBtn.onclick = async () => {
+      const files = fileQueue.files;
+      if (!files.length) { alert("Please add PDF file(s) first."); return; }
       logEl.textContent = "Starting extraction...";
       setProgress(0);
       hideDownloadArea();
-      output.style.display = "none";
-
-      const selected = [...document.querySelectorAll(".pageSel:checked")].map(x => parseInt(x.dataset.id));
-      if (!selected.length) {
-        alert("Please select at least one page to extract.");
-        setProgress(-1);
-        return;
-      }
-
-      extractedText = "";
-      log(`Extracting text from ${selected.length} pages...`);
-
-      for (let pi = 0; pi < selected.length; pi++) {
-        const pageNum = selected[pi];
-        const page = await pdf.getPage(pageNum);
-
-        if (enableOCR.checked) {
-          log(`OCR processing page ${pageNum} (${pi + 1}/${selected.length})...`);
-          const vp = page.getViewport({ scale: 2 });
-          const c = document.createElement("canvas");
-          c.width = vp.width;
-          c.height = vp.height;
-          await page.render({ canvasContext: c.getContext("2d"), viewport: vp }).promise;
-
-          try {
-            const ocr = await Tesseract.recognize(c, "eng");
-            extractedText += `\n\n--- Page ${pageNum} ---\n` + ocr.data.text;
-            log(`✓ Page ${pageNum} OCR completed`);
-          } catch (ocrError) {
-            log(`✗ OCR failed for page ${pageNum}: ${ocrError.message}`);
-            // Fallback to regular text extraction
-            const content = await page.getTextContent();
-            const text = content.items.map(it => it.str).join(" ");
-            extractedText += `\n\n--- Page ${pageNum} ---\n` + text;
-          }
-        } else {
-          log(`Extracting text from page ${pageNum} (${pi + 1}/${selected.length})`);
-          const content = await page.getTextContent();
-          const text = content.items.map(it => it.str).join(" ");
-          extractedText += `\n\n--- Page ${pageNum} ---\n` + text;
+      extractBtn.disabled = true;
+      try {
+        const { results, errors } = await BatchProcessor.run(files, processOneFile, {
+          queue: fileQueue,
+          onProgress: (c, t, f) => { log(`Extracting ${c}/${t}: ${f.name}`); setProgress(c / t); }
+        });
+        if (results.length === 1) {
+          extractedText = await results[0].blob.text();
+          output.value = extractedText;
+          showDownloadArea();
         }
-
-        setProgress((pi + 1) / selected.length);
+        if (results.length) {
+          BatchProcessor.deliver(results, { container: downloadArea });
+          showDownloadArea();
+          log("✓ Extraction completed — " + results.length + " file(s).");
+        }
+        if (errors.length) log("Errors: " + errors.length);
+      } finally {
+        extractBtn.disabled = false;
+        setProgress(-1);
       }
-
-      output.value = extractedText;
-      log("✓ Text extraction completed!");
-      setProgress(-1);
-
-      // Show download area
-      showDownloadArea();
     };
 
     // Download button

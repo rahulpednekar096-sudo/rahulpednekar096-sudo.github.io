@@ -45,7 +45,8 @@
 
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="/windows-tools/js/batch-files.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
@@ -174,9 +175,10 @@
   </section>
   <section class="section">
     <div class="drop" id="dropArea">
-      Drop DOCX here or <button class="btn" id="pickBtn">Choose file</button>
-      <input type="file" id="fileInput" accept=".docx" style="display:none">
+      Drop DOCX files here or <button class="btn" id="pickBtn">Choose files</button>
+      <input type="file" id="fileInput" accept=".docx" multiple style="display:none">
     </div>
+    <div class="files-list" id="filesList" aria-live="polite"></div>
 
     <div class="controls" style="margin-top:10px">
       <label>Page size</label>
@@ -287,16 +289,27 @@
     let currentFile = null;
     let docxHtml = "";
 
+    const fileQueue = new BatchFileQueue({
+      fileInput, dropArea, pickBtn,
+      listContainer: document.getElementById('filesList'),
+      accept: '.docx',
+      interactive: true,
+      onActiveChange: async (entry) => {
+        if (!entry) { clearAll(); return; }
+        await loadDocx(entry.file);
+      }
+    });
+
     function log(msg) {
       logEl.textContent += "\n" + msg;
       logEl.scrollTop = logEl.scrollHeight;
     }
 
     function clearAll() {
+      fileQueue.clear();
       previewContent.innerHTML = "<p>No file selected. Upload a DOCX file to see preview.</p>";
       download.innerHTML = "";
       logEl.textContent = "Ready.";
-      fileInput.value = "";
       currentFile = null;
       docxHtml = "";
       setProgress(-1);
@@ -312,24 +325,13 @@
       }
     }
 
-    pickBtn.onclick = () => fileInput.click();
-    fileInput.onchange = e => loadDocx(e.target.files[0]);
-
-    dropArea.ondragover = e => { e.preventDefault(); dropArea.style.borderColor = "#0aa37f"; }
-    dropArea.ondragleave = () => dropArea.style.borderColor = "#222";
-    dropArea.ondrop = e => {
-      e.preventDefault();
-      dropArea.style.borderColor = "#222";
-      loadDocx(e.dataTransfer.files[0]);
-    };
-
     async function loadDocx(file) {
       if (!file || !file.name.toLowerCase().endsWith('.docx')) {
         alert("Please select a valid DOCX file (.docx)");
         return;
       }
 
-      clearAll();
+      download.innerHTML = "";
       log("Loading DOCX file: " + file.name);
       setProgress(0.1);
 
@@ -376,19 +378,11 @@
       }
     }
 
-    convertBtn.onclick = async () => {
-      if (!currentFile || !docxHtml) {
-        alert("Please select a DOCX file first");
-        return;
-      }
-
-      log("Starting PDF conversion...");
-      download.innerHTML = "";
-      setProgress(0);
-
-      try {
-        // Prepare HTML content for PDF with better styling
-        const tempDiv = document.createElement('div');
+    async function processOneFile(file) {
+      const arrayBuffer = await file.arrayBuffer();
+      const result = await mammoth.convertToHtml({ arrayBuffer });
+      const html = result.value;
+      const tempDiv = document.createElement('div');
         tempDiv.style.position = 'absolute';
         tempDiv.style.left = '-9999px';
         tempDiv.style.top = '-9999px';
@@ -409,141 +403,61 @@
         font-size: 12pt;
         line-height: 1.5;
       ">
-        ${docxHtml}
+        ${html}
       </div>
     `;
+      document.body.appendChild(tempDiv);
+      const pageSize = document.getElementById("pageSize").value;
+      const orientation = document.getElementById("orientation").value === "p" ? "portrait" : "landscape";
+      const margin = parseFloat(document.getElementById("margin").value) || 10;
+      let pdfWidth, pdfHeight;
+      if (pageSize === "A4") {
+        pdfWidth = orientation === "portrait" ? 210 : 297;
+        pdfHeight = orientation === "portrait" ? 297 : 210;
+      } else if (pageSize === "Letter") {
+        pdfWidth = orientation === "portrait" ? 216 : 279;
+        pdfHeight = orientation === "portrait" ? 279 : 216;
+      } else {
+        pdfWidth = orientation === "portrait" ? 216 : 356;
+        pdfHeight = orientation === "portrait" ? 356 : 216;
+      }
+      const canvas = await html2canvas(tempDiv, {
+        scale: window.devicePixelRatio * 3, useCORS: true, backgroundColor: "#ffffff",
+        letterRendering: true, logging: false, allowTaint: true, imageTimeout: 15000, removeContainer: true
+      });
+      document.body.removeChild(tempDiv);
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF({ unit: "mm", format: pageSize.toLowerCase(), orientation, compress: true });
+      const pageWidth = pdfWidth - (margin * 2);
+      const imgWidth = pageWidth;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      pdf.addImage(canvas.toDataURL('image/png', 1.0), 'PNG', margin, margin, imgWidth, imgHeight, '', 'MEDIUM');
+      return { blob: pdf.output('blob'), filename: file.name.replace(/\.docx$/i, '.pdf') };
+    }
 
-        document.body.appendChild(tempDiv);
-
-        const pageSize = document.getElementById("pageSize").value;
-        const orientation = document.getElementById("orientation").value === "p" ? "portrait" : "landscape";
-        const margin = parseFloat(document.getElementById("margin").value) || 10;
-
-        // Get PDF dimensions in mm
-        let pdfWidth, pdfHeight;
-        if (pageSize === "A4") {
-          pdfWidth = orientation === "portrait" ? 210 : 297;
-          pdfHeight = orientation === "portrait" ? 297 : 210;
-        } else if (pageSize === "Letter") {
-          pdfWidth = orientation === "portrait" ? 216 : 279;
-          pdfHeight = orientation === "portrait" ? 279 : 216;
-        } else { // Legal
-          pdfWidth = orientation === "portrait" ? 216 : 356;
-          pdfHeight = orientation === "portrait" ? 356 : 216;
+    convertBtn.onclick = async () => {
+      const files = fileQueue.files;
+      if (!files.length) { alert("Please select DOCX file(s) first"); return; }
+      log("Starting PDF conversion...");
+      download.innerHTML = "";
+      setProgress(0);
+      convertBtn.disabled = true;
+      try {
+        const { results, errors } = await BatchProcessor.run(files, processOneFile, {
+          queue: fileQueue,
+          onProgress: (c, t, f) => { log(`Converting ${c}/${t}: ${f.name}`); setProgress(c / t); }
+        });
+        if (results.length) {
+          BatchProcessor.deliver(results);
+          log(`Done — ${results.length} PDF(s) ready.`);
         }
-
-        log("Rendering HTML to canvas...");
-        setProgress(0.2);
-
-        // Convert HTML to canvas with higher quality
-        const canvas = await html2canvas(tempDiv, {
-          scale: window.devicePixelRatio * 3,
-          useCORS: true,
-          backgroundColor: "#ffffff",
-          letterRendering: true, // हे महत्वाचे आहे
-          logging: false,
-          allowTaint: true,
-          imageTimeout: 15000,
-          removeContainer: true,
-          onclone: function (clonedDoc) {
-            clonedDoc.body.style.fontFamily = "'Times New Roman', serif";
-            clonedDoc.body.style.fontSize = '16px';
-            clonedDoc.body.style.color = '#000000';
-          }
-        });
-
-        // Remove temp div
-        document.body.removeChild(tempDiv);
-
-        log("Generating PDF...");
-        setProgress(0.8);
-
-        const { jsPDF } = window.jspdf;
-        const pdf = new jsPDF({
-          unit: "mm",
-          format: pageSize.toLowerCase(),
-          orientation: orientation,
-          compress: true
-        });
-
-        // Calculate image dimensions to fit page
-        const pageWidth = pdfWidth - (margin * 2);
-        const pageHeight = pdfHeight - (margin * 2);
-
-        const imgWidth = pageWidth;
-        const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-        // Add image to PDF with quality settings
-        const imgData = canvas.toDataURL('image/png', 1.0); // Maximum quality
-        pdf.addImage(imgData, 'PNG', margin, margin, imgWidth, imgHeight, '', 'MEDIUM');
-
-        log("Saving PDF...");
-        setProgress(0.95);
-
-        // Save PDF
-        const pdfBlob = pdf.output('blob');
-        const fileName = currentFile.name.replace(/\.docx$/i, '.pdf');
-
-        // Create download link
-        const downloadLink = document.createElement('a');
-        downloadLink.href = URL.createObjectURL(pdfBlob);
-        downloadLink.download = fileName;
-        downloadLink.textContent = `📥 Download ${fileName}`;
-        downloadLink.className = "btn-primary";
-        downloadLink.style.marginTop = "10px";
-        downloadLink.style.display = "inline-block";
-        downloadLink.style.textDecoration = "none";
-        downloadLink.style.padding = "10px 20px";
-
-        // Create preview link
-        const previewLink = document.createElement('a');
-        previewLink.href = URL.createObjectURL(pdfBlob);
-        previewLink.target = "_blank";
-        previewLink.textContent = "👁️ Open PDF Preview";
-        previewLink.style.marginLeft = "10px";
-        previewLink.style.display = "inline-block";
-        previewLink.style.padding = "10px 20px";
-        previewLink.style.backgroundColor = "#2a3a4a";
-        previewLink.style.color = "white";
-        previewLink.style.borderRadius = "4px";
-        previewLink.style.textDecoration = "none";
-
-        // Create container for buttons
-        const buttonContainer = document.createElement('div');
-        buttonContainer.style.marginTop = "15px";
-        buttonContainer.style.padding = "15px";
-        buttonContainer.style.backgroundColor = "#0a2a1e";
-        buttonContainer.style.borderRadius = "8px";
-        buttonContainer.style.border = "1px solid #0aa37f";
-
-        const title = document.createElement('h3');
-        title.textContent = "✓ PDF Conversion Complete!";
-        title.style.color = "#0aa37f";
-        title.style.marginTop = "0";
-
-        const info = document.createElement('p');
-        info.textContent = `Your Word document has been converted to PDF.`;
-        info.style.color = "#9fbfb0";
-        info.style.marginBottom = "15px";
-
-        buttonContainer.appendChild(title);
-        buttonContainer.appendChild(info);
-        buttonContainer.appendChild(downloadLink);
-        buttonContainer.appendChild(previewLink);
-
-        download.appendChild(buttonContainer);
-
-        log(`PDF created successfully: ${fileName}`);
-        setProgress(1);
-
-        // Hide progress after a moment
-        setTimeout(() => setProgress(-1), 1000);
-
+        if (errors.length) log(`Errors: ${errors.length}`);
       } catch (error) {
         log("Conversion error: " + error.message);
-        setProgress(-1);
-        alert("Failed to convert to PDF. Please try again with a different file.");
-        console.error("PDF Conversion Error:", error);
+        alert("Failed to convert. Please try again.");
+      } finally {
+        convertBtn.disabled = false;
+        setTimeout(() => setProgress(-1), 500);
       }
     };
 

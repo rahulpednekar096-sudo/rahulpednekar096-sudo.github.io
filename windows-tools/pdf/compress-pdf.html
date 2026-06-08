@@ -57,6 +57,8 @@
 
   <!-- jQuery (optional – remove if not needed) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="/windows-tools/js/batch-files.js"></script>
 
   <!-- Structured Data (VERY IMPORTANT 🔥) -->
   <script type="application/ld+json">
@@ -123,9 +125,10 @@
   <section class="tool-section">
     <div class="card">
       <div class="card">
-        <div class="drop" id="dropArea">Drop PDF here or <button class="btn btn-ghost" id="pickBtn">Choose
-            file</button></div>
-        <input type="file" id="fileInput" accept="application/pdf" />
+        <div class="drop" id="dropArea">Drop PDFs here or <button class="btn btn-ghost" id="pickBtn">Choose
+            files</button></div>
+        <input type="file" id="fileInput" accept="application/pdf" multiple />
+        <div class="files-list" id="filesList" aria-live="polite"></div>
 
         <div class="row">
           <div class="col">
@@ -311,8 +314,23 @@
       const warningEl = document.getElementById('warning');
 
       let controller = { cancel: false };
-      let currentFile = null;
       let isProcessing = false;
+
+      const fileQueue = new BatchFileQueue({
+        fileInput, dropArea, pickBtn,
+        listContainer: document.getElementById('filesList'),
+        accept: 'application/pdf',
+        interactive: true,
+        onActiveChange: (entry) => {
+          if (entry) {
+            logEl.textContent = '';
+            log(`Selected: ${entry.file.name} — ${(entry.file.size / 1024).toFixed(1)} KB`);
+            sizeInfo.textContent = '';
+            downloadLink.style.display = 'none';
+            previewEl.innerHTML = '';
+          }
+        }
+      });
 
       // Ensure cancelBtn is properly styled
       cancelBtn.style.cssText = 'display: none; visibility: visible; opacity: 1; position: relative;';
@@ -347,20 +365,6 @@
       document.head.appendChild(style);
 
       jpegQ.addEventListener('input', () => jpegVal.textContent = `Quality: ${jpegQ.value}%`);
-      pickBtn.addEventListener('click', () => fileInput.click());
-
-      dropArea.addEventListener('dragover', (e) => { e.preventDefault(); dropArea.style.borderColor = '#0aa37f'; });
-      dropArea.addEventListener('dragleave', () => { dropArea.style.borderColor = '#202426'; });
-      dropArea.addEventListener('drop', async (e) => {
-        e.preventDefault();
-        dropArea.style.borderColor = '#202426';
-        if (e.dataTransfer.files.length) {
-          fileInput.files = e.dataTransfer.files;
-          handleFileSelected();
-        }
-      });
-
-      fileInput.addEventListener('change', handleFileSelected);
 
       function log(msg) { logEl.textContent += msg + "\n"; logEl.scrollTop = logEl.scrollHeight; }
       function clearLog() { logEl.textContent = 'Ready.'; }
@@ -406,255 +410,137 @@
         // Clear size info
         sizeInfo.textContent = '';
 
-        // Reset file input
-        fileInput.value = '';
-        currentFile = null;
-
-        // Clear log
+        fileQueue.clear();
         clearLog();
       }
 
-      function handleFileSelected() {
-        currentFile = fileInput.files[0];
-        if (currentFile) {
-          // Don't clear log completely, just add selection message
-          logEl.textContent = ''; // Clear first
-          log(`Selected: ${currentFile.name} — ${(currentFile.size / 1024).toFixed(1)} KB`);
-          sizeInfo.textContent = '';
-          downloadLink.style.display = 'none';
-          previewEl.innerHTML = '';
-
-          // Show start button if it was hidden
-          startBtn.style.display = 'inline-block';
-          cancelBtn.style.display = 'none';
-        }
-      }
-
-      // tiny helper to yield to UI / avoid freeze
       async function briefYield(ms = 20) { return new Promise(r => setTimeout(r, ms)); }
 
-      startBtn.addEventListener('click', async () => {
-        if (!currentFile) return alert('कृपया PDF निवडा.');
-
-        isProcessing = true;
-        controller.cancel = false;
-
-        // Show cancel button with multiple methods
-        cancelBtn.style.display = 'inline-block';
-        cancelBtn.style.visibility = 'visible';
-        cancelBtn.style.opacity = '1';
-        cancelBtn.textContent = 'Cancel';
-
-        // Hide start button
-        startBtn.style.display = 'none';
-
-        // Force reflow
-        cancelBtn.offsetHeight;
-
-        // Clear previous results
-        downloadLink.style.display = 'none';
-        previewEl.innerHTML = '';
-        warningEl.textContent = '';
-        logEl.textContent = ''; // Clear log for new process
+      async function processOneFile(file) {
+        if (!window.pdfjsLib) throw new Error('pdf.js not loaded');
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
         const scaleFactor = parseFloat(scaleSelect.value);
         const quality = parseInt(jpegQ.value) / 100;
         const maxPages = Math.max(0, parseInt(maxPagesInput.value) || 0);
-        const doPreview = optPreview.checked;
+        const doPreview = optPreview.checked && fileQueue.count === 1;
         const doOCR = optOCR.checked;
 
-        log(`Starting compression — scale ${scaleFactor}×, JPEG quality ${Math.round(quality * 100)}%`);
+        const arrayBuffer = await file.arrayBuffer();
+        const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(arrayBuffer) }).promise;
+        const totalPages = pdf.numPages;
+        const pagesToProcess = (maxPages > 0) ? Math.min(maxPages, totalPages) : totalPages;
+        const newPdf = await PDFLib.PDFDocument.create();
+        const ocrTexts = [];
+
+        for (let i = 1; i <= pagesToProcess; i++) {
+          if (controller.cancel) throw new Error('Cancelled');
+          const page = await pdf.getPage(i);
+          const canvas = document.createElement('canvas');
+          const vp = page.getViewport({ scale: scaleFactor });
+          canvas.width = Math.max(1, Math.round(vp.width));
+          canvas.height = Math.max(1, Math.round(vp.height));
+          const ctx = canvas.getContext('2d');
+          await page.render({ canvasContext: ctx, viewport: vp }).promise;
+
+          if (doPreview) {
+            const thumb = document.createElement('img');
+            thumb.style.maxWidth = '120px';
+            thumb.style.borderRadius = '6px';
+            thumb.src = canvas.toDataURL('image/jpeg', Math.max(0.1, quality));
+            previewEl.appendChild(thumb);
+          }
+
+          if (doOCR) {
+            try {
+              const worker = Tesseract.createWorker({ logger: () => {} });
+              await worker.load();
+              await worker.loadLanguage('eng');
+              await worker.initialize('eng');
+              const { data: { text } } = await worker.recognize(canvas);
+              ocrTexts.push(`--- Page ${i} ---\n` + (text.trim() || '[no text detected]') + '\n');
+              await worker.terminate();
+            } catch (ocrErr) { /* skip OCR errors per page */ }
+          }
+
+          const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
+          const jpgBytes = new Uint8Array(await blob.arrayBuffer());
+          const imgEmbed = await newPdf.embedJpg(jpgBytes);
+          const imgDims = imgEmbed.scale(1);
+          const pdfPage = newPdf.addPage([imgDims.width, imgDims.height]);
+          pdfPage.drawImage(imgEmbed, { x: 0, y: 0, width: imgDims.width, height: imgDims.height });
+          await briefYield(10);
+        }
+
+        if (ocrTexts.length) {
+          const textDoc = newPdf.addPage([595, 842]);
+          const combined = ocrTexts.join('\n\n');
+          textDoc.drawText('OCR Summary (automatically extracted text):', {
+            x: 20, y: textDoc.getHeight() - 40, size: 12, color: PDFLib.rgb(0.9, 0.9, 0.9)
+          });
+          let cursorY = textDoc.getHeight() - 60;
+          for (const line of combined.split('\n')) {
+            if (cursorY < 40) cursorY = textDoc.getHeight() - 40;
+            textDoc.drawText(line, { x: 20, y: cursorY, size: 10, color: PDFLib.rgb(0.85, 0.85, 0.85) });
+            cursorY -= 12;
+          }
+        }
+
+        const pdfBytes = await newPdf.save();
+        const outBlob = new Blob([pdfBytes], { type: 'application/pdf' });
+        return {
+          blob: outBlob,
+          filename: file.name.replace(/\.[^/.]+$/, '') + '-compressed.pdf'
+        };
+      }
+
+      startBtn.addEventListener('click', async () => {
+        const files = fileQueue.files;
+        if (!files.length) return alert('कृपया PDF निवडा.');
+
+        isProcessing = true;
+        controller.cancel = false;
+        cancelBtn.style.display = 'inline-block';
+        cancelBtn.textContent = 'Cancel';
+        startBtn.disabled = true;
+        downloadLink.style.display = 'none';
+        previewEl.innerHTML = '';
+        warningEl.textContent = '';
+        logEl.textContent = '';
+
+        const bigFile = files.find(f => f.size > 50 * 1024 * 1024);
+        if (bigFile) warningEl.textContent = 'Warning: large file(s) (>50MB) may be slow.';
+
+        log(`Compressing ${files.length} PDF(s)...`);
         setProgress(0);
 
-        // Safety: warn for very large files
-        if (currentFile.size > 50 * 1024 * 1024) {
-          warningEl.textContent = 'Warning: large file (>50MB). This may be slow and may use a lot of memory.';
-        }
-
-        // load pdf.js
-        if (!window.pdfjsLib) {
-          alert('pdf.js not loaded');
-          resetUI();
-          return;
-        }
-
         try {
-          pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
-
-          // load file
-          const arrayBuffer = await currentFile.arrayBuffer();
-          const pdfData = new Uint8Array(arrayBuffer);
-          let pdf;
-          try {
-            pdf = await pdfjsLib.getDocument({ data: pdfData }).promise;
-          } catch (e) {
-            log('Failed to parse PDF: ' + e.message);
-            resetUI();
-            return;
-          }
-
-          const totalPages = pdf.numPages;
-          log(`Input pages: ${totalPages}`);
-
-          const pagesToProcess = (maxPages > 0) ? Math.min(maxPages, totalPages) : totalPages;
-
-          // create new pdf
-          const newPdf = await PDFLib.PDFDocument.create();
-          let ocrTexts = [];
-
-          for (let i = 1; i <= pagesToProcess; i++) {
-            if (controller.cancel) {
-              log('Cancelled by user');
-              break;
+          const { results, errors } = await BatchProcessor.run(files, processOneFile, {
+            queue: fileQueue,
+            onProgress: (c, t, f) => {
+              log(`Processing ${c}/${t}: ${f.name}`);
+              setProgress(c / t);
             }
+          });
 
-            try {
-              log(`Rendering page ${i}/${pagesToProcess} ...`);
-              const page = await pdf.getPage(i);
-              const viewport = page.getViewport({ scale: 1.0 });
-              const renderWidth = Math.max(1, Math.round(viewport.width * scaleFactor));
-              const renderHeight = Math.max(1, Math.round(viewport.height * scaleFactor));
-              const canvas = document.createElement('canvas');
-              canvas.width = renderWidth;
-              canvas.height = renderHeight;
-              const ctx = canvas.getContext('2d');
-
-              // render
-              const renderContext = {
-                canvasContext: ctx,
-                viewport: page.getViewport({ scale: scaleFactor })
-              };
-              await page.render(renderContext).promise;
-
-              // optional preview thumbnail
-              if (doPreview) {
-                const thumb = document.createElement('img');
-                thumb.style.maxWidth = '120px';
-                thumb.style.borderRadius = '6px';
-                thumb.src = canvas.toDataURL('image/jpeg', Math.max(0.1, quality));
-                previewEl.appendChild(thumb);
-              }
-
-              // optional OCR of page (summary) — slow
-              if (doOCR) {
-                try {
-                  log(`OCR page ${i} ... (this may be slow)`);
-                  const worker = Tesseract.createWorker({ logger: m => { } });
-                  await worker.load();
-                  await worker.loadLanguage('eng');
-                  await worker.initialize('eng');
-                  const { data: { text } } = await worker.recognize(canvas);
-                  ocrTexts.push(`--- Page ${i} ---\n` + (text.trim() || '[no text detected]') + '\n');
-                  await worker.terminate();
-                } catch (ocrErr) {
-                  log('OCR failed for page ' + i + ': ' + ocrErr.message);
-                }
-              }
-
-              // convert canvas to JPEG blob
-              const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
-              const arrayBuf = await blob.arrayBuffer();
-              const jpgBytes = new Uint8Array(arrayBuf);
-
-              // embed and add page
-              const imgEmbed = await newPdf.embedJpg(jpgBytes);
-              const imgDims = imgEmbed.scale(1);
-              const pdfPage = newPdf.addPage([imgDims.width, imgDims.height]);
-              pdfPage.drawImage(imgEmbed, {
-                x: 0,
-                y: 0,
-                width: imgDims.width,
-                height: imgDims.height
-              });
-
-              // progress update
-              setProgress(i / pagesToProcess);
-              await briefYield(30);
-              // free canvas memory
-              ctx && ctx.clearRect(0, 0, canvas.width, canvas.height);
-            } catch (pageErr) {
-              log('Error processing page ' + i + ': ' + (pageErr.message || pageErr));
+          if (results.length) {
+            const mode = BatchProcessor.deliver(results);
+            if (mode === 'single' && results[0]) {
+              sizeInfo.textContent = `Compressed: ${(results[0].blob.size / 1024).toFixed(1)} KB`;
+            } else {
+              sizeInfo.textContent = `${results.length} file(s) ready`;
             }
+            log(`Done — ${results.length} compressed.`);
           }
-
-          // Check if cancelled
-          if (controller.cancel) {
-            resetUI();
-            setProgress(-1);
-            log('Operation cancelled — no file produced.');
-            return;
-          }
-
-          // if OCR texts exist and user wanted summary, add as last page (text)
-          if (ocrTexts.length && !controller.cancel) {
-            try {
-              const textDoc = newPdf.addPage([595, 842]);
-              const combined = ocrTexts.join('\n\n');
-              textDoc.drawText('OCR Summary (automatically extracted text):', {
-                x: 20,
-                y: textDoc.getHeight() - 40,
-                size: 12,
-                color: PDFLib.rgb(0.9, 0.9, 0.9)
-              });
-              // split text into lines
-              const lines = combined.split('\n');
-              let cursorY = textDoc.getHeight() - 60;
-              const lineHeight = 12;
-              for (const line of lines) {
-                if (cursorY < 40) {
-                  // add new page
-                  cursorY = textDoc.getHeight() - 40;
-                }
-                textDoc.drawText(line, {
-                  x: 20,
-                  y: cursorY,
-                  size: 10,
-                  color: PDFLib.rgb(0.85, 0.85, 0.85)
-                });
-                cursorY -= lineHeight;
-              }
-              log('OCR summary added as last page.');
-            } catch (e) {
-              log('Failed to append OCR summary: ' + e.message);
-            }
-          }
-
-          log('Finalizing PDF (this may take some seconds)...');
-          try {
-            const pdfBytes = await newPdf.save();
-            const outBlob = new Blob([pdfBytes], { type: 'application/pdf' });
-            const outUrl = URL.createObjectURL(outBlob);
-
-            // Set up download link
-            downloadLink.href = outUrl;
-            downloadLink.download = currentFile.name.replace(/\.[^/.]+$/, '') + '-compressed.pdf';
-            downloadLink.textContent = '📥 Download compressed PDF';
-            downloadLink.style.display = 'inline-block';
-
-            // Show stats
-            sizeInfo.textContent = `Original: ${(currentFile.size / 1024).toFixed(1)} KB → Compressed: ${(outBlob.size / 1024).toFixed(1)} KB`;
-            log(`Done. Original ${(currentFile.size / 1024).toFixed(1)} KB, Compressed ${(outBlob.size / 1024).toFixed(1)} KB`);
-
-            // IMPORTANT: Change cancel button to "Reset" and keep it visible
-            cancelBtn.textContent = 'Reset';
-            cancelBtn.style.display = 'inline-block';
-            cancelBtn.style.backgroundColor = '#ffc107';
-            cancelBtn.style.color = '#212529';
-            cancelBtn.style.borderColor = '#ffc107';
-
-            // Show start button again (for new compression)
-            startBtn.style.display = 'inline-block';
-            startBtn.textContent = 'Compress Another PDF';
-
-            setProgress(1);
-            isProcessing = false;
-          } catch (saveErr) {
-            log('Failed to save compressed PDF: ' + saveErr.message);
-            resetUI();
-          }
+          if (errors.length) log(`Errors: ${errors.length}`);
         } catch (error) {
           log('Error: ' + error.message);
-          resetUI();
+        } finally {
+          isProcessing = false;
+          startBtn.disabled = false;
+          startBtn.textContent = files.length > 1 ? 'Compress PDFs' : 'Compress PDF';
+          cancelBtn.textContent = 'Reset';
+          setProgress(-1);
         }
       });
 

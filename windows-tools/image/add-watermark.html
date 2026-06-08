@@ -31,7 +31,8 @@
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/windows-tools/js/batch-files.js"></script>
 
   <script type="application/ld+json">
   {
@@ -83,9 +84,10 @@
     </section>
     <section class="tool-section">
         <div class="card">
-            <div class="drop" id="dropArea">Drop image or <button class="btn btn-ghost" id="pickBtn">Choose
-                    file</button></div>
-            <input type="file" id="fileInput" accept="image/*" />
+            <div class="drop" id="dropArea">Drop images or <button class="btn btn-ghost" id="pickBtn">Choose
+                    files</button></div>
+            <input type="file" id="fileInput" accept="image/*" multiple />
+            <div class="files-list" id="filesList" aria-live="polite"></div>
             <hr>
             <div class="row">
                 <div class="col"><label class="small">Type</label><select id="wmType">
@@ -176,7 +178,6 @@
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
 
-        // Variables declaration
         const pickBtn = document.getElementById('pickBtn'),
             fileInput = document.getElementById('fileInput'),
             dropArea = document.getElementById('dropArea'),
@@ -191,27 +192,38 @@
             resetBtn = document.getElementById('resetBtn'),
             preview = document.getElementById('preview'),
             downloadLink = document.getElementById('downloadLink'),
-            logEl = document.getElementById('log');
+            logEl = document.getElementById('log'),
+            wmPickBtn = document.getElementById('wmPickBtn'),
+            wmImageName = document.getElementById('wmImageName');
 
-        let currentFile = null;
-        let mainImageURL = null;
-        let watermarkImageURL = null;
+        let previewImageURL = null;
+        let watermarkImageData = null;
 
-        // Event Listeners
-        pickBtn.addEventListener('click', () => fileInput.click());
+        function log(msg) { logEl.textContent += msg + '\n'; }
 
-        dropArea.addEventListener('dragover', e => {
-            e.preventDefault();
-            dropArea.style.borderColor = '#0aa37f';
-        });
+        function revokePreviewURL() {
+            if (previewImageURL) {
+                URL.revokeObjectURL(previewImageURL);
+                previewImageURL = null;
+            }
+        }
 
-        dropArea.addEventListener('dragleave', () => {
-            dropArea.style.borderColor = '';
-        });
+        function loadPreview(file) {
+            revokePreviewURL();
+            previewImageURL = URL.createObjectURL(file);
+            preview.innerHTML = `<img src="${previewImageURL}" style="max-width:420px;border-radius:8px">`;
+        }
 
-        dropArea.addEventListener('drop', e => {
-            e.preventDefault();
-            if (e.dataTransfer.files.length) fileInput.files = e.dataTransfer.files;
+        const fileQueue = new BatchFileQueue({
+            fileInput, dropArea, pickBtn,
+            listContainer: document.getElementById('filesList'),
+            accept: 'image/*',
+            showThumbnails: true,
+            interactive: true,
+            onActiveChange: (entry) => {
+                if (entry) loadPreview(entry.file);
+                else { revokePreviewURL(); preview.innerHTML = ''; }
+            }
         });
 
         wmType.addEventListener('change', () => {
@@ -223,194 +235,126 @@
                 imageOpts.style.display = 'block';
             }
         });
-
-        // Force correct visibility on page load
         wmType.dispatchEvent(new Event('change'));
 
         wmOpacity.addEventListener('input', () => opVal.textContent = wmOpacity.value + '%');
 
-        wmImage.addEventListener('change', () => {
+        wmPickBtn.addEventListener('click', () => wmImage.click());
+
+        wmImage.addEventListener('change', async () => {
             if (!wmImage.files.length) return;
-
             const f = wmImage.files[0];
-
-            // Release previous watermark image URL
-            if (watermarkImageURL) {
-                URL.revokeObjectURL(watermarkImageURL);
-            }
-
-            watermarkImageURL = URL.createObjectURL(f);
-            logEl.textContent = "Watermark image selected: " + f.name;
+            const dataUrl = await new Promise((res, rej) => {
+                const r = new FileReader();
+                r.onload = () => res(r.result);
+                r.onerror = rej;
+                r.readAsDataURL(f);
+            });
+            const wmi = new Image();
+            wmi.src = dataUrl;
+            await wmi.decode();
+            watermarkImageData = { img: wmi, name: f.name };
+            wmImageName.textContent = 'Selected: ' + f.name;
+            logEl.textContent = 'Watermark image selected: ' + f.name;
         });
 
-        fileInput.addEventListener('change', () => {
-            currentFile = fileInput.files[0];
+        async function loadImage(file) {
+            const dataUrl = await new Promise((res, rej) => {
+                const r = new FileReader();
+                r.onload = () => res(r.result);
+                r.onerror = rej;
+                r.readAsDataURL(file);
+            });
+            const img = new Image();
+            img.src = dataUrl;
+            await img.decode();
+            return img;
+        }
 
-            // Release previous main image URL
-            if (mainImageURL) {
-                URL.revokeObjectURL(mainImageURL);
+        async function applyWatermarkToCanvas(img) {
+            const canvas = document.createElement('canvas');
+            canvas.width = img.naturalWidth;
+            canvas.height = img.naturalHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+            ctx.globalAlpha = parseInt(wmOpacity.value) / 100;
+
+            if (wmType.value === 'text') {
+                const text = wmText.value.trim() || '© RDroid Apps';
+                const lines = text.split('\n');
+                const fontSize = Math.max(18, Math.round(canvas.width / 20));
+                ctx.font = `${fontSize}px sans-serif`;
+                ctx.textBaseline = 'bottom';
+                let y = canvas.height - 20;
+                for (let i = lines.length - 1; i >= 0; i--) {
+                    const line = lines[i];
+                    const textWidth = ctx.measureText(line).width;
+                    const x = canvas.width - textWidth - 20;
+                    ctx.fillStyle = 'white';
+                    ctx.strokeStyle = 'rgba(0,0,0,0.5)';
+                    ctx.lineWidth = 3;
+                    ctx.strokeText(line, x, y);
+                    ctx.fillText(line, x, y);
+                    y -= fontSize + 6;
+                }
+            } else {
+                if (!watermarkImageData) throw new Error('Watermark image required');
+                const wmi = watermarkImageData.img;
+                const scale = Math.min(0.25, canvas.width / (wmi.naturalWidth * 3));
+                const w = Math.round(wmi.naturalWidth * scale);
+                const h = Math.round(wmi.naturalHeight * scale);
+                const x = canvas.width - w - 20;
+                const y = canvas.height - h - 20;
+                ctx.drawImage(wmi, x, y, w, h);
             }
 
-            mainImageURL = URL.createObjectURL(currentFile);
-            preview.innerHTML = `<img id="loaded" src="${mainImageURL}" style="max-width:420px;border-radius:8px">`;
+            ctx.globalAlpha = 1;
+            return canvas;
+        }
+
+        async function processOneFile(file) {
+            const img = await loadImage(file);
+            const canvas = await applyWatermarkToCanvas(img);
+            const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+            return { blob, filename: file.name.replace(/\.[^/.]+$/, '') + '-wm.png' };
+        }
+
+        applyBtn.addEventListener('click', async () => {
+            const files = fileQueue.files;
+            if (!files.length) return alert('कृपया image निवडा');
+            if (wmType.value === 'image' && !watermarkImageData) return alert('कृपया watermark image निवडा');
+            applyBtn.disabled = true;
+            downloadLink.style.display = 'none';
+            logEl.textContent = 'Processing...\n';
+            const { results, errors } = await BatchProcessor.run(files, processOneFile, {
+                queue: fileQueue,
+                onProgress: (c, t, f) => log(`Processing ${c}/${t}: ${f.name}`)
+            });
+            if (results.length) BatchProcessor.deliver(results);
+            if (errors.length) log(`Errors: ${errors.length}`);
+            log('Done.');
+            applyBtn.disabled = false;
         });
 
-        // Reset Function
         resetBtn.addEventListener('click', () => {
-            // Reset file inputs
-            currentFile = null;
-            fileInput.value = '';
+            fileQueue.clear();
             wmImage.value = '';
-
-            // Reset text and options
+            watermarkImageData = null;
+            wmImageName.textContent = '';
             wmText.value = '© RDroid Apps';
             wmType.value = 'text';
             textOpts.style.display = 'block';
             imageOpts.style.display = 'none';
             wmOpacity.value = 60;
             opVal.textContent = '60%';
-
-            // Reset UI elements
             downloadLink.style.display = 'none';
+            revokePreviewURL();
             preview.innerHTML = '';
             logEl.textContent = 'Ready.';
-            dropArea.style.borderColor = '';
-
-            // Release all Object URLs
-            if (mainImageURL) {
-                URL.revokeObjectURL(mainImageURL);
-                mainImageURL = null;
-            }
-
-            if (watermarkImageURL) {
-                URL.revokeObjectURL(watermarkImageURL);
-                watermarkImageURL = null;
-            }
-
             if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
                 URL.revokeObjectURL(downloadLink.href);
                 downloadLink.href = '#';
             }
-        });
-
-        const wmPickBtn = document.getElementById("wmPickBtn");
-        const wmImageName = document.getElementById("wmImageName");
-
-        wmPickBtn.addEventListener("click", () => wmImage.click());
-
-        wmImage.addEventListener("change", () => {
-            if (!wmImage.files.length) return;
-            wmImageName.textContent = "Selected: " + wmImage.files[0].name;
-        });
-
-        // Apply Watermark Function (UPDATED PRO VERSION)
-        applyBtn.addEventListener('click', async () => {
-
-            if (!currentFile) return alert('कृपया image निवडा');
-
-            const reader = new FileReader();
-
-            reader.onload = async (e) => {
-
-                const img = new Image();
-                img.src = e.target.result;
-                await img.decode();
-
-                const canvas = document.createElement('canvas');
-                canvas.width = img.naturalWidth;
-                canvas.height = img.naturalHeight;
-
-                const ctx = canvas.getContext('2d');
-                ctx.drawImage(img, 0, 0);
-
-                // Opacity
-                ctx.globalAlpha = parseInt(wmOpacity.value) / 100;
-
-                /* ==========================
-                   TEXT WATERMARK (MULTILINE)
-                ========================== */
-                if (wmType.value === 'text') {
-
-                    const text = wmText.value.trim() || '© RDroid Apps';
-                    const lines = text.split('\n');
-
-                    const fontSize = Math.max(18, Math.round(canvas.width / 20));
-                    ctx.font = `${fontSize}px sans-serif`;
-                    ctx.textBaseline = 'bottom';
-
-                    let y = canvas.height - 20;
-
-                    for (let i = lines.length - 1; i >= 0; i--) {
-
-                        const line = lines[i];
-                        const textWidth = ctx.measureText(line).width;
-                        const x = canvas.width - textWidth - 20;
-
-                        ctx.fillStyle = 'white';
-                        ctx.strokeStyle = 'rgba(0,0,0,0.5)';
-                        ctx.lineWidth = 3;
-
-                        ctx.strokeText(line, x, y);
-                        ctx.fillText(line, x, y);
-
-                        y -= fontSize + 6;
-                    }
-                }
-
-                /* ==========================
-                   IMAGE WATERMARK (STABLE)
-                ========================== */
-                else {
-
-                    const wmF = wmImage.files[0];
-                    if (!wmF) return alert("कृपया watermark image निवडा");
-
-                    const wmi = new Image();
-                    const wmURL = URL.createObjectURL(wmF);
-                    wmi.src = wmURL;
-
-                    await wmi.decode();
-
-                    // Scale watermark relative to main image
-                    const scale = Math.min(0.25, canvas.width / (wmi.naturalWidth * 3));
-                    const w = Math.round(wmi.naturalWidth * scale);
-                    const h = Math.round(wmi.naturalHeight * scale);
-
-                    const x = canvas.width - w - 20;
-                    const y = canvas.height - h - 20;
-
-                    ctx.drawImage(wmi, x, y, w, h);
-
-                    URL.revokeObjectURL(wmURL);
-                }
-
-                ctx.globalAlpha = 1;
-
-                canvas.toBlob((b) => {
-
-                    const url = URL.createObjectURL(b);
-
-                    if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
-                        URL.revokeObjectURL(downloadLink.href);
-                    }
-
-                    preview.innerHTML = `
-                <img src="${url}"
-                     style="max-width:420px;border-radius:8px">
-            `;
-
-                    downloadLink.href = url;
-                    downloadLink.download =
-                        currentFile.name.replace(/\.[^/.]+$/, '') + '-wm.png';
-
-                    downloadLink.textContent = 'Download';
-                    downloadLink.style.display = 'inline-block';
-
-                    logEl.textContent = "Watermark applied successfully!";
-                }, 'image/png');
-            };
-
-            reader.readAsDataURL(currentFile);
         });
     </script>
     <script type="module" src="/js/firebase-config.js"></script>

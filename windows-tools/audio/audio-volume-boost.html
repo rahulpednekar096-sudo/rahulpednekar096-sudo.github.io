@@ -86,9 +86,10 @@
     <section class="tool-section">
         <div class="card">
             <button class="btn btn-ghost" id="pick"
-                style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload
-                Audio</button>
-            <input type="file" id="file" accept="audio/*" hidden>
+                style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload Audio
+                Files</button>
+            <input type="file" id="file" accept="audio/*" multiple hidden>
+            <div id="filesList" class="files-list batch-files-list" style="display:none"></div>
 
             <div class="row">
                 <label>Boost: <b id="gainVal">1.5×</b></label>
@@ -111,10 +112,9 @@
                 <button class="btn" id="previewBtn">▶ Preview</button>
                 <button class="btn btn-primary" id="applyBtn">Apply</button>
                 <button class="btn btn-ghost" id="resetBtn">Reset</button>
-                <a id="download" class="btn" style="display:none">Download</a>
             </div>
 
-            <pre id="status">Upload an audio file.</pre>
+            <pre id="status">Upload audio files.</pre>
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
@@ -166,6 +166,8 @@
         </button>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/windows-tools/js/batch-files.js"></script>
     <script>
         function toggleMenu() {
             document.getElementById('drawer').classList.toggle('open');
@@ -183,25 +185,32 @@
         const previewBtn = document.getElementById("previewBtn");
         const applyBtn = document.getElementById("applyBtn");
         const resetBtn = document.getElementById("resetBtn");
-        const download = document.getElementById("download");
         const status = document.getElementById("status");
 
         gainSlider.oninput = () => {
             gainVal.textContent = gainSlider.value + "×";
         };
 
-        pick.onclick = () => file.click();
-
-        file.onchange = async () => {
-            status.textContent = "Loading audio…";
-            buffer = await ctx.decodeAudioData(await file.files[0].arrayBuffer());
-
-            const peak = getPeak(buffer);
-            peakText.textContent = peak.toFixed(2);
-            status.textContent =
-                "Loaded | Duration: " + buffer.duration.toFixed(2) +
-                " sec | Peak: " + peak.toFixed(2);
-        };
+        const fileQueue = new BatchFileQueue({
+            fileInput: file,
+            pickBtn: pick,
+            listContainer: document.getElementById("filesList"),
+            accept: "audio/*",
+            onChange: async (files) => {
+                if (!files.length) {
+                    buffer = null;
+                    peakText.textContent = "—";
+                    status.textContent = "Upload audio files.";
+                    return;
+                }
+                status.textContent = "Loading preview…";
+                buffer = await ctx.decodeAudioData(await files[0].arrayBuffer());
+                const peak = getPeak(buffer);
+                peakText.textContent = peak.toFixed(2);
+                status.textContent =
+                    files.length + " file(s) | Preview peak: " + peak.toFixed(2);
+            }
+        });
 
         previewBtn.onclick = () => {
             if (!buffer) return alert("Upload audio first");
@@ -225,50 +234,53 @@
             previewSrc.start();
         };
 
-        applyBtn.onclick = async () => {
-            if (!buffer) return alert("Upload audio first");
-
-            applyBtn.disabled = true;
-            status.textContent = "Processing…";
-
+        async function processOneFile(f) {
+            const buf = await ctx.decodeAudioData(await f.arrayBuffer());
             let gainValue = parseFloat(gainSlider.value);
-            const peak = getPeak(buffer);
+            const peak = getPeak(buf);
 
             if (normalize.checked && peak * gainValue > 1) {
                 gainValue = 1 / peak;
             }
 
-            const off = new OfflineAudioContext(
-                buffer.numberOfChannels,
-                buffer.length,
-                buffer.sampleRate
-            );
-
+            const off = new OfflineAudioContext(buf.numberOfChannels, buf.length, buf.sampleRate);
             const src = off.createBufferSource();
             const g = off.createGain();
             g.gain.value = gainValue;
-
-            src.buffer = buffer;
+            src.buffer = buf;
             src.connect(g).connect(off.destination);
             src.start();
 
             const out = await off.startRendering();
-            const blob = new Blob([audioBufferToWav(out)], { type: "audio/wav" });
+            const base = f.name.replace(/\.[^.]+$/, "");
+            return {
+                blob: new Blob([audioBufferToWav(out)], { type: "audio/wav" }),
+                filename: base + "-boosted.wav"
+            };
+        }
 
-            download.href = URL.createObjectURL(blob);
-            download.download = "volume-boosted.wav";
-            download.style.display = "inline-block";
+        applyBtn.onclick = async () => {
+            if (!fileQueue.count) return alert("Upload audio first");
 
-            status.textContent =
-                "Done | Applied gain: " + gainValue.toFixed(2) + "×";
+            applyBtn.disabled = true;
+            status.textContent = "Processing " + fileQueue.count + " file(s)…";
+
+            const { results, errors } = await BatchProcessor.run(fileQueue.files, processOneFile, { queue: fileQueue });
+            if (results.length) {
+                BatchProcessor.deliver(results);
+                status.textContent = results.length + " file(s) processed.";
+            } else {
+                status.textContent = "Processing failed.";
+            }
+            if (errors.length) status.textContent += " " + errors.length + " error(s).";
             applyBtn.disabled = false;
         };
 
         resetBtn.onclick = () => {
             if (previewSrc) previewSrc.stop();
+            fileQueue.clear();
             buffer = null;
             peakText.textContent = "—";
-            download.style.display = "none";
             status.textContent = "Reset.";
         };
 

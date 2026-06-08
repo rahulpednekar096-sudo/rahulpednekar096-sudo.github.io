@@ -29,7 +29,8 @@
 
     <!-- Include jQuery for load function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/windows-tools/js/batch-files.js"></script>
 
   <script type="application/ld+json">
   {
@@ -82,10 +83,12 @@
     <section class="tool-section">
         <div class="card">
             <label class="drop" id="dropArea"
-                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop image or
-                <button class="btn btn-ghost" id="pickBtn">Choose file</button>
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">Drop images or
+                <button class="btn btn-ghost" id="pickBtn">Choose files</button>
             </label>
-            <input type="file" id="fileInput" accept="image/*" />
+            <input type="file" id="fileInput" accept="image/*" multiple />
+            <div class="files-list" id="filesList" aria-live="polite"></div>
+            <p class="small muted" style="margin-top:8px;">Draw crop area on the active image. The same relative region is applied to all selected images.</p>
             <div style="margin-top:12px;"><canvas id="canvas"
                     style="max-width:100%;border-radius:6px;background:#0b0c0d"></canvas>
             </div>
@@ -144,7 +147,6 @@
     <script>
         function toggleMenu() { document.getElementById('drawer').classList.toggle('open') }
 
-        // Variables declaration
         const fileInput = document.getElementById('fileInput'),
             pickBtn = document.getElementById('pickBtn'),
             dropArea = document.getElementById('dropArea'),
@@ -156,70 +158,73 @@
             logEl = document.getElementById('log');
 
         let img = null, isDown = false, start = null, rect = null;
+        let normalizedRect = null;
         let currentImageURL = null;
-        let croppedImageURL = null;
 
-        // Helper function to update log
         function log(msg) {
-            logEl.textContent = msg;
+            logEl.textContent += msg + '\n';
             logEl.scrollTop = logEl.scrollHeight;
         }
 
-        // Event Listeners
-        pickBtn.addEventListener('click', () => fileInput.click());
-
-        dropArea.addEventListener('dragover', e => {
-            e.preventDefault();
-            dropArea.style.borderColor = '#0aa37f';
-            dropArea.style.background = 'rgba(10, 163, 127, 0.03)';
-        });
-
-        dropArea.addEventListener('dragleave', () => {
-            dropArea.style.borderColor = '';
-            dropArea.style.background = '';
-        });
-
-        dropArea.addEventListener('drop', e => {
-            e.preventDefault();
-            dropArea.style.borderColor = '';
-            dropArea.style.background = '';
-
-            if (e.dataTransfer.files.length) {
-                fileInput.files = e.dataTransfer.files;
-                loadFile();
+        function updateNormalizedRect() {
+            if (!rect || !img || rect.w <= 0 || rect.h <= 0) {
+                normalizedRect = null;
+                return;
             }
-        });
+            normalizedRect = {
+                x: rect.x / img.naturalWidth,
+                y: rect.y / img.naturalHeight,
+                w: rect.w / img.naturalWidth,
+                h: rect.h / img.naturalHeight
+            };
+        }
 
-        fileInput.addEventListener('change', loadFile);
-
-        // Load image function
-        async function loadFile() {
-            const f = fileInput.files[0];
-            if (!f) return;
-
-            // Release previous image URL
-            if (currentImageURL) {
-                URL.revokeObjectURL(currentImageURL);
-            }
-
-            currentImageURL = URL.createObjectURL(f);
+        async function loadPreview(file) {
+            if (currentImageURL) URL.revokeObjectURL(currentImageURL);
+            currentImageURL = URL.createObjectURL(file);
             img = new Image();
             img.src = currentImageURL;
             await img.decode();
-
             canvas.width = img.naturalWidth;
             canvas.height = img.naturalHeight;
             canvas.style.width = '100%';
-
-            // Reset rectangle selection
-            rect = null;
-
-            // Draw the image
+            if (normalizedRect) {
+                rect = {
+                    x: Math.round(normalizedRect.x * img.naturalWidth),
+                    y: Math.round(normalizedRect.y * img.naturalHeight),
+                    w: Math.round(normalizedRect.w * img.naturalWidth),
+                    h: Math.round(normalizedRect.h * img.naturalHeight)
+                };
+            } else {
+                rect = null;
+            }
             redraw();
-            log('Image loaded: ' + f.name + ' (' + img.naturalWidth + 'x' + img.naturalHeight + ')');
+            logEl.textContent = `Loaded: ${file.name} (${img.naturalWidth}x${img.naturalHeight})\n`;
         }
 
-        // Canvas mouse events for cropping
+        const fileQueue = new BatchFileQueue({
+            fileInput, dropArea, pickBtn,
+            listContainer: document.getElementById('filesList'),
+            accept: 'image/*',
+            showThumbnails: true,
+            interactive: true,
+            onActiveChange: (entry) => {
+                if (entry) loadPreview(entry.file);
+                else {
+                    img = null;
+                    rect = null;
+                    normalizedRect = null;
+                    if (currentImageURL) {
+                        URL.revokeObjectURL(currentImageURL);
+                        currentImageURL = null;
+                    }
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    canvas.width = 400;
+                    canvas.height = 200;
+                }
+            }
+        });
+
         canvas.addEventListener('mousedown', e => {
             if (!img) return;
             isDown = true;
@@ -235,30 +240,27 @@
             const r = canvas.getBoundingClientRect();
             const x = Math.round((e.clientX - r.left) * (canvas.width / r.width)),
                 y = Math.round((e.clientY - r.top) * (canvas.height / r.height));
-
             rect = {
                 x: Math.min(start.x, x),
                 y: Math.min(start.y, y),
                 w: Math.abs(x - start.x),
                 h: Math.abs(y - start.y)
             };
+            updateNormalizedRect();
             redraw();
         });
 
         canvas.addEventListener('mouseup', () => {
             isDown = false;
             if (rect && rect.w > 0 && rect.h > 0) {
-                log('Selected area: ' + rect.w + 'x' + rect.h + ' pixels');
+                updateNormalizedRect();
+                log(`Selected area: ${rect.w}x${rect.h} px (applied to all images)`);
             }
         });
 
-        // Redraw canvas with image and selection rectangle
         function redraw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            if (img) {
-                ctx.drawImage(img, 0, 0);
-            }
-
+            if (img) ctx.drawImage(img, 0, 0);
             if (rect) {
                 ctx.strokeStyle = '#0aa37f';
                 ctx.lineWidth = 3;
@@ -268,74 +270,71 @@
             }
         }
 
-        // Crop button function
-        cropBtn.addEventListener('click', () => {
-            if (!rect || rect.w <= 0 || rect.h <= 0) return alert('Select area to crop');
+        async function loadImage(file) {
+            const dataUrl = await new Promise((res, rej) => {
+                const r = new FileReader();
+                r.onload = () => res(r.result);
+                r.onerror = rej;
+                r.readAsDataURL(file);
+            });
+            const image = new Image();
+            image.src = dataUrl;
+            await image.decode();
+            return image;
+        }
 
+        async function processOneFile(file) {
+            if (!normalizedRect) throw new Error('No crop area selected');
+            const image = await loadImage(file);
+            const cx = Math.round(normalizedRect.x * image.naturalWidth);
+            const cy = Math.round(normalizedRect.y * image.naturalHeight);
+            const cw = Math.max(1, Math.round(normalizedRect.w * image.naturalWidth));
+            const ch = Math.max(1, Math.round(normalizedRect.h * image.naturalHeight));
             const out = document.createElement('canvas');
-            out.width = rect.w;
-            out.height = rect.h;
-            out.getContext('2d').drawImage(canvas, rect.x, rect.y, rect.w, rect.h, 0, 0, rect.w, rect.h);
+            out.width = cw;
+            out.height = ch;
+            out.getContext('2d').drawImage(image, cx, cy, cw, ch, 0, 0, cw, ch);
+            const blob = await new Promise(resolve => out.toBlob(resolve, 'image/png'));
+            return { blob, filename: file.name.replace(/\.[^/.]+$/, '') + '-cropped.png' };
+        }
 
-            out.toBlob(b => {
-                // Release previous cropped image URL
-                if (croppedImageURL) {
-                    URL.revokeObjectURL(croppedImageURL);
-                }
-
-                if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
-                    URL.revokeObjectURL(downloadLink.href);
-                }
-
-                croppedImageURL = URL.createObjectURL(b);
-                downloadLink.href = croppedImageURL;
-                downloadLink.download = 'cropped.png';
-                downloadLink.textContent = 'Download cropped image';
-                downloadLink.style.display = 'inline-block';
-
-                log('Image cropped: ' + rect.w + 'x' + rect.h + ' pixels');
-            }, 'image/png');
+        cropBtn.addEventListener('click', async () => {
+            const files = fileQueue.files;
+            if (!files.length) return alert('कृपया image निवडा');
+            if (!normalizedRect || normalizedRect.w <= 0 || normalizedRect.h <= 0) return alert('Select area to crop');
+            cropBtn.disabled = true;
+            downloadLink.style.display = 'none';
+            logEl.textContent = 'Cropping...\n';
+            const { results, errors } = await BatchProcessor.run(files, processOneFile, {
+                queue: fileQueue,
+                onProgress: (c, t, f) => log(`Processing ${c}/${t}: ${f.name}`)
+            });
+            if (results.length) BatchProcessor.deliver(results);
+            if (errors.length) log(`Errors: ${errors.length}`);
+            log('Done.');
+            cropBtn.disabled = false;
         });
 
-        // Reset button function
         resetBtn.addEventListener('click', () => {
-            // Reset file input
-            fileInput.value = '';
-
-            // Reset variables
+            fileQueue.clear();
             img = null;
             rect = null;
+            normalizedRect = null;
             isDown = false;
             start = null;
-
-            // Clear canvas
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            canvas.width = 400; // Reset to default width
-            canvas.height = 200; // Reset to default height
-
-            // Reset UI elements
+            canvas.width = 400;
+            canvas.height = 200;
             downloadLink.style.display = 'none';
-            dropArea.style.borderColor = '';
-            dropArea.style.background = '';
-
-            // Release all Object URLs
             if (currentImageURL) {
                 URL.revokeObjectURL(currentImageURL);
                 currentImageURL = null;
             }
-
-            if (croppedImageURL) {
-                URL.revokeObjectURL(croppedImageURL);
-                croppedImageURL = null;
-            }
-
             if (downloadLink.href && downloadLink.href.startsWith('blob:')) {
                 URL.revokeObjectURL(downloadLink.href);
                 downloadLink.href = '#';
             }
-
-            // Reset log
-            log('Ready.');
+            logEl.textContent = 'Ready.\n';
         });
     </script>
     <script type="module" src="/js/firebase-config.js"></script>

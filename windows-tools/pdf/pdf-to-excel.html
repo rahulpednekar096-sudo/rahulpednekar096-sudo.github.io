@@ -41,6 +41,7 @@
 
   <!-- Include jQuery for load function -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/windows-tools/js/batch-files.js"></script>
 
 
 
@@ -101,9 +102,10 @@
     <div class="row">
       <div class="card" style="flex:1 1 420px">
         <label class="small">Source PDF</label>
-        <div class="drop" id="dropArea">Drop PDF here or <button class="btn" id="pickBtn">Choose file</button>
-          <input id="fileInput" type="file" accept="application/pdf" style="display:none" />
+        <div class="drop" id="dropArea">Drop PDFs here or <button class="btn" id="pickBtn">Choose files</button>
+          <input id="fileInput" type="file" accept="application/pdf" multiple style="display:none" />
         </div>
+        <div class="files-list" id="filesList" aria-live="polite"></div>
         <div style="margin-top:10px" class="small">Pages detected: <span id="pageCount">0</span></div>
         <div class="optionRow">
           <label class="small"><input type="checkbox" id="useOCR"> Enable OCR (scanned PDF)</label>
@@ -252,16 +254,21 @@
 
     let pdfDoc = null, pdfBytes = null, pageCount = 0;
 
+    const fileQueue = new BatchFileQueue({
+      fileInput, dropArea, pickBtn,
+      listContainer: document.getElementById('filesList'),
+      accept: 'application/pdf',
+      interactive: true,
+      onActiveChange: async (entry) => {
+        if (!entry) { pdfDoc = null; pdfBytes = null; pageCount = 0; pageCountEl.textContent = '0'; return; }
+        await handleFile(entry.file);
+      }
+    });
+
     function log(msg) { logEl.textContent += "\\n" + msg; logEl.scrollTop = logEl.scrollHeight; }
     function clearLog() { logEl.textContent = 'Ready.'; }
     function setProgress(p) { progressWrap.style.display = p >= 0 ? 'block' : 'none'; progressBar.style.width = ((p || 0) * 100).toFixed(1) + '%'; }
     function brief(ms = 20) { return new Promise(r => setTimeout(r, ms)); }
-
-    pickBtn.addEventListener('click', () => fileInput.click());
-    fileInput.addEventListener('change', e => handleFile(e.target.files && e.target.files[0]));
-    dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.classList.add('dragover'); });
-    dropArea.addEventListener('dragleave', e => dropArea.classList.remove('dragover'));
-    dropArea.addEventListener('drop', e => { e.preventDefault(); dropArea.classList.remove('dragover'); if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]); });
 
     async function handleFile(file) {
       if (!file) return;
@@ -289,13 +296,13 @@
       await detectAndPreviewPage(1);
     });
 
-    // Main extraction
-    extractBtn.addEventListener('click', async () => {
-      if (!pdfDoc) { alert('Load a PDF first'); return; }
-      extractBtn.disabled = true;
-      setProgress(0);
-      clearLog();
-      log('Starting extraction...');
+    async function extractOnePdf(file) {
+      pdfBytes = await file.arrayBuffer();
+      if (!pdfjsLib.GlobalWorkerOptions.workerSrc) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+      }
+      pdfDoc = await pdfjsLib.getDocument({ data: pdfBytes }).promise;
+      pageCount = pdfDoc.numPages;
       const mode = extractMode.value;
       const pagesToProcess = pageCount;
       const extractedTables = []; // {page, tableIndex, grid:[][], bbox}
@@ -311,7 +318,7 @@
       }
 
       // Build workbook according to mode
-      if (extractedTables.length === 0) { alert('No tables detected. Try enabling OCR or manual inspection.'); extractBtn.disabled = false; setProgress(-1); return; }
+      if (extractedTables.length === 0) return null;
       log('Assembling workbook...');
       const wb = XLSX.utils.book_new();
       const csvFiles = []; // for CSV per table
@@ -363,29 +370,43 @@
         }
       }
 
-      // Write output
+      const fileBase = file.name.replace(/\.pdf$/i, '');
       if (outFormat.value === 'xlsx') {
         const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-        const blob = new Blob([wbout], { type: 'application/octet-stream' });
-        saveAs(blob, `${baseName.value || 'extracted'}.xlsx`);
-        log('XLSX generated.');
-      } else {
-        // CSV(s) -> zip
-        const zip = new JSZip();
-        for (const f of csvFiles) zip.file(f.name, f.text);
-        const zblob = await zip.generateAsync({ type: 'blob' });
-        saveAs(zblob, `${baseName.value || 'extracted'}.zip`);
-        log('CSV ZIP generated.');
+        return { blob: new Blob([wbout], { type: 'application/octet-stream' }), filename: `${fileBase}_${baseName.value || 'extracted'}.xlsx` };
       }
+      const zip = new JSZip();
+      for (const f of csvFiles) zip.file(f.name, f.text);
+      const zblob = await zip.generateAsync({ type: 'blob' });
+      return { blob: zblob, filename: `${fileBase}_${baseName.value || 'extracted'}.zip` };
+    }
 
-      setProgress(-1);
-      extractBtn.disabled = false;
-      log('Extraction finished. Tables extracted: ' + extractedTables.length);
+    extractBtn.addEventListener('click', async () => {
+      const files = fileQueue.files;
+      if (!files.length) { alert('Add PDF file(s) first'); return; }
+      extractBtn.disabled = true;
+      setProgress(0);
+      clearLog();
+      log('Starting batch extraction...');
+      try {
+        const { results, errors } = await BatchProcessor.run(files, async (file) => {
+          const result = await extractOnePdf(file);
+          if (!result) throw new Error('No tables detected');
+          return result;
+        }, { queue: fileQueue, onProgress: (c, t, f) => { log(`Processing ${c}/${t}: ${f.name}`); setProgress(c / t); } });
+        if (results.length) BatchProcessor.deliver(results);
+        if (errors.length) log('Errors/skipped: ' + errors.length);
+        log('Extraction finished.');
+      } finally {
+        extractBtn.disabled = false;
+        setProgress(-1);
+      }
     });
 
-    // Clear
     clearBtn.addEventListener('click', () => {
-      pdfDoc = null; pdfBytes = null; pageCount = 0; pageCountEl.textContent = '0'; previewArea.innerHTML = 'No preview yet.'; clearLog(); setProgress(-1); infoLabel.textContent = '';
+      fileQueue.clear();
+      pdfDoc = null; pdfBytes = null; pageCount = 0; pageCountEl.textContent = '0';
+      previewArea.innerHTML = 'No preview yet.'; clearLog(); setProgress(-1); infoLabel.textContent = '';
     });
 
     // Utility: detect and preview tables on a single page

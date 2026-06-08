@@ -87,9 +87,10 @@
     <section class="tool-section">
         <div class="card">
             <button class="btn btn-ghost" id="pick"
-                style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload
-                Audio</button>
-            <input type="file" id="file" accept="audio/*" hidden>
+                style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload Audio
+                Files</button>
+            <input type="file" id="file" accept="audio/*" multiple hidden>
+            <div id="filesList" class="files-list batch-files-list" style="display:none"></div>
 
             <div class="row">
                 <h3>Input Audio</h3>
@@ -108,10 +109,9 @@
                 <button class="btn" id="previewBtn">▶ Preview</button>
                 <button class="btn btn-primary" id="convertBtn" disabled>Convert</button>
                 <button class="btn btn-ghost" id="resetBtn">Reset</button>
-                <a id="download" class="btn" style="display:none">Download</a>
             </div>
 
-            <pre id="status">Upload an audio file.</pre>
+            <pre id="status">Upload audio files.</pre>
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
@@ -159,6 +159,8 @@
             <i class="fas fa-arrow-up">Back to Top</i>
         </button>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/windows-tools/js/batch-files.js"></script>
     <script>
         function toggleMenu() {
             document.getElementById('drawer').classList.toggle('open');
@@ -174,23 +176,39 @@
         const previewBtn = document.getElementById("previewBtn");
         const convertBtn = document.getElementById("convertBtn");
         const resetBtn = document.getElementById("resetBtn");
-        const download = document.getElementById("download");
         const status = document.getElementById("status");
 
-        pick.onclick = () => file.click();
-
-        file.onchange = async () => {
-            status.textContent = "Loading audio…";
-            buffer = await ctx.decodeAudioData(await file.files[0].arrayBuffer());
-
-            inputInfo.textContent =
-                "Duration: " + buffer.duration.toFixed(2) + " sec\n" +
-                "Channels: " + buffer.numberOfChannels + "\n" +
-                "Sample Rate: " + buffer.sampleRate + " Hz";
-
-            convertBtn.disabled = false;
-            status.textContent = "Audio loaded.";
-        };
+        const fileQueue = new BatchFileQueue({
+            fileInput: file,
+            pickBtn: pick,
+            listContainer: document.getElementById("filesList"),
+            accept: "audio/*",
+            onChange: async (files) => {
+                if (!files.length) {
+                    buffer = null;
+                    inputInfo.textContent = "No files loaded.";
+                    convertBtn.disabled = true;
+                    status.textContent = "Upload audio files.";
+                    return;
+                }
+                status.textContent = "Loading preview…";
+                try {
+                    buffer = await ctx.decodeAudioData(await files[0].arrayBuffer());
+                    inputInfo.textContent =
+                        files.length + " file(s)\n" +
+                        "Preview: " + files[0].name + "\n" +
+                        "Duration: " + buffer.duration.toFixed(2) + " sec\n" +
+                        "Channels: " + buffer.numberOfChannels + "\n" +
+                        "Sample Rate: " + buffer.sampleRate + " Hz";
+                    convertBtn.disabled = false;
+                    status.textContent = files.length + " file(s) ready.";
+                } catch (e) {
+                    buffer = null;
+                    convertBtn.disabled = false;
+                    status.textContent = files.length + " file(s) added.";
+                }
+            }
+        });
 
         previewBtn.onclick = () => {
             if (!buffer) return alert("Upload audio first");
@@ -202,44 +220,49 @@
             previewSrc.start();
         };
 
-        convertBtn.onclick = async () => {
-            if (!buffer) return;
-
-            convertBtn.disabled = true;
-            status.textContent = "Converting…";
-
+        async function processOneFile(f) {
+            const buf = await ctx.decodeAudioData(await f.arrayBuffer());
             const outRate = parseInt(rateSel.value, 10);
-            const newLength = Math.floor(buffer.duration * outRate);
+            const newLength = Math.floor(buf.duration * outRate);
 
-            const off = new OfflineAudioContext(
-                buffer.numberOfChannels,
-                newLength,
-                outRate
-            );
-
+            const off = new OfflineAudioContext(buf.numberOfChannels, newLength, outRate);
             const src = off.createBufferSource();
-            src.buffer = buffer;
+            src.buffer = buf;
             src.connect(off.destination);
             src.start();
 
             const out = await off.startRendering();
-            const blob = new Blob([audioBufferToWav(out)], { type: "audio/wav" });
+            const base = f.name.replace(/\.[^.]+$/, "");
+            return {
+                blob: new Blob([audioBufferToWav(out)], { type: "audio/wav" }),
+                filename: base + "-" + outRate + "Hz.wav"
+            };
+        }
 
-            download.href = URL.createObjectURL(blob);
-            download.download = "converted-" + outRate + "Hz.wav";
-            download.style.display = "inline-block";
+        convertBtn.onclick = async () => {
+            if (!fileQueue.count) return alert("Upload audio first");
 
-            status.textContent = "Conversion complete.";
+            convertBtn.disabled = true;
+            status.textContent = "Converting…";
+
+            const { results, errors } = await BatchProcessor.run(fileQueue.files, processOneFile, { queue: fileQueue });
+            if (results.length) {
+                BatchProcessor.deliver(results);
+                status.textContent = results.length + " file(s) converted.";
+            } else {
+                status.textContent = "Conversion failed.";
+            }
+            if (errors.length) status.textContent += " " + errors.length + " error(s).";
             convertBtn.disabled = false;
         };
 
         resetBtn.onclick = () => {
             if (previewSrc) previewSrc.stop();
+            fileQueue.clear();
             buffer = null;
-            inputInfo.textContent = "No file loaded.";
+            inputInfo.textContent = "No files loaded.";
             status.textContent = "Reset.";
             convertBtn.disabled = true;
-            download.style.display = "none";
         };
 
         function audioBufferToWav(buffer) {

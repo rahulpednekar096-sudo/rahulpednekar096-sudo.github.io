@@ -89,9 +89,10 @@
     <section class="tool-section">
         <div class="card">
             <button class="btn btn-ghost" id="pick"
-                style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload
-                Audio</button>
-            <input type="file" id="file" accept="audio/*" hidden>
+                style="color:#fff0eb; max-width: 100%; background-color: rgba(4, 119, 19, 0.473);">🎵 Upload Audio
+                Files</button>
+            <input type="file" id="file" accept="audio/*" multiple hidden>
+            <div id="filesList" class="files-list batch-files-list" style="display:none"></div>
 
             <div class="meta-box">
                 <h3>Audio Info</h3>
@@ -103,10 +104,9 @@
                     🧹 Remove Metadata (Clean WAV)
                 </button>
                 <button class="btn btn-ghost" id="resetBtn">Reset</button>
-                <a id="download" class="btn" style="display:none">Download</a>
             </div>
 
-            <pre id="status">Waiting for audio…</pre>
+            <pre id="status">Upload audio files. Click a file to view metadata.</pre>
             <!-- SEO Content -->
             <div id="warning" style="color:#ffb199; margin-top:8px"></div>
             <hr style="margin:32px 0">
@@ -163,6 +163,8 @@
         </button>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/windows-tools/js/batch-files.js"></script>
     <script>
         function toggleMenu() {
             document.getElementById('drawer').classList.toggle('open');
@@ -175,46 +177,85 @@
         const info = document.getElementById("info");
         const cleanBtn = document.getElementById("cleanBtn");
         const resetBtn = document.getElementById("resetBtn");
-        const download = document.getElementById("download");
         const status = document.getElementById("status");
 
-        pick.onclick = () => file.click();
-
-        file.onchange = async () => {
-            status.textContent = "Loading audio…";
-            buffer = await ctx.decodeAudioData(await file.files[0].arrayBuffer());
-
-            info.textContent =
-                "Duration: " + buffer.duration.toFixed(2) + " sec\n" +
-                "Channels: " + buffer.numberOfChannels + "\n" +
-                "Sample Rate: " + buffer.sampleRate + " Hz\n\n" +
+        function formatInfo(f, buf) {
+            return (
+                "File: " + f.name + "\n" +
+                "Size: " + (f.size / 1024).toFixed(1) + " KB\n" +
+                "Duration: " + buf.duration.toFixed(2) + " sec\n" +
+                "Channels: " + buf.numberOfChannels + "\n" +
+                "Sample Rate: " + buf.sampleRate + " Hz\n\n" +
                 "Metadata:\n" +
                 "- ID3 tags: Not editable in browser\n" +
-                "- Cover art: Removed on WAV export";
+                "- Cover art: Removed on WAV export"
+            );
+        }
 
+        async function loadActiveFile(f) {
+            if (!f) {
+                buffer = null;
+                info.textContent = "No file loaded.";
+                cleanBtn.disabled = true;
+                return;
+            }
+            status.textContent = "Loading " + f.name + "…";
+            buffer = await ctx.decodeAudioData(await f.arrayBuffer());
+            info.textContent = formatInfo(f, buffer);
             cleanBtn.disabled = false;
-            status.textContent = "Audio loaded.";
-        };
+            status.textContent = "Active: " + f.name;
+        }
 
-        cleanBtn.onclick = () => {
-            if (!buffer) return;
+        const fileQueue = new BatchFileQueue({
+            fileInput: file,
+            pickBtn: pick,
+            listContainer: document.getElementById("filesList"),
+            accept: "audio/*",
+            interactive: true,
+            onChange: (files) => {
+                if (!files.length) {
+                    loadActiveFile(null);
+                    status.textContent = "Upload audio files.";
+                } else {
+                    cleanBtn.disabled = false;
+                }
+            },
+            onActiveChange: async (entry) => {
+                if (entry) await loadActiveFile(entry.file);
+            }
+        });
 
-            status.textContent = "Removing metadata…";
-            const wav = audioBufferToWav(buffer);
-            const blob = new Blob([wav], { type: "audio/wav" });
+        async function processOneFile(f) {
+            const buf = await ctx.decodeAudioData(await f.arrayBuffer());
+            const base = f.name.replace(/\.[^.]+$/, "");
+            return {
+                blob: new Blob([audioBufferToWav(buf)], { type: "audio/wav" }),
+                filename: base + "-clean.wav"
+            };
+        }
 
-            download.href = URL.createObjectURL(blob);
-            download.download = "clean-audio.wav";
-            download.style.display = "inline-block";
+        cleanBtn.onclick = async () => {
+            if (!fileQueue.count) return alert("Upload audio first");
 
-            status.textContent = "Metadata removed. Download ready.";
+            cleanBtn.disabled = true;
+            status.textContent = "Removing metadata from " + fileQueue.count + " file(s)…";
+
+            const { results, errors } = await BatchProcessor.run(fileQueue.files, processOneFile, { queue: fileQueue });
+            if (results.length) {
+                BatchProcessor.deliver(results);
+                status.textContent = results.length + " file(s) cleaned.";
+            } else {
+                status.textContent = "Processing failed.";
+            }
+            if (errors.length) status.textContent += " " + errors.length + " error(s).";
+            cleanBtn.disabled = !fileQueue.count;
         };
 
         resetBtn.onclick = () => {
+            fileQueue.clear();
             buffer = null;
             info.textContent = "No file loaded.";
             status.textContent = "Reset.";
-            download.style.display = "none";
             cleanBtn.disabled = true;
         };
 
