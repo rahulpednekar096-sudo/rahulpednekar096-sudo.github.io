@@ -14,7 +14,7 @@
       "month": 1,
       "day": 12,
       "title": "Swami Vivekananda Jayanti",
-      "description": "Birth anniversary...",
+      "description": "Birth anniversary of Swami Vivekananda, celebrated as National Youth Day.",
       "category": "festival",
       "year": "1863",
       "isSymbolic": false
@@ -23,7 +23,7 @@
       "month": 1,
       "day": 14,
       "title": "Makar Sankranti",
-      "description": "Festival marking the sun's transition...",
+      "description": "Festival marking the sun's transition into Capricorn...",
       "category": "festival",
       "year": null,
       "isSymbolic": true
@@ -32,7 +32,7 @@
       "month": 1,
       "day": 15,
       "title": "Indian Army Day",
-      "description": "Marks the day Lt. Gen...",
+      "description": "Marks the day Lt. Gen. K.M. Cariappa took over as Commander-in-Chief.",
       "category": "festival",
       "year": "1949",
       "isSymbolic": false
@@ -41,7 +41,7 @@
       "month": 1,
       "day": 24,
       "title": "National Girl Child Day",
-      "description": "A day to raise awareness...",
+      "description": "A day to raise awareness about the rights of a girl child.",
       "category": "festival",
       "year": null,
       "isSymbolic": false
@@ -50,7 +50,7 @@
       "month": 1,
       "day": 25,
       "title": "National Voters' Day",
-      "description": "Established in 2011...",
+      "description": "Established to encourage more young voters to take part in the political process.",
       "category": "festival",
       "year": "2011",
       "isSymbolic": false
@@ -59,25 +59,16 @@
       "month": 1,
       "day": 26,
       "title": "Republic Day",
-      "description": "India adopted its Constitution...",
+      "description": "India adopted its Constitution and became a Republic.",
       "category": "festival",
       "year": "1950",
       "isSymbolic": false
     },
     {
       "month": 2,
-      "day": 11,
-      "title": "Magha Puja",
-      "description": "An important Buddhist festival...",
-      "category": "festival",
-      "year": null,
-      "isSymbolic": true
-    },
-    {
-      "month": 2,
-      "day": 12,
+      "day": 1,
       "title": "Sant Ravidas Jayanti",
-      "description": "Birth anniversary...",
+      "description": "Birth anniversary of the legendary saint and social reformer, celebrated on Magha Purnima.",
       "category": "festival",
       "year": null,
       "isSymbolic": true
@@ -85,8 +76,17 @@
     {
       "month": 2,
       "day": 14,
-      "title": "Maitri Diwas",
-      "description": "A day to celebrate universal love...",
+      "title": "Maitri Diwas / Valentine's Day",
+      "description": "A day to celebrate universal love and affection.",
+      "category": "festival",
+      "year": null,
+      "isSymbolic": true
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "title": "Magha Puja",
+      "description": "An important Buddhist festival commemorating the spontaneous gathering of 1,250 disciples.",
       "category": "festival",
       "year": null,
       "isSymbolic": true
