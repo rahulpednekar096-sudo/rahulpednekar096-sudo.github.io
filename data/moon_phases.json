@@ -1,45 +1,181 @@
 {
-"version": 1,
-"year": 2026,
-"phases": [
-{ "month": 1, "day": 3,  "phase": "FULL_MOON", "label": "Full Moon" },
-{ "month": 1, "day": 18, "phase": "NEW_MOON",  "label": "New Moon" },
-
-```
-{ "month": 2, "day": 2,  "phase": "FULL_MOON", "label": "Full Moon" },
-{ "month": 2, "day": 17, "phase": "NEW_MOON",  "label": "New Moon" },
-
-{ "month": 3, "day": 3,  "phase": "FULL_MOON", "label": "Full Moon" },
-{ "month": 3, "day": 19, "phase": "NEW_MOON",  "label": "New Moon" },
-
-{ "month": 4, "day": 2,  "phase": "FULL_MOON", "label": "Full Moon" },
-{ "month": 4, "day": 17, "phase": "NEW_MOON",  "label": "New Moon" },
-
-{ "month": 5, "day": 1,  "phase": "FULL_MOON", "label": "Full Moon" },
-{ "month": 5, "day": 17, "phase": "NEW_MOON",  "label": "New Moon" },
-{ "month": 5, "day": 31, "phase": "FULL_MOON", "label": "Blue Moon" },
-
-{ "month": 6, "day": 15, "phase": "NEW_MOON",  "label": "New Moon" },
-{ "month": 6, "day": 30, "phase": "FULL_MOON", "label": "Full Moon" },
-
-{ "month": 7, "day": 14, "phase": "NEW_MOON",  "label": "New Moon" },
-{ "month": 7, "day": 29, "phase": "FULL_MOON", "label": "Full Moon" },
-
-{ "month": 8, "day": 12, "phase": "NEW_MOON",  "label": "New Moon" },
-{ "month": 8, "day": 28, "phase": "FULL_MOON", "label": "Full Moon" },
-
-{ "month": 9, "day": 11, "phase": "NEW_MOON",  "label": "New Moon" },
-{ "month": 9, "day": 26, "phase": "FULL_MOON", "label": "Full Moon" },
-
-{ "month": 10, "day": 10, "phase": "NEW_MOON",  "label": "New Moon" },
-{ "month": 10, "day": 26, "phase": "FULL_MOON", "label": "Full Moon" },
-
-{ "month": 11, "day": 9,  "phase": "NEW_MOON",  "label": "New Moon" },
-{ "month": 11, "day": 24, "phase": "FULL_MOON", "label": "Full Moon" },
-
-{ "month": 12, "day": 8,  "phase": "NEW_MOON",  "label": "New Moon" },
-{ "month": 12, "day": 24, "phase": "FULL_MOON", "label": "Full Moon" }
-```
-
-]
+  "version": 1,
+  "year": 2026,
+  "phases": [
+    {
+      "month": 1,
+      "day": 3,
+      "phase": "FULL_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — Full Moon"
+    },
+    {
+      "month": 1,
+      "day": 18,
+      "phase": "NEW_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — New Moon"
+    },
+    {
+      "month": 2,
+      "day": 2,
+      "phase": "FULL_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — Full Moon"
+    },
+    {
+      "month": 2,
+      "day": 16,
+      "phase": "NEW_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — New Moon"
+    },
+    {
+      "month": 3,
+      "day": 3,
+      "phase": "FULL_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — Magha Puja Full Moon"
+    },
+    {
+      "month": 3,
+      "day": 18,
+      "phase": "NEW_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — New Moon"
+    },
+    {
+      "month": 4,
+      "day": 2,
+      "phase": "FULL_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — Full Moon"
+    },
+    {
+      "month": 4,
+      "day": 16,
+      "phase": "NEW_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — New Moon"
+    },
+    {
+      "month": 5,
+      "day": 1,
+      "phase": "FULL_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — Full Moon"
+    },
+    {
+      "month": 5,
+      "day": 16,
+      "phase": "NEW_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — New Moon"
+    },
+    {
+      "month": 5,
+      "day": 31,
+      "phase": "FULL_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — Visakha Puja (Vesak) Full Moon"
+    },
+    {
+      "month": 6,
+      "day": 14,
+      "phase": "NEW_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — New Moon"
+    },
+    {
+      "month": 6,
+      "day": 29,
+      "phase": "FULL_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — Full Moon"
+    },
+    {
+      "month": 7,
+      "day": 14,
+      "phase": "NEW_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — New Moon"
+    },
+    {
+      "month": 7,
+      "day": 29,
+      "phase": "FULL_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — Asalha Puja Full Moon"
+    },
+    {
+      "month": 8,
+      "day": 12,
+      "phase": "NEW_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — New Moon"
+    },
+    {
+      "month": 8,
+      "day": 28,
+      "phase": "FULL_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — Full Moon"
+    },
+    {
+      "month": 9,
+      "day": 11,
+      "phase": "NEW_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — New Moon"
+    },
+    {
+      "month": 9,
+      "day": 26,
+      "phase": "FULL_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — Full Moon"
+    },
+    {
+      "month": 10,
+      "day": 11,
+      "phase": "NEW_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — New Moon"
+    },
+    {
+      "month": 10,
+      "day": 26,
+      "phase": "FULL_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — Pavarana (Kathina) Full Moon"
+    },
+    {
+      "month": 11,
+      "day": 9,
+      "phase": "NEW_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — New Moon"
+    },
+    {
+      "month": 11,
+      "day": 24,
+      "phase": "FULL_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — Full Moon"
+    },
+    {
+      "month": 12,
+      "day": 9,
+      "phase": "NEW_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — New Moon"
+    },
+    {
+      "month": 12,
+      "day": 24,
+      "phase": "FULL_MOON",
+      "is_uposatha": true,
+      "label": "Uposatha — Full Moon"
+    }
+  ]
 }
