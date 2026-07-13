@@ -1,0 +1,698 @@
+{
+  "version": 1,
+  "quotes": [
+    {
+      "id": "q001",
+      "text": "この世において、憎しみは憎しみによって鎮まることはない。非憎しみによってのみ憎しみは鎮まる。これは不変の法である。",
+      "source": "Dhammapada 5",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q002",
+      "text": "すべての有為の法は無常なるもの。これを智慧によって見るとき、人は苦しみから離れる。",
+      "source": "Dhammapada 277",
+      "language": "ja",
+      "tags": ["impermanence", "daily"]
+    },
+    {
+      "id": "q003",
+      "text": "あなた自身が努力しなければならない。仏たちは道を示すのみである。",
+      "source": "Dhammapada 276",
+      "language": "ja",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q004",
+      "text": "堅固な岩が風に揺るがされないように、賢者は称賛や非難に動かされることはない。",
+      "source": "Dhammapada 81",
+      "language": "ja",
+      "tags": ["equanimity", "daily"]
+    },
+    {
+      "id": "q005",
+      "text": "健康は最大の贈り物、知足は最大の富、信実は最良の縁である。",
+      "source": "Dhammapada 204",
+      "language": "ja",
+      "tags": ["contentment", "daily"]
+    },
+    {
+      "id": "q006",
+      "text": "空虚な言葉千句より、平和をもたらす一言のほうが優れている。",
+      "source": "Dhammapada 100",
+      "language": "ja",
+      "tags": ["speech", "daily"]
+    },
+    {
+      "id": "q007",
+      "text": "怒りを非怒りで制し、悪を善で制し、吝嗇を布施で制し、虚偽を真実で制せよ。",
+      "source": "Dhammapada 223",
+      "language": "ja",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q008",
+      "text": "心はすべての行いの先駆けである。すべての行為は心に導かれ、心によって造られる。",
+      "source": "Dhammapada 1",
+      "language": "ja",
+      "tags": ["mind", "daily"]
+    },
+    {
+      "id": "q009",
+      "text": "母がたった一人の子を自分の命を懸けても守るように、すべての衆生に対し無量の愛を育めよ。",
+      "source": "Metta Sutta",
+      "language": "ja",
+      "tags": ["loving-kindness", "daily"]
+    },
+    {
+      "id": "q010",
+      "text": "過去にとどまるな、未来を夢見るな。今この瞬間に心を集中せよ。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["mindfulness", "daily"]
+    },
+    {
+      "id": "q011",
+      "text": "怒りを抱き続けることは、誰かに投げつけようとして熱い石炭を握ることに似ている。火傷するのは自分自身である。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["anger", "daily"]
+    },
+    {
+      "id": "q012",
+      "text": "我らを救うのは他ならぬ我ら自身である。誰も救うことはできず、救うべきでもない。我ら自身が道を歩まねばならない。",
+      "source": "Dhammapada 165",
+      "language": "ja",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q013",
+      "text": "空には東西の区別はない。人々は自らの心に区別を作り出し、それを真実であると信じる。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q014",
+      "text": "三つのものは長く隠されない。太陽、月、そして真理である。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["truth", "daily"]
+    },
+    {
+      "id": "q015",
+      "text": "安らぎは内にあり。外に求めるべきではない。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["peace", "daily"]
+    },
+    {
+      "id": "q016",
+      "text": "苦しみの根本は執着である。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["attachment", "daily"]
+    },
+    {
+      "id": "q017",
+      "text": "怒りのために罰せられるのではなく、怒りによって罰せられるのである。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["anger", "daily"]
+    },
+    {
+      "id": "q018",
+      "text": "一つのろうそくから千のろうそくに火をともしても、ろうそくの命は短くならない。幸福は分かち合えば決して減らない。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["compassion", "daily"]
+    },
+    {
+      "id": "q019",
+      "text": "誰かのために灯をともすなら、それは自分の道も照らすであろう。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["compassion", "daily"]
+    },
+    {
+      "id": "q020",
+      "text": "舌は鋭い刃のごとく、血を流さずに殺す。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["speech", "daily"]
+    },
+    {
+      "id": "q021",
+      "text": "壺は一滴ずつ満ちる。",
+      "source": "Dhammapada 122",
+      "language": "ja",
+      "tags": ["patience", "daily"]
+    },
+    {
+      "id": "q022",
+      "text": "堅固な岩が風に揺るがされないように、賢者は称賛と非難に揺るがされない。",
+      "source": "Dhammapada 81",
+      "language": "ja",
+      "tags": ["equanimity", "daily"]
+    },
+    {
+      "id": "q023",
+      "text": "あなたのものでないものは手放せ。手放すことが長き幸福となるであろう。",
+      "source": "Majjhima Nikaya",
+      "language": "ja",
+      "tags": ["letting-go", "daily"]
+    },
+    {
+      "id": "q024",
+      "text": "全世界に無量の愛を放て。",
+      "source": "Metta Sutta",
+      "language": "ja",
+      "tags": ["loving-kindness", "daily"]
+    },
+    {
+      "id": "q025",
+      "text": "体を健康に保つことは義務である。さもなければ心を強く澄んだものとすることはできない。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["health", "daily"]
+    },
+    {
+      "id": "q026",
+      "text": "幸福への道はない。幸福こそが道である。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["happiness", "daily"]
+    },
+    {
+      "id": "q027",
+      "text": "道は空にあるのではない。道は心にある。",
+      "source": "Dhammapada 254",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q028",
+      "text": "毎朝我々は新しく生まれる。今日することこそが最も大切である。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["present-moment", "daily"]
+    },
+    {
+      "id": "q029",
+      "text": "一輪の花の奇跡をはっきりと見ることができれば、人生全体が変わるであろう。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["mindfulness", "daily"]
+    },
+    {
+      "id": "q030",
+      "text": "何も永遠ではない。すべては変化の対象である。存在は常に生成している。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["impermanence", "daily"]
+    },
+    {
+      "id": "q031",
+      "text": "自制された心は幸福をもたらす。",
+      "source": "Dhammapada 35",
+      "language": "ja",
+      "tags": ["mind", "daily"]
+    },
+    {
+      "id": "q032",
+      "text": "起き上がれ！坐れ！平安のために猛烈に修行せよ。",
+      "source": "Dhammapada 144",
+      "language": "ja",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q033",
+      "text": "賢者は身を制し、語を制し、心を制する。真に善く制された者である。",
+      "source": "Dhammapada 234",
+      "language": "ja",
+      "tags": ["self-control", "daily"]
+    },
+    {
+      "id": "q034",
+      "text": "他者の過ちを見つけるな、他者の善悪の行いを見るな。ただ自分のなした行いとなさぬ行いを見よ。",
+      "source": "Dhammapada 50",
+      "language": "ja",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q035",
+      "text": "雨が葺きの悪い家屋を打ち破るように、激情は省察のない心を打ち破る。",
+      "source": "Dhammapada 13",
+      "language": "ja",
+      "tags": ["mind", "daily"]
+    },
+    {
+      "id": "q036",
+      "text": "雨が葺きのよい家屋を打ち破らないように、激情は省察のよい心を打ち破らない。",
+      "source": "Dhammapada 14",
+      "language": "ja",
+      "tags": ["mind", "daily"]
+    },
+    {
+      "id": "q037",
+      "text": "なお存在と再生を永続させる渇愛と渇望が存在しない者を、どうして跡を追うことができようか。その覚者は跡なき者であり、無限の範囲を持つ者なのだから。",
+      "source": "Dhammapada 180",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q038",
+      "text": "諸法の興亡を見る一日を生きることは、興亡を見ぬ百年を生きることより優れている。",
+      "source": "Dhammapada 113",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q039",
+      "text": "布施の力を私が知っていることをあなたが知っていたなら、一食を何らかの形で分かち合わずに済ませることはないであろう。",
+      "source": "Buddha",
+      "language": "ja",
+      "tags": ["generosity", "daily"]
+    },
+    {
+      "id": "q040",
+      "text": "ほんの少ししか持っていなくとも、与えよ。",
+      "source": "Dhammapada 224",
+      "language": "ja",
+      "tags": ["generosity", "daily"]
+    },
+    {
+      "id": "q041",
+      "text": "人が善をなすなら、繰り返しなすべきである。そこに喜びを見出せ。善の蓄積は幸福に満ちている。",
+      "source": "Dhammapada 118",
+      "language": "ja",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q042",
+      "text": "人が悪をなすなら、繰り返してはならない。そこに喜びを見出してはならない。悪の蓄積は苦痛に満ちている。",
+      "source": "Dhammapada 117",
+      "language": "ja",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q043",
+      "text": "色は美しくとも香りのない花のように、言葉が行いと一致しない者の美しい言葉は実を結ばない。",
+      "source": "Dhammapada 51",
+      "language": "ja",
+      "tags": ["action", "daily"]
+    },
+    {
+      "id": "q044",
+      "text": "色も美しく香りもある花のように、行いと一致する者の優れた言葉は実を結ぶ。",
+      "source": "Dhammapada 52",
+      "language": "ja",
+      "tags": ["action", "daily"]
+    },
+    {
+      "id": "q045",
+      "text": "花の香りは風と共に吹く。徳の香りは風に逆らって吹く。徳ある人はあらゆる方向に浸透する。",
+      "source": "Dhammapada 54",
+      "language": "ja",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q046",
+      "text": "蜂が蜜を集めても花の色や香りを損なわぬように、賢者は世を渡る。",
+      "source": "Dhammapada 49",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q047",
+      "text": "恣意的な判断によって人は正しくなるのではない。善悪の両方を調べる者こそ賢者である。",
+      "source": "Dhammapada 256",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q048",
+      "text": "起きるべき時に自らを奮い起こさず、若く強くとも怠惰に満ち、意志と思念が弱い者――その怠惰な者は智慧への道を見出すことはない。",
+      "source": "Dhammapada 280",
+      "language": "ja",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q049",
+      "text": "警覚は不死の道、無警覚は死の道である。警覚ある者は死なず、無警覚の者はすでに死んだも同然である。",
+      "source": "Dhammapada 21",
+      "language": "ja",
+      "tags": ["mindfulness", "daily"]
+    },
+    {
+      "id": "q050",
+      "text": "常に警覚し、昼夜修行し、常に涅槃を志向する者の激情は消え去る。",
+      "source": "Dhammapada 226",
+      "language": "ja",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q051",
+      "text": "欲のような火はなく、憎しみのような掴みはなく、迷いのような網はなく、渇愛のような川はない。",
+      "source": "Dhammapada 251",
+      "language": "ja",
+      "tags": ["craving", "daily"]
+    },
+    {
+      "id": "q052",
+      "text": "他者の過ちは容易に見えるが、自分の過ちは見難い。糠をふるうように他者の過ちをふるい、自分のは隠す。",
+      "source": "Dhammapada 252",
+      "language": "ja",
+      "tags": ["self-reflection", "daily"]
+    },
+    {
+      "id": "q053",
+      "text": "他者の過ちは自分のより見やすく、糠をふるうように他者の過ちは見えるが、自分の過ちは見難い。",
+      "source": "Dhammapada 253",
+      "language": "ja",
+      "tags": ["self-reflection", "daily"]
+    },
+    {
+      "id": "q054",
+      "text": "人が悪い思いで語り行動すれば、苦痛が彼に従う。荷車を引く牛の足に車輪が従うように。",
+      "source": "Dhammapada 1",
+      "language": "ja",
+      "tags": ["karma", "daily"]
+    },
+    {
+      "id": "q055",
+      "text": "人が清らかな思いで語り行動すれば、幸福が彼に従う。決して離れぬ影のように。",
+      "source": "Dhammapada 2",
+      "language": "ja",
+      "tags": ["karma", "daily"]
+    },
+    {
+      "id": "q056",
+      "text": "「彼は私を罵った、打った、圧倒した、奪った」――このような思いを抱く者は憎しみを鎮めることができない。",
+      "source": "Dhammapada 3",
+      "language": "ja",
+      "tags": ["forgiveness", "daily"]
+    },
+    {
+      "id": "q057",
+      "text": "「彼は私を罵った、打った、圧倒した、奪った」――このような思いを抱かない者は憎しみを鎮める。",
+      "source": "Dhammapada 4",
+      "language": "ja",
+      "tags": ["forgiveness", "daily"]
+    },
+    {
+      "id": "q058",
+      "text": "憎しみはいかなる時にも憎しみによって止まらない。憎しみは愛によって止まる。これは変わらぬ法である。",
+      "source": "Dhammapada 5",
+      "language": "ja",
+      "tags": ["loving-kindness", "daily"]
+    },
+    {
+      "id": "q059",
+      "text": "多くの者は、我々がこの世に調和して生きるためにいることを知らない。それを知り従う者の争いはすぐに終わる。",
+      "source": "Dhammapada 6",
+      "language": "ja",
+      "tags": ["harmony", "daily"]
+    },
+    {
+      "id": "q060",
+      "text": "堅固な岩が風に揺るがされないように、賢者は非難と称賛の中でも動じない。",
+      "source": "Dhammapada 81",
+      "language": "ja",
+      "tags": ["equanimity", "daily"]
+    },
+    {
+      "id": "q061",
+      "text": "美しく香り高いが実を結ばぬ花のように、行いと一致しない者の美しく空虚な言葉はそうである。",
+      "source": "Dhammapada 51",
+      "language": "ja",
+      "tags": ["action", "daily"]
+    },
+    {
+      "id": "q062",
+      "text": "警覚によって放逸を制した賢者は、苦しみから解放され、智慧の宮殿に登る。",
+      "source": "Dhammapada 36",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q063",
+      "text": "警覚によって放逸を制した賢者は、苦しみから解放され、智慧の宮殿に登る。",
+      "source": "Dhammapada 37",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q064",
+      "text": "賢者が智慧によって自利を駆逐する時、最も不浄なものを駆逐するように、苦しみから解放され智慧の宮殿に登る。",
+      "source": "Dhammapada 39",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q065",
+      "text": "自らの愚かさを知る愚者は、少なくともその点では賢い。自らを賢いと思う愚者こそ真の愚者である。",
+      "source": "Dhammapada 63",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q066",
+      "text": "百年にわたり月ごとに千の犠牲を捧げても、瞬間たりとも完全な心を持つ者を礼拝するほうが、確かにその礼拝のほうが優れている。",
+      "source": "Dhammapada 106",
+      "language": "ja",
+      "tags": ["devotion", "daily"]
+    },
+    {
+      "id": "q067",
+      "text": "戦いで千人を千人征服する者よりも、自らを征服する者こそ最大の征服者である。",
+      "source": "Dhammapada 103",
+      "language": "ja",
+      "tags": ["self-mastery", "daily"]
+    },
+    {
+      "id": "q068",
+      "text": "自らを征服することは他のすべての人々より優れている。神でさえ、ガンダルヴァでさえ、ブラフマーを伴うマーラでさえ、自らを打ち負かした者の勝利を敗北に変えることはできない。",
+      "source": "Dhammapada 104",
+      "language": "ja",
+      "tags": ["self-mastery", "daily"]
+    },
+    {
+      "id": "q069",
+      "text": "聞いても利益の得られない千の偈より、聞いて人が安心する一偈のほうが優れている。",
+      "source": "Dhammapada 101",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q070",
+      "text": "怠惰で不活動の者の百年の生涯より、精励して活動する者の一日のほうが優れている。",
+      "source": "Dhammapada 112",
+      "language": "ja",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q071",
+      "text": "限られた楽を捨てて大きな楽を見ることができるなら、賢者は大きな楽を見据えて限られた楽を捨てよ。",
+      "source": "Dhammapada 290",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q072",
+      "text": "他者の過ちを見つけるな、他者の善悪の行いを見るな。ただ自分のなした行いとなさぬ行いを見よ。",
+      "source": "Dhammapada 50",
+      "language": "ja",
+      "tags": ["self-reflection", "daily"]
+    },
+    {
+      "id": "q073",
+      "text": "美しく香り高いが実を結ばぬ花のように、行いと一致しない者の美しく空虚な言葉はそうである。",
+      "source": "Dhammapada 51",
+      "language": "ja",
+      "tags": ["action", "daily"]
+    },
+    {
+      "id": "q074",
+      "text": "花の山から数多くの花輪を作れるように、死すべき者として生まれた者は数多くの善行をなすべきである。",
+      "source": "Dhammapada 53",
+      "language": "ja",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q075",
+      "text": "他者の過ちや善悪の行いではなく、自分の過ちと怠慢を見るべきである。",
+      "source": "Dhammapada 50",
+      "language": "ja",
+      "tags": ["self-reflection", "daily"]
+    },
+    {
+      "id": "q076",
+      "text": "花の香りは風に逆らって行かないが、善き人の香りは風に逆らっても行く。善き人はあらゆる場所に浸透する。",
+      "source": "Dhammapada 54",
+      "language": "ja",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q077",
+      "text": "すべての香りの中で――白檀、多伽羅、青蓮、またはジャスミン――徳の香りが圧倒的に最も甘美である。",
+      "source": "Dhammapada 55",
+      "language": "ja",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q078",
+      "text": "多伽羅と白檀の香りはかすかであるが、徳ある者の香りは最も甘美で、神々の住まいまで広がる。",
+      "source": "Dhammapada 56",
+      "language": "ja",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q079",
+      "text": "善人は遠くから見える、雪山のように。悪人は見えない、夜に放たれた矢のように。",
+      "source": "Dhammapada 304",
+      "language": "ja",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q080",
+      "text": "独り坐り、独り休み、独り歩み、決意して、自らに安らぎを得た者は、森の中に喜びを見出す。",
+      "source": "Dhammapada 305",
+      "language": "ja",
+      "tags": ["solitude", "daily"]
+    },
+    {
+      "id": "q081",
+      "text": "瞑想に喜び、独り住まいに喜び、法に喜ぶ、覚者の弟子たちは喜ぶ。",
+      "source": "Dhammapada 373",
+      "language": "ja",
+      "tags": ["meditation", "daily"]
+    },
+    {
+      "id": "q082",
+      "text": "自らを征服した者は、千人を千人打ち負かした者よりはるかに大きな英雄である。",
+      "source": "Dhammapada 103",
+      "language": "ja",
+      "tags": ["self-mastery", "daily"]
+    },
+    {
+      "id": "q083",
+      "text": "常にあなたと共にある善行の修行をせよ。法の実践にまさるものはない。",
+      "source": "Dhammapada 289",
+      "language": "ja",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q084",
+      "text": "身を制し、語を制し、心を制し、安らぎにあり、世の誘いを捨てた賢者を仙と呼ぶ。",
+      "source": "Dhammapada 391",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q085",
+      "text": "心と身に全く執着がなく、持たぬものを嘆かぬ者こそ真の比丘と呼ばれる。",
+      "source": "Dhammapada 367",
+      "language": "ja",
+      "tags": ["non-attachment", "daily"]
+    },
+    {
+      "id": "q086",
+      "text": "法に住み、法に喜び、法を思惟し、法を善く心に留める者は、崇高なる法から離れることはない。",
+      "source": "Dhammapada 364",
+      "language": "ja",
+      "tags": ["dhamma", "daily"]
+    },
+    {
+      "id": "q087",
+      "text": "花の香りは風と共に吹く。徳の香りは風に逆らって吹く。徳ある人はあらゆる方向に浸透する。",
+      "source": "Dhammapada 54",
+      "language": "ja",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q088",
+      "text": "茉莉花が枯れた花を落とすように、激情と憎しみを捨てよ。",
+      "source": "Dhammapada 377",
+      "language": "ja",
+      "tags": ["letting-go", "daily"]
+    },
+    {
+      "id": "q089",
+      "text": "心に安らぎ、語に安らぎ、行いに安らぎ、正しく知って完全に解放された、完璧に平和で均衡のとれた者。",
+      "source": "Dhammapada 378",
+      "language": "ja",
+      "tags": ["peace", "daily"]
+    },
+    {
+      "id": "q090",
+      "text": "盲目的な信仰なき者、未造作を知る者、すべての繋がりを断ち、すべての誘惑を除き、すべての欲望を捨てた者こそ最大の人である。",
+      "source": "Dhammapada 97",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q091",
+      "text": "村にあれ森にあれ、陸にあれ海にあれ、尊き者が住むところは喜ばしい場所である。",
+      "source": "Dhammapada 98",
+      "language": "ja",
+      "tags": ["community", "daily"]
+    },
+    {
+      "id": "q092",
+      "text": "森の葉は心地よく、森もまた心地よい。しかし法の至福を味わったことのない者にとって森に喜びはない。",
+      "source": "Dhammapada 99",
+      "language": "ja",
+      "tags": ["dhamma", "daily"]
+    },
+    {
+      "id": "q093",
+      "text": "空虚な偈千句より、安らぎをもたらす一偈のほうが優れている。",
+      "source": "Dhammapada 100",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q094",
+      "text": "百年不徳で無制御に生きるより、確かに一日徳に満ち瞑想に生きるほうが優れている。",
+      "source": "Dhammapada 110",
+      "language": "ja",
+      "tags": ["meditation", "daily"]
+    },
+    {
+      "id": "q095",
+      "text": "百年興亡を見ぬまま生きるより、確かに一日興亡を見て生きるほうが優れている。",
+      "source": "Dhammapada 113",
+      "language": "ja",
+      "tags": ["impermanence", "daily"]
+    },
+    {
+      "id": "q096",
+      "text": "小さな幸福を捨てて大きな幸福を実現できるなら、賢者は大きなものを見据えて小さなものを捨てよ。",
+      "source": "Dhammapada 290",
+      "language": "ja",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q097",
+      "text": "どんなに偉大な他者のためであっても、自分の福祉を怠ってはならない。自分の福祉をはっきり理解し、善に専念せよ。",
+      "source": "Dhammapada 166",
+      "language": "ja",
+      "tags": ["self-care", "daily"]
+    },
+    {
+      "id": "q098",
+      "text": "他者の過ちを見つけるな、他者の善悪の行いを見るな。ただ自分のなした行いとなさぬ行いを見よ。",
+      "source": "Dhammapada 50",
+      "language": "ja",
+      "tags": ["self-reflection", "daily"]
+    },
+    {
+      "id": "q099",
+      "text": "すべては暴力を恐れ、すべては死を恐れる。自らを他者の立場に置き、殺してはならず、他者に殺させてはならない。",
+      "source": "Dhammapada 129",
+      "language": "ja",
+      "tags": ["compassion", "daily"]
+    }
+  ]
+}

@@ -1,0 +1,1823 @@
+{
+  "version": 2,
+  "events": [
+    {
+      "id": "buddha_birth",
+      "title": "Đức Phật đản sinh",
+      "year_be": -623,
+      "year_ce": -563,
+      "description": "Tất-đạt-đa Cồ-đàm sinh ra ở Lumbini (Nepal ngày nay) là hoàng tử của gia tộc Shakya.",
+      "category": "life_of_buddha",
+      "order": 1
+    },
+    {
+      "id": "buddha_childhood_name",
+      "title": "Tuổi thơ của Tất Đạt Đa",
+      "year_be": -613,
+      "year_ce": -553,
+      "description": "Hoàng tử trẻ tên là Tất-đạt-đa, nghĩa là người đã hoàn thành mục tiêu của mình và được nuôi dưỡng trong nhung lụa ở Kapilavatthu.",
+      "category": "life_of_buddha",
+      "order": 2
+    },
+    {
+      "id": "great_renunciation",
+      "title": "Đại Từ Bỏ",
+      "year_be": -594,
+      "year_ce": -534,
+      "description": "Ở tuổi 29, Thái tử Tất Đạt Đa rời bỏ cung điện, gia đình và cuộc sống hoàng gia để tìm kiếm sự giải thoát khỏi đau khổ.",
+      "category": "life_of_buddha",
+      "order": 3
+    },
+    {
+      "id": "buddha_marriage_yasodhara",
+      "title": "Kết hôn với Công chúa Da-duy-da-na",
+      "year_be": -593,
+      "year_ce": -533,
+      "description": "Năm 16 tuổi, Tất-đạt-đa kết hôn với Da-duy-da-na, con gái của vua Suppabuddha và sống cuộc đời của một hoàng tử.",
+      "category": "life_of_buddha",
+      "order": 4
+    },
+    {
+      "id": "study_with_alara_kalama",
+      "title": "Học với Alara Kalama",
+      "year_be": -593,
+      "year_ce": -533,
+      "description": "Tất-đạt-đa học thiền dưới sự hướng dẫn của nhà khổ hạnh Alara Kalama và làm chủ được cõi hư vô.",
+      "category": "life_of_buddha",
+      "order": 5
+    },
+    {
+      "id": "birth_of_rahula",
+      "title": "La-hầu-la chào đời",
+      "year_be": -592,
+      "year_ce": -532,
+      "description": "Tất Đạt Đa và Da-duy-da-na có một con trai tên là La-hầu-la, sinh ra không lâu trước cuộc Đại Xuất Gia.",
+      "category": "life_of_buddha",
+      "order": 6
+    },
+    {
+      "id": "study_with_udaka_ramaputta",
+      "title": "Học với Uddaka Ramaputta",
+      "year_be": -592,
+      "year_ce": -532,
+      "description": "Tất-đạt-đa sau đó học với Uddaka Ramaputta, đạt đến cõi phi tưởng cũng như phi tưởng tượng.",
+      "category": "life_of_buddha",
+      "order": 7
+    },
+    {
+      "id": "four_great_sights",
+      "title": "Tứ đại thắng cảnh",
+      "year_be": -591,
+      "year_ce": -531,
+      "description": "Tất Đạt gặp một ông già, một người bệnh, một xác chết và một tu sĩ khổ hạnh, đánh thức ông về thực tại của đau khổ.",
+      "category": "life_of_buddha",
+      "order": 8
+    },
+    {
+      "id": "six_years_austerities",
+      "title": "Sáu năm khổ hạnh",
+      "year_be": -591,
+      "year_ce": -531,
+      "description": "Tất-đạt-đa thực hành khổ hạnh cực độ với năm người bạn đồng hành gần Uruvela, gần như chết đói trước khi từ bỏ việc đền tội khắc nghiệt.",
+      "category": "life_of_buddha",
+      "order": 9
+    },
+    {
+      "id": "sujata_offering",
+      "title": "Sujata cúng dường cơm sữa",
+      "year_be": -589,
+      "year_ce": -529,
+      "description": "Một người phụ nữ trong làng tên là Sujata đã dâng cơm sữa cho nhà tu khổ hạnh, giúp ông phục hồi sức lực vào đêm trước giác ngộ.",
+      "category": "life_of_buddha",
+      "order": 10
+    },
+    {
+      "id": "buddha_enlightenment",
+      "title": "Sự giác ngộ (Bồ Đề)",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "Ở tuổi 35, Tất Đạt đã giác ngộ dưới gốc cây Bồ đề tại Bồ Đề Đạo Tràng, trở thành Đức Phật.",
+      "category": "life_of_buddha",
+      "order": 11
+    },
+    {
+      "id": "mara_confrontation",
+      "title": "Sự cám dỗ của Ma-vương",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "Vào đêm giác ngộ, Đức Phật đã vượt qua những cám dỗ và nỗi sợ hãi được nhân cách hóa thành Ma-vương, chúa tể của ảo ảnh.",
+      "category": "life_of_buddha",
+      "order": 12
+    },
+    {
+      "id": "first_sermon",
+      "title": "Bài pháp đầu tiên (Chuyển Pháp luân)",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "Đức Phật đã thuyết giảng lần đầu tiên tại Vườn Nai ở Lộc Uyển, khởi động Bánh xe Pháp.",
+      "category": "life_of_buddha",
+      "order": 13
+    },
+    {
+      "id": "ordination_of_first_monks",
+      "title": "Lễ xuất gia của các nhà sư đầu tiên",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "Đức Phật đã thành lập Tăng đoàn Tỳ kheo khi Ngài xuất gia cho năm đệ tử đầu tiên với công thức đơn giản Hãy đến, Tỳ kheo.",
+      "category": "sangha",
+      "order": 14
+    },
+    {
+      "id": "buddhism_india_bodhi_tree_tradition",
+      "title": "Truyền thống cây bồ đề tại Bồ-đề Già-yết",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "Cây bồ đề ở Bồ-đề Già-yết đã được tôn kính kể từ khi Đức Phật thành đạo, với những cây non được mang đến Sri Lanka và xa hơn nữa.",
+      "category": "india_buddhism",
+      "order": 15
+    },
+    {
+      "id": "buddha_meets_bimbisara",
+      "title": "Đức Phật gặp vua Bimbisara",
+      "year_be": -587,
+      "year_ce": -527,
+      "description": "Vua Bimbisara của Magadha đã trở thành một cư sĩ nhiệt thành ủng hộ và tặng tu viện Veluvana cho tăng đoàn.",
+      "category": "life_of_buddha",
+      "order": 16
+    },
+    {
+      "id": "first_rains_retreat",
+      "title": "An cư mùa mưa đầu tiên (An cư mùa mưa)",
+      "year_be": -587,
+      "year_ce": -527,
+      "description": "Đức Phật và các đệ tử của Ngài đã quan sát mùa an cư ba tháng đầu tiên hàng năm tại Varanasi, thiết lập truyền thống vassa.",
+      "category": "sangha",
+      "order": 17
+    },
+    {
+      "id": "jetavana_monastery",
+      "title": "Tu viện Jetavana có năng khiếu",
+      "year_be": -586,
+      "year_ce": -526,
+      "description": "Vị cư sĩ giàu có Anathapindika đã mua và tặng khu rừng Jetavana gần Savatthi, một trung tâm giảng dạy lớn.",
+      "category": "sangha",
+      "order": 18
+    },
+    {
+      "id": "buddha_visits_kapilavastu",
+      "title": "Đức Phật đến thăm Kapilavatthu",
+      "year_be": -585,
+      "year_ce": -525,
+      "description": "Đức Phật trở về quê hương và truyền giới cho con trai La-hầu-la, người em cùng cha khác mẹ Nanda và em họ Ananda.",
+      "category": "life_of_buddha",
+      "order": 19
+    },
+    {
+      "id": "subduing_nalagiri_elephant",
+      "title": "Chế phục voi điên Nalagiri",
+      "year_be": -584,
+      "year_ce": -524,
+      "description": "Đức Phật đã làm dịu một con voi đang giận dữ được phái đến tấn công Ngài nhờ sức mạnh của lòng từ và sự điềm tĩnh.",
+      "category": "life_of_buddha",
+      "order": 20
+    },
+    {
+      "id": "buddhism_india_taxila",
+      "title": "Học Phật tại Taxila",
+      "year_be": -560,
+      "year_ce": -500,
+      "description": "Taxila ở Gandhara là một trung tâm học tập cổ xưa, nơi triết học và y học Phật giáo được nghiên cứu cùng với các ngành khoa học khác.",
+      "category": "india_buddhism",
+      "order": 21
+    },
+    {
+      "id": "buddha_teaches_devadatta_schism",
+      "title": "Nỗ lực ly giáo của Devadatta",
+      "year_be": -550,
+      "year_ce": -490,
+      "description": "Anh họ của Đức Phật là Devadatta đã tìm cách chia rẽ tăng đoàn và đề xuất các quy định chặt chẽ hơn, nhưng cộng đồng vẫn đoàn kết.",
+      "category": "sangha",
+      "order": 22
+    },
+    {
+      "id": "mahaparinirvana",
+      "title": "Đại Bát Niết Bàn",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "Đức Phật viên tịch tại Câu-thi-na lúc 80 tuổi, nhập niết bàn cuối cùng.",
+      "category": "life_of_buddha",
+      "order": 23
+    },
+    {
+      "id": "first_council",
+      "title": "Hội đồng Phật giáo đầu tiên",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "Được tổ chức tại Rajagaha dưới thời vua Ajatasattu, do Mahakassapa chủ trì. Luật tạng và kinh được tụng.",
+      "category": "council",
+      "order": 24
+    },
+    {
+      "id": "buddhism_india_buddha_relics",
+      "title": "Xá lợi Phật được lưu giữ trên khắp Ấn Độ",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "Sau khi Đức Phật nhập Niết Bàn, xá lợi của Ngài được phân phát khắp tám vương quốc và được cất giữ trong các bảo tháp trên khắp Ấn Độ.",
+      "category": "india_buddhism",
+      "order": 25
+    },
+    {
+      "id": "ordination_of_nuns",
+      "title": "Thành lập Tăng đoàn Tỳ kheo ni",
+      "year_be": -541,
+      "year_ce": -481,
+      "description": "Mahapajapati Gotami và những phụ nữ khác đã thọ giới, thành lập dòng tu nữ Phật giáo dưới sự chỉ đạo của Tám Garudhammas.",
+      "category": "sangha",
+      "order": 26
+    },
+    {
+      "id": "second_council",
+      "title": "Hội đồng Phật giáo lần thứ hai",
+      "year_be": 160,
+      "year_ce": -383,
+      "description": "Được tổ chức tại Vesali để giải quyết các tranh chấp về quy tắc tu viện.",
+      "category": "council",
+      "order": 27
+    },
+    {
+      "id": "schism_mahasanghika",
+      "title": "Sự ly giáo của Đại chúng bộ",
+      "year_be": 160,
+      "year_ce": -383,
+      "description": "Những tranh chấp sau lần kết tập thứ hai đã dẫn đến sự ly giáo lớn đầu tiên, làm nảy sinh trường phái Đại chúng bộ.",
+      "category": "council",
+      "order": 28
+    },
+    {
+      "id": "theravada_emergence",
+      "title": "Trường phái Nguyên Thủy đã thành hình",
+      "year_be": 193,
+      "year_ce": -350,
+      "description": "Dòng truyền thừa Sthavira đã phát triển thành cái mà sau này được gọi là Nguyên thủy, nhấn mạnh đến những giáo lý được ghi chép sớm nhất.",
+      "category": "sangha",
+      "order": 29
+    },
+    {
+      "id": "rise_of_sarvastivada",
+      "title": "Sự trỗi dậy của trường phái Sarvastivada",
+      "year_be": 243,
+      "year_ce": -300,
+      "description": "Trường phái Sarvastivada phát triển mạnh mẽ ở tây bắc Ấn Độ, sản sinh ra nhiều tác phẩm A-tỳ-đạt-ma.",
+      "category": "sangha",
+      "order": 30
+    },
+    {
+      "id": "ashoka_conversion",
+      "title": "Sự chuyển đổi sang Phật giáo của A-dục Vương",
+      "year_be": 280,
+      "year_ce": -263,
+      "description": "Sau chiến tranh Kalinga, Hoàng đế A-dục Vương theo đạo Phật và quyết tâm cai trị bằng Giáo pháp hơn là chinh phục.",
+      "category": "ashoka",
+      "order": 31
+    },
+    {
+      "id": "maurya_buddhist_patronage",
+      "title": "Hoàng gia Mauryan bảo trợ Phật giáo",
+      "year_be": 283,
+      "year_ce": -260,
+      "description": "Ngoài A-dục Vương, triều đình Maurya còn hỗ trợ các tu viện và hoạt động truyền giáo trên khắp tiểu lục địa Ấn Độ.",
+      "category": "india_buddhism",
+      "order": 32
+    },
+    {
+      "id": "buddhism_india_dhamma_vijay",
+      "title": "Chính sách Pháp-Vijaya của A-dục Vương",
+      "year_be": 283,
+      "year_ce": -260,
+      "description": "A-dục Vương thay thế cuộc chinh phục quân sự bằng Pháp-vijaya – chiến thắng nhờ lẽ phải – làm nguyên tắc chỉ đạo cho đế chế của ông.",
+      "category": "india_buddhism",
+      "order": 33
+    },
+    {
+      "id": "ashoka_dhamma_letters",
+      "title": "Sắc lệnh Giáo pháp của A-dục Vương",
+      "year_be": 286,
+      "year_ce": -257,
+      "description": "A-dục Vương đã khắc những giáo lý đạo đức và tôn giáo lên các cột trụ và đá khắp đế quốc của mình, truyền bá đạo đức Phật giáo một cách rộng rãi.",
+      "category": "ashoka",
+      "order": 34
+    },
+    {
+      "id": "buddhism_india_rock_edicts",
+      "title": "Sắc lệnh đá trên khắp tiểu lục địa",
+      "year_be": 286,
+      "year_ce": -257,
+      "description": "Các sắc lệnh trên đá của A-dục Vương tại Dhauli, Girnar và Kalsi đã truyền bá giáo lý đạo đức Phật giáo ở Prakrit trên khắp các vùng khác nhau của Ấn Độ.",
+      "category": "india_buddhism",
+      "order": 35
+    },
+    {
+      "id": "compilation_abhidhamma",
+      "title": "Biên soạn các văn bản A-tì-đạm",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "Các văn bản triết học có hệ thống phân tích tâm, vật chất và đạo đức đã được biên soạn, sau này là trọng tâm của học thuật Nguyên thủy.",
+      "category": "sangha",
+      "order": 36
+    },
+    {
+      "id": "ashoka_sends_missionaries",
+      "title": "A-dục Vương gửi các nhà truyền giáo Phật giáo",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "A-dục Vương phái các nhà sư đến Sri Lanka, Kashmir, Gandhara và xa hơn nữa để truyền bá Giáo pháp.",
+      "category": "ashoka",
+      "order": 37
+    },
+    {
+      "id": "buddhism_india_sarnath_lion_capital",
+      "title": "Thủ đô sư tử Lộc Uyển",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "Thủ đô sư tử của A-dục Vương tại Lộc Uyển, với bốn con sư tử và bánh xe Pháp, đã trở thành biểu tượng quốc gia của Ấn Độ.",
+      "category": "india_buddhism",
+      "order": 38
+    },
+    {
+      "id": "buddhism_india_maurya_stupas",
+      "title": "Bảo tháp Phật giáo Mauryan",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "A-dục Vương và những người kế vị ông đã mở rộng và xây dựng các bảo tháp tại Sanchi, Bharhut và các địa điểm khác trên khắp đế chế Mauryan.",
+      "category": "india_buddhism",
+      "order": 39
+    },
+    {
+      "id": "buddhism_india_ashoka_pillars",
+      "title": "Trụ cột A-dục Vương được dựng lên trên khắp Ấn Độ",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "A-dục Vương đã dựng lên những cột đá sa thạch bóng loáng có khắc những dòng chữ Pháp từ Afghanistan đến Karnataka trên khắp đế quốc của mình.",
+      "category": "india_buddhism",
+      "order": 40
+    },
+    {
+      "id": "third_council",
+      "title": "Hội đồng Phật giáo lần thứ ba",
+      "year_be": 296,
+      "year_ce": -247,
+      "description": "Được tổ chức tại Pataliputra dưới thời Hoàng đế A-dục Vương, do Moggaliputta Tissa lãnh đạo.",
+      "category": "council",
+      "order": 41
+    },
+    {
+      "id": "mahinda_sri_lanka",
+      "title": "Phật giáo đến Sri Lanka",
+      "year_be": 296,
+      "year_ce": -247,
+      "description": "Hoàng đế A-dục Vương gửi con trai Ma-hinda tới Sri Lanka, nơi vua Devanampiya Tissa thọ nhận Giáo pháp tại Mihintale.",
+      "category": "spread_of_buddhism",
+      "order": 42
+    },
+    {
+      "id": "sanghamitta_bodhi_tree",
+      "title": "Cây Bồ đề giống đến Sri Lanka",
+      "year_be": 297,
+      "year_ce": -246,
+      "description": "Con gái của A-dục Vương, Tăng-giới-mật-đa, đã mang một cây bồ đề non đến Anuradhapura, nơi nó vẫn được tôn kính cho đến ngày nay.",
+      "category": "spread_of_buddhism",
+      "order": 43
+    },
+    {
+      "id": "greco_buddhist_art_gandhara",
+      "title": "Nghệ thuật Phật giáo Hy Lạp ở Gandhara",
+      "year_be": 343,
+      "year_ce": -200,
+      "description": "Tác phẩm điêu khắc Phật giáo ở Gandhara pha trộn các hình thức nghệ thuật Hy Lạp với các chủ đề Phật giáo, tạo ra những hình tượng Phật mang tính biểu tượng đầu tiên.",
+      "category": "spread_of_buddhism",
+      "order": 44
+    },
+    {
+      "id": "buddhism_india_sunga_art",
+      "title": "Nghệ thuật Phật giáo triều đại Sunga",
+      "year_be": 393,
+      "year_ce": -150,
+      "description": "Thời kỳ Sunga chứng kiến ​​sự phát triển mạnh mẽ của việc trang trí bảo tháp Phật giáo tại Sanchi và Bharhut, kể lại những câu chuyện Jataka trên đá.",
+      "category": "india_buddhism",
+      "order": 45
+    },
+    {
+      "id": "rise_of_mahayana",
+      "title": "Sự trỗi dậy của Phật giáo Đại thừa",
+      "year_be": 443,
+      "year_ce": -100,
+      "description": "Những kinh điển mới và lý tưởng Bồ Tát đã mở rộng Phật giáo ra ngoài địa vị A-la-hán tu viện hướng tới sự giải thoát phổ quát.",
+      "category": "mahayana",
+      "order": 46
+    },
+    {
+      "id": "kushan_empire_buddhism",
+      "title": "Phật giáo dưới thời Đế quốc Kushan",
+      "year_be": 443,
+      "year_ce": -100,
+      "description": "Những người cai trị Quý Sương đã bảo trợ Phật giáo trên khắp Gandhara và Mathura, thúc đẩy các tu viện và nghệ thuật trên tuyến đường thương mại.",
+      "category": "india_buddhism",
+      "order": 47
+    },
+    {
+      "id": "buddhism_india_barhut_stupa",
+      "title": "Phù điêu Bảo tháp Bharhut",
+      "year_be": 443,
+      "year_ce": -100,
+      "description": "Các bức phù điêu bảo tháp Bharhut ở Madhya Pradesh lưu giữ một số mô tả tường thuật sớm nhất về cuộc đời của Đức Phật.",
+      "category": "india_buddhism",
+      "order": 48
+    },
+    {
+      "id": "fourth_council_sri_lanka",
+      "title": "Hội đồng Phật giáo lần thứ tư (Sri Lanka)",
+      "year_be": 514,
+      "year_ce": -29,
+      "description": "Các tu sĩ Nguyên thủy ở Sri Lanka đã cam kết viết Tam tạng bằng tiếng Pali ở Aluvihara để bảo tồn giáo lý trong thời kỳ đói kém.",
+      "category": "council",
+      "order": 49
+    },
+    {
+      "id": "buddhism_india_jataka_literature",
+      "title": "Truyện Jataka được biên soạn ở Ấn Độ",
+      "year_be": 543,
+      "year_ce": 0,
+      "description": "Bộ sưu tập các câu chuyện Jataka kể lại tiền kiếp của Đức Phật đã được biên soạn bằng tiếng Pali và tiếng Phạn, truyền bá giáo lý đạo đức khắp châu Á.",
+      "category": "india_buddhism",
+      "order": 50
+    },
+    {
+      "id": "buddhism_china",
+      "title": "Phật Giáo Vào Trung Quốc",
+      "year_be": 611,
+      "year_ce": 68,
+      "description": "Hoàng đế nhà Hán nhà Minh đã chào đón các tu sĩ Phật giáo và kinh điển từ Ấn Độ, đánh dấu sự khởi đầu chính thức của Phật giáo ở Trung Quốc.",
+      "category": "spread_of_buddhism",
+      "order": 51
+    },
+    {
+      "id": "fourth_council_kashmir",
+      "title": "Hội đồng Phật giáo lần thứ tư (Kashmir)",
+      "year_be": 621,
+      "year_ce": 78,
+      "description": "Dưới thời vua Kanishka, các học giả của trường phái Sarvastivada đã hệ thống hóa các văn bản Vi Diệu Pháp của họ ở Kashmir.",
+      "category": "council",
+      "order": 52
+    },
+    {
+      "id": "lotus_sutra_composition",
+      "title": "Kinh Pháp Hoa đạt được sự nổi bật",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "Kinh Saddharmapundarika đã trở thành một trong những kinh điển Đại thừa có ảnh hưởng nhất trên khắp Đông Á.",
+      "category": "mahayana",
+      "order": 53
+    },
+    {
+      "id": "buddhism_india_mathura_art",
+      "title": "Trường Nghệ thuật Phật giáo Mathura",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "Mathura ở miền bắc Ấn Độ đã tạo ra những bức tượng Phật đầu tiên đặc biệt có ảnh hưởng đến nghệ thuật Phật giáo trên khắp châu Á.",
+      "category": "india_buddhism",
+      "order": 54
+    },
+    {
+      "id": "buddhism_india_cave_monasteries",
+      "title": "Tu viện hang động Phật giáo của Deccan",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "Các tu viện hang động bằng đá ở Bhaja, Bedsa, Karla, và sau đó là Ajanta và Ellora là nơi ở của hàng nghìn tu sĩ qua nhiều thế kỷ.",
+      "category": "india_buddhism",
+      "order": 55
+    },
+    {
+      "id": "buddhism_india_women_patrons",
+      "title": "Những người bảo trợ phụ nữ của Phật giáo Ấn Độ",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "Những nữ cư sĩ như Visakha và Hoàng hậu Mallika đã hỗ trợ tăng đoàn, xây dựng tu viện và tài trợ cho các sứ mệnh của Đức Phật.",
+      "category": "india_buddhism",
+      "order": 56
+    },
+    {
+      "id": "nagarjuna_madhyamaka",
+      "title": "Long Thọ và trường phái Madhyamaka",
+      "year_be": 693,
+      "year_ce": 150,
+      "description": "Nhà triết học Long Thọ đã trình bày rõ ràng triết lý Trung Đạo về tính không (shunyata), định hình lại tư tưởng Đại thừa.",
+      "category": "mahayana",
+      "order": 57
+    },
+    {
+      "id": "buddhism_vietnam",
+      "title": "Phật giáo du nhập vào Việt Nam",
+      "year_be": 732,
+      "year_ce": 189,
+      "description": "Giáo lý Phật giáo đến Việt Nam thông qua cả hai tuyến đường thương mại hàng hải Đại thừa của Trung Quốc và Ấn Độ.",
+      "category": "spread_of_buddhism",
+      "order": 58
+    },
+    {
+      "id": "buddhism_central_asia",
+      "title": "Phật giáo dọc theo con đường tơ lụa",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "Các tu viện và chùa hang dọc theo các tuyến đường thương mại Trung Á mang theo giáo lý Phật giáo giữa Ấn Độ và Trung Quốc.",
+      "category": "spread_of_buddhism",
+      "order": 59
+    },
+    {
+      "id": "buddhism_india_kanheri_caves",
+      "title": "Hang Phật Kanheri",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "Các hang động Kanheri gần Mumbai từng là trung tâm giáo dục và tu viện Phật giáo lớn trong hơn một thiên niên kỷ.",
+      "category": "india_buddhism",
+      "order": 60
+    },
+    {
+      "id": "buddhism_india_amaravati",
+      "title": "Bảo Tháp Amaravati",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "Đại Bảo Tháp tại Amaravati ở Andhra Pradesh là một trung tâm nghệ thuật Phật giáo và hành hương tráng lệ ở Ấn Độ cổ đại.",
+      "category": "india_buddhism",
+      "order": 61
+    },
+    {
+      "id": "buddhism_india_sanskrit_mahayana",
+      "title": "Kinh điển Đại thừa tiếng Phạn ở Ấn Độ",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "Kinh điển Đại thừa mới được sáng tác bằng tiếng Phạn ở Ấn Độ đã lan truyền sang Trung Quốc, Tây Tạng và Đông Nam Á, định hình lại việc thực hành Phật giáo.",
+      "category": "india_buddhism",
+      "order": 62
+    },
+    {
+      "id": "dunhuang_mogao_caves",
+      "title": "Hang Mogao tại Đôn Hoàng",
+      "year_be": 909,
+      "year_ce": 366,
+      "description": "Các ngôi chùa hang động Phật giáo tại Đôn Hoàng, Trung Quốc đã trở thành một kho lưu trữ khổng lồ về nghệ thuật, bản thảo và thực hành thiền định.",
+      "category": "spread_of_buddhism",
+      "order": 63
+    },
+    {
+      "id": "buddhism_korea",
+      "title": "Phật giáo du nhập vào Hàn Quốc",
+      "year_be": 915,
+      "year_ce": 372,
+      "description": "Kinh điển và các nhà sư Phật giáo đã đến vương quốc Goguryeo, bắt đầu một truyền thống Phật giáo lâu đời và có ảnh hưởng của Hàn Quốc.",
+      "category": "spread_of_buddhism",
+      "order": 64
+    },
+    {
+      "id": "faxian_pilgrimage",
+      "title": "Cuộc hành hương của Pháp Hiển đến Ấn Độ",
+      "year_be": 942,
+      "year_ce": 399,
+      "description": "Nhà sư Trung Quốc Pháp Hiển đã đến Ấn Độ và Sri Lanka để thu thập các văn bản Luật tạng và ghi lại tình trạng của các di tích Phật giáo.",
+      "category": "pilgrimage",
+      "order": 65
+    },
+    {
+      "id": "vasubandhu_yogacara",
+      "title": "Vasubandhu và trường phái Yogacara",
+      "year_be": 943,
+      "year_ce": 400,
+      "description": "Nhà triết học Vasubandhu đã phát triển giáo lý Yogacara về ý thức, ảnh hưởng sâu sắc đến lý thuyết thiền Đại thừa.",
+      "category": "mahayana",
+      "order": 66
+    },
+    {
+      "id": "buddhism_india_gupta_golden_age",
+      "title": "Thời đại hoàng kim của nghệ thuật Phật giáo Gupta",
+      "year_be": 943,
+      "year_ce": 400,
+      "description": "Thời kỳ Gupta đã tạo ra những tượng Phật tinh xảo ở Lộc Uyển và Na-lan-đà, được coi là lý tưởng cổ điển của nghệ thuật điêu khắc Phật giáo.",
+      "category": "india_buddhism",
+      "order": 67
+    },
+    {
+      "id": "kumarajiva_translations",
+      "title": "Kumarajiva dịch kinh điển Phật giáo",
+      "year_be": 944,
+      "year_ce": 401,
+      "description": "Nhà sư Kumarajiva đã dịch các kinh điển Đại thừa quan trọng sang tiếng Trung Quốc, định hình Phật giáo Đông Á trong nhiều thế kỷ.",
+      "category": "east_asia",
+      "order": 68
+    },
+    {
+      "id": "pure_land_school_china",
+      "title": "Tịnh Độ Tông Phát Triển Ở Trung Quốc",
+      "year_be": 945,
+      "year_ce": 402,
+      "description": "Việc thực hành sùng kính tập trung vào Đức Phật A Di Đà đã phát triển thành trường phái Tịnh Độ, sau đó lan rộng khắp Đông Á.",
+      "category": "mahayana",
+      "order": 69
+    },
+    {
+      "id": "buddhaghosa_visuddhimagga",
+      "title": "Đức Phậtghosa Sáng Tác Thanh Tịnh Đạo Luận",
+      "year_be": 948,
+      "year_ce": 405,
+      "description": "Học giả-tu sĩ Đức Phậtghosa đã viết Con đường Tịnh hóa ở Sri Lanka, hệ thống hóa thiền định và giáo lý Nguyên thủy.",
+      "category": "sangha",
+      "order": 70
+    },
+    {
+      "id": "nalanda_founded",
+      "title": "Na-lan-đà Mahavihara được thành lập",
+      "year_be": 970,
+      "year_ce": 427,
+      "description": "Đại học tu viện lớn ở Na-lan-đà ở Bihar đã trở thành một trung tâm nổi tiếng về triết học, logic và thiền định Phật giáo.",
+      "category": "university",
+      "order": 71
+    },
+    {
+      "id": "buddhism_nepal_licchavi",
+      "title": "Phật giáo ở thung lũng Nepal",
+      "year_be": 1007,
+      "year_ce": 464,
+      "description": "Các bảo tháp và tu viện Phật giáo phát triển mạnh mẽ ở Thung lũng Kathmandu dưới thời Licchavi và các triều đại sau này.",
+      "category": "spread_of_buddhism",
+      "order": 72
+    },
+    {
+      "id": "white_huns_persecution",
+      "title": "Sự suy tàn của Phật giáo ở Tây Bắc Ấn Độ",
+      "year_be": 1008,
+      "year_ce": 465,
+      "description": "Cuộc xâm lược của người Huna và sự mất đi sự bảo trợ của hoàng gia đã làm suy yếu các tu viện Phật giáo ở Gandhara và tây bắc Ấn Độ.",
+      "category": "india_buddhism",
+      "order": 73
+    },
+    {
+      "id": "sri_lanka_mahavamsa",
+      "title": "Biên niên sử Mahavamsa được sáng tác",
+      "year_be": 1043,
+      "year_ce": 500,
+      "description": "Biên niên sử Mahavamsa ở Sri Lanka đã ghi lại lịch sử Phật giáo và sự bảo trợ của hoàng gia, bảo tồn di sản Nguyên thủy.",
+      "category": "sangha",
+      "order": 74
+    },
+    {
+      "id": "bodhidharma_china",
+      "title": "Bồ Đề Đạt Ma Mang Thiền đến Trung Quốc",
+      "year_be": 1063,
+      "year_ce": 520,
+      "description": "Tổ sư Ấn Độ Bồ Đề Đạt Ma theo truyền thống được cho là người đã truyền thiền Thiền (Thiền) cho tu viện Thiếu Lâm ở Trung Quốc.",
+      "category": "east_asia",
+      "order": 75
+    },
+    {
+      "id": "odantapuri_founded",
+      "title": "Odantapuri Mahavihara được thành lập",
+      "year_be": 1093,
+      "year_ce": 550,
+      "description": "Trường đại học tu viện ở Odantapuri ở Bihar đã trở thành một trung tâm nghiên cứu Phật giáo lớn dưới sự bảo trợ của Pala.",
+      "category": "university",
+      "order": 76
+    },
+    {
+      "id": "buddhism_japan",
+      "title": "Phật giáo đến Nhật Bản",
+      "year_be": 1095,
+      "year_ce": 552,
+      "description": "Các hình ảnh và văn bản Phật giáo đã được Hàn Quốc trình lên triều đình Nhật Bản, đưa Phật giáo trở thành một thế lực chính ở Nhật Bản.",
+      "category": "spread_of_buddhism",
+      "order": 77
+    },
+    {
+      "id": "tiantai_school_china",
+      "title": "Trường Thiên Thai được thành lập",
+      "year_be": 1118,
+      "year_ce": 575,
+      "description": "Zhiyi thành lập trường phái Tiantai ở Trung Quốc, hệ thống hóa thiền định và Kinh Pháp Hoa làm giáo lý trung tâm.",
+      "category": "east_asia",
+      "order": 78
+    },
+    {
+      "id": "wonhyo_korean_buddhism",
+      "title": "Wonhyo thống nhất tư tưởng Phật giáo Hàn Quốc",
+      "year_be": 1143,
+      "year_ce": 600,
+      "description": "Nhà sư Hàn Quốc Wonhyo đã hòa hợp các trường phái Phật giáo cạnh tranh, giúp cho người dân bình thường có thể tiếp cận Giáo pháp.",
+      "category": "east_asia",
+      "order": 79
+    },
+    {
+      "id": "buddhism_india_ellora_caves",
+      "title": "Hang động Phật giáo Ellora",
+      "year_be": 1143,
+      "year_ce": 600,
+      "description": "Các ngôi đền hang động Phật giáo tại Ellora ở Maharashtra được chạm khắc cùng với các tượng đài của đạo Hindu và đạo Jain, thể hiện sự chung sống tôn giáo.",
+      "category": "india_buddhism",
+      "order": 80
+    },
+    {
+      "id": "shotoku_taishi_japan",
+      "title": "Hoàng tử Shotoku quảng bá Phật giáo",
+      "year_be": 1147,
+      "year_ce": 604,
+      "description": "Hoàng tử Shotoku Taishi của Nhật Bản đã thúc đẩy quản lý Phật giáo, xây dựng chùa chiền và cử phái đoàn đến Trung Quốc.",
+      "category": "east_asia",
+      "order": 81
+    },
+    {
+      "id": "xuanzang_pilgrimage",
+      "title": "Huyền Trang du hành tới Ấn Độ",
+      "year_be": 1172,
+      "year_ce": 629,
+      "description": "Nhà hành hương Trung Quốc Huyền Trang đã dành mười sáu năm ở Ấn Độ để học tập tại Na-lan-đà và mang về hàng trăm văn bản tiếng Phạn.",
+      "category": "pilgrimage",
+      "order": 82
+    },
+    {
+      "id": "buddhism_india_harsha_patronage",
+      "title": "Vua Harsha bảo trợ Phật giáo",
+      "year_be": 1173,
+      "year_ce": 630,
+      "description": "Hoàng đế Harsha của Kannauj là một người bảo trợ hào phóng cho Phật giáo, đã đón tiếp những người hành hương Trung Quốc Huyền Trang và hỗ trợ các tu viện.",
+      "category": "india_buddhism",
+      "order": 83
+    },
+    {
+      "id": "buddhism_india_hiuen_tsang_record",
+      "title": "Huyền Trang ghi lại vinh quang của Na-lan-đà",
+      "year_be": 1178,
+      "year_ce": 635,
+      "description": "Nhà hành hương Trung Quốc Huyền Trang mô tả Na-lan-đà có hàng nghìn học trò và hàng trăm giáo viên vào thời kỳ đỉnh cao.",
+      "category": "india_buddhism",
+      "order": 84
+    },
+    {
+      "id": "buddhism_tibet",
+      "title": "Phật giáo được thành lập ở Tây Tạng",
+      "year_be": 1184,
+      "year_ce": 641,
+      "description": "Vua Songtsen Gampo kết hôn với các công chúa Phật giáo và quảng bá Giáo pháp, đặt nền móng cho Phật giáo Tây Tạng.",
+      "category": "tibet",
+      "order": 85
+    },
+    {
+      "id": "yi_jing_pilgrimage",
+      "title": "Cuộc hành hương của Kinh Dịch đến Ấn Độ",
+      "year_be": 1214,
+      "year_ce": 671,
+      "description": "Nhà sư Trung Quốc Yijing đã sống 25 năm ở Ấn Độ và Đông Nam Á, ghi lại đời sống tu viện và thực hành Luật tạng.",
+      "category": "pilgrimage",
+      "order": 86
+    },
+    {
+      "id": "huayan_school_china",
+      "title": "Trường Huayan được thành lập",
+      "year_be": 1243,
+      "year_ce": 700,
+      "description": "Trường phái Huayan (Fflower Garland) tổng hợp kinh điển Đại thừa thành một triết lý về thực tại liên kết với nhau.",
+      "category": "mahayana",
+      "order": 87
+    },
+    {
+      "id": "buddhism_india_vajrayana_origins",
+      "title": "Phật giáo Kim Cương thừa xuất hiện ở Ấn Độ",
+      "year_be": 1243,
+      "year_ce": 700,
+      "description": "Các thực hành Phật giáo Mật tông được phát triển tại Na-lan-đà và Vikramashila, sau đó được truyền đến Tây Tạng, Nepal và Đông Á.",
+      "category": "india_buddhism",
+      "order": 88
+    },
+    {
+      "id": "buddhism_bhutan",
+      "title": "Phật giáo trở thành quốc giáo của Bhutan",
+      "year_be": 1290,
+      "year_ce": 747,
+      "description": "Giáo lý Phật giáo bén rễ ở Bhutan dưới ảnh hưởng của Tây Tạng, sau này trở thành nền tảng của bản sắc dân tộc.",
+      "category": "spread_of_buddhism",
+      "order": 89
+    },
+    {
+      "id": "pala_dynasty_buddhism",
+      "title": "Triều đại Pala bảo trợ Phật giáo",
+      "year_be": 1293,
+      "year_ce": 750,
+      "description": "Các vị vua Pala của Bengal và Bihar đã trở thành những người bảo trợ lớn cho Na-lan-đà, Vikramashila và học thuật Phật giáo ở Ấn Độ.",
+      "category": "india_buddhism",
+      "order": 90
+    },
+    {
+      "id": "buddhism_indonesia",
+      "title": "Phật giáo ở Đông Nam Á hải đảo",
+      "year_be": 1303,
+      "year_ce": 760,
+      "description": "Srivijaya và các vương quốc khác ở Sumatra và thế giới Mã Lai đã hỗ trợ việc học Đại thừa và Kim cương thừa cũng như con đường buôn bán Phật giáo.",
+      "category": "spread_of_buddhism",
+      "order": 91
+    },
+    {
+      "id": "buddhism_india_santarakshita",
+      "title": "Shantarakshita Thiết lập Phật giáo ở Tây Tạng từ Ấn Độ",
+      "year_be": 1306,
+      "year_ce": 763,
+      "description": "Học giả Ấn Độ Shantarakshita du hành tới Tây Tạng theo lời mời của Vua Trisong Detsen, người thành lập Tu viện Samye.",
+      "category": "india_buddhism",
+      "order": 92
+    },
+    {
+      "id": "samye_monastery",
+      "title": "Tu viện Samye được thành lập",
+      "year_be": 1318,
+      "year_ce": 775,
+      "description": "Tu viện Phật giáo đầu tiên ở Tây Tạng được thành lập tại Samye dưới thời vua Trisong Detsen và Guru Padmasambhava.",
+      "category": "tibet",
+      "order": 93
+    },
+    {
+      "id": "mongol_buddhism",
+      "title": "Phật giáo dưới thời Nguyên Mông Cổ",
+      "year_be": 1323,
+      "year_ce": 780,
+      "description": "Phật giáo Tây Tạng nhận được sự bảo trợ của hoàng gia dưới thời Hốt Tất Liệt, liên kết sự cai trị của người Mông Cổ với các Lạt ma Tây Tạng và các tổ chức tu viện.",
+      "category": "tibet",
+      "order": 94
+    },
+    {
+      "id": "vikramashila_founded",
+      "title": "Vikramashila Mahavihara được thành lập",
+      "year_be": 1343,
+      "year_ce": 800,
+      "description": "Đại học tu viện lớn ở Vikramashila ở Bihar cạnh tranh với Na-lan-đà về tư cách là một trung tâm nghiên cứu mật tông và triết học.",
+      "category": "university",
+      "order": 95
+    },
+    {
+      "id": "buddhism_india_ratnagiri_monastery",
+      "title": "Tu viện Phật giáo Ratnagiri",
+      "year_be": 1343,
+      "year_ce": 800,
+      "description": "Tu viện ở Ratnagiri ở Odisha là một trung tâm Phật giáo Mật tông lớn dưới sự bảo trợ của triều đại Pala.",
+      "category": "india_buddhism",
+      "order": 96
+    },
+    {
+      "id": "buddhism_india_pala_somapura",
+      "title": "Đại tu viện Somapura Mahavihara",
+      "year_be": 1343,
+      "year_ce": 800,
+      "description": "Triều đại Pala đã xây dựng Somapura Mahavihara ở Bangladesh ngày nay, một khu phức hợp tu viện rộng lớn và là Di sản Thế giới được UNESCO công nhận.",
+      "category": "india_buddhism",
+      "order": 97
+    },
+    {
+      "id": "saicho_tendai_japan",
+      "title": "Saicho thành lập trường Tendai ở Nhật Bản",
+      "year_be": 1349,
+      "year_ce": 806,
+      "description": "Nhà sư Saicho đã thành lập trường Tendai trên núi Hiei sau khi nghiên cứu giáo lý Tiantai ở Trung Quốc.",
+      "category": "east_asia",
+      "order": 98
+    },
+    {
+      "id": "padmasambhava_vajrayana",
+      "title": "Padmasambhava Thiết lập Kim Cương thừa ở Tây Tạng",
+      "year_be": 1353,
+      "year_ce": 810,
+      "description": "Guru Padmasambhava được ghi nhận là người đã điều phục các chướng ngại và thiết lập thực hành Phật giáo Mật tông ở Tây Tạng.",
+      "category": "tibet",
+      "order": 99
+    },
+    {
+      "id": "kukai_shingon_japan",
+      "title": "Kukai sáng lập Phật giáo Shingon",
+      "year_be": 1359,
+      "year_ce": 816,
+      "description": "Nhà sư Kukai trở về từ Trung Quốc và thành lập Phật giáo bí truyền Shingon, xây dựng các ngôi chùa trên khắp Nhật Bản.",
+      "category": "east_asia",
+      "order": 100
+    },
+    {
+      "id": "borobudur_built",
+      "title": "Đền Borobudur đã hoàn thành",
+      "year_be": 1368,
+      "year_ce": 825,
+      "description": "Tượng đài Đại thừa đồ sộ ở Java đã được hoàn thành, thể hiện con đường dẫn đến giác ngộ trong các bức phù điêu và bảo tháp bằng đá.",
+      "category": "spread_of_buddhism",
+      "order": 101
+    },
+    {
+      "id": "buddhism_india_ladakh",
+      "title": "Phật giáo ở Ladakh",
+      "year_be": 1543,
+      "year_ce": 1000,
+      "description": "Phật giáo Tây Tạng phát triển mạnh mẽ ở Ladakh, xây dựng các tu viện như Hemis, Thiksey và Diskit trên khắp vùng Himalaya.",
+      "category": "india_buddhism",
+      "order": 102
+    },
+    {
+      "id": "atisha_tibet",
+      "title": "Atisha hồi sinh Phật giáo ở Tây Tạng",
+      "year_be": 1585,
+      "year_ce": 1042,
+      "description": "Đạo sư Ấn Độ Atisha Dipankara đã trải qua mười hai năm ở Tây Tạng, cải cách kỷ luật tu viện và truyền cảm hứng cho truyền thống Kadampa.",
+      "category": "tibet",
+      "order": 103
+    },
+    {
+      "id": "buddhism_india_dipankara_atisha",
+      "title": "Sứ mệnh của Atisha từ Ấn Độ đến Tây Tạng",
+      "year_be": 1585,
+      "year_ce": 1042,
+      "description": "Đạo sư người Bengali Atisha Dipankara, được đào tạo tại Na-lan-đà, đã dành những năm cuối đời để phục hưng Phật giáo ở Tây Tạng.",
+      "category": "india_buddhism",
+      "order": 104
+    },
+    {
+      "id": "buddhism_bagan_myanmar",
+      "title": "Xây dựng chùa Phật giáo ở Bagan",
+      "year_be": 1593,
+      "year_ce": 1050,
+      "description": "Vương quốc Bagan ở Myanmar đã xây dựng hàng nghìn bảo tháp và chùa chiền, tạo nên một trong những thắng cảnh Phật giáo vĩ đại nhất thế giới.",
+      "category": "spread_of_buddhism",
+      "order": 105
+    },
+    {
+      "id": "buddhism_myanmar",
+      "title": "Phật giáo Nguyên thủy ở Myanmar",
+      "year_be": 1600,
+      "year_ce": 1057,
+      "description": "Vua Anawrahta đã thống nhất Miến Điện và biến Phật giáo Nguyên thủy trở thành quốc giáo sau khi nhận được kinh điển từ Sri Lanka.",
+      "category": "spread_of_buddhism",
+      "order": 106
+    },
+    {
+      "id": "buddhism_india_sen_dynasty",
+      "title": "Phật giáo dưới triều đại Sena",
+      "year_be": 1643,
+      "year_ce": 1100,
+      "description": "Những người cai trị Sena của Bengal ban đầu ủng hộ Phật giáo trước khi truyền thống này suy tàn ở miền đông Ấn Độ.",
+      "category": "india_buddhism",
+      "order": 107
+    },
+    {
+      "id": "buddhism_india_bengal_survival",
+      "title": "Thành trì Phật giáo cuối cùng ở Bengal",
+      "year_be": 1643,
+      "year_ce": 1100,
+      "description": "Các tu viện Phật giáo ở Bengal và Bihar vẫn tồn tại dưới sự bảo trợ của Pala cho đến những cuộc xâm lược vào thế kỷ 12.",
+      "category": "india_buddhism",
+      "order": 108
+    },
+    {
+      "id": "angkor_wat_buddhist",
+      "title": "Angkor Wat là ngôi chùa Phật giáo",
+      "year_be": 1656,
+      "year_ce": 1113,
+      "description": "Ngôi đền Khmer Angkor Wat, ban đầu dành riêng cho Vishnu, đã trở thành một trung tâm thờ cúng Phật giáo Nguyên thủy lớn ở Campuchia.",
+      "category": "spread_of_buddhism",
+      "order": 109
+    },
+    {
+      "id": "eisai_zen_japan",
+      "title": "Eisai giới thiệu Rinzai Thiền tới Nhật Bản",
+      "year_be": 1734,
+      "year_ce": 1191,
+      "description": "Hòa thượng Eisai đã mang Thiền Lâm Tế từ Trung Quốc và thành lập Thiền viện Kenninji, đưa Thiền trở thành một truyền thống lớn của Nhật Bản.",
+      "category": "east_asia",
+      "order": 110
+    },
+    {
+      "id": "nalanda_destroyed",
+      "title": "Sự phá hủy Na-lan-đà",
+      "year_be": 1740,
+      "year_ce": 1197,
+      "description": "Những kẻ xâm lược Thổ Nhĩ Kỳ dưới sự lãnh đạo của Bakhtiyar Khalji đã cướp phá Na-lan-đà, chấm dứt hàng thế kỷ tu học và đánh dấu sự suy tàn lớn của Phật giáo Ấn Độ.",
+      "category": "india_buddhism",
+      "order": 111
+    },
+    {
+      "id": "vikramashila_destroyed",
+      "title": "Sự hủy diệt của Vikramashila",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "Vikramashila Mahavihara đã bị phá hủy bởi các cuộc xâm lược của người Thổ Nhĩ Kỳ, tàn phá thêm các cơ sở Phật giáo ở miền đông Ấn Độ.",
+      "category": "india_buddhism",
+      "order": 112
+    },
+    {
+      "id": "buddhism_decline_eastern_india",
+      "title": "Sự suy tàn cuối cùng của Phật giáo ở Đông Ấn Độ",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "Sự mất mát của các trường đại học tu viện, sự bảo trợ thay đổi và các cuộc xâm lược đã dẫn đến sự biến mất gần như của Phật giáo khỏi vùng trung tâm Ấn Độ.",
+      "category": "india_buddhism",
+      "order": 113
+    },
+    {
+      "id": "jinul_korean_seon",
+      "title": "Jinul cải cách Phật giáo Seon Hàn Quốc",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "Nhà sư Jinul đã kết hợp thiền Seon với việc nghiên cứu giáo lý, hình thành nên Phật giáo Hàn Quốc trong nhiều thế kỷ.",
+      "category": "east_asia",
+      "order": 114
+    },
+    {
+      "id": "buddhism_india_muslim_conquest_impact",
+      "title": "Tác động của Vương quốc Delhi đối với Phật giáo Ấn Độ",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "Việc thành lập Vương quốc Delhi đã đẩy nhanh sự suy tàn của các tổ chức Phật giáo vốn đã suy yếu ở miền bắc Ấn Độ.",
+      "category": "india_buddhism",
+      "order": 115
+    },
+    {
+      "id": "sri_lanka_vinaya_reform",
+      "title": "Cải cách Luật tạng Kandyan",
+      "year_be": 1756,
+      "year_ce": 1213,
+      "description": "Các tu sĩ Sri Lanka dưới sự chỉ đạo của Parakramabahu I đã tổ chức một hội đồng để khôi phục giới xuất gia cao hơn và thống nhất việc thực hành tu viện trên đảo.",
+      "category": "council",
+      "order": 116
+    },
+    {
+      "id": "dogen_zen_japan",
+      "title": "Đạo Nguyên sáng lập Thiền Tào Động ở Nhật Bản",
+      "year_be": 1766,
+      "year_ce": 1223,
+      "description": "Hòa thượng Dogen đã mang Thiền Tào Động từ Trung Quốc đến và nhấn mạnh thiền tọa thiền là tinh túy của thực hành Phật giáo.",
+      "category": "east_asia",
+      "order": 117
+    },
+    {
+      "id": "nichiren_buddhism",
+      "title": "Phật giáo Nichiren được thành lập",
+      "year_be": 1796,
+      "year_ce": 1253,
+      "description": "Nhà sư Nichiren đã thành lập một truyền thống tập trung vào việc tôn sùng Kinh Pháp Hoa và cải cách xã hội ở Nhật Bản.",
+      "category": "east_asia",
+      "order": 118
+    },
+    {
+      "id": "buddhism_thailand",
+      "title": "Phật giáo Nguyên thủy ở Thái Lan",
+      "year_be": 1835,
+      "year_ce": 1292,
+      "description": "Vua Ramkhamhaeng của Sukhothai đã quảng bá Phật giáo Nguyên thủy, tăng cường vai trò của Phật giáo trong văn hóa và quản trị Thái Lan.",
+      "category": "spread_of_buddhism",
+      "order": 119
+    },
+    {
+      "id": "buddhism_laos",
+      "title": "Phật giáo ở Vương quốc Lào",
+      "year_be": 1893,
+      "year_ce": 1350,
+      "description": "Phật giáo Nguyên thủy trở thành tôn giáo thống trị khắp các vương quốc Lào, định hình văn hóa, nghệ thuật và đời sống tu viện.",
+      "category": "spread_of_buddhism",
+      "order": 120
+    },
+    {
+      "id": "buddhism_cambodia_theravada",
+      "title": "Phật giáo Nguyên thủy ở Campuchia",
+      "year_be": 1893,
+      "year_ce": 1350,
+      "description": "Phật giáo Nguyên thủy thay thế Đại thừa trở thành truyền thống thống trị ở Campuchia, tập trung ở Angkor và sau đó là Phnom Penh.",
+      "category": "spread_of_buddhism",
+      "order": 121
+    },
+    {
+      "id": "tsongkhapa_gelug",
+      "title": "Tsongkhapa thành lập trường Gelug",
+      "year_be": 1952,
+      "year_ce": 1409,
+      "description": "Đạo sư Tây Tạng Tsongkhapa đã thành lập Tu viện Ganden và trường phái Gelug, nhấn mạnh đến việc nghiên cứu và đạo đức nghiêm ngặt.",
+      "category": "tibet",
+      "order": 122
+    },
+    {
+      "id": "buddhism_mongolia_16th",
+      "title": "Phật giáo hồi sinh ở Mông Cổ",
+      "year_be": 2121,
+      "year_ce": 1578,
+      "description": "Altan Khan của Mông Cổ đã phong tặng danh hiệu Đạt Lai Lạt Ma cho Sonam Gyatso, liên kết Mông Cổ và Tây Tạng trong liên minh Phật giáo.",
+      "category": "tibet",
+      "order": 123
+    },
+    {
+      "id": "buddhism_kalmykia",
+      "title": "Phật giáo ở Kalmykia",
+      "year_be": 2143,
+      "year_ce": 1600,
+      "description": "Người Mông Cổ Kalmyk đã đưa Phật giáo Tây Tạng đến vùng Bắc Kavkaz của Nga.",
+      "category": "spread_of_buddhism",
+      "order": 124
+    },
+    {
+      "id": "buddhism_sikkim",
+      "title": "Phật giáo ở Sikkim và dãy Himalaya",
+      "year_be": 2185,
+      "year_ce": 1642,
+      "description": "Phật giáo Tây Tạng trở thành quốc giáo của Sikkim dưới triều đại Namgyal.",
+      "category": "tibet",
+      "order": 125
+    },
+    {
+      "id": "buddhism_buryatia",
+      "title": "Phật giáo lan truyền đến Buryatia",
+      "year_be": 2243,
+      "year_ce": 1700,
+      "description": "Phật giáo Tây Tạng đã đến được với người Buryat ở Siberia thông qua hoạt động truyền giáo của người Mông Cổ và Tây Tạng.",
+      "category": "spread_of_buddhism",
+      "order": 126
+    },
+    {
+      "id": "buddhism_india_arunachal",
+      "title": "Phật giáo ở Arunachal Pradesh",
+      "year_be": 2243,
+      "year_ce": 1700,
+      "description": "Các tu viện Phật giáo Tây Tạng như Tawang Gompa được thành lập trên khắp Arunachal Pradesh trên dãy Himalaya.",
+      "category": "india_buddhism",
+      "order": 127
+    },
+    {
+      "id": "buddhism_india_ajanta_caves",
+      "title": "Những bức tranh trong hang động Ajanta được công nhận",
+      "year_be": 2362,
+      "year_ce": 1819,
+      "description": "Các sĩ quan Anh đã khám phá lại những bức tranh trong hang động Ajanta, tiết lộ những kiệt tác nghệ thuật Phật giáo Ấn Độ cổ đại cho thế giới.",
+      "category": "india_buddhism",
+      "order": 128
+    },
+    {
+      "id": "buddhist_archaeology_india",
+      "title": "Tái khám phá các di tích Phật giáo ở Ấn Độ",
+      "year_be": 2373,
+      "year_ce": 1830,
+      "description": "Các nhà khảo cổ Anh và Ấn Độ đã phát hiện ra Lộc Uyển, Sanchi và các địa điểm Phật giáo cổ xưa khác, làm dấy lên mối quan tâm mới về di sản Phật giáo của Ấn Độ.",
+      "category": "india_buddhism",
+      "order": 129
+    },
+    {
+      "id": "buddhism_australia",
+      "title": "Phật giáo được thành lập ở Úc",
+      "year_be": 2393,
+      "year_ce": 1850,
+      "description": "Những người nhập cư Trung Quốc và Sri Lanka đã mang thực hành Phật giáo đến Úc, sau đó được cộng đồng người Tây Tạng và người Việt gia nhập.",
+      "category": "spread_of_buddhism",
+      "order": 130
+    },
+    {
+      "id": "thai_reform_mongkut",
+      "title": "Vua Mongkut cải cách Phật giáo Thái Lan",
+      "year_be": 2394,
+      "year_ce": 1851,
+      "description": "Vua Mongkut của Thái Lan đã thành lập giáo phái Phápyutika, nhấn mạnh vào học thuật nghiêm ngặt về Luật tạng và tiếng Pali.",
+      "category": "spread_of_buddhism",
+      "order": 131
+    },
+    {
+      "id": "pali_canon_chiang_mai",
+      "title": "Hội đồng Phật giáo lần thứ năm (Myanmar)",
+      "year_be": 1414,
+      "year_ce": 1871,
+      "description": "Các nhà sư Nguyên thủy ở Mandalay đã đọc và khắc Kinh điển Pali trên các phiến đá cẩm thạch trong Hội đồng Phật giáo lần thứ năm ở Myanmar.",
+      "category": "council",
+      "order": 132
+    },
+    {
+      "id": "buddhism_west_19th",
+      "title": "Phật giáo đến thế giới phương Tây",
+      "year_be": 1422,
+      "year_ce": 1879,
+      "description": "Cuốn Ánh sáng Châu Á của Edwin Arnold và những bản dịch đầu tiên đã giới thiệu những tư tưởng Phật giáo đến Châu Âu và Châu Mỹ.",
+      "category": "modern_buddhism",
+      "order": 133
+    },
+    {
+      "id": "buddhism_new_zealand",
+      "title": "Phật giáo ở New Zealand",
+      "year_be": 1423,
+      "year_ce": 1880,
+      "description": "Những người khai thác vàng Trung Quốc và những người nhập cư châu Á sau này đã mang truyền thống Phật giáo đến New Zealand.",
+      "category": "spread_of_buddhism",
+      "order": 134
+    },
+    {
+      "id": "buddhism_india_bodh_gaya_restoration",
+      "title": "Phục hồi chùa Bồ-đề Già-yết",
+      "year_be": 1423,
+      "year_ce": 1880,
+      "description": "Anagarika Pháppala đã vận động để khôi phục quyền kiểm soát của Phật giáo đối với Đại Tháp Bồ Đề ở Bồ Đề Đạo Tràng, địa điểm giác ngộ.",
+      "category": "india_buddhism",
+      "order": 135
+    },
+    {
+      "id": "pali_text_society",
+      "title": "Hiệp hội Kinh văn Pali được thành lập",
+      "year_be": 1424,
+      "year_ce": 1881,
+      "description": "T. W. Rhys Davids thành lập Hiệp hội Văn bản Pali ở London, xuất bản các ấn bản quan trọng của Tam Tạng cho học bổng toàn cầu.",
+      "category": "revival",
+      "order": 136
+    },
+    {
+      "id": "buddhism_hawaii",
+      "title": "Phật giáo ở Hawaii",
+      "year_be": 1432,
+      "year_ce": 1889,
+      "description": "Những người nhập cư Nhật Bản đã thành lập Jodo Shinshu và các ngôi chùa Phật giáo khác trên khắp quần đảo Hawaii.",
+      "category": "spread_of_buddhism",
+      "order": 137
+    },
+    {
+      "id": "maha_bodhi_society",
+      "title": "Hội Đại Bồ Đề được thành lập",
+      "year_be": 1434,
+      "year_ce": 1891,
+      "description": "Anagarika Pháppala đã thành lập Hội Maha Bồ-đề để khôi phục Bồ Đề Đạo Tràng và hồi sinh Phật giáo ở Ấn Độ và trên toàn thế giới.",
+      "category": "india_buddhism",
+      "order": 138
+    },
+    {
+      "id": "buddhism_south_africa",
+      "title": "Phật giáo ở Nam Phi",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "Các cộng đồng Phật giáo được hình thành ở Nam Phi thông qua sự nhập cư của người châu Á và sau đó thông qua các truyền thống cải đạo của phương Tây.",
+      "category": "spread_of_buddhism",
+      "order": 139
+    },
+    {
+      "id": "buddhism_singapore",
+      "title": "Phật giáo ở Singapore",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "Cộng đồng Phật giáo Trung Quốc, Thái Lan và Sri Lanka đã xây dựng chùa chiền và trường học, biến Singapore thành một trung tâm Phật giáo đa dạng.",
+      "category": "spread_of_buddhism",
+      "order": 140
+    },
+    {
+      "id": "buddhism_malaysia",
+      "title": "Phật giáo ở Malaysia",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "Truyền thống Phật giáo Trung Quốc và Thái Lan phát triển mạnh mẽ ở Malaysia cùng với cộng đồng Nguyên thủy của người Xiêm Malaysia.",
+      "category": "spread_of_buddhism",
+      "order": 141
+    },
+    {
+      "id": "buddhism_canada",
+      "title": "Phật giáo ở Canada",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "Các cộng đồng Phật giáo Trung Quốc, Nhật Bản và sau đó là Việt Nam và Tây Tạng đã thành lập các ngôi chùa trên khắp Canada.",
+      "category": "spread_of_buddhism",
+      "order": 142
+    },
+    {
+      "id": "buddhism_germany",
+      "title": "Phật giáo ở Đức",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "Các học giả và hành giả người Đức đã thành lập các hội Phật giáo, dịch kinh và thành lập các nhóm thiền định.",
+      "category": "modern_buddhism",
+      "order": 143
+    },
+    {
+      "id": "buddhism_india_sarnath_restoration",
+      "title": "Phục hồi Lộc Uyển",
+      "year_be": 1448,
+      "year_ce": 1905,
+      "description": "Cơ quan Khảo sát Khảo cổ Ấn Độ và Hội Đại Bồ Đề đã khôi phục lại Lộc Uyển, nơi Đức Phật thuyết pháp lần đầu tiên.",
+      "category": "india_buddhism",
+      "order": 144
+    },
+    {
+      "id": "buddhist_revival_movement",
+      "title": "Sự hồi sinh Phật giáo hiện đại",
+      "year_be": 1454,
+      "year_ce": 1911,
+      "description": "Các phong trào cải cách và phục hưng khắp châu Á nhấn mạnh đến thiền định, đạo đức xã hội và nghiên cứu đổi mới kinh điển nguyên thủy.",
+      "category": "revival",
+      "order": 145
+    },
+    {
+      "id": "buddhism_india_sanchi_restoration",
+      "title": "Phục hồi bảo tháp Sanchi",
+      "year_be": 1455,
+      "year_ce": 1912,
+      "description": "Ngài John Marshall đã lãnh đạo việc khôi phục Đại Bảo Tháp tại Sanchi, một trong những di tích Phật giáo lâu đời nhất và đẹp nhất của Ấn Độ.",
+      "category": "india_buddhism",
+      "order": 146
+    },
+    {
+      "id": "buddhism_india_nalanda_excavation",
+      "title": "Khai quật khảo cổ Na-lan-đà",
+      "year_be": 1458,
+      "year_ce": 1915,
+      "description": "Việc khai quật có hệ thống Na-lan-đà đã tiết lộ cách bố trí của trường đại học cổ xưa, truyền cảm hứng cho những nỗ lực phục hưng hiện đại.",
+      "category": "india_buddhism",
+      "order": 147
+    },
+    {
+      "id": "buddhism_uk",
+      "title": "Phật giáo ở Vương quốc Anh",
+      "year_be": 1467,
+      "year_ce": 1924,
+      "description": "Hiệp hội Phật giáo Luân Đôn và các phái đoàn Nguyên thủy đã giới thiệu việc thực hành Phật giáo có tổ chức đến Anh.",
+      "category": "modern_buddhism",
+      "order": 148
+    },
+    {
+      "id": "buddhism_france",
+      "title": "Phật giáo ở Pháp",
+      "year_be": 1472,
+      "year_ce": 1929,
+      "description": "Sự tiếp xúc của thực dân Pháp với Việt Nam và Campuchia, và sau đó là những người tị nạn Tây Tạng, đã mang thực hành Phật giáo đến Pháp.",
+      "category": "modern_buddhism",
+      "order": 149
+    },
+    {
+      "id": "first_zen_center_usa",
+      "title": "Trung tâm Thiền đầu tiên ở Mỹ",
+      "year_be": 1473,
+      "year_ce": 1930,
+      "description": "Các nhóm thực hành Thiền tông được thành lập tại Hoa Kỳ, khởi đầu cho việc truyền bá các truyền thống thiền định ở phương Tây.",
+      "category": "modern_buddhism",
+      "order": 150
+    },
+    {
+      "id": "buddhism_philippines",
+      "title": "Phật giáo ở Philippines",
+      "year_be": 1473,
+      "year_ce": 1930,
+      "description": "Các cộng đồng Phật giáo Trung Quốc và sau này là Tây Tạng và Thiền tông đã thành lập các trung tâm thực hành trên khắp Philippines.",
+      "category": "spread_of_buddhism",
+      "order": 151
+    },
+    {
+      "id": "ambedkar_discovers_buddhism",
+      "title": "Tiến sĩ Ambedkar khám phá Phật giáo",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Tiến sĩ B. R. Ambedkar, người thiết kế Hiến pháp Ấn Độ, đã hướng tới Phật giáo như một con đường dẫn đến tự do, bình đẳng và tình huynh đệ vượt lên trên sự áp bức giai cấp.",
+      "category": "india_buddhism",
+      "order": 152
+    },
+    {
+      "id": "international_buddhist_flag",
+      "title": "Cờ Phật giáo quốc tế được thông qua",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Hiệp hội Phật tử Thế giới đã thông qua lá cờ Phật giáo sáu màu như một biểu tượng của sự thống nhất giữa các truyền thống trên toàn thế giới.",
+      "category": "modern_buddhism",
+      "order": 153
+    },
+    {
+      "id": "buddhism_brazil",
+      "title": "Phật giáo ở Brazil và Mỹ Latinh",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Các truyền thống Phật giáo Nhật Bản, Trung Quốc và Tây Tạng đã bén rễ khắp Brazil và châu Mỹ Latinh vào thế kỷ XX.",
+      "category": "spread_of_buddhism",
+      "order": 154
+    },
+    {
+      "id": "buddhism_taiwan",
+      "title": "Phật giáo hưng thịnh ở Đài Loan",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Các phong trào Phật giáo nhân văn ở Đài Loan thúc đẩy giáo dục, từ thiện và thiền định, biến Đài Loan trở thành trung tâm lớn của Phật giáo Trung Quốc.",
+      "category": "east_asia",
+      "order": 155
+    },
+    {
+      "id": "buddhism_scandinavia",
+      "title": "Phật giáo ở Scandinavia",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Những người tị nạn Tây Tạng và các học viên phương Tây đã thành lập các trung tâm Phật giáo trên khắp Đan Mạch, Na Uy và Thụy Điển.",
+      "category": "modern_buddhism",
+      "order": 156
+    },
+    {
+      "id": "buddhism_india_constitution",
+      "title": "Giá trị Phật giáo trong Hiến pháp Ấn Độ",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Tiến sĩ B. R. Ambedkar đã đưa các nguyên tắc tự do, bình đẳng và tình huynh đệ - rút ra từ tầm nhìn Phật giáo của ông - vào Hiến pháp Ấn Độ.",
+      "category": "india_buddhism",
+      "order": 157
+    },
+    {
+      "id": "india_buddha_purnima_holiday",
+      "title": "Lễ Phật Purnima là ngày lễ quốc gia ở Ấn Độ",
+      "year_be": 1495,
+      "year_ce": 1952,
+      "description": "Ấn Độ tuyên bố Lễ Phật đản là ngày lễ quốc gia, tôn vinh sự đản sinh, thành đạo và nhập niết bàn của Đức Phật.",
+      "category": "india_buddhism",
+      "order": 158
+    },
+    {
+      "id": "sixth_buddhist_council",
+      "title": "Hội đồng Phật giáo lần thứ sáu",
+      "year_be": 1497,
+      "year_ce": 1954,
+      "description": "Chư Tăng Nguyên Thủy từ nhiều quốc gia đã tụ hội về Yangon, Myanmar để tụng và chứng thực Kinh điển Pali.",
+      "category": "council",
+      "order": 159
+    },
+    {
+      "id": "ambedkar_buddhist_conversion_movement",
+      "title": "Ambedkar tuyên bố chuyển đổi sang Phật giáo",
+      "year_be": 1498,
+      "year_ce": 1955,
+      "description": "Tiến sĩ B. R. Ambedkar đã công khai ý định chuyển sang Phật giáo, bác bỏ sự bất bình đẳng đẳng cấp và đi theo con đường của Đức Phật.",
+      "category": "india_buddhism",
+      "order": 160
+    },
+    {
+      "id": "beat_generation_buddhism",
+      "title": "Thế hệ Beat ôm lấy Phật giáo",
+      "year_be": 1498,
+      "year_ce": 1955,
+      "description": "Các nhà văn như Jack Kerouac và Allen Ginsberg đã phổ biến tư tưởng Phật giáo trong văn học Mỹ và phản văn hóa.",
+      "category": "modern_buddhism",
+      "order": 161
+    },
+    {
+      "id": "ambedkar_deekshabhoomi",
+      "title": "Cuộc chuyển đổi hàng loạt của Ambedkar tại Deekshabhoomi",
+      "year_be": 1499,
+      "year_ce": 1956,
+      "description": "Tiến sĩ B. R. Ambedkar và hàng trăm ngàn tín đồ đã theo đạo Phật tại Nagpur trên Vijayadashami, khẳng định quyền tự do, bình đẳng và tình huynh đệ.",
+      "category": "india_buddhism",
+      "order": 162
+    },
+    {
+      "id": "neo_buddhist_movement_india",
+      "title": "Phong trào Phật giáo mới ở Ấn Độ",
+      "year_be": 1499,
+      "year_ce": 1956,
+      "description": "Sau sự chuyển đổi của Ambedkar, hàng triệu người Dalit trên khắp Maharashtra và Ấn Độ đã theo đạo Phật, tạo ra một cộng đồng Phật giáo mới sôi động.",
+      "category": "india_buddhism",
+      "order": 163
+    },
+    {
+      "id": "buddhism_india_chaitya_bhoomi",
+      "title": "Đài tưởng niệm Chaitya Bhoomi",
+      "year_be": 1499,
+      "year_ce": 1956,
+      "description": "Chaitya Bhoomi ở Mumbai đã trở thành địa điểm tưởng niệm và hành hương nơi Tiến sĩ B. R. Ambedkar được hỏa táng sau khi ông cải sang đạo Phật.",
+      "category": "india_buddhism",
+      "order": 164
+    },
+    {
+      "id": "ambedkar_buddha_and_his_dhamma",
+      "title": "Ambedkar xuất bản Đức Phật và Pháp của Ngài",
+      "year_be": 1500,
+      "year_ce": 1957,
+      "description": "Tiến sĩ B. R. Ambedkar đã viết Đức Phật và Giáo pháp của Ngài, trình bày cuộc đời và giáo lý của Đức Phật như một triết lý hợp lý, bình đẳng cho Ấn Độ hiện đại.",
+      "category": "india_buddhism",
+      "order": 165
+    },
+    {
+      "id": "buddhism_india_ambedkar_jayanti",
+      "title": "Ambedkar Jayanti vai Người quan sát công cộng",
+      "year_be": 1500,
+      "year_ce": 1957,
+      "description": "Ngày 14 tháng 4, ngày kỷ niệm ngày sinh của Tiến sĩ Ambedkar, được Phật tử Ấn Độ coi là ngày suy ngẫm và tụ họp cộng đồng.",
+      "category": "india_buddhism",
+      "order": 166
+    },
+    {
+      "id": "dalai_lama_exile",
+      "title": "Đức Đạt Lai Lạt Ma lưu vong",
+      "year_be": 1502,
+      "year_ce": 1959,
+      "description": "Đức Đạt Lai Lạt Ma thứ 14 trốn khỏi Tây Tạng và thành lập chính phủ lưu vong ở Ấn Độ, bảo tồn văn hóa và giáo lý Phật giáo Tây Tạng.",
+      "category": "tibet",
+      "order": 167
+    },
+    {
+      "id": "buddhism_india_dalai_lama_dharamsala",
+      "title": "Dharamsala là Trung tâm Phật giáo Tây Tạng",
+      "year_be": 1503,
+      "year_ce": 1960,
+      "description": "Chính phủ Tây Tạng lưu vong đã thành lập trụ sở ở Dharamsala, Ấn Độ, biến nơi đây trở thành trung tâm nghiên cứu Phật giáo Tây Tạng toàn cầu.",
+      "category": "india_buddhism",
+      "order": 168
+    },
+    {
+      "id": "buddhism_india_waghala",
+      "title": "Phong trào Phật giáo Waghala Vihara",
+      "year_be": 1503,
+      "year_ce": 1960,
+      "description": "Các tu viện và trường học Phật giáo mới được xây dựng trên khắp Maharashtra và Ấn Độ, nuôi dưỡng đời sống cộng đồng Phật giáo Ambedkarite.",
+      "category": "india_buddhism",
+      "order": 169
+    },
+    {
+      "id": "buddhism_india_tibetan_settlements",
+      "title": "Khu định cư Phật giáo Tây Tạng ở Ấn Độ",
+      "year_be": 1503,
+      "year_ce": 1960,
+      "description": "Ấn Độ chào đón những người tị nạn Tây Tạng, thành lập các khu định cư tại Bylakuppe, Mundgod và Dharamsala cùng với các tu viện và trường học.",
+      "category": "india_buddhism",
+      "order": 170
+    },
+    {
+      "id": "buddhism_india_maharashtra_growth",
+      "title": "Tăng trưởng dân số Phật giáo ở Maharashtra",
+      "year_be": 1504,
+      "year_ce": 1961,
+      "description": "Hồ sơ điều tra dân số cho thấy sự gia tăng đáng kể về dân số theo đạo Phật ở Maharashtra sau phong trào cải đạo hàng loạt của Ambedkar.",
+      "category": "india_buddhism",
+      "order": 171
+    },
+    {
+      "id": "thich_nhat_hanh_engaged",
+      "title": "Thích Nhất Hạnh và Phật giáo nhập thế",
+      "year_be": 1508,
+      "year_ce": 1965,
+      "description": "Hòa thượng Thích Nhất Hạnh đã sáng lập ra Phật giáo Nhập thế, liên kết thực hành chánh niệm với hoạt động vì hòa bình và công bằng xã hội.",
+      "category": "modern_buddhism",
+      "order": 172
+    },
+    {
+      "id": "master_hsing_yun_foguang",
+      "title": "Phật giáo nhân văn Phật Quang Sơn",
+      "year_be": 1510,
+      "year_ce": 1967,
+      "description": "Thầy Hsing Yun thành lập Phật Quang Sơn ở Đài Loan, truyền bá Phật giáo Nhân văn, nhấn mạnh vào giáo dục và sự tham gia xã hội trên toàn thế giới.",
+      "category": "east_asia",
+      "order": 173
+    },
+    {
+      "id": "buddhism_indonesia_modern",
+      "title": "Sự hồi sinh của Phật giáo ở Indonesia",
+      "year_be": 1513,
+      "year_ce": 1970,
+      "description": "Sau nhiều thế kỷ suy tàn, cộng đồng Phật giáo ở Indonesia đã trải qua sự hồi sinh thông qua các nhóm nghiên cứu và trùng tu chùa chiền.",
+      "category": "spread_of_buddhism",
+      "order": 174
+    },
+    {
+      "id": "buddhism_india_global_diaspora",
+      "title": "Cộng đồng Phật giáo Ấn Độ trên toàn thế giới",
+      "year_be": 1513,
+      "year_ce": 1970,
+      "description": "Phật tử Ấn Độ, đặc biệt là từ cộng đồng Ambedkarite, đã thành lập các ngôi chùa và trung tâm văn hóa trên khắp thế giới.",
+      "category": "india_buddhism",
+      "order": 175
+    },
+    {
+      "id": "vipassana_global_spread",
+      "title": "Thiền Thiền Vipassana lan rộng khắp thế giới",
+      "year_be": 1514,
+      "year_ce": 1971,
+      "description": "S. N. Goenka bắt đầu giảng dạy thiền Thiền Vipassana trên phạm vi quốc tế, dựa trên truyền thống Sayagyi U Ba Khin của Miến Điện.",
+      "category": "revival",
+      "order": 176
+    },
+    {
+      "id": "buddhism_india_sikkim_state",
+      "title": "Sikkim gia nhập Ấn Độ với tư cách là quốc gia Phật giáo",
+      "year_be": 1518,
+      "year_ce": 1975,
+      "description": "Sikkim trở thành một phần của Ấn Độ trong khi vẫn bảo tồn di sản tu viện và địa điểm hành hương Phật giáo Tây Tạng phong phú.",
+      "category": "india_buddhism",
+      "order": 177
+    },
+    {
+      "id": "buddhism_india_vipassana_dhammagiri",
+      "title": "Trung tâm Thiền Vipassana Phápgiri",
+      "year_be": 1519,
+      "year_ce": 1976,
+      "description": "S. N. Goenka đã thành lập trung tâm Phápgiri Thiền Vipassana tại Igatpuri, Maharashtra, một trong những trung tâm thiền lớn nhất thế giới.",
+      "category": "india_buddhism",
+      "order": 178
+    },
+    {
+      "id": "buddhism_india_triratna",
+      "title": "Cộng đồng Phật giáo Triratna ở Ấn Độ",
+      "year_be": 1521,
+      "year_ce": 1978,
+      "description": "Dòng Phật giáo Triratna mở rộng ở Ấn Độ, cung cấp việc giảng dạy Giáo pháp và phát triển cộng đồng lấy cảm hứng từ tầm nhìn của Ambedkar.",
+      "category": "india_buddhism",
+      "order": 179
+    },
+    {
+      "id": "mindfulness_mbsr",
+      "title": "Giảm căng thẳng dựa trên chánh niệm",
+      "year_be": 1522,
+      "year_ce": 1979,
+      "description": "Tiến sĩ Jon Kabat-Zinn đã phát triển MBSR tại Đại học Massachusetts, đưa chánh niệm Phật giáo vào chăm sóc sức khỏe hiện đại.",
+      "category": "modern_buddhism",
+      "order": 180
+    },
+    {
+      "id": "thai_forest_tradition_global",
+      "title": "Truyền thống rừng Thái lan rộng trên toàn cầu",
+      "year_be": 1523,
+      "year_ce": 1980,
+      "description": "Ajahn Chah và các đệ tử đã thành lập các tu viện trong rừng trên toàn thế giới, dạy thực hành thiền khổ hạnh bắt nguồn từ truyền thống sống trong rừng của Thái Lan.",
+      "category": "revival",
+      "order": 181
+    },
+    {
+      "id": "buddhism_china_cultural_revival",
+      "title": "Sự hồi sinh của Phật giáo ở Trung Quốc thời hậu Mao",
+      "year_be": 1523,
+      "year_ce": 1980,
+      "description": "Các ngôi chùa mở cửa trở lại và việc thực hành Phật giáo được hồi sinh trên khắp Trung Quốc sau thời kỳ đàn áp Cách mạng Văn hóa.",
+      "category": "east_asia",
+      "order": 182
+    },
+    {
+      "id": "plum_village_founded",
+      "title": "Tu viện Làng Mai được thành lập",
+      "year_be": 1525,
+      "year_ce": 1982,
+      "description": "Thích Nhất Hạnh thành lập Làng Mai ở Pháp, trở thành tu viện Phật giáo lớn nhất châu Âu và là trung tâm của Phật giáo Dấn thân.",
+      "category": "modern_buddhism",
+      "order": 183
+    },
+    {
+      "id": "buddhism_science_dialogue",
+      "title": "Đối thoại Phật giáo và Khoa học",
+      "year_be": 1530,
+      "year_ce": 1987,
+      "description": "Viện Tâm thức và Đời sống bắt đầu đối thoại giữa Đức Đạt Lai Lạt Ma và các nhà khoa học phương Tây về ý thức và hạnh phúc.",
+      "category": "modern_buddhism",
+      "order": 184
+    },
+    {
+      "id": "dalai_lama_nobel_peace",
+      "title": "Đức Đạt Lai Lạt Ma được trao giải Nobel Hòa bình",
+      "year_be": 1532,
+      "year_ce": 1989,
+      "description": "Đức Đạt Lai Lạt Ma thứ 14 đã nhận được Giải Nobel Hòa bình vì cuộc đấu tranh bất bạo động để giải phóng Tây Tạng và phát huy lòng từ bi.",
+      "category": "modern_buddhism",
+      "order": 185
+    },
+    {
+      "id": "buddhism_environmental_movement",
+      "title": "Phong trào Môi trường Phật giáo",
+      "year_be": 1533,
+      "year_ce": 1990,
+      "description": "Các nhà lãnh đạo Phật giáo trên toàn thế giới bắt đầu ủng hộ việc bảo vệ sinh thái bắt nguồn từ sự phụ thuộc lẫn nhau và lòng từ bi đối với mọi sinh vật.",
+      "category": "modern_buddhism",
+      "order": 186
+    },
+    {
+      "id": "buddhism_women_ordination",
+      "title": "Phong trào Toàn cầu về Truyền giới Tỳ kheo ni",
+      "year_be": 1539,
+      "year_ce": 1996,
+      "description": "Các cộng đồng Nguyên thủy ở Sri Lanka và xa hơn nữa đã khôi phục lại việc xuất gia đầy đủ cho phụ nữ, tiếp tục di sản của Mahapajapati Gotami.",
+      "category": "sangha",
+      "order": 187
+    },
+    {
+      "id": "un_vesak_day",
+      "title": "Liên hợp quốc công nhận Phật Đản",
+      "year_be": 1542,
+      "year_ce": 1999,
+      "description": "Liên hợp quốc công nhận Phật Đản là ngày quốc tế kỷ niệm, tôn vinh ngày đản sinh, thành đạo và nhập diệt của Đức Phật.",
+      "category": "modern_buddhism",
+      "order": 188
+    },
+    {
+      "id": "buddhism_online_dharma",
+      "title": "Giáo lý Phật giáo trực tuyến",
+      "year_be": 1543,
+      "year_ce": 2000,
+      "description": "Các tu viện, giáo viên và học giả trên toàn thế giới bắt đầu chia sẻ các bài pháp thoại, kinh điển và hướng dẫn thiền định qua internet.",
+      "category": "modern_buddhism",
+      "order": 189
+    },
+    {
+      "id": "bamiyan_buddhas_destroyed",
+      "title": "Sự tiêu diệt các tượng Phật Bamiyan",
+      "year_be": 1544,
+      "year_ce": 2001,
+      "description": "Taliban đã phá hủy những bức tượng Phật khổng lồ ở Bamiyan, Afghanistan, gây chấn động thế giới và làm nổi bật sự mong manh của di sản Phật giáo.",
+      "category": "modern_buddhism",
+      "order": 190
+    },
+    {
+      "id": "buddhism_india_diksha_ceremonies",
+      "title": "Lễ nhập môn Phật giáo đại chúng ở Ấn Độ",
+      "year_be": 1544,
+      "year_ce": 2001,
+      "description": "Các nghi lễ diksha quy mô lớn tiếp tục diễn ra trên khắp Ấn Độ khi hàng triệu người theo đạo Phật lấy cảm hứng từ di sản của Tiến sĩ Ambedkar.",
+      "category": "india_buddhism",
+      "order": 191
+    },
+    {
+      "id": "buddha_birthplace_unesco",
+      "title": "Di sản thế giới Lumbini được UNESCO công nhận",
+      "year_be": 1545,
+      "year_ce": 2002,
+      "description": "Nơi sinh của Đức Phật tại Lumbini đã được UNESCO công nhận là Di sản Thế giới, bảo vệ một địa điểm hành hương quan trọng.",
+      "category": "modern_buddhism",
+      "order": 192
+    },
+    {
+      "id": "buddhism_sri_lanka_civil_war",
+      "title": "Những nỗ lực hòa bình của Phật giáo ở Sri Lanka",
+      "year_be": 1545,
+      "year_ce": 2002,
+      "description": "Các tu sĩ và cư sĩ Phật giáo ở Sri Lanka đã nỗ lực vì hòa bình và hòa giải trong và sau cuộc nội chiến.",
+      "category": "modern_buddhism",
+      "order": 193
+    },
+    {
+      "id": "buddhism_india_bodh_gaya_unesco",
+      "title": "Di sản văn hóa UNESCO",
+      "year_be": 1545,
+      "year_ce": 2002,
+      "description": "Đền Mahabodhi ở Bồ-đề Già-yết được công nhận là Di sản Thế giới của UNESCO, công nhận ý nghĩa tâm linh toàn cầu của nó.",
+      "category": "india_buddhism",
+      "order": 194
+    },
+    {
+      "id": "buddhism_india_bodh_gaya_summit",
+      "title": "Hội nghị Phật giáo quốc tế tại Bồ-đề Già-yết",
+      "year_be": 1547,
+      "year_ce": 2004,
+      "description": "Ấn Độ đã tổ chức các hội nghị Phật giáo quốc tế tại Bồ-đề Già-yết, tái khẳng định vai trò của địa điểm này như một trung tâm hành hương toàn cầu.",
+      "category": "india_buddhism",
+      "order": 195
+    },
+    {
+      "id": "buddhism_myanmar_saffron",
+      "title": "Cách mạng nghệ tây ở Myanmar",
+      "year_be": 1550,
+      "year_ce": 2007,
+      "description": "Các tu sĩ Phật giáo đã dẫn đầu các cuộc biểu tình rầm rộ ở Myanmar kêu gọi dân chủ và nhân quyền, thể hiện Phật giáo Dấn thân trong hành động.",
+      "category": "modern_buddhism",
+      "order": 196
+    },
+    {
+      "id": "buddhism_india_nagaloka",
+      "title": "Trung tâm đào tạo Phật giáo Nagaloka",
+      "year_be": 1550,
+      "year_ce": 2007,
+      "description": "Trung tâm Nagaloka ở Nagpur được thành lập để đào tạo một thế hệ Phật tử Ấn Độ mới về thiền định, nghiên cứu và chuyển hóa xã hội.",
+      "category": "india_buddhism",
+      "order": 197
+    },
+    {
+      "id": "nalanda_university_revived",
+      "title": "Đại học Na-lan-đà hồi sinh",
+      "year_be": 1557,
+      "year_ce": 2014,
+      "description": "Ấn Độ tái lập Đại học Na-lan-đà ở Bihar như một tổ chức quốc tế, tượng trưng cho sự hồi sinh di sản học thuật Phật giáo của Ấn Độ.",
+      "category": "india_buddhism",
+      "order": 198
+    },
+    {
+      "id": "buddhism_india_kushinagar_development",
+      "title": "Phát triển mạch Phật giáo Câu-thi-na",
+      "year_be": 1559,
+      "year_ce": 2016,
+      "description": "Ấn Độ đã phát triển Câu-thi-na, nơi Đức Phật nhập Niết bàn, như một điểm đến hành hương và di sản lớn.",
+      "category": "india_buddhism",
+      "order": 199
+    },
+    {
+      "id": "buddhism_india_modern_pilgrimage",
+      "title": "Cuộc hành hương vòng quanh Phật giáo ở Ấn Độ hiện đại",
+      "year_be": 1559,
+      "year_ce": 2016,
+      "description": "Ấn Độ đã phát động sáng kiến ​​Mạch Phật giáo kết nối Lâm Tỳ Ni, Bồ Đề Đạo Tràng, Lộc Uyển và Câu-thi-na cho những người hành hương quốc tế.",
+      "category": "india_buddhism",
+      "order": 200
+    },
+    {
+      "id": "covid_buddhist_online_practice",
+      "title": "Cộng đồng Phật giáo thích ứng trong thời kỳ dịch bệnh Covid-19",
+      "year_be": 1563,
+      "year_ce": 2020,
+      "description": "Các ngôi chùa và trung tâm thiền định trên toàn thế giới đã chuyển sang giảng dạy trực tuyến và tụ tập tăng đoàn ảo trong thời kỳ đại dịch toàn cầu.",
+      "category": "modern_buddhism",
+      "order": 201
+    },
+    {
+      "id": "global_buddhist_summit",
+      "title": "Hội nghị thượng đỉnh Phật giáo toàn cầu",
+      "year_be": 1566,
+      "year_ce": 2023,
+      "description": "Các nhà lãnh đạo và học giả từ các truyền thống Phật giáo trên toàn thế giới đã gặp nhau tại New Delhi để thảo luận về hòa bình, lòng từ bi và trách nhiệm chung.",
+      "category": "modern_buddhism",
+      "order": 202
+    }
+  ]
+}

@@ -1,0 +1,995 @@
+{
+  "version": 1,
+  "quotes": [
+    {
+      "id": "q001",
+      "text": "འཇིག་རྟེན་འདིར་ཁོང་ཁྲོས་ཀྱིས་ཁོང་ཁྲོ་མི་ཞི་བ། ཁོང་ཁྲོ་མེད་པས་ཁོང་ཁྲོ་ཞི་བ། འདི་ནི་རྟག་པའི་ཆོས་སོ།",
+      "source": "Dhammapada 5",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q002",
+      "text": "རྒྱུ་འབྲས་ཀྱི་ཆོས་ཐམས་ཅད་མི་རྟག་པ་ཡིན། དེ་མཐོང་བ་ལས་ཤེས་རབ་ཀྱིས་སྡུག་བསྔལ་ལས་ལྡོག",
+      "source": "Dhammapada 277",
+      "language": "dz",
+      "tags": [
+        "impermanence",
+        "daily"
+      ]
+    },
+    {
+      "id": "q003",
+      "text": "ཁྱོད་རང་གིས་འབད་དགོས། སངས་རྒྱས་ཀྱིས་ལམ་ཙམ་ཞིག་སྟོན་ཙམ།",
+      "source": "Dhammapada 276",
+      "language": "dz",
+      "tags": [
+        "effort",
+        "daily"
+      ]
+    },
+    {
+      "id": "q004",
+      "text": "ཇི་ལྟར་བྲག་རྡོ་རླུང་གིས་མི་གཡོ་བ་བཞིན། མཁས་པ་རྣམས་ཁ་སྐོང་དང་གཏམ་པོས་མི་གཡོ།",
+      "source": "Dhammapada 81",
+      "language": "dz",
+      "tags": [
+        "equanimity",
+        "daily"
+      ]
+    },
+    {
+      "id": "q005",
+      "text": "ནད་མེད་པའི་དབུལ་ཕོངས་ཆེན་པོ་ཡིན། སེམས་དགའ་བ་ནོར་བུ་ཡིན། དད་པ་འབྲེལ་བ་ལེགས་སོ།",
+      "source": "Dhammapada 204",
+      "language": "dz",
+      "tags": [
+        "contentment",
+        "daily"
+      ]
+    },
+    {
+      "id": "q006",
+      "text": "ཙིག་བརྗོད་བརྒྱ་སྟོང་ལས་བདེ་བ་སྦྱིན་པའི་ཚིག་གཅིག་ལེགས་སོ།",
+      "source": "Dhammapada 100",
+      "language": "dz",
+      "tags": [
+        "speech",
+        "daily"
+      ]
+    },
+    {
+      "id": "q007",
+      "text": "ཁོང་ཁྲོས་ཁོང་ཁྲོ་རྒྱལ། ངན་པ་ངན་པ་རྒྱལ། ཞེམ་པ་ཞེམ་པ་རྒྱལ། རྫུན་པ་བདེན་པ་རྒྱལ།",
+      "source": "Dhammapada 223",
+      "language": "dz",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q008",
+      "text": "སེམས་ཀྱིས་ལས་ཀུན་གྱི་སྔོན་དུ་འགྲོ། ལས་ཀུན་སེམས་ཀྱིས་འདྲེན་པ་ཡིན།",
+      "source": "Dhammapada 1",
+      "language": "dz",
+      "tags": [
+        "mind",
+        "daily"
+      ]
+    },
+    {
+      "id": "q009",
+      "text": "མ་བུས་བུ་གཅིག་སྲུང་བ་བཞིན། སེམས་ཅན་ཐམས་ཅད་ལ་བྱམས་པ་མི་མཐའ་སྐྱེད།",
+      "source": "Metta Sutta",
+      "language": "dz",
+      "tags": [
+        "loving-kindness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q010",
+      "text": "དུས་སྔོན་ལ་མི་གནས། མ་འོངས་པ་མི་བསམ། ད་ལྟའི་སྐད་ཅིག་ལ་སེམས་གཏད།",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "mindfulness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q011",
+      "text": "ཁོང་ཁྲོ་འཛིན་པ་ནི་ཚ་བའི་མེ་མར་འཛིན་པ་དང་འདྲ། ཁྱོད་རང་ཚ་བ་མྱོང།",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "anger",
+        "daily"
+      ]
+    },
+    {
+      "id": "q012",
+      "text": "རང་གིས་རང་གིས་སྐྱོབ། གཞན་གྱིས་སྐྱོབ་མི་ནུས། རང་གིས་ལམ་ལ་འགྲོ་དགོས།",
+      "source": "Dhammapada 165",
+      "language": "dz",
+      "tags": [
+        "effort",
+        "daily"
+      ]
+    },
+    {
+      "id": "q013",
+      "text": "ནམ་མཁའ་ལ་ཤར་ནུབ་མེད། སེམས་ཅན་གྱིས་རང་གི་སེམས་ལ་ཁྱད་པར་འབྱེད།",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q014",
+      "text": "ཉི་མ་ཟླ་བ་བདེན་པ་གསུམ་རིང་དུ་སྦས་མི་ནུས།",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "truth",
+        "daily"
+      ]
+    },
+    {
+      "id": "q015",
+      "text": "བདེ་བ་ནང་ནས་འབྱུང། ཕྱི་རོལ་ཏུ་མི་ཚོལ།",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "peace",
+        "daily"
+      ]
+    },
+    {
+      "id": "q016",
+      "text": "སྡུག་བསྔལ་གྱི་རྩ་བ་ཞེན་པ་ཡིན།",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "attachment",
+        "daily"
+      ]
+    },
+    {
+      "id": "q017",
+      "text": "ཁོང་ཁྲོས་ཆད་མི་འགྲོ། ཁོང་ཁྲོས་ཆད་འགྲོ།",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "anger",
+        "daily"
+      ]
+    },
+    {
+      "id": "q018",
+      "text": "མེ་གཅིག་ལས་མར་མེ་བརྒྱ་ཕྲག་འབར། བདེ་བ་བརྙེས་པས་ཉམས་མི་འགྲོ།",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "compassion",
+        "daily"
+      ]
+    },
+    {
+      "id": "q019",
+      "text": "གཞོན་ནུ་ལ་མར་མེ་འབར་ན་ཁྱོད་ཀྱི་ལམ་ཡང་གསལ་འགྱུར།",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "compassion",
+        "daily"
+      ]
+    },
+    {
+      "id": "q020",
+      "text": "ལྕེ་ནི་གྲི་ཆུ་མེད་པར་འཆི་བ་བཞིན།",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "speech",
+        "daily"
+      ]
+    },
+    {
+      "id": "q021",
+      "text": "བུམ་པ་ཐིགས་པ་རེ་རེ་གིས་གང་འགྱུར།",
+      "source": "Dhammapada 122",
+      "language": "dz",
+      "tags": [
+        "patience",
+        "daily"
+      ]
+    },
+    {
+      "id": "q022",
+      "text": "ཇི་ལྟར་བྲག་རྡོ་རླུང་གིས་མི་གཡོ་བ་བཞིན། མཁས་པ་རྣམས་ཁ་སྐོང་དང་གཏམ་པོས་མི་གཡོ།",
+      "source": "Dhammapada 81",
+      "language": "dz",
+      "tags": [
+        "equanimity",
+        "daily"
+      ]
+    },
+    {
+      "id": "q023",
+      "text": "ཁྱོད་ཀྱི་མ་ཡིན་པ་སྤང། སྤང་བས་ཡུན་རིང་བདེ་བ་འབྱུང།",
+      "source": "Majjhima Nikaya",
+      "language": "dz",
+      "tags": [
+        "letting-go",
+        "daily"
+      ]
+    },
+    {
+      "id": "q024",
+      "text": "འཇིག་རྟེན་ཀུན་ཏུ་བྱམས་པ་མི་མཐའ་སྒོམ།",
+      "source": "Metta Sutta",
+      "language": "dz",
+      "tags": [
+        "loving-kindness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q025",
+      "text": "ལུས་བདེན་པར་སྲུང་བ་ལས་འདས་མི་ནུས།",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "health",
+        "daily"
+      ]
+    },
+    {
+      "id": "q026",
+      "text": "བདེ་བའི་ལམ་མེད། བདེ་བ་ཉིད་ལམ་ཡིན།",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "happiness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q027",
+      "text": "ལམ་ནམ་མཁའ་ལ་མ་ཡིན། ལམ་སེམས་ཀྱི་ནང་དུ་ཡོད།",
+      "source": "Dhammapada 254",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q028",
+      "text": "ཉིན་རེ་རེ་སྐྱེ་བ་གསར་པ་འབྱུང། ད་ལྟ་བྱེད་པ་གཅེས་ཤོ།",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "present-moment",
+        "daily"
+      ]
+    },
+    {
+      "id": "q029",
+      "text": "མེ་ཏོག་གཅིག་གི་རྨད་དུ་བྱུང་བ་མཐོང་ན་ཚེ་འདི་འགྱུར།",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "mindfulness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q030",
+      "text": "གང་ཡང་རྟག་པ་མེད། ཐམས་ཅད་འགྱུར་བའི་གཞི་འགྲོ།",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "impermanence",
+        "daily"
+      ]
+    },
+    {
+      "id": "q031",
+      "text": "དུལ་བའི་སེམས་ཀྱིས་བདེ་བ་འབྱུང།",
+      "source": "Dhammapada 35",
+      "language": "dz",
+      "tags": [
+        "mind",
+        "daily"
+      ]
+    },
+    {
+      "id": "q032",
+      "text": "ལང་ཤིག་འདུག་ཤིག་བདེ་བའི་ཕྱིར་འབད་པ་རྩོལ།",
+      "source": "Dhammapada 144",
+      "language": "dz",
+      "tags": [
+        "effort",
+        "daily"
+      ]
+    },
+    {
+      "id": "q033",
+      "text": "མཁས་པ་ལུས་ངག་སེམས་གསུམ་ཚུལ་བཞིན་འཛིན།",
+      "source": "Dhammapada 234",
+      "language": "dz",
+      "tags": [
+        "self-control",
+        "daily"
+      ]
+    },
+    {
+      "id": "q034",
+      "text": "གཞན་གྱི་སྐྱོན་མ་བལྟ། རང་གི་བྱས་དང་མ་བྱས་བལྟ།",
+      "source": "Dhammapada 50",
+      "language": "dz",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q035",
+      "text": "ཆར་བུད་མེད་པའི་ཁང་པ་ཆར་པས་འཇུག་བཞིན། བརྟག་མེད་སེམས་ལ་འདོད་ཆགས་འཇུག།",
+      "source": "Dhammapada 13",
+      "language": "dz",
+      "tags": [
+        "mind",
+        "daily"
+      ]
+    },
+    {
+      "id": "q036",
+      "text": "ཆར་བུད་ལེགས་པའི་ཁང་པ་ཆར་པས་མ་འཇུག་བཞིན། བརྟག་པ་ལེགས་པའི་སེམས་ལ་འདོད་ཆགས་མ་འཇུག།",
+      "source": "Dhammapada 14",
+      "language": "dz",
+      "tags": [
+        "mind",
+        "daily"
+      ]
+    },
+    {
+      "id": "q037",
+      "text": "སྐྱེ་བ་འཛིན་པའི་སྲེད་པ་མེད་པའི་སངས་རྒྱས་རྗེས་སུ་མ་རྙེད།",
+      "source": "Dhammapada 180",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q038",
+      "text": "ལོ་བརྒྱ་ཚེ་འཛིན་མེད་པས་ཉིན་གཅིག་འཆི་བ་ལེགས་སོ།",
+      "source": "Dhammapada 113",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q039",
+      "text": "སྦྱིན་པའི་ནུས་པ་ཤེས་ན་ཞལ་ཟས་གཅིག་ཀྱང་མི་འདའ",
+      "source": "Buddha",
+      "language": "dz",
+      "tags": [
+        "generosity",
+        "daily"
+      ]
+    },
+    {
+      "id": "q040",
+      "text": "ཙ་ཉུང་ཡང་སྦྱིན།",
+      "source": "Dhammapada 224",
+      "language": "dz",
+      "tags": [
+        "generosity",
+        "daily"
+      ]
+    },
+    {
+      "id": "q041",
+      "text": "མི་ཡིས་དགེ་བ་བྱས་ན་ཡང་ཡང་བྱེད། དགེ་བ་བསགས་པ་བདེ་བ་ཡིན།",
+      "source": "Dhammapada 118",
+      "language": "dz",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q042",
+      "text": "མི་ཡིས་སྡིག་པ་བྱས་ན་སླན་ཆད་མ་བྱེད། སྡིག་པ་བསགས་པ་སྡུག་བསྔལ་ཡིན།",
+      "source": "Dhammapada 117",
+      "language": "dz",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q043",
+      "text": "མེ་ཏོག་མཛེས་ཤིང་དྲི་མེད་བཞིན། བྱེད་པ་མི་མཐུན་ན་ཚིག་ལེགས་དོན་མེད།",
+      "source": "Dhammapada 51",
+      "language": "dz",
+      "tags": [
+        "action",
+        "daily"
+      ]
+    },
+    {
+      "id": "q044",
+      "text": "མེ་ཏོག་མཛེས་ཤིང་དྲི་ཅན་བཞིན། བྱེད་པ་མཐུན་ན་ཚིག་ལེགས་དོན་ཡོད།",
+      "source": "Dhammapada 52",
+      "language": "dz",
+      "tags": [
+        "action",
+        "daily"
+      ]
+    },
+    {
+      "id": "q045",
+      "text": "མེ་ཏོག་གི་དྲི་རླུང་གིས་འགྲོ། དགེ་བའི་དྲི་རླུང་ངེས་པར་འགྲོ།",
+      "source": "Dhammapada 54",
+      "language": "dz",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q046",
+      "text": "བུམ་བུ་ཆར་པ་བཞིན། མཁས་པ་འཇིག་རྟེན་འགྲོ་ཚུལ་བཞིན།",
+      "source": "Dhammapada 49",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q047",
+      "text": "ཁྲེལ་མེད་པར་བརྟག་པས་མི་འགྱུར། མཁས་པས་ལེགས་དང་ཉེས་བརྟག།",
+      "source": "Dhammapada 256",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q048",
+      "text": "ལང་ཚོ་སྟོབས་ཅན་ཡང་ལེ་ན་མི་ལང་ན་མཁས་པའི་ལམ་མི་རྙེད།",
+      "source": "Dhammapada 280",
+      "language": "dz",
+      "tags": [
+        "effort",
+        "daily"
+      ]
+    },
+    {
+      "id": "q049",
+      "text": "བག་ཡོད་པ་འཆི་མེད་པའི་ལམ་ཡིན། བག་མེད་པ་འཆི་བའི་ལམ་ཡིན།",
+      "source": "Dhammapada 21",
+      "language": "dz",
+      "tags": [
+        "mindfulness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q050",
+      "text": "བག་ཡོད་པས་ཉིན་མཚན་རྒྱུན་དུ་བསྙེན་བཞིན། མྱ་ངན་ལས་འདས་ལ་མོས་པའི་འདོད་ཆགས་ཞི་འགྱུར།",
+      "source": "Dhammapada 226",
+      "language": "dz",
+      "tags": [
+        "effort",
+        "daily"
+      ]
+    },
+    {
+      "id": "q051",
+      "text": "འདོད་ཆགས་མེ་དང་འདྲ། ཁོང་ཁྲོ་ལྕགས་ཀྱུ་དང་འདྲ། གཏུམ་མོ་དྲ་བ་དང་འདྲ། སྲེད་པ་ཆུ་བོ་དང་འདྲ།",
+      "source": "Dhammapada 251",
+      "language": "dz",
+      "tags": [
+        "craving",
+        "daily"
+      ]
+    },
+    {
+      "id": "q052",
+      "text": "གཞན་གྱི་སྐྱོན་བལྟ་སླ། རང་གི་སྐྱོན་བལྟ་དཀའ",
+      "source": "Dhammapada 252",
+      "language": "dz",
+      "tags": [
+        "self-reflection",
+        "daily"
+      ]
+    },
+    {
+      "id": "q053",
+      "text": "གཞན་གྱི་སྐྱོན་རང་གི་ལས་སླར་བལྟ་སླ།",
+      "source": "Dhammapada 253",
+      "language": "dz",
+      "tags": [
+        "self-reflection",
+        "daily"
+      ]
+    },
+    {
+      "id": "q054",
+      "text": "མི་ཡིས་ངན་སེམས་ཀྱིས་སྨྲ་ན་སྡུག་བསྔལ་འབྲང།",
+      "source": "Dhammapada 1",
+      "language": "dz",
+      "tags": [
+        "karma",
+        "daily"
+      ]
+    },
+    {
+      "id": "q055",
+      "text": "མི་ཡིས་དག་སེམས་ཀྱིས་སྨྲ་ན་བདེ་བ་འབྲང།",
+      "source": "Dhammapada 2",
+      "language": "dz",
+      "tags": [
+        "karma",
+        "daily"
+      ]
+    },
+    {
+      "id": "q056",
+      "text": "དེས་ང་བརྙས་བརྡུང་རྒྱལ་རྐུ། འདི་ལྟར་བསམས་པས་ཁྲག་མི་ཞི།",
+      "source": "Dhammapada 3",
+      "language": "dz",
+      "tags": [
+        "forgiveness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q057",
+      "text": "དེས་ང་བརྙས་བརྡུང་རྒྱལ་རྐུ། འདི་ལྟར་མ་བསམས་པས་ཁྲག་ཞི།",
+      "source": "Dhammapada 4",
+      "language": "dz",
+      "tags": [
+        "forgiveness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q058",
+      "text": "ཁོང་ཁྲོས་ཁྲག་མི་ཞི། བྱམས་པས་ཁྲག་ཞི། འདི་ནི་མི་འགྱུར་བའི་ཆོས་ཡིན།",
+      "source": "Dhammapada 5",
+      "language": "dz",
+      "tags": [
+        "loving-kindness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q059",
+      "text": "མི་མང་པོས་འཇིག་རྟེན་འགྲོགས་པར་འོང་བ་མི་ཤེས།",
+      "source": "Dhammapada 6",
+      "language": "dz",
+      "tags": [
+        "harmony",
+        "daily"
+      ]
+    },
+    {
+      "id": "q060",
+      "text": "ཇི་ལྟར་བྲག་རྡོ་རླུང་གིས་མི་གཡོ་བ་བཞིན། མཁས་པ་གཏམ་དང་ཁ་སྐོང་གིས་མི་གཡོ།",
+      "source": "Dhammapada 81",
+      "language": "dz",
+      "tags": [
+        "equanimity",
+        "daily"
+      ]
+    },
+    {
+      "id": "q061",
+      "text": "མེ་ཏོག་མཛེས་ཤིང་དྲི་ཅན་འབྲས་བུ་མེད་བཞིན། ཚིག་ལེགས་དོན་མེད།",
+      "source": "Dhammapada 51",
+      "language": "dz",
+      "tags": [
+        "action",
+        "daily"
+      ]
+    },
+    {
+      "id": "q062",
+      "text": "བག་ཡོད་པས་བག་མེད་པ་རྒྱལ་ཏེ་མཁས་པའི་གཞལ་མེད་ཁང་དུ་འགྲོ།",
+      "source": "Dhammapada 36",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q063",
+      "text": "བག་ཡོད་པས་བག་མེད་པ་རྒྱལ་ཏེ་མཁས་པའི་གཞལ་མེད་ཁང་དུ་འགྲོ།",
+      "source": "Dhammapada 37",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q064",
+      "text": "ཤེས་རབ་ཀྱིས་ང་རྒྱལ་བསལ་ན་སྡུག་བསྔལ་མེད་པའི་མཁས་པའི་གཞལ་མེད་དུ་འགྲོ།",
+      "source": "Dhammapada 39",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q065",
+      "text": "བླུན་པོ་རང་གི་བླུན་པོ་ཤེས་ན་དེ་ཙམ་མཁས། རང་མཁས་ཤེས་ན་བླུན་པོ་ཡིན།",
+      "source": "Dhammapada 63",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q066",
+      "text": "ལོ་བརྒྱ་ཚེ་ཟླ་བ་རེ་རེ་མཆོད་པ་བརྒྱ་སྟོང་བྱས་ཀྱང། སེམས་ཅན་ཡོངས་སུ་དག་པ་ལ་མོས་པ་ལེགས་སོ།",
+      "source": "Dhammapada 106",
+      "language": "dz",
+      "tags": [
+        "devotion",
+        "daily"
+      ]
+    },
+    {
+      "id": "q067",
+      "text": "མི་གཅིག་གིས་རྒྱལ་རཏཟ་བརྒྱ་སྟོང་རྒྱལ་ཡང། རང་གི་རྒྱལ་བ་ཆེ་ཤོས་ཡིན།",
+      "source": "Dhammapada 103",
+      "language": "dz",
+      "tags": [
+        "self-mastery",
+        "daily"
+      ]
+    },
+    {
+      "id": "q068",
+      "text": "རང་གི་རྒྱལ་བ་མི་ཐམས་ཅད་ལས་ལེགས། ལྷ་དང་དྲི་ཟ་དང་བདུད་ཀྱིས་ཕམ་མི་ནུས།",
+      "source": "Dhammapada 104",
+      "language": "dz",
+      "tags": [
+        "self-mastery",
+        "daily"
+      ]
+    },
+    {
+      "id": "q069",
+      "text": "ཚོ་བརྒྱ་སྟོང་ལས་དོན་མེད་ན། ཚིག་གཅིག་ཉན་པས་སེམས་ཞི་བ་ལེགས།",
+      "source": "Dhammapada 101",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q070",
+      "text": "ལེ་ལོ་ཅན་མིའི་ལོ་བརྒྱ་ལས། འབད་པ་ཅན་མིའི་ཉིན་གཅིག་ལེགས།",
+      "source": "Dhammapada 112",
+      "language": "dz",
+      "tags": [
+        "effort",
+        "daily"
+      ]
+    },
+    {
+      "id": "q071",
+      "text": "ཆུང་བའི་བདེ་བ་སྤང་ནས་ཆེ་བའི་བདེ་བ་མཐོང་ན། མཁས་པས་ཆེ་བ་དམིགས།",
+      "source": "Dhammapada 290",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q072",
+      "text": "གཞན་གྱི་སྐྱོན་མ་བལྟ། རང་གི་བྱས་དང་མ་བྱས་བལྟ།",
+      "source": "Dhammapada 50",
+      "language": "dz",
+      "tags": [
+        "self-reflection",
+        "daily"
+      ]
+    },
+    {
+      "id": "q073",
+      "text": "མེ་ཏོག་མཛེས་ཤིང་དྲི་ཅན་འབྲས་བུ་མེད་བཞིན། ཚིག་ལེགས་དོན་མེད།",
+      "source": "Dhammapada 51",
+      "language": "dz",
+      "tags": [
+        "action",
+        "daily"
+      ]
+    },
+    {
+      "id": "q074",
+      "text": "མེ་ཏོག་ཕུང་པོ་ལས་ཕྲེང་བ་མང་དུ་བྱས་བཞིན། མི་ཡིས་དགེ་བ་མང་པོ་བྱའོ།",
+      "source": "Dhammapada 53",
+      "language": "dz",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q075",
+      "text": "གཞན་གྱི་སྐྱོན་མ་བལྟ། རང་གི་ཉེས་པ་དང་བག་མེད་པ་བལྟ།",
+      "source": "Dhammapada 50",
+      "language": "dz",
+      "tags": [
+        "self-reflection",
+        "daily"
+      ]
+    },
+    {
+      "id": "q076",
+      "text": "མེ་ཏོག་གི་དྲི་རླུང་ངེས་པར་མི་འགྲོ། དགེ་བའི་མིའི་དྲི་རླུང་ངེས་པར་འགྲོ།",
+      "source": "Dhammapada 54",
+      "language": "dz",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q077",
+      "text": "སྤོས་ཙན་དང་ཏ་ག་ར་དང་ཨཽཏ་པ་ལ་དང་མ་ལི་ཀ་ལས། དགེ་བའི་དྲི་ཤིན་ཏུ་ལེགས།",
+      "source": "Dhammapada 55",
+      "language": "dz",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q078",
+      "text": "ཏ་ག་ར་དང་སྤོས་ཙན་གྱི་དྲི་ཉམ་ཆུང་ཡང། དགེ་བའི་མིའི་དྲི་ཤིན་ཏུ་ལེགས།",
+      "source": "Dhammapada 56",
+      "language": "dz",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q079",
+      "text": "དགེ་བའི་མི་རིང་ནས་འོད་འབར། ཉེས་པའི་མི་མཐོང་མི་ནུས།",
+      "source": "Dhammapada 304",
+      "language": "dz",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q080",
+      "text": "གཅིག་པུ་འདུག་གཅིག་པུ་གནས་གཅིག་པུ་འགྲོ་བཞིན། ནང་དུ་བདེ་བ་རྙེད་ན་ནགས་ཚལ་དུ་དགའ",
+      "source": "Dhammapada 305",
+      "language": "dz",
+      "tags": [
+        "solitude",
+        "daily"
+      ]
+    },
+    {
+      "id": "q081",
+      "text": "བསམ་གཏན་ལ་དགའ། གཅིག་པུ་ལ་དགའ། ཆོས་ལ་དགའ། སངས་རྒྱས་ཀྱི་སློབ་མ་དགའ",
+      "source": "Dhammapada 373",
+      "language": "dz",
+      "tags": [
+        "meditation",
+        "daily"
+      ]
+    },
+    {
+      "id": "q082",
+      "text": "རང་གི་རྒྱལ་བ་མི་བརྒྱ་སྟོང་ལས་ཆེ་བའི་དཔའ་བོ་ཡིན།",
+      "source": "Dhammapada 103",
+      "language": "dz",
+      "tags": [
+        "self-mastery",
+        "daily"
+      ]
+    },
+    {
+      "id": "q083",
+      "text": "དགེ་བ་རྟག་ཏུ་རང་དང་འགྲོགས་པའི་རྒྱུན་བསྙེན། ཆོས་ཀྱི་བསྙེན་པ་ལས་ལེགས་པ་མེད།",
+      "source": "Dhammapada 289",
+      "language": "dz",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q084",
+      "text": "མཁས་པ་ལུས་ངག་སེམས་གསུམ་ཚུལ་བཞིན་འཛིན། འཇིག་རྟེན་གྱི་འདོད་ཆགས་སྤངས་པ་ཡིན།",
+      "source": "Dhammapada 391",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q085",
+      "text": "སེམས་དང་ལུས་ལ་ཞེན་པ་མེད་པ་དང་མེད་པ་ལ་མྱ་ངན་མི་བྱེད་པ་དགེ་སློང་ཡིན།",
+      "source": "Dhammapada 367",
+      "language": "dz",
+      "tags": [
+        "non-attachment",
+        "daily"
+      ]
+    },
+    {
+      "id": "q086",
+      "text": "ཆོས་ལ་གནས་ཤིང་ཆོས་ལ་དགའ། ཆོས་ལ་བསམ་གཏན་བྱེད། ཆོས་མི་བརླག།",
+      "source": "Dhammapada 364",
+      "language": "dz",
+      "tags": [
+        "dhamma",
+        "daily"
+      ]
+    },
+    {
+      "id": "q087",
+      "text": "མེ་ཏོག་གི་དྲི་རླུང་གིས་འགྲོ། དགེ་བའི་དྲི་རླུང་ངེས་པར་འགྲོ།",
+      "source": "Dhammapada 54",
+      "language": "dz",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q088",
+      "text": "མ་ལི་ཀའི་རྒྱུད་ཀྱིས་མེ་ཏོག་ཤིང་བལ་འདོར་བཞིན། འདོད་ཆགས་དང་ཁྲོ་སྤང།",
+      "source": "Dhammapada 377",
+      "language": "dz",
+      "tags": [
+        "letting-go",
+        "daily"
+      ]
+    },
+    {
+      "id": "q089",
+      "text": "སེམས་ལ་བདེ་བ་ངག་ལ་བདེ་བ་ལས་ལ་བདེ་བ། ཡང་དག་པར་ཤེས་ནས་ཐམས་ཅད་གྲོལ།",
+      "source": "Dhammapada 378",
+      "language": "dz",
+      "tags": [
+        "peace",
+        "daily"
+      ]
+    },
+    {
+      "id": "q090",
+      "text": "དད་པ་རྨོངས་མེད་པ་སྐྱེ་མེད་པ་ཤེས་པ་དང། འབྲེལ་བ་ཐམས་ཅད་བཅད་པ་དང་འདོད་ཆགས་སྤངས་པ་མི་མཆོག།",
+      "source": "Dhammapada 97",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q091",
+      "text": "གྲོང་ཁྱེར་འམ་ནགས་ཚལ་འམ་ས་འམ་རྒྱ་མཚོ་ལ། སྐྱེས་བུ་དམ་པ་གནས་པའི་ས་དགའ་བ་ཡིན།",
+      "source": "Dhammapada 98",
+      "language": "dz",
+      "tags": [
+        "community",
+        "daily"
+      ]
+    },
+    {
+      "id": "q092",
+      "text": "ནགས་ཚལ་གྱི་ཤིང་ལོ་དགའ་བ་ཡིན། ནགས་ཚལ་དགའ་བ་ཡིན། ཆོས་ཀྱི་བདེ་བ་མྱོང་མ་མྱོང་ན་མི་དགའ",
+      "source": "Dhammapada 99",
+      "language": "dz",
+      "tags": [
+        "dhamma",
+        "daily"
+      ]
+    },
+    {
+      "id": "q093",
+      "text": "བརྗོད་བརྒྱ་སྟོང་དོན་མེད་ལས། ཚིག་གཅིག་བདེ་བ་སྦྱིན་པ་ལེགས།",
+      "source": "Dhammapada 100",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q094",
+      "text": "ལོ་བརྒྱ་ཚེ་ཚུལ་ཁྲིམས་མེད་པས་གནས་ལས། ཉིན་གཅིག་ཚུལ་ཁྲིམས་དང་བསམ་གཏན་ཅན་ལེགས།",
+      "source": "Dhammapada 110",
+      "language": "dz",
+      "tags": [
+        "meditation",
+        "daily"
+      ]
+    },
+    {
+      "id": "q095",
+      "text": "ལོ་བརྒྱ་ཚེ་འབྱུང་འཇིག་མ་མཐོང་བས་གནས་ལས། ཉིན་གཅིག་འབྱུང་འཇིག་མཐོང་བ་ལེགས།",
+      "source": "Dhammapada 113",
+      "language": "dz",
+      "tags": [
+        "impermanence",
+        "daily"
+      ]
+    },
+    {
+      "id": "q096",
+      "text": "ཆུང་བའི་བདེ་བ་སྤང་ནས་ཆེ་བའི་བདེ་བ་ཐོབ་ན། མཁས་པས་ཆེ་བ་དམིགས།",
+      "source": "Dhammapada 290",
+      "language": "dz",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q097",
+      "text": "གཞན་གྱི་བདེ་བའི་ཕྱིར་རང་གི་བདེ་བ་མ་སྤང། རང་གི་བདེ་བ་ལེགས་པར་ཤེས་ནས་དགེ་བ་དམིགས།",
+      "source": "Dhammapada 166",
+      "language": "dz",
+      "tags": [
+        "self-care",
+        "daily"
+      ]
+    },
+    {
+      "id": "q098",
+      "text": "གཞན་གྱི་སྐྱོན་མ་བལྟ། རང་གི་བྱས་དང་མ་བྱས་བལྟ།",
+      "source": "Dhammapada 50",
+      "language": "dz",
+      "tags": [
+        "self-reflection",
+        "daily"
+      ]
+    },
+    {
+      "id": "q099",
+      "text": "མི་ཐམས་ཅད་གནོད་པ་ལས་འཇིགས། མི་ཐམས་ཅད་འཆི་བ་ལས་འཇིགས། རང་གི་ཚུར་བལྟས་གསད་མི་བྱ། གསད་མི་འཇུག།",
+      "source": "Dhammapada 129",
+      "language": "dz",
+      "tags": [
+        "compassion",
+        "daily"
+      ]
+    }
+  ]
+}

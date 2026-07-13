@@ -1,0 +1,1823 @@
+{
+  "version": 2,
+  "events": [
+    {
+      "id": "buddha_birth",
+      "title": "កំណើតរបស់ព្រះពុទ្ធ",
+      "year_be": -623,
+      "year_ce": -563,
+      "description": "សិទ្ធរត្ថ គោតម កើតនៅ លុម្បិនី (ប្រទេសនេប៉ាល់បច្ចុប្បន្ន) ជាព្រះអង្គម្ចាស់នៃត្រកូល សាក្យ ។",
+      "category": "life_of_buddha",
+      "order": 1
+    },
+    {
+      "id": "buddha_childhood_name",
+      "title": "កុមារភាពជា សិទ្ធរត្ថ",
+      "year_be": -613,
+      "year_ce": -553,
+      "description": "សម្ដេច​ព្រះ​អង្គ​មាន​ព្រះ​នាម​ថា សត្ថាធិប្បាយ ប្រែ​ថា អ្នក​បាន​សម្រេច​គោល​បំណង ហើយ​បាន​ត្រាស់​ដឹង​យ៉ាង​ប្រណិត​នៅ​ក្រុង​កបិល​មហា​ព្រហ្ម។",
+      "category": "life_of_buddha",
+      "order": 2
+    },
+    {
+      "id": "great_renunciation",
+      "title": "ការលះបង់ដ៏អស្ចារ្យ",
+      "year_be": -594,
+      "year_ce": -534,
+      "description": "ព្រះជន្ម ២៩ ព្រះវស្សា ព្រះអង្គម្ចាស់ សិទ្ធរត្ថ បានចាកចេញពីព្រះរាជវាំង ក្រុមគ្រួសារ និងព្រះរាជជីវិត ដើម្បីស្វែងរកការរំដោះទុក្ខ។",
+      "category": "life_of_buddha",
+      "order": 3
+    },
+    {
+      "id": "buddha_marriage_yasodhara",
+      "title": "រៀបអភិសេកជាមួយព្រះនាងយសោធរ",
+      "year_be": -593,
+      "year_ce": -533,
+      "description": "ព្រះជន្ម ១៦ ព្រះវស្សា ព្រះបាទស្រីសុរិយោពណ៌ បានរៀបអភិសេកជាមួយព្រះបាទយសោធរ ជាបុត្រីរបស់ព្រះបាទសុពបពុទ្ធ ហើយបានរស់នៅជាព្រះរាជបុត្រ។",
+      "category": "life_of_buddha",
+      "order": 4
+    },
+    {
+      "id": "study_with_alara_kalama",
+      "title": "សិក្សាជាមួយ អាឡារ៉ា កាឡាម",
+      "year_be": -593,
+      "year_ce": -533,
+      "description": "សិទ្ធរត្ថ បានសិក្សាសមាធិនៅក្រោមការ ascetic អាឡារ៉ា កាឡាម និងបានស្ទាត់ជំនាញនៃអាណាចក្រនៃគ្មានអ្វី។",
+      "category": "life_of_buddha",
+      "order": 5
+    },
+    {
+      "id": "birth_of_rahula",
+      "title": "កំណើតរបស់ រាហុល",
+      "year_be": -592,
+      "year_ce": -532,
+      "description": "ព្រះ​សិវៈ និង​យសោធរ​មាន​បុត្រ​មួយ​ឈ្មោះ រាហ៊ូ ដែល​ប្រសូត​មិន​យូរ​ប៉ុន្មាន​មុន​ការ​លះបង់​ធំ។",
+      "category": "life_of_buddha",
+      "order": 6
+    },
+    {
+      "id": "study_with_udaka_ramaputta",
+      "title": "សិក្សាជាមួយ ឧដ្ឋក រាមបុត្ត",
+      "year_be": -592,
+      "year_ce": -532,
+      "description": "ព្រះ​សិវៈ​បាន​សិក្សា​ក្រោម​ឧបាទានក្ខន្ធ រាមា​ពុទ្ធា បាន​ដល់​នូវ​ភាវៈ​នៃ​ការ​យល់​ឃើញ ឬ​មិន​យល់​ឃើញ។",
+      "category": "life_of_buddha",
+      "order": 7
+    },
+    {
+      "id": "four_great_sights",
+      "title": "ទិដ្ឋភាពដ៏អស្ចារ្យទាំងបួន",
+      "year_be": -591,
+      "year_ce": -531,
+      "description": "ព្រះ​សិវៈ​បាន​ប្រទះ​នឹង​បុរស​ចំណាស់​ម្នាក់​ឈឺ​ជា​សព​ហើយ​ជា​ឧបាសក​ធ្វើ​ឲ្យ​ភ្ញាក់​ដឹង​ខ្លួន​ដល់​សេចក្តី​ពិត​នៃ​ទុក្ខ។",
+      "category": "life_of_buddha",
+      "order": 8
+    },
+    {
+      "id": "six_years_austerities",
+      "title": "ប្រាំមួយឆ្នាំនៃសោកនាដកម្ម",
+      "year_be": -591,
+      "year_ce": -531,
+      "description": "ព្រះ​សិវៈ​បាន​បដិបត្តិ​ធម៌​ដ៏​ក្រៃលែង​ជា​មួយ​នឹង​គូកន​៥​នាក់​នៅ​ជិត​ឧរុវេឡា ស្ទើរតែ​ស្រេក​ឃ្លាន​ខ្លួន​ឯង មុន​នឹង​លះបង់​នូវ​ទោសៈ​ដ៏​អាក្រក់ ។",
+      "category": "life_of_buddha",
+      "order": 9
+    },
+    {
+      "id": "sujata_offering",
+      "title": "សុជាតា ការថ្វាយទឹកដោះគោ - អង្ករ",
+      "year_be": -589,
+      "year_ce": -529,
+      "description": "ស្ត្រី​អ្នក​ភូមិ​ម្នាក់​ឈ្មោះ​ស៊ូ​យ៉ា​តា បាន​ប្រគេន​បាយ​ទឹក​ដោះ​គោ​ដល់​ព្រះ​សាវ័ក​ដោយ​បាន​ស្តារ​កម្លាំង​ឡើង​វិញ​នៅ​មុន​ថ្ងៃ​ត្រាស់​ដឹង។",
+      "category": "life_of_buddha",
+      "order": 10
+    },
+    {
+      "id": "buddha_enlightenment",
+      "title": "ការត្រាស់ដឹង (ព្រះពោធិសត្វ)",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "ព្រះជន្ម ៣៥ ព្រះវស្សា ព្រះសមណគោតម បានត្រាស់ដឹងនៅក្រោមដើមពោធិព្រឹក្ស នៅពុទ្ធគយា ក្លាយជាព្រះពុទ្ធ។",
+      "category": "life_of_buddha",
+      "order": 11
+    },
+    {
+      "id": "mara_confrontation",
+      "title": "ការល្បួងរបស់ម៉ារ៉ា",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "នៅយប់នៃការត្រាស់ដឹង ព្រះពុទ្ធបានយកឈ្នះលើការល្បួង និងការភ័យខ្លាច ដែលគេចាត់ទុកជាព្រះនាងម៉ារា ដែលជាម្ចាស់នៃការបំភាន់។",
+      "category": "life_of_buddha",
+      "order": 12
+    },
+    {
+      "id": "first_sermon",
+      "title": "ធម្មទេសនា (ធម៌សូត្រ)",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "ព្រះសម្មាសម្ពុទ្ធទ្រង់សំដែងការប្រៀនប្រដៅដំបូងរបស់ព្រះអង្គនៅសួនសត្វ ក្នុងក្រុងសារនាថ ដោយកំណត់កង់នៃព្រះធម៌ជាចលនា។",
+      "category": "life_of_buddha",
+      "order": 13
+    },
+    {
+      "id": "ordination_of_first_monks",
+      "title": "ការ​បួស​ជា​ភិក្ខុ​ដំបូង",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "ព្រះ​សម្មាសម្ពុទ្ធ​ទ្រង់​បាន​បង្កើត​ភិក្ខុ​សង្ឃ កាល​ទ្រង់​បញ្ញត្ត​នូវ​សាវ័ក​ទាំង​៥​អង្គ​ដំបូង​ដោយ​រូបមន្ត​ដ៏​សាមញ្ញ​មក​ហើយ បពិត្រ​ព្រះសង្ឃ។",
+      "category": "sangha",
+      "order": 14
+    },
+    {
+      "id": "buddhism_india_bodhi_tree_tradition",
+      "title": "ទំនៀម​ទំលាប់​ដើម​ពោធិ៍​នៅ​ពុទ្ធ​គយា​",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "ដើមពោធិ៍នៅពុទ្ធគយា ត្រូវបានគេគោរពបូជាតាំងពីព្រះពុទ្ធទ្រង់ត្រាស់ដឹង ដោយមានដើមពោធិ៍យកទៅប្រទេសស្រីលង្កា និងលើសពីនេះទៅទៀត។",
+      "category": "india_buddhism",
+      "order": 15
+    },
+    {
+      "id": "buddha_meets_bimbisara",
+      "title": "ព្រះពុទ្ធ​ចូល​គាល់​ព្រះបាទ​ភិរម្យ",
+      "year_be": -587,
+      "year_ce": -527,
+      "description": "ព្រះបាទ បិម្ភិសារ of Magadha បាន​ក្លាយ​​​ជា​អ្នក​គាំទ្រ​ឧទ្ទិស​និង​បាន​បរិច្ចាគ​វត្ត វេលុវន ដល់​ព្រះសង្ឃ​។",
+      "category": "life_of_buddha",
+      "order": 16
+    },
+    {
+      "id": "first_rains_retreat",
+      "title": "ការដកថយភ្លៀងដំបូង (វ៉ាសា)",
+      "year_be": -587,
+      "year_ce": -527,
+      "description": "ព្រះពុទ្ធ និង​សាវ័ក​របស់​ព្រះអង្គ​បាន​ប្រារព្ធ​ពិធី​ភ្លៀង​ធ្លាក់​បី​ខែ​ដំបូង​ប្រចាំឆ្នាំ​នៅ​ក្រុង​វ៉ា​រ៉ា​ណា​ស៊ី ដោយ​បង្កើត​ទំនៀម​ទំលាប់​វេសា។",
+      "category": "sangha",
+      "order": 17
+    },
+    {
+      "id": "jetavana_monastery",
+      "title": "ចេតិយវត្តជេតពន",
+      "year_be": -586,
+      "year_ce": -526,
+      "description": "ឧបាសក​ឧបាសិកា អនាថបិណ្ឌិកសេដ្ឋី បាន​ទិញ​បរិច្ចាក​ព្រៃ​ចេតិយ ជិត​សាវត្ថី ជា​មជ្ឈមណ្ឌល​បង្រៀន​ដ៏​សំខាន់។",
+      "category": "sangha",
+      "order": 18
+    },
+    {
+      "id": "buddha_visits_kapilavastu",
+      "title": "ព្រះពុទ្ធចូលគាល់ កបិលវត្ថុ",
+      "year_be": -585,
+      "year_ce": -525,
+      "description": "ព្រះសម្មាសម្ពុទ្ធ​ទ្រង់​យាង​ត្រឡប់​ទៅ​មាតុភូមិ​វិញ ហើយ​បាន​តែងតាំង​ព្រះរាជបុត្រ រាហុល, ប្អូនប្រុស Nanda, និង​បងប្អូនជីដូនមួយ​របស់​ព្រះអង្គ អានន្ទ ។",
+      "category": "life_of_buddha",
+      "order": 19
+    },
+    {
+      "id": "subduing_nalagiri_elephant",
+      "title": "បង្ក្រាបដំរីឆ្កួតណាឡាគីរី",
+      "year_be": -584,
+      "year_ce": -524,
+      "description": "ព្រះពុទ្ធ​បាន​រំងាប់​ដំរី​ដ៏​ក្ដៅគគុក​មួយ​ក្បាល​ដែល​បញ្ជូន​មក​វាយ​ព្រះអង្គ​ដោយ​អំណាច​នៃ​សេចក្ដី​សប្បុរស និង​ការ​តាំងចិត្ត។",
+      "category": "life_of_buddha",
+      "order": 20
+    },
+    {
+      "id": "buddhism_india_taxila",
+      "title": "រៀនពុទ្ធសាសនានៅតាក់សីលា",
+      "year_be": -560,
+      "year_ce": -500,
+      "description": "Taxila នៅ Gandhara គឺជាមជ្ឈមណ្ឌលបុរាណនៃការរៀនដែលទស្សនវិជ្ជានិងថ្នាំរបស់ព្រះពុទ្ធសាសនាត្រូវបានសិក្សារួមជាមួយវិទ្យាសាស្ត្រផ្សេងទៀត។",
+      "category": "india_buddhism",
+      "order": 21
+    },
+    {
+      "id": "buddha_teaches_devadatta_schism",
+      "title": "ឧបាទានក្ខន្ធ របស់ទេវតា",
+      "year_be": -550,
+      "year_ce": -490,
+      "description": "ទេវតា ដែលជាបងប្អូនជីដូនមួយរបស់ព្រះពុទ្ធបានព្យាយាមបំបែកសង្ឃ ហើយស្នើច្បាប់តឹងរ៉ឹង ប៉ុន្តែសហគមន៍នៅតែរួបរួមគ្នា។",
+      "category": "sangha",
+      "order": 22
+    },
+    {
+      "id": "mahaparinirvana",
+      "title": "មហាបរិនិព្វាន",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "ព្រះពុទ្ធ​ទ្រង់​សោយ​ទិវង្គត​ក្នុង​ព្រះជន្ម ៨០ ព្រះវស្សា ដោយ​ចូល​បរិនិព្វាន​ចុងក្រោយ​។",
+      "category": "life_of_buddha",
+      "order": 23
+    },
+    {
+      "id": "first_council",
+      "title": "ក្រុមប្រឹក្សាពុទ្ធសាសនាទី១",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "ប្រារព្ធនៅ Rajagaha ក្រោមព្រះបាទ Ajatasattu ក្រោមអធិបតីភាព មហាកស្សប ។ វិនយ៉ា និងសូត្រ ត្រូវបានសូត្រ។",
+      "category": "council",
+      "order": 24
+    },
+    {
+      "id": "buddhism_india_buddha_relics",
+      "title": "ព្រះសារីរិកធាតុ តម្កល់ទុកនៅទូទាំងប្រទេសឥណ្ឌា",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "បន្ទាប់ពីព្រះពុទ្ធបរិនិព្វាន ព្រះសារីរិកធាតុរបស់ព្រះអង្គត្រូវបានចែកចាយក្នុងចំណោមនគរទាំងប្រាំបី ហើយបានតម្កល់នៅក្នុងចេតិយទូទាំងប្រទេសឥណ្ឌា។",
+      "category": "india_buddhism",
+      "order": 25
+    },
+    {
+      "id": "ordination_of_nuns",
+      "title": "ការ​បង្កើត​ព្រះសង្ឃ​",
+      "year_be": -541,
+      "year_ce": -481,
+      "description": "មហាបជាបតិ គោតមី និងស្ត្រីដទៃទៀតបានទទួលការតែងតាំងដោយបង្កើតលំដាប់នៃដូនជីព្រះពុទ្ធសាសនានៅក្រោមប្រាំបី Garuធម្មs ។",
+      "category": "sangha",
+      "order": 26
+    },
+    {
+      "id": "second_council",
+      "title": "ក្រុមប្រឹក្សាពុទ្ធសាសនា ទី២",
+      "year_be": 160,
+      "year_ce": -383,
+      "description": "ប្រារព្ធនៅវេសាលីដើម្បីដោះស្រាយវិវាទអំពីច្បាប់របស់ព្រះសង្ឃ។",
+      "category": "council",
+      "order": 27
+    },
+    {
+      "id": "schism_mahasanghika",
+      "title": "វិបស្សនា មហាសង្ខារ",
+      "year_be": 160,
+      "year_ce": -383,
+      "description": "វិវាទ​បន្ទាប់​ពី​ក្រុមប្រឹក្សា​ទី​២​នាំ​ឱ្យ​មាន​ការ​ខ្វែង​គំនិត​គ្នា​ជា​លើក​ទី​១ ដែល​នាំ​ឱ្យ​សាលា មហាសង្ឃិក កើនឡើង ។",
+      "category": "council",
+      "order": 28
+    },
+    {
+      "id": "theravada_emergence",
+      "title": "សាលា​ថេរវាទ​មាន​រូបរាង",
+      "year_be": 193,
+      "year_ce": -350,
+      "description": "ពូជពង្សស្ថាវីរ៉ាបានវិវត្តទៅជាអ្វីដែលក្រោយមកត្រូវបានគេស្គាល់ថាជាថេរវាទដោយសង្កត់ធ្ងន់លើការបង្រៀនដែលបានកត់ត្រាដំបូងបំផុត។",
+      "category": "sangha",
+      "order": 29
+    },
+    {
+      "id": "rise_of_sarvastivada",
+      "title": "ការក្រោកឡើងនៃសាលាសាវត្ថី",
+      "year_be": 243,
+      "year_ce": -300,
+      "description": "សាលា សរវាស្តិវាទ បានរីកដុះដាលនៅភាគពាយព្យនៃប្រទេសឥណ្ឌា ដោយបង្កើតអក្សរសិល្ប៍ អភិធម្ម យ៉ាងទូលំទូលាយ។",
+      "category": "sangha",
+      "order": 30
+    },
+    {
+      "id": "ashoka_conversion",
+      "title": "ការ​ប្រែ​ចិត្ត​របស់​អសោក​ទៅ​កាន់​ព្រះពុទ្ធសាសនា",
+      "year_be": 280,
+      "year_ce": -263,
+      "description": "ក្រោយ​សង្គ្រាម​កល្យាណ ព្រះ​ចៅ​អសោក​បាន​កាន់​ពុទ្ធសាសនា ហើយ​តាំង​ចិត្ត​គ្រប់គ្រង​ដោយ​ធម៌​ជា​ជាង​ការ​ដណ្តើម​យក​ជ័យ​ជំនះ។",
+      "category": "ashoka",
+      "order": 31
+    },
+    {
+      "id": "maurya_buddhist_patronage",
+      "title": "Mauryan បុព្វបុរសនៃព្រះពុទ្ធសាសនា",
+      "year_be": 283,
+      "year_ce": -260,
+      "description": "លើសពី អសោក តុលាការ Mauryan បានគាំទ្រវត្តអារាម និងសកម្មភាពផ្សព្វផ្សាយសាសនានៅទូទាំងឧបទ្វីបឥណ្ឌា។",
+      "category": "india_buddhism",
+      "order": 32
+    },
+    {
+      "id": "buddhism_india_dhamma_vijay",
+      "title": "គោលការណ៍ ធម៌-វិជ័យ របស់អសោក",
+      "year_be": 283,
+      "year_ce": -260,
+      "description": "អសោក បានជំនួសការសញ្ជ័យយោធាដោយ ធម្មវិជ័យ - ជ័យជំនះតាមរយៈសេចក្តីសុចរិត - ជាគោលការណ៍ណែនាំនៃអាណាចក្ររបស់គាត់។",
+      "category": "india_buddhism",
+      "order": 33
+    },
+    {
+      "id": "ashoka_dhamma_letters",
+      "title": "ធម្មទេសនា របស់អសោក",
+      "year_be": 286,
+      "year_ce": -257,
+      "description": "អសោក បានចារឹកការបង្រៀនខាងសីលធម៌ និងសាសនានៅលើសសរ និងថ្មពាសពេញអាណាចក្ររបស់គាត់ ដោយបានផ្សព្វផ្សាយសីលធម៌ព្រះពុទ្ធសាសនាយ៉ាងទូលំទូលាយ។",
+      "category": "ashoka",
+      "order": 34
+    },
+    {
+      "id": "buddhism_india_rock_edicts",
+      "title": "Rock Edicts ឆ្លងទ្វីប",
+      "year_be": 286,
+      "year_ce": -257,
+      "description": "សេចក្តីប្រកាសរបស់ អសោក នៅ Dhauli, Girnar, និង Kalsi បានផ្សព្វផ្សាយការបង្រៀនសីលធម៌ព្រះពុទ្ធសាសនានៅ Prakrit ទូទាំងតំបន់ផ្សេងៗគ្នានៃប្រទេសឥណ្ឌា។",
+      "category": "india_buddhism",
+      "order": 35
+    },
+    {
+      "id": "compilation_abhidhamma",
+      "title": "ការ​ចងក្រង​អត្ថបទ​ព្រះ​ពុទ្ធ​សាសនា",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "អត្ថបទទស្សនវិជ្ជាជាប្រព័ន្ធដែលវិភាគអំពីចិត្ត រូបធាតុ និងក្រមសីលធម៌ត្រូវបានចងក្រង ក្រោយមកបានផ្តោតលើអាហារូបករណ៍ថេរវាទ។",
+      "category": "sangha",
+      "order": 36
+    },
+    {
+      "id": "ashoka_sends_missionaries",
+      "title": "អសោក បញ្ជូនអ្នកផ្សព្វផ្សាយព្រះពុទ្ធសាសនា",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "អសោក​បាន​បញ្ជូន​ព្រះសង្ឃ​ទៅ​ប្រទេស​ស្រីលង្កា កាស្មៀរ គន្ធា និង​ខាង​ក្រៅ ដើម្បី​ផ្សព្វផ្សាយ​ព្រះធម៌។",
+      "category": "ashoka",
+      "order": 37
+    },
+    {
+      "id": "buddhism_india_sarnath_lion_capital",
+      "title": "សារណាថ Lion Capital",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "អសោក's Lion Capital at សារណាថ ជាមួយនឹងតោទាំងបួន និងកង់ព្រះធម៌ បានក្លាយជានិមិត្តសញ្ញាជាតិរបស់ប្រទេសឥណ្ឌា។",
+      "category": "india_buddhism",
+      "order": 38
+    },
+    {
+      "id": "buddhism_india_maurya_stupas",
+      "title": "ចេតិយពុទ្ធសាសនា Mauryan",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "អសោក និងអ្នកស្នងតំណែងរបស់គាត់បានពង្រីក និងសាងសង់ស្តូបនៅ Sanchi, Bharhut និងកន្លែងផ្សេងទៀតនៅទូទាំងចក្រភព Mauryan ។",
+      "category": "india_buddhism",
+      "order": 39
+    },
+    {
+      "id": "buddhism_india_ashoka_pillars",
+      "title": "សសរ អសោក ត្រូវបានសាងសង់នៅទូទាំងប្រទេសឥណ្ឌា",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "អសោក បានសាងសង់សសរថ្មភក់រលោងជាមួយនឹងសិលាចារឹកព្រះធម៌ពីប្រទេសអាហ្វហ្គានីស្ថានរហូតដល់ Karnataka នៅទូទាំងអាណាចក្ររបស់គាត់។",
+      "category": "india_buddhism",
+      "order": 40
+    },
+    {
+      "id": "third_council",
+      "title": "ក្រុមប្រឹក្សាពុទ្ធសាសនា ទី៣",
+      "year_be": 296,
+      "year_ce": -247,
+      "description": "ប្រារព្ធនៅ Pataliputra ក្រោមអធិរាជ អសោក ដឹកនាំដោយ មុហលិបុត្ត ទិស្ស ។",
+      "category": "council",
+      "order": 41
+    },
+    {
+      "id": "mahinda_sri_lanka",
+      "title": "ព្រះពុទ្ធសាសនាមកដល់ប្រទេសស្រីលង្កា",
+      "year_be": 296,
+      "year_ce": -247,
+      "description": "ព្រះបាទអសោកបានបញ្ជូនព្រះរាជបុត្រ មហិន្ទ ទៅប្រទេសស្រីលង្កា ជាកន្លែងដែលព្រះបាទ Devanampiya Tissa បានទទួលព្រះធម៌នៅ មិහිន្តលេ ។",
+      "category": "spread_of_buddhism",
+      "order": 42
+    },
+    {
+      "id": "sanghamitta_bodhi_tree",
+      "title": "ដើមពោធិព្រឹក្ស ទៅកាន់ស្រីលង្កា",
+      "year_be": 297,
+      "year_ce": -246,
+      "description": "កូន​ស្រី​របស់​ព្រះបាទ​អសោក ព្រះ​សាមណេរ​បាន​នាំ​យក​ដើម​ពោធិ៍​មួយ​ដើម​មក​ថ្វាយ​ព្រះ​ឥន្ទ្របុរៈ ជា​កន្លែង​ដែល​គេ​គោរព​រហូត​ដល់​សព្វ​ថ្ងៃ។",
+      "category": "spread_of_buddhism",
+      "order": 43
+    },
+    {
+      "id": "greco_buddhist_art_gandhara",
+      "title": "សិល្បៈគ្រិច-ពុទ្ធសាសនានៅគន្ធា",
+      "year_be": 343,
+      "year_ce": -200,
+      "description": "ចម្លាក់ពុទ្ធសាសនានៅគន្ធាបានលាយបញ្ចូលទម្រង់សិល្បៈក្រិកជាមួយនឹងប្រធានបទព្រះពុទ្ធសាសនា បង្កើតបានជារូបព្រះពុទ្ធរូបដំបូងបង្អស់។",
+      "category": "spread_of_buddhism",
+      "order": 44
+    },
+    {
+      "id": "buddhism_india_sunga_art",
+      "title": "សិល្បៈពុទ្ធសាសនារាជវង្សស៊ុងហ្គា",
+      "year_be": 393,
+      "year_ce": -150,
+      "description": "សម័យ Sunga បានឃើញការតុបតែងស្តូបពុទ្ធសាសនារីកដុះដាលនៅ Sanchi និង Bharhut ដោយរៀបរាប់រឿងនិទានចាតាកាជាថ្ម។",
+      "category": "india_buddhism",
+      "order": 45
+    },
+    {
+      "id": "rise_of_mahayana",
+      "title": "ការងើបឡើងនៃព្រះពុទ្ធសាសនាមហាយាន",
+      "year_be": 443,
+      "year_ce": -100,
+      "description": "ព្រះសូត្រថ្មី និងឧត្តមគតិព្រះពោធិសត្វបានពង្រីកពុទ្ធសាសនា ហួសពីអរហន្តសម្មាសម្ពុទ្ធ ឆ្ពោះទៅរកការរំដោះសកល។",
+      "category": "mahayana",
+      "order": 46
+    },
+    {
+      "id": "kushan_empire_buddhism",
+      "title": "ព្រះពុទ្ធសាសនាក្រោមអាណាចក្រ Kushan",
+      "year_be": 443,
+      "year_ce": -100,
+      "description": "អ្នកគ្រប់គ្រង Kushan បានឧបត្ថម្ភព្រះពុទ្ធសាសនានៅទូទាំង Gandhara និង Mathura ដោយជំរុញឱ្យមានវត្តអារាមពាណិជ្ជកម្មនិងសិល្បៈ។",
+      "category": "india_buddhism",
+      "order": 47
+    },
+    {
+      "id": "buddhism_india_barhut_stupa",
+      "title": "Bharhut ចេតិយ Relief",
+      "year_be": 443,
+      "year_ce": -100,
+      "description": "ចេតិយ Bharhut នៅ Madhya Pradesh រក្សាការពិពណ៌នាអំពីជីវិតរបស់ព្រះពុទ្ធដំបូងបំផុតមួយចំនួន។",
+      "category": "india_buddhism",
+      "order": 48
+    },
+    {
+      "id": "fourth_council_sri_lanka",
+      "title": "ក្រុមប្រឹក្សាពុទ្ធសាសនាទី៤ (ស្រីលង្កា)",
+      "year_be": 514,
+      "year_ce": -29,
+      "description": "ព្រះសង្ឃថេរវាទនៅប្រទេសស្រីលង្កាបានយកគម្ពីរព្រះត្រៃបិដកបាលីដើម្បីសរសេរនៅ Aluvihara ដើម្បីរក្សាការបង្រៀនក្នុងគ្រាទុរ្ភិក្ស។",
+      "category": "council",
+      "order": 49
+    },
+    {
+      "id": "buddhism_india_jataka_literature",
+      "title": "រឿងនិទានចាតាកាចងក្រងនៅប្រទេសឥណ្ឌា",
+      "year_be": 543,
+      "year_ce": 0,
+      "description": "កម្រង​រឿងនិទាន​អំពី​ជីវិត​អតីតកាល​របស់​ព្រះពុទ្ធ​ត្រូវបាន​ចងក្រង​ជា​ភាសាបាលី និង​សំស្រ្កឹត ផ្សព្វផ្សាយ​អំពី​សីលធម៌​ទូទាំង​អាស៊ី។",
+      "category": "india_buddhism",
+      "order": 50
+    },
+    {
+      "id": "buddhism_china",
+      "title": "ព្រះពុទ្ធសាសនាចូលប្រទេសចិន",
+      "year_be": 611,
+      "year_ce": 68,
+      "description": "ព្រះចៅអធិរាជ Ming of Han បានស្វាគមន៍ព្រះសង្ឃ និងគម្ពីរពុទ្ធសាសនាមកពីប្រទេសឥណ្ឌា ដែលជាការកត់សម្គាល់ការចាប់ផ្តើមជាផ្លូវការនៃព្រះពុទ្ធសាសនានៅក្នុងប្រទេសចិន។",
+      "category": "spread_of_buddhism",
+      "order": 51
+    },
+    {
+      "id": "fourth_council_kashmir",
+      "title": "ទី៤ ក្រុមប្រឹក្សាពុទ្ធសាសនា",
+      "year_be": 621,
+      "year_ce": 78,
+      "description": "នៅក្រោមស្តេច Kanishka អ្នកប្រាជ្ញនៃសាលា សរវាស្តិវាទ បានរៀបចំប្រព័ន្ធអត្ថបទ អភិធម្ម របស់ពួកគេនៅក្នុង Kashmir ។",
+      "category": "council",
+      "order": 52
+    },
+    {
+      "id": "lotus_sutra_composition",
+      "title": "Lotus Sutra ទទួលបានភាពលេចធ្លោ",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "Saddharmapundarika Sutra បានក្លាយជាគម្ពីរមហាយានដែលមានឥទ្ធិពលបំផុតមួយនៅអាស៊ីបូព៌ា។",
+      "category": "mahayana",
+      "order": 53
+    },
+    {
+      "id": "buddhism_india_mathura_art",
+      "title": "សាលាពុទ្ធិកបឋមសិក្សា មធរា",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "Mathura នៅភាគខាងជើងប្រទេសឥណ្ឌាបានផលិតរូបព្រះពុទ្ធដើមដំបូងប្លែកៗដែលមានឥទ្ធិពលលើសិល្បៈព្រះពុទ្ធសាសនានៅទូទាំងអាស៊ី។",
+      "category": "india_buddhism",
+      "order": 54
+    },
+    {
+      "id": "buddhism_india_cave_monasteries",
+      "title": "វត្ត​គុហា​ព្រះពុទ្ធ​សាសនា​នៃ Deccan",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "វត្តអារាមល្អាងថ្មនៅ Bhaja, Bedsa, Karla និងក្រោយមក Ajanta និង Ellora បានដាក់ព្រះសង្ឃរាប់ពាន់អង្គពេញមួយសតវត្ស។",
+      "category": "india_buddhism",
+      "order": 55
+    },
+    {
+      "id": "buddhism_india_women_patrons",
+      "title": "ស្ត្រីអ្នកឧបត្ថម្ភព្រះពុទ្ធសាសនាឥណ្ឌា",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "ឧបាសក​ដូចជា​វិសាខបូជា និង​ព្រះនាង​មល្លិកា បាន​ជួយ​ដល់​ព្រះសង្ឃ កសាង​វត្ត​អារាម និង​ឧបត្ថម្ភ​ថវិកា​ដល់​ព្រះ​ពុទ្ធ​។",
+      "category": "india_buddhism",
+      "order": 56
+    },
+    {
+      "id": "nagarjuna_madhyamaka",
+      "title": "Nagarjuna និងសាលា Madhyamaka",
+      "year_be": 693,
+      "year_ce": 150,
+      "description": "ទស្សនវិទូ Nagarjuna បានពន្យល់ពីទស្សនវិជ្ជាមជ្ឈិមបូព៌ានៃភាពទទេ (shunyata) ផ្លាស់ប្តូរគំនិតរបស់មហាយាន។",
+      "category": "mahayana",
+      "order": 57
+    },
+    {
+      "id": "buddhism_vietnam",
+      "title": "ពុទ្ធសាសនា ណែនាំដល់ប្រទេសវៀតណាម",
+      "year_be": 732,
+      "year_ce": 189,
+      "description": "ការបង្រៀនរបស់ព្រះពុទ្ធសាសនាបានទៅដល់ប្រទេសវៀតណាមតាមរយៈផ្លូវពាណិជ្ជកម្មមហាយានរបស់ចិន និងឥណ្ឌា។",
+      "category": "spread_of_buddhism",
+      "order": 58
+    },
+    {
+      "id": "buddhism_central_asia",
+      "title": "ព្រះពុទ្ធសាសនាតាមវិថីសូត្រ",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "វត្តអារាម និងរូងភ្នំនៅតាមបណ្តោយផ្លូវពាណិជ្ជកម្មអាស៊ីកណ្តាលបានអនុវត្តការបង្រៀនព្រះពុទ្ធសាសនារវាងឥណ្ឌា និងចិន។",
+      "category": "spread_of_buddhism",
+      "order": 59
+    },
+    {
+      "id": "buddhism_india_kanheri_caves",
+      "title": "គុហាព្រះពុទ្ធសាសនា Kanheri",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "រូងភ្នំ Kanheri នៅជិតទីក្រុង Mumbai បានបម្រើការជាវត្តអារាម និងមជ្ឈមណ្ឌលអប់រំព្រះពុទ្ធសាសនាដ៏សំខាន់អស់រយៈពេលជាងមួយសហស្សវត្សរ៍។",
+      "category": "india_buddhism",
+      "order": 60
+    },
+    {
+      "id": "buddhism_india_amaravati",
+      "title": "ចេតិយ អមរាវតី",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "ចេតិយដ៏អស្ចារ្យនៅ Amaravati ក្នុង Andhra Pradesh គឺជាមជ្ឈមណ្ឌលដ៏អស្ចារ្យនៃសិល្បៈព្រះពុទ្ធសាសនា និងធម្មយាត្រានៅប្រទេសឥណ្ឌាបុរាណ។",
+      "category": "india_buddhism",
+      "order": 61
+    },
+    {
+      "id": "buddhism_india_sanskrit_mahayana",
+      "title": "សំស្ក្រឹត មហាយាន Sutras នៅប្រទេសឥណ្ឌា",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "ព្រះសូត្រថ្មីរបស់មហាយានដែលផ្សំឡើងជាភាសាសំស្រ្កឹតក្នុងប្រទេសឥណ្ឌាបានរីករាលដាលដល់ប្រទេសចិន ទីបេ និងអាស៊ីអាគ្នេយ៍ ដោយបានកែប្រែការអនុវត្តព្រះពុទ្ធសាសនាឡើងវិញ។",
+      "category": "india_buddhism",
+      "order": 62
+    },
+    {
+      "id": "dunhuang_mogao_caves",
+      "title": "គុហា Mogao នៅ Dunhuang",
+      "year_be": 909,
+      "year_ce": 366,
+      "description": "ប្រាសាទគុហាពុទ្ធសាសនានៅ Dunhuang ក្នុងប្រទេសចិនបានក្លាយជាឃ្លាំងដ៏ធំនៃសិល្បៈ សាត្រាស្លឹករឹត និងការអនុវត្តសមាធិ។",
+      "category": "spread_of_buddhism",
+      "order": 63
+    },
+    {
+      "id": "buddhism_korea",
+      "title": "ព្រះពុទ្ធសាសនា ណែនាំដល់ប្រទេសកូរ៉េ",
+      "year_be": 915,
+      "year_ce": 372,
+      "description": "គម្ពីរពុទ្ធសាសនា និងព្រះសង្ឃបានទៅដល់នគរ Goguryeo ដោយចាប់ផ្តើមប្រពៃណីព្រះពុទ្ធសាសនាកូរ៉េដ៏យូរអង្វែង និងមានឥទ្ធិពល។",
+      "category": "spread_of_buddhism",
+      "order": 64
+    },
+    {
+      "id": "faxian_pilgrimage",
+      "title": "ធម្មយាត្រារបស់ Faxian ទៅប្រទេសឥណ្ឌា",
+      "year_be": 942,
+      "year_ce": 399,
+      "description": "ព្រះសង្ឃចិន Faxian បានធ្វើដំណើរទៅកាន់ប្រទេសឥណ្ឌា និងស្រីលង្កា ដើម្បីទទួលបានអត្ថបទ វិន័យ និងកត់ត្រាស្ថានភាពនៃទីកន្លែងព្រះពុទ្ធសាសនា។",
+      "category": "pilgrimage",
+      "order": 65
+    },
+    {
+      "id": "vasubandhu_yogacara",
+      "title": "Vasubandhu និងសាលា Yogacara",
+      "year_be": 943,
+      "year_ce": 400,
+      "description": "ទស្សនវិទូ Vasubandhu បានបង្កើតការបង្រៀន Yogacara លើស្មារតី ដែលមានឥទ្ធិពលយ៉ាងខ្លាំងទៅលើទ្រឹស្តីសមាធិរបស់មហាយាន។",
+      "category": "mahayana",
+      "order": 66
+    },
+    {
+      "id": "buddhism_india_gupta_golden_age",
+      "title": "Gupta យុគមាសនៃសិល្បៈព្រះពុទ្ធសាសនា",
+      "year_be": 943,
+      "year_ce": 400,
+      "description": "សម័យ​គុយតា​បាន​ផលិត​រូប​ព្រះពុទ្ធ​ដែល​ចម្រាញ់​នៅ​សាណាត និង​ណាឡិនដា ដែល​ចាត់​ទុក​ជា​ឧត្តម​គតិ​បុរាណ​នៃ​ចម្លាក់​ព្រះពុទ្ធ​សាសនា។",
+      "category": "india_buddhism",
+      "order": 67
+    },
+    {
+      "id": "kumarajiva_translations",
+      "title": "Kumarajiva បកប្រែអត្ថបទព្រះពុទ្ធសាសនា",
+      "year_be": 944,
+      "year_ce": 401,
+      "description": "ព្រះសង្ឃ Kumarajiva បានបកប្រែព្រះសូត្រសំខាន់ៗរបស់មហាយានទៅជាភាសាចិន ដោយបង្កើតព្រះពុទ្ធសាសនានៅអាស៊ីបូព៌ាអស់ជាច្រើនសតវត្សមកហើយ។",
+      "category": "east_asia",
+      "order": 68
+    },
+    {
+      "id": "pure_land_school_china",
+      "title": "សាលាដីបរិសុទ្ធ អភិវឌ្ឍនៅប្រទេសចិន",
+      "year_be": 945,
+      "year_ce": 402,
+      "description": "បដិបត្តិធម៌ដែលផ្តោតលើព្រះពុទ្ធ Amitabha បានអភិវឌ្ឍទៅជាសាលាដែនដីបរិសុទ្ធ ក្រោយមកបានរីករាលដាលពាសពេញអាស៊ីបូព៌ា។",
+      "category": "mahayana",
+      "order": 69
+    },
+    {
+      "id": "buddhaghosa_visuddhimagga",
+      "title": "ព្រះសម្មាសម្ពុទ្ធ តែង​វិសុទ្ធិមគ",
+      "year_be": 948,
+      "year_ce": 405,
+      "description": "អ្នកប្រាជ្ញ-ព្រះសង្ឃ ព្រះពុទ្ធghosa បានសរសេរផ្លូវនៃការបន្សុតនៅក្នុងប្រទេសស្រីលង្កាដោយរៀបចំប្រព័ន្ធសមាធិនិងលទ្ធិថេរវាទ។",
+      "category": "sangha",
+      "order": 70
+    },
+    {
+      "id": "nalanda_founded",
+      "title": "នាឡន្ត Mahavihara ត្រូវបានបង្កើតឡើង",
+      "year_be": 970,
+      "year_ce": 427,
+      "description": "សាកលវិទ្យាល័យព្រះសង្ឃដ៏អស្ចារ្យនៅ នាឡន្ត ក្នុងរដ្ឋ Bihar បានក្លាយជាមជ្ឈមណ្ឌលដ៏ល្បីល្បាញនៃទស្សនវិជ្ជា តក្កវិជ្ជា និងសមាធិព្រះពុទ្ធសាសនា។",
+      "category": "university",
+      "order": 71
+    },
+    {
+      "id": "buddhism_nepal_licchavi",
+      "title": "ព្រះពុទ្ធសាសនានៅជ្រលងភ្នំនេប៉ាល់",
+      "year_be": 1007,
+      "year_ce": 464,
+      "description": "ចេតិយ និងវត្តអារាមពុទ្ធសាសនាបានរីកដុះដាលនៅជ្រលងភ្នំ Kathmandu ក្រោម Licchavi និងរាជវង្សក្រោយៗមក។",
+      "category": "spread_of_buddhism",
+      "order": 72
+    },
+    {
+      "id": "white_huns_persecution",
+      "title": "ការធ្លាក់ចុះនៃព្រះពុទ្ធសាសនានៅភាគពាយព្យនៃប្រទេសឥណ្ឌា",
+      "year_be": 1008,
+      "year_ce": 465,
+      "description": "ការឈ្លានពានរបស់ Huna និងការបាត់បង់ការឧបត្ថម្ភរបស់ស្តេចបានធ្វើឱ្យវត្តព្រះពុទ្ធសាសនាចុះខ្សោយនៅ Gandhara និងភាគពាយព្យនៃប្រទេសឥណ្ឌា។",
+      "category": "india_buddhism",
+      "order": 73
+    },
+    {
+      "id": "sri_lanka_mahavamsa",
+      "title": "Mahavamsa Chronicle តែង",
+      "year_be": 1043,
+      "year_ce": 500,
+      "description": "រជ្ជកាល Mahavamsa នៅប្រទេសស្រីលង្កា បានកត់ត្រាប្រវត្តិសាស្ត្រព្រះពុទ្ធសាសនា និងព្រះរាជទ្រព្យ រក្សាកេរដំណែលថេរវាទ។",
+      "category": "sangha",
+      "order": 74
+    },
+    {
+      "id": "bodhidharma_china",
+      "title": "ព្រះពោធិសត្វនាំចាន់ទៅប្រទេសចិន",
+      "year_be": 1063,
+      "year_ce": 520,
+      "description": "បុព្វបុរសឥណ្ឌា ព្រះពុទ្ធគារdharma ត្រូវបានចាត់ទុកថាជាប្រពៃណីជាមួយនឹងការបញ្ជូន Chan (Zen) សមាធិទៅកាន់វត្ត Shaolin ក្នុងប្រទេសចិន។",
+      "category": "east_asia",
+      "order": 75
+    },
+    {
+      "id": "odantapuri_founded",
+      "title": "Odantapuri Mahavihara ត្រូវបានបង្កើតឡើង",
+      "year_be": 1093,
+      "year_ce": 550,
+      "description": "សាកលវិទ្យាល័យព្រះសង្ឃនៅ Odantapuri ក្នុង Bihar បានក្លាយជាមជ្ឈមណ្ឌលដ៏សំខាន់នៃការសិក្សាព្រះពុទ្ធសាសនាក្រោមការឧបត្ថម្ភរបស់ Pala ។",
+      "category": "university",
+      "order": 76
+    },
+    {
+      "id": "buddhism_japan",
+      "title": "ព្រះពុទ្ធសាសនាមកដល់ប្រទេសជប៉ុន",
+      "year_be": 1095,
+      "year_ce": 552,
+      "description": "រូបភាព និងអត្ថបទព្រះពុទ្ធសាសនាត្រូវបានបង្ហាញដល់តុលាការជប៉ុនពីប្រទេសកូរ៉េ ដោយចាប់ផ្តើមព្រះពុទ្ធសាសនាជាកម្លាំងដ៏សំខាន់នៅក្នុងប្រទេសជប៉ុន។",
+      "category": "spread_of_buddhism",
+      "order": 77
+    },
+    {
+      "id": "tiantai_school_china",
+      "title": "សាលា Tiantai ត្រូវបានបង្កើតឡើង",
+      "year_be": 1118,
+      "year_ce": 575,
+      "description": "Zhiyi បានបង្កើតសាលា Tiantai ក្នុងប្រទេសចិន ដោយរៀបចំសមាធិ និង Lotus Sutra ជាការបង្រៀនកណ្តាល។",
+      "category": "east_asia",
+      "order": 78
+    },
+    {
+      "id": "wonhyo_korean_buddhism",
+      "title": "Wonhyo បង្រួបបង្រួមគំនិតព្រះពុទ្ធសាសនាកូរ៉េ",
+      "year_be": 1143,
+      "year_ce": 600,
+      "description": "ព្រះសង្ឃកូរ៉េ Wonhyo បានចុះសម្រុងនឹងសាលាពុទ្ធសាសនាដែលប្រកួតប្រជែង ធ្វើឱ្យព្រះធម៌អាចចូលទៅដល់មនុស្សទូទៅបាន។",
+      "category": "east_asia",
+      "order": 79
+    },
+    {
+      "id": "buddhism_india_ellora_caves",
+      "title": "គុហាពុទ្ធសាសនា Ellora",
+      "year_be": 1143,
+      "year_ce": 600,
+      "description": "ប្រាសាទគុហាពុទ្ធសាសនានៅ Ellora ក្នុងរដ្ឋ Maharashtra ត្រូវបានឆ្លាក់ជាប់នឹងវិមានហិណ្ឌូ និង Jain ដែលបង្ហាញពីការរួមរស់ជាមួយគ្នាខាងសាសនា។",
+      "category": "india_buddhism",
+      "order": 80
+    },
+    {
+      "id": "shotoku_taishi_japan",
+      "title": "ព្រះអង្គម្ចាស់ Shotoku ផ្សព្វផ្សាយព្រះពុទ្ធសាសនា",
+      "year_be": 1147,
+      "year_ce": 604,
+      "description": "ព្រះអង្គម្ចាស់ Shotoku Taishi នៃប្រទេសជប៉ុនបានលើកកម្ពស់ការគ្រប់គ្រងព្រះពុទ្ធសាសនា សាងសង់ប្រាសាទ និងបញ្ជូនបេសកកម្មទៅកាន់ប្រទេសចិន។",
+      "category": "east_asia",
+      "order": 81
+    },
+    {
+      "id": "xuanzang_pilgrimage",
+      "title": "ដំណើររបស់ Xuanzang ទៅកាន់ប្រទេសឥណ្ឌា",
+      "year_be": 1172,
+      "year_ce": 629,
+      "description": "អ្នកធម្មយាត្រាជនជាតិចិនឈ្មោះ Xuanzang បានចំណាយពេលដប់ប្រាំមួយឆ្នាំនៅប្រទេសឥណ្ឌាដើម្បីសិក្សានៅ នាឡន្ត ហើយបាននាំយកអត្ថបទសំស្ក្រឹតរាប់រយមកវិញ។",
+      "category": "pilgrimage",
+      "order": 82
+    },
+    {
+      "id": "buddhism_india_harsha_patronage",
+      "title": "ព្រះបាទហរិហរាជា ឧបត្ថម្ភព្រះពុទ្ធសាសនា",
+      "year_be": 1173,
+      "year_ce": 630,
+      "description": "ព្រះចៅអធិរាជ Harsha នៃ Kannauj គឺជាអ្នកឧបត្ថម្ភដ៏សប្បុរសនៃព្រះពុទ្ធសាសនា ធ្វើជាម្ចាស់ផ្ទះធម្មយាត្រាចិន Xuanzang និងគាំទ្រវត្តអារាមនានា។",
+      "category": "india_buddhism",
+      "order": 83
+    },
+    {
+      "id": "buddhism_india_hiuen_tsang_record",
+      "title": "Xuanzang Records សិរីរុងរឿងរបស់ នាឡន្ត",
+      "year_be": 1178,
+      "year_ce": 635,
+      "description": "អ្នកធម្មយាត្រាជនជាតិចិន Xuanzang បានពណ៌នា នាឡន្ត ថាមានសិស្សរាប់ពាន់នាក់ និងគ្រូបង្រៀនរាប់រយនាក់នៅកម្រិតកំពូលរបស់វា។",
+      "category": "india_buddhism",
+      "order": 84
+    },
+    {
+      "id": "buddhism_tibet",
+      "title": "ព្រះពុទ្ធសាសនាបង្កើតឡើងនៅទីបេ",
+      "year_be": 1184,
+      "year_ce": 641,
+      "description": "ស្តេច Songtsen Gampo បានរៀបអភិសេកជាមួយព្រះនាងពុទ្ធសាសនា ហើយបានលើកតម្កើងព្រះធម៌ ដោយដាក់គ្រឹះសម្រាប់ព្រះពុទ្ធសាសនាទីបេ។",
+      "category": "tibet",
+      "order": 85
+    },
+    {
+      "id": "yi_jing_pilgrimage",
+      "title": "ដំណើរធម្មយាត្រារបស់ Yijing ទៅកាន់ប្រទេសឥណ្ឌា",
+      "year_be": 1214,
+      "year_ce": 671,
+      "description": "ព្រះសង្ឃចិន Yijing បានចំណាយពេល 25 ឆ្នាំនៅក្នុងប្រទេសឥណ្ឌា និងអាស៊ីអាគ្នេយ៍ ដោយបានចងក្រងឯកសារអំពីជីវិតព្រះសង្ឃ និងការអនុវត្ត វិន័យ ។",
+      "category": "pilgrimage",
+      "order": 86
+    },
+    {
+      "id": "huayan_school_china",
+      "title": "សាលា Huayan ត្រូវបានបង្កើតឡើង",
+      "year_be": 1243,
+      "year_ce": 700,
+      "description": "សាលា Huayan (Flower Garland) បានសំយោគសូត្រមហាយានទៅជាទស្សនវិជ្ជានៃការពិតដែលទាក់ទងគ្នាទៅវិញទៅមក។",
+      "category": "mahayana",
+      "order": 87
+    },
+    {
+      "id": "buddhism_india_vajrayana_origins",
+      "title": "ព្រះ​ពុទ្ធ​សាសនា​វចនានុក្រម​បាន​លេច​ចេញ​ក្នុង​ប្រទេស​ឥណ្ឌា",
+      "year_be": 1243,
+      "year_ce": 700,
+      "description": "ការអនុវត្តព្រះពុទ្ធសាសនា Tantric ត្រូវបានបង្កើតឡើងនៅ នាឡន្ត និង វិក្រមសិល ក្រោយមកបានបញ្ជូនទៅទីបេ នេប៉ាល់ និងអាស៊ីបូព៌ា។",
+      "category": "india_buddhism",
+      "order": 88
+    },
+    {
+      "id": "buddhism_bhutan",
+      "title": "ព្រះពុទ្ធសាសនាក្លាយជាសាសនារដ្ឋរបស់ប៊ូតាន",
+      "year_be": 1290,
+      "year_ce": 747,
+      "description": "ការបង្រៀនព្រះពុទ្ធសាសនាបានចាក់ឫសនៅក្នុងប្រទេសប៊ូតង់ក្រោមឥទ្ធិពលទីបេ ក្រោយមកបានក្លាយទៅជាមូលដ្ឋានគ្រឹះនៃអត្តសញ្ញាណជាតិ។",
+      "category": "spread_of_buddhism",
+      "order": 89
+    },
+    {
+      "id": "pala_dynasty_buddhism",
+      "title": "រាជវង្ស ប៉ាឡា ពុទ្ធសាសនា",
+      "year_be": 1293,
+      "year_ce": 750,
+      "description": "ស្តេច Pala នៃ Bengal និង Bihar បានក្លាយជាអ្នកឧបត្ថម្ភដ៏អស្ចារ្យរបស់ នាឡន្ត, វិក្រមសិល និងអាហារូបករណ៍ព្រះពុទ្ធសាសនានៅប្រទេសឥណ្ឌា។",
+      "category": "india_buddhism",
+      "order": 90
+    },
+    {
+      "id": "buddhism_indonesia",
+      "title": "ពុទ្ធសាសនានៅអាស៊ីអាគ្នេយ៍",
+      "year_be": 1303,
+      "year_ce": 760,
+      "description": "Srivijaya និងរាជាណាចក្រផ្សេងទៀតនៅស៊ូម៉ាត្រា និងពិភពម៉ាឡេបានគាំទ្រដល់ការរៀនសូត្ររបស់ មហាយាន និង Vajrayana និងផ្លូវពាណិជ្ជកម្ម។",
+      "category": "spread_of_buddhism",
+      "order": 91
+    },
+    {
+      "id": "buddhism_india_santarakshita",
+      "title": "Shantarakshita បង្កើតព្រះពុទ្ធសាសនានៅទីបេពីប្រទេសឥណ្ឌា",
+      "year_be": 1306,
+      "year_ce": 763,
+      "description": "អ្នកប្រាជ្ញឥណ្ឌា Shantarakshita បានធ្វើដំណើរទៅកាន់ទីបេតាមការអញ្ជើញរបស់ស្តេច Trisong Detsen ដែលបានបង្កើតវត្ត Samye ។",
+      "category": "india_buddhism",
+      "order": 92
+    },
+    {
+      "id": "samye_monastery",
+      "title": "វត្ត Samye ត្រូវបានបង្កើតឡើង",
+      "year_be": 1318,
+      "year_ce": 775,
+      "description": "វត្តពុទ្ធសាសនាដំបូងគេនៅទីបេត្រូវបានបង្កើតឡើងនៅ Samye ក្រោមស្តេច Trisong Detsen និង Guru Padmasambhava ។",
+      "category": "tibet",
+      "order": 93
+    },
+    {
+      "id": "mongol_buddhism",
+      "title": "ព្រះពុទ្ធសាសនាក្រោមអាណាចក្រម៉ុងហ្គោលយាន",
+      "year_be": 1323,
+      "year_ce": 780,
+      "description": "ព្រះពុទ្ធសាសនាទីបេបានទទួលការឧបត្ថម្ភពីចក្រពត្តិក្រោម Kublai Khan ដោយភ្ជាប់ការគ្រប់គ្រងរបស់ម៉ុងហ្គោលជាមួយឡាម៉ាទីបេ និងស្ថាប័នព្រះសង្ឃ។",
+      "category": "tibet",
+      "order": 94
+    },
+    {
+      "id": "vikramashila_founded",
+      "title": "វិក្រមសិល Mahavihara ត្រូវបានបង្កើតឡើង",
+      "year_be": 1343,
+      "year_ce": 800,
+      "description": "សាកលវិទ្យាល័យព្រះសង្ឃដ៏អស្ចារ្យនៅ វិក្រមសិល ក្នុង Bihar បានប្រកួតប្រជែងជាមួយ នាឡន្ត ជាមជ្ឈមណ្ឌលនៃការរៀនសូត្របែបតានតឹង និងទស្សនវិជ្ជា។",
+      "category": "university",
+      "order": 95
+    },
+    {
+      "id": "buddhism_india_ratnagiri_monastery",
+      "title": "វត្តរតនគិរី",
+      "year_be": 1343,
+      "year_ce": 800,
+      "description": "វត្តនៅ Ratnagiri ក្នុង Odisha គឺជាមជ្ឈមណ្ឌលព្រះពុទ្ធសាសនាដ៏សំខាន់មួយក្រោមការឧបត្ថម្ភរបស់រាជវង្ស Pala ។",
+      "category": "india_buddhism",
+      "order": 96
+    },
+    {
+      "id": "buddhism_india_pala_somapura",
+      "title": "សូម៉ាបុរ មហាវិហារ៉ា",
+      "year_be": 1343,
+      "year_ce": 800,
+      "description": "រាជវង្ស Pala បានសាងសង់ Somapura Mahavihara នៅក្នុងប្រទេសបង់ក្លាដែសបច្ចុប្បន្ន ដែលជាប្រាសាទដ៏ធំមួយ និងជាតំបន់បេតិកភណ្ឌពិភពលោករបស់អង្គការយូណេស្កូ។",
+      "category": "india_buddhism",
+      "order": 97
+    },
+    {
+      "id": "saicho_tendai_japan",
+      "title": "Saicho រកឃើញសាលា Tendai ក្នុងប្រទេសជប៉ុន",
+      "year_be": 1349,
+      "year_ce": 806,
+      "description": "ព្រះសង្ឃ Saicho បានបង្កើតសាលា Tendai នៅលើភ្នំ Hiei បន្ទាប់ពីសិក្សាការបង្រៀន Tiantai នៅក្នុងប្រទេសចិន។",
+      "category": "east_asia",
+      "order": 98
+    },
+    {
+      "id": "padmasambhava_vajrayana",
+      "title": "Padmasambhava បង្កើត Vajrayana នៅទីបេ",
+      "year_be": 1353,
+      "year_ce": 810,
+      "description": "Guru Padmasambhava ត្រូវ​បាន​គេ​សរសើរ​ថា​នឹង​មាន​ឧបសគ្គ និង​ការ​បង្កើត​ការ​ប្រតិបត្តិ​តាម​បែប​ពុទ្ធសាសនា​នៅ​ទីបេ។",
+      "category": "tibet",
+      "order": 99
+    },
+    {
+      "id": "kukai_shingon_japan",
+      "title": "Kukai រកឃើញព្រះពុទ្ធសាសនា Shingon",
+      "year_be": 1359,
+      "year_ce": 816,
+      "description": "ព្រះសង្ឃ Kukai បានត្រឡប់មកពីប្រទេសចិន ហើយបានបង្កើតព្រះពុទ្ធសាសនា Shingon Esoteric ដោយបានកសាងព្រះវិហារនៅទូទាំងប្រទេសជប៉ុន។",
+      "category": "east_asia",
+      "order": 100
+    },
+    {
+      "id": "borobudur_built",
+      "title": "ប្រាសាទ Borobudur បានបញ្ចប់",
+      "year_be": 1368,
+      "year_ce": 825,
+      "description": "បូជនីយដ្ឋានមហាយានដ៏ធំនៅជ្វាត្រូវបានបញ្ចប់ ដោយបង្កប់ផ្លូវទៅកាន់ការត្រាស់ដឹងក្នុងចម្លាក់ថ្ម និងចេតិយ។",
+      "category": "spread_of_buddhism",
+      "order": 101
+    },
+    {
+      "id": "buddhism_india_ladakh",
+      "title": "ព្រះពុទ្ធសាសនានៅ Ladakh",
+      "year_be": 1543,
+      "year_ce": 1000,
+      "description": "ព្រះពុទ្ធសាសនាទីបេបានរីកចំរើននៅ Ladakh ដោយបានកសាងវត្តអារាមដូចជា Hemis, Thiksey និង Diskit នៅទូទាំងតំបន់ហិម៉ាឡៃយ៉ាន។",
+      "category": "india_buddhism",
+      "order": 102
+    },
+    {
+      "id": "atisha_tibet",
+      "title": "Atisha ធ្វើឱ្យព្រះពុទ្ធសាសនារស់ឡើងវិញនៅទីបេ",
+      "year_be": 1585,
+      "year_ce": 1042,
+      "description": "មេឥណ្ឌា Atisha Dipankara បានចំណាយពេលដប់ពីរឆ្នាំនៅទីបេ ធ្វើកំណែទម្រង់វិន័យព្រះសង្ឃ និងបំផុសប្រពៃណី Kadampa ។",
+      "category": "tibet",
+      "order": 103
+    },
+    {
+      "id": "buddhism_india_dipankara_atisha",
+      "title": "បេសកកម្មរបស់ Atisha ពីប្រទេសឥណ្ឌាទៅកាន់ទីបេ",
+      "year_be": 1585,
+      "year_ce": 1042,
+      "description": "គ្រូជនជាតិបង់ក្លាដែ Atisha Dipankara ដែលបានទទួលការបណ្តុះបណ្តាលនៅ នាឡន្ត បានចំណាយពេលប៉ុន្មានឆ្នាំចុងក្រោយរបស់គាត់ដើម្បីរស់ឡើងវិញនូវព្រះពុទ្ធសាសនានៅទីបេ។",
+      "category": "india_buddhism",
+      "order": 104
+    },
+    {
+      "id": "buddhism_bagan_myanmar",
+      "title": "ប្រាសាទពុទ្ធសាសនា បាកាន",
+      "year_be": 1593,
+      "year_ce": 1050,
+      "description": "រាជាណាចក្រ បុរាណ ក្នុងប្រទេសមីយ៉ាន់ម៉ាបានសាងសង់ចេតិយ និងប្រាសាទរាប់ពាន់ ដែលបង្កើតបានជាទេសភាពព្រះពុទ្ធសាសនាដ៏អស្ចារ្យមួយរបស់ពិភពលោក។",
+      "category": "spread_of_buddhism",
+      "order": 105
+    },
+    {
+      "id": "buddhism_myanmar",
+      "title": "ព្រះពុទ្ធសាសនាថេរវាទនៅមីយ៉ាន់ម៉ា",
+      "year_be": 1600,
+      "year_ce": 1057,
+      "description": "ព្រះបាទអណ្ណារត្ថាបង្រួបបង្រួមប្រទេសភូមា ហើយបានធ្វើឱ្យព្រះពុទ្ធសាសនាថេរវាទក្លាយជាសាសនារដ្ឋ បន្ទាប់ពីបានទទួលគម្ពីរពីប្រទេសស្រីលង្កា។",
+      "category": "spread_of_buddhism",
+      "order": 106
+    },
+    {
+      "id": "buddhism_india_sen_dynasty",
+      "title": "ព្រះពុទ្ធសាសនាក្រោមរាជវង្សសេណា",
+      "year_be": 1643,
+      "year_ce": 1100,
+      "description": "អ្នកគ្រប់គ្រងសេណានៃបេងហ្គាល់ដំបូងបានគាំទ្រព្រះពុទ្ធសាសនាមុនពេលទំនៀមទម្លាប់បានធ្លាក់ចុះនៅភាគខាងកើតប្រទេសឥណ្ឌា។",
+      "category": "india_buddhism",
+      "order": 107
+    },
+    {
+      "id": "buddhism_india_bengal_survival",
+      "title": "បន្ទាយពុទ្ធសាសនាចុងក្រោយនៅបេងហ្គាល់",
+      "year_be": 1643,
+      "year_ce": 1100,
+      "description": "វត្តពុទ្ធសាសនានៅ Bengal និង Bihar បានបន្តស្ថិតក្រោមការឧបត្ថម្ភរបស់ Pala រហូតដល់ការឈ្លានពាននៃសតវត្សទីដប់ពីរ។",
+      "category": "india_buddhism",
+      "order": 108
+    },
+    {
+      "id": "angkor_wat_buddhist",
+      "title": "អង្គរវត្តជាប្រាសាទពុទ្ធសាសនា",
+      "year_be": 1656,
+      "year_ce": 1113,
+      "description": "ប្រាសាទអង្គរវត្តរបស់ខ្មែរ ដែលដើមឡើយឧទ្ទិសដល់ព្រះវិស្ណុ បានក្លាយជាមជ្ឈមណ្ឌលដ៏សំខាន់នៃការគោរពបូជាព្រះពុទ្ធសាសនាថេរវាទក្នុងប្រទេសកម្ពុជា។",
+      "category": "spread_of_buddhism",
+      "order": 109
+    },
+    {
+      "id": "eisai_zen_japan",
+      "title": "Eisai ណែនាំ Rinzai Zen ទៅកាន់ប្រទេសជប៉ុន",
+      "year_be": 1734,
+      "year_ce": 1191,
+      "description": "ព្រះសង្ឃ Eisai បាននាំយក Rinzai Zen ពីប្រទេសចិន ហើយបានបង្កើត Kenninji ដោយបង្កើត Zen ជាប្រពៃណីជប៉ុនដ៏សំខាន់មួយ។",
+      "category": "east_asia",
+      "order": 110
+    },
+    {
+      "id": "nalanda_destroyed",
+      "title": "ការបំផ្លិចបំផ្លាញ នាឡន្ត",
+      "year_be": 1740,
+      "year_ce": 1197,
+      "description": "អ្នកឈ្លានពាន Turkic នៅក្រោម Bakhtiyar Khalji បានបណ្តេញ នាឡន្ត ដោយបញ្ចប់ការរៀនសូត្រតាមបែបព្រះសង្ឃជាច្រើនសតវត្ស និងបង្ហាញពីការធ្លាក់ចុះយ៉ាងខ្លាំងនៅក្នុងព្រះពុទ្ធសាសនាឥណ្ឌា។",
+      "category": "india_buddhism",
+      "order": 111
+    },
+    {
+      "id": "vikramashila_destroyed",
+      "title": "ការបំផ្លាញ វិក្រមសិល",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "វិក្រមសិល Mahavihara ត្រូវ​បាន​បំផ្លាញ​ដោយ​ការ​លុកលុយ​របស់​តួគី ដែល​បាន​បំផ្លិចបំផ្លាញ​ដល់​ស្ថាប័ន​ពុទ្ធសាសនា​នៅ​ភាគ​ខាងកើត​ប្រទេស​ឥណ្ឌា។",
+      "category": "india_buddhism",
+      "order": 112
+    },
+    {
+      "id": "buddhism_decline_eastern_india",
+      "title": "ការធ្លាក់ចុះចុងក្រោយនៃព្រះពុទ្ធសាសនានៅភាគខាងកើតប្រទេសឥណ្ឌា",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "ការ​បាត់​បង់​សាកល​វិទ្យាល័យ​ព្រះសង្ឃ ការ​ផ្លាស់​ប្តូរ​ការ​ឧបត្ថម្ភ និង​ការ​ឈ្លាន​ពាន​នាំ​ឱ្យ​ព្រះពុទ្ធ​សាសនា​ជិត​បាត់​ខ្លួន​ពី​តំបន់​បេះដូង​ឥណ្ឌា។",
+      "category": "india_buddhism",
+      "order": 113
+    },
+    {
+      "id": "jinul_korean_seon",
+      "title": "Jinul កែទម្រង់ព្រះពុទ្ធសាសនា Seon កូរ៉េ",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "ព្រះសង្ឃ Jinul បានរួមបញ្ចូលសមាធិ Seon ជាមួយនឹងការសិក្សាខាងគោលលទ្ធិ បង្កើតព្រះពុទ្ធសាសនាកូរ៉េជាច្រើនសតវត្សមកហើយ។",
+      "category": "east_asia",
+      "order": 114
+    },
+    {
+      "id": "buddhism_india_muslim_conquest_impact",
+      "title": "ឥទ្ធិពលនៃទីក្រុង Delhi Sultanate លើព្រះពុទ្ធសាសនាឥណ្ឌា",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "ការបង្កើតរដ្ឋស៊ុលតង់ដេលីបានពន្លឿនការធ្លាក់ចុះនៃស្ថាប័នពុទ្ធសាសនិកដែលខ្សោយរួចហើយនៅភាគខាងជើងប្រទេសឥណ្ឌា។",
+      "category": "india_buddhism",
+      "order": 115
+    },
+    {
+      "id": "sri_lanka_vinaya_reform",
+      "title": "កំណែទម្រង់ Kandyan វិន័យ",
+      "year_be": 1756,
+      "year_ce": 1213,
+      "description": "ព្រះសង្ឃស្រីលង្កានៅក្រោម Parakramabahu I បានធ្វើក្រុមប្រឹក្សាមួយដើម្បីស្ដារការតែងតាំងជាន់ខ្ពស់ និងបង្រួបបង្រួមការអនុវត្តព្រះសង្ឃនៅលើកោះនេះ។",
+      "category": "council",
+      "order": 116
+    },
+    {
+      "id": "dogen_zen_japan",
+      "title": "Dogen រកឃើញ Soto Zen នៅប្រទេសជប៉ុន",
+      "year_be": 1766,
+      "year_ce": 1223,
+      "description": "ព្រះសង្ឃ Dogen បាននាំយក Soto Zen ពីប្រទេសចិន ហើយបានសង្កត់ធ្ងន់លើការធ្វើសមាធិ zazen ជាខ្លឹមសារនៃការអនុវត្តព្រះពុទ្ធសាសនា។",
+      "category": "east_asia",
+      "order": 117
+    },
+    {
+      "id": "nichiren_buddhism",
+      "title": "ព្រះពុទ្ធសាសនា Nichiren ត្រូវបានបង្កើតឡើង",
+      "year_be": 1796,
+      "year_ce": 1253,
+      "description": "ព្រះសង្ឃ Nichiren បានបង្កើតប្រពៃណីមួយដែលផ្តោតលើការលះបង់ចំពោះ Lotus Sutra និងកំណែទម្រង់សង្គមនៅក្នុងប្រទេសជប៉ុន។",
+      "category": "east_asia",
+      "order": 118
+    },
+    {
+      "id": "buddhism_thailand",
+      "title": "ព្រះពុទ្ធសាសនាថេរវាទនៅប្រទេសថៃ",
+      "year_be": 1835,
+      "year_ce": 1292,
+      "description": "ស្តេច Ramkhamhaeng នៃសុខោទ័យបានលើកតម្កើងព្រះពុទ្ធសាសនាថេរវាទ ដោយពង្រឹងតួនាទីរបស់ខ្លួនក្នុងវប្បធម៌ និងអភិបាលកិច្ចថៃ។",
+      "category": "spread_of_buddhism",
+      "order": 119
+    },
+    {
+      "id": "buddhism_laos",
+      "title": "ព្រះពុទ្ធសាសនានៅព្រះរាជាណាចក្រឡាវ",
+      "year_be": 1893,
+      "year_ce": 1350,
+      "description": "ព្រះពុទ្ធសាសនាថេរវាទបានក្លាយជាសាសនាលេចធ្លោនៅទូទាំងនគរលាវ រចនាវប្បធម៌ សិល្បៈ និងជីវិតព្រះសង្ឃ។",
+      "category": "spread_of_buddhism",
+      "order": 120
+    },
+    {
+      "id": "buddhism_cambodia_theravada",
+      "title": "ព្រះពុទ្ធសាសនាថេរវាទនៅកម្ពុជា",
+      "year_be": 1893,
+      "year_ce": 1350,
+      "description": "ព្រះពុទ្ធសាសនាថេរវាទបានជំនួសមហាយានជាប្រពៃណីដ៏លេចធ្លោនៅក្នុងប្រទេសកម្ពុជា ដែលផ្តោតលើអង្គរ និងក្រោយទីក្រុងភ្នំពេញ។",
+      "category": "spread_of_buddhism",
+      "order": 121
+    },
+    {
+      "id": "tsongkhapa_gelug",
+      "title": "Tongkhapa រកឃើញសាលា Gelug",
+      "year_be": 1952,
+      "year_ce": 1409,
+      "description": "ចៅហ្វាយនាយជនជាតិទីបេឈ្មោះ Tsongkhapa បានបង្កើតវត្ត Ganden និងសាលា Gelug ដោយសង្កត់ធ្ងន់លើការសិក្សាយ៉ាងម៉ត់ចត់ និងក្រមសីលធម៌។",
+      "category": "tibet",
+      "order": 122
+    },
+    {
+      "id": "buddhism_mongolia_16th",
+      "title": "ព្រះពុទ្ធសាសនារស់ឡើងវិញនៅម៉ុងហ្គោលី",
+      "year_be": 2121,
+      "year_ce": 1578,
+      "description": "Altan Khan នៃប្រទេសម៉ុងហ្គោលីបានប្រគល់ងារ ដាឡៃឡាម៉ា លើ Sonam Gyatso ដោយភ្ជាប់ម៉ុងហ្គោលីនិងទីបេក្នុងសម្ព័ន្ធពុទ្ធសាសនា។",
+      "category": "tibet",
+      "order": 123
+    },
+    {
+      "id": "buddhism_kalmykia",
+      "title": "ព្រះពុទ្ធសាសនានៅ Kalmykia",
+      "year_be": 2143,
+      "year_ce": 1600,
+      "description": "Kalmyk Mongols បាននាំយកព្រះពុទ្ធសាសនាទីបេទៅកាន់តំបន់ Caucasus ខាងជើងនៃប្រទេសរុស្ស៊ី។",
+      "category": "spread_of_buddhism",
+      "order": 124
+    },
+    {
+      "id": "buddhism_sikkim",
+      "title": "ព្រះពុទ្ធសាសនានៅ Sikkim និង Himalayas",
+      "year_be": 2185,
+      "year_ce": 1642,
+      "description": "ព្រះពុទ្ធសាសនាទីបេបានក្លាយជាសាសនារដ្ឋរបស់ Sikkim ក្រោមរាជវង្ស Namgyal ។",
+      "category": "tibet",
+      "order": 125
+    },
+    {
+      "id": "buddhism_buryatia",
+      "title": "ពុទ្ធសាសនាបានសាយភាយដល់បូរីតាយ៉ា",
+      "year_be": 2243,
+      "year_ce": 1700,
+      "description": "ព្រះពុទ្ធសាសនាទីបេបានទៅដល់ប្រជាជន Buryat នៃស៊ីបេរី តាមរយៈសកម្មភាពផ្សព្វផ្សាយសាសនារបស់ម៉ុងហ្គោល និងទីបេ។",
+      "category": "spread_of_buddhism",
+      "order": 126
+    },
+    {
+      "id": "buddhism_india_arunachal",
+      "title": "ព្រះពុទ្ធសាសនានៅអរុណចលប្រាដេស",
+      "year_be": 2243,
+      "year_ce": 1700,
+      "description": "វត្តពុទ្ធសាសនាទីបេ ដូចជា Tawang Gompa ត្រូវបានបង្កើតឡើងនៅទូទាំង Arunachal Pradesh នៅហិម៉ាឡៃយ៉ា។",
+      "category": "india_buddhism",
+      "order": 127
+    },
+    {
+      "id": "buddhism_india_ajanta_caves",
+      "title": "ផ្ទាំងគំនូរល្អាង Ajanta ត្រូវបានទទួលស្គាល់",
+      "year_be": 2362,
+      "year_ce": 1819,
+      "description": "មន្ត្រីអង់គ្លេសបានរកឃើញផ្ទាំងគំនូររូងភ្នំ Ajanta ឡើងវិញ ដោយបង្ហាញពីស្នាដៃសិល្បៈព្រះពុទ្ធសាសនាបុរាណឥណ្ឌាទៅកាន់ពិភពលោក។",
+      "category": "india_buddhism",
+      "order": 128
+    },
+    {
+      "id": "buddhist_archaeology_india",
+      "title": "ការរកឃើញឡើងវិញនៃកន្លែងពុទ្ធសាសនានៅប្រទេសឥណ្ឌា",
+      "year_be": 2373,
+      "year_ce": 1830,
+      "description": "អ្នកបុរាណវត្ថុវិទូអង់គ្លេស និងឥណ្ឌាបានរកឃើញសាណាត សានឈី និងកន្លែងពុទ្ធសាសនាបុរាណផ្សេងទៀត ដែលបង្កឱ្យមានចំណាប់អារម្មណ៍ជាថ្មីចំពោះបេតិកភណ្ឌព្រះពុទ្ធសាសនារបស់ប្រទេសឥណ្ឌា។",
+      "category": "india_buddhism",
+      "order": 129
+    },
+    {
+      "id": "buddhism_australia",
+      "title": "ព្រះពុទ្ធសាសនាបង្កើតឡើងនៅប្រទេសអូស្ត្រាលី",
+      "year_be": 2393,
+      "year_ce": 1850,
+      "description": "ជនអន្តោប្រវេសន៍ចិន និងស្រីលង្កាបាននាំយកការអនុវត្តព្រះពុទ្ធសាសនាទៅកាន់ប្រទេសអូស្ត្រាលី ដែលក្រោយមកត្រូវបានចូលរួមដោយសហគមន៍ទីបេ និងវៀតណាម។",
+      "category": "spread_of_buddhism",
+      "order": 130
+    },
+    {
+      "id": "thai_reform_mongkut",
+      "title": "ព្រះបាទមង្ឃុត កែទម្រង់ព្រះពុទ្ធសាសនាថៃ",
+      "year_be": 2394,
+      "year_ce": 1851,
+      "description": "ស្តេច Mongkut នៃប្រទេសថៃបានបង្កើតលំដាប់ ធម្មyutika ដោយសង្កត់ធ្ងន់លើអាហារូបករណ៍ វិន័យ និង Pali យ៉ាងតឹងរឹង។",
+      "category": "spread_of_buddhism",
+      "order": 131
+    },
+    {
+      "id": "pali_canon_chiang_mai",
+      "title": "ក្រុមប្រឹក្សាពុទ្ធសាសនាទីប្រាំ (មីយ៉ាន់ម៉ា)",
+      "year_be": 1414,
+      "year_ce": 1871,
+      "description": "ព្រះសង្ឃថេរវាទនៅទីក្រុង មանդလေး បានសូត្រ និងចារឹកបាលីកាណុងនៅលើផ្ទាំងថ្មម៉ាបក្នុងកំឡុងក្រុមប្រឹក្សាពុទ្ធសាសនាទីប្រាំនៅប្រទេសមីយ៉ាន់ម៉ា។",
+      "category": "council",
+      "order": 132
+    },
+    {
+      "id": "buddhism_west_19th",
+      "title": "ពុទ្ធសាសនាឈានទៅដល់លោកខាងលិច",
+      "year_be": 1422,
+      "year_ce": 1879,
+      "description": "ពន្លឺនៃអាស៊ីរបស់ Edwin Arnold និងការបកប្រែដំបូងបានណែនាំគំនិតព្រះពុទ្ធសាសនាទៅកាន់អឺរ៉ុប និងអាមេរិក។",
+      "category": "modern_buddhism",
+      "order": 133
+    },
+    {
+      "id": "buddhism_new_zealand",
+      "title": "ព្រះពុទ្ធសាសនានៅប្រទេសនូវែលសេឡង់",
+      "year_be": 1423,
+      "year_ce": 1880,
+      "description": "អ្នកជីករ៉ែមាសចិន និងជនអន្តោប្រវេសន៍អាស៊ីក្រោយៗមកបាននាំយកប្រពៃណីព្រះពុទ្ធសាសនាទៅកាន់ប្រទេសនូវែលសេឡង់។",
+      "category": "spread_of_buddhism",
+      "order": 134
+    },
+    {
+      "id": "buddhism_india_bodh_gaya_restoration",
+      "title": "ការ​ជួសជុល​ប្រាសាទ​ព្រះពុទ្ធ​គយា​",
+      "year_be": 1423,
+      "year_ce": 1880,
+      "description": "អនាគារិក ធម្មបាល បានធ្វើយុទ្ធនាការដើម្បីស្ដារការគ្រប់គ្រងព្រះពុទ្ធសាសនានៃប្រាសាទ Mahabodhi នៅ បដ្គយា ដែលជាកន្លែងនៃការត្រាស់ដឹង។",
+      "category": "india_buddhism",
+      "order": 135
+    },
+    {
+      "id": "pali_text_society",
+      "title": "សមាគមអត្ថបទបាលីត្រូវបានបង្កើតឡើង",
+      "year_be": 1424,
+      "year_ce": 1881,
+      "description": "T. W. Rhys Davids បានបង្កើតសមាគមអត្ថបទភាសាបាលីនៅទីក្រុងឡុងដ៍ ដោយបោះពុម្ភផ្សាយគម្ពីរ ត្រៃបិដក សម្រាប់អាហារូបករណ៍សកល។",
+      "category": "revival",
+      "order": 136
+    },
+    {
+      "id": "buddhism_hawaii",
+      "title": "ព្រះពុទ្ធសាសនានៅហាវ៉ៃ",
+      "year_be": 1432,
+      "year_ce": 1889,
+      "description": "ជនអន្តោប្រវេសន៍ជប៉ុនបានបង្កើត Jodo Shinshu និងប្រាសាទពុទ្ធសាសនាផ្សេងទៀតនៅទូទាំងកោះហាវ៉ៃ។",
+      "category": "spread_of_buddhism",
+      "order": 137
+    },
+    {
+      "id": "maha_bodhi_society",
+      "title": "សមាគម Maha ព្រះពុទ្ធគារ ត្រូវបានបង្កើតឡើង",
+      "year_be": 1434,
+      "year_ce": 1891,
+      "description": "អនាគារិក ធម្មបាល បានបង្កើតសមាគម Maha ព្រះពុទ្ធគារ ដើម្បីស្ដារព្រះពុទ្ធសាសនា Gaya និងធ្វើឱ្យព្រះពុទ្ធសាសនារស់ឡើងវិញនៅក្នុងប្រទេសឥណ្ឌានិងទូទាំងពិភពលោក។",
+      "category": "india_buddhism",
+      "order": 138
+    },
+    {
+      "id": "buddhism_south_africa",
+      "title": "ព្រះពុទ្ធសាសនានៅអាហ្វ្រិកខាងត្បូង",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "សហគមន៍ពុទ្ធសាសនិកបានបង្កើតឡើងនៅអាហ្រ្វិកខាងត្បូងតាមរយៈអន្តោប្រវេសន៍អាស៊ី ហើយក្រោយមកទៀតតាមទំនៀមទំលាប់បំប្លែងលោកខាងលិច។",
+      "category": "spread_of_buddhism",
+      "order": 139
+    },
+    {
+      "id": "buddhism_singapore",
+      "title": "ព្រះពុទ្ធសាសនានៅប្រទេសសិង្ហបុរី",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "សហគមន៍ពុទ្ធសាសនិកចិន ថៃ និងស្រីលង្កាបានសាងសង់វត្តអារាម និងសាលារៀន ដែលធ្វើឱ្យប្រទេសសិង្ហបុរីក្លាយជាមជ្ឈមណ្ឌលព្រះពុទ្ធសាសនាចម្រុះ។",
+      "category": "spread_of_buddhism",
+      "order": 140
+    },
+    {
+      "id": "buddhism_malaysia",
+      "title": "ព្រះពុទ្ធសាសនានៅប្រទេសម៉ាឡេស៊ី",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "ប្រពៃណីព្រះពុទ្ធសាសនារបស់ចិន និងថៃបានរីកដុះដាលនៅក្នុងប្រទេសម៉ាឡេស៊ីជាមួយនឹងសហគមន៍ថេរវាទរបស់ប្រជាជនសៀមម៉ាឡេស៊ី។",
+      "category": "spread_of_buddhism",
+      "order": 141
+    },
+    {
+      "id": "buddhism_canada",
+      "title": "ព្រះពុទ្ធសាសនានៅប្រទេសកាណាដា",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "សហគមន៍ពុទ្ធសាសនាចិន ជប៉ុន និងក្រោយមកទៀតវៀតណាម និងទីបេបានបង្កើតវត្តអារាមទូទាំងប្រទេសកាណាដា។",
+      "category": "spread_of_buddhism",
+      "order": 142
+    },
+    {
+      "id": "buddhism_germany",
+      "title": "ព្រះពុទ្ធសាសនានៅប្រទេសអាឡឺម៉ង់",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "អ្នកប្រាជ្ញ និង​អ្នក​ប្រតិបត្តិ​អាល្លឺម៉ង់​បាន​បង្កើត​សង្គម​ពុទ្ធសាសនា បកប្រែ​ព្រះសូត្រ និង​បង្កើត​ក្រុម​សមាធិ។",
+      "category": "modern_buddhism",
+      "order": 143
+    },
+    {
+      "id": "buddhism_india_sarnath_restoration",
+      "title": "ការស្តារសាណាត",
+      "year_be": 1448,
+      "year_ce": 1905,
+      "description": "ការស្ទាបស្ទង់បុរាណវិទ្យានៃប្រទេសឥណ្ឌា និងសមាគម Maha ព្រះពុទ្ធគារ បានស្ដារឡើងវិញនូវសាណាត ជាកន្លែងដែលព្រះពុទ្ធទ្រង់បានសំដែងធម្មទេសនាលើកដំបូង។",
+      "category": "india_buddhism",
+      "order": 144
+    },
+    {
+      "id": "buddhist_revival_movement",
+      "title": "ការរស់ឡើងវិញនៃព្រះពុទ្ធសាសនាសម័យទំនើប",
+      "year_be": 1454,
+      "year_ce": 1911,
+      "description": "ចលនាកំណែទម្រង់ និងការរស់ឡើងវិញនៅទូទាំងអាស៊ីបានសង្កត់ធ្ងន់លើការធ្វើសមាធិ សីលធម៌សង្គម និងការសិក្សាឡើងវិញនូវព្រះគម្ពីរដើម។",
+      "category": "revival",
+      "order": 145
+    },
+    {
+      "id": "buddhism_india_sanchi_restoration",
+      "title": "ការស្ដារឡើងវិញនូវចេតិយ Sanchi",
+      "year_be": 1455,
+      "year_ce": 1912,
+      "description": "Sir John Marshall បានដឹកនាំការស្ដារឡើងវិញនូវចេតិយដ៏អស្ចារ្យនៅ Sanchi ដែលជាវិមានព្រះពុទ្ធសាសនាដ៏ចំណាស់បំផុត និងល្អបំផុតរបស់ប្រទេសឥណ្ឌា។",
+      "category": "india_buddhism",
+      "order": 146
+    },
+    {
+      "id": "buddhism_india_nalanda_excavation",
+      "title": "ការជីកកកាយបុរាណវិទ្យា នាឡន្ត",
+      "year_be": 1458,
+      "year_ce": 1915,
+      "description": "ការជីកកកាយជាប្រព័ន្ធនៃ នាឡន្ត បានបង្ហាញប្លង់នៃសាកលវិទ្យាល័យបុរាណ ដែលជំរុញឱ្យមានការខិតខំប្រឹងប្រែងរស់ឡើងវិញទំនើប។",
+      "category": "india_buddhism",
+      "order": 147
+    },
+    {
+      "id": "buddhism_uk",
+      "title": "ព្រះពុទ្ធសាសនានៅចក្រភពអង់គ្លេស",
+      "year_be": 1467,
+      "year_ce": 1924,
+      "description": "សមាគមពុទ្ធសាសនានៅទីក្រុងឡុងដ៍ និងបេសកកម្មថេរវាទបានណែនាំការអនុវត្តព្រះពុទ្ធសាសនាដែលបានរៀបចំដល់ប្រទេសអង់គ្លេស។",
+      "category": "modern_buddhism",
+      "order": 148
+    },
+    {
+      "id": "buddhism_france",
+      "title": "ព្រះពុទ្ធសាសនានៅប្រទេសបារាំង",
+      "year_be": 1472,
+      "year_ce": 1929,
+      "description": "អាណានិគមបារាំងទាក់ទងជាមួយវៀតណាម និងកម្ពុជា ហើយក្រោយមកជនភៀសខ្លួនទីបេបាននាំយកការអនុវត្តព្រះពុទ្ធសាសនាមកប្រទេសបារាំង។",
+      "category": "modern_buddhism",
+      "order": 149
+    },
+    {
+      "id": "first_zen_center_usa",
+      "title": "មជ្ឈមណ្ឌល Zen ដំបូងគេនៅអាមេរិក",
+      "year_be": 1473,
+      "year_ce": 1930,
+      "description": "ក្រុមប្រតិបត្តិព្រះពុទ្ធសាសនា Zen បានបង្កើតឡើងនៅក្នុងសហរដ្ឋអាមេរិក ដោយចាប់ផ្តើមការរីករាលដាលនៃប្រពៃណីសមាធិនៅលោកខាងលិច។",
+      "category": "modern_buddhism",
+      "order": 150
+    },
+    {
+      "id": "buddhism_philippines",
+      "title": "ព្រះពុទ្ធសាសនានៅប្រទេសហ្វីលីពីន",
+      "year_be": 1473,
+      "year_ce": 1930,
+      "description": "សហគមន៍ពុទ្ធសាសនាចិន និងក្រោយៗមក ទីបេ និងហ្សេន បានបង្កើតមជ្ឈមណ្ឌលប្រតិបត្តិនៅទូទាំងប្រទេសហ្វីលីពីន។",
+      "category": "spread_of_buddhism",
+      "order": 151
+    },
+    {
+      "id": "ambedkar_discovers_buddhism",
+      "title": "បណ្ឌិត អំបេតការ ស្វែងយល់អំពីព្រះពុទ្ធសាសនា",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "បណ្ឌិត B.R. អំបេតការ ស្ថាបត្យករនៃរដ្ឋធម្មនុញ្ញរបស់ប្រទេសឥណ្ឌា បានងាកទៅរកព្រះពុទ្ធសាសនា ជាផ្លូវនៃសេរីភាព សមភាព និងភាតរភាព លើសពីការជិះជាន់វណ្ណៈ។",
+      "category": "india_buddhism",
+      "order": 152
+    },
+    {
+      "id": "international_buddhist_flag",
+      "title": "ទង់ព្រះពុទ្ធសាសនាអន្តរជាតិត្រូវបានអនុម័ត",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "សមាគមពុទ្ធសាសនិកពិភពលោកបានយកទង់ព្រះពុទ្ធសាសនាប្រាំមួយពណ៌ជានិមិត្តរូបនៃការរួបរួមក្នុងចំណោមប្រពៃណីទូទាំងពិភពលោក។",
+      "category": "modern_buddhism",
+      "order": 153
+    },
+    {
+      "id": "buddhism_brazil",
+      "title": "ព្រះពុទ្ធសាសនានៅប្រទេសប្រេស៊ីល និងអាមេរិកឡាទីន",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "ប្រពៃណីព្រះពុទ្ធសាសនាជប៉ុន ចិន និងទីបេបានចាក់ឫសនៅទូទាំងប្រទេសប្រេស៊ីល និងអាមេរិកឡាទីនក្នុងសតវត្សទី 20 ។",
+      "category": "spread_of_buddhism",
+      "order": 154
+    },
+    {
+      "id": "buddhism_taiwan",
+      "title": "ព្រះពុទ្ធ​សាសនា​រីក​ចម្រើន​នៅ​តៃវ៉ាន់",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "ចលនាព្រះពុទ្ធសាសនាមនុស្សធម៌នៅតៃវ៉ាន់បានលើកកម្ពស់ការអប់រំ សប្បុរសធម៌ និងសមាធិ ដែលធ្វើឱ្យតៃវ៉ាន់ក្លាយជាមជ្ឈមណ្ឌលដ៏សំខាន់នៃព្រះពុទ្ធសាសនារបស់ចិន។",
+      "category": "east_asia",
+      "order": 155
+    },
+    {
+      "id": "buddhism_scandinavia",
+      "title": "ព្រះពុទ្ធសាសនានៅប្រទេសស្គែនឌីណាវី",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "ជនភៀសខ្លួនទីបេ និងអ្នកប្រតិបត្តិបស្ចិមប្រទេសបានបង្កើតមជ្ឈមណ្ឌលព្រះពុទ្ធសាសនានៅទូទាំងប្រទេសដាណឺម៉ាក ន័រវេស និងស៊ុយអែត។",
+      "category": "modern_buddhism",
+      "order": 156
+    },
+    {
+      "id": "buddhism_india_constitution",
+      "title": "តម្លៃព្រះពុទ្ធសាសនានៅក្នុងរដ្ឋធម្មនុញ្ញឥណ្ឌា",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "លោកបណ្ឌិត B.R. អំបេតការ បានបង្កប់នូវគោលការណ៍នៃសេរីភាព សមភាព និងភាតរភាព — ទាញចេញពីទស្សនៈវិស័យព្រះពុទ្ធសាសនា — ទៅក្នុងរដ្ឋធម្មនុញ្ញរបស់ប្រទេសឥណ្ឌា។",
+      "category": "india_buddhism",
+      "order": 157
+    },
+    {
+      "id": "india_buddha_purnima_holiday",
+      "title": "ព្រះពុទ្ធពោធិនីម៉ា ជាថ្ងៃបុណ្យជាតិនៅប្រទេសឥណ្ឌា",
+      "year_be": 1495,
+      "year_ce": 1952,
+      "description": "ប្រទេស​ឥណ្ឌា​បាន​ប្រកាស​ពុទ្ធបរិស័ទ​ជា​ថ្ងៃ​បុណ្យ​ជាតិ ដោយ​គោរព​ដល់​ការ​ប្រសូត ត្រាស់​ដឹង និង​បរិនិព្វាន​របស់​ព្រះពុទ្ធ។",
+      "category": "india_buddhism",
+      "order": 158
+    },
+    {
+      "id": "sixth_buddhist_council",
+      "title": "ទី៦ ក្រុមប្រឹក្សាពុទ្ធសាសនា",
+      "year_be": 1497,
+      "year_ce": 1954,
+      "description": "ព្រះសង្ឃថេរវាទមកពីប្រទេសជាច្រើនបានប្រមូលផ្តុំគ្នានៅទីក្រុងយ៉ាំងហ្គោន ប្រទេសភូមា ដើម្បីសូត្រ និងបញ្ជាក់អំពីគម្ពីរព្រះត្រៃបិដក។",
+      "category": "council",
+      "order": 159
+    },
+    {
+      "id": "ambedkar_buddhist_conversion_movement",
+      "title": "អំបេតការ ប្រកាសពីការប្តូរទៅជាព្រះពុទ្ធសាសនា",
+      "year_be": 1498,
+      "year_ce": 1955,
+      "description": "លោកបណ្ឌិត B.R. អំបេតការ បានប្រកាសជាសាធារណៈអំពីចេតនារបស់គាត់ក្នុងការប្តូរមកព្រះពុទ្ធសាសនា ដោយបដិសេធមិនស្មើភាពវណ្ណៈ និងប្រកាន់យកមាគ៌ារបស់ព្រះពុទ្ធ។",
+      "category": "india_buddhism",
+      "order": 160
+    },
+    {
+      "id": "beat_generation_buddhism",
+      "title": "Beat Generation ប្រកាន់យកព្រះពុទ្ធសាសនា",
+      "year_be": 1498,
+      "year_ce": 1955,
+      "description": "អ្នកនិពន្ធដូចជា Jack Kerouac និង Allen Ginsberg បានពេញនិយមគំនិតព្រះពុទ្ធសាសនានៅក្នុងអក្សរសិល្ប៍អាមេរិក និងប្រឆាំងវប្បធម៌។",
+      "category": "modern_buddhism",
+      "order": 161
+    },
+    {
+      "id": "ambedkar_deekshabhoomi",
+      "title": "ការបំប្លែងដ៏ធំរបស់ អំបេតការ នៅ Deekshabhoomi",
+      "year_be": 1499,
+      "year_ce": 1956,
+      "description": "លោកបណ្ឌិត B.R. អំបេតការ និងអ្នកដើរតាមរាប់សែននាក់បានទទួលយកព្រះពុទ្ធសាសនានៅ Nagpur នៅលើ Vijayadashami ដោយបញ្ជាក់ពីសេរីភាព សមភាព និងភាតរភាព។",
+      "category": "india_buddhism",
+      "order": 162
+    },
+    {
+      "id": "neo_buddhist_movement_india",
+      "title": "ចលនាពុទ្ធសាសនានៅឥណ្ឌា",
+      "year_be": 1499,
+      "year_ce": 1956,
+      "description": "បន្ទាប់ពីការប្រែចិត្តជឿរបស់ អំបេតការ ជនជាតិ Dalits រាប់លាននាក់នៅទូទាំង Maharashtra និងប្រទេសឥណ្ឌាបានទទួលយកព្រះពុទ្ធសាសនា ដោយបង្កើតសហគមន៍ព្រះពុទ្ធសាសនាថ្មីដ៏រស់រវើក។",
+      "category": "india_buddhism",
+      "order": 163
+    },
+    {
+      "id": "buddhism_india_chaitya_bhoomi",
+      "title": "អនុស្សាវរីយ៍ Chaiitya Bhoomi",
+      "year_be": 1499,
+      "year_ce": 1956,
+      "description": "Chaitya Bhoomi នៅទីក្រុង Mumbai បានក្លាយជាកន្លែងរំលឹក និងធម្មយាត្រា ដែលលោកបណ្ឌិត B.R. អំបេតការ ត្រូវបានបូជាបន្ទាប់ពីការប្រែចិត្តជឿព្រះពុទ្ធសាសនា។",
+      "category": "india_buddhism",
+      "order": 164
+    },
+    {
+      "id": "ambedkar_buddha_and_his_dhamma",
+      "title": "អំបេតការ ផ្សព្វផ្សាយព្រះពុទ្ធ និងព្រះធម៌របស់ព្រះអង្គ",
+      "year_be": 1500,
+      "year_ce": 1957,
+      "description": "បណ្ឌិត B. R. អំបេតការ បានសរសេរព្រះពុទ្ធ និងព្រះធម៌របស់ទ្រង់ ដោយបង្ហាញអំពីជីវិត និងការបង្រៀនរបស់ព្រះពុទ្ធជាទស្សនវិជ្ជាសមហេតុផល និងសមភាពសម្រាប់ឥណ្ឌាសម័យទំនើប។",
+      "category": "india_buddhism",
+      "order": 165
+    },
+    {
+      "id": "buddhism_india_ambedkar_jayanti",
+      "title": "អំបេតការ Jayanti ជាអ្នកសង្កេតការណ៍សាធារណៈ",
+      "year_be": 1500,
+      "year_ce": 1957,
+      "description": "ថ្ងៃទី 14 ខែមេសា ជាថ្ងៃខួបកំណើតរបស់លោកបណ្ឌិត អំបេតការ ត្រូវបានគេសង្កេតឃើញយ៉ាងទូលំទូលាយដោយពុទ្ធសាសនិកជនឥណ្ឌាថាជាថ្ងៃនៃការឆ្លុះបញ្ចាំង និងការប្រមូលផ្តុំសហគមន៍។",
+      "category": "india_buddhism",
+      "order": 166
+    },
+    {
+      "id": "dalai_lama_exile",
+      "title": "សម្តេចសង្ឃ ដាឡៃ ឡាម៉ា នៅនិរទេសខ្លួន",
+      "year_be": 1502,
+      "year_ce": 1959,
+      "description": "សម្តេចសង្ឃ ដាឡៃ ឡាម៉ា ទី ១៤ បានភៀសខ្លួនចេញពីទីបេ ហើយបានបង្កើតរដ្ឋាភិបាលនិរទេសក្នុងប្រទេសឥណ្ឌា ដោយរក្សាវប្បធម៌ និងការបង្រៀនពុទ្ធសាសនាទីបេ។",
+      "category": "tibet",
+      "order": 167
+    },
+    {
+      "id": "buddhism_india_dalai_lama_dharamsala",
+      "title": "Dharamsala ជាមជ្ឈមណ្ឌលព្រះពុទ្ធសាសនាទីបេ",
+      "year_be": 1503,
+      "year_ce": 1960,
+      "description": "រដ្ឋាភិបាល​និរទេស​ទីបេ​បាន​បង្កើត​អាសនៈ​របស់​ខ្លួន​នៅ​ទីក្រុង Dharamsala ប្រទេស​ឥណ្ឌា ដោយ​ធ្វើ​ឱ្យ​វា​ក្លាយ​ជា​មជ្ឈមណ្ឌល​សកល​នៃ​ការ​សិក្សា​ពុទ្ធសាសនា​ទីបេ។",
+      "category": "india_buddhism",
+      "order": 168
+    },
+    {
+      "id": "buddhism_india_waghala",
+      "title": "ចលនាវិហារពុទ្ធសាសនា Waghala",
+      "year_be": 1503,
+      "year_ce": 1960,
+      "description": "វិហារពុទ្ធសាសនាថ្មី និងសាលារៀនត្រូវបានសាងសង់នៅទូទាំង Maharashtra និងប្រទេសឥណ្ឌា ដោយចិញ្ចឹមបីបាច់ជីវិតសហគមន៍ពុទ្ធសាសនា អំបេតការite ។",
+      "category": "india_buddhism",
+      "order": 169
+    },
+    {
+      "id": "buddhism_india_tibetan_settlements",
+      "title": "ការតាំងទីលំនៅព្រះពុទ្ធសាសនាទីបេនៅប្រទេសឥណ្ឌា",
+      "year_be": 1503,
+      "year_ce": 1960,
+      "description": "ប្រទេសឥណ្ឌាបានស្វាគមន៍ជនភៀសខ្លួនទីបេ ដោយបង្កើតការតាំងទីលំនៅនៅ Bylakuppe, Mundgod និង Dharamsala ជាមួយនឹងវត្តអារាម និងសាលារៀន។",
+      "category": "india_buddhism",
+      "order": 170
+    },
+    {
+      "id": "buddhism_india_maharashtra_growth",
+      "title": "កំណើនប្រជាជនពុទ្ធសាសនិកនៅ Maharashtra",
+      "year_be": 1504,
+      "year_ce": 1961,
+      "description": "កំណត់ត្រាជំរឿនបានបង្ហាញពីការកើនឡើងគួរឱ្យកត់សម្គាល់នៃចំនួនប្រជាជនពុទ្ធសាសនិកនៅ Maharashtra បន្ទាប់ពីចលនាបំប្លែងដ៏ធំរបស់ អំបេតការ ។",
+      "category": "india_buddhism",
+      "order": 171
+    },
+    {
+      "id": "thich_nhat_hanh_engaged",
+      "title": "ធិចណាតហាន និងបានភ្ជាប់ព្រះពុទ្ធសាសនា",
+      "year_be": 1508,
+      "year_ce": 1965,
+      "description": "ព្រះសង្ឃវៀតណាម ធិចណាតហាន បានបង្កើតព្រះពុទ្ធសាសនាភ្ជាប់ទំនាក់ទំនងការអនុវត្តសតិអារម្មណ៍ជាមួយនឹងសកម្មភាពសន្តិភាព និងយុត្តិធម៌សង្គម។",
+      "category": "modern_buddhism",
+      "order": 172
+    },
+    {
+      "id": "master_hsing_yun_foguang",
+      "title": "Fo Guang Shan ពុទ្ធសាសនាមនុស្សធម៌",
+      "year_be": 1510,
+      "year_ce": 1967,
+      "description": "លោកគ្រូ Hsing Yun បានបង្កើត Fo Guang Shan នៅតៃវ៉ាន់ ដោយផ្សព្វផ្សាយពុទ្ធសាសនាមនុស្សធម៌ ដោយសង្កត់ធ្ងន់លើការអប់រំ និងការចូលរួមសង្គមទូទាំងពិភពលោក។",
+      "category": "east_asia",
+      "order": 173
+    },
+    {
+      "id": "buddhism_indonesia_modern",
+      "title": "ការរស់ឡើងវិញព្រះពុទ្ធសាសនានៅប្រទេសឥណ្ឌូនេស៊ី",
+      "year_be": 1513,
+      "year_ce": 1970,
+      "description": "បន្ទាប់ពីការធ្លាក់ចុះជាច្រើនសតវត្ស សហគមន៍ពុទ្ធសាសនិកក្នុងប្រទេសឥណ្ឌូនេស៊ីបានជួបប្រទះនឹងការរស់ឡើងវិញតាមរយៈក្រុមសិក្សា និងការជួសជុលប្រាសាទ។",
+      "category": "spread_of_buddhism",
+      "order": 174
+    },
+    {
+      "id": "buddhism_india_global_diaspora",
+      "title": "ជនភៀសខ្លួនពុទ្ធសាសនាឥណ្ឌាទូទាំងពិភពលោក",
+      "year_be": 1513,
+      "year_ce": 1970,
+      "description": "ពុទ្ធសាសនិកឥណ្ឌា ជាពិសេសមកពីសហគមន៍ អំបេតការite បានបង្កើតវត្តអារាម និងមជ្ឈមណ្ឌលវប្បធម៌នៅទូទាំងពិភពលោក។",
+      "category": "india_buddhism",
+      "order": 175
+    },
+    {
+      "id": "vipassana_global_spread",
+      "title": "វិបស្សនាសមាធិ រីករាលដាលពាសពេញពិភពលោក",
+      "year_be": 1514,
+      "year_ce": 1971,
+      "description": "S. N. ហ្គូអង្កា បានចាប់ផ្តើមបង្រៀនវិបស្សនាសមាធិជាអន្តរជាតិ ដោយគូរពីប្រពៃណីភូមារបស់ Sayagyi U Ba Khin។",
+      "category": "revival",
+      "order": 176
+    },
+    {
+      "id": "buddhism_india_sikkim_state",
+      "title": "Sikkim ចូលរួមជាមួយឥណ្ឌាជារដ្ឋព្រះពុទ្ធសាសនា",
+      "year_be": 1518,
+      "year_ce": 1975,
+      "description": "Sikkim បានក្លាយជាផ្នែកមួយនៃប្រទេសឥណ្ឌា ខណៈពេលដែលរក្សាបាននូវបេតិកភណ្ឌពុទ្ធសាសនាទីបេ និងកន្លែងធម្មយាត្រាដ៏សម្បូរបែបរបស់ខ្លួន។",
+      "category": "india_buddhism",
+      "order": 177
+    },
+    {
+      "id": "buddhism_india_vipassana_dhammagiri",
+      "title": "មណ្ឌលវិបស្សនាធុរៈ",
+      "year_be": 1519,
+      "year_ce": 1976,
+      "description": "S. N. ហ្គូអង្កា បានបង្កើតមជ្ឈមណ្ឌល ធម្មgiri វិបស្សនា នៅ Igatpuri, Maharashtra ដែលជាមជ្ឈមណ្ឌលសមាធិដ៏ធំបំផុតមួយរបស់ពិភពលោក។",
+      "category": "india_buddhism",
+      "order": 178
+    },
+    {
+      "id": "buddhism_india_triratna",
+      "title": "សហគមន៍ពុទ្ធសាសនា Triratna ក្នុងប្រទេសឥណ្ឌា",
+      "year_be": 1521,
+      "year_ce": 1978,
+      "description": "លំដាប់ព្រះពុទ្ធសាសនា Triratna បានពង្រីកនៅក្នុងប្រទេសឥណ្ឌា ដោយផ្តល់ជូននូវការបង្រៀនព្រះធម៌ និងការអភិវឌ្ឍន៍សហគមន៍ដែលបំផុសគំនិតដោយចក្ខុវិស័យរបស់ អំបេតការ ។",
+      "category": "india_buddhism",
+      "order": 179
+    },
+    {
+      "id": "mindfulness_mbsr",
+      "title": "ការកាត់បន្ថយភាពតានតឹងផ្អែកលើការគិត",
+      "year_be": 1522,
+      "year_ce": 1979,
+      "description": "វេជ្ជបណ្ឌិត Jon Kabat-Zinn បានបង្កើត MBSR នៅសាកលវិទ្យាល័យ Massachusetts ដោយនាំយកការគិតតាមបែបព្រះពុទ្ធសាសនាទៅជាការថែទាំសុខភាពទំនើប។",
+      "category": "modern_buddhism",
+      "order": 180
+    },
+    {
+      "id": "thai_forest_tradition_global",
+      "title": "ទំនៀមទម្លាប់ព្រៃឈើថៃរីករាលដាលពាសពេញពិភពលោក",
+      "year_be": 1523,
+      "year_ce": 1980,
+      "description": "Ajahn Chah និង​សិស្ស​បាន​បង្កើត​វត្ត​ព្រៃ​នៅ​ទូទាំង​ពិភពលោក ដោយ​បង្រៀន​ការ​ធ្វើ​សមាធិ​យ៉ាង​ម៉ឺងម៉ាត់​ដែល​មាន​ឫសគល់​តាម​ប្រពៃណី​ព្រៃ​ថៃ។",
+      "category": "revival",
+      "order": 181
+    },
+    {
+      "id": "buddhism_china_cultural_revival",
+      "title": "ការរស់ឡើងវិញព្រះពុទ្ធសាសនានៅក្រោយម៉ៅប្រទេសចិន",
+      "year_be": 1523,
+      "year_ce": 1980,
+      "description": "ប្រាសាទនានាបានបើកឡើងវិញ ហើយការអនុវត្តព្រះពុទ្ធសាសនាបានរស់ឡើងវិញនៅទូទាំងប្រទេសចិន បន្ទាប់ពីសម័យបដិវត្តន៍វប្បធម៌នៃការគាបសង្កត់។",
+      "category": "east_asia",
+      "order": 182
+    },
+    {
+      "id": "plum_village_founded",
+      "title": "វត្ត Plum Village ត្រូវបានបង្កើតឡើង",
+      "year_be": 1525,
+      "year_ce": 1982,
+      "description": "ធិចណាតហាន បានបង្កើតភូមិ Plum ក្នុងប្រទេសបារាំង ក្លាយជាវត្តព្រះពុទ្ធសាសនាដ៏ធំបំផុតនៅអឺរ៉ុប និងជាមជ្ឈមណ្ឌលនៃព្រះពុទ្ធសាសនាភ្ជាប់ពាក្យ។",
+      "category": "modern_buddhism",
+      "order": 183
+    },
+    {
+      "id": "buddhism_science_dialogue",
+      "title": "កិច្ចសន្ទនាពុទ្ធសាសនា និងវិទ្យាសាស្ត្រ",
+      "year_be": 1530,
+      "year_ce": 1987,
+      "description": "វិទ្យាស្ថានចិត្ត និងជីវិត បានចាប់ផ្តើមកិច្ចសន្ទនារវាងសម្តេចសង្ឃ ដាឡៃ ឡាម៉ា និងអ្នកវិទ្យាសាស្ត្រលោកខាងលិច ស្តីពីស្មារតី និងសុខុមាលភាព។",
+      "category": "modern_buddhism",
+      "order": 184
+    },
+    {
+      "id": "dalai_lama_nobel_peace",
+      "title": "សម្តេចសង្ឃ ដាឡៃ ឡាម៉ា បានទទួលរង្វាន់ណូបែលសន្តិភាព",
+      "year_be": 1532,
+      "year_ce": 1989,
+      "description": "សម្តេចសង្ឃ ដាឡៃ ឡាម៉ា ទី១៤ បានទទួលរង្វាន់ណូបែលសន្តិភាព សម្រាប់ការតស៊ូអហិង្សារបស់គាត់ សម្រាប់ការរំដោះទីបេ និងការលើកកម្ពស់សេចក្តីមេត្តា។",
+      "category": "modern_buddhism",
+      "order": 185
+    },
+    {
+      "id": "buddhism_environmental_movement",
+      "title": "ចលនាបរិស្ថានព្រះពុទ្ធសាសនា",
+      "year_be": 1533,
+      "year_ce": 1990,
+      "description": "មេដឹកនាំព្រះពុទ្ធសាសនានៅទូទាំងពិភពលោកបានចាប់ផ្តើមតស៊ូមតិសម្រាប់ការការពារអេកូឡូស៊ីដែលមានឫសគល់នៃការពឹងពាក់គ្នាទៅវិញទៅមក និងការអាណិតអាសូរសម្រាប់ជីវិតទាំងអស់។",
+      "category": "modern_buddhism",
+      "order": 186
+    },
+    {
+      "id": "buddhism_women_ordination",
+      "title": "ចលនាសកលសម្រាប់ពិធីបួសភិក្ខុនី",
+      "year_be": 1539,
+      "year_ce": 1996,
+      "description": "សហគមន៍ថេរវាទនៅប្រទេសស្រីលង្កា និងលើសពីនេះទៀតបានរស់ឡើងវិញនូវការតែងតាំងពេញលេញសម្រាប់ស្ត្រី ដោយបន្តនូវមរតករបស់ មហាបជាបតិ គោតមី ។",
+      "category": "sangha",
+      "order": 187
+    },
+    {
+      "id": "un_vesak_day",
+      "title": "ការទទួលស្គាល់របស់អង្គការសហប្រជាជាតិនៃវិសាខបូជា",
+      "year_be": 1542,
+      "year_ce": 1999,
+      "description": "អង្គការសហប្រជាជាតិបានទទួលស្គាល់ថា វិសាខបូជា ជាទិវាអន្តរជាតិនៃការប្រារព្ធពិធី គោរពដល់ការប្រសូត ត្រាស់ដឹង និងការបរិនិព្វានរបស់ព្រះពុទ្ធ។",
+      "category": "modern_buddhism",
+      "order": 188
+    },
+    {
+      "id": "buddhism_online_dharma",
+      "title": "ការបង្រៀនតាមបែបព្រះពុទ្ធសាសនាតាមអ៊ីនធឺណិត",
+      "year_be": 1543,
+      "year_ce": 2000,
+      "description": "វត្តអារាម លោកគ្រូ អ្នកគ្រូ និងអ្នកប្រាជ្ញនៅទូទាំងពិភពលោក បានចាប់ផ្តើមចែករំលែកព្រះធម៌ទេសនា ព្រះសូត្រ និងការណែនាំអំពីសមាធិ តាមរយៈអ៊ីនធឺណិត។",
+      "category": "modern_buddhism",
+      "order": 189
+    },
+    {
+      "id": "bamiyan_buddhas_destroyed",
+      "title": "ការបំផ្លាញព្រះពុទ្ធ Bamiyan",
+      "year_be": 1544,
+      "year_ce": 2001,
+      "description": "ពួកតាលីបង់បានបំផ្លាញរូបសំណាកព្រះពុទ្ធដ៏ធំនៅ Bamiyan ប្រទេសអាហ្វហ្គានីស្ថាន ធ្វើឱ្យពិភពលោកភ្ញាក់ផ្អើល និងបង្ហាញពីភាពផុយស្រួយនៃបេតិកភណ្ឌព្រះពុទ្ធសាសនា។",
+      "category": "modern_buddhism",
+      "order": 190
+    },
+    {
+      "id": "buddhism_india_diksha_ceremonies",
+      "title": "ពិធី​បូជា​ព្រះ​ពុទ្ធ​សាសនា​នៅ​ប្រទេស​ឥណ្ឌា",
+      "year_be": 1544,
+      "year_ce": 2001,
+      "description": "ពិធី diksha ទ្រង់ទ្រាយធំបានបន្តនៅទូទាំងប្រទេសឥណ្ឌា ខណៈដែលមនុស្សរាប់លាននាក់បានទទួលយកព្រះពុទ្ធសាសនាដែលត្រូវបានបំផុសគំនិតដោយមរតករបស់លោកបណ្ឌិត អំបេតការ ។",
+      "category": "india_buddhism",
+      "order": 191
+    },
+    {
+      "id": "buddha_birthplace_unesco",
+      "title": "លុម្បិនី បេតិកភណ្ឌពិភពលោករបស់យូណេស្កូ",
+      "year_be": 1545,
+      "year_ce": 2002,
+      "description": "ទីកន្លែងកំណើតរបស់ព្រះពុទ្ធនៅ លុម្បិនី ត្រូវបានចុះក្នុងបញ្ជីបេតិកភណ្ឌពិភពលោករបស់អង្គការយូណេស្កូ ដោយការពារគោលដៅធម្មយាត្រាដ៏សំខាន់មួយ។",
+      "category": "modern_buddhism",
+      "order": 192
+    },
+    {
+      "id": "buddhism_sri_lanka_civil_war",
+      "title": "កិច្ចខិតខំប្រឹងប្រែងសន្តិភាពព្រះពុទ្ធសាសនានៅប្រទេសស្រីលង្កា",
+      "year_be": 1545,
+      "year_ce": 2002,
+      "description": "ព្រះសង្ឃ និងពុទ្ធសាសនិកនៅស្រីលង្កា បានធ្វើការដើម្បីសន្តិភាព និងការផ្សះផ្សាជាតិក្នុងអំឡុងពេល និងក្រោយសង្គ្រាមស៊ីវិល។",
+      "category": "modern_buddhism",
+      "order": 193
+    },
+    {
+      "id": "buddhism_india_bodh_gaya_unesco",
+      "title": "ប្រាសាទ Mahabodhi បេតិកភណ្ឌ UNESCO",
+      "year_be": 1545,
+      "year_ce": 2002,
+      "description": "ប្រាសាទ Mahabodhi នៅ បដ្គយា ត្រូវ​បាន​ចុះ​ក្នុង​បញ្ជី​បេតិកភណ្ឌ​ពិភពលោក​របស់​អង្គការ UNESCO ដោយ​ទទួល​ស្គាល់​ពី​សារៈសំខាន់​ខាង​វិញ្ញាណ​ជា​សាកល​របស់​វា។",
+      "category": "india_buddhism",
+      "order": 194
+    },
+    {
+      "id": "buddhism_india_bodh_gaya_summit",
+      "title": "មហាសន្និបាតពុទ្ធសាសនបណ្ឌិត្យអន្តរជាតិ នៅពុទ្ធគយា",
+      "year_be": 1547,
+      "year_ce": 2004,
+      "description": "ប្រទេស​ឥណ្ឌា​បាន​ធ្វើ​ជា​ម្ចាស់​ផ្ទះ​សន្និសីទ​ពុទ្ធសាសនិក​អន្តរជាតិ​នៅ​ទីក្រុង​ បដ្គយា ដោយ​បញ្ជាក់​ឡើង​វិញ​នូវ​តួនាទី​របស់​គេហទំព័រ​ជា​មជ្ឈមណ្ឌល​ធម្មយាត្រា​សាកល​។",
+      "category": "india_buddhism",
+      "order": 195
+    },
+    {
+      "id": "buddhism_myanmar_saffron",
+      "title": "បដិវត្ត Saffron នៅមីយ៉ាន់ម៉ា",
+      "year_be": 1550,
+      "year_ce": 2007,
+      "description": "ព្រះសង្ឃ​ពុទ្ធសាសនា​បាន​ដឹកនាំ​ការ​តវ៉ា​ទ្រង់ទ្រាយ​ធំ​ក្នុង​ប្រទេស​មីយ៉ាន់ម៉ា​ដែល​ទាមទារ​លទ្ធិប្រជាធិបតេយ្យ​និង​សិទ្ធិ​មនុស្ស​ដោយ​បាន​បង្ហាញ​ពី​ការ​ចូលរួម​របស់​ព្រះពុទ្ធសាសនា​ក្នុង​សកម្មភាព។",
+      "category": "modern_buddhism",
+      "order": 196
+    },
+    {
+      "id": "buddhism_india_nagaloka",
+      "title": "មជ្ឈមណ្ឌលបណ្តុះបណ្តាលពុទ្ធសាសនា Nagaloka",
+      "year_be": 1550,
+      "year_ce": 2007,
+      "description": "មជ្ឈមណ្ឌល Nagaloka នៅ Nagpur ត្រូវបានបង្កើតឡើងដើម្បីបណ្តុះបណ្តាលពុទ្ធសាសនិកឥណ្ឌាជំនាន់ថ្មីក្នុងការធ្វើសមាធិ ការសិក្សា និងការផ្លាស់ប្តូរសង្គម។",
+      "category": "india_buddhism",
+      "order": 197
+    },
+    {
+      "id": "nalanda_university_revived",
+      "title": "សាកលវិទ្យាល័យ នាឡន្ត បានរស់ឡើងវិញ",
+      "year_be": 1557,
+      "year_ce": 2014,
+      "description": "ប្រទេសឥណ្ឌាបានបង្កើតសាកលវិទ្យាល័យ នាឡន្ត នៅ Bihar ឡើងវិញជាស្ថាប័នអន្តរជាតិ ដែលជានិមិត្តរូបនៃការរស់ឡើងវិញនៃបេតិកភណ្ឌអ្នកប្រាជ្ញព្រះពុទ្ធសាសនារបស់ប្រទេសឥណ្ឌា។",
+      "category": "india_buddhism",
+      "order": 198
+    },
+    {
+      "id": "buddhism_india_kushinagar_development",
+      "title": "ការអភិវឌ្ឍសៀគ្វីពុទ្ធសាសនា កុសិនារ",
+      "year_be": 1559,
+      "year_ce": 2016,
+      "description": "ប្រទេសឥណ្ឌាបានបង្កើត កុសិនារ ជាកន្លែងដែលព្រះពុទ្ធបានចូលបរិនិព្វាន ជាកន្លែងធម្មយាត្រាដ៏សំខាន់ និងជាគោលដៅបេតិកភណ្ឌ។",
+      "category": "india_buddhism",
+      "order": 199
+    },
+    {
+      "id": "buddhism_india_modern_pilgrimage",
+      "title": "ធម្មយាត្រាពុទ្ធសាសនានៅប្រទេសឥណ្ឌាទំនើប",
+      "year_be": 1559,
+      "year_ce": 2016,
+      "description": "ប្រទេសឥណ្ឌាបានចាប់ផ្តើមគំនិតផ្តួចផ្តើមសៀគ្វីពុទ្ធសាសនាតភ្ជាប់ លុម្បិនី, បដ្គយា, សារណាថ, និង កុសិនារ សម្រាប់ធម្មយាត្រាអន្តរជាតិ។",
+      "category": "india_buddhism",
+      "order": 200
+    },
+    {
+      "id": "covid_buddhist_online_practice",
+      "title": "សហគមន៍ពុទ្ធសាសនិកសម្របខ្លួនក្នុងអំឡុងពេលកូវីដ-១៩",
+      "year_be": 1563,
+      "year_ce": 2020,
+      "description": "ព្រះវិហារបរិសុទ្ធ និងមជ្ឈមណ្ឌលសមាធិនៅទូទាំងពិភពលោកបានផ្លាស់ប្តូរទៅការបង្រៀនតាមអ៊ីនធឺណិត និងការជួបជុំព្រះសង្ឃនិម្មិតក្នុងអំឡុងពេលជំងឺរាតត្បាតសកល។",
+      "category": "modern_buddhism",
+      "order": 201
+    },
+    {
+      "id": "global_buddhist_summit",
+      "title": "កិច្ចប្រជុំកំពូលពុទ្ធសាសនាសកល",
+      "year_be": 1566,
+      "year_ce": 2023,
+      "description": "មេដឹកនាំ និងអ្នកប្រាជ្ញមកពីប្រពៃណីព្រះពុទ្ធសាសនាទូទាំងពិភពលោកបានជួបប្រជុំគ្នានៅទីក្រុងញូវដេលី ដើម្បីពិភាក្សាអំពីសន្តិភាព ក្តីមេត្តា និងការទទួលខុសត្រូវរួមគ្នា។",
+      "category": "modern_buddhism",
+      "order": 202
+    }
+  ]
+}

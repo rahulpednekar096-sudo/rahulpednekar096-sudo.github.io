@@ -1,0 +1,995 @@
+{
+  "version": 1,
+  "quotes": [
+    {
+      "id": "q001",
+      "text": "Trong đời này, hận thù không bao giờ được dập tắt bằng hận thù. Chỉ bằng không-hận thù mà hận thù mới được dập tắt. Đây là luật vĩnh cửu.",
+      "source": "Dhammapada 5",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q002",
+      "text": "Tất cả các pháp hữu vi đều vô thường. Khi người với trí tuệ thấy điều này, họ quay lưng lại với khổ đau.",
+      "source": "Dhammapada 277",
+      "language": "vi",
+      "tags": [
+        "impermanence",
+        "daily"
+      ]
+    },
+    {
+      "id": "q003",
+      "text": "Chính ngươi phải tinh tấn. Các đức Phật chỉ chỉ đường.",
+      "source": "Dhammapada 276",
+      "language": "vi",
+      "tags": [
+        "effort",
+        "daily"
+      ]
+    },
+    {
+      "id": "q004",
+      "text": "Như tảng đá vững chắc không bị lay chuyển bởi gió, người trí không bị dao động bởi khen ngợi hay chỉ trích.",
+      "source": "Dhammapada 81",
+      "language": "vi",
+      "tags": [
+        "equanimity",
+        "daily"
+      ]
+    },
+    {
+      "id": "q005",
+      "text": "Sức khỏe là món quà lớn nhất, an lạc là của cải lớn nhất, trung thành là mối quan hệ tốt nhất.",
+      "source": "Dhammapada 204",
+      "language": "vi",
+      "tags": [
+        "contentment",
+        "daily"
+      ]
+    },
+    {
+      "id": "q006",
+      "text": "Hơn ngàn lời nói rỗng tuếch, một lời mang lại bình an còn hơn.",
+      "source": "Dhammapada 100",
+      "language": "vi",
+      "tags": [
+        "speech",
+        "daily"
+      ]
+    },
+    {
+      "id": "q007",
+      "text": "Hãy chế ngự giận dữ bằng không-giận. Chế ngự điều ác bằng thiện. Chế ngự keo kiệt bằng bố thí. Chế ngự dối trá bằng chân lý.",
+      "source": "Dhammapada 223",
+      "language": "vi",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q008",
+      "text": "Tâm là tiền đề của mọi hành động. Mọi việc làm đều do tâm dẫn dắt, do tâm tạo thành.",
+      "source": "Dhammapada 1",
+      "language": "vi",
+      "tags": [
+        "mind",
+        "daily"
+      ]
+    },
+    {
+      "id": "q009",
+      "text": "Như người mẹ bảo vệ đứa con duy nhất, dù phải mạng hiểm cũng không tiếc, hãy nuôi dưỡng tình thương vô lượng đối với mọi chúng sinh.",
+      "source": "Metta Sutta",
+      "language": "vi",
+      "tags": [
+        "loving-kindness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q010",
+      "text": "Đừng chấp trước vào quá khứ, đừng mơ mộng về tương lai, hãy tập trung tâm ý vào khoảnh khắc hiện tại.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "mindfulness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q011",
+      "text": "Giữ chấp giận dữ giống như nắm than hồng nóng với ý định ném vào người khác; chính mình là người bị bỏng.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "anger",
+        "daily"
+      ]
+    },
+    {
+      "id": "q012",
+      "text": "Không ai cứu chúng ta ngoài chính mình. Không ai có thể và không ai được phép. Chính ta phải tự bước trên con đường.",
+      "source": "Dhammapada 165",
+      "language": "vi",
+      "tags": [
+        "effort",
+        "daily"
+      ]
+    },
+    {
+      "id": "q013",
+      "text": "Trên bầu trời, không có sự phân biệt đông tây; con người tạo ra sự phân biệt trong tâm mình rồi tin rằng chúng là thật.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q014",
+      "text": "Ba điều không thể che giấu lâu: mặt trời, mặt trăng, và chân lý.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "truth",
+        "daily"
+      ]
+    },
+    {
+      "id": "q015",
+      "text": "Bình an đến từ bên trong. Đừng tìm kiếm nó ở bên ngoài.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "peace",
+        "daily"
+      ]
+    },
+    {
+      "id": "q016",
+      "text": "Gốc rễ của khổ đau là chấp trước.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "attachment",
+        "daily"
+      ]
+    },
+    {
+      "id": "q017",
+      "text": "Ngươi sẽ không bị trừng phạt vì giận dữ; ngươi sẽ bị trừng phạt bởi chính giận dữ của mình.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "anger",
+        "daily"
+      ]
+    },
+    {
+      "id": "q018",
+      "text": "Ngàn ngọn nến có thể được thắp từ một ngọn nến, và tuổi thọ của ngọn nến ấy không bị rút ngắn. Hạnh phúc không bao giờ giảm đi khi được chia sẻ.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "compassion",
+        "daily"
+      ]
+    },
+    {
+      "id": "q019",
+      "text": "Nếu ngươi thắp đèn cho người khác, con đường của ngươi cũng sẽ được soi sáng.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "compassion",
+        "daily"
+      ]
+    },
+    {
+      "id": "q020",
+      "text": "Lưỡi như dao sắc giết người mà không đổ máu.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "speech",
+        "daily"
+      ]
+    },
+    {
+      "id": "q021",
+      "text": "Bình nước đầy từng giọt một.",
+      "source": "Dhammapada 122",
+      "language": "vi",
+      "tags": [
+        "patience",
+        "daily"
+      ]
+    },
+    {
+      "id": "q022",
+      "text": "Như tảng đá vững chắc không bị lay chuyển bởi gió, người trí không bị dao động bởi khen ngợi và chỉ trích.",
+      "source": "Dhammapada 81",
+      "language": "vi",
+      "tags": [
+        "equanimity",
+        "daily"
+      ]
+    },
+    {
+      "id": "q023",
+      "text": "Bất cứ điều gì không phải của ngươi, hãy buông bỏ. Sự buông bỏ ấy sẽ mang lại hạnh phúc lâu dài cho ngươi.",
+      "source": "Majjhima Nikaya",
+      "language": "vi",
+      "tags": [
+        "letting-go",
+        "daily"
+      ]
+    },
+    {
+      "id": "q024",
+      "text": "Hãy tỏa ra tình thương vô lượng khắp cả thế giới.",
+      "source": "Metta Sutta",
+      "language": "vi",
+      "tags": [
+        "loving-kindness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q025",
+      "text": "Giữ gìn thân thể khỏe mạnh là bổn phận, nếu không ta sẽ không thể giữ tâm vững và trong sáng.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "health",
+        "daily"
+      ]
+    },
+    {
+      "id": "q026",
+      "text": "Không có con đường dẫn đến hạnh phúc. Hạnh phúc chính là con đường.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "happiness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q027",
+      "text": "Con đường không ở trên trời. Con đường ở trong tâm.",
+      "source": "Dhammapada 254",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q028",
+      "text": "Mỗi buổi sáng ta được tái sinh. Điều ta làm hôm nay mới là quan trọng nhất.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "present-moment",
+        "daily"
+      ]
+    },
+    {
+      "id": "q029",
+      "text": "Nếu ta có thể thấy rõ phép mầu của một bông hoa, cả cuộc đời ta sẽ thay đổi.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "mindfulness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q030",
+      "text": "Không gì là vĩnh cửu. Mọi thứ đều biến đổi. Sự tồn tại luôn đang trở thành.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "impermanence",
+        "daily"
+      ]
+    },
+    {
+      "id": "q031",
+      "text": "Tâm được điều phục mang lại hạnh phúc.",
+      "source": "Dhammapada 35",
+      "language": "vi",
+      "tags": [
+        "mind",
+        "daily"
+      ]
+    },
+    {
+      "id": "q032",
+      "text": "Hãy trỗi dậy! Ngồi thẳng! Hãy tinh tấn tu tập để đạt bình an.",
+      "source": "Dhammapada 144",
+      "language": "vi",
+      "tags": [
+        "effort",
+        "daily"
+      ]
+    },
+    {
+      "id": "q033",
+      "text": "Người trí được điều phục về thân, về lời nói, và về tâm. Họ thật sự được điều phục hoàn toàn.",
+      "source": "Dhammapada 234",
+      "language": "vi",
+      "tags": [
+        "self-control",
+        "daily"
+      ]
+    },
+    {
+      "id": "q034",
+      "text": "Đừng để ai tìm lỗi người khác; đừng để ai thấy sự thiếu sót và sai lầm của người khác. Hãy để mỗi người thấy việc làm của chính mình, đã làm và chưa làm.",
+      "source": "Dhammapada 50",
+      "language": "vi",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q035",
+      "text": "Như mưa xuyên qua mái nhà lợp kém, dục vọng sẽ xuyên qua tâm không suy xét.",
+      "source": "Dhammapada 13",
+      "language": "vi",
+      "tags": [
+        "mind",
+        "daily"
+      ]
+    },
+    {
+      "id": "q036",
+      "text": "Như mưa không xuyên qua mái nhà lợp kỹ, dục vọng không xuyên qua tâm suy xét kỹ lưỡng.",
+      "source": "Dhammapada 14",
+      "language": "vi",
+      "tags": [
+        "mind",
+        "daily"
+      ]
+    },
+    {
+      "id": "q037",
+      "text": "Người mà trong đó không còn tham ái và khát vọng tiếp tục tái sinh; làm sao ngươi có thể theo dấu vị Giác Ngộ ấy, vô dấu vết và phạm vi vô hạn?",
+      "source": "Dhammapada 180",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q038",
+      "text": "Tốt hơn sống một ngày thấy được sự sinh khởi và diệt mất của các pháp, hơn sống trăm năm mà chưa từng thấy sự sinh khởi và diệt mất của các pháp.",
+      "source": "Dhammapada 113",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q039",
+      "text": "Nếu ngươi biết những gì ta biết về sức mạnh của bố thí, ngươi sẽ không để một bữa ăn nào trôi qua mà không chia sẻ theo cách nào đó.",
+      "source": "Buddha",
+      "language": "vi",
+      "tags": [
+        "generosity",
+        "daily"
+      ]
+    },
+    {
+      "id": "q040",
+      "text": "Hãy cho đi, dù ngươi chỉ có một chút.",
+      "source": "Dhammapada 224",
+      "language": "vi",
+      "tags": [
+        "generosity",
+        "daily"
+      ]
+    },
+    {
+      "id": "q041",
+      "text": "Nếu người làm điều thiện, hãy để họ làm đi lần nữa. Hãy để họ tìm thấy niềm vui trong đó, vì tích lũy thiện là điều an lạc.",
+      "source": "Dhammapada 118",
+      "language": "vi",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q042",
+      "text": "Nếu người làm điều ác, đừng để họ làm đi lần nữa. Đừng để họ tìm thấy niềm vui trong đó, vì tích lũy ác là điều đau khổ.",
+      "source": "Dhammapada 117",
+      "language": "vi",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q043",
+      "text": "Như bông hoa đẹp đầy màu sắc nhưng không hương thơm, lời nói hay là vô ích ở người không hành động phù hợp với lời nói.",
+      "source": "Dhammapada 51",
+      "language": "vi",
+      "tags": [
+        "action",
+        "daily"
+      ]
+    },
+    {
+      "id": "q044",
+      "text": "Như bông hoa đẹp, đầy màu sắc và cũng thơm ngát, lời nói hay và có ích là của người hành động tương ứng.",
+      "source": "Dhammapada 52",
+      "language": "vi",
+      "tags": [
+        "action",
+        "daily"
+      ]
+    },
+    {
+      "id": "q045",
+      "text": "Hương hoa theo gió bay. Hương đức hạnh bay ngược gió. Người có đức hạnh lan tỏa khắp mọi phương.",
+      "source": "Dhammapada 54",
+      "language": "vi",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q046",
+      "text": "Như ong lấy mật không làm hại hay làm mất màu sắc và hương thơm của hoa, người trí cũng đi qua thế gian như vậy.",
+      "source": "Dhammapada 49",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q047",
+      "text": "Không phải bằng cách phán xét tùy tiện mà người trở nên công bằng; người trí là người điều tra cả điều đúng và sai.",
+      "source": "Dhammapada 256",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q048",
+      "text": "Kẻ không trỗi dậy khi đến giờ, dù còn trẻ và khỏe mạnh mà đầy lười biếng, ý chí và tư tưởng yếu đuối — người lười biếng ấy sẽ không bao giờ tìm thấy con đường đến trí tuệ.",
+      "source": "Dhammapada 280",
+      "language": "vi",
+      "tags": [
+        "effort",
+        "daily"
+      ]
+    },
+    {
+      "id": "q049",
+      "text": "Giác ngộ là con đường bất tử; không giác ngộ là con đường chết. Người giác ngộ không chết; người không giác ngộ như đã chết.",
+      "source": "Dhammapada 21",
+      "language": "vi",
+      "tags": [
+        "mindfulness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q050",
+      "text": "Những ai luôn cảnh giác, ngày đêm tinh tấn tu tập, và luôn hướng tâm đến Niết-bàn, các phiền não của họ sẽ tiêu tan.",
+      "source": "Dhammapada 226",
+      "language": "vi",
+      "tags": [
+        "effort",
+        "daily"
+      ]
+    },
+    {
+      "id": "q051",
+      "text": "Không có lửa nào như dục, không có sự nắm giữ nào như hận, không có lưới nào như si mê, không có dòng sông nào như tham.",
+      "source": "Dhammapada 251",
+      "language": "vi",
+      "tags": [
+        "craving",
+        "daily"
+      ]
+    },
+    {
+      "id": "q052",
+      "text": "Dễ thấy lỗi của người khác, nhưng lỗi của mình khó thấy. Như đãy gạo người ta sàng lỗi người khác, nhưng che giấu lỗi của mình.",
+      "source": "Dhammapada 252",
+      "language": "vi",
+      "tags": [
+        "self-reflection",
+        "daily"
+      ]
+    },
+    {
+      "id": "q053",
+      "text": "Lỗi của người khác dễ thấy hơn lỗi của mình; lỗi của người khác dễ thấy, vì chúng được sàng lọc như trấu, nhưng lỗi của mình khó thấy.",
+      "source": "Dhammapada 253",
+      "language": "vi",
+      "tags": [
+        "self-reflection",
+        "daily"
+      ]
+    },
+    {
+      "id": "q054",
+      "text": "Nếu người nói hoặc hành động với tâm ác, khổ đau theo sau họ, như bánh xe theo chân con bò kéo xe.",
+      "source": "Dhammapada 1",
+      "language": "vi",
+      "tags": [
+        "karma",
+        "daily"
+      ]
+    },
+    {
+      "id": "q055",
+      "text": "Nếu người nói hoặc hành động với tâm trong sạch, hạnh phúc theo sau họ, như bóng không bao giờ rời họ.",
+      "source": "Dhammapada 2",
+      "language": "vi",
+      "tags": [
+        "karma",
+        "daily"
+      ]
+    },
+    {
+      "id": "q056",
+      "text": "Hắn mắng ta, hắn đánh ta, hắn thắng ta, hắn cướp ta. Những ai ấp ủ những tư tưởng ấy không làm dịu hận thù.",
+      "source": "Dhammapada 3",
+      "language": "vi",
+      "tags": [
+        "forgiveness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q057",
+      "text": "Hắn mắng ta, hắn đánh ta, hắn thắng ta, hắn cướp ta. Những ai không ấp ủ những tư tưởng ấy làm dịu hận thù.",
+      "source": "Dhammapada 4",
+      "language": "vi",
+      "tags": [
+        "forgiveness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q058",
+      "text": "Vì hận thù không bao giờ chấm dứt bằng hận thù; hận thù chấm dứt bằng tình thương. Đây là luật bất biến.",
+      "source": "Dhammapada 5",
+      "language": "vi",
+      "tags": [
+        "loving-kindness",
+        "daily"
+      ]
+    },
+    {
+      "id": "q059",
+      "text": "Nhiều người không biết rằng ta ở đời này để sống hòa hợp. Những ai biết và những ai theo đuổi điều đó, cuộc cãi vã của họ sớm chấm dứt.",
+      "source": "Dhammapada 6",
+      "language": "vi",
+      "tags": [
+        "harmony",
+        "daily"
+      ]
+    },
+    {
+      "id": "q060",
+      "text": "Như tảng đá vững chắc không bị lay chuyển bởi gió, người trí không lung lay giữa chỉ trích và khen ngợi.",
+      "source": "Dhammapada 81",
+      "language": "vi",
+      "tags": [
+        "equanimity",
+        "daily"
+      ]
+    },
+    {
+      "id": "q061",
+      "text": "Như bông hoa đẹp, sáng và thơm, nhưng vô quả, lời nói đẹp mà rỗng tuếch là của người không hành động tương ứng.",
+      "source": "Dhammapada 51",
+      "language": "vi",
+      "tags": [
+        "action",
+        "daily"
+      ]
+    },
+    {
+      "id": "q062",
+      "text": "Người trí, bằng sự cảnh giác chế ngự sự vô ý thức, như người được giải thoát khỏi sầu muộn, và bước lên cung điện trí tuệ.",
+      "source": "Dhammapada 36",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q063",
+      "text": "Người trí, bằng sự cảnh giác chế ngự sự vô ý thức, như người được giải thoát khỏi sầu muộn, và bước lên cung điện trí tuệ.",
+      "source": "Dhammapada 37",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q064",
+      "text": "Khi người trí đuổi tánh ích kỷ bằng trí tuệ, như đuổi điều ô uế nhất, rồi được giải thoát khỏi sầu muộn, họ bước lên cung điện trí tuệ.",
+      "source": "Dhammapada 39",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q065",
+      "text": "Kẻ ngu biết mình ngu ít nhất cũng là người trí đến mức đó. Nhưng kẻ ngu tưởng mình trí, thật sự được gọi là kẻ ngu.",
+      "source": "Dhammapada 63",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q066",
+      "text": "Dù tháng này qua tháng khác trong trăm năm người dâng lễ hàng ngàn lần, nhưng chỉ trong một khoảnh khắc lễ bái những người tâm hoàn hảo, sự lễ bái ấy quả thật tốt hơn.",
+      "source": "Dhammapada 106",
+      "language": "vi",
+      "tags": [
+        "devotion",
+        "daily"
+      ]
+    },
+    {
+      "id": "q067",
+      "text": "Nếu một người chiến thắng trong trận chiến ngàn lần ngàn người, và người khác chiến thắng chính mình, người ấy là kẻ chiến thắng lớn nhất.",
+      "source": "Dhammapada 103",
+      "language": "vi",
+      "tags": [
+        "self-mastery",
+        "daily"
+      ]
+    },
+    {
+      "id": "q068",
+      "text": "Chiến thắng chính mình tốt hơn tất cả mọi người khác; dù là thần, Gandharva, hay Ma-vương với Phạm-thiên, cũng không thể biến thành thất bại chiến thắng của người đã chinh phục chính mình.",
+      "source": "Dhammapada 104",
+      "language": "vi",
+      "tags": [
+        "self-mastery",
+        "daily"
+      ]
+    },
+    {
+      "id": "q069",
+      "text": "Tốt hơn ngàn câu kệ mà nghe chẳng được lợi ích gì, là một câu kệ mà nghe xong người được an tịnh.",
+      "source": "Dhammapada 101",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q070",
+      "text": "Tốt hơn trăm năm sống lười biếng và không hoạt động, là một ngày sống tinh tấn và năng động.",
+      "source": "Dhammapada 112",
+      "language": "vi",
+      "tags": [
+        "effort",
+        "daily"
+      ]
+    },
+    {
+      "id": "q071",
+      "text": "Nếu bằng cách hy sinh một niềm vui hạn hẹp mà thấy được niềm vui lớn lao, hãy để người trí hy sinh niềm vui hạn hẹp, nhìn về niềm vui lớn lao.",
+      "source": "Dhammapada 290",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q072",
+      "text": "Đừng để ai tìm lỗi người khác; đừng để ai thấy sai lầm và thiếu sót của người khác. Hãy để mỗi người thấy việc làm của chính mình, đã làm và chưa làm.",
+      "source": "Dhammapada 50",
+      "language": "vi",
+      "tags": [
+        "self-reflection",
+        "daily"
+      ]
+    },
+    {
+      "id": "q073",
+      "text": "Như bông hoa đẹp, sáng và thơm, nhưng vô quả, lời nói đẹp mà rỗng tuếch là của người không hành động tương ứng.",
+      "source": "Dhammapada 51",
+      "language": "vi",
+      "tags": [
+        "action",
+        "daily"
+      ]
+    },
+    {
+      "id": "q074",
+      "text": "Như từ đống hoa có thể kết thành nhiều vòng hoa, cũng vậy người sinh ra trong cõi người nên làm nhiều việc thiện.",
+      "source": "Dhammapada 53",
+      "language": "vi",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q075",
+      "text": "Không phải sự ngược đời của người khác, không phải lỗi làm hay lỗi bỏ sót của họ, mà chính sai lầm và sự sơ suất của mình mới nên xem xét.",
+      "source": "Dhammapada 50",
+      "language": "vi",
+      "tags": [
+        "self-reflection",
+        "daily"
+      ]
+    },
+    {
+      "id": "q076",
+      "text": "Hương hoa không bay ngược gió, nhưng mùi của người thiện bay cả ngược gió; người thiện lan tỏa khắp mọi nơi.",
+      "source": "Dhammapada 54",
+      "language": "vi",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q077",
+      "text": "Trong tất cả các hương thơm — đàn hương, tagara, sen xanh, hay nhài — hương đức hạnh ngọt ngào nhất.",
+      "source": "Dhammapada 55",
+      "language": "vi",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q078",
+      "text": "Hương tagara và đàn hương mờ nhạt, nhưng hương của người có đức hạnh ngọt ngào nhất; nó lan tỏa đến cả cõi thiên.",
+      "source": "Dhammapada 56",
+      "language": "vi",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q079",
+      "text": "Người thiện tỏa sáng từ xa, như núi tuyết; người ác không thấy, như mũi tên bắn trong đêm.",
+      "source": "Dhammapada 304",
+      "language": "vi",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q080",
+      "text": "Kẻ ngồi một mình, nghỉ một mình, đi một mình, kiên quyết, đã an tịnh trong chính mình, sẽ tìm thấy niềm vui trong rừng.",
+      "source": "Dhammapada 305",
+      "language": "vi",
+      "tags": [
+        "solitude",
+        "daily"
+      ]
+    },
+    {
+      "id": "q081",
+      "text": "Vui thích trong thiền định, vui thích trong cô tịch, vui thích trong Pháp, các đệ tử của bậc Giác Ngộ vui thích.",
+      "source": "Dhammapada 373",
+      "language": "vi",
+      "tags": [
+        "meditation",
+        "daily"
+      ]
+    },
+    {
+      "id": "q082",
+      "text": "Người đã chinh phục chính mình là anh hùng lớn hơn nhiều so với kẻ đã đánh bại ngàn lần ngàn người.",
+      "source": "Dhammapada 103",
+      "language": "vi",
+      "tags": [
+        "self-mastery",
+        "daily"
+      ]
+    },
+    {
+      "id": "q083",
+      "text": "Hãy tu tập làm điều thiện, điều luôn ở bên ngươi. Không gì tốt bằng thực hành Pháp.",
+      "source": "Dhammapada 289",
+      "language": "vi",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q084",
+      "text": "Người trí được điều phục về thân, lời nói, và tâm, người an tịnh, đã từ bỏ mồi câu của thế gian, được gọi là bậc hiền nhân.",
+      "source": "Dhammapada 391",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q085",
+      "text": "Kẻ không chấp trước gì đối với thân và tâm, không than khóc vì những gì mình không có — người ấy thật sự được gọi là tỳ-kheo.",
+      "source": "Dhammapada 367",
+      "language": "vi",
+      "tags": [
+        "non-attachment",
+        "daily"
+      ]
+    },
+    {
+      "id": "q086",
+      "text": "Kẻ sống trong Pháp, vui thích trong Pháp, suy ngẫm Pháp, và ghi nhớ Pháp tốt đẹp — người ấy không sa ngã khỏi Pháp cao quý.",
+      "source": "Dhammapada 364",
+      "language": "vi",
+      "tags": [
+        "dhamma",
+        "daily"
+      ]
+    },
+    {
+      "id": "q087",
+      "text": "Hương hoa theo gió bay. Hương đức hạnh bay ngược gió. Người có đức hạnh lan tỏa khắp mọi phương.",
+      "source": "Dhammapada 54",
+      "language": "vi",
+      "tags": [
+        "virtue",
+        "daily"
+      ]
+    },
+    {
+      "id": "q088",
+      "text": "Như dây leo nhài rụng hoa héo, cũng vậy hãy buông bỏ dục vọng và hận thù.",
+      "source": "Dhammapada 377",
+      "language": "vi",
+      "tags": [
+        "letting-go",
+        "daily"
+      ]
+    },
+    {
+      "id": "q089",
+      "text": "Tâm an tịnh, lời nói an tịnh, hành động an tịnh, người biết đúng được giải thoát hoàn toàn, hoàn toàn bình an và cân bằng.",
+      "source": "Dhammapada 378",
+      "language": "vi",
+      "tags": [
+        "peace",
+        "daily"
+      ]
+    },
+    {
+      "id": "q090",
+      "text": "Người không mù quáng tin, biết pháp vô vi, đã cắt đứt mọi ràng buộc, loại bỏ mọi cám dỗ, từ bỏ mọi khát vọng — người ấy là người vĩ đại nhất.",
+      "source": "Dhammapada 97",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q091",
+      "text": "Trong làng hay trong rừng, trên đất liền hay trên biển, bất cứ nơi nào có người đáng kính cư trú, nơi ấy đáng yêu thích.",
+      "source": "Dhammapada 98",
+      "language": "vi",
+      "tags": [
+        "community",
+        "daily"
+      ]
+    },
+    {
+      "id": "q092",
+      "text": "Lá rừng thật dễ chịu; rừng cũng vậy. Nhưng rừng không mang lại niềm vui cho những ai chưa nếm trải niềm an lạc của Pháp.",
+      "source": "Dhammapada 99",
+      "language": "vi",
+      "tags": [
+        "dhamma",
+        "daily"
+      ]
+    },
+    {
+      "id": "q093",
+      "text": "Tốt hơn ngàn câu kệ rỗng tuếch, một câu kệ mang lại bình an còn hơn.",
+      "source": "Dhammapada 100",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q094",
+      "text": "Dù sống trăm năm vô đạo đức và không tự chủ, nhưng tốt hơn thật sự là sống một ngày có đạo đức và thiền định.",
+      "source": "Dhammapada 110",
+      "language": "vi",
+      "tags": [
+        "meditation",
+        "daily"
+      ]
+    },
+    {
+      "id": "q095",
+      "text": "Dù sống trăm năm mà không thấy sự sinh khởi và diệt mất của các pháp, nhưng tốt hơn thật sự là sống một ngày thấy sự sinh khởi và diệt mất của các pháp.",
+      "source": "Dhammapada 113",
+      "language": "vi",
+      "tags": [
+        "impermanence",
+        "daily"
+      ]
+    },
+    {
+      "id": "q096",
+      "text": "Nếu bằng cách từ bỏ một hạnh phúc nhỏ hơn mà có thể đạt được hạnh phúc lớn hơn, hãy để người trí từ bỏ hạnh phúc nhỏ hơn, nghĩ đến hạnh phúc lớn hơn.",
+      "source": "Dhammapada 290",
+      "language": "vi",
+      "tags": [
+        "wisdom",
+        "daily"
+      ]
+    },
+    {
+      "id": "q097",
+      "text": "Đừng vì ai dù lớn lao mà bỏ bê phúc lợi của chính mình. Hiểu rõ phúc lợi của mình, hãy hướng tâm đến điều thiện.",
+      "source": "Dhammapada 166",
+      "language": "vi",
+      "tags": [
+        "self-care",
+        "daily"
+      ]
+    },
+    {
+      "id": "q098",
+      "text": "Đừng để ai tìm lỗi người khác; đừng để ai thấy sự thiếu sót và sai lầm của người khác. Hãy để mỗi người thấy việc làm của chính mình, đã làm và chưa làm.",
+      "source": "Dhammapada 50",
+      "language": "vi",
+      "tags": [
+        "self-reflection",
+        "daily"
+      ]
+    },
+    {
+      "id": "q099",
+      "text": "Tất cả đều run sợ trước bạo lực; tất cả đều sợ chết. Đặt mình vào vị trí người khác, không nên giết hay để người khác giết.",
+      "source": "Dhammapada 129",
+      "language": "vi",
+      "tags": [
+        "compassion",
+        "daily"
+      ]
+    }
+  ]
+}

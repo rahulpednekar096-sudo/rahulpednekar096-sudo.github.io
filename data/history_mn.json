@@ -1,0 +1,1823 @@
+{
+  "version": 2,
+  "events": [
+    {
+      "id": "buddha_birth",
+      "title": "Буддагийн төрөлт",
+      "year_be": -623,
+      "year_ce": -563,
+      "description": "Сиддхартха Гаутама Лумбинид (одоогийн Непал) Шакья овгийн хүүхэд хаан хэмээн төрсөн.",
+      "category": "life_of_buddha",
+      "order": 1
+    },
+    {
+      "id": "buddha_childhood_name",
+      "title": "Сиддхартха хүүхэд нас",
+      "year_be": -613,
+      "year_ce": -553,
+      "description": "Залуу хаан хүүг Сиддхартха гэж нэрлэсэн — зорилгоо биелүүлсэн гэсэн утгатай. Капилавасту хотод тансаг амьдарч өссөн.",
+      "category": "life_of_buddha",
+      "order": 2
+    },
+    {
+      "id": "great_renunciation",
+      "title": "Их татгалзал",
+      "year_be": -594,
+      "year_ce": -534,
+      "description": "29 настай Сиддхартха хаан ордон, гэр бүл, хаан шагналыг орхин зовлонгоос ангижрахыг хайсан.",
+      "category": "life_of_buddha",
+      "order": 3
+    },
+    {
+      "id": "buddha_marriage_yasodhara",
+      "title": "Гүнж Яшодхаратай гэрлэлт",
+      "year_be": -593,
+      "year_ce": -533,
+      "description": "16 настай Сиддхартха Суппабудда хааны охин Яшодхаратай гэрлэж хаан хүүхдийн амьдралыг өнгөрүүлсэн.",
+      "category": "life_of_buddha",
+      "order": 4
+    },
+    {
+      "id": "study_with_alara_kalama",
+      "title": "Алара Каламатай суралцах",
+      "year_be": -593,
+      "year_ce": -533,
+      "description": "Сиддхартха тахир дэглэмт Алара Каламын хажуугаар бясалгал сурч 'юу ч байхгүй' орчлонд нэвтэрсэн.",
+      "category": "life_of_buddha",
+      "order": 5
+    },
+    {
+      "id": "birth_of_rahula",
+      "title": "Рахулын төрөлт",
+      "year_be": -592,
+      "year_ce": -532,
+      "description": "Сиддхартха, Яшодхара хоёрын Рахула нэртэй хүү төрсөн — их татгалзлын өмнөхөн.",
+      "category": "life_of_buddha",
+      "order": 6
+    },
+    {
+      "id": "study_with_udaka_ramaputta",
+      "title": "Уддака Рамапуттатай суралцах",
+      "year_be": -592,
+      "year_ce": -532,
+      "description": "Дараа нь Уддака Рамапуттатай сурч 'ухаалаг биш, ухаалаг биш биш' орчлонд хүрсэн.",
+      "category": "life_of_buddha",
+      "order": 7
+    },
+    {
+      "id": "four_great_sights",
+      "title": "Дөрвөн их үзэгдэл",
+      "year_be": -591,
+      "year_ce": -531,
+      "description": "Хөгшин хүн, өвчтөн, үхсэн бие, тахир дэглэмт — эдгээр нь зовлонгийн бодит байдлыг ухамсарлуулсан.",
+      "category": "life_of_buddha",
+      "order": 8
+    },
+    {
+      "id": "six_years_austerities",
+      "title": "Зургаан жилийн арилж бясалгал",
+      "year_be": -591,
+      "year_ce": -531,
+      "description": "Урувелад таван нөхөртэйгээ хэт хатуу арилж бясалгал хийж, өөрийгөө өлсгөж байгаад хатуу дэглэмийг орхисон.",
+      "category": "life_of_buddha",
+      "order": 9
+    },
+    {
+      "id": "sujata_offering",
+      "title": "Сужатагийн сүүтэй будаа өргөл",
+      "year_be": -589,
+      "year_ce": -529,
+      "description": "Сужата нэртэй эмэгтэй тахир дэглэмтэд сүүтэй будаа өргөж, гэгээрэлийн өмнөхөн хүчээ сэргээсэн.",
+      "category": "life_of_buddha",
+      "order": 10
+    },
+    {
+      "id": "buddha_enlightenment",
+      "title": "Гэгээрэл (Бодхи)",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "35 настай Сиддхартха Бодх Гаяагийн Бодхи модны доор гэгээрч Будда болсон.",
+      "category": "life_of_buddha",
+      "order": 11
+    },
+    {
+      "id": "mara_confrontation",
+      "title": "Марагийн сорилт",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "Гэгээрлийн шөнө Будда Мара — хуурмагийн эзэн — ийн сорилт, айдсыг даван туулсан.",
+      "category": "life_of_buddha",
+      "order": 12
+    },
+    {
+      "id": "first_sermon",
+      "title": "Анхны номлол (Дхаммачаккаппаваттана)",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "Будда Сарнатхийн бугын цогцолборт анхны сургаал тавьж Дхаммын хүрдийг эргүүлсэн.",
+      "category": "life_of_buddha",
+      "order": 13
+    },
+    {
+      "id": "ordination_of_first_monks",
+      "title": "Анхны лам нарын бясалгал",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "Будда 'Ир, лам' гэсэн энгийн үгээр анхны таван шавьдаа лам нарын сангхад оруулсан.",
+      "category": "sangha",
+      "order": 14
+    },
+    {
+      "id": "buddhism_india_bodhi_tree_tradition",
+      "title": "Бодх Гаяагийн Бодхи модны уламжлал",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "Бодх Гаяагийн Бодхи мод гэгээрлээс хойш хүндлэгдэж, салхур Шри Ланка болон бусад газар хүргэгдсэн.",
+      "category": "india_buddhism",
+      "order": 15
+    },
+    {
+      "id": "buddha_meets_bimbisara",
+      "title": "Будда Бимбисара хаантай уулзах",
+      "year_be": -587,
+      "year_ce": -527,
+      "description": "Магад хаан Бимбисара итгэмтлэг дэмжигч болж, Велувана хийдийг сангхад өгсөн.",
+      "category": "life_of_buddha",
+      "order": 16
+    },
+    {
+      "id": "first_rains_retreat",
+      "title": "Анхны борооны улирлын бясалгал (Васса)",
+      "year_be": -587,
+      "year_ce": -527,
+      "description": "Будда, шавь нар Варанасид анхны гурван сарын борооны улирлын васса хийж уламжлалыг тогтоосон.",
+      "category": "sangha",
+      "order": 17
+    },
+    {
+      "id": "jetavana_monastery",
+      "title": "Жетавана хийдийг өгсөн",
+      "year_be": -586,
+      "year_ce": -526,
+      "description": "Баян дэмжигч Анатхапиндика Саваттхид ойролцоох Жетавана ойг худалдаж авч сангхад өгсөн — гол сургаалын төв.",
+      "category": "sangha",
+      "order": 18
+    },
+    {
+      "id": "buddha_visits_kapilavastu",
+      "title": "Будда Капилавасту руу зочилсон",
+      "year_be": -585,
+      "year_ce": -525,
+      "description": "Будда төрсөн нутагтаа буцаж хүү Рахула, ах дүү Нанда, хөөрөг Ананддаг лам болгосон.",
+      "category": "life_of_buddha",
+      "order": 19
+    },
+    {
+      "id": "subduing_nalagiri_elephant",
+      "title": "Налагири ууртай зааныг тайвшруулах",
+      "year_be": -584,
+      "year_ce": -524,
+      "description": "Будда түүнийг дайрахаар илгээсэн уурт зааныг хайр, тайвшгүй байдлаар тайвшруулсан.",
+      "category": "life_of_buddha",
+      "order": 20
+    },
+    {
+      "id": "buddhism_india_taxila",
+      "title": "Таксилийн Буддын сургалт",
+      "year_be": -560,
+      "year_ce": -500,
+      "description": "Гандхарын Таксила нь Буддын философи, эмнэлэг болон бусад шинжлэх ухааныг сурдаг эртний төв байсан.",
+      "category": "india_buddhism",
+      "order": 21
+    },
+    {
+      "id": "buddha_teaches_devadatta_schism",
+      "title": "Девадаттын хуваагдал оролдлого",
+      "year_be": -550,
+      "year_ce": -490,
+      "description": "Буддагийн хөөрөг Девадатта сангхыг хуваах гэж хатуу дүрэм санал болгосон ч нийгэмлэг нэгдмэл үлдсэн.",
+      "category": "sangha",
+      "order": 22
+    },
+    {
+      "id": "mahaparinirvana",
+      "title": "Махапаринирвана",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "Будда 80 настайдаа Кушинагарт эцсийн нирваанд орсон.",
+      "category": "life_of_buddha",
+      "order": 23
+    },
+    {
+      "id": "first_council",
+      "title": "Анхны Буддын сүм",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "Ажаташатру хааны үед Ражагахад Махакассапагийн удирдлагаар болсон. Виная, Сутта уншигдсан.",
+      "category": "council",
+      "order": 24
+    },
+    {
+      "id": "buddhism_india_buddha_relics",
+      "title": "Энэтхэг даяар Буддын шарилаас хадгалсан",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "Махапаринирванын дараа шарилаас найм улсад хувааж Энэтхэг даяар ступад хадгалсан.",
+      "category": "india_buddhism",
+      "order": 25
+    },
+    {
+      "id": "ordination_of_nuns",
+      "title": "Лам эмэгтэйчүүдийн сангхийн байгуулалт",
+      "year_be": -541,
+      "year_ce": -481,
+      "description": "Махапажапати Готами болон бусад эмэгтэйчүүд лам эмэгтэй болж, найман Гарудхаммын дор сангх байгуулагдсан.",
+      "category": "sangha",
+      "order": 26
+    },
+    {
+      "id": "second_council",
+      "title": "Хоёр дахь Буддын сүм",
+      "year_be": 160,
+      "year_ce": -383,
+      "description": "Весалид лам нарын дүрмийн маргааныг шийдвэрлэхээр болсон.",
+      "category": "council",
+      "order": 27
+    },
+    {
+      "id": "schism_mahasanghika",
+      "title": "Махасангхикагийн хуваагдал",
+      "year_be": 160,
+      "year_ce": -383,
+      "description": "Хоёр дахь сүмийн дараах маргаан анхны том хуваагдалд хүргэж Махасангхика суртгал үүссэн.",
+      "category": "council",
+      "order": 28
+    },
+    {
+      "id": "theravada_emergence",
+      "title": "Теравада суртгал бүрэлдэх",
+      "year_be": 193,
+      "year_ce": -350,
+      "description": "Стхавира уламжлал дараа нь Теравада болж, хамгийн эртний бичигдсэн сургаалыг онцолсон.",
+      "category": "sangha",
+      "order": 29
+    },
+    {
+      "id": "rise_of_sarvastivada",
+      "title": "Сарвастивада суртгалын өсөлт",
+      "year_be": 243,
+      "year_ce": -300,
+      "description": "Сарвастивада суртгал баруун хойд Энэтхэгт цэцэглэж, өргөн Абхидхарма ном бүтээлүүд гаргасан.",
+      "category": "sangha",
+      "order": 30
+    },
+    {
+      "id": "ashoka_conversion",
+      "title": "Ашокагийн Будданд шилжих",
+      "year_be": 280,
+      "year_ce": -263,
+      "description": "Калинга дайны дараа Ашока хаан Будданд шилжиж, ялалтыг дайраар биш, Дхаммагаар олохоор шийдсэн.",
+      "category": "ashoka",
+      "order": 31
+    },
+    {
+      "id": "maurya_buddhist_patronage",
+      "title": "Маурь эзэнт гүрний Буддын дэмжлэг",
+      "year_be": 283,
+      "year_ce": -260,
+      "description": "Ашокагийн гадна Маурь зөвлөл Энэтхэгийн дэд тив даяар хийд, миссионерийн үйл ажиллагааг дэмжсэн.",
+      "category": "india_buddhism",
+      "order": 32
+    },
+    {
+      "id": "buddhism_india_dhamma_vijay",
+      "title": "Ашокагийн Дхамма-Вижая бодлого",
+      "year_be": 283,
+      "year_ce": -260,
+      "description": "Ашока цэргийн ялалтыг шударга ёсны ялалт — Дхамма-вижая — болгон эзэнт гүрний удирдам болгосон.",
+      "category": "india_buddhism",
+      "order": 33
+    },
+    {
+      "id": "ashoka_dhamma_letters",
+      "title": "Ашокагийн Дхамма бичиг",
+      "year_be": 286,
+      "year_ce": -257,
+      "description": "Ашока ёс зүй, шашны сургаалыг баганан, хаданд сийлж Буддын ёсыг түгээн.",
+      "category": "ashoka",
+      "order": 34
+    },
+    {
+      "id": "buddhism_india_rock_edicts",
+      "title": "Дэд тив даяар хадны бичиг",
+      "year_be": 286,
+      "year_ce": -257,
+      "description": "Дхаули, Гирнар, Калси зэрэгт Пракрит хэлээр Буддын ёсны сургаал хадны бичгээр түгсэн.",
+      "category": "india_buddhism",
+      "order": 35
+    },
+    {
+      "id": "compilation_abhidhamma",
+      "title": "Абхидхарма бичгүүдийн цуглуулга",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "Ухамсар, матери, ёс зүйг шинжилсэн системт философи ном бүтээгдэж, Теравада сургалтын төв болсон.",
+      "category": "sangha",
+      "order": 36
+    },
+    {
+      "id": "ashoka_sends_missionaries",
+      "title": "Ашока Буддын миссионер илгээх",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "Ашока Шри Ланка, Кашмир, Гандхар болон бусад газар Дхамма түгээх лам нар илгээсэн.",
+      "category": "ashoka",
+      "order": 37
+    },
+    {
+      "id": "buddhism_india_sarnath_lion_capital",
+      "title": "Сарнатхийн арслангийн толгой",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "Сарнатхийн дөрвөн арслан, Дхаммын хүрдтэй Ашокагийн багананы толгой Энэтхэгийн улсын тэмдэг болсон.",
+      "category": "india_buddhism",
+      "order": 38
+    },
+    {
+      "id": "buddhism_india_maurya_stupas",
+      "title": "Маурь Буддын ступа",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "Ашока болон дараагийнх нь Санчи, Бархут зэрэгт ступа өргөтгөж, барьсан.",
+      "category": "india_buddhism",
+      "order": 39
+    },
+    {
+      "id": "buddhism_india_ashoka_pillars",
+      "title": "Энэтхэг даяар Ашокагийн багана",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "Ашока Афганистанаас Карнатака хүртэл гялалзсан элсэн чулуун баганан дээр Дхаммын бичиг босгосон.",
+      "category": "india_buddhism",
+      "order": 40
+    },
+    {
+      "id": "third_council",
+      "title": "Гурав дахь Буддын сүм",
+      "year_be": 296,
+      "year_ce": -247,
+      "description": "Ашока хааны үед Паталипутрад Моггалипутта Тиссагийн удирдлагаар болсон.",
+      "category": "council",
+      "order": 41
+    },
+    {
+      "id": "mahinda_sri_lanka",
+      "title": "Шри Ланкад Буддын шашин ирсэн",
+      "year_be": 296,
+      "year_ce": -247,
+      "description": "Ашока хүү Махиндаг Шри Ланкад илгээсэн; Деванампия Тисса хаан Михинталед Дхамма хүлээн авсан.",
+      "category": "spread_of_buddhism",
+      "order": 42
+    },
+    {
+      "id": "sanghamitta_bodhi_tree",
+      "title": "Шри Ланкад Бодхи модны салхур",
+      "year_be": 297,
+      "year_ce": -246,
+      "description": "Ашокагийн охин Сангхамитта Анурадхапурад анхны Бодхи модны салхур авчирсан — өнөөдөр хүртэл хүндлэгддэг.",
+      "category": "spread_of_buddhism",
+      "order": 43
+    },
+    {
+      "id": "greco_buddhist_art_gandhara",
+      "title": "Гандхарын Грек-Буддын урлаг",
+      "year_be": 343,
+      "year_ce": -200,
+      "description": "Гандхарын Буддын баримал Грекийн урлагийн хэлбэр, Буддын сэдэвтэй нэгтгэж анхны Буддын дүр зургийг бүтээсэн.",
+      "category": "spread_of_buddhism",
+      "order": 44
+    },
+    {
+      "id": "buddhism_india_sunga_art",
+      "title": "Сунга үеийн Буддын урлаг",
+      "year_be": 393,
+      "year_ce": -150,
+      "description": "Сунга үед Санчи, Бархутын ступа чимэглэл цэцэглэж, Жатака түүхийг чуланд сийлсэн.",
+      "category": "india_buddhism",
+      "order": 45
+    },
+    {
+      "id": "rise_of_mahayana",
+      "title": "Махаяна Буддын шашны өсөлт",
+      "year_be": 443,
+      "year_ce": -100,
+      "description": "Шинэ сутра, бодисатва санаа Буддыг лам нарын архатын түвшнээс хэтрэн ерөнхий ангижрал руу өргөтгөсөн.",
+      "category": "mahayana",
+      "order": 46
+    },
+    {
+      "id": "kushan_empire_buddhism",
+      "title": "Кушан эзэнт гүрний дор Буддын шашин",
+      "year_be": 443,
+      "year_ce": -100,
+      "description": "Кушан эзэн хаад Гандхар, Матхурад Буддыг дэмжиж, худалдааны замын хийд, урлагыг хөгжүүлсэн.",
+      "category": "india_buddhism",
+      "order": 47
+    },
+    {
+      "id": "buddhism_india_barhut_stupa",
+      "title": "Бархут ступаны барельеф",
+      "year_be": 443,
+      "year_ce": -100,
+      "description": "Мадхья Прадешийн Бархут ступаны барельеф Буддын амьдралын хамгийн эртний дүрслэлийг хадгалсан.",
+      "category": "india_buddhism",
+      "order": 48
+    },
+    {
+      "id": "fourth_council_sri_lanka",
+      "title": "Дөрөв дэхь Буддын сүм (Шри Ланка)",
+      "year_be": 514,
+      "year_ce": -29,
+      "description": "Теравада лам нар өлсгөлөнгийн үед Алувихарад Пали Типитакаг бичиж сургаалыг хадгалсан.",
+      "category": "council",
+      "order": 49
+    },
+    {
+      "id": "buddhism_india_jataka_literature",
+      "title": "Энэтхэгт Жатака түүх цуглуулсан",
+      "year_be": 543,
+      "year_ce": 0,
+      "description": "Буддын өмнөх амьдралын түүхүүд Пали, Санскритээр цуглуулагдаж, Ази даяар ёсны сургаал түгээсэн.",
+      "category": "india_buddhism",
+      "order": 50
+    },
+    {
+      "id": "buddhism_china",
+      "title": "Хятадад Буддын шашин ирсэн",
+      "year_be": 611,
+      "year_ce": 68,
+      "description": "Хан Мин хаан Энэтхэгээс лам нар, бичгийг хүлээн авч, Хятадад Буддын шашны албан ёсны эхлэл тавигдсан.",
+      "category": "spread_of_buddhism",
+      "order": 51
+    },
+    {
+      "id": "fourth_council_kashmir",
+      "title": "Дөрөв дэхь Буддын сүм (Кашмир)",
+      "year_be": 621,
+      "year_ce": 78,
+      "description": "Канишка хааны үед Сарвастивада сургалтын эрдэмтэд Кашмирт Абхидхарма бичгээ системчилсэн.",
+      "category": "council",
+      "order": 52
+    },
+    {
+      "id": "lotus_sutra_composition",
+      "title": "Лотос сутра алдартай болсон",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "Саддхармапундарика сутра Зүүн Ази даяар хамгийн нөлөө бүхий Махаяна бичгүүдийн нэг болсон.",
+      "category": "mahayana",
+      "order": 53
+    },
+    {
+      "id": "buddhism_india_mathura_art",
+      "title": "Матхура Буддын урлагийн сургууль",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "Хойд Энэтхэгийн Матхура онцлогтой эрт Буддын дүр зургийг бүтээж, Ази даяар Буддын урлагийг нөлөөлсөн.",
+      "category": "india_buddhism",
+      "order": 54
+    },
+    {
+      "id": "buddhism_india_cave_monasteries",
+      "title": "Декканы Буддын агуй хийд",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "Бхажа, Бедса, Карла, дараа нь Ажанта, Эллора агуй хийдүүд зуун жилийн турш мянга мянган лам нарыг байрлуулсан.",
+      "category": "india_buddhism",
+      "order": 55
+    },
+    {
+      "id": "buddhism_india_women_patrons",
+      "title": "Энэтхэг Буддын шашны эмэгтэй дэмжигчид",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "Висакха, Маллика хатан зэрэг эмэгтэйчүүд хийд барьж, Буддын үйл ажиллагааг санхүүжүүлсэн.",
+      "category": "india_buddhism",
+      "order": 56
+    },
+    {
+      "id": "nagarjuna_madhyamaka",
+      "title": "Нагаржуна ба Мадхьямака суртгал",
+      "year_be": 693,
+      "year_ce": 150,
+      "description": "Философ Нагаржуна хоосон чанарын (шуньята) дундын замын философийг тодорхойлж, Махаяна сэтгэлгээг өөрчилсөн.",
+      "category": "mahayana",
+      "order": 57
+    },
+    {
+      "id": "buddhism_vietnam",
+      "title": "Вьетнамд Буддын шашин танилсан",
+      "year_be": 732,
+      "year_ce": 189,
+      "description": "Хятадын Махаяна болон Энэтхэгийн далайн худалдааны замаар Буддын сургаал Вьетнамд хүрсэн.",
+      "category": "spread_of_buddhism",
+      "order": 58
+    },
+    {
+      "id": "buddhism_central_asia",
+      "title": "Зүүдний зам дагуу Буддын шашин",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "Төв Азийн худалдааны замын хийд, агуй сүм Энэтхэг, Хятадыг холбож Буддын сургаал түгээсэн.",
+      "category": "spread_of_buddhism",
+      "order": 59
+    },
+    {
+      "id": "buddhism_india_kanheri_caves",
+      "title": "Канхери Буддын агуй",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "Мумбай ойролцоох Канхери агуй мянга жилийн турш гол Буддын сургалтын төв байсан.",
+      "category": "india_buddhism",
+      "order": 60
+    },
+    {
+      "id": "buddhism_india_amaravati",
+      "title": "Амаравати ступа",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "Андхра Прадешийн Амаравати их ступа эртний Энэтхэгийн гайхалтай Буддын урлаг, аялал жуулчлалын төв байсан.",
+      "category": "india_buddhism",
+      "order": 61
+    },
+    {
+      "id": "buddhism_india_sanskrit_mahayana",
+      "title": "Энэтхэгт Санскрит Махаяна сутра",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "Энэтхэгт Санскритээр бичигдсэн шинэ Махаяна сутра Хятад, Төвөд, Өмнөд Ази руу түгсэн.",
+      "category": "india_buddhism",
+      "order": 62
+    },
+    {
+      "id": "dunhuang_mogao_caves",
+      "title": "Дуньхуан Могао агуй",
+      "year_be": 909,
+      "year_ce": 366,
+      "description": "Хятадын Дуньхуан агуй сүм урлаг, гар бичмэл, бясалгалын баялаг сан болсон.",
+      "category": "spread_of_buddhism",
+      "order": 63
+    },
+    {
+      "id": "buddhism_korea",
+      "title": "Солонгост Буддын шашин танилсан",
+      "year_be": 915,
+      "year_ce": 372,
+      "description": "Буддын бичиг, лам нар Гогурёо улсад хүрч, Солонгосын Буддын уламжлалын эхлэл болсон.",
+      "category": "spread_of_buddhism",
+      "order": 64
+    },
+    {
+      "id": "faxian_pilgrimage",
+      "title": "Фасянь Энэтхэгт аялсан",
+      "year_be": 942,
+      "year_ce": 399,
+      "description": "Хятадын лам Фасянь Энэтхэг, Шри Ланкад Виная бичиг авахаар явж, Буддын газрын байдлыг бичсэн.",
+      "category": "pilgrimage",
+      "order": 65
+    },
+    {
+      "id": "vasubandhu_yogacara",
+      "title": "Васубандху ба Йогачара суртгал",
+      "year_be": 943,
+      "year_ce": 400,
+      "description": "Васубандху ухамсрын талаарх Йогачара сургаалыг хөгжүүлж, Махаяна бясалгалын онолд гүн нөлөөлсөн.",
+      "category": "mahayana",
+      "order": 66
+    },
+    {
+      "id": "buddhism_india_gupta_golden_age",
+      "title": "Гупта үеийн Буддын урлагийн алтан үе",
+      "year_be": 943,
+      "year_ce": 400,
+      "description": "Гупта үед Сарнатх, Наландад нарийн Буддын дүр зургийг бүтээж, Буддын барималын сонгодог загвар болсон.",
+      "category": "india_buddhism",
+      "order": 67
+    },
+    {
+      "id": "kumarajiva_translations",
+      "title": "Кумаражива Буддын бичиг орчуулсан",
+      "year_be": 944,
+      "year_ce": 401,
+      "description": "Лам Кумаражива гол Махаяна сутраг Хятад хэл рүү орчуулж, Зүүн Азийн Буддыг зуун жилийн турш хэлбэржүүлсэн.",
+      "category": "east_asia",
+      "order": 68
+    },
+    {
+      "id": "pure_land_school_china",
+      "title": "Хятадад Цэвэр Газрын суртгал хөгжсөн",
+      "year_be": 945,
+      "year_ce": 402,
+      "description": "Амитаб Будда төвтэй бясалгалын дадлага Цэвэр Газрын суртгал болж, Зүүн Ази даяар түгсэн.",
+      "category": "mahayana",
+      "order": 69
+    },
+    {
+      "id": "buddhaghosa_visuddhimagga",
+      "title": "Буддагхоса Висуддхимагга бичсэн",
+      "year_be": 948,
+      "year_ce": 405,
+      "description": "Шри Ланкын эрдэмт лам Буддагхоса 'Цэвэршилийн зам' бичиж, Теравада бясалгал, суртгалыг системчилсэн.",
+      "category": "sangha",
+      "order": 70
+    },
+    {
+      "id": "nalanda_founded",
+      "title": "Наланда Махавихара байгуулагдсан",
+      "year_be": 970,
+      "year_ce": 427,
+      "description": "Бихарын Наланда их сургууль Буддын философи, логик, бясалгалын алдартай төв болсон.",
+      "category": "university",
+      "order": 71
+    },
+    {
+      "id": "buddhism_nepal_licchavi",
+      "title": "Непалын хөндийд Буддын шашин",
+      "year_be": 1007,
+      "year_ce": 464,
+      "description": "Личчави болон дараагийн үеийн хаадын үед Катманду хөндийд Буддын ступа, хийд цэцэглэсэн.",
+      "category": "spread_of_buddhism",
+      "order": 72
+    },
+    {
+      "id": "white_huns_persecution",
+      "title": "Баруун хойд Энэтхэгт Буддын шашны бууралт",
+      "year_be": 1008,
+      "year_ce": 465,
+      "description": "Хүн түрэмгийлэл, хаан дэмжлэгийн алдагдал Гандхар, баруун хойд Энэтхэгийн хийдийг сулруулсан.",
+      "category": "india_buddhism",
+      "order": 73
+    },
+    {
+      "id": "sri_lanka_mahavamsa",
+      "title": "Махавамса түүх бичигдсэн",
+      "year_be": 1043,
+      "year_ce": 500,
+      "description": "Шри Ланкын Махавамса Буддын түүх, хаан дэмжлэгийг бичиж, Теравада уламжлалыг хадгалсан.",
+      "category": "sangha",
+      "order": 74
+    },
+    {
+      "id": "bodhidharma_china",
+      "title": "Бодхидхарма Чан (Зэн)-г Хятад руу авчирсан",
+      "year_be": 1063,
+      "year_ce": 520,
+      "description": "Энэтхэгийн эцэг Бодхидхарма уламжлалаар Шаолинь хийдэд бясалгалын сургаал түгээсэн гэж үздэг.",
+      "category": "east_asia",
+      "order": 75
+    },
+    {
+      "id": "odantapuri_founded",
+      "title": "Одантапури Махавихара байгуулагдсан",
+      "year_be": 1093,
+      "year_ce": 550,
+      "description": "Бихарын Одантапури их сургууль Пала хаадын дэмжлэгтэй Буддын сургалтын гол төв болсон.",
+      "category": "university",
+      "order": 76
+    },
+    {
+      "id": "buddhism_japan",
+      "title": "Японд Буддын шашин ирсэн",
+      "year_be": 1095,
+      "year_ce": 552,
+      "description": "Солонгосоос Буддын дүр, бичиг Японы зөвлөлд өгөгдөж, Буддын шашин гол хүч болсон.",
+      "category": "spread_of_buddhism",
+      "order": 77
+    },
+    {
+      "id": "tiantai_school_china",
+      "title": "Тяньтай суртгал байгуулагдсан",
+      "year_be": 1118,
+      "year_ce": 575,
+      "description": "Чжийи Хятадад Тяньтай суртгалыг байгуулж, бясалгал, Лотос сутрыг төв сургаал болгосон.",
+      "category": "east_asia",
+      "order": 78
+    },
+    {
+      "id": "wonhyo_korean_buddhism",
+      "title": "Вонхё Солонгосын Буддын сэтгэлгээг нэгтгэсэн",
+      "year_be": 1143,
+      "year_ce": 600,
+      "description": "Солонгосын лам Вонхё Буддын суртгалуудыг нэгтгэж, Дхаммаг олон нийтэд ойлгомжтой болгосон.",
+      "category": "east_asia",
+      "order": 79
+    },
+    {
+      "id": "buddhism_india_ellora_caves",
+      "title": "Эллора Буддын агуй",
+      "year_be": 1143,
+      "year_ce": 600,
+      "description": "Махараштрагийн Эллорад Буддын агуй сүмүүд Хинду, Жайн дурсгалтай хамт шашны хамтарч амьдралын жишээ болсон.",
+      "category": "india_buddhism",
+      "order": 80
+    },
+    {
+      "id": "shotoku_taishi_japan",
+      "title": "Хаан шавь Шотоку Буддыг дэмжсэн",
+      "year_be": 1147,
+      "year_ce": 604,
+      "description": "Японы Хаан шавь Шотоку Буддын засаглалыг дэмжиж, сүм барьж, Хятад руу элч илгээсэн.",
+      "category": "east_asia",
+      "order": 81
+    },
+    {
+      "id": "xuanzang_pilgrimage",
+      "title": "Сюаньзан Энэтхэгт аялсан",
+      "year_be": 1172,
+      "year_ce": 629,
+      "description": "Хятадын аялагч Сюаньзан 16 жил Энэтхэгт Наландад сурч, олон зуун Санскрит бичиг авчирсан.",
+      "category": "pilgrimage",
+      "order": 82
+    },
+    {
+      "id": "buddhism_india_harsha_patronage",
+      "title": "Хаан Харш Буддыг дэмжсэн",
+      "year_be": 1173,
+      "year_ce": 630,
+      "description": "Каннаужийн Харш хаан Буддын шашныг дэмжиж, Сюаньзанг хүлээн авч, хийдүүдийг санхүүжүүлсэн.",
+      "category": "india_buddhism",
+      "order": 83
+    },
+    {
+      "id": "buddhism_india_hiuen_tsang_record",
+      "title": "Сюаньзан Наландагийн славыг бичсэн",
+      "year_be": 1178,
+      "year_ce": 635,
+      "description": "Сюаньзан Наландад мянга мянган оюутан, зуун багш байсан гэж тодорхойлсон.",
+      "category": "india_buddhism",
+      "order": 84
+    },
+    {
+      "id": "buddhism_tibet",
+      "title": "Төвөдөд Буддын шашин тогтоосон",
+      "year_be": 1184,
+      "year_ce": 641,
+      "description": "Сонгцэн Гампо хаан Буддын гүнж нартай гэрлэж, Дхаммаг дэмжиж, Төвөд Буддын суурь тавьсан.",
+      "category": "tibet",
+      "order": 85
+    },
+    {
+      "id": "yi_jing_pilgrimage",
+      "title": "И Цзин Энэтхэгт аялсан",
+      "year_be": 1214,
+      "year_ce": 671,
+      "description": "Хятадын лам И Цзин 25 жил Энэтхэг, Өмнөд Азид лам нарын амьдрал, Винаяг бичсэн.",
+      "category": "pilgrimage",
+      "order": 86
+    },
+    {
+      "id": "huayan_school_china",
+      "title": "Хуаян суртгал байгуулагдсан",
+      "year_be": 1243,
+      "year_ce": 700,
+      "description": "Хуаян (Цэцэг гэрэл) суртгал Махаяна сутраг холбоотой бодит байдлын философи болгон нэгтгэсэн.",
+      "category": "mahayana",
+      "order": 87
+    },
+    {
+      "id": "buddhism_india_vajrayana_origins",
+      "title": "Энэтхэгт Ваджраяна Буддын шашин гарсан",
+      "year_be": 1243,
+      "year_ce": 700,
+      "description": "Наланда, Викрамашилад тантра Буддын дадлага хөгжиж, Төвөд, Непал, Зүүн Ази руу түгсэн.",
+      "category": "india_buddhism",
+      "order": 88
+    },
+    {
+      "id": "buddhism_bhutan",
+      "title": "Бутаны улсын шашин болсон Буддын шашин",
+      "year_be": 1290,
+      "year_ce": 747,
+      "description": "Төвөдийн нөлөөгөөр Бутанд Буддын сургаал үндэслэгдэж, үндэсний таних ойн суурь болсон.",
+      "category": "spread_of_buddhism",
+      "order": 89
+    },
+    {
+      "id": "pala_dynasty_buddhism",
+      "title": "Пала үеийн Буддын шашны дэмжлэг",
+      "year_be": 1293,
+      "year_ce": 750,
+      "description": "Бенгал, Бихарын Пала хаад Наланда, Викрамашила болон Буддын сургалтын их дэмжигч болсон.",
+      "category": "india_buddhism",
+      "order": 90
+    },
+    {
+      "id": "buddhism_indonesia",
+      "title": "Далайн замын Өмнөд Азид Буддын шашин",
+      "year_be": 1303,
+      "year_ce": 760,
+      "description": "Шривийжая болон бусад улсууд Махаяна, Ваджраяна сургалт, худалдааны замын Буддыг дэмжсэн.",
+      "category": "spread_of_buddhism",
+      "order": 91
+    },
+    {
+      "id": "buddhism_india_santarakshita",
+      "title": "Шантаракшита Энэтхэгээс Төвөдөд Буддыг тогтоосон",
+      "year_be": 1306,
+      "year_ce": 763,
+      "description": "Энэтхэгийн эрдэмт Шантаракшита Трисон Дэцэн хааны урилгаар Төвөдөд очиж, Самье хийдийг байгуулсан.",
+      "category": "india_buddhism",
+      "order": 92
+    },
+    {
+      "id": "samye_monastery",
+      "title": "Самье хийд байгуулагдсан",
+      "year_be": 1318,
+      "year_ce": 775,
+      "description": "Төвөдийн анхны Буддын хийд Самьед Трисон Дэцэн хаан, Гуру Падмасамбхав хамтран байгуулсан.",
+      "category": "tibet",
+      "order": 93
+    },
+    {
+      "id": "mongol_buddhism",
+      "title": "Монгол Юань үеийн Буддын шашин",
+      "year_be": 1323,
+      "year_ce": 780,
+      "description": "Хубилай хааны үед Төвөд Буддын шашин хаан дэмжлэг авч, Монгол эрх мэдэл, Төвөд лам нар холбогдсон.",
+      "category": "tibet",
+      "order": 94
+    },
+    {
+      "id": "vikramashila_founded",
+      "title": "Викрамашила Махавихара байгуулагдсан",
+      "year_be": 1343,
+      "year_ce": 800,
+      "description": "Бихарын Викрамашила их сургууль Наландатай зэрэгцэн тантра, философийн сургалтын төв болсон.",
+      "category": "university",
+      "order": 95
+    },
+    {
+      "id": "buddhism_india_ratnagiri_monastery",
+      "title": "Ратнагири Буддын хийд",
+      "year_be": 1343,
+      "year_ce": 800,
+      "description": "Одишагийн Ратнагири хийд Пала хаадын дэмжлэгтэй гол Ваджраяна төв байсан.",
+      "category": "india_buddhism",
+      "order": 96
+    },
+    {
+      "id": "buddhism_india_pala_somapura",
+      "title": "Сомапура Махавихара",
+      "year_be": 1343,
+      "year_ce": 800,
+      "description": "Пала үеийн хаад одоогийн Бангладешид асар том Сомапура Махавихара барьсан — ЮНЕСКО-гийн дэлхийн өв.",
+      "category": "india_buddhism",
+      "order": 97
+    },
+    {
+      "id": "saicho_tendai_japan",
+      "title": "Сайчо Японд Тэндай суртгал байгуулсан",
+      "year_be": 1349,
+      "year_ce": 806,
+      "description": "Сайчо Хятадад Тяньтай сурч, Хиэй ууланд Тэндай суртгалыг байгуулсан.",
+      "category": "east_asia",
+      "order": 98
+    },
+    {
+      "id": "padmasambhava_vajrayana",
+      "title": "Падмасамбхава Төвөдөд Ваджраяна тогтоосон",
+      "year_be": 1353,
+      "year_ce": 810,
+      "description": "Гуру Падмасамбхава саадлыг дарж, Төвөдөд тантра Буддын дадлагыг тогтоосон гэж үздэг.",
+      "category": "tibet",
+      "order": 99
+    },
+    {
+      "id": "kukai_shingon_japan",
+      "title": "Кукай Шингон Буддыг байгуулсан",
+      "year_be": 1359,
+      "year_ce": 816,
+      "description": "Кукай Хятадаас буцаж Шингон нууц Буддыг байгуулж, Япон даяар сүм барьсан.",
+      "category": "east_asia",
+      "order": 100
+    },
+    {
+      "id": "borobudur_built",
+      "title": "Боробудур сүм дууссан",
+      "year_be": 1368,
+      "year_ce": 825,
+      "description": "Яавын асар их Махаяна дурсгал чулуун барельеф, ступагаар гэгээрлийн замыг илэрхийлж дууссан.",
+      "category": "spread_of_buddhism",
+      "order": 101
+    },
+    {
+      "id": "buddhism_india_ladakh",
+      "title": "Ладакх дахь Буддын шашин",
+      "year_be": 1543,
+      "year_ce": 1000,
+      "description": "Гималайн бүсэд Хемис, Тиксей, Дискит зэрэг Төвөд Буддын хийдүүд Ладакхад цэцэглэсэн.",
+      "category": "india_buddhism",
+      "order": 102
+    },
+    {
+      "id": "atisha_tibet",
+      "title": "Атиша Төвөдөд Буддыг сэргээсэн",
+      "year_be": 1585,
+      "year_ce": 1042,
+      "description": "Энэтхэгийн багш Атиша Дипанкара 12 жил Төвөдөд лам нарын дэглэмийг сэргээж, Кадампа уламжлалыг дэмжсэн.",
+      "category": "tibet",
+      "order": 103
+    },
+    {
+      "id": "buddhism_india_dipankara_atisha",
+      "title": "Атишагийн Энэтхэгээс Төвөд рүүх аян",
+      "year_be": 1585,
+      "year_ce": 1042,
+      "description": "Наландад суралцсан Бенгалийн Атиша Дипанкара Төвөдөд Буддыг сэргээх сүүлийн жилүүдээ өнгөрүүлсэн.",
+      "category": "india_buddhism",
+      "order": 104
+    },
+    {
+      "id": "buddhism_bagan_myanmar",
+      "title": "Баганд Буддын сүм барих",
+      "year_be": 1593,
+      "year_ce": 1050,
+      "description": "Мьянмарын Баган улс мянга мянган ступа, сүм барьж, дэлхийн их Буддын ландшафт бүтээсэн.",
+      "category": "spread_of_buddhism",
+      "order": 105
+    },
+    {
+      "id": "buddhism_myanmar",
+      "title": "Мьянмарт Теравада Буддын шашин",
+      "year_be": 1600,
+      "year_ce": 1057,
+      "description": "Анауратха хаан Бурмаг нэгтгэж, Шри Ланкаас бичиг авч, Теравадаг улсын шашин болгосон.",
+      "category": "spread_of_buddhism",
+      "order": 106
+    },
+    {
+      "id": "buddhism_india_sen_dynasty",
+      "title": "Сена үеийн Буддын шашин",
+      "year_be": 1643,
+      "year_ce": 1100,
+      "description": "Бенгалийн Сена эзэн хаад эхэнд Буддыг дэмжсэн; дараа нь зүүн Энэтхэгт уламжлал буурчээ.",
+      "category": "india_buddhism",
+      "order": 107
+    },
+    {
+      "id": "buddhism_india_bengal_survival",
+      "title": "Бенгалийн сүүлийн Буддын цогцос",
+      "year_be": 1643,
+      "year_ce": 1100,
+      "description": "Бенгал, Бихарын хийдүүд Пала дэмжлэгтэй хадгалагдсан — арван хоёрдугаар зууны түрэмгийлэл хүртэл.",
+      "category": "india_buddhism",
+      "order": 108
+    },
+    {
+      "id": "angkor_wat_buddhist",
+      "title": "Буддын сүм болсон Ангкор Ват",
+      "year_be": 1656,
+      "year_ce": 1113,
+      "description": "Вишну-д зориулсан Кхмер сүм дараа нь Камбожид Теравада Буддын шашны гол төв болсон.",
+      "category": "spread_of_buddhism",
+      "order": 109
+    },
+    {
+      "id": "eisai_zen_japan",
+      "title": "Эйсай Ринзай Зэн-г Япон руу авчирсан",
+      "year_be": 1734,
+      "year_ce": 1191,
+      "description": "Эйсай Хятадаас Ринзай Зэн авчирч, Кэннинжи байгуулж, Японд Зэн уламжлалыг тогтоосон.",
+      "category": "east_asia",
+      "order": 110
+    },
+    {
+      "id": "nalanda_destroyed",
+      "title": "Наланда устгагдсан",
+      "year_be": 1740,
+      "year_ce": 1197,
+      "description": "Бахтияр Халжигийн түрэг түрэмгийлэгчид Наландаг эзэлж, зуун жилийн сургалтыг дуусгаж, Энэтхэг Буддын шашны том бууралтыг тэмдэглэсэн.",
+      "category": "india_buddhism",
+      "order": 111
+    },
+    {
+      "id": "vikramashila_destroyed",
+      "title": "Викрамашила устгагдсан",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "Түрэг түрэмгийлэл Викрамашила Махавихараг устгаж, зүүн Энэтхэгийн Буддын байгууллагыг цаашид сүйтгэсэн.",
+      "category": "india_buddhism",
+      "order": 112
+    },
+    {
+      "id": "buddhism_decline_eastern_india",
+      "title": "Зүүн Энэтхэгт Буддын шашны эцсийн бууралт",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "Их сургууль алдагдал, дэмжлэг шилжилт, түрэмгийлэл Энэтхэгийн Буддын төвөөс Буддыг бараг арилгасан.",
+      "category": "india_buddhism",
+      "order": 113
+    },
+    {
+      "id": "jinul_korean_seon",
+      "title": "Жинул Солонгосын Сеон Буддыг шинэчилсэн",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "Жинул Сеон бясалгалыг суртгалтай нэгтгэж, Солонгосын Буддыг зуун жилийн турш хэлбэржүүлсэн.",
+      "category": "east_asia",
+      "order": 114
+    },
+    {
+      "id": "buddhism_india_muslim_conquest_impact",
+      "title": "Дели Султанатын Энэтхэг Буддын шашныд нөлөө",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "Дели Султанатын байгуулалт хойд Энэтхэгт аль хэдийн суларсан Буддын байгууллагын бууралтыг хурдассан.",
+      "category": "india_buddhism",
+      "order": 115
+    },
+    {
+      "id": "sri_lanka_vinaya_reform",
+      "title": "Канди Виная шинэчлэл",
+      "year_be": 1756,
+      "year_ce": 1213,
+      "description": "Паракрамабаху I хааны үед Шри Ланкын лам нар дээд бясалгалыг сэргээж, лам нарын дадлагыг нэгтгэсэн.",
+      "category": "council",
+      "order": 116
+    },
+    {
+      "id": "dogen_zen_japan",
+      "title": "Догэн Японд Сото Зэн байгуулсан",
+      "year_be": 1766,
+      "year_ce": 1223,
+      "description": "Догэн Хятадаас Сото Зэн авчирч, засэн бясалгалыг Буддын дадлагын гол болгосон.",
+      "category": "east_asia",
+      "order": 117
+    },
+    {
+      "id": "nichiren_buddhism",
+      "title": "Ничирэн Буддын шашин байгуулагдсан",
+      "year_be": 1796,
+      "year_ce": 1253,
+      "description": "Ничирэн Лотос сутрад зориулсан бясалгал, нийгмийн шинэчлэл төвтэй уламжлалыг байгуулсан.",
+      "category": "east_asia",
+      "order": 118
+    },
+    {
+      "id": "buddhism_thailand",
+      "title": "Тайланд Теравада Буддын шашин",
+      "year_be": 1835,
+      "year_ce": 1292,
+      "description": "Сукхотайн Рамкамхэнг хаан Теравадаг дэмжиж, Тай соёл, засаглалд түүний үүргийг бэхжүүлсэн.",
+      "category": "spread_of_buddhism",
+      "order": 119
+    },
+    {
+      "id": "buddhism_laos",
+      "title": "Лаосын хаант улсуудад Буддын шашин",
+      "year_be": 1893,
+      "year_ce": 1350,
+      "description": "Теравада Лаосын хаант улсууд даяар гол шашин болж, соёл, урлаг, лам нарын амьдралыг хэлбэржүүлсэн.",
+      "category": "spread_of_buddhism",
+      "order": 120
+    },
+    {
+      "id": "buddhism_cambodia_theravada",
+      "title": "Камбожид Теравада Буддын шашин",
+      "year_be": 1893,
+      "year_ce": 1350,
+      "description": "Теравада Камбожид Махаянаг сольж, Ангкор, дараа нь Пном Пень төв болсон.",
+      "category": "spread_of_buddhism",
+      "order": 121
+    },
+    {
+      "id": "tsongkhapa_gelug",
+      "title": "Цонхава Гэлүг суртгал байгуулсан",
+      "year_be": 1952,
+      "year_ce": 1409,
+      "description": "Төвөдийн багш Цонхава Гандэн хийд, Гэлүг суртгалыг байгуулж, хатуу сургалт, ёсыг онцолсон.",
+      "category": "tibet",
+      "order": 122
+    },
+    {
+      "id": "buddhism_mongolia_16th",
+      "title": "Монголд Буддын шашин сэргээгдсэн",
+      "year_be": 2121,
+      "year_ce": 1578,
+      "description": "Монголын Алтан хаан Сонам Гятсод Далай лам цол олгож, Монгол-Төвөд Буддын холбоос бий болгосон.",
+      "category": "tibet",
+      "order": 123
+    },
+    {
+      "id": "buddhism_kalmykia",
+      "title": "Халимагт Буддын шашин",
+      "year_be": 2143,
+      "year_ce": 1600,
+      "description": "Халимаг монголчууд Төвөд Буддыг Оросын Хойд Кавказ бүсэд авчирсан.",
+      "category": "spread_of_buddhism",
+      "order": 124
+    },
+    {
+      "id": "buddhism_sikkim",
+      "title": "Сикким болон Гималайд Буддын шашин",
+      "year_be": 2185,
+      "year_ce": 1642,
+      "description": "Намгьял үеийн хаадын дор Төвөд Буддын шашин Сиккимийн улсын шашин болсон.",
+      "category": "tibet",
+      "order": 125
+    },
+    {
+      "id": "buddhism_buryatia",
+      "title": "Буриадт Буддын шашин түгссэн",
+      "year_be": 2243,
+      "year_ce": 1700,
+      "description": "Монгол, Төвөд миссионерийн үйл ажиллагаагаар Төвөд Буддын шашин Сибирийн буриадуудад хүрсэн.",
+      "category": "spread_of_buddhism",
+      "order": 126
+    },
+    {
+      "id": "buddhism_india_arunachal",
+      "title": "Аруначал Прадеш дахь Буддын шашин",
+      "year_be": 2243,
+      "year_ce": 1700,
+      "description": "Таванг Гомпа зэрэг Төвөд Буддын хийдүүд Аруначал Прадешийн Гималайд байгуулагдсан.",
+      "category": "india_buddhism",
+      "order": 127
+    },
+    {
+      "id": "buddhism_india_ajanta_caves",
+      "title": "Ажанта агуйн зураг танигдсан",
+      "year_be": 2362,
+      "year_ce": 1819,
+      "description": "Британийн албан тушаалтнууд Ажанта агуйн зургийг дахин олж, эртний Энэтхэг Буддын урлагыг дэлхийд илрүүлсэн.",
+      "category": "india_buddhism",
+      "order": 128
+    },
+    {
+      "id": "buddhist_archaeology_india",
+      "title": "Энэтхэгт Буддын газрууд дахин олдсон",
+      "year_be": 2373,
+      "year_ce": 1830,
+      "description": "Британ, Энэтхэг археологичид Сарнатх, Санчи зэргийг малдаж, Энэтхэгийн Буддын өв сонирхлыг сэргээсэн.",
+      "category": "india_buddhism",
+      "order": 129
+    },
+    {
+      "id": "buddhism_australia",
+      "title": "Австралид Буддын шашин тогтоосон",
+      "year_be": 2393,
+      "year_ce": 1850,
+      "description": "Хятад, Шри Ланкын имигрантууд Буддын дадлага авчирсан; дараа нь Төвөд, Вьетнамын нийгэмлэгүүд нэгдсэн.",
+      "category": "spread_of_buddhism",
+      "order": 130
+    },
+    {
+      "id": "thai_reform_mongkut",
+      "title": "Хаан Монгкут Тай Буддыг шинэчилсэн",
+      "year_be": 2394,
+      "year_ce": 1851,
+      "description": "Тайландын Монгкут хаан Дхаммайутика зэрэглэлийг байгуулж, хатуу Виная, Пали сургалтыг онцолсон.",
+      "category": "spread_of_buddhism",
+      "order": 131
+    },
+    {
+      "id": "pali_canon_chiang_mai",
+      "title": "Тав дахь Буддын сүм (Мьянмар)",
+      "year_be": 1414,
+      "year_ce": 1871,
+      "description": "Мандалейд Теравада лам нар Пали Каноныг уншиж, мрамор хавтан дээр сийлсэн.",
+      "category": "council",
+      "order": 132
+    },
+    {
+      "id": "buddhism_west_19th",
+      "title": "Буддын шашин Барууныг хүрсэн",
+      "year_be": 1422,
+      "year_ce": 1879,
+      "description": "Эдвин Арнольдын 'Азийн гэрэл' болон эрт орчуулгууд Европ, Америкт Буддын санааг танилцуулсан.",
+      "category": "modern_buddhism",
+      "order": 133
+    },
+    {
+      "id": "buddhism_new_zealand",
+      "title": "Шинэ Зеландид Буддын шашин",
+      "year_be": 1423,
+      "year_ce": 1880,
+      "description": "Хятадын алт уурхайчид болон дараагийн Азийн имигрантууд Шинэ Зеландид Буддын уламжлал авчирсан.",
+      "category": "spread_of_buddhism",
+      "order": 134
+    },
+    {
+      "id": "buddhism_india_bodh_gaya_restoration",
+      "title": "Бодх Гаяа сүмийг сэргээсэн",
+      "year_be": 1423,
+      "year_ce": 1880,
+      "description": "Анагарика Дхармапала гэгээрлийн газар Махабодхи сүмийг Буддын хяналтад буцаах төлөөхөд тэмцсэн.",
+      "category": "india_buddhism",
+      "order": 135
+    },
+    {
+      "id": "pali_text_society",
+      "title": "Пали бичгийн нийгэмлэг байгуулагдсан",
+      "year_be": 1424,
+      "year_ce": 1881,
+      "description": "Т.У. Райс Дэвидс Лондонд Пали бичгийн нийгэмлэг байгуулж, Типитакаг дэлхийн сургалтад хэвлүүлсэн.",
+      "category": "revival",
+      "order": 136
+    },
+    {
+      "id": "buddhism_hawaii",
+      "title": "Гавайд Буддын шашин",
+      "year_be": 1432,
+      "year_ce": 1889,
+      "description": "Японы имигрантууд Гавайн арлууд даяар Жодо Шиншу болон бусад Буддын сүм байгуулсан.",
+      "category": "spread_of_buddhism",
+      "order": 137
+    },
+    {
+      "id": "maha_bodhi_society",
+      "title": "Маха Бодхи нийгэмлэг байгуулагдсан",
+      "year_be": 1434,
+      "year_ce": 1891,
+      "description": "Анагарика Дхармапала Маха Бодхи нийгэмлэг байгуулж, Бодх Гаяа сэргээж, Энэтхэг, дэлхий даяар Буддыг сэргээсэн.",
+      "category": "india_buddhism",
+      "order": 138
+    },
+    {
+      "id": "buddhism_south_africa",
+      "title": "Өмнөд Африкт Буддын шашин",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "Азийн имиграци, дараа нь Барууны шилжилтийн уламжлалаар Өмнөд Африкт Буддын нийгэмлэгүүд үүссэн.",
+      "category": "spread_of_buddhism",
+      "order": 139
+    },
+    {
+      "id": "buddhism_singapore",
+      "title": "Сингапурт Буддын шашин",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "Хятад, Тай, Шри Ланкын Буддын нийгэмлэгүүд сүм, сургууль барьж, Сингапурыг олон янзын Буддын төв болгосон.",
+      "category": "spread_of_buddhism",
+      "order": 140
+    },
+    {
+      "id": "buddhism_malaysia",
+      "title": "Малайзид Буддын шашин",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "Хятад, Тай Буддын уламжлал Малай Сиам хүмүүсийн Теравада нийгэмлэгтэй хамт цэцэглэсэн.",
+      "category": "spread_of_buddhism",
+      "order": 141
+    },
+    {
+      "id": "buddhism_canada",
+      "title": "Канад Буддын шашин",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "Хятад, Япон, дараа нь Вьетнам, Төвөд Буддын нийгэмлэгүүд Канад даяар сүм байгуулсан.",
+      "category": "spread_of_buddhism",
+      "order": 142
+    },
+    {
+      "id": "buddhism_germany",
+      "title": "Герман Буддын шашин",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "Герман эрдэмтэд, дадлагчид Буддын нийгэмлэгүүд байгуулж, сутра орчуулж, бясалгалын бүлгүүд үүсгэсэн.",
+      "category": "modern_buddhism",
+      "order": 143
+    },
+    {
+      "id": "buddhism_india_sarnath_restoration",
+      "title": "Сарнатхыг сэргээсэн",
+      "year_be": 1448,
+      "year_ce": 1905,
+      "description": "Энэтхэгийн Археологийн хүрээлэн, Маха Бодхи нийгэмлэг Будда анхны номлол тавьсан Сарнатхыг сэргээсэн.",
+      "category": "india_buddhism",
+      "order": 144
+    },
+    {
+      "id": "buddhist_revival_movement",
+      "title": "Орчин үеийн Буддын сэргээн босголт",
+      "year_be": 1454,
+      "year_ce": 1911,
+      "description": "Ази даяар шинэчлэлийн хөдөлгөөнүүд бясалгал, нийгмийн ёс, анхны бичгийн сургалтыг онцолсон.",
+      "category": "revival",
+      "order": 145
+    },
+    {
+      "id": "buddhism_india_sanchi_restoration",
+      "title": "Санчи ступаг сэргээсэн",
+      "year_be": 1455,
+      "year_ce": 1912,
+      "description": "Сэр Жон Маршалл Энэтхэгийн хамгийн эртний, сайхан Буддын дурсгалуудын нэг Санчи их ступаг сэргээсэн.",
+      "category": "india_buddhism",
+      "order": 146
+    },
+    {
+      "id": "buddhism_india_nalanda_excavation",
+      "title": "Наланда археологийн малдалт",
+      "year_be": 1458,
+      "year_ce": 1915,
+      "description": "Наландагийн системт малдалт эртний их сургуулийн зохион байгуулалтыг илрүүлж, орчин үеийн сэргээн босголтыг дэмжсэн.",
+      "category": "india_buddhism",
+      "order": 147
+    },
+    {
+      "id": "buddhism_uk",
+      "title": "Их Британид Буддын шашин",
+      "year_be": 1467,
+      "year_ce": 1924,
+      "description": "Лондоны Буддын нийгэмлэг, Теравада миссионерүүд Британд зохион байгуулагдсан Буддын дадлагыг танилцуулсан.",
+      "category": "modern_buddhism",
+      "order": 148
+    },
+    {
+      "id": "buddhism_france",
+      "title": "Франц Буддын шашин",
+      "year_be": 1472,
+      "year_ce": 1929,
+      "description": "Вьетнам, Камбожитой колони холбоо, дараа нь Төвөдийн дүрвэгсд Францад Буддын дадлага авчирсан.",
+      "category": "modern_buddhism",
+      "order": 149
+    },
+    {
+      "id": "first_zen_center_usa",
+      "title": "Америкийн анхны Зэн төв",
+      "year_be": 1473,
+      "year_ce": 1930,
+      "description": "АНУ-д Зэн бясалгалын бүлгүүд үүссэн; Баруунд бясалгалын уламжлал түгэж эхэлсэн.",
+      "category": "modern_buddhism",
+      "order": 150
+    },
+    {
+      "id": "buddhism_philippines",
+      "title": "Филиппинд Буддын шашин",
+      "year_be": 1473,
+      "year_ce": 1930,
+      "description": "Хятад, дараа нь Төвөд, Зэн Буддын нийгэмлэгүүд Филиппин даяар дадлагын төвүүд байгуулсан.",
+      "category": "spread_of_buddhism",
+      "order": 151
+    },
+    {
+      "id": "ambedkar_discovers_buddhism",
+      "title": "Доктор Амбедкар Буддыг олсон",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Энэтхэгийн Үндсэн хуулийн эцэг Доктор Б.Р. Амбедкар кастын дарангуйллаас ангижрах чөлөө, тэгш байдал, ахан дүүсийн зам болгон Буддыг сонгосон.",
+      "category": "india_buddhism",
+      "order": 152
+    },
+    {
+      "id": "international_buddhist_flag",
+      "title": "Олон улсын Буддын далбаа зөвшөөрөгдсөн",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Дэлхийн Буддын нөхөрлөл зургаан өнгийн Буддын далбааг дэлхий даяарх уламжлалын нэгдмэл байдлын тэмдэг болгосон.",
+      "category": "modern_buddhism",
+      "order": 153
+    },
+    {
+      "id": "buddhism_brazil",
+      "title": "Бразиль болон Латин Америк Буддын шашин",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Япон, Хятад, Төвөд Буддын уламжлалууд XX зуунд Латин Америк даяар үндэслэгдсэн.",
+      "category": "spread_of_buddhism",
+      "order": 154
+    },
+    {
+      "id": "buddhism_taiwan",
+      "title": "Тайваньд Буддын шашин цэцэглэсэн",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Тайваньд хүний төлөөх Буддын хөдөлгөөнүүд боловсрол, туслалцаа, бясалгалыг дэмжиж, Хятад Буддын гол төв болсон.",
+      "category": "east_asia",
+      "order": 155
+    },
+    {
+      "id": "buddhism_scandinavia",
+      "title": "Скандинав Буддын шашин",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Төвөдийн дүрвэгсэд, Барууны дадлагчид Дани, Норвеги, Швед даяар Буддын төвүүд байгуулсан.",
+      "category": "modern_buddhism",
+      "order": 156
+    },
+    {
+      "id": "buddhism_india_constitution",
+      "title": "Энэтхэгийн Үндсэн хуульд Буддын үнэт зүйлс",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "Доктор Амбедкар Буддын үзлээс чөлөө, тэгш байдал, ахан дүүсийг Энэтхэгийн Үндсэн хуульд тусгасан.",
+      "category": "india_buddhism",
+      "order": 157
+    },
+    {
+      "id": "india_buddha_purnima_holiday",
+      "title": "Энэтхэгт Будда Пурнима улсын амралт",
+      "year_be": 1495,
+      "year_ce": 1952,
+      "description": "Энэтхэг Буддын төрөлт, гэгээрэл, паринирваныг дурсах Будда Пурнимаг улсын амралтын өдөр болгосон.",
+      "category": "india_buddhism",
+      "order": 158
+    },
+    {
+      "id": "sixth_buddhist_council",
+      "title": "Зургаа дахь Буддын сүм",
+      "year_be": 1497,
+      "year_ce": 1954,
+      "description": "Олон улсын Теравада лам нар Мьянмарын Янгоноор Пали Типитакаг уншиж, баталгаажуулсан.",
+      "category": "council",
+      "order": 159
+    },
+    {
+      "id": "ambedkar_buddhist_conversion_movement",
+      "title": "Амбедкар Будданд шилжихээ зарласан",
+      "year_be": 1498,
+      "year_ce": 1955,
+      "description": "Доктор Амбедкар кастын тэгш бус байдлыг татгалзаж, Буддын замыг сонгохоор зарласан.",
+      "category": "india_buddhism",
+      "order": 160
+    },
+    {
+      "id": "beat_generation_buddhism",
+      "title": "Бит үеийнхэн Буддыг дэмжсэн",
+      "year_be": 1498,
+      "year_ce": 1955,
+      "description": "Жек Керуак, Аллен Гинсберг зэрэг зохиолчид Америкийн уран зохиол, эсрэг соёлд Буддын санааг түгээсэн.",
+      "category": "modern_buddhism",
+      "order": 161
+    },
+    {
+      "id": "ambedkar_deekshabhoomi",
+      "title": "Дикшабхуми дээрх Амбедкарын масс шилжилт",
+      "year_be": 1499,
+      "year_ce": 1956,
+      "description": "Доктор Амбедкар болон зуун мянган дагагч Нагпурт Вижаядашами өдөр Будданд шилжиж, чөлөө, тэгш байдал, ахан дүүсийг баталгаажуулсан.",
+      "category": "india_buddhism",
+      "order": 162
+    },
+    {
+      "id": "neo_buddhist_movement_india",
+      "title": "Энэтхэгт шинэ Буддын хөдөлгөөн",
+      "year_be": 1499,
+      "year_ce": 1956,
+      "description": "Амбедкарын шилжилтийн дараа Махараштра, Энэтхэг даяар сая сая Далит Будданд шилжиж, шинэ нийгэмлэг үүсгэсэн.",
+      "category": "india_buddhism",
+      "order": 163
+    },
+    {
+      "id": "buddhism_india_chaitya_bhoomi",
+      "title": "Чайтья Бхуми дурсгал",
+      "year_be": 1499,
+      "year_ce": 1956,
+      "description": "Мумбайн Чайтья Бхуми Доктор Амбедкар Будданд шилжсний дараа шатаасан, аялал жуулчлалын газар болсон.",
+      "category": "india_buddhism",
+      "order": 164
+    },
+    {
+      "id": "ambedkar_buddha_and_his_dhamma",
+      "title": "Амбедкар 'Будда ба түүний Дхамма' хэвлүүлсэн",
+      "year_be": 1500,
+      "year_ce": 1957,
+      "description": "Доктор Амбедкар Буддын амьдрал, сургаалыг орчин үеийн Энэтхэгт оюунлаг, тэгш ёсны философи болгон тайлбарласан.",
+      "category": "india_buddhism",
+      "order": 165
+    },
+    {
+      "id": "buddhism_india_ambedkar_jayanti",
+      "title": "Амбедкар Жаянти олон нийтийн ёслол",
+      "year_be": 1500,
+      "year_ce": 1957,
+      "description": "4-р сарын 14, Доктор Амбедкарын төрсөн өдөр Энэтхэг Буддын шашныхан бясалгал, нийгэмлэгийн өдөр болгон тэмдэглэдэг.",
+      "category": "india_buddhism",
+      "order": 166
+    },
+    {
+      "id": "dalai_lama_exile",
+      "title": "Далай ламын изгнан",
+      "year_be": 1502,
+      "year_ce": 1959,
+      "description": "14-р Далай лам Төвөдөөс гарч Энэтхэгт зугтаасан засгийн газар байгуулж, Төвөд Буддын соёлыг хадгалсан.",
+      "category": "tibet",
+      "order": 167
+    },
+    {
+      "id": "buddhism_india_dalai_lama_dharamsala",
+      "title": "Дарамсала Төвөд Буддын төв",
+      "year_be": 1503,
+      "year_ce": 1960,
+      "description": "Төвөдийн зугтаасан засгийн газар Дарамсалад байрлаж, дэлхийн Төвөд Буддын сургалтын төв болсон.",
+      "category": "india_buddhism",
+      "order": 168
+    },
+    {
+      "id": "buddhism_india_waghala",
+      "title": "Вагхала Буддын вихара хөдөлгөөн",
+      "year_be": 1503,
+      "year_ce": 1960,
+      "description": "Махараштра, Энэтхэг даяар шинэ Буддын вихара, сургууль барьж, Амбедкарит нийгэмлэгийн амьдралыг хөгжүүлсэн.",
+      "category": "india_buddhism",
+      "order": 169
+    },
+    {
+      "id": "buddhism_india_tibetan_settlements",
+      "title": "Энэтхэгт Төвөд Буддын суурь",
+      "year_be": 1503,
+      "year_ce": 1960,
+      "description": "Энэтхэг Төвөдийн дүрвэгсдийг хүлээн авч, Байлакuppe, Мундгод, Дарамсалад хийд, сургуультай суурь байгуулсан.",
+      "category": "india_buddhism",
+      "order": 170
+    },
+    {
+      "id": "buddhism_india_maharashtra_growth",
+      "title": "Махараштра Буддын хүн амын өсөлт",
+      "year_be": 1504,
+      "year_ce": 1961,
+      "description": "Амбедкарын масс шилжилтийн дараа Махараштрад Буддын хүн амын тоо тооллогоор их өссөн.",
+      "category": "india_buddhism",
+      "order": 171
+    },
+    {
+      "id": "thich_nhat_hanh_engaged",
+      "title": "Тхич Нат Хан ба идэвхтэй Буддын шашин",
+      "year_be": 1508,
+      "year_ce": 1965,
+      "description": "Вьетнамын лам Тхич Нат Хан идэвхтэй Буддыг бий болгож, бясалгалыг энх тайвны идэвхжил, нийгмийн шударга ёстой холбосон.",
+      "category": "modern_buddhism",
+      "order": 172
+    },
+    {
+      "id": "master_hsing_yun_foguang",
+      "title": "Фо Гуан Шань хүний төлөөх Буддын шашин",
+      "year_be": 1510,
+      "year_ce": 1967,
+      "description": "Хсин Юнь багш Тайваньд Фо Гуан Шань байгуулж, боловсрол, нийгмийн оролцоог онцолж, дэлхий даяар түгээсэн.",
+      "category": "east_asia",
+      "order": 173
+    },
+    {
+      "id": "buddhism_indonesia_modern",
+      "title": "Индонезид Буддын шашны сэргээн босголт",
+      "year_be": 1513,
+      "year_ce": 1970,
+      "description": "Зуун жилийн бууралтын дараа Индонезийн Буддын нийгэмлэгүүд сургалтын бүлэг, сүм сэргээлтээр сэргэсэн.",
+      "category": "spread_of_buddhism",
+      "order": 174
+    },
+    {
+      "id": "buddhism_india_global_diaspora",
+      "title": "Дэлхийн Энэтхэг Буддын диаспора",
+      "year_be": 1513,
+      "year_ce": 1970,
+      "description": "Амбедкарит нийгэмлэгийн Энэтхэг Буддын шашныхан дэлхий даяар сүм, соёлын төвүүд байгуулсан.",
+      "category": "india_buddhism",
+      "order": 175
+    },
+    {
+      "id": "vipassana_global_spread",
+      "title": "Випассана бясалгал дэлхий даяар түгссэн",
+      "year_be": 1514,
+      "year_ce": 1971,
+      "description": "С.Н. Гоенка Саяджи У Ба Хин Мьянмарын уламжлалаар Випассанаг дэлхий даяар зааж эхэлсэн.",
+      "category": "revival",
+      "order": 176
+    },
+    {
+      "id": "buddhism_india_sikkim_state",
+      "title": "Сикким Энэтхэгт нэгдсэн Буддын улс",
+      "year_be": 1518,
+      "year_ce": 1975,
+      "description": "Сикким Энэтхэгт нэгдсэн; Төвөд Буддын хийдийн өв, аялал жуулчлалын газрууд хадгалагдсан.",
+      "category": "india_buddhism",
+      "order": 177
+    },
+    {
+      "id": "buddhism_india_vipassana_dhammagiri",
+      "title": "Дхаммагири Випассана төв",
+      "year_be": 1519,
+      "year_ce": 1976,
+      "description": "С.Н. Гоенка Махараштрагийн Игатпурид дэлхийн хамгийн том бясалгалын төвүүдийн нэг Дхаммагириг байгуулсан.",
+      "category": "india_buddhism",
+      "order": 178
+    },
+    {
+      "id": "buddhism_india_triratna",
+      "title": "Энэтхэгт Триратна Буддын нийгэмлэг",
+      "year_be": 1521,
+      "year_ce": 1978,
+      "description": "Триратна Буддын зэрэглэл Энэтхэгт өргөж, Амбедкарын үзлээр урамшуулсан Дхамма сургалт, нийгмийн хөгжлийг өгсөн.",
+      "category": "india_buddhism",
+      "order": 179
+    },
+    {
+      "id": "mindfulness_mbsr",
+      "title": "Ухамсрын стресс бууруулах арга",
+      "year_be": 1522,
+      "year_ce": 1979,
+      "description": "Доктор Жон Кабат-Зинн Массачусетс их сургуульд MBSR хөгжүүлж, Буддын ухамсрыг орчин үеийн эрүүл мэндэд нэгтгэсэн.",
+      "category": "modern_buddhism",
+      "order": 180
+    },
+    {
+      "id": "thai_forest_tradition_global",
+      "title": "Тай ойн уламжлал дэлхий даяар түгссэн",
+      "year_be": 1523,
+      "year_ce": 1980,
+      "description": "Ажан Ча болон шавь нар дэлхий даяар ойн хийд байгуулж, Тай ойн уламжлалын хатуу бясалгалыг заасан.",
+      "category": "revival",
+      "order": 181
+    },
+    {
+      "id": "buddhism_china_cultural_revival",
+      "title": "Мао-гийн дараах Хятад Буддын сэргээн босголт",
+      "year_be": 1523,
+      "year_ce": 1980,
+      "description": "Соёлын хувьсгалын дарангуйллын дараа Хятад даяар сүмүүд дахин нээгдэж, Буддын дадлага сэргэсэн.",
+      "category": "east_asia",
+      "order": 182
+    },
+    {
+      "id": "plum_village_founded",
+      "title": "Плам Виллиж хийд байгуулагдсан",
+      "year_be": 1525,
+      "year_ce": 1982,
+      "description": "Тхич Нат Хан Францад Плам Виллиж байгуулж, Европын хамгийн том Буддын хийд, идэвхтэй Буддын төв болгосон.",
+      "category": "modern_buddhism",
+      "order": 183
+    },
+    {
+      "id": "buddhism_science_dialogue",
+      "title": "Буддын шашин ба шинжлэх ухааны ярилцлага",
+      "year_be": 1530,
+      "year_ce": 1987,
+      "description": "Майнд энд Лайф институт Далай лам, Барууны эрдэмтдийн ухамсар, сайн сайхан ярилцлагыг эхлүүлсэн.",
+      "category": "modern_buddhism",
+      "order": 184
+    },
+    {
+      "id": "dalai_lama_nobel_peace",
+      "title": "Далай лам Нобелийн энх тайвны шагнал авсан",
+      "year_be": 1532,
+      "year_ce": 1989,
+      "description": "14-р Далай лам Төвөдийн чөлөөлөлтийн төлөөх энх тайвны тэмцэл, энэрэнгүй сэтгэлийг дэмжсний төлөө Нобелийн энх тайвны шагнал авсан.",
+      "category": "modern_buddhism",
+      "order": 185
+    },
+    {
+      "id": "buddhism_environmental_movement",
+      "title": "Буддын байгаль орчны хөдөлгөөн",
+      "year_be": 1533,
+      "year_ce": 1990,
+      "description": "Дэлхий даяар Буддын удирдагчид харилцан хамаарал, амьд бүхнийг энэрэх үндсээр байгаль орчныг хамгаалахыг дэмжиж эхэлсэн.",
+      "category": "modern_buddhism",
+      "order": 186
+    },
+    {
+      "id": "buddhism_women_ordination",
+      "title": "Лам эмэгтэй бясалгалын дэлхийн хөдөлгөөн",
+      "year_be": 1539,
+      "year_ce": 1996,
+      "description": "Шри Ланка зэрэг Теравада нийгэмлэгүүд эмэгтэйчүүдэд бүрэн бясалгалыг сэргээсэн — Махапажапати Готамийн уламжлалыг үргэлжлүүлсэн.",
+      "category": "sangha",
+      "order": 187
+    },
+    {
+      "id": "un_vesak_day",
+      "title": "НҮБ-ын Весак өдрийг хүлээн зөвшөөрсөн",
+      "year_be": 1542,
+      "year_ce": 1999,
+      "description": "НҮБ Буддын төрөлт, гэгээрэл, паринирваныг дурсах Весакийг олон улсын ажиглалтын өдөр болгосон.",
+      "category": "modern_buddhism",
+      "order": 188
+    },
+    {
+      "id": "buddhism_online_dharma",
+      "title": "Буддын сургаал онлайн болсон",
+      "year_be": 1543,
+      "year_ce": 2000,
+      "description": "Хийд, багш, эрдэмтэд дэлхий даяар интернетээр Дхаммын яриа, сутра, бясалгалын заавар хуваалцаж эхэлсэн.",
+      "category": "modern_buddhism",
+      "order": 189
+    },
+    {
+      "id": "bamiyan_buddhas_destroyed",
+      "title": "Бамиан Буддын хөшөө устгагдсан",
+      "year_be": 1544,
+      "year_ce": 2001,
+      "description": "Талибан Афганистаны Бамианд асар том Буддын хөшөөг устгаж, дэлхийг цочирдуулж, Буддын өвийн эмзгэг байдлыг харуулсан.",
+      "category": "modern_buddhism",
+      "order": 190
+    },
+    {
+      "id": "buddhism_india_diksha_ceremonies",
+      "title": "Энэтхэгт масс Буддын дикша ёслол",
+      "year_be": 1544,
+      "year_ce": 2001,
+      "description": "Доктор Амбедкарын өв санаагаар урамшуулсан томоохон дикша ёслолууд Энэтхэг даяар үргэлжилсэн.",
+      "category": "india_buddhism",
+      "order": 191
+    },
+    {
+      "id": "buddha_birthplace_unesco",
+      "title": "Лумбини ЮНЕСКО-гийн дэлхийн өв",
+      "year_be": 1545,
+      "year_ce": 2002,
+      "description": "Буддын төрсөн газар Лумбини ЮНЕСКО-гийн дэлхийн өв болж, гол аялал жуулчлалын газар хамгаалагдсан.",
+      "category": "modern_buddhism",
+      "order": 192
+    },
+    {
+      "id": "buddhism_sri_lanka_civil_war",
+      "title": "Шри Ланка Буддын энх тайвны оролдлого",
+      "year_be": 1545,
+      "year_ce": 2002,
+      "description": "Шри Ланкын лам нар, дэмжигчид дотоодын дайны үед болон дараа нь энх тайвны, эвлэрлийн төлөө ажилласан.",
+      "category": "modern_buddhism",
+      "order": 193
+    },
+    {
+      "id": "buddhism_india_bodh_gaya_unesco",
+      "title": "Махабодхи сүм ЮНЕСКО-гийн өв",
+      "year_be": 1545,
+      "year_ce": 2002,
+      "description": "Бодх Гаяагийн Махабодхи сүм ЮНЕСКО-гийн дэлхийн өв болж, дэлхийн сүнслэг ач холбогдлыг хүлээн зөвшөөрсөн.",
+      "category": "india_buddhism",
+      "order": 194
+    },
+    {
+      "id": "buddhism_india_bodh_gaya_summit",
+      "title": "Бодх Гаяа олон улсын Буддын уулзалт",
+      "year_be": 1547,
+      "year_ce": 2004,
+      "description": "Энэтхэг Бодх Гаяад олон улсын Буддын хурал зохион, дэлхийн аялал жуулчлалын төвийн үүргийг баталгаажуулсан.",
+      "category": "india_buddhism",
+      "order": 195
+    },
+    {
+      "id": "buddhism_myanmar_saffron",
+      "title": "Мьянмарын шар хувьсгал",
+      "year_be": 1550,
+      "year_ce": 2007,
+      "description": "Мьянмарын лам нар ардчилал, хүний эрхийн төлөө масс жагсаал удирдаж, идэвхтэй Буддыг үйлдэлд харуулсан.",
+      "category": "modern_buddhism",
+      "order": 196
+    },
+    {
+      "id": "buddhism_india_nagaloka",
+      "title": "Нагалока Буддын сургалтын төв",
+      "year_be": 1550,
+      "year_ce": 2007,
+      "description": "Нагпурт Нагалока төв Энэтхэг Буддын шашны шинэ үеийнхэнд бясалгал, сургалт, нийгмийн өөрчлөлтийг заахаар байгуулагдсан.",
+      "category": "india_buddhism",
+      "order": 197
+    },
+    {
+      "id": "nalanda_university_revived",
+      "title": "Наланда их сургууль сэргээгдсэн",
+      "year_be": 1557,
+      "year_ce": 2014,
+      "description": "Энэтхэг Бихарид Наланда их сургуулийг олон улсын байгууллага болгон дахин байгуулж, Энэтхэг Буддын сургалтын өвийн сэргээн босголтын тэмдэг болгосон.",
+      "category": "india_buddhism",
+      "order": 198
+    },
+    {
+      "id": "buddhism_india_kushinagar_development",
+      "title": "Кушинагар Буддын аялал жуулчлалын хөгжил",
+      "year_be": 1559,
+      "year_ce": 2016,
+      "description": "Будда паринирванад орсон Кушинагарыг Энэтхэг гол аялал жуулчлал, өвийн газар болгон хөгжүүлсэн.",
+      "category": "india_buddhism",
+      "order": 199
+    },
+    {
+      "id": "buddhism_india_modern_pilgrimage",
+      "title": "Орчин үеийн Энэтхэг Буддын аялалын маршрут",
+      "year_be": 1559,
+      "year_ce": 2016,
+      "description": "Энэтхэг Лумбини, Бодх Гаяа, Сарнатх, Кушинагарыг холбосон Буддын аялалын санаачилгыг эхлүүлсэн.",
+      "category": "india_buddhism",
+      "order": 200
+    },
+    {
+      "id": "covid_buddhist_online_practice",
+      "title": "COVID-19 үед Буддын нийгэмлэгүүд дасан зохицсон",
+      "year_be": 1563,
+      "year_ce": 2020,
+      "description": "Дэлхийн тархалтын үед сүм, бясалгалын төвүүд онлайн сургаал, виртуал сангха цугларал руу шилжсэн.",
+      "category": "modern_buddhism",
+      "order": 201
+    },
+    {
+      "id": "global_buddhist_summit",
+      "title": "Дэлхийн Буддын уулзалт",
+      "year_be": 1566,
+      "year_ce": 2023,
+      "description": "Буддын уламжлалын удирдагчид, эрдэмтэд Нью Делид уулзаж, энх тайвны, энэрэнгүй сэтгэл, хамтын хариуцлагын талаар хэлэлцсэн.",
+      "category": "modern_buddhism",
+      "order": 202
+    }
+  ]
+}

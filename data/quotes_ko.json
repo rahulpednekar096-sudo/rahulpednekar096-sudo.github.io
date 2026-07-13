@@ -1,0 +1,698 @@
+{
+  "version": 1,
+  "quotes": [
+    {
+      "id": "q001",
+      "text": "이 세상에서 미움은 미움으로 그칠 수 없고, 오직 자비로만 미움이 그친다. 이것이 영원한 법이다.",
+      "source": "Dhammapada 5",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q002",
+      "text": "모든 유위의 것은 무상하다. 이를 지혜로 볼 때, 사람은 고통에서 떠난다.",
+      "source": "Dhammapada 277",
+      "language": "ko",
+      "tags": ["impermanence", "daily"]
+    },
+    {
+      "id": "q003",
+      "text": "너 스스로 정진해야 한다. 부처들은 오직 길을 가리킬 뿐이다.",
+      "source": "Dhammapada 276",
+      "language": "ko",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q004",
+      "text": "단단한 바위가 바람에 흔들리지 않듯, 현자는 칭찬과 비난에 흔들리지 않는다.",
+      "source": "Dhammapada 81",
+      "language": "ko",
+      "tags": ["equanimity", "daily"]
+    },
+    {
+      "id": "q005",
+      "text": "건강은 가장 큰 선물이요, 만족은 가장 큰 부요, 성실함은 가장 좋은 인연이다.",
+      "source": "Dhammapada 204",
+      "language": "ko",
+      "tags": ["contentment", "daily"]
+    },
+    {
+      "id": "q006",
+      "text": "빈말 천 마디보다 평화를 가져오는 한 마디가 낫다.",
+      "source": "Dhammapada 100",
+      "language": "ko",
+      "tags": ["speech", "daily"]
+    },
+    {
+      "id": "q007",
+      "text": "분노를 무원(無怨)으로 이기고, 악을 선으로 이기며, 인색함을 보시로 이기고, 불성실을 진실로 이겨라.",
+      "source": "Dhammapada 223",
+      "language": "ko",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q008",
+      "text": "마음은 모든 행동의 선행자이다. 모든 업은 마음이 이끌고 마음이 만들어낸다.",
+      "source": "Dhammapada 1",
+      "language": "ko",
+      "tags": ["mind", "daily"]
+    },
+    {
+      "id": "q009",
+      "text": "어머니가 독자(獨子)를 지키려 생명을 내놓듯, 모든 중생에 한량 없는 사랑을 기르아라.",
+      "source": "Metta Sutta",
+      "language": "ko",
+      "tags": ["loving-kindness", "daily"]
+    },
+    {
+      "id": "q010",
+      "text": "과거에 머무르지 말고, 미래를 꿈꾸지 말며, 마음을 현재의 순간에 집중하라.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["mindfulness", "daily"]
+    },
+    {
+      "id": "q011",
+      "text": "분노를 붙잡고 있는 것은 뜨거운 숯을 잡아 상대에게 던지려는 것과 같으니, 타는 이는 바로 너이다.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["anger", "daily"]
+    },
+    {
+      "id": "q012",
+      "text": "우리를 구원하는 이는 우리 자신 외에 없다. 누구도 할 수 없고 누구도 하지 않는다. 우리 스스로 길을 걸어야 한다.",
+      "source": "Dhammapada 165",
+      "language": "ko",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q013",
+      "text": "하늘에는 동서의 구별이 없으나, 사람들은 마음속에서 구별을 만들어 이를 진리로 믿는다.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q014",
+      "text": "오래 숨길 수 없는 것이 셋이니, 해와 달과 진리이다.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["truth", "daily"]
+    },
+    {
+      "id": "q015",
+      "text": "평화는 내면에서 온다. 밖에서 찾지 말라.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["peace", "daily"]
+    },
+    {
+      "id": "q016",
+      "text": "고통의 뿌리는 집착이다.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["attachment", "daily"]
+    },
+    {
+      "id": "q017",
+      "text": "분노로 벌을 받는 것이 아니라, 분노에 의해 벌을 받는다.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["anger", "daily"]
+    },
+    {
+      "id": "q018",
+      "text": "한 개의 촛불에서 수천 개의 촛불을 켤 수 있고, 그 촛불의 수명은 줄어들지 않는다. 행복은 나눌수록 줄어들지 않는다.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["compassion", "daily"]
+    },
+    {
+      "id": "q019",
+      "text": "남을 위해 등불을 밝히면, 너의 길 또한 밝아진다.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["compassion", "daily"]
+    },
+    {
+      "id": "q020",
+      "text": "혀는 날카로운 칼과 같아 피 한 방울 없이 살생한다.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["speech", "daily"]
+    },
+    {
+      "id": "q021",
+      "text": "항아리는 한 방울 한 방울 모여 차오른다.",
+      "source": "Dhammapada 122",
+      "language": "ko",
+      "tags": ["patience", "daily"]
+    },
+    {
+      "id": "q022",
+      "text": "단단한 바위가 바람에 흔들리지 않듯, 현자는 칭찬과 비난에 흔들리지 않는다.",
+      "source": "Dhammapada 81",
+      "language": "ko",
+      "tags": ["equanimity", "daily"]
+    },
+    {
+      "id": "q023",
+      "text": "너의 것이 아닌 모든 것은 내버려 두라. 그렇게 놓아줌이 오래도록 행복이 될 것이다.",
+      "source": "Majjhima Nikaya",
+      "language": "ko",
+      "tags": ["letting-go", "daily"]
+    },
+    {
+      "id": "q024",
+      "text": "온 세상을 향해 한량 없는 사랑을 발산하라.",
+      "source": "Metta Sutta",
+      "language": "ko",
+      "tags": ["loving-kindness", "daily"]
+    },
+    {
+      "id": "q025",
+      "text": "몸을 건강히 유지하는 것은 의무이니, 그렇지 않으면 마음을 굳세고 맑게 유지할 수 없다.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["health", "daily"]
+    },
+    {
+      "id": "q026",
+      "text": "행복에 이르는 길은 없다. 행복 그 자체가 길이다.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["happiness", "daily"]
+    },
+    {
+      "id": "q027",
+      "text": "길은 하늘에 있지 않고, 길은 마음속에 있다.",
+      "source": "Dhammapada 254",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q028",
+      "text": "매일 아침 우리는 다시 태어난다. 오늘 우리가 하는 일이 가장 중요하다.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["present-moment", "daily"]
+    },
+    {
+      "id": "q029",
+      "text": "한 송이 꽃의 기적을 분명히 볼 수 있다면, 우리의 삶 전체가 달라질 것이다.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["mindfulness", "daily"]
+    },
+    {
+      "id": "q030",
+      "text": "영원한 것은 없고, 모든 것은 변화에 종속된다. 존재는 항상 되어감이다.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["impermanence", "daily"]
+    },
+    {
+      "id": "q031",
+      "text": "단련된 마음은 행복을 가져온다.",
+      "source": "Dhammapada 35",
+      "language": "ko",
+      "tags": ["mind", "daily"]
+    },
+    {
+      "id": "q032",
+      "text": "일어나라! 앉아라! 평화를 위해 열심히 수련하라.",
+      "source": "Dhammapada 144",
+      "language": "ko",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q033",
+      "text": "현자는 몸을 제어하고, 말을 제어하며, 마음을 제어한다. 그들은 참으로 잘 통제된 자다.",
+      "source": "Dhammapada 234",
+      "language": "ko",
+      "tags": ["self-control", "daily"]
+    },
+    {
+      "id": "q034",
+      "text": "남의 허물을 찾지 말고, 남이 지은 일과 하지 않은 일을 보지 말라. 오직 자신의 행한 일과 하지 못한 일을 보라.",
+      "source": "Dhammapada 50",
+      "language": "ko",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q035",
+      "text": "비가 지붕을 잘 얹지 않은 집을 뚫고 들어오듯, 번뇌는 사유 없는 마음을 뚫고 들어온다.",
+      "source": "Dhammapada 13",
+      "language": "ko",
+      "tags": ["mind", "daily"]
+    },
+    {
+      "id": "q036",
+      "text": "비가 잘 얹은 지붕을 뚫지 못하듯, 번뇌는 사유 있는 마음을 뚫지 못한다.",
+      "source": "Dhammapada 14",
+      "language": "ko",
+      "tags": ["mind", "daily"]
+    },
+    {
+      "id": "q037",
+      "text": "존재를 이어가는 갈망과 목마름이 더 이상 없는 자, 흔적 없고 한없이 넓은 그 깨달은 이를 어찌 추적할 수 있으랴.",
+      "source": "Dhammapada 180",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q038",
+      "text": "흥망(興亡)을 보지 못하고 백 년 사는 것보다, 하루를 살며 흥망을 보는 것이 낫다.",
+      "source": "Dhammapada 113",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q039",
+      "text": "보시(布施)의 힘을 내가 아는 대로 네가 안다면, 한 끼 식사도 어떤 형태로든 나누지 않고 지나치지 않을 것이다.",
+      "source": "Buddha",
+      "language": "ko",
+      "tags": ["generosity", "daily"]
+    },
+    {
+      "id": "q040",
+      "text": "조금밖에 없어도 베풀어라.",
+      "source": "Dhammapada 224",
+      "language": "ko",
+      "tags": ["generosity", "daily"]
+    },
+    {
+      "id": "q041",
+      "text": "선을 행할 일이 있으면 또다시 행하라. 그 안에서 기쁨을 찾으라. 선을 쌓음은 경(輕)한 것이다.",
+      "source": "Dhammapada 118",
+      "language": "ko",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q042",
+      "text": "악을 행한 일이 있으면 다시 행하지 말라. 그 안에서 즐거움을 찾지 말라. 악을 쌓음은 고통스러운 것이다.",
+      "source": "Dhammapada 117",
+      "language": "ko",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q043",
+      "text": "빛깔은 아름답되 향기 없는 꽃과 같이, 말만 아름답고 그에 따라 행하지 않는 자에게는 아무 열매가 없다.",
+      "source": "Dhammapada 51",
+      "language": "ko",
+      "tags": ["action", "daily"]
+    },
+    {
+      "id": "q044",
+      "text": "빛깔도 아름답고 향기도 있는 꽃과 같이, 그 말에 따라 행하는 자의 올바른 말은 열매를 맺는다.",
+      "source": "Dhammapada 52",
+      "language": "ko",
+      "tags": ["action", "daily"]
+    },
+    {
+      "id": "q045",
+      "text": "꽃의 향기는 바람을 따라 흐르고, 덕(德)의 향기는 바람을 거슬러 흐른다. 덕 있는 자는 사방에 퍼진다.",
+      "source": "Dhammapada 54",
+      "language": "ko",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q046",
+      "text": "벌이 꿀을 취하며 꽃의 빛깔과 향기를 해치지 않듯, 현자는 세상을 지나간다.",
+      "source": "Dhammapada 49",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q047",
+      "text": "마음대로 판단한다고 정의로운 자가 되지 않는다. 옳고 그름을 살피는 자가 현자이다.",
+      "source": "Dhammapada 256",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q048",
+      "text": "일어날 때 일어나지 않고, 젊고 강하지만 게으르며, 의지와 생각이 약한 그 나태하고 게으른 자는 결코 지혜의 길을 찾지 못하리라.",
+      "source": "Dhammapada 280",
+      "language": "ko",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q049",
+      "text": "경계(警界)는 불멸의 길이요, 방탕은 죽음의 길이다. 경계하는 자는 죽지 않고, 방탕한 자는 이미 죽은 것과 같다.",
+      "source": "Dhammapada 21",
+      "language": "ko",
+      "tags": ["mindfulness", "daily"]
+    },
+    {
+      "id": "q050",
+      "text": "항상 깨어 있고 밤낮으로 수련하며 열반에 뜻을 두는 자들의 번뇌는 사라진다.",
+      "source": "Dhammapada 226",
+      "language": "ko",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q051",
+      "text": "욕망과 같은 불도 없고, 증오와 같은 움켜쥠도 없으며, 환망(幻想)과 같은 그물도 없고, 갈망과 같은 강도 없다.",
+      "source": "Dhammapada 251",
+      "language": "ko",
+      "tags": ["craving", "daily"]
+    },
+    {
+      "id": "q052",
+      "text": "남의 허물은 쉽게 보이나 자신의 허물은 보기 어렵다. 겨를 털어 남의 허물을 거르듯 하면서 자기 것은 숨긴다.",
+      "source": "Dhammapada 252",
+      "language": "ko",
+      "tags": ["self-reflection", "daily"]
+    },
+    {
+      "id": "q053",
+      "text": "남의 허물은 자신의 것보다 보기 쉽다. 남의 허물은 겨를 거르듯 쉽게 분별되나, 자기 허물은 보기 어렵다.",
+      "source": "Dhammapada 253",
+      "language": "ko",
+      "tags": ["self-reflection", "daily"]
+    },
+    {
+      "id": "q054",
+      "text": "사람이 악한 생각으로 말하거나 행하면, 수레를 끄는 소의 발에 바퀴가 따르듯 고통이 그를 따른다.",
+      "source": "Dhammapada 1",
+      "language": "ko",
+      "tags": ["karma", "daily"]
+    },
+    {
+      "id": "q055",
+      "text": "사람이 순수한 생각으로 말하거나 행하면, 그림자가 떠나지 않듯 행복이 그를 따른다.",
+      "source": "Dhammapada 2",
+      "language": "ko",
+      "tags": ["karma", "daily"]
+    },
+    {
+      "id": "q056",
+      "text": "그가 나를 욕하고, 나를 치고, 나를 제압하고, 나를 빼앗았다. 이런 생각을 품는 자는 미움이 가라앉지 않는다.",
+      "source": "Dhammapada 3",
+      "language": "ko",
+      "tags": ["forgiveness", "daily"]
+    },
+    {
+      "id": "q057",
+      "text": "그가 나를 욕하고, 나를 치고, 나를 제압하고, 나를 빼앗았다. 이런 생각을 품지 않는 자는 미움이 가라앉는다.",
+      "source": "Dhammapada 4",
+      "language": "ko",
+      "tags": ["forgiveness", "daily"]
+    },
+    {
+      "id": "q058",
+      "text": "어떤 때에도 미움은 미움으로 그치지 않고, 사랑으로 그친다. 이것이 변하지 않는 법이다.",
+      "source": "Dhammapada 5",
+      "language": "ko",
+      "tags": ["loving-kindness", "daily"]
+    },
+    {
+      "id": "q059",
+      "text": "우리가 이 세상에 화합하여 살기 위해 왔다는 것을 아는 이가 많지 않다. 이를 알고 따르는 자들의 다툼은 곧 끝난다.",
+      "source": "Dhammapada 6",
+      "language": "ko",
+      "tags": ["harmony", "daily"]
+    },
+    {
+      "id": "q060",
+      "text": "단단한 바위가 바람에 흔들리지 않듯, 현자는 비난과 칭찬 속에서도 흔들리지 않는다.",
+      "source": "Dhammapada 81",
+      "language": "ko",
+      "tags": ["equanimity", "daily"]
+    },
+    {
+      "id": "q061",
+      "text": "빛나고 향기 있으나 열매 없는 아름다운 꽃과 같이, 말만 아름답고 그에 따라 행하지 않는 자의 말은 헛되다.",
+      "source": "Dhammapada 51",
+      "language": "ko",
+      "tags": ["action", "daily"]
+    },
+    {
+      "id": "q062",
+      "text": "경계함으로 방심을 이기는 현자는 슬픔에서 벗어나 지혜의 궁전에 오른다.",
+      "source": "Dhammapada 36",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q063",
+      "text": "경계함으로 방심을 이기는 현자는 슬픔에서 벗어나 지혜의 궁전에 오른다.",
+      "source": "Dhammapada 37",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q064",
+      "text": "현자가 지혜로 이기심을 가장 더러운 것을 몰아내듯 몰아내면, 슬픔에서 벗어나 지혜의 궁전에 오른다.",
+      "source": "Dhammapada 39",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q065",
+      "text": "자신의 어리석음을 아는 어리석은 자는 적어도 그만큼 지혜롭다. 그러나 스스로 지혜롭다고 생각하는 어리석은 자를 진정 어리석은 자라 한다.",
+      "source": "Dhammapada 63",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q066",
+      "text": "백 년 동안 달마다 수천 번의 제사를 지내도, 순간이라도 완전한 마음을 가진 자를 공경하는 것이 더 낫다.",
+      "source": "Dhammapada 106",
+      "language": "ko",
+      "tags": ["devotion", "daily"]
+    },
+    {
+      "id": "q067",
+      "text": "한 사람이 전투에서 천 번 천 명을 이기고, 다른 이가 자신을 이긴다면, 그가 가장 위대한 승리자이다.",
+      "source": "Dhammapada 103",
+      "language": "ko",
+      "tags": ["self-mastery", "daily"]
+    },
+    {
+      "id": "q068",
+      "text": "자신을 이김이 만인을 이기는 것보다 낫다. 신이나 간다르바, 브라흐마와 함께한 마라도 자신을 이긴 자의 승리를 패배로 바꿀 수 없다.",
+      "source": "Dhammapada 104",
+      "language": "ko",
+      "tags": ["self-mastery", "daily"]
+    },
+    {
+      "id": "q069",
+      "text": "듣고도 이익이 없는 천 구절보다, 한 구절을 듣고 마음이 평온해지는 것이 낫다.",
+      "source": "Dhammapada 101",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q070",
+      "text": "게으르고 무기력한 자의 백 년보다, 부지런하고 활동적인 자의 하루가 낫다.",
+      "source": "Dhammapada 112",
+      "language": "ko",
+      "tags": ["effort", "daily"]
+    },
+    {
+      "id": "q071",
+      "text": "제한된 즐거움을 버리고 큰 즐거움을 볼 수 있다면, 현자는 큰 즐거움을 바라보며 제한된 즐거움을 버려라.",
+      "source": "Dhammapada 290",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q072",
+      "text": "남의 허물을 찾지 말고, 남이 지은 일과 하지 않은 일을 보지 말라. 오직 자신의 행한 일과 하지 못한 일을 보라.",
+      "source": "Dhammapada 50",
+      "language": "ko",
+      "tags": ["self-reflection", "daily"]
+    },
+    {
+      "id": "q073",
+      "text": "빛나고 향기 있으나 열매 없는 아름다운 꽃과 같이, 말만 아름답고 그에 따라 행하지 않는 자의 말은 헛되다.",
+      "source": "Dhammapada 51",
+      "language": "ko",
+      "tags": ["action", "daily"]
+    },
+    {
+      "id": "q074",
+      "text": "꽃 더미에서 화환을 여러 개 만들 수 있듯, 필멸자로 태어난 자는 선한 일을 많이 행하여야 한다.",
+      "source": "Dhammapada 53",
+      "language": "ko",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q075",
+      "text": "남의 잘못이나 지은 죄와 범하지 않은 죄가 아니라, 자신의 잘못과 소홀함을 보라.",
+      "source": "Dhammapada 50",
+      "language": "ko",
+      "tags": ["self-reflection", "daily"]
+    },
+    {
+      "id": "q076",
+      "text": "꽃의 향기는 바람을 거슬러 가지 않으나, 선한 사람의 향기는 바람을 거슬러 퍼진다. 선한 자는 어디에나 퍼진다.",
+      "source": "Dhammapada 54",
+      "language": "ko",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q077",
+      "text": "백단(栴檀), 타가라, 청련(靑蓮), 자스민 등 모든 향기 중에서 덕의 향기가 가장 달콤하다.",
+      "source": "Dhammapada 55",
+      "language": "ko",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q078",
+      "text": "타가라와 백단의 향기는 연하나, 덕 있는 자의 향기가 가장 달콤하니, 신들의 처소에까지 퍼진다.",
+      "source": "Dhammapada 56",
+      "language": "ko",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q079",
+      "text": "선한 자는 눈 덮인 산처럼 멀리서도 빛나고, 악한 자는 밤에 쏜 화살처럼 보이지 않는다.",
+      "source": "Dhammapada 304",
+      "language": "ko",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q080",
+      "text": "홀로 앉고, 홀로 쉬고, 홀로 걸으며 확고한 자, 자신 안에서 평온해진 자는 숲에서 기쁨을 찾으리라.",
+      "source": "Dhammapada 305",
+      "language": "ko",
+      "tags": ["solitude", "daily"]
+    },
+    {
+      "id": "q081",
+      "text": "선(禪)에 기쁨을, 고독에 기쁨을, 법(法)에 기쁨을, 깨달으신 분의 제자들이 기뻐하니라.",
+      "source": "Dhammapada 373",
+      "language": "ko",
+      "tags": ["meditation", "daily"]
+    },
+    {
+      "id": "q082",
+      "text": "자신을 이긴 자는 천 번 천 명을 이긴 자보다 훨씬 더 위대한 영웅이다.",
+      "source": "Dhammapada 103",
+      "language": "ko",
+      "tags": ["self-mastery", "daily"]
+    },
+    {
+      "id": "q083",
+      "text": "항상 함께하는 선행을 수련하라. 법(法)을 실천하는 것만큼 좋은 것은 없다.",
+      "source": "Dhammapada 289",
+      "language": "ko",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q084",
+      "text": "몸과 말과 마음을 제어하고 평온하며 세상의 미끼를 버린 현자를 성자(聖者)라 한다.",
+      "source": "Dhammapada 391",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q085",
+      "text": "심신(身心)에 조금도 집착하지 않고, 가지지 못한 것에 슬퍼하지 않는 자를 참으로 승려(僧侶)라 한다.",
+      "source": "Dhammapada 367",
+      "language": "ko",
+      "tags": ["non-attachment", "daily"]
+    },
+    {
+      "id": "q086",
+      "text": "법(法) 가운데 살고, 법에 기뻐하며, 법을 관찰하고 마음에 법을 잘 간직하는 자는 지극한 법에서 떨어지지 않는다.",
+      "source": "Dhammapada 364",
+      "language": "ko",
+      "tags": ["dhamma", "daily"]
+    },
+    {
+      "id": "q087",
+      "text": "꽃의 향기는 바람을 따라 흐르고, 덕(德)의 향기는 바람을 거슬러 흐른다. 덕 있는 자는 사방에 퍼진다.",
+      "source": "Dhammapada 54",
+      "language": "ko",
+      "tags": ["virtue", "daily"]
+    },
+    {
+      "id": "q088",
+      "text": "재스민 덩굴이 시든 꽃을 떨어뜨리듯, 번뇌와 미움을 떨쳐 버려라.",
+      "source": "Dhammapada 377",
+      "language": "ko",
+      "tags": ["letting-go", "daily"]
+    },
+    {
+      "id": "q089",
+      "text": "마음이 고요하고 말이 고요하며 행동이 고요한 자, 올바르게 아는 자는 완전히 해방되어 완전한 평화와 균형을 이룬다.",
+      "source": "Dhammapada 378",
+      "language": "ko",
+      "tags": ["peace", "daily"]
+    },
+    {
+      "id": "q090",
+      "text": "맹목적 믿음이 없고 무위(無爲)를 알며, 모든 결속을 끊고 모든 유혹을 제거하며 모든 욕망을 버린 자가 사람 중 가장 위대한 자이다.",
+      "source": "Dhammapada 97",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q091",
+      "text": "촌락이든 숲이든, 육지든 바다든, 고귀한 분들이 머무시는 곳이면 그곳은 기쁨이 넘치는 곳이다.",
+      "source": "Dhammapada 98",
+      "language": "ko",
+      "tags": ["community", "daily"]
+    },
+    {
+      "id": "q092",
+      "text": "숲의 잎은 즐겁고 숲도 즐겁다. 그러나 법(法)의 행복을 맛보지 못한 자에게는 숲에 기쁨이 없다.",
+      "source": "Dhammapada 99",
+      "language": "ko",
+      "tags": ["dhamma", "daily"]
+    },
+    {
+      "id": "q093",
+      "text": "빈 구절 천 개보다 평화를 가져오는 한 구절이 낫다.",
+      "source": "Dhammapada 100",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q094",
+      "text": "도덕 없이 통제 없이 백 년 사는 것보다, 하루를 도덕적으로 명상하며 사는 것이 참으로 낫다.",
+      "source": "Dhammapada 110",
+      "language": "ko",
+      "tags": ["meditation", "daily"]
+    },
+    {
+      "id": "q095",
+      "text": "흥망을 보지 못하고 백 년 사는 것보다, 하루를 살며 흥망을 보는 것이 참으로 낫다.",
+      "source": "Dhammapada 113",
+      "language": "ko",
+      "tags": ["impermanence", "daily"]
+    },
+    {
+      "id": "q096",
+      "text": "작은 행복을 버리고 큰 행복을 얻을 수 있다면, 현자는 큰 행복을 바라보며 작은 것을 버려라.",
+      "source": "Dhammapada 290",
+      "language": "ko",
+      "tags": ["wisdom", "daily"]
+    },
+    {
+      "id": "q097",
+      "text": "아무리 위대한 자를 위해서라도 자신의 안녕을 소홀히 하지 말라. 자신의 안녕을 분명히 알고 선(善)에 뜻을 두라.",
+      "source": "Dhammapada 166",
+      "language": "ko",
+      "tags": ["self-care", "daily"]
+    },
+    {
+      "id": "q098",
+      "text": "남의 허물을 찾지 말고, 남이 지은 일과 하지 않은 일을 보지 말라. 오직 자신의 행한 일과 하지 못한 일을 보라.",
+      "source": "Dhammapada 50",
+      "language": "ko",
+      "tags": ["self-reflection", "daily"]
+    },
+    {
+      "id": "q099",
+      "text": "모두가 폭력을 두려워하고 모두가 죽음을 두려워한다. 자신을 남의 자리에 놓고 살생하지 말며 남에게 살생하게 하지 말라.",
+      "source": "Dhammapada 129",
+      "language": "ko",
+      "tags": ["compassion", "daily"]
+    }
+  ]
+}

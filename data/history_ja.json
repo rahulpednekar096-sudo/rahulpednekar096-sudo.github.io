@@ -1,0 +1,1823 @@
+{
+  "version": 2,
+  "events": [
+    {
+      "id": "buddha_birth",
+      "title": "仏陀の誕生",
+      "year_be": -623,
+      "year_ce": -563,
+      "description": "ゴータマ・シッダールタはルンビニ（現在のネパール）で釈迦族の王子として生まれました。",
+      "category": "life_of_buddha",
+      "order": 1
+    },
+    {
+      "id": "buddha_childhood_name",
+      "title": "シッダールタとしての子供時代",
+      "year_be": -613,
+      "year_ce": -553,
+      "description": "若い王子は、目的を達成した人を意味するシッダールタと名付けられ、カピラヴァストゥで贅沢に育てられた。",
+      "category": "life_of_buddha",
+      "order": 2
+    },
+    {
+      "id": "great_renunciation",
+      "title": "大いなる放棄",
+      "year_be": -594,
+      "year_ce": -534,
+      "description": "29歳のとき、シッダールタ王子は苦しみからの解放を求めて宮殿、家族、王室生活を離れました。",
+      "category": "life_of_buddha",
+      "order": 3
+    },
+    {
+      "id": "buddha_marriage_yasodhara",
+      "title": "ヤソーダラー王女との結婚",
+      "year_be": -593,
+      "year_ce": -533,
+      "description": "16歳のとき、シッダールタはスッパブッダ王の娘ヤソーダーラと結婚し、王室の王子としての生活を送りました。",
+      "category": "life_of_buddha",
+      "order": 4
+    },
+    {
+      "id": "study_with_alara_kalama",
+      "title": "アララ・カラマと学ぶ",
+      "year_be": -593,
+      "year_ce": -533,
+      "description": "シッダールタは禁欲主義者アラーラ・カラマの下で瞑想を学び、無の領域を習得しました。",
+      "category": "life_of_buddha",
+      "order": 5
+    },
+    {
+      "id": "birth_of_rahula",
+      "title": "ラーフラの誕生",
+      "year_be": -592,
+      "year_ce": -532,
+      "description": "シッダールタとヤソーダーラには、大放棄の直前に生まれたラーフラという名前の息子がいました。",
+      "category": "life_of_buddha",
+      "order": 6
+    },
+    {
+      "id": "study_with_udaka_ramaputta",
+      "title": "ウッダカ・ラマプッタに学ぶ",
+      "year_be": -592,
+      "year_ce": -532,
+      "description": "その後、シッダールタはウッダカ・ラマプッタに師事し、知覚も非知覚も存在しない領域に達しました。",
+      "category": "life_of_buddha",
+      "order": 7
+    },
+    {
+      "id": "four_great_sights",
+      "title": "四大名所",
+      "year_be": -591,
+      "year_ce": -531,
+      "description": "シッダールタは老人、病人、死体、修行者に出会い、苦しみの現実に目覚めました。",
+      "category": "life_of_buddha",
+      "order": 8
+    },
+    {
+      "id": "six_years_austerities",
+      "title": "6年間にわたる緊縮財政",
+      "year_be": -591,
+      "year_ce": -531,
+      "description": "シッダールタはウルベラ近郊で5人の仲間とともに極度の苦行を実践し、過酷な苦行を放棄する前に自らも餓死しそうになった。",
+      "category": "life_of_buddha",
+      "order": 9
+    },
+    {
+      "id": "sujata_offering",
+      "title": "スジャータのミルクライスのお供え",
+      "year_be": -589,
+      "year_ce": -529,
+      "description": "スジャータという名前の村の女性が修行者にミルクライスを捧げ、悟りの前夜に彼​​の体力を回復させました。",
+      "category": "life_of_buddha",
+      "order": 10
+    },
+    {
+      "id": "buddha_enlightenment",
+      "title": "悟り（菩提）",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "35歳のとき、シッダールタはブッダガヤの菩提樹の下で悟りを開き、仏陀になりました。",
+      "category": "life_of_buddha",
+      "order": 11
+    },
+    {
+      "id": "mara_confrontation",
+      "title": "マラの誘惑",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "悟りを開いた夜、ブッダは幻想の王マーラとして擬人化された誘惑と恐怖を克服しました。",
+      "category": "life_of_buddha",
+      "order": 12
+    },
+    {
+      "id": "first_sermon",
+      "title": "最初の説教（ダンマカカッパヴァッタナ）",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "仏陀はサルナートのディアパークで最初の教えを説き、法輪を動かしました。",
+      "category": "life_of_buddha",
+      "order": 13
+    },
+    {
+      "id": "ordination_of_first_monks",
+      "title": "最初の修道士の叙階",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "仏陀は、最初の 5 人の弟子を「僧よ、来なさい」という単純な公式で叙階したときに、比丘サンガを確立しました。",
+      "category": "sangha",
+      "order": 14
+    },
+    {
+      "id": "buddhism_india_bodhi_tree_tradition",
+      "title": "ブッダガヤの菩提樹の伝統",
+      "year_be": -588,
+      "year_ce": -528,
+      "description": "ブッダガヤの菩提樹はブッダの悟りの時代から崇拝されており、苗木はスリランカや海外に運ばれました。",
+      "category": "india_buddhism",
+      "order": 15
+    },
+    {
+      "id": "buddha_meets_bimbisara",
+      "title": "ブッダとビンビサーラ王との出会い",
+      "year_be": -587,
+      "year_ce": -527,
+      "description": "マガダ国のビンビサーラ王は熱心な信徒の支持者となり、ヴェルヴァナ僧院をサンガに寄贈しました。",
+      "category": "life_of_buddha",
+      "order": 16
+    },
+    {
+      "id": "first_rains_retreat",
+      "title": "ファースト レインズ リトリート (ヴァッサ)",
+      "year_be": -587,
+      "year_ce": -527,
+      "description": "仏陀とその弟子たちは、バラナシで最初の年次 3 か月にわたる雨乞いの静養を観察し、ヴァッサの伝統を確立しました。",
+      "category": "sangha",
+      "order": 17
+    },
+    {
+      "id": "jetavana_monastery",
+      "title": "ジェータヴァナ修道院の賜物",
+      "year_be": -586,
+      "year_ce": -526,
+      "description": "裕福な俗弟子アナタピンディカは、教育の主要な中心地であるサバティ近くのジェタヴァナ林を購入して寄付しました。",
+      "category": "sangha",
+      "order": 18
+    },
+    {
+      "id": "buddha_visits_kapilavastu",
+      "title": "仏陀、カピラヴァストゥを訪問",
+      "year_be": -585,
+      "year_ce": -525,
+      "description": "仏陀は祖国に戻り、息子のラーフラ、異母兄弟のナンダ、いとこのアナンダを出家しました。",
+      "category": "life_of_buddha",
+      "order": 19
+    },
+    {
+      "id": "subduing_nalagiri_elephant",
+      "title": "狂象ナラギリの討伐",
+      "year_be": -584,
+      "year_ce": -524,
+      "description": "仏陀は、慈愛と冷静さの力で、自分を攻撃しようとして送られた激怒した象を静めました。",
+      "category": "life_of_buddha",
+      "order": 20
+    },
+    {
+      "id": "buddhism_india_taxila",
+      "title": "タクシラで仏教を学ぶ",
+      "year_be": -560,
+      "year_ce": -500,
+      "description": "ガンダーラのタキシラは、仏教哲学と医学が他の科学と並行して研究される古代の学習の中心地でした。",
+      "category": "india_buddhism",
+      "order": 21
+    },
+    {
+      "id": "buddha_teaches_devadatta_schism",
+      "title": "デーヴァダッタの分裂の試み",
+      "year_be": -550,
+      "year_ce": -490,
+      "description": "ブッダのいとこであるデーヴァダッタはサンガを分割しようとし、より厳格な規則を提案したが、コミュニティは団結を保った。",
+      "category": "sangha",
+      "order": 22
+    },
+    {
+      "id": "mahaparinirvana",
+      "title": "マハパリニルヴァーナ",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "釈迦は80歳でクシナガラで亡くなり、最後の涅槃に入った。",
+      "category": "life_of_buddha",
+      "order": 23
+    },
+    {
+      "id": "first_council",
+      "title": "第一回仏教評議会",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "アジャタサトゥ王のもと、マハーカッサパが主宰し、ラジャガハで開催された。ヴィナヤとスッタが唱えられました。",
+      "category": "council",
+      "order": 24
+    },
+    {
+      "id": "buddhism_india_buddha_relics",
+      "title": "インド全土に仏陀の遺骨が安置される",
+      "year_be": -543,
+      "year_ce": -483,
+      "description": "ブッダのパリ涅槃後、彼の遺骨は 8 つの王国に分配され、インド全土の仏塔に祀られました。",
+      "category": "india_buddhism",
+      "order": 25
+    },
+    {
+      "id": "ordination_of_nuns",
+      "title": "比丘尼僧団の設立",
+      "year_be": -541,
+      "year_ce": -481,
+      "description": "マハパジャパティ ゴータミと他の女性たちは叙階を受け、8 つのガルダンマの下に仏教尼僧の教団を設立しました。",
+      "category": "sangha",
+      "order": 26
+    },
+    {
+      "id": "second_council",
+      "title": "第二回仏教評議会",
+      "year_be": 160,
+      "year_ce": -383,
+      "description": "修道院の規則をめぐる紛争に対処するためにヴェサリで開催。",
+      "category": "council",
+      "order": 27
+    },
+    {
+      "id": "schism_mahasanghika",
+      "title": "マハサンギカの分裂",
+      "year_be": 160,
+      "year_ce": -383,
+      "description": "第二次公会議後の紛争は最初の大きな分裂を引き起こし、マハサンギカ学派が誕生した。",
+      "category": "council",
+      "order": 28
+    },
+    {
+      "id": "theravada_emergence",
+      "title": "上座部学校が形になる",
+      "year_be": 193,
+      "year_ce": -350,
+      "description": "スタヴィーラの系統は、後に上座部として知られるようになるものに発展し、記録された最古の教えを強調しました。",
+      "category": "sangha",
+      "order": 29
+    },
+    {
+      "id": "rise_of_sarvastivada",
+      "title": "サルヴァスティーヴァーダ学派の台頭",
+      "year_be": 243,
+      "year_ce": -300,
+      "description": "サルヴァスティヴァーダ学派はインド北西部で栄え、広範なアビダルマ文学を生み出しました。",
+      "category": "sangha",
+      "order": 30
+    },
+    {
+      "id": "ashoka_conversion",
+      "title": "アショーカ王の仏教への改宗",
+      "year_be": 280,
+      "year_ce": -263,
+      "description": "カリンガ戦争の後、アショーカ王は仏教を受け入れ、征服ではなくダンマによって統治することを決意しました。",
+      "category": "ashoka",
+      "order": 31
+    },
+    {
+      "id": "maurya_buddhist_patronage",
+      "title": "マウリヤ朝仏教後援会",
+      "year_be": 283,
+      "year_ce": -260,
+      "description": "アショーカ王以外にも、マウリヤ朝の宮廷はインド亜大陸全域の修道院と布教活動を支援しました。",
+      "category": "india_buddhism",
+      "order": 32
+    },
+    {
+      "id": "buddhism_india_dhamma_vijay",
+      "title": "アショカのダンマ・ヴィジャヤ政策",
+      "year_be": 283,
+      "year_ce": -260,
+      "description": "アショーカ王は軍事征服をダンマ・ヴィジャヤ（義による勝利）に置き換え、帝国の指導原則とした。",
+      "category": "india_buddhism",
+      "order": 33
+    },
+    {
+      "id": "ashoka_dhamma_letters",
+      "title": "アショーカ王のダンマ勅令",
+      "year_be": 286,
+      "year_ce": -257,
+      "description": "アショーカ王は帝国中の柱や岩に道徳的、宗教的教えを刻み込み、仏教倫理を広く広めました。",
+      "category": "ashoka",
+      "order": 34
+    },
+    {
+      "id": "buddhism_india_rock_edicts",
+      "title": "亜大陸全体のロックの布告",
+      "year_be": 286,
+      "year_ce": -257,
+      "description": "ダウリ、ギルナール、カルシでのアショーカ王の岩勅令は、プラクリット語で仏教の倫理的教えをインドの多様な地域に広めました。",
+      "category": "india_buddhism",
+      "order": 35
+    },
+    {
+      "id": "compilation_abhidhamma",
+      "title": "アビダンマ経典の編集",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "心、物質、倫理を分析する体系的な哲学書が編纂され、後に上座部学問の中心となりました。",
+      "category": "sangha",
+      "order": 36
+    },
+    {
+      "id": "ashoka_sends_missionaries",
+      "title": "アショーカ王は仏教宣教師を派遣",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "アショーカ王はダンマを広めるために僧侶をスリランカ、カシミール、ガンダーラなどに派遣しました。",
+      "category": "ashoka",
+      "order": 37
+    },
+    {
+      "id": "buddhism_india_sarnath_lion_capital",
+      "title": "サーナート ライオン キャピタル",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "サルナートにあるアショーカ王の獅子の首都には、4 頭のライオンと法輪があり、インドの国章になりました。",
+      "category": "india_buddhism",
+      "order": 38
+    },
+    {
+      "id": "buddhism_india_maurya_stupas",
+      "title": "マウリヤ仏教の仏塔",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "アショーカ王とその後継者たちは、マウリヤ帝国中のサーンチー、バルハット、その他の場所に仏塔を拡張し、建設しました。",
+      "category": "india_buddhism",
+      "order": 39
+    },
+    {
+      "id": "buddhism_india_ashoka_pillars",
+      "title": "インド全土に建立されたアショーカ王の柱",
+      "year_be": 293,
+      "year_ce": -250,
+      "description": "アショカは、アフガニスタンからカルナータカ州に至るまで、彼の帝国全域に、ダンマの碑文が刻まれた磨かれた砂岩の柱を建てました。",
+      "category": "india_buddhism",
+      "order": 40
+    },
+    {
+      "id": "third_council",
+      "title": "第3回仏教評議会",
+      "year_be": 296,
+      "year_ce": -247,
+      "description": "モッガリプッタ・ティッサ率いるアショカ皇帝のもと、パータリプトラで開催された。",
+      "category": "council",
+      "order": 41
+    },
+    {
+      "id": "mahinda_sri_lanka",
+      "title": "スリランカに仏教が伝来",
+      "year_be": 296,
+      "year_ce": -247,
+      "description": "アショーカ王は息子のマヒンダをスリランカに送り、デヴァナンピヤ・ティッサ王はミヒンタレーで法を受けました。",
+      "category": "spread_of_buddhism",
+      "order": 42
+    },
+    {
+      "id": "sanghamitta_bodhi_tree",
+      "title": "菩提樹の苗木をスリランカへ",
+      "year_be": 297,
+      "year_ce": -246,
+      "description": "アショカの娘サンガミッタは、オリジナルの菩提樹の苗木をアヌラーダプラにもたらし、今日でもそこで崇拝され続けています。",
+      "category": "spread_of_buddhism",
+      "order": 43
+    },
+    {
+      "id": "greco_buddhist_art_gandhara",
+      "title": "ガンダーラのギリシャ仏教美術",
+      "year_be": 343,
+      "year_ce": -200,
+      "description": "ガンダーラの仏教彫刻は、ギリシャの芸術的形式と仏教のテーマを融合させ、最初の象徴的な仏像を生み出しました。",
+      "category": "spread_of_buddhism",
+      "order": 44
+    },
+    {
+      "id": "buddhism_india_sunga_art",
+      "title": "スンガ朝の仏教美術",
+      "year_be": 393,
+      "year_ce": -150,
+      "description": "スンガ時代にはサーンチーとバルハットで仏教の仏塔の装飾が盛んになり、ジャータカの物語が石で語られました。",
+      "category": "india_buddhism",
+      "order": 45
+    },
+    {
+      "id": "rise_of_mahayana",
+      "title": "大乗仏教の興隆",
+      "year_be": 443,
+      "year_ce": -100,
+      "description": "新しい経典と菩薩の理想は、仏教を僧院の阿羅漢を超えて普遍的な解放に向けて拡大しました。",
+      "category": "mahayana",
+      "order": 46
+    },
+    {
+      "id": "kushan_empire_buddhism",
+      "title": "クシャーン帝国下の仏教",
+      "year_be": 443,
+      "year_ce": -100,
+      "description": "クシャーンの統治者はガンダーラとマトゥラーの全域で仏教を擁護し、交易ルートの僧院や芸術を育成しました。",
+      "category": "india_buddhism",
+      "order": 47
+    },
+    {
+      "id": "buddhism_india_barhut_stupa",
+      "title": "バルハット仏塔のレリーフ",
+      "year_be": 443,
+      "year_ce": -100,
+      "description": "マディヤ プラデーシュ州のバルハット仏塔のレリーフには、釈迦の生涯を描いた最も初期の物語の一部が保存されています。",
+      "category": "india_buddhism",
+      "order": 48
+    },
+    {
+      "id": "fourth_council_sri_lanka",
+      "title": "第 4 回仏教評議会 (スリランカ)",
+      "year_be": 514,
+      "year_ce": -29,
+      "description": "スリランカの上座部僧侶たちは、飢餓の時代に教えを守るために、パーリ語のティピタカにアルヴィハラでの執筆を託しました。",
+      "category": "council",
+      "order": 49
+    },
+    {
+      "id": "buddhism_india_jataka_literature",
+      "title": "インドで編纂されたジャータカ物語",
+      "year_be": 543,
+      "year_ce": 0,
+      "description": "ブッダの過去世を語るジャータカ物語集がパーリ語とサンスクリット語で編纂され、道徳の教えがアジア全土に広まりました。",
+      "category": "india_buddhism",
+      "order": 50
+    },
+    {
+      "id": "buddhism_china",
+      "title": "仏教が中国に伝来",
+      "year_be": 611,
+      "year_ce": 68,
+      "description": "漢の明皇帝はインドから僧侶と経典を歓迎し、中国における仏教の正式な始まりを示しました。",
+      "category": "spread_of_buddhism",
+      "order": 51
+    },
+    {
+      "id": "fourth_council_kashmir",
+      "title": "第 4 回仏教評議会 (カシミール)",
+      "year_be": 621,
+      "year_ce": 78,
+      "description": "カニシカ王の下で、サルヴァスティーヴァーダ学派の学者たちはカシミールでアビダルマの文書を体系化しました。",
+      "category": "council",
+      "order": 52
+    },
+    {
+      "id": "lotus_sutra_composition",
+      "title": "法華経の隆盛",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "『サダルマプンダリカ経典』は、東アジア全体で最も影響力のある大乗経典の 1 つとなりました。",
+      "category": "mahayana",
+      "order": 53
+    },
+    {
+      "id": "buddhism_india_mathura_art",
+      "title": "マトゥラ仏教美術学校",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "インド北部のマトゥラでは、アジア全域の仏教美術に影響を与えた独特の初期の仏像が制作されました。",
+      "category": "india_buddhism",
+      "order": 54
+    },
+    {
+      "id": "buddhism_india_cave_monasteries",
+      "title": "デカンの仏教洞窟修道院",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "バジャ、ベドサ、カルラ、そしてその後のアジャンタとエローラにある岩窟修道院には、何世紀にもわたって数千人の僧侶が住んでいました。",
+      "category": "india_buddhism",
+      "order": 55
+    },
+    {
+      "id": "buddhism_india_women_patrons",
+      "title": "インド仏教の女性後援者",
+      "year_be": 643,
+      "year_ce": 100,
+      "description": "ヴィシャーカやマリカ女王などの在家女性はサンガを支援し、僧院を建設し、仏陀の布教に資金を提供しました。",
+      "category": "india_buddhism",
+      "order": 56
+    },
+    {
+      "id": "nagarjuna_madhyamaka",
+      "title": "ナーガルジュナとマディヤマカ学派",
+      "year_be": 693,
+      "year_ce": 150,
+      "description": "哲学者ナーガルジュナは、大乗思想を再形成した空（シュニヤタ）の中道の哲学を明確に述べました。",
+      "category": "mahayana",
+      "order": 57
+    },
+    {
+      "id": "buddhism_vietnam",
+      "title": "ベトナムに仏教が伝わった",
+      "year_be": 732,
+      "year_ce": 189,
+      "description": "仏教の教えは、中国の大乗仏教とインドの海上交易路を通じてベトナムに伝わりました。",
+      "category": "spread_of_buddhism",
+      "order": 58
+    },
+    {
+      "id": "buddhism_central_asia",
+      "title": "シルクロード沿いの仏教",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "中央アジアの交易路沿いにある僧院や石窟寺院は、インドと中国の間に仏教の教えを伝えました。",
+      "category": "spread_of_buddhism",
+      "order": 59
+    },
+    {
+      "id": "buddhism_india_kanheri_caves",
+      "title": "カンヘリ仏教石窟",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "ムンバイ近郊のカンヘリ洞窟は、1000 年以上にわたって主要な仏教僧院および教育の中心地として機能しました。",
+      "category": "india_buddhism",
+      "order": 60
+    },
+    {
+      "id": "buddhism_india_amaravati",
+      "title": "アマラヴァティ仏塔",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "アーンドラ プラデーシュ州のアマラヴァティの大仏塔は、古代インドにおける仏教芸術と巡礼の壮大な中心地でした。",
+      "category": "india_buddhism",
+      "order": 61
+    },
+    {
+      "id": "buddhism_india_sanskrit_mahayana",
+      "title": "インドのサンスクリット大乗経典",
+      "year_be": 743,
+      "year_ce": 200,
+      "description": "インドでサンスクリット語で書かれた新しい大乗経典が中国、チベット、東南アジアに広がり、仏教の実践が再形成されました。",
+      "category": "india_buddhism",
+      "order": 62
+    },
+    {
+      "id": "dunhuang_mogao_caves",
+      "title": "敦煌莫高窟",
+      "year_be": 909,
+      "year_ce": 366,
+      "description": "中国の敦煌にある仏教石窟寺院は、芸術、写本、瞑想実践の広大な宝庫となった。",
+      "category": "spread_of_buddhism",
+      "order": 63
+    },
+    {
+      "id": "buddhism_korea",
+      "title": "韓国に仏教が伝わった",
+      "year_be": 915,
+      "year_ce": 372,
+      "description": "仏教の経典と僧侶は高句麗王国に伝わり、長く影響力のある韓国仏教の伝統が始まりました。",
+      "category": "spread_of_buddhism",
+      "order": 64
+    },
+    {
+      "id": "faxian_pilgrimage",
+      "title": "ファクシアンのインド巡礼",
+      "year_be": 942,
+      "year_ce": 399,
+      "description": "中国の僧侶ファクシアンは、ヴィナヤ文書を入手し、仏教遺跡の状況を記録するためにインドとスリランカを訪れました。",
+      "category": "pilgrimage",
+      "order": 65
+    },
+    {
+      "id": "vasubandhu_yogacara",
+      "title": "ヴァスバンドゥとヨガカラ スクール",
+      "year_be": 943,
+      "year_ce": 400,
+      "description": "哲学者ヴァスバンドゥは意識に関するヨガカラの教えを発展させ、大乗瞑想理論に深い影響を与えました。",
+      "category": "mahayana",
+      "order": 66
+    },
+    {
+      "id": "buddhism_india_gupta_golden_age",
+      "title": "グプタ仏教美術の黄金時代",
+      "year_be": 943,
+      "year_ce": 400,
+      "description": "グプタ時代には、仏教彫刻の古典的な理想と考えられる洗練された仏像がサルナートとナーランダで制作されました。",
+      "category": "india_buddhism",
+      "order": 67
+    },
+    {
+      "id": "kumarajiva_translations",
+      "title": "鳩摩羅什は仏典を翻訳",
+      "year_be": 944,
+      "year_ce": 401,
+      "description": "僧侶クマーラージーヴァは主要な大乗経典を中国語に翻訳し、何世紀にもわたって東アジアの仏教を形成しました。",
+      "category": "east_asia",
+      "order": 68
+    },
+    {
+      "id": "pure_land_school_china",
+      "title": "中国で浄土学校が発展",
+      "year_be": 945,
+      "year_ce": 402,
+      "description": "阿弥陀仏を中心とした信仰の実践は浄土学へと発展し、後に東アジア全域に広がりました。",
+      "category": "mahayana",
+      "order": 69
+    },
+    {
+      "id": "buddhaghosa_visuddhimagga",
+      "title": "ブッダゴーサがヴィシュッディマッガを作曲",
+      "year_be": 948,
+      "year_ce": 405,
+      "description": "学者僧侶のブッダゴーサは、上座部瞑想と教義を体系化した『浄化の道』をスリランカで執筆しました。",
+      "category": "sangha",
+      "order": 70
+    },
+    {
+      "id": "nalanda_founded",
+      "title": "ナーランダ・マハヴィハーラ設立",
+      "year_be": 970,
+      "year_ce": 427,
+      "description": "ビハール州ナーランダにある偉大な僧院大学は、仏教哲学、論理学、瞑想の有名な中心地となりました。",
+      "category": "university",
+      "order": 71
+    },
+    {
+      "id": "buddhism_nepal_licchavi",
+      "title": "ネパール渓谷の仏教",
+      "year_be": 1007,
+      "year_ce": 464,
+      "description": "仏教の仏塔と僧院は、リチャヴィ王朝とその後の王朝の時代にカトマンズ渓谷で栄えま​​した。",
+      "category": "spread_of_buddhism",
+      "order": 72
+    },
+    {
+      "id": "white_huns_persecution",
+      "title": "インド北西部における仏教の衰退",
+      "year_be": 1008,
+      "year_ce": 465,
+      "description": "フナ族の侵入と王室の後援の喪失により、ガンダーラとインド北西部の仏教僧院は弱体化した。",
+      "category": "india_buddhism",
+      "order": 73
+    },
+    {
+      "id": "sri_lanka_mahavamsa",
+      "title": "マハーヴァムサ・クロニクルの作曲",
+      "year_be": 1043,
+      "year_ce": 500,
+      "description": "スリランカのマハーヴァムサ年代記には、上座部仏教の遺産を保存しながら、仏教の歴史と王室の後援が記録されています。",
+      "category": "sangha",
+      "order": 74
+    },
+    {
+      "id": "bodhidharma_china",
+      "title": "達磨大師がチャンを中国に連れて行く",
+      "year_be": 1063,
+      "year_ce": 520,
+      "description": "インドの教祖達磨大師は伝統的に、中国の少林寺にチャン（禅）瞑想を伝えたと信じられています。",
+      "category": "east_asia",
+      "order": 75
+    },
+    {
+      "id": "odantapuri_founded",
+      "title": "オダンタプリ マハーヴィハーラ設立",
+      "year_be": 1093,
+      "year_ce": 550,
+      "description": "ビハール州オダンタプリの僧院大学は、パラの後援のもと、仏教学習の主要な中心地となった。",
+      "category": "university",
+      "order": 76
+    },
+    {
+      "id": "buddhism_japan",
+      "title": "仏教が日本に伝来",
+      "year_be": 1095,
+      "year_ce": 552,
+      "description": "朝鮮から日本の宮廷に仏像や経典が献上され、日本に仏教が大きな勢力として定着するきっかけとなった。",
+      "category": "spread_of_buddhism",
+      "order": 77
+    },
+    {
+      "id": "tiantai_school_china",
+      "title": "天台学校創立",
+      "year_be": 1118,
+      "year_ce": 575,
+      "description": "志儀は中国に天台学派を設立し、瞑想と法華経を中心的な教えとして体系化しました。",
+      "category": "east_asia",
+      "order": 78
+    },
+    {
+      "id": "wonhyo_korean_buddhism",
+      "title": "元暁が韓国の仏教思想を統一",
+      "year_be": 1143,
+      "year_ce": 600,
+      "description": "韓国の僧侶元暁は、競合する仏教流派を調和させ、法を一般の人々が利用できるようにしました。",
+      "category": "east_asia",
+      "order": 79
+    },
+    {
+      "id": "buddhism_india_ellora_caves",
+      "title": "エローラ仏教石窟群",
+      "year_be": 1143,
+      "year_ce": 600,
+      "description": "マハラシュトラ州エローラの仏教石窟寺院は、ヒンズー教とジャイナ教の記念碑と並んで彫刻され、宗教の共存を示しています。",
+      "category": "india_buddhism",
+      "order": 80
+    },
+    {
+      "id": "shotoku_taishi_japan",
+      "title": "聖徳太子が仏教を広めた",
+      "year_be": 1147,
+      "year_ce": 604,
+      "description": "日本の聖徳太子は仏教による統治を推進し、寺院を建立し、中国に使節を派遣しました。",
+      "category": "east_asia",
+      "order": 81
+    },
+    {
+      "id": "xuanzang_pilgrimage",
+      "title": "玄奘のインド旅行",
+      "year_be": 1172,
+      "year_ce": 629,
+      "description": "中国の巡礼者玄奘三蔵はインドで 16 年間を過ごし、ナーランダで学び、何百ものサンスクリット語の文書を持ち帰った。",
+      "category": "pilgrimage",
+      "order": 82
+    },
+    {
+      "id": "buddhism_india_harsha_patronage",
+      "title": "ハルシャ王は仏教を擁護する",
+      "year_be": 1173,
+      "year_ce": 630,
+      "description": "カンナウジのハルシャ皇帝は仏教の寛大な後援者であり、中国の巡礼者玄奘三蔵をもてなし、僧院を支援しました。",
+      "category": "india_buddhism",
+      "order": 83
+    },
+    {
+      "id": "buddhism_india_hiuen_tsang_record",
+      "title": "玄奘はナーランダの栄光を記録する",
+      "year_be": 1178,
+      "year_ce": 635,
+      "description": "中国の巡礼者玄奘三蔵は、ナーランダには最盛期には数千人の生徒と数百人の教師がいたと述べています。",
+      "category": "india_buddhism",
+      "order": 84
+    },
+    {
+      "id": "buddhism_tibet",
+      "title": "チベットに仏教が成立",
+      "year_be": 1184,
+      "year_ce": 641,
+      "description": "ソンツェン・ガンポ王は仏教の王女と結婚し、ダンマを推進し、チベット仏教の基礎を築きました。",
+      "category": "tibet",
+      "order": 85
+    },
+    {
+      "id": "yi_jing_pilgrimage",
+      "title": "イージンのインド巡礼",
+      "year_be": 1214,
+      "year_ce": 671,
+      "description": "中国の僧侶イージンは、インドと東南アジアで 25 年間を過ごし、修道生活とヴィナヤ修行を記録しました。",
+      "category": "pilgrimage",
+      "order": 86
+    },
+    {
+      "id": "huayan_school_china",
+      "title": "華厳学校創立",
+      "year_be": 1243,
+      "year_ce": 700,
+      "description": "華厳（花輪）派は、大乗経典を相互に結びついた現実の哲学に統合しました。",
+      "category": "mahayana",
+      "order": 87
+    },
+    {
+      "id": "buddhism_india_vajrayana_origins",
+      "title": "インドに金剛乗仏教が出現",
+      "year_be": 1243,
+      "year_ce": 700,
+      "description": "密教仏教の実践はナーランダとヴィクラマシラで発展し、後にチベット、ネパール、東アジアに伝わりました。",
+      "category": "india_buddhism",
+      "order": 88
+    },
+    {
+      "id": "buddhism_bhutan",
+      "title": "仏教がブータンの国教とな​​る",
+      "year_be": 1290,
+      "year_ce": 747,
+      "description": "仏教の教えはチベットの影響下でブータンに根付き、後に国家アイデンティティの基礎となりました。",
+      "category": "spread_of_buddhism",
+      "order": 89
+    },
+    {
+      "id": "pala_dynasty_buddhism",
+      "title": "パーラ朝の仏教支援団体",
+      "year_be": 1293,
+      "year_ce": 750,
+      "description": "ベンガルとビハールのパーラ王は、インドにおけるナーランダ、ヴィクラマシラ、仏教学の偉大な後援者となりました。",
+      "category": "india_buddhism",
+      "order": 90
+    },
+    {
+      "id": "buddhism_indonesia",
+      "title": "海洋東南アジアにおける仏教",
+      "year_be": 1303,
+      "year_ce": 760,
+      "description": "シュリヴィジャヤとスマトラとマレー世界の他の王国は、大乗仏教と金剛乗仏教の学習と貿易ルートの仏教を支援しました。",
+      "category": "spread_of_buddhism",
+      "order": 91
+    },
+    {
+      "id": "buddhism_india_santarakshita",
+      "title": "シャンタラクシタがインドからチベットに仏教を確立",
+      "year_be": 1306,
+      "year_ce": 763,
+      "description": "インドの学者シャンタラクシタはトリソン・デツェン王の招待でチベットに旅行し、サムイェ僧院を設立しました。",
+      "category": "india_buddhism",
+      "order": 92
+    },
+    {
+      "id": "samye_monastery",
+      "title": "サムエ僧院創立",
+      "year_be": 1318,
+      "year_ce": 775,
+      "description": "チベット初の仏教僧院は、トリソン・デツェン王とグル・パドマサンバヴァのもとサムイェに設立されました。",
+      "category": "tibet",
+      "order": 93
+    },
+    {
+      "id": "mongol_buddhism",
+      "title": "モンゴル元時代の仏教",
+      "year_be": 1323,
+      "year_ce": 780,
+      "description": "チベット仏教はフビライ・ハーンのもとで帝国の庇護を受け、モンゴルの統治とチベットのラマ僧や僧院施設を結びつけました。",
+      "category": "tibet",
+      "order": 94
+    },
+    {
+      "id": "vikramashila_founded",
+      "title": "ヴィクラマシラ マハーヴィハーラ設立",
+      "year_be": 1343,
+      "year_ce": 800,
+      "description": "ビハール州のヴィクラマシラにある偉大な僧院大学は、タントラと哲学の学習の中心地としてナーランダに匹敵しました。",
+      "category": "university",
+      "order": 95
+    },
+    {
+      "id": "buddhism_india_ratnagiri_monastery",
+      "title": "ラトナギリ仏教僧院",
+      "year_be": 1343,
+      "year_ce": 800,
+      "description": "オリッサ州ラトナギリの僧院は、パーラ王朝の庇護下にある主要な密教の中心地でした。",
+      "category": "india_buddhism",
+      "order": 96
+    },
+    {
+      "id": "buddhism_india_pala_somapura",
+      "title": "ソーマプラ マハヴィハーラ",
+      "year_be": 1343,
+      "year_ce": 800,
+      "description": "パーラ王朝は、現在のバングラデシュに広大な修道院複合施設でありユネスコの世界遺産に登録されているソーマプラ マハヴィハーラを建設しました。",
+      "category": "india_buddhism",
+      "order": 97
+    },
+    {
+      "id": "saicho_tendai_japan",
+      "title": "最澄が日本に天台宗を設立",
+      "year_be": 1349,
+      "year_ce": 806,
+      "description": "僧最澄は中国で天台教を学んだ後、比叡山に天台宗を開きました。",
+      "category": "east_asia",
+      "order": 98
+    },
+    {
+      "id": "padmasambhava_vajrayana",
+      "title": "パドマサンバヴァがチベットに金剛乗仏教を確立",
+      "year_be": 1353,
+      "year_ce": 810,
+      "description": "グル・パドマサンバヴァは、障害を克服し、チベットに密教仏教の実践を確立したと信じられています。",
+      "category": "tibet",
+      "order": 99
+    },
+    {
+      "id": "kukai_shingon_japan",
+      "title": "空海が真言宗を開いた",
+      "year_be": 1359,
+      "year_ce": 816,
+      "description": "中国から帰国した空海僧侶は真言密教を確立し、日本各地に寺院を建立しました。",
+      "category": "east_asia",
+      "order": 100
+    },
+    {
+      "id": "borobudur_built",
+      "title": "ボロブドゥール寺院完成",
+      "year_be": 1368,
+      "year_ce": 825,
+      "description": "ジャワ島にある巨大な大乗記念碑が完成し、石のレリーフや仏塔に悟りへの道が具体化されました。",
+      "category": "spread_of_buddhism",
+      "order": 101
+    },
+    {
+      "id": "buddhism_india_ladakh",
+      "title": "ラダックの仏教",
+      "year_be": 1543,
+      "year_ce": 1000,
+      "description": "チベット仏教はラダックで栄え、ヒマラヤ地方全域にヘミス、ティクセ、ディスキットなどの僧院を建設しました。",
+      "category": "india_buddhism",
+      "order": 102
+    },
+    {
+      "id": "atisha_tibet",
+      "title": "アティシャがチベットで仏教を復活させる",
+      "year_be": 1585,
+      "year_ce": 1042,
+      "description": "インドのマスター、アティシャ ディパンカラはチベットで 12 年間を過ごし、修道院の規律を改革し、カダンパの伝統にインスピレーションを与えました。",
+      "category": "tibet",
+      "order": 103
+    },
+    {
+      "id": "buddhism_india_dipankara_atisha",
+      "title": "インドからチベットへのアティシャの使命",
+      "year_be": 1585,
+      "year_ce": 1042,
+      "description": "ベンガル人のマスター、アティシャ ディパンカラは、ナーランダで修行し、晩年はチベットで仏教を復興させました。",
+      "category": "india_buddhism",
+      "order": 104
+    },
+    {
+      "id": "buddhism_bagan_myanmar",
+      "title": "バガンの仏教寺院の建物",
+      "year_be": 1593,
+      "year_ce": 1050,
+      "description": "ミャンマーのバガン王国は、数千の仏塔や寺院を建設し、世界の素晴らしい仏教景観の 1 つを作り出しました。",
+      "category": "spread_of_buddhism",
+      "order": 105
+    },
+    {
+      "id": "buddhism_myanmar",
+      "title": "ミャンマーの上座部仏教",
+      "year_be": 1600,
+      "year_ce": 1057,
+      "description": "アノーラタ王はスリランカから経典を受け取った後、ビルマを統一し、上座部仏教を国教とした。",
+      "category": "spread_of_buddhism",
+      "order": 106
+    },
+    {
+      "id": "buddhism_india_sen_dynasty",
+      "title": "セナ朝下の仏教",
+      "year_be": 1643,
+      "year_ce": 1100,
+      "description": "ベンガルのセーナ支配者たちは、インド東部で伝統が衰退する前に、当初仏教を支持していました。",
+      "category": "india_buddhism",
+      "order": 107
+    },
+    {
+      "id": "buddhism_india_bengal_survival",
+      "title": "ベンガル最後の仏教拠点",
+      "year_be": 1643,
+      "year_ce": 1100,
+      "description": "ベンガルとビハールの仏教僧院は、12 世紀の侵略までパーラの保護のもとに存続しました。",
+      "category": "india_buddhism",
+      "order": 108
+    },
+    {
+      "id": "angkor_wat_buddhist",
+      "title": "仏教寺院としてのアンコール ワット",
+      "year_be": 1656,
+      "year_ce": 1113,
+      "description": "アンコール ワットのクメール寺院は、もともとヴィシュヌ神に捧げられていましたが、カンボジアの上座部仏教崇拝の主要な中心地になりました。",
+      "category": "spread_of_buddhism",
+      "order": 109
+    },
+    {
+      "id": "eisai_zen_japan",
+      "title": "栄西が臨済禅を日本に伝えた",
+      "year_be": 1734,
+      "year_ce": 1191,
+      "description": "僧栄西は中国から臨済禅を伝え、建仁寺を創立し、禅を日本の主要な伝統として確立しました。",
+      "category": "east_asia",
+      "order": 110
+    },
+    {
+      "id": "nalanda_destroyed",
+      "title": "ナーランダの破壊",
+      "year_be": 1740,
+      "year_ce": 1197,
+      "description": "バフティヤル・ハルジ率いるトルコ系侵略者がナーランダを略奪し、何世紀にもわたる修道院の学問に終止符を打ち、インド仏教の大幅な衰退を示した。",
+      "category": "india_buddhism",
+      "order": 111
+    },
+    {
+      "id": "vikramashila_destroyed",
+      "title": "ヴィクラマシラの破壊",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "ヴィクラマシーラ マハーヴィハーラはテュルク人の侵略によって破壊され、インド東部の仏教施設はさらに破壊されました。",
+      "category": "india_buddhism",
+      "order": 112
+    },
+    {
+      "id": "buddhism_decline_eastern_india",
+      "title": "東インドにおける仏教の最終的な衰退",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "僧院大学の喪失、後援者の変化、侵略により、インドの中心地から仏教はほぼ消滅した。",
+      "category": "india_buddhism",
+      "order": 113
+    },
+    {
+      "id": "jinul_korean_seon",
+      "title": "ジヌル改革 韓国のソン仏教",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "僧侶ジヌルは、善意の瞑想と教義の研究を統合し、何世紀にもわたって韓国仏教を形成しました。",
+      "category": "east_asia",
+      "order": 114
+    },
+    {
+      "id": "buddhism_india_muslim_conquest_impact",
+      "title": "デリー・スルタン朝がインド仏教に与えた影響",
+      "year_be": 1743,
+      "year_ce": 1200,
+      "description": "デリー・スルタン国の成立により、インド北部ですでに弱体化していた仏教団体の衰退が加速した。",
+      "category": "india_buddhism",
+      "order": 115
+    },
+    {
+      "id": "sri_lanka_vinaya_reform",
+      "title": "キャンディアン・ヴィナヤ改革",
+      "year_be": 1756,
+      "year_ce": 1213,
+      "description": "パラクラマバフ1世率いるスリランカの僧侶たちは、より高い叙階を回復し、島での修道院の実践を統一するための評議会を開催した。",
+      "category": "council",
+      "order": 116
+    },
+    {
+      "id": "dogen_zen_japan",
+      "title": "道元が日本に曹洞禅を創始",
+      "year_be": 1766,
+      "year_ce": 1223,
+      "description": "僧侶道元は中国から曹洞禅を伝え、仏教修行の真髄として座禅を強調しました。",
+      "category": "east_asia",
+      "order": 117
+    },
+    {
+      "id": "nichiren_buddhism",
+      "title": "日蓮宗の開宗",
+      "year_be": 1796,
+      "year_ce": 1253,
+      "description": "僧侶の日蓮は、日本に法華経への帰依と社会改革を中心とした伝統を築きました。",
+      "category": "east_asia",
+      "order": 118
+    },
+    {
+      "id": "buddhism_thailand",
+      "title": "タイの上座部仏教",
+      "year_be": 1835,
+      "year_ce": 1292,
+      "description": "スコータイのラムカムヘン王は上座部仏教を推進し、タイの文化と統治における上座部仏教の役割を強化しました。",
+      "category": "spread_of_buddhism",
+      "order": 119
+    },
+    {
+      "id": "buddhism_laos",
+      "title": "ラオス王国の仏教",
+      "year_be": 1893,
+      "year_ce": 1350,
+      "description": "上座部仏教はラオス王国全体で主要な宗教となり、文化、芸術、修道院の生活を形作りました。",
+      "category": "spread_of_buddhism",
+      "order": 120
+    },
+    {
+      "id": "buddhism_cambodia_theravada",
+      "title": "カンボジアの上座部仏教",
+      "year_be": 1893,
+      "year_ce": 1350,
+      "description": "上座部仏教は、アンコールとその後のプノンペンを中心とするカンボジアの主要な伝統として大乗仏教に取って代わりました。",
+      "category": "spread_of_buddhism",
+      "order": 121
+    },
+    {
+      "id": "tsongkhapa_gelug",
+      "title": "ツォンカパ氏がゲルク学校を設立",
+      "year_be": 1952,
+      "year_ce": 1409,
+      "description": "チベットの僧侶ツォンカパはガンデン僧院とゲルク学校を設立し、厳格な学習と倫理を重視しました。",
+      "category": "tibet",
+      "order": 122
+    },
+    {
+      "id": "buddhism_mongolia_16th",
+      "title": "モンゴルで仏教が復活",
+      "year_be": 2121,
+      "year_ce": 1578,
+      "description": "モンゴルのアルタン・ハーンはソナム・ギャツォにダライ・ラマの称号を与え、モンゴルとチベットを仏教同盟で結びつけました。",
+      "category": "tibet",
+      "order": 123
+    },
+    {
+      "id": "buddhism_kalmykia",
+      "title": "カルムイク州の仏教",
+      "year_be": 2143,
+      "year_ce": 1600,
+      "description": "カルムイク・モンゴル人はチベット仏教をロシアの北コーカサス地方にもたらしました。",
+      "category": "spread_of_buddhism",
+      "order": 124
+    },
+    {
+      "id": "buddhism_sikkim",
+      "title": "シッキムとヒマラヤの仏教",
+      "year_be": 2185,
+      "year_ce": 1642,
+      "description": "チベット仏教はナムギャル朝のもとでシッキムの国教とな​​った。",
+      "category": "tibet",
+      "order": 125
+    },
+    {
+      "id": "buddhism_buryatia",
+      "title": "仏教がブリヤートに広まる",
+      "year_be": 2243,
+      "year_ce": 1700,
+      "description": "チベット仏教は、モンゴルとチベットの布教活動を通じてシベリアのブリヤート人に伝わりました。",
+      "category": "spread_of_buddhism",
+      "order": 126
+    },
+    {
+      "id": "buddhism_india_arunachal",
+      "title": "アルナーチャル プラデーシュ州の仏教",
+      "year_be": 2243,
+      "year_ce": 1700,
+      "description": "タワン・ゴンパなどのチベット仏教の僧院は、ヒマラヤ山脈のアルナーチャル・プラデーシュ州全域に設立されました。",
+      "category": "india_buddhism",
+      "order": 127
+    },
+    {
+      "id": "buddhism_india_ajanta_caves",
+      "title": "アジャンタの洞窟壁画が認められる",
+      "year_be": 2362,
+      "year_ce": 1819,
+      "description": "英国将校がアジャンタ洞窟壁画を再発見し、古代インド仏教美術の傑作を世界に明らかにしました。",
+      "category": "india_buddhism",
+      "order": 128
+    },
+    {
+      "id": "buddhist_archaeology_india",
+      "title": "インドの仏教遺跡の再発見",
+      "year_be": 2373,
+      "year_ce": 1830,
+      "description": "イギリスとインドの考古学者がサルナート、サーンチー、その他の古代仏教遺跡を発見し、インドの仏教遺産への新たな関心を引き起こしました。",
+      "category": "india_buddhism",
+      "order": 129
+    },
+    {
+      "id": "buddhism_australia",
+      "title": "オーストラリアに仏教が定着",
+      "year_be": 2393,
+      "year_ce": 1850,
+      "description": "中国人とスリランカ人移民がオーストラリアに仏教の実践をもたらし、後にチベット人やベトナム人のコミュニティも加わりました。",
+      "category": "spread_of_buddhism",
+      "order": 130
+    },
+    {
+      "id": "thai_reform_mongkut",
+      "title": "モンクット王がタイ仏教を改革",
+      "year_be": 2394,
+      "year_ce": 1851,
+      "description": "タイのモンクット王は、厳格なヴィナヤ語とパーリ語の学問を重視してダンマユティカ教団を設立しました。",
+      "category": "spread_of_buddhism",
+      "order": 131
+    },
+    {
+      "id": "pali_canon_chiang_mai",
+      "title": "第5回仏教評議会（ミャンマー）",
+      "year_be": 1414,
+      "year_ce": 1871,
+      "description": "マンダレーの上座部僧侶たちは、ミャンマーでの第5回仏教評議会中にパーリ語の聖典を朗読し、大理石の板に刻んだ。",
+      "category": "council",
+      "order": 132
+    },
+    {
+      "id": "buddhism_west_19th",
+      "title": "仏教が西洋世界に到達",
+      "year_be": 1422,
+      "year_ce": 1879,
+      "description": "エドウィン・アーノルドの『アジアの光』と初期の翻訳は、仏教の思想をヨーロッパとアメリカに紹介しました。",
+      "category": "modern_buddhism",
+      "order": 133
+    },
+    {
+      "id": "buddhism_new_zealand",
+      "title": "ニュージーランドの仏教",
+      "year_be": 1423,
+      "year_ce": 1880,
+      "description": "中国の金鉱夫とその後のアジア系移民がニュージーランドに仏教の伝統をもたらしました。",
+      "category": "spread_of_buddhism",
+      "order": 134
+    },
+    {
+      "id": "buddhism_india_bodh_gaya_restoration",
+      "title": "ブッダガヤ寺院の修復",
+      "year_be": 1423,
+      "year_ce": 1880,
+      "description": "アナガリカ・ダルマパーラは、悟りの地であるブッダガヤの大菩提寺に対する仏教の支配を回復する運動を行った。",
+      "category": "india_buddhism",
+      "order": 135
+    },
+    {
+      "id": "pali_text_society",
+      "title": "パーリ語テキスト協会設立",
+      "year_be": 1424,
+      "year_ce": 1881,
+      "description": "T. W. リス デイヴィッドはロンドンにパーリ語テキスト協会を設立し、世界的な学問のためにティピタカの批判版を出版しました。",
+      "category": "revival",
+      "order": 136
+    },
+    {
+      "id": "buddhism_hawaii",
+      "title": "ハワイの仏教",
+      "year_be": 1432,
+      "year_ce": 1889,
+      "description": "日本人移民はハワイ諸島各地に浄土真宗やその他の仏教寺院を設立しました。",
+      "category": "spread_of_buddhism",
+      "order": 137
+    },
+    {
+      "id": "maha_bodhi_society",
+      "title": "マハーボディ協会設立",
+      "year_be": 1434,
+      "year_ce": 1891,
+      "description": "アナガリカ ダルマパーラは、ブッダガヤを修復し、インドおよび世界中で仏教を復活させるためにマハ ボディ協会を設立しました。",
+      "category": "india_buddhism",
+      "order": 138
+    },
+    {
+      "id": "buddhism_south_africa",
+      "title": "南アフリカの仏教",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "南アフリカでは、アジアからの移民を通じて、そしてその後西洋の改宗の伝統を通じて仏教コミュニティが形成されました。",
+      "category": "spread_of_buddhism",
+      "order": 139
+    },
+    {
+      "id": "buddhism_singapore",
+      "title": "シンガポールの仏教",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "中国、タイ、スリランカの仏教コミュニティが寺院や学校を建設し、シンガポールを多様な仏教の中心地にしました。",
+      "category": "spread_of_buddhism",
+      "order": 140
+    },
+    {
+      "id": "buddhism_malaysia",
+      "title": "マレーシアの仏教",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "中国とタイの仏教の伝統は、マレーシアのシャム民族の上座部コミュニティとともにマレーシアで栄えました。",
+      "category": "spread_of_buddhism",
+      "order": 141
+    },
+    {
+      "id": "buddhism_canada",
+      "title": "カナダの仏教",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "中国人、日本人、そして後にはベトナム人やチベット人の仏教コミュニティがカナダ全土に寺院を設立しました。",
+      "category": "spread_of_buddhism",
+      "order": 142
+    },
+    {
+      "id": "buddhism_germany",
+      "title": "ドイツの仏教",
+      "year_be": 1443,
+      "year_ce": 1900,
+      "description": "ドイツの学者や実践者は仏教協会を設立し、経典を翻訳したり、瞑想グループを設立したりしました。",
+      "category": "modern_buddhism",
+      "order": 143
+    },
+    {
+      "id": "buddhism_india_sarnath_restoration",
+      "title": "サルナートの修復",
+      "year_be": 1448,
+      "year_ce": 1905,
+      "description": "インド考古学調査局とマハボディ協会は、釈迦が最初の説法を行ったサルナートを復元しました。",
+      "category": "india_buddhism",
+      "order": 144
+    },
+    {
+      "id": "buddhist_revival_movement",
+      "title": "現代仏教の復興",
+      "year_be": 1454,
+      "year_ce": 1911,
+      "description": "アジア各地の改革と復興の運動は、瞑想、社会倫理、原典の新たな研究を重視しました。",
+      "category": "revival",
+      "order": 145
+    },
+    {
+      "id": "buddhism_india_sanchi_restoration",
+      "title": "サーンチー仏塔修復",
+      "year_be": 1455,
+      "year_ce": 1912,
+      "description": "サー・ジョン・マーシャルは、インド最古にして最高級の仏教記念碑の 1 つであるサーンチーの大仏塔の修復を主導しました。",
+      "category": "india_buddhism",
+      "order": 146
+    },
+    {
+      "id": "buddhism_india_nalanda_excavation",
+      "title": "ナランダ考古学発掘調査",
+      "year_be": 1458,
+      "year_ce": 1915,
+      "description": "ナーランダの体系的な発掘により、古代の大学の配置が明らかになり、現代の復興の取り組みに刺激を与えました。",
+      "category": "india_buddhism",
+      "order": 147
+    },
+    {
+      "id": "buddhism_uk",
+      "title": "イギリスの仏教",
+      "year_be": 1467,
+      "year_ce": 1924,
+      "description": "ロンドン仏教協会と上座部伝道団は、組織化された仏教実践をイギリスに紹介しました。",
+      "category": "modern_buddhism",
+      "order": 148
+    },
+    {
+      "id": "buddhism_france",
+      "title": "フランスの仏教",
+      "year_be": 1472,
+      "year_ce": 1929,
+      "description": "フランス植民地時代のベトナムやカンボジアとの接触、そしてその後のチベット難民との接触により、フランスに仏教の実践がもたらされました。",
+      "category": "modern_buddhism",
+      "order": 149
+    },
+    {
+      "id": "first_zen_center_usa",
+      "title": "アメリカ初の禅センター",
+      "year_be": 1473,
+      "year_ce": 1930,
+      "description": "禅仏教の実践グループが米国で結成され、西洋で瞑想の伝統が広がり始めました。",
+      "category": "modern_buddhism",
+      "order": 150
+    },
+    {
+      "id": "buddhism_philippines",
+      "title": "フィリピンの仏教",
+      "year_be": 1473,
+      "year_ce": 1930,
+      "description": "中国人、そしてその後のチベット仏教と禅宗のコミュニティは、フィリピン全土に実践センターを設立しました。",
+      "category": "spread_of_buddhism",
+      "order": 151
+    },
+    {
+      "id": "ambedkar_discovers_buddhism",
+      "title": "アンベードカル博士が仏教を発見",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "インド憲法の制定者である B.R. アンベードカル博士は、カースト抑圧を超えた自由、平等、友愛の道として仏教に目を向けました。",
+      "category": "india_buddhism",
+      "order": 152
+    },
+    {
+      "id": "international_buddhist_flag",
+      "title": "国際仏教旗を採択",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "世界仏教徒連盟は、世界中の伝統間の統一の象徴として 6 色の仏教旗を採用しました。",
+      "category": "modern_buddhism",
+      "order": 153
+    },
+    {
+      "id": "buddhism_brazil",
+      "title": "ブラジルとラテンアメリカの仏教",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "日本、中国、チベットの仏教の伝統は、20 世紀にブラジルとラテンアメリカに根付きました。",
+      "category": "spread_of_buddhism",
+      "order": 154
+    },
+    {
+      "id": "buddhism_taiwan",
+      "title": "台湾で栄える仏教",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "台湾の人文主義仏教運動は教育、慈善活動、瞑想を促進し、台湾を中国仏教の主要な中心地にしました。",
+      "category": "east_asia",
+      "order": 155
+    },
+    {
+      "id": "buddhism_scandinavia",
+      "title": "スカンジナビアの仏教",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "チベット難民と西洋の修行者は、デンマーク、ノルウェー、スウェーデンに仏教センターを設立しました。",
+      "category": "modern_buddhism",
+      "order": 156
+    },
+    {
+      "id": "buddhism_india_constitution",
+      "title": "インド憲法における仏教の価値観",
+      "year_be": 1493,
+      "year_ce": 1950,
+      "description": "B.R.アンベードカル博士は、仏教のビジョンから導き出された自由、平等、友愛の原則をインド憲法に埋め込みました。",
+      "category": "india_buddhism",
+      "order": 157
+    },
+    {
+      "id": "india_buddha_purnima_holiday",
+      "title": "インドの祝日としての仏陀プルニマ",
+      "year_be": 1495,
+      "year_ce": 1952,
+      "description": "インドは、釈迦の誕生、悟り、パリ涅槃を讃えるブッダ・プルニマを国民の祝日と宣言した。",
+      "category": "india_buddhism",
+      "order": 158
+    },
+    {
+      "id": "sixth_buddhist_council",
+      "title": "第6回仏教評議会",
+      "year_be": 1497,
+      "year_ce": 1954,
+      "description": "多くの国の上座部僧侶がミャンマーのヤンゴンに集まり、パーリ語のティピタカを唱えて認証しました。",
+      "category": "council",
+      "order": 159
+    },
+    {
+      "id": "ambedkar_buddhist_conversion_movement",
+      "title": "アンベードカル氏、仏教への改宗を発表",
+      "year_be": 1498,
+      "year_ce": 1955,
+      "description": "B. R. アンベードカル博士は、カーストの不平等を拒否し、仏陀の道を受け入れ、仏教に改宗する意向を公に宣言しました。",
+      "category": "india_buddhism",
+      "order": 160
+    },
+    {
+      "id": "beat_generation_buddhism",
+      "title": "ビートジェネレーションは仏教を受け入れる",
+      "year_be": 1498,
+      "year_ce": 1955,
+      "description": "ジャック ケルアックやアレン ギンズバーグなどの作家は、アメリカ文学やカウンターカルチャーに仏教の考えを広めました。",
+      "category": "modern_buddhism",
+      "order": 161
+    },
+    {
+      "id": "ambedkar_deekshabhoomi",
+      "title": "ディークシャブーミにおけるアンベードカルの大量改宗",
+      "year_be": 1499,
+      "year_ce": 1956,
+      "description": "B. R. アンベードカル博士と数十万人の信者は、ヴィジャヤダシャミのナーグプールで仏教を受け入れ、自由、平等、友愛を確認しました。",
+      "category": "india_buddhism",
+      "order": 162
+    },
+    {
+      "id": "neo_buddhist_movement_india",
+      "title": "インドにおける新仏教運動",
+      "year_be": 1499,
+      "year_ce": 1956,
+      "description": "アンベードカルの改宗後、マハラシュトラ州とインドの何百万人ものダリットが仏教を受け入れ、活気に満ちた新しい仏教コミュニティが形成されました。",
+      "category": "india_buddhism",
+      "order": 163
+    },
+    {
+      "id": "buddhism_india_chaitya_bhoomi",
+      "title": "チャイティヤ・ブーミ記念碑",
+      "year_be": 1499,
+      "year_ce": 1956,
+      "description": "ムンバイのチャイティヤ ブーミは、B. R. アンベードカル博士が仏教に改宗した後、火葬された記念碑および巡礼地となりました。",
+      "category": "india_buddhism",
+      "order": 164
+    },
+    {
+      "id": "ambedkar_buddha_and_his_dhamma",
+      "title": "アンベードカル、『仏陀とその法』を出版",
+      "year_be": 1500,
+      "year_ce": 1957,
+      "description": "B. R. アンベードカル博士は『ブッダとそのダンマ』を著し、ブッダの生涯と教えを現代インドの合理的で平等主義の哲学として提示しました。",
+      "category": "india_buddhism",
+      "order": 165
+    },
+    {
+      "id": "buddhism_india_ambedkar_jayanti",
+      "title": "公共行事としてのアンベドカル・ジャヤンティ",
+      "year_be": 1500,
+      "year_ce": 1957,
+      "description": "アンベードカル博士の生誕記念日である 4 月 14 日は、インドの仏教徒の間で反省と地域の集まりの日として広く守られるようになりました。",
+      "category": "india_buddhism",
+      "order": 166
+    },
+    {
+      "id": "dalai_lama_exile",
+      "title": "亡命中のダライ・ラマ法王",
+      "year_be": 1502,
+      "year_ce": 1959,
+      "description": "ダライ・ラマ14世はチベットから亡命し、インドに亡命政府を樹立し、チベット仏教の文化と教えを守りました。",
+      "category": "tibet",
+      "order": 167
+    },
+    {
+      "id": "buddhism_india_dalai_lama_dharamsala",
+      "title": "チベット仏教センターとしてのダラムサラ",
+      "year_be": 1503,
+      "year_ce": 1960,
+      "description": "チベット亡命政府はインドのダラムサラに本拠地を置き、同地をチベット仏教研究の世界的な中心地とした。",
+      "category": "india_buddhism",
+      "order": 168
+    },
+    {
+      "id": "buddhism_india_waghala",
+      "title": "ワガラ仏教ビハーラ運動",
+      "year_be": 1503,
+      "year_ce": 1960,
+      "description": "マハーラーシュトラ州とインド各地に新しい仏教のヴィハーラと学校が建設され、アンベドカリ派の仏教共同体生活が育まれました。",
+      "category": "india_buddhism",
+      "order": 169
+    },
+    {
+      "id": "buddhism_india_tibetan_settlements",
+      "title": "インドのチベット仏教集落",
+      "year_be": 1503,
+      "year_ce": 1960,
+      "description": "インドはチベット難民を歓迎し、ビラクッペ、ムンドゴド、ダラムサラに僧院や学校のある入植地を設立した。",
+      "category": "india_buddhism",
+      "order": 170
+    },
+    {
+      "id": "buddhism_india_maharashtra_growth",
+      "title": "マハラシュトラ州における仏教徒人口の増加",
+      "year_be": 1504,
+      "year_ce": 1961,
+      "description": "国勢調査の記録によると、アンベードカルの大量改宗運動を受けてマハラシュトラ州の仏教徒人口が大幅に増加した。",
+      "category": "india_buddhism",
+      "order": 171
+    },
+    {
+      "id": "thich_nhat_hanh_engaged",
+      "title": "ティク・ナット・ハンと熱心な仏教",
+      "year_be": 1508,
+      "year_ce": 1965,
+      "description": "ベトナムの僧侶ティク・ナット・ハンは、マインドフルネスの実践を平和活動や社会正義と結びつけて、エンゲージド・ブディズムという言葉を生み出しました。",
+      "category": "modern_buddhism",
+      "order": 172
+    },
+    {
+      "id": "master_hsing_yun_foguang",
+      "title": "佛光山人文仏教",
+      "year_be": 1510,
+      "year_ce": 1967,
+      "description": "興雲師は台湾に仏光山を設立し、教育と社会参加を重視した人文仏教を世界中に広めました。",
+      "category": "east_asia",
+      "order": 173
+    },
+    {
+      "id": "buddhism_indonesia_modern",
+      "title": "インドネシアにおける仏教復興",
+      "year_be": 1513,
+      "year_ce": 1970,
+      "description": "何世紀にもわたって衰退してきたインドネシアの仏教コミュニティは、研究グループや寺院の修復を通じて復興を経験しました。",
+      "category": "spread_of_buddhism",
+      "order": 174
+    },
+    {
+      "id": "buddhism_india_global_diaspora",
+      "title": "世界中のインド仏教徒ディアスポラ",
+      "year_be": 1513,
+      "year_ce": 1970,
+      "description": "インドの仏教徒、特にアンベドカリ派コミュニティの人々は、世界中に寺院や文化センターを設立しました。",
+      "category": "india_buddhism",
+      "order": 175
+    },
+    {
+      "id": "vipassana_global_spread",
+      "title": "ヴィパッサナー瞑想は世界中に広がる",
+      "year_be": 1514,
+      "year_ce": 1971,
+      "description": "S.N.ゴエンカは、ビルマの伝統であるサヤジー・ウ・バ・キンを参考にして、ヴィパッサナー瞑想を国際的に教え始めました。",
+      "category": "revival",
+      "order": 176
+    },
+    {
+      "id": "buddhism_india_sikkim_state",
+      "title": "シッキム州がインドに仏教国家として加わる",
+      "year_be": 1518,
+      "year_ce": 1975,
+      "description": "シッキムは、豊かなチベット仏教の僧院遺産と巡礼地を保存しながら、インドの一部となりました。",
+      "category": "india_buddhism",
+      "order": 177
+    },
+    {
+      "id": "buddhism_india_vipassana_dhammagiri",
+      "title": "ダンマギリ ヴィパッサナー センター",
+      "year_be": 1519,
+      "year_ce": 1976,
+      "description": "S. N. ゴエンカは、世界最大の瞑想センターの 1 つであるダンマギリ ヴィパッサナー センターをマハラシュトラ州イガットプリに設立しました。",
+      "category": "india_buddhism",
+      "order": 178
+    },
+    {
+      "id": "buddhism_india_triratna",
+      "title": "インドのトリラートナ仏教コミュニティ",
+      "year_be": 1521,
+      "year_ce": 1978,
+      "description": "トリラートナ仏教教団はインドで拡大し、アンベードカルのビジョンに触発されたダンマの教えとコミュニティ開発を提供しました。",
+      "category": "india_buddhism",
+      "order": 179
+    },
+    {
+      "id": "mindfulness_mbsr",
+      "title": "マインドフルネスに基づくストレス軽減",
+      "year_be": 1522,
+      "year_ce": 1979,
+      "description": "ジョン・カバット・ジン博士はマサチューセッツ大学で MBSR を開発し、仏教のマインドフルネスを現代の医療に取り入れました。",
+      "category": "modern_buddhism",
+      "order": 180
+    },
+    {
+      "id": "thai_forest_tradition_global",
+      "title": "タイの森の伝統が世界に広がる",
+      "year_be": 1523,
+      "year_ce": 1980,
+      "description": "アジャン・チャーと弟子たちは世界中に森林修道院を設立し、タイの森の伝統に根ざした厳格な瞑想実践を教えています。",
+      "category": "revival",
+      "order": 181
+    },
+    {
+      "id": "buddhism_china_cultural_revival",
+      "title": "毛沢東後の中国における仏教の復興",
+      "year_be": 1523,
+      "year_ce": 1980,
+      "description": "文化大革命の弾圧期間の後、中国全土で寺院が再開され、仏教の実践が復活した。",
+      "category": "east_asia",
+      "order": 182
+    },
+    {
+      "id": "plum_village_founded",
+      "title": "プラムビレッジ修道院設立",
+      "year_be": 1525,
+      "year_ce": 1982,
+      "description": "ティク・ナット・ハンはフランスにプラム・ヴィレッジを設立し、ヨーロッパ最大の仏教僧院となり、エンゲージド・仏教の中心地となりました。",
+      "category": "modern_buddhism",
+      "order": 183
+    },
+    {
+      "id": "buddhism_science_dialogue",
+      "title": "仏教と科学の対話",
+      "year_be": 1530,
+      "year_ce": 1987,
+      "description": "マインド・アンド・ライフ・インスティチュートは、ダライ・ラマと西洋の科学者との間で、意識と幸福についての対話を開始した。",
+      "category": "modern_buddhism",
+      "order": 184
+    },
+    {
+      "id": "dalai_lama_nobel_peace",
+      "title": "ダライ・ラマ法王がノーベル平和賞を受賞",
+      "year_be": 1532,
+      "year_ce": 1989,
+      "description": "ダライ・ラマ14世は、チベット解放と慈悲の促進のための非暴力闘争でノーベル平和賞を受賞した。",
+      "category": "modern_buddhism",
+      "order": 185
+    },
+    {
+      "id": "buddhism_environmental_movement",
+      "title": "仏教環境運動",
+      "year_be": 1533,
+      "year_ce": 1990,
+      "description": "世界中の仏教指導者たちは、相互依存とすべての生命への慈悲に根ざした生態保護を主張し始めました。",
+      "category": "modern_buddhism",
+      "order": 186
+    },
+    {
+      "id": "buddhism_women_ordination",
+      "title": "比丘尼出家を求める世界的な運動",
+      "year_be": 1539,
+      "year_ce": 1996,
+      "description": "スリランカおよびその他の上座部仏教コミュニティは、マハパジャパティ ゴータミの遺産を引き継ぎ、女性のための完全な叙階を復活させました。",
+      "category": "sangha",
+      "order": 187
+    },
+    {
+      "id": "un_vesak_day",
+      "title": "ヴェサクの国連承認",
+      "year_be": 1542,
+      "year_ce": 1999,
+      "description": "国連は、ヴェサックを仏陀の誕生、悟り、入滅を讃える国際的な記念日として認めました。",
+      "category": "modern_buddhism",
+      "order": 188
+    },
+    {
+      "id": "buddhism_online_dharma",
+      "title": "仏教の教えがオンラインに",
+      "year_be": 1543,
+      "year_ce": 2000,
+      "description": "世界中の僧院、教師、学者がインターネットを通じて法話、経典、瞑想指導を共有し始めました。",
+      "category": "modern_buddhism",
+      "order": 189
+    },
+    {
+      "id": "bamiyan_buddhas_destroyed",
+      "title": "バーミヤンの仏像破壊",
+      "year_be": 1544,
+      "year_ce": 2001,
+      "description": "タリバンはアフガニスタンのバーミヤンにある巨大な仏像を破壊し、世界に衝撃を与え、仏教遺産のもろさを浮き彫りにした。",
+      "category": "modern_buddhism",
+      "order": 190
+    },
+    {
+      "id": "buddhism_india_diksha_ceremonies",
+      "title": "インドでの集団仏教参入儀式",
+      "year_be": 1544,
+      "year_ce": 2001,
+      "description": "アンベードカル博士の遺志に触発されて数百万人が仏教を信仰する中、インド全土で大規模なディクシャの儀式が続いた。",
+      "category": "india_buddhism",
+      "order": 191
+    },
+    {
+      "id": "buddha_birthplace_unesco",
+      "title": "ルンビニ ユネスコ世界遺産",
+      "year_be": 1545,
+      "year_ce": 2002,
+      "description": "ルンビニの釈迦生誕の地はユネスコの世界遺産に登録され、重要な巡礼地を保護しています。",
+      "category": "modern_buddhism",
+      "order": 192
+    },
+    {
+      "id": "buddhism_sri_lanka_civil_war",
+      "title": "スリランカにおける仏教の平和への取り組み",
+      "year_be": 1545,
+      "year_ce": 2002,
+      "description": "スリランカの僧侶と在家仏教徒は、内戦中および内戦後に平和と和解のために活動しました。",
+      "category": "modern_buddhism",
+      "order": 193
+    },
+    {
+      "id": "buddhism_india_bodh_gaya_unesco",
+      "title": "マハーボディ寺院 ユネスコ遺産",
+      "year_be": 1545,
+      "year_ce": 2002,
+      "description": "ブッダガヤの大菩提寺は、その世界的な精神的重要性が認められ、ユネスコの世界遺産に登録されました。",
+      "category": "india_buddhism",
+      "order": 194
+    },
+    {
+      "id": "buddhism_india_bodh_gaya_summit",
+      "title": "ブッダガヤでの国際仏教会議",
+      "year_be": 1547,
+      "year_ce": 2004,
+      "description": "インドはブッダガヤで国際仏教会議を主催し、この場所の世界的な巡礼の中心地としての役割を再確認した。",
+      "category": "india_buddhism",
+      "order": 195
+    },
+    {
+      "id": "buddhism_myanmar_saffron",
+      "title": "ミャンマーのサフラン革命",
+      "year_be": 1550,
+      "year_ce": 2007,
+      "description": "ミャンマーでは仏教僧侶らが民主主義と人権を求める大規模な抗議活動を主導し、熱心な仏教の実践を示した。",
+      "category": "modern_buddhism",
+      "order": 196
+    },
+    {
+      "id": "buddhism_india_nagaloka",
+      "title": "ナガロカ仏教研修センター",
+      "year_be": 1550,
+      "year_ce": 2007,
+      "description": "ナグプールのナガロカ センターは、新世代のインド仏教徒に瞑想、学習、社会変革を訓練するために設立されました。",
+      "category": "india_buddhism",
+      "order": 197
+    },
+    {
+      "id": "nalanda_university_revived",
+      "title": "ナーランダ大学が復活",
+      "year_be": 1557,
+      "year_ce": 2014,
+      "description": "インドは、インドの仏教学術遺産の復活を象徴する国際機関としてビハール州にナーランダ大学を再設立した。",
+      "category": "india_buddhism",
+      "order": 198
+    },
+    {
+      "id": "buddhism_india_kushinagar_development",
+      "title": "クシナガラ仏教回路の発展",
+      "year_be": 1559,
+      "year_ce": 2016,
+      "description": "インドは、釈迦がパリ涅槃に到達したクシナガルを主要な巡礼地および遺産の目的地として発展させました。",
+      "category": "india_buddhism",
+      "order": 199
+    },
+    {
+      "id": "buddhism_india_modern_pilgrimage",
+      "title": "現代インドにおける仏教巡礼巡礼",
+      "year_be": 1559,
+      "year_ce": 2016,
+      "description": "インドは、国際巡礼者のためにルンビニ、ブッダガヤ、サルナート、クシナガルを結ぶ仏教巡回計画を立ち上げた。",
+      "category": "india_buddhism",
+      "order": 200
+    },
+    {
+      "id": "covid_buddhist_online_practice",
+      "title": "仏教コミュニティは新型コロナウイルス感染症に適応する",
+      "year_be": 1563,
+      "year_ce": 2020,
+      "description": "世界的なパンデミックの間、世界中の寺院や瞑想センターはオンラインでの教えや仮想サンガの集まりに移行しました。",
+      "category": "modern_buddhism",
+      "order": 201
+    },
+    {
+      "id": "global_buddhist_summit",
+      "title": "世界仏教サミット",
+      "year_be": 1566,
+      "year_ce": 2023,
+      "description": "世界中の仏教伝統の指導者や学者がニューデリーに集まり、平和、慈悲、責任の共有について話し合いました。",
+      "category": "modern_buddhism",
+      "order": 202
+    }
+  ]
+}
