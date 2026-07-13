@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "refresh_interval_hours": 6,
+  "widgets": [
+    { "id": "today_buddhist_date", "title": "අද බුද්ධ දිනය", "refresh_hours": 6, "data_sources": ["countries", "calendar"] },
+    { "id": "next_holiday", "title": "ඊළඟ නිවාඩුව", "refresh_hours": 12, "data_sources": ["buddhist_holidays", "countries"] },
+    { "id": "moon_phase", "title": "සඳ අවධිය හා පෝය", "refresh_hours": 12, "data_sources": ["moon_phases", "tithi"] },
+    { "id": "next_alarm", "title": "ඊළඟ එලාමය", "refresh_hours": 1, "data_sources": ["alarms"] },
+    { "id": "buddhist_clock", "title": "බෞද්ධ ඔරලෝසුව", "refresh_hours": 1, "data_sources": ["countries", "buddhist_holidays", "moon_phases", "alarms"] }
+  ]
+}

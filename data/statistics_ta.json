@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "monthly_report_title": "உங்கள் பௌத்த பயிற்சி அறிக்கை",
+  "sections": [
+    { "id": "meditation", "title": "தியானம்", "enabled": true },
+    { "id": "planner", "title": "தினசரி திட்டமிடுபவர்", "enabled": true },
+    { "id": "uposatha", "title": "உபோசதம்", "enabled": true },
+    { "id": "reminders", "title": "நினைவூட்டல்கள்", "enabled": true },
+    { "id": "quotes", "title": "பிடித்த வாக்குகள்", "enabled": true }
+  ],
+  "streak_milestones": [7, 14, 30, 60, 100]
+}

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "monthly_report_title": "ඔබේ බෞද්ධ පුහුණු වාර්තාව",
+  "sections": [
+    { "id": "meditation", "title": "භාවනාව", "enabled": true },
+    { "id": "planner", "title": "දෛනික සැලසුම්කරු", "enabled": true },
+    { "id": "uposatha", "title": "පෝය", "enabled": true },
+    { "id": "reminders", "title": "මතක් කිරීම්", "enabled": true },
+    { "id": "quotes", "title": "ප්‍රියතම වදන්", "enabled": true }
+  ],
+  "streak_milestones": [7, 14, 30, 60, 100]
+}

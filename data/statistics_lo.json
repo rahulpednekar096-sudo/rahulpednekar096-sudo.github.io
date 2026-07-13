@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "monthly_report_title": "ບົດລາຍງານການປະຕິບັດພຸດທະສາສະໜາຂອງທ່ານ",
+  "sections": [
+    { "id": "meditation", "title": "ສະມາທິ", "enabled": true },
+    { "id": "planner", "title": "ຕົວວາງແຜນປະຈຳວັນ", "enabled": true },
+    { "id": "uposatha", "title": "ອຸໂປສະຖ", "enabled": true },
+    { "id": "reminders", "title": "ການເຕືອນ", "enabled": true },
+    { "id": "quotes", "title": "ຄຳຄົມທີ່ມັກ", "enabled": true }
+  ],
+  "streak_milestones": [7, 14, 30, 60, 100]
+}

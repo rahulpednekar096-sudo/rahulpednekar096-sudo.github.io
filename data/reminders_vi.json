@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "templates": [
+    { "id": "meditation_morning", "type": "meditation", "title": "Thiền buổi sáng", "default_hour": 6, "default_minute": 0, "message": "Đã đến giờ thực hành thiền hằng ngày của bạn.", "repeat": "daily" },
+    { "id": "uposatha_reminder", "type": "uposatha", "title": "Nhắc nhở Bố-tát", "default_hour": 6, "default_minute": 0, "message": "Hôm nay là Bố-tát — ngày để giữ giới và hành trì.", "repeat": "uposatha" },
+    { "id": "temple_visit", "type": "temple_visit", "title": "Viếng chùa", "default_hour": 9, "default_minute": 0, "message": "Nhắc nhở cho chuyến viếng chùa đã lên lịch của bạn.", "repeat": "weekly" },
+    { "id": "holiday_reminder", "type": "holiday", "title": "Ngày lễ Phật giáo", "default_hour": 7, "default_minute": 0, "message": "Một ngày lễ Phật giáo quan trọng đang đến gần.", "repeat": "holiday" },
+    { "id": "wake_up", "type": "daily", "title": "Báo thức thức dậy", "default_hour": 5, "default_minute": 30, "message": "Chào buổi sáng — bắt đầu ngày mới với chánh niệm.", "repeat": "daily" }
+  ]
+}

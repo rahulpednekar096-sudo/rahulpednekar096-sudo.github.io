@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "refresh_interval_hours": 6,
+  "widgets": [
+    { "id": "today_buddhist_date", "title": "오늘의 불기 날짜", "refresh_hours": 6, "data_sources": ["countries", "calendar"] },
+    { "id": "next_holiday", "title": "다음 명절", "refresh_hours": 12, "data_sources": ["buddhist_holidays", "countries"] },
+    { "id": "moon_phase", "title": "달의 위상과 포살", "refresh_hours": 12, "data_sources": ["moon_phases", "tithi"] },
+    { "id": "next_alarm", "title": "다음 알람", "refresh_hours": 1, "data_sources": ["alarms"] },
+    { "id": "buddhist_clock", "title": "불교 시계", "refresh_hours": 1, "data_sources": ["countries", "buddhist_holidays", "moon_phases", "alarms"] }
+  ]
+}

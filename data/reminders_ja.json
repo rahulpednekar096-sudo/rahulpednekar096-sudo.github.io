@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "templates": [
+    { "id": "meditation_morning", "type": "meditation", "title": "朝の瞑想", "default_hour": 6, "default_minute": 0, "message": "毎日の瞑想の時間です。", "repeat": "daily" },
+    { "id": "uposatha_reminder", "type": "uposatha", "title": "布薩のリマインダー", "default_hour": 6, "default_minute": 0, "message": "今日は布薩 — 行いと実践の日です。", "repeat": "uposatha" },
+    { "id": "temple_visit", "type": "temple_visit", "title": "寺院参拝", "default_hour": 9, "default_minute": 0, "message": "予定された寺院参拝のリマインダーです。", "repeat": "weekly" },
+    { "id": "holiday_reminder", "type": "holiday", "title": "仏教の祝日", "default_hour": 7, "default_minute": 0, "message": "大切な仏教の祝日が近づいています。", "repeat": "holiday" },
+    { "id": "wake_up", "type": "daily", "title": "起床アラーム", "default_hour": 5, "default_minute": 30, "message": "おはようございます — マインドフルネスで一日を始めましょう。", "repeat": "daily" }
+  ]
+}

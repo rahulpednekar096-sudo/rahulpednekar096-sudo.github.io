@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "templates": [
+    { "id": "meditation_morning", "type": "meditation", "title": "မနက်ခင်း တရားထိုင်ခြင်း", "default_hour": 6, "default_minute": 0, "message": "သင့် နေ့စဉ် တရားထိုင်မှု အချိန်ဖြစ်ပါပြီ။", "repeat": "daily" },
+    { "id": "uposatha_reminder", "type": "uposatha", "title": "ဥပုသ် သတိပေးချက်", "default_hour": 6, "default_minute": 0, "message": "ယနေ့သည် ဥပုသ်နေ့ — သီလဆောက်တည်ခြင်းနှင့် ကျင့်ကြံခြင်း၏ နေ့ဖြစ်သည်။", "repeat": "uposatha" },
+    { "id": "temple_visit", "type": "temple_visit", "title": "ဘုရားဖူးခြင်း", "default_hour": 9, "default_minute": 0, "message": "သင့် စီစဉ်ထားသော ဘုရားဖူးခြင်းအတွက် သတိပေးချက်။", "repeat": "weekly" },
+    { "id": "holiday_reminder", "type": "holiday", "title": "ဗုဒ္ဓဘာသာ ပွဲနေ့", "default_hour": 7, "default_minute": 0, "message": "အရေးကြီးသော ဗုဒ္ဓဘာသာ ပွဲနေ့ တစ်ခု နီးကပ်လာနေသည်။", "repeat": "holiday" },
+    { "id": "wake_up", "type": "daily", "title": "အိပ်ရာထ နှိုးစက်", "default_hour": 5, "default_minute": 30, "message": "မင်္ဂလာနံနက်ခင်းပါ — သတိဖြင့် နေ့ကို စတင်ပါ။", "repeat": "daily" }
+  ]
+}

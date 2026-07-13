@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "monthly_report_title": "Таны Буддын дадлагын тайлан",
+  "sections": [
+    { "id": "meditation", "title": "Бясалгал", "enabled": true },
+    { "id": "planner", "title": "Өдрийн төлөвлөгч", "enabled": true },
+    { "id": "uposatha", "title": "Упосата", "enabled": true },
+    { "id": "reminders", "title": "Сануулга", "enabled": true },
+    { "id": "quotes", "title": "Дуртай айлдвар", "enabled": true }
+  ],
+  "streak_milestones": [7, 14, 30, 60, 100]
+}

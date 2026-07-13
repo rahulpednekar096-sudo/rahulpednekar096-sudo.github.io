@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "templates": [
+    { "id": "meditation_morning", "type": "meditation", "title": "ཞོགས་པའི་སྒོམ", "default_hour": 6, "default_minute": 0, "message": "ཁྱོད་ཀྱི་ཉིན་བསྟར་སྒོམ་གྱི་ཉམས་ལེན་གྱི་དུས་ཚོད་ཨིན།", "repeat": "daily" },
+    { "id": "uposatha_reminder", "type": "uposatha", "title": "གསོ་སྦྱོང་གི་དྲན་སྐུལ", "default_hour": 6, "default_minute": 0, "message": "ད་རིས་གསོ་སྦྱོང་ཨིན — ཚུལ་ཁྲིམས་བསྲུང་བ་དང་ཉམས་ལེན་གྱི་ཉིན།", "repeat": "uposatha" },
+    { "id": "temple_visit", "type": "temple_visit", "title": "ལྷ་ཁང་མཇལ་བ", "default_hour": 9, "default_minute": 0, "message": "ཁྱོད་ཀྱི་འཆར་གཞི་བཟོས་པའི་ལྷ་ཁང་མཇལ་བའི་དྲན་སྐུལ།", "repeat": "weekly" },
+    { "id": "holiday_reminder", "type": "holiday", "title": "ནང་པའི་དུས་ཆེན", "default_hour": 7, "default_minute": 0, "message": "གལ་ཅན་གྱི་ནང་པའི་དུས་ཆེན་ཞིག་ཉེ་བར་འོང་བཞིན་ཡོད།", "repeat": "holiday" },
+    { "id": "wake_up", "type": "daily", "title": "གཉིད་སད་ཀྱི་དུས་སྐུལ", "default_hour": 5, "default_minute": 30, "message": "ཞོགས་པ་བདེ་ལེགས — དྲན་ཤེས་དང་བཅས་ཉིན་མོ་འགོ་བཙུགས།", "repeat": "daily" }
+  ]
+}

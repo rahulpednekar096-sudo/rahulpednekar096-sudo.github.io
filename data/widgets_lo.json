@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "refresh_interval_hours": 6,
+  "widgets": [
+    { "id": "today_buddhist_date", "title": "ວັນທີ ພ.ສ. ມື້ນີ້", "refresh_hours": 6, "data_sources": ["countries", "calendar"] },
+    { "id": "next_holiday", "title": "ວັນພັກຕໍ່ໄປ", "refresh_hours": 12, "data_sources": ["buddhist_holidays", "countries"] },
+    { "id": "moon_phase", "title": "ໄລຍະດວງຈັນ ແລະ ອຸໂປສະຖ", "refresh_hours": 12, "data_sources": ["moon_phases", "tithi"] },
+    { "id": "next_alarm", "title": "ໂມງປຸກຕໍ່ໄປ", "refresh_hours": 1, "data_sources": ["alarms"] },
+    { "id": "buddhist_clock", "title": "ໂມງພຸດທະສາສະໜາ", "refresh_hours": 1, "data_sources": ["countries", "buddhist_holidays", "moon_phases", "alarms"] }
+  ]
+}

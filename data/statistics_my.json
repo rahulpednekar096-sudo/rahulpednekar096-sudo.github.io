@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "monthly_report_title": "သင့် ဗုဒ္ဓဘာသာ ကျင့်စဉ် အစီရင်ခံစာ",
+  "sections": [
+    { "id": "meditation", "title": "တရားထိုင်ခြင်း", "enabled": true },
+    { "id": "planner", "title": "နေ့စဉ် စီစဉ်သူ", "enabled": true },
+    { "id": "uposatha", "title": "ဥပုသ်", "enabled": true },
+    { "id": "reminders", "title": "သတိပေးချက်များ", "enabled": true },
+    { "id": "quotes", "title": "အနှစ်သက်ဆုံး စကားများ", "enabled": true }
+  ],
+  "streak_milestones": [7, 14, 30, 60, 100]
+}

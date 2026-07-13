@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "monthly_report_title": "あなたの仏教実践レポート",
+  "sections": [
+    { "id": "meditation", "title": "瞑想", "enabled": true },
+    { "id": "planner", "title": "デイリープランナー", "enabled": true },
+    { "id": "uposatha", "title": "布薩", "enabled": true },
+    { "id": "reminders", "title": "リマインダー", "enabled": true },
+    { "id": "quotes", "title": "お気に入りの言葉", "enabled": true }
+  ],
+  "streak_milestones": [7, 14, 30, 60, 100]
+}

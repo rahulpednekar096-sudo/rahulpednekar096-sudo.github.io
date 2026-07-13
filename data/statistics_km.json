@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "monthly_report_title": "របាយការណ៍អនុវត្តពុទ្ធសាសនារបស់អ្នក",
+  "sections": [
+    { "id": "meditation", "title": "សមាធិ", "enabled": true },
+    { "id": "planner", "title": "កម្មវិធីរៀបចំប្រចាំថ្ងៃ", "enabled": true },
+    { "id": "uposatha", "title": "ឧបោសថ", "enabled": true },
+    { "id": "reminders", "title": "ការរំលឹក", "enabled": true },
+    { "id": "quotes", "title": "ពាក្យស្លោកសំណព្វ", "enabled": true }
+  ],
+  "streak_milestones": [7, 14, 30, 60, 100]
+}

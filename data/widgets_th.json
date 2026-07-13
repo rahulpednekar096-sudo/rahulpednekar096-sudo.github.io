@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "refresh_interval_hours": 6,
+  "widgets": [
+    { "id": "today_buddhist_date", "title": "วันที่ทางพุทธศาสนาวันนี้", "refresh_hours": 6, "data_sources": ["countries", "calendar"] },
+    { "id": "next_holiday", "title": "วันหยุดถัดไป", "refresh_hours": 12, "data_sources": ["buddhist_holidays", "countries"] },
+    { "id": "moon_phase", "title": "ข้างขึ้นข้างแรมและอุโบสถ", "refresh_hours": 12, "data_sources": ["moon_phases", "tithi"] },
+    { "id": "next_alarm", "title": "การเตือนถัดไป", "refresh_hours": 1, "data_sources": ["alarms"] },
+    { "id": "buddhist_clock", "title": "นาฬิกาพุทธ", "refresh_hours": 1, "data_sources": ["countries", "buddhist_holidays", "moon_phases", "alarms"] }
+  ]
+}

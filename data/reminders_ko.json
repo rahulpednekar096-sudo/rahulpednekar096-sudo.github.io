@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "templates": [
+    { "id": "meditation_morning", "type": "meditation", "title": "아침 명상", "default_hour": 6, "default_minute": 0, "message": "매일 명상 수행 시간입니다.", "repeat": "daily" },
+    { "id": "uposatha_reminder", "type": "uposatha", "title": "포살 알림", "default_hour": 6, "default_minute": 0, "message": "오늘은 포살 — 지계와 수행의 날입니다.", "repeat": "uposatha" },
+    { "id": "temple_visit", "type": "temple_visit", "title": "사원 방문", "default_hour": 9, "default_minute": 0, "message": "예정된 사원 방문 알림입니다.", "repeat": "weekly" },
+    { "id": "holiday_reminder", "type": "holiday", "title": "불교 명절", "default_hour": 7, "default_minute": 0, "message": "중요한 불교 명절이 다가오고 있습니다.", "repeat": "holiday" },
+    { "id": "wake_up", "type": "daily", "title": "기상 알람", "default_hour": 5, "default_minute": 30, "message": "좋은 아침입니다 — 마음챙김으로 하루를 시작하세요.", "repeat": "daily" }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "refresh_interval_hours": 6,
+  "widgets": [
+    { "id": "today_buddhist_date", "title": "Өнөөдрийн Буддын огноо", "refresh_hours": 6, "data_sources": ["countries", "calendar"] },
+    { "id": "next_holiday", "title": "Дараагийн баяр", "refresh_hours": 12, "data_sources": ["buddhist_holidays", "countries"] },
+    { "id": "moon_phase", "title": "Сарны байдал ба Упосата", "refresh_hours": 12, "data_sources": ["moon_phases", "tithi"] },
+    { "id": "next_alarm", "title": "Дараагийн сэрүүлэг", "refresh_hours": 1, "data_sources": ["alarms"] },
+    { "id": "buddhist_clock", "title": "Буддын цаг", "refresh_hours": 1, "data_sources": ["countries", "buddhist_holidays", "moon_phases", "alarms"] }
+  ]
+}

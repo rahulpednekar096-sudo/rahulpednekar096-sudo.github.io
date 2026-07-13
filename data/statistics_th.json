@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "monthly_report_title": "รายงานการปฏิบัติธรรมของคุณ",
+  "sections": [
+    { "id": "meditation", "title": "สมาธิ", "enabled": true },
+    { "id": "planner", "title": "ตัววางแผนประจำวัน", "enabled": true },
+    { "id": "uposatha", "title": "อุโบสถ", "enabled": true },
+    { "id": "reminders", "title": "การเตือน", "enabled": true },
+    { "id": "quotes", "title": "คำคมที่ชื่นชอบ", "enabled": true }
+  ],
+  "streak_milestones": [7, 14, 30, 60, 100]
+}

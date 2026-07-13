@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "templates": [
+    { "id": "meditation_morning", "type": "meditation", "title": "ສະມາທິຕອນເຊົ້າ", "default_hour": 6, "default_minute": 0, "message": "ຮອດເວລາສຳລັບການປະຕິບັດສະມາທິປະຈຳວັນຂອງທ່ານ.", "repeat": "daily" },
+    { "id": "uposatha_reminder", "type": "uposatha", "title": "ການເຕືອນວັນອຸໂປສະຖ", "default_hour": 6, "default_minute": 0, "message": "ມື້ນີ້ແມ່ນວັນອຸໂປສະຖ — ວັນສຳລັບການຮັກສາສິນ ແລະ ການປະຕິບັດ.", "repeat": "uposatha" },
+    { "id": "temple_visit", "type": "temple_visit", "title": "ໄປວັດ", "default_hour": 9, "default_minute": 0, "message": "ການເຕືອນສຳລັບການໄປວັດຕາມກຳນົດຂອງທ່ານ.", "repeat": "weekly" },
+    { "id": "holiday_reminder", "type": "holiday", "title": "ວັນພັກທາງພຸດທະສາສະໜາ", "default_hour": 7, "default_minute": 0, "message": "ວັນສຳຄັນທາງພຸດທະສາສະໜາກຳລັງໃກ້ເຂົ້າມາ.", "repeat": "holiday" },
+    { "id": "wake_up", "type": "daily", "title": "ໂມງປຸກຕື່ນນອນ", "default_hour": 5, "default_minute": 30, "message": "ອະລຸນສະຫວັດ — ເລີ່ມຕົ້ນມື້ດ້ວຍສະຕິ.", "repeat": "daily" }
+  ]
+}

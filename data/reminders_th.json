@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "templates": [
+    { "id": "meditation_morning", "type": "meditation", "title": "สมาธิยามเช้า", "default_hour": 6, "default_minute": 0, "message": "ถึงเวลาสำหรับการฝึกสมาธิประจำวันของคุณ", "repeat": "daily" },
+    { "id": "uposatha_reminder", "type": "uposatha", "title": "การเตือนวันอุโบสถ", "default_hour": 6, "default_minute": 0, "message": "วันนี้เป็นวันอุโบสถ — วันสำหรับการรักษาศีลและการปฏิบัติ", "repeat": "uposatha" },
+    { "id": "temple_visit", "type": "temple_visit", "title": "ไปวัด", "default_hour": 9, "default_minute": 0, "message": "การเตือนสำหรับการไปวัดตามกำหนดของคุณ", "repeat": "weekly" },
+    { "id": "holiday_reminder", "type": "holiday", "title": "วันหยุดทางพุทธศาสนา", "default_hour": 7, "default_minute": 0, "message": "วันสำคัญทางพุทธศาสนากำลังใกล้เข้ามา", "repeat": "holiday" },
+    { "id": "wake_up", "type": "daily", "title": "นาฬิกาปลุกตื่นนอน", "default_hour": 5, "default_minute": 30, "message": "อรุณสวัสดิ์ — เริ่มต้นวันด้วยสติ", "repeat": "daily" }
+  ]
+}

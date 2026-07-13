@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "monthly_report_title": "ཁྱོད་ཀྱི་ནང་པའི་ཉམས་ལེན་སྙན་ཞུ",
+  "sections": [
+    { "id": "meditation", "title": "སྒོམ", "enabled": true },
+    { "id": "planner", "title": "ཉིན་བསྟར་འཆར་འགོད་པ", "enabled": true },
+    { "id": "uposatha", "title": "གསོ་སྦྱོང", "enabled": true },
+    { "id": "reminders", "title": "དྲན་སྐུལ", "enabled": true },
+    { "id": "quotes", "title": "དགའ་མཛེས་ཀྱི་གསུང", "enabled": true }
+  ],
+  "streak_milestones": [7, 14, 30, 60, 100]
+}

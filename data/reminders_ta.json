@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "templates": [
+    { "id": "meditation_morning", "type": "meditation", "title": "காலை தியானம்", "default_hour": 6, "default_minute": 0, "message": "உங்கள் தினசரி தியானப் பயிற்சிக்கான நேரம்.", "repeat": "daily" },
+    { "id": "uposatha_reminder", "type": "uposatha", "title": "உபோசத நினைவூட்டல்", "default_hour": 6, "default_minute": 0, "message": "இன்று உபோசதம் — சீலம் காத்தல் மற்றும் பயிற்சிக்கான நாள்.", "repeat": "uposatha" },
+    { "id": "temple_visit", "type": "temple_visit", "title": "கோயில் தரிசனம்", "default_hour": 9, "default_minute": 0, "message": "உங்கள் திட்டமிட்ட கோயில் தரிசனத்திற்கான நினைவூட்டல்.", "repeat": "weekly" },
+    { "id": "holiday_reminder", "type": "holiday", "title": "பௌத்த விடுமுறை", "default_hour": 7, "default_minute": 0, "message": "முக்கியமான பௌத்த விடுமுறை நெருங்கி வருகிறது.", "repeat": "holiday" },
+    { "id": "wake_up", "type": "daily", "title": "எழுப்பும் அலாரம்", "default_hour": 5, "default_minute": 30, "message": "காலை வணக்கம் — நினைவாற்றலுடன் நாளைத் தொடங்குங்கள்.", "repeat": "daily" }
+  ]
+}

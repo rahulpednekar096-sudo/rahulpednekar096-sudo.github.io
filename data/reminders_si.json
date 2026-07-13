@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "templates": [
+    { "id": "meditation_morning", "type": "meditation", "title": "උදෑසන භාවනාව", "default_hour": 6, "default_minute": 0, "message": "ඔබේ දෛනික භාවනා පුහුණුවේ වේලාවයි.", "repeat": "daily" },
+    { "id": "uposatha_reminder", "type": "uposatha", "title": "පෝය මතක් කිරීම", "default_hour": 6, "default_minute": 0, "message": "අද පෝය දිනයයි — සිල් රැකීම හා පුහුණුවීමේ දිනයකි.", "repeat": "uposatha" },
+    { "id": "temple_visit", "type": "temple_visit", "title": "විහාර වන්දනාව", "default_hour": 9, "default_minute": 0, "message": "ඔබේ නියමිත විහාර වන්දනාව සඳහා මතක් කිරීමකි.", "repeat": "weekly" },
+    { "id": "holiday_reminder", "type": "holiday", "title": "බෞද්ධ නිවාඩුව", "default_hour": 7, "default_minute": 0, "message": "වැදගත් බෞද්ධ නිවාඩුවක් ළඟා වෙමින් පවතී.", "repeat": "holiday" },
+    { "id": "wake_up", "type": "daily", "title": "අවදි වීමේ එලාමය", "default_hour": 5, "default_minute": 30, "message": "සුබ උදෑසනක් — සිහියෙන් දිනය අරඹන්න.", "repeat": "daily" }
+  ]
+}

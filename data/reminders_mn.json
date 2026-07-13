@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "templates": [
+    { "id": "meditation_morning", "type": "meditation", "title": "Өглөөний бясалгал", "default_hour": 6, "default_minute": 0, "message": "Таны өдөр тутмын бясалгалын дадлагын цаг боллоо.", "repeat": "daily" },
+    { "id": "uposatha_reminder", "type": "uposatha", "title": "Упосатагийн сануулга", "default_hour": 6, "default_minute": 0, "message": "Өнөөдөр Упосата — сахил санваар сахих, дадлага хийх өдөр.", "repeat": "uposatha" },
+    { "id": "temple_visit", "type": "temple_visit", "title": "Сүмд зочлох", "default_hour": 9, "default_minute": 0, "message": "Таны товлосон сүмд зочлох сануулга.", "repeat": "weekly" },
+    { "id": "holiday_reminder", "type": "holiday", "title": "Буддын баяр", "default_hour": 7, "default_minute": 0, "message": "Чухал Буддын баяр ойртож байна.", "repeat": "holiday" },
+    { "id": "wake_up", "type": "daily", "title": "Сэрэх сэрүүлэг", "default_hour": 5, "default_minute": 30, "message": "Өглөөний мэнд — ухамсартайгаар өдрөө эхлүүлээрэй.", "repeat": "daily" }
+  ]
+}

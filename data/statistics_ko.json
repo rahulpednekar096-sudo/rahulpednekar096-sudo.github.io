@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "monthly_report_title": "당신의 불교 수행 보고서",
+  "sections": [
+    { "id": "meditation", "title": "명상", "enabled": true },
+    { "id": "planner", "title": "일일 플래너", "enabled": true },
+    { "id": "uposatha", "title": "포살", "enabled": true },
+    { "id": "reminders", "title": "알림", "enabled": true },
+    { "id": "quotes", "title": "즐겨찾는 명언", "enabled": true }
+  ],
+  "streak_milestones": [7, 14, 30, 60, 100]
+}

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "monthly_report_title": "Báo cáo tu tập Phật giáo của bạn",
+  "sections": [
+    { "id": "meditation", "title": "Thiền", "enabled": true },
+    { "id": "planner", "title": "Kế hoạch hằng ngày", "enabled": true },
+    { "id": "uposatha", "title": "Bố-tát", "enabled": true },
+    { "id": "reminders", "title": "Nhắc nhở", "enabled": true },
+    { "id": "quotes", "title": "Lời hay yêu thích", "enabled": true }
+  ],
+  "streak_milestones": [7, 14, 30, 60, 100]
+}
