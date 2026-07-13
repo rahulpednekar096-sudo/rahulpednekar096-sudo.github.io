@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "chants": [
+    {
+      "id": "triple_gem",
+      "title": "พระรัตนตรัย (ติรัตนะ)",
+      "category": "refuge",
+      "text_pali": "Buddhaṃ saraṇaṃ gacchāmi.\nDhammaṃ saraṇaṃ gacchāmi.\nSaṅghaṃ saraṇaṃ gacchāmi.\n\nDutiyampi Buddhaṃ saraṇaṃ gacchāmi.\nDutiyampi Dhammaṃ saraṇaṃ gacchāmi.\nDutiyampi Saṅghaṃ saraṇaṃ gacchāmi.\n\nTatiyampi Buddhaṃ saraṇaṃ gacchāmi.\nTatiyampi Dhammaṃ saraṇaṃ gacchāmi.\nTatiyampi Saṅghaṃ saraṇaṃ gacchāmi.",
+      "text_english": "ข้าพเจ้าขอถึงพระพุทธเจ้าเป็นที่พึ่ง\nข้าพเจ้าขอถึงพระธรรมเป็นที่พึ่ง\nข้าพเจ้าขอถึงพระสงฆ์เป็นที่พึ่ง\n\nแม้ครั้งที่สอง ข้าพเจ้าขอถึงพระพุทธเจ้าเป็นที่พึ่ง\nแม้ครั้งที่สอง ข้าพเจ้าขอถึงพระธรรมเป็นที่พึ่ง\nแม้ครั้งที่สอง ข้าพเจ้าขอถึงพระสงฆ์เป็นที่พึ่ง\n\nแม้ครั้งที่สาม ข้าพเจ้าขอถึงพระพุทธเจ้าเป็นที่พึ่ง\nแม้ครั้งที่สาม ข้าพเจ้าขอถึงพระธรรมเป็นที่พึ่ง\nแม้ครั้งที่สาม ข้าพเจ้าขอถึงพระสงฆ์เป็นที่พึ่ง",
+      "audio_id": "audio_triple_gem"
+    },
+    {
+      "id": "five_precepts",
+      "title": "ศีลห้า (ปัญจศีล)",
+      "category": "precepts",
+      "text_pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi.\nAdinnādānā veramaṇī sikkhāpadaṃ samādiyāmi.\nKāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi.\nMusāvādā veramaṇī sikkhāpadaṃ samādiyāmi.\nSurāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi.",
+      "text_english": "ข้าพเจ้าขอสมาทานสิกขาบทที่จะงดเว้นจากการฆ่าสัตว์\nข้าพเจ้าขอสมาทานสิกขาบทที่จะงดเว้นจากการถือเอาสิ่งที่เจ้าของไม่ได้ให้\nข้าพเจ้าขอสมาทานสิกขาบทที่จะงดเว้นจากการประพฤติผิดในกาม\nข้าพเจ้าขอสมาทานสิกขาบทที่จะงดเว้นจากการพูดเท็จ\nข้าพเจ้าขอสมาทานสิกขาบทที่จะงดเว้นจากของมึนเมาอันเป็นที่ตั้งแห่งความประมาท",
+      "audio_id": "audio_five_precepts"
+    },
+    {
+      "id": "metta_sutta",
+      "title": "เมตตสูตร (เมตตา)",
+      "category": "paritta",
+      "text_pali": "Karaṇīyam-atthakusalena\nYanta santaṃ padaṃ abhisamecca:\nSakko ujū ca suhujū ca,\nSūvaco cassa mudu anatimānī.",
+      "text_english": "ผู้ฉลาดในประโยชน์ พึงกระทำสิ่งนี้\nผู้ที่เข้าใจหนทางแห่งความสงบ:\nพึงเป็นผู้สามารถ ซื่อตรง เที่ยงธรรม และอ่อนโยนในวาจา\nถ่อมตนและไม่ทะนงตน",
+      "audio_id": "audio_metta_sutta"
+    },
+    {
+      "id": "mangala_sutta",
+      "title": "มงคลสูตร (พร)",
+      "category": "paritta",
+      "text_pali": "Bāhuṃ sahassaṃ abhinimmita vo,\nDvādasakaraṃ saṭṭhi ca vālam-ajjhuṃ;\nEkena saccena suvatthi hotu.",
+      "text_english": "แม้ผู้หนึ่งจะเนรมิตแขนพันแขนและสิบเอ็ดเศียร\nขอความสวัสดีจงมีแก่ท่านด้วยสัจวาจาหนึ่งคำ",
+      "audio_id": "audio_mangala_sutta"
+    },
+    {
+      "id": "ratana_sutta",
+      "title": "รตนสูตร (รตนะ)",
+      "category": "paritta",
+      "text_pali": "Yānīdha bhūtāni samāgatāni,\nBhummāni vā yāni va antalikkhe;\nSabbeva bhūtā sumanā bhavantu,\nAthopi sakkacca suṇantu bhāsitaṃ.",
+      "text_english": "เหล่าสรรพสัตว์ที่มาชุมนุมกัน ณ ที่นี้\nไม่ว่าบนแผ่นดินหรือในอากาศ\nขอสรรพสัตว์ทั้งปวงจงมีความสุข\nและจงตั้งใจฟังคำที่กล่าว",
+      "audio_id": "audio_ratana_sutta"
+    }
+  ]
+}

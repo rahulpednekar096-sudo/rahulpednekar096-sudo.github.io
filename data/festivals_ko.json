@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "festivals": [
+    { "month": 1, "day": 1, "title": "새해 2026", "description": "새로운 해의 시작…", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 12, "title": "스와미 비베카난다 탄신일", "description": "스와미 비베카난다의 탄신일로, 전국 청년의 날로 기념됩니다.", "category": "festival", "year": "1863", "isSymbolic": false },
+    { "month": 1, "day": 14, "title": "마카르 산크란티", "description": "태양이 염소자리로 이동하는 것을 기리는 축제…", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 1, "day": 15, "title": "인도 육군의 날", "description": "K.M. 카리아파 중장이 총사령관으로 취임한 날을 기념합니다.", "category": "festival", "year": "1949", "isSymbolic": false },
+    { "month": 1, "day": 24, "title": "전국 여아의 날", "description": "여아의 권리에 대한 인식을 높이는 날.", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 25, "title": "전국 유권자의 날", "description": "더 많은 젊은 유권자가 정치 과정에 참여하도록 장려하기 위해 제정되었습니다.", "category": "festival", "year": "2011", "isSymbolic": false },
+    { "month": 1, "day": 26, "title": "공화국의 날", "description": "인도가 헌법을 채택하고 공화국이 되었습니다.", "category": "festival", "year": "1950", "isSymbolic": false },
+    { "month": 2, "day": 1, "title": "산트 라비다스 탄신일", "description": "전설적인 성인이자 사회 개혁가의 탄신일로, 마가 푸르니마에 기념됩니다.", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 2, "day": 14, "title": "마이트리 디와스 / 밸런타인데이", "description": "보편적 사랑과 애정을 기념하는 날.", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 3, "day": 3, "title": "마가 푸자", "description": "1,250명의 제자가 자발적으로 모인 것을 기념하는 중요한 불교 축제.", "category": "festival", "year": null, "isSymbolic": true }
+  ]
+}

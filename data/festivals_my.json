@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "festivals": [
+    { "month": 1, "day": 1, "title": "နှစ်သစ်ကူး 2026", "description": "နှစ်သစ်၏ အစ...", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 12, "title": "Swami Vivekananda မွေးနေ့", "description": "Swami Vivekananda ၏ မွေးနေ့ဖြစ်ပြီး အမျိုးသားလူငယ်နေ့အဖြစ် ကျင်းပသည်။", "category": "festival", "year": "1863", "isSymbolic": false },
+    { "month": 1, "day": 14, "title": "Makar Sankranti", "description": "နေသည် မကာရ (မကရ) ရာသီသို့ ကူးပြောင်းခြင်းကို အမှတ်အသားပြုသော ပွဲတော်...", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 1, "day": 15, "title": "အိန္ဒိယ တပ်မတော်နေ့", "description": "ဗိုလ်ချုပ်ကြီး K.M. Cariappa သည် စစ်ဦးစီးချုပ်အဖြစ် တာဝန်ယူသည့်နေ့ကို အမှတ်အသားပြုသည်။", "category": "festival", "year": "1949", "isSymbolic": false },
+    { "month": 1, "day": 24, "title": "အမျိုးသား မိန်းကလေးနေ့", "description": "မိန်းကလေးများ၏ အခွင့်အရေးများအကြောင်း အသိပညာမြှင့်တင်ရန် နေ့တစ်နေ့။", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 25, "title": "အမျိုးသား မဲဆန္ဒရှင်နေ့", "description": "လူငယ်မဲဆန္ဒရှင်များ နိုင်ငံရေးလုပ်ငန်းစဉ်တွင် ပါဝင်လာစေရန် တည်ထောင်ခဲ့သည်။", "category": "festival", "year": "2011", "isSymbolic": false },
+    { "month": 1, "day": 26, "title": "သမ္မတနိုင်ငံနေ့", "description": "အိန္ဒိယသည် ဖွဲ့စည်းပုံအခြေခံဥပဒေကို ကျင့်သုံးပြီး သမ္မတနိုင်ငံ ဖြစ်လာသည်။", "category": "festival", "year": "1950", "isSymbolic": false },
+    { "month": 2, "day": 1, "title": "Sant Ravidas မွေးနေ့", "description": "ဒဏ္ဍာရီလာ သူတော်စင်နှင့် လူမှုပြုပြင်ပြောင်းလဲရေးသမား၏ မွေးနေ့ဖြစ်ပြီး Magha Purnima တွင် ကျင်းပသည်။", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 2, "day": 14, "title": "Maitri Diwas / Valentine နေ့", "description": "စကြဝဠာ ချစ်ခြင်းမေတ္တာကို ဂုဏ်ပြုသော နေ့။", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 3, "day": 3, "title": "မာဃ ပူဇာ", "description": "တပည့် ၁,၂၅၀ ၏ အလိုအလျောက် စုဝေးမှုကို အောက်မေ့သော အရေးကြီးသည့် ဗုဒ္ဓဘာသာ ပွဲတော်။", "category": "festival", "year": null, "isSymbolic": true }
+  ]
+}

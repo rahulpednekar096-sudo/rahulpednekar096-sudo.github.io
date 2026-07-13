@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "precepts": [
+    { "number": 1, "pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "සතුන් මැරීමෙන් වැළකී සිටීමේ ශික්ෂාපදය මම සමාදන් වෙමි.", "explanation": "කිසිදු ජීවියෙකු මැරීමෙන් වළකින්න." },
+    { "number": 2, "pali": "Adinnādānā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "නොදුන් දෙය ගැනීමෙන් වැළකී සිටීමේ ශික්ෂාපදය මම සමාදන් වෙමි.", "explanation": "සොරකම් කිරීමෙන් හෝ අන් අයගේ දේ අවසරයකින් තොරව ගැනීමෙන් වළකින්න." },
+    { "number": 3, "pali": "Kāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "කාමයෙහි වරදවා හැසිරීමෙන් වැළකී සිටීමේ ශික්ෂාපදය මම සමාදන් වෙමි.", "explanation": "හානිකර හෝ සූරාකෑමේ ලිංගික හැසිරීමෙන් වළකින්න." },
+    { "number": 4, "pali": "Musāvādā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "බොරු කීමෙන් වැළකී සිටීමේ ශික්ෂාපදය මම සමාදන් වෙමි.", "explanation": "බොරු කීමෙන්, රැවටීමෙන් හෝ හානිකර වචනවලින් වළකින්න." },
+    { "number": 5, "pali": "Surāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "ප්‍රමාදයට හේතුවන මත්ද්‍රව්‍යවලින් වැළකී සිටීමේ ශික්ෂාපදය මම සමාදන් වෙමි.", "explanation": "මනස මුළා කරන මත්පැන් හා ද්‍රව්‍යවලින් වළකින්න." }
+  ]
+}

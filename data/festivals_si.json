@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "festivals": [
+    { "month": 1, "day": 1, "title": "නව වසර 2026", "description": "නව වසරක ආරම්භය...", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 12, "title": "Swami Vivekananda ජන්ම දිනය", "description": "Swami Vivekananda ගේ ජන්ම දිනය, ජාතික තරුණ දිනය ලෙස සමරනු ලැබේ.", "category": "festival", "year": "1863", "isSymbolic": false },
+    { "month": 1, "day": 14, "title": "Makar Sankranti", "description": "සූර්යයා මකර රාශියට සංක්‍රමණය වීම සලකුණු කරන උත්සවය...", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 1, "day": 15, "title": "ඉන්දීය හමුදා දිනය", "description": "ලුතිනන් ජෙනරාල් K.M. Cariappa අණදෙන නිලධාරියා ලෙස වැඩ භාර ගත් දිනය සලකුණු කරයි.", "category": "festival", "year": "1949", "isSymbolic": false },
+    { "month": 1, "day": 24, "title": "ජාතික ගැහැනු දරු දිනය", "description": "ගැහැනු දරුවෙකුගේ අයිතිවාසිකම් පිළිබඳ දැනුවත්භාවය වැඩි කිරීමේ දිනයකි.", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 25, "title": "ජාතික ඡන්දදායක දිනය", "description": "වැඩි තරුණ ඡන්දදායකයින් දේශපාලන ක්‍රියාවලියට සහභාගී වීම දිරිගැන්වීමට ස්ථාපිත කරන ලදී.", "category": "festival", "year": "2011", "isSymbolic": false },
+    { "month": 1, "day": 26, "title": "ජනරජ දිනය", "description": "ඉන්දියාව එහි ව්‍යවස්ථාව සම්මත කර ජනරජයක් බවට පත් විය.", "category": "festival", "year": "1950", "isSymbolic": false },
+    { "month": 2, "day": 1, "title": "Sant Ravidas ජන්ම දිනය", "description": "ජනප්‍රවාදගත සාන්තුවරයාගේ හා සමාජ ප්‍රතිසංස්කරණවාදියාගේ ජන්ම දිනය, Magha Purnima දින සමරනු ලැබේ.", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 2, "day": 14, "title": "Maitri Diwas / වැලන්ටයින් දිනය", "description": "විශ්ව ප්‍රේමය හා සෙනෙහස සමරන දිනයකි.", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 3, "day": 3, "title": "මාඝ පූජාව", "description": "ශ්‍රාවකයන් 1,250 දෙනෙකුගේ ස්වයංසිද්ධ එකතුවීම සිහිපත් කරන වැදගත් බෞද්ධ උත්සවයකි.", "category": "festival", "year": null, "isSymbolic": true }
+  ]
+}

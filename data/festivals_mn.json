@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "festivals": [
+    { "month": 1, "day": 1, "title": "Шинэ жил 2026", "description": "Шинэ жилийн эхлэл...", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 12, "title": "Свами Вивеканандагийн төрсөн өдөр", "description": "Свами Вивеканандагийн төрсөн өдөр бөгөөд Үндэсний Залуучуудын өдөр болгон тэмдэглэдэг.", "category": "festival", "year": "1863", "isSymbolic": false },
+    { "month": 1, "day": 14, "title": "Макар Санкранти", "description": "Нар матрын ордод шилжихийг тэмдэглэсэн баяр...", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 1, "day": 15, "title": "Энэтхэгийн Армийн өдөр", "description": "Дэслэгч генерал K.M. Кариаппа ерөнхий командлагчаар томилогдсон өдрийг тэмдэглэдэг.", "category": "festival", "year": "1949", "isSymbolic": false },
+    { "month": 1, "day": 24, "title": "Үндэсний охидын өдөр", "description": "Охид хүүхдийн эрхийн талаарх мэдлэгийг дээшлүүлэх өдөр.", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 25, "title": "Үндэсний сонгогчдын өдөр", "description": "Илүү олон залуу сонгогчийг улс төрийн үйл явцад оролцохыг дэмжих зорилгоор байгуулагдсан.", "category": "festival", "year": "2011", "isSymbolic": false },
+    { "month": 1, "day": 26, "title": "Бүгд Найрамдах Улсын өдөр", "description": "Энэтхэг Үндсэн хуулиа баталж, Бүгд Найрамдах Улс болсон.", "category": "festival", "year": "1950", "isSymbolic": false },
+    { "month": 2, "day": 1, "title": "Сант Равидасын төрсөн өдөр", "description": "Домогт гэгээнтэн, нийгмийн шинэчлэгчийн төрсөн өдөр бөгөөд Магха Пурнимад тэмдэглэдэг.", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 2, "day": 14, "title": "Майтри Дивас / Гэгээн Валентины өдөр", "description": "Түгээмэл хайр, энэрлийг тэмдэглэх өдөр.", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 3, "day": 3, "title": "Магха Пуджа", "description": "1,250 шавь өөрсдийн санаачилгаар цугларсныг дурсан тэмдэглэдэг чухал Буддын баяр.", "category": "festival", "year": null, "isSymbolic": true }
+  ]
+}

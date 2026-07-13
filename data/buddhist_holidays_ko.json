@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "holidays": [
+    { "id": "magha_puja_2026", "name": "마가 푸자", "country_code": "ALL", "year": 2026, "month": 2, "day": 12, "type": "major", "category": "festival", "description": "부처님 앞에 1,250명의 아라한이 모인 것을 기념합니다. 마가월 보름에 지냅니다.", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2026", "name": "베삭 (부처님 오신 날)", "country_code": "ALL", "year": 2026, "month": 5, "day": 12, "type": "major", "category": "festival", "description": "부처님의 탄생, 성도, 반열반. 불교 달력에서 가장 신성한 날입니다.", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "asalha_puja_2026", "name": "아살하 푸자 (법의 날)", "country_code": "ALL", "year": 2026, "month": 7, "day": 10, "type": "major", "category": "festival", "description": "부처님의 초전법륜과 승가의 시작을 기립니다.", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "kathina_2026", "name": "카티나", "country_code": "ALL", "year": 2026, "month": 11, "day": 5, "type": "major", "category": "festival", "description": "안거(왓사)가 끝날 때 가사를 공양하는 의식입니다.", "is_movable": true, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2026_th", "name": "위사카 부차", "country_code": "TH", "year": 2026, "month": 5, "day": 12, "type": "major", "category": "festival", "description": "태국의 베삭 — 사원 방문, 촛불 행렬, 공덕 쌓기.", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2026_lk", "name": "베삭 보름 포야", "country_code": "LK", "year": 2026, "month": 5, "day": 12, "type": "major", "category": "festival", "description": "스리랑카의 베삭 — 등불, 무료 급식소(단살), 지계 준수.", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2026_mm", "name": "카손 보름", "country_code": "MM", "year": 2026, "month": 5, "day": 12, "type": "major", "category": "festival", "description": "미얀마의 베삭 — 보리수 물 주기 의식과 파고다 참배.", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "magha_puja_2027", "name": "마가 푸자", "country_code": "ALL", "year": 2027, "month": 2, "day": 21, "type": "major", "category": "festival", "description": "부처님 앞에 1,250명의 아라한이 모인 것을 기념합니다. 마가월 보름에 지냅니다.", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2027", "name": "베삭 (부처님 오신 날)", "country_code": "ALL", "year": 2027, "month": 5, "day": 20, "type": "major", "category": "festival", "description": "부처님의 탄생, 성도, 반열반. 불교 달력에서 가장 신성한 날입니다.", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "asalha_puja_2027", "name": "아살하 푸자 (법의 날)", "country_code": "ALL", "year": 2027, "month": 7, "day": 1, "type": "major", "category": "festival", "description": "부처님의 초전법륜과 승가의 시작을 기립니다.", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "kathina_2027", "name": "카티나", "country_code": "ALL", "year": 2027, "month": 11, "day": 12, "type": "major", "category": "festival", "description": "안거(왓사)가 끝날 때 가사를 공양하는 의식입니다.", "is_movable": true, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2027_th", "name": "위사카 부차", "country_code": "TH", "year": 2027, "month": 5, "day": 20, "type": "major", "category": "festival", "description": "태국의 베삭 — 사원 방문, 촛불 행렬, 공덕 쌓기.", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2027_lk", "name": "베삭 보름 포야", "country_code": "LK", "year": 2027, "month": 5, "day": 20, "type": "major", "category": "festival", "description": "스리랑카의 베삭 — 등불, 무료 급식소(단살), 지계 준수.", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2027_mm", "name": "카손 보름", "country_code": "MM", "year": 2027, "month": 5, "day": 20, "type": "major", "category": "festival", "description": "미얀마의 베삭 — 보리수 물 주기 의식과 파고다 참배.", "is_movable": false, "related_moon": "FULL_MOON" }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "precepts": [
+    { "number": 1, "pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "ខ្ញុំសូមសមាទានសិក្ខាបទ ដើម្បីវៀរចាកពីការសម្លាប់សត្វ។", "explanation": "វៀរចាកពីការសម្លាប់សត្វមានជីវិតណាមួយ។" },
+    { "number": 2, "pali": "Adinnādānā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "ខ្ញុំសូមសមាទានសិក្ខាបទ ដើម្បីវៀរចាកពីការយកអ្វីដែលគេមិនបានឲ្យ។", "explanation": "វៀរចាកពីការលួច ឬយករបស់អ្នកដទៃដោយគ្មានការអនុញ្ញាត។" },
+    { "number": 3, "pali": "Kāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "ខ្ញុំសូមសមាទានសិក្ខាបទ ដើម្បីវៀរចាកពីការប្រព្រឹត្តខុសក្នុងកាម។", "explanation": "វៀរចាកពីអំពើផ្លូវភេទដែលបង្កគ្រោះថ្នាក់ ឬកេងប្រវ័ញ្ច។" },
+    { "number": 4, "pali": "Musāvādā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "ខ្ញុំសូមសមាទានសិក្ខាបទ ដើម្បីវៀរចាកពីការនិយាយកុហក។", "explanation": "វៀរចាកពីការភូតកុហក បោកប្រាស់ ឬពាក្យសម្តីបង្កគ្រោះថ្នាក់។" },
+    { "number": 5, "pali": "Surāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "ខ្ញុំសូមសមាទានសិក្ខាបទ ដើម្បីវៀរចាកពីគ្រឿងស្រវឹងដែលបណ្តាលឲ្យប្រមាទ។", "explanation": "វៀរចាកពីស្រា និងសារធាតុដែលធ្វើឲ្យចិត្តព្រិលៗ។" }
+  ]
+}

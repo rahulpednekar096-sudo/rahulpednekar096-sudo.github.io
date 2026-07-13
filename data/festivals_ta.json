@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "festivals": [
+    { "month": 1, "day": 1, "title": "புத்தாண்டு 2026", "description": "புதிய ஆண்டின் தொடக்கம்...", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 12, "title": "சுவாமி விவேகானந்தர் பிறந்தநாள்", "description": "சுவாமி விவேகானந்தரின் பிறந்தநாள், தேசிய இளைஞர் தினமாகக் கொண்டாடப்படுகிறது.", "category": "festival", "year": "1863", "isSymbolic": false },
+    { "month": 1, "day": 14, "title": "மகர சங்கராந்தி", "description": "சூரியன் மகர ராசிக்கு மாறுவதைக் குறிக்கும் திருவிழா...", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 1, "day": 15, "title": "இந்திய ராணுவ தினம்", "description": "லெப்டினன்ட் ஜெனரல் K.M. கரியப்பா தலைமைத் தளபதியாகப் பொறுப்பேற்ற நாளைக் குறிக்கிறது.", "category": "festival", "year": "1949", "isSymbolic": false },
+    { "month": 1, "day": 24, "title": "தேசிய பெண் குழந்தைகள் தினம்", "description": "பெண் குழந்தையின் உரிமைகள் குறித்த விழிப்புணர்வை ஏற்படுத்தும் நாள்.", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 25, "title": "தேசிய வாக்காளர் தினம்", "description": "அதிக இளம் வாக்காளர்கள் அரசியல் செயல்பாட்டில் பங்கேற்க ஊக்குவிக்க நிறுவப்பட்டது.", "category": "festival", "year": "2011", "isSymbolic": false },
+    { "month": 1, "day": 26, "title": "குடியரசு தினம்", "description": "இந்தியா தனது அரசியலமைப்பை ஏற்று குடியரசாக மாறியது.", "category": "festival", "year": "1950", "isSymbolic": false },
+    { "month": 2, "day": 1, "title": "சந்த் ரவிதாஸ் பிறந்தநாள்", "description": "புராண புகழ் பெற்ற துறவி மற்றும் சமூக சீர்திருத்தவாதியின் பிறந்தநாள், மாக பூர்ணிமா அன்று கொண்டாடப்படுகிறது.", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 2, "day": 14, "title": "மைத்ரி திவஸ் / காதலர் தினம்", "description": "பரந்த அன்பையும் பாசத்தையும் கொண்டாடும் நாள்.", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 3, "day": 3, "title": "மாக பூஜை", "description": "1,250 சீடர்கள் தன்னிச்சையாகக் கூடியதை நினைவுகூரும் முக்கியமான பௌத்த திருவிழா.", "category": "festival", "year": null, "isSymbolic": true }
+  ]
+}

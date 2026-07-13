@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "chants": [
+    {
+      "id": "triple_gem",
+      "title": "ရတနာသုံးပါး (တိရတန)",
+      "category": "refuge",
+      "text_pali": "Buddhaṃ saraṇaṃ gacchāmi.\nDhammaṃ saraṇaṃ gacchāmi.\nSaṅghaṃ saraṇaṃ gacchāmi.\n\nDutiyampi Buddhaṃ saraṇaṃ gacchāmi.\nDutiyampi Dhammaṃ saraṇaṃ gacchāmi.\nDutiyampi Saṅghaṃ saraṇaṃ gacchāmi.\n\nTatiyampi Buddhaṃ saraṇaṃ gacchāmi.\nTatiyampi Dhammaṃ saraṇaṃ gacchāmi.\nTatiyampi Saṅghaṃ saraṇaṃ gacchāmi.",
+      "text_english": "အကျွန်ုပ်သည် ဘုရားကို ကိုးကွယ်ရာအဖြစ် ဆည်းကပ်ပါ၏။\nအကျွန်ုပ်သည် တရားကို ကိုးကွယ်ရာအဖြစ် ဆည်းကပ်ပါ၏။\nအကျွန်ုပ်သည် သံဃာကို ကိုးကွယ်ရာအဖြစ် ဆည်းကပ်ပါ၏။\n\nဒုတိယအကြိမ်လည်း ဘုရားကို ကိုးကွယ်ရာအဖြစ် ဆည်းကပ်ပါ၏။\nဒုတိယအကြိမ်လည်း တရားကို ကိုးကွယ်ရာအဖြစ် ဆည်းကပ်ပါ၏။\nဒုတိယအကြိမ်လည်း သံဃာကို ကိုးကွယ်ရာအဖြစ် ဆည်းကပ်ပါ၏။\n\nတတိယအကြိမ်လည်း ဘုရားကို ကိုးကွယ်ရာအဖြစ် ဆည်းကပ်ပါ၏။\nတတိယအကြိမ်လည်း တရားကို ကိုးကွယ်ရာအဖြစ် ဆည်းကပ်ပါ၏။\nတတိယအကြိမ်လည်း သံဃာကို ကိုးကွယ်ရာအဖြစ် ဆည်းကပ်ပါ၏။",
+      "audio_id": "audio_triple_gem"
+    },
+    {
+      "id": "five_precepts",
+      "title": "ငါးပါးသီလ (ပဉ္စသီလ)",
+      "category": "precepts",
+      "text_pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi.\nAdinnādānā veramaṇī sikkhāpadaṃ samādiyāmi.\nKāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi.\nMusāvādā veramaṇī sikkhāpadaṃ samādiyāmi.\nSurāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi.",
+      "text_english": "အသက်သတ်ခြင်းမှ ရှောင်ကြဉ်ရန် သိက္ခာပုဒ်ကို ဆောက်တည်ပါ၏။\nမပေးသည်ကို ယူခြင်းမှ ရှောင်ကြဉ်ရန် သိက္ခာပုဒ်ကို ဆောက်တည်ပါ၏။\nကာမဂုဏ်၌ မှားယွင်းစွာ ကျင့်ခြင်းမှ ရှောင်ကြဉ်ရန် သိက္ခာပုဒ်ကို ဆောက်တည်ပါ၏။\nမမှန်သော စကားပြောခြင်းမှ ရှောင်ကြဉ်ရန် သိက္ခာပုဒ်ကို ဆောက်တည်ပါ၏။\nမေ့လျော့ခြင်း၏ အကြောင်းဖြစ်သော မူးယစ်စေတတ်သည့်အရာမှ ရှောင်ကြဉ်ရန် သိက္ခာပုဒ်ကို ဆောက်တည်ပါ၏။",
+      "audio_id": "audio_five_precepts"
+    },
+    {
+      "id": "metta_sutta",
+      "title": "မေတ္တသုတ် (မေတ္တာ)",
+      "category": "paritta",
+      "text_pali": "Karaṇīyam-atthakusalena\nYanta santaṃ padaṃ abhisamecca:\nSakko ujū ca suhujū ca,\nSūvaco cassa mudu anatimānī.",
+      "text_english": "ကောင်းမှု၌ ကျွမ်းကျင်သူ ပြုအပ်သည်ကား၊\nငြိမ်းချမ်းရာလမ်းကို သိမြင်သူ၏ လုပ်ဆောင်ချက်:\nစွမ်းဆောင်နိုင်၍ ဖြောင့်မတ်၊ ရိုးသား၍ စကားနူးညံ့၊\nနှိမ့်ချ၍ မာနမရှိသူ ဖြစ်စေ။",
+      "audio_id": "audio_metta_sutta"
+    },
+    {
+      "id": "mangala_sutta",
+      "title": "မင်္ဂလသုတ် (ကောင်းချီး)",
+      "category": "paritta",
+      "text_pali": "Bāhuṃ sahassaṃ abhinimmita vo,\nDvādasakaraṃ saṭṭhi ca vālam-ajjhuṃ;\nEkena saccena suvatthi hotu.",
+      "text_english": "လက်တစ်ထောင်နှင့် ဦးခေါင်းဆယ့်တစ်လုံးကို ဖန်ဆင်းသော်လည်း၊\nသစ္စာစကားတစ်ခွန်းဖြင့် သင့်အား ချမ်းသာသုခ ဖြစ်ပါစေ။",
+      "audio_id": "audio_mangala_sutta"
+    },
+    {
+      "id": "ratana_sutta",
+      "title": "ရတနသုတ် (ရတန)",
+      "category": "paritta",
+      "text_pali": "Yānīdha bhūtāni samāgatāni,\nBhummāni vā yāni va antalikkhe;\nSabbeva bhūtā sumanā bhavantu,\nAthopi sakkacca suṇantu bhāsitaṃ.",
+      "text_english": "ဤအရပ်၌ စုဝေးရောက်ရှိကြသော သတ္တဝါအပေါင်းတို့၊\nမြေပြင်၌ဖြစ်စေ၊ ကောင်းကင်၌ဖြစ်စေ၊\nသတ္တဝါအားလုံး စိတ်ချမ်းသာကြပါစေ၊\nထို့ပြင် ပြောဆိုသောစကားကို ရိုသေစွာ နာယူကြပါစေ။",
+      "audio_id": "audio_ratana_sutta"
+    }
+  ]
+}

@@ -1,49 +1,1729 @@
 {
-  "version": 1,
-  "last_updated": "2026-05-31",
-  "sync_interval_hours": 168,
-  "files": [
-    { "name": "calendar_2026_jan.json", "version": 1 },
-    { "name": "calendar_2026_feb.json", "version": 1 },
-    { "name": "calendar_2026_mar.json", "version": 1 },
-    { "name": "calendar_2026_apr.json", "version": 1 },
-    { "name": "calendar_2026_may.json", "version": 1 },
-    { "name": "calendar_2026_jun.json", "version": 1 },
-    { "name": "calendar_2026_jul.json", "version": 1 },
-    { "name": "calendar_2026_aug.json", "version": 1 },
-    { "name": "calendar_2026_sep.json", "version": 1 },
-    { "name": "calendar_2026_oct.json", "version": 1 },
-    { "name": "calendar_2026_nov.json", "version": 1 },
-    { "name": "calendar_2026_dec.json", "version": 1 },
-    { "name": "tithi.json", "version": 1 },
-    { "name": "festivals.json", "version": 1 },
-    { "name": "buddhist_places.json", "version": 1 },
-    { "name": "countries.json", "version": 1 },
-    { "name": "buddhist_holidays.json", "version": 1 },
-    { "name": "moon_phases.json", "version": 1 },
-    { "name": "quotes.json", "version": 1 },
-    { "name": "history.json", "version": 1 },
-    { "name": "panchsheel.json", "version": 1 },
-    { "name": "chants.json", "version": 1 },
-    { "name": "audio.json", "version": 1 },
-    { "name": "reminders.json", "version": 1 },
-    { "name": "widgets.json", "version": 1 },
-    { "name": "planner.json", "version": 1 },
-    { "name": "statistics.json", "version": 1 },
-    { "name": "calendar_years.json", "version": 1 },
-    { "name": "calendar_2027_jan.json", "version": 1 },
-    { "name": "calendar_2027_feb.json", "version": 1 },
-    { "name": "calendar_2027_mar.json", "version": 1 },
-    { "name": "calendar_2027_apr.json", "version": 1 },
-    { "name": "calendar_2027_may.json", "version": 1 },
-    { "name": "calendar_2027_jun.json", "version": 1 },
-    { "name": "calendar_2027_jul.json", "version": 1 },
-    { "name": "calendar_2027_aug.json", "version": 1 },
-    { "name": "calendar_2027_sep.json", "version": 1 },
-    { "name": "calendar_2027_oct.json", "version": 1 },
-    { "name": "calendar_2027_nov.json", "version": 1 },
-    { "name": "calendar_2027_dec.json", "version": 1 },
-    { "name": "moon_phases_2027.json", "version": 1 },
-    { "name": "tithi_2027.json", "version": 1 }
-  ]
+    "version":  1,
+    "last_updated":  "2026-07-13",
+    "sync_interval_hours":  168,
+    "languages":  [
+                      "en",
+                      "th",
+                      "my",
+                      "si",
+                      "ta",
+                      "km",
+                      "lo",
+                      "dz",
+                      "mn",
+                      "ja",
+                      "ko",
+                      "vi"
+                  ],
+    "files":  [
+                  {
+                      "name":  "calendar_2026_jan.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_feb.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_mar.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_apr.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_may.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jun.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jul.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_aug.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_sep.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_oct.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_nov.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_dec.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "tithi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "festivals.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_places.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "countries.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_holidays.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "moon_phases.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "quotes.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "history.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "panchsheel.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "chants.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "audio.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "reminders.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "widgets.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "planner.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "statistics.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_years.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jan.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_feb.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_mar.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_apr.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_may.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jun.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jul.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_aug.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_sep.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_oct.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_nov.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_dec.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "moon_phases_2027.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "tithi_2027.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jan_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jan_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jan_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jan_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jan_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jan_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jan_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jan_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jan_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jan_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jan_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_feb_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_feb_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_feb_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_feb_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_feb_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_feb_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_feb_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_feb_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_feb_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_feb_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_feb_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_mar_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_mar_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_mar_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_mar_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_mar_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_mar_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_mar_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_mar_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_mar_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_mar_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_mar_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_apr_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_apr_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_apr_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_apr_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_apr_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_apr_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_apr_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_apr_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_apr_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_apr_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_apr_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_may_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_may_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_may_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_may_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_may_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_may_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_may_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_may_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_may_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_may_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_may_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jun_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jun_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jun_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jun_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jun_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jun_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jun_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jun_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jun_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jun_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jun_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jul_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jul_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jul_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jul_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jul_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jul_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jul_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jul_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jul_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jul_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_jul_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_aug_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_aug_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_aug_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_aug_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_aug_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_aug_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_aug_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_aug_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_aug_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_aug_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_aug_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_sep_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_sep_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_sep_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_sep_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_sep_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_sep_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_sep_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_sep_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_sep_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_sep_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_sep_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_oct_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_oct_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_oct_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_oct_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_oct_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_oct_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_oct_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_oct_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_oct_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_oct_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_oct_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_nov_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_nov_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_nov_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_nov_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_nov_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_nov_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_nov_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_nov_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_nov_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_nov_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_nov_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_dec_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_dec_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_dec_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_dec_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_dec_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_dec_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_dec_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_dec_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_dec_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_dec_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2026_dec_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jan_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jan_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jan_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jan_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jan_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jan_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jan_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jan_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jan_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jan_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jan_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_feb_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_feb_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_feb_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_feb_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_feb_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_feb_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_feb_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_feb_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_feb_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_feb_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_feb_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_mar_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_mar_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_mar_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_mar_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_mar_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_mar_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_mar_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_mar_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_mar_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_mar_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_mar_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_apr_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_apr_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_apr_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_apr_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_apr_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_apr_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_apr_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_apr_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_apr_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_apr_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_apr_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_may_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_may_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_may_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_may_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_may_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_may_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_may_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_may_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_may_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_may_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_may_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jun_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jun_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jun_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jun_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jun_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jun_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jun_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jun_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jun_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jun_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jun_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jul_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jul_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jul_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jul_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jul_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jul_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jul_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jul_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jul_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jul_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_jul_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_aug_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_aug_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_aug_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_aug_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_aug_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_aug_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_aug_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_aug_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_aug_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_aug_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_aug_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_sep_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_sep_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_sep_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_sep_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_sep_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_sep_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_sep_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_sep_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_sep_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_sep_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_sep_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_oct_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_oct_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_oct_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_oct_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_oct_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_oct_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_oct_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_oct_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_oct_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_oct_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_oct_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_nov_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_nov_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_nov_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_nov_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_nov_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_nov_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_nov_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_nov_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_nov_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_nov_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_nov_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_dec_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_dec_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_dec_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_dec_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_dec_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_dec_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_dec_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_dec_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_dec_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_dec_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "calendar_2027_dec_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "festivals_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "festivals_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "festivals_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "festivals_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "festivals_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "festivals_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "festivals_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "festivals_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "festivals_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "festivals_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "festivals_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_places_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_places_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_places_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_places_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_places_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_places_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_places_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_places_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_places_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_places_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_places_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_holidays_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_holidays_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_holidays_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_holidays_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_holidays_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_holidays_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_holidays_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_holidays_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_holidays_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_holidays_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "buddhist_holidays_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "quotes_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "quotes_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "quotes_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "quotes_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "quotes_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "quotes_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "quotes_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "quotes_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "quotes_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "quotes_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "quotes_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "history_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "history_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "history_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "history_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "history_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "history_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "history_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "history_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "history_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "history_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "history_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "panchsheel_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "panchsheel_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "panchsheel_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "panchsheel_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "panchsheel_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "panchsheel_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "panchsheel_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "panchsheel_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "panchsheel_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "panchsheel_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "panchsheel_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "chants_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "chants_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "chants_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "chants_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "chants_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "chants_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "chants_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "chants_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "chants_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "chants_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "chants_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "reminders_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "reminders_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "reminders_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "reminders_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "reminders_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "reminders_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "reminders_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "reminders_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "reminders_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "reminders_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "reminders_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "widgets_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "widgets_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "widgets_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "widgets_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "widgets_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "widgets_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "widgets_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "widgets_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "widgets_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "widgets_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "widgets_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "planner_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "planner_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "planner_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "planner_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "planner_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "planner_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "planner_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "planner_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "planner_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "planner_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "planner_vi.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "statistics_th.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "statistics_my.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "statistics_si.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "statistics_ta.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "statistics_km.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "statistics_lo.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "statistics_dz.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "statistics_mn.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "statistics_ja.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "statistics_ko.json",
+                      "version":  1
+                  },
+                  {
+                      "name":  "statistics_vi.json",
+                      "version":  1
+                  }
+              ]
 }

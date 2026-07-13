@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "festivals": [
+    { "month": 1, "day": 1, "title": "ปีใหม่ 2026", "description": "การเริ่มต้นปีใหม่...", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 12, "title": "วันคล้ายวันเกิดสวามีวิเวกานันทะ", "description": "วันคล้ายวันเกิดของสวามีวิเวกานันทะ เฉลิมฉลองเป็นวันเยาวชนแห่งชาติ", "category": "festival", "year": "1863", "isSymbolic": false },
+    { "month": 1, "day": 14, "title": "มกรสังกรานติ", "description": "เทศกาลที่หมายถึงการโคจรของดวงอาทิตย์เข้าสู่ราศีมังกร...", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 1, "day": 15, "title": "วันกองทัพอินเดีย", "description": "วันที่พลโท เค.เอ็ม. การิอัปปา เข้ารับตำแหน่งผู้บัญชาการทหารสูงสุด", "category": "festival", "year": "1949", "isSymbolic": false },
+    { "month": 1, "day": 24, "title": "วันเด็กหญิงแห่งชาติ", "description": "วันเพื่อสร้างความตระหนักถึงสิทธิของเด็กหญิง", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 25, "title": "วันผู้มีสิทธิเลือกตั้งแห่งชาติ", "description": "จัดตั้งขึ้นเพื่อส่งเสริมให้ผู้มีสิทธิเลือกตั้งรุ่นใหม่มีส่วนร่วมในกระบวนการทางการเมือง", "category": "festival", "year": "2011", "isSymbolic": false },
+    { "month": 1, "day": 26, "title": "วันสาธารณรัฐ", "description": "อินเดียประกาศใช้รัฐธรรมนูญและกลายเป็นสาธารณรัฐ", "category": "festival", "year": "1950", "isSymbolic": false },
+    { "month": 2, "day": 1, "title": "วันคล้ายวันเกิดสันตราวิทาส", "description": "วันคล้ายวันเกิดของนักบุญและนักปฏิรูปสังคมในตำนาน เฉลิมฉลองในวันมาฆปุรณมี", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 2, "day": 14, "title": "ไมตรีทิวัส / วันวาเลนไทน์", "description": "วันเพื่อเฉลิมฉลองความรักและความเมตตาสากล", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 3, "day": 3, "title": "มาฆบูชา", "description": "เทศกาลสำคัญทางพุทธศาสนาที่ระลึกถึงการชุมนุมโดยมิได้นัดหมายของสาวก 1,250 รูป", "category": "festival", "year": null, "isSymbolic": true }
+  ]
+}

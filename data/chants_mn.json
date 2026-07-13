@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "chants": [
+    {
+      "id": "triple_gem",
+      "title": "Гурван Эрдэнэ (Ти-Ратана)",
+      "category": "refuge",
+      "text_pali": "Buddhaṃ saraṇaṃ gacchāmi.\nDhammaṃ saraṇaṃ gacchāmi.\nSaṅghaṃ saraṇaṃ gacchāmi.\n\nDutiyampi Buddhaṃ saraṇaṃ gacchāmi.\nDutiyampi Dhammaṃ saraṇaṃ gacchāmi.\nDutiyampi Saṅghaṃ saraṇaṃ gacchāmi.\n\nTatiyampi Buddhaṃ saraṇaṃ gacchāmi.\nTatiyampi Dhammaṃ saraṇaṃ gacchāmi.\nTatiyampi Saṅghaṃ saraṇaṃ gacchāmi.",
+      "text_english": "Би Буддад итгэн даган мөргөнө.\nБи Дармад итгэн даган мөргөнө.\nБи Санхад итгэн даган мөргөнө.\n\nХоёр дахь удаагаа би Буддад итгэн даган мөргөнө.\nХоёр дахь удаагаа би Дармад итгэн даган мөргөнө.\nХоёр дахь удаагаа би Санхад итгэн даган мөргөнө.\n\nГурав дахь удаагаа би Буддад итгэн даган мөргөнө.\nГурав дахь удаагаа би Дармад итгэн даган мөргөнө.\nГурав дахь удаагаа би Санхад итгэн даган мөргөнө.",
+      "audio_id": "audio_triple_gem"
+    },
+    {
+      "id": "five_precepts",
+      "title": "Таван Санваар (Панча Сила)",
+      "category": "precepts",
+      "text_pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi.\nAdinnādānā veramaṇī sikkhāpadaṃ samādiyāmi.\nKāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi.\nMusāvādā veramaṇī sikkhāpadaṃ samādiyāmi.\nSurāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi.",
+      "text_english": "Би амь бүхнийг хөнөөхөөс зайлсхийх санваарыг хүлээн авна.\nБи өгөөгүй зүйлийг авахаас зайлсхийх санваарыг хүлээн авна.\nБи буруу бэлгийн харьцаанаас зайлсхийх санваарыг хүлээн авна.\nБи худал үг хэлэхээс зайлсхийх санваарыг хүлээн авна.\nБи сэрэмжгүй байдалд хүргэдэг согтууруулах бодисоос зайлсхийх санваарыг хүлээн авна.",
+      "audio_id": "audio_five_precepts"
+    },
+    {
+      "id": "metta_sutta",
+      "title": "Меттагийн судар (Хайр асрал)",
+      "category": "paritta",
+      "text_pali": "Karaṇīyam-atthakusalena\nYanta santaṃ padaṃ abhisamecca:\nSakko ujū ca suhujū ca,\nSūvaco cassa mudu anatimānī.",
+      "text_english": "Сайныг эрхэмлэгч чадварлаг хүний хийвэл зохих зүйл,\nАмар амгалангийн замыг ухаарсан хүн:\nТэрээр чадварлаг, шударга, шулуун, зөөлөн үгтэй,\nдаруу, бардам биш байг.",
+      "audio_id": "audio_metta_sutta"
+    },
+    {
+      "id": "mangala_sutta",
+      "title": "Мангалагийн судар (Адис)",
+      "category": "paritta",
+      "text_pali": "Bāhuṃ sahassaṃ abhinimmita vo,\nDvādasakaraṃ saṭṭhi ca vālam-ajjhuṃ;\nEkena saccena suvatthi hotu.",
+      "text_english": "Мянган гар, арван нэгэн толгойг бүтээсэн ч,\nҮнэний нэг үгээр танд амар амгалан оршиж болтугай.",
+      "audio_id": "audio_mangala_sutta"
+    },
+    {
+      "id": "ratana_sutta",
+      "title": "Ратанагийн судар (Эрдэнэ)",
+      "category": "paritta",
+      "text_pali": "Yānīdha bhūtāni samāgatāni,\nBhummāni vā yāni va antalikkhe;\nSabbeva bhūtā sumanā bhavantu,\nAthopi sakkacca suṇantu bhāsitaṃ.",
+      "text_english": "Энд цугларсан бүх амьтад,\nГазар дээр байгаа ч, тэнгэрт байгаа ч,\nБүх амьтан жаргалтай байг,\nМөн хэлсэн үгийг анхааралтай сонсог.",
+      "audio_id": "audio_ratana_sutta"
+    }
+  ]
+}

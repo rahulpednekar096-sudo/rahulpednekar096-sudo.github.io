@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "chants": [
+    {
+      "id": "triple_gem",
+      "title": "ព្រះរតនត្រ័យ (តិរតនៈ)",
+      "category": "refuge",
+      "text_pali": "Buddhaṃ saraṇaṃ gacchāmi.\nDhammaṃ saraṇaṃ gacchāmi.\nSaṅghaṃ saraṇaṃ gacchāmi.\n\nDutiyampi Buddhaṃ saraṇaṃ gacchāmi.\nDutiyampi Dhammaṃ saraṇaṃ gacchāmi.\nDutiyampi Saṅghaṃ saraṇaṃ gacchāmi.\n\nTatiyampi Buddhaṃ saraṇaṃ gacchāmi.\nTatiyampi Dhammaṃ saraṇaṃ gacchāmi.\nTatiyampi Saṅghaṃ saraṇaṃ gacchāmi.",
+      "text_english": "ខ្ញុំសូមដល់ព្រះពុទ្ធជាទីពឹង។\nខ្ញុំសូមដល់ព្រះធម៌ជាទីពឹង។\nខ្ញុំសូមដល់ព្រះសង្ឃជាទីពឹង។\n\nជាលើកទីពីរ ខ្ញុំសូមដល់ព្រះពុទ្ធជាទីពឹង។\nជាលើកទីពីរ ខ្ញុំសូមដល់ព្រះធម៌ជាទីពឹង។\nជាលើកទីពីរ ខ្ញុំសូមដល់ព្រះសង្ឃជាទីពឹង។\n\nជាលើកទីបី ខ្ញុំសូមដល់ព្រះពុទ្ធជាទីពឹង។\nជាលើកទីបី ខ្ញុំសូមដល់ព្រះធម៌ជាទីពឹង។\nជាលើកទីបី ខ្ញុំសូមដល់ព្រះសង្ឃជាទីពឹង។",
+      "audio_id": "audio_triple_gem"
+    },
+    {
+      "id": "five_precepts",
+      "title": "សីលប្រាំ (បញ្ចសីល)",
+      "category": "precepts",
+      "text_pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi.\nAdinnādānā veramaṇī sikkhāpadaṃ samādiyāmi.\nKāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi.\nMusāvādā veramaṇī sikkhāpadaṃ samādiyāmi.\nSurāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi.",
+      "text_english": "ខ្ញុំសូមសមាទានសិក្ខាបទ ដើម្បីវៀរចាកពីការសម្លាប់សត្វ។\nខ្ញុំសូមសមាទានសិក្ខាបទ ដើម្បីវៀរចាកពីការយកអ្វីដែលគេមិនបានឲ្យ។\nខ្ញុំសូមសមាទានសិក្ខាបទ ដើម្បីវៀរចាកពីការប្រព្រឹត្តខុសក្នុងកាម។\nខ្ញុំសូមសមាទានសិក្ខាបទ ដើម្បីវៀរចាកពីការនិយាយកុហក។\nខ្ញុំសូមសមាទានសិក្ខាបទ ដើម្បីវៀរចាកពីគ្រឿងស្រវឹងដែលបណ្តាលឲ្យប្រមាទ។",
+      "audio_id": "audio_five_precepts"
+    },
+    {
+      "id": "metta_sutta",
+      "title": "មេត្តាសូត្រ (មេត្តា)",
+      "category": "paritta",
+      "text_pali": "Karaṇīyam-atthakusalena\nYanta santaṃ padaṃ abhisamecca:\nSakko ujū ca suhujū ca,\nSūvaco cassa mudu anatimānī.",
+      "text_english": "នេះជាអ្វីដែលអ្នកជំនាញក្នុងសេចក្តីល្អគប្បីធ្វើ\nអ្នកដែលបានយល់ផ្លូវនៃសន្តិភាព៖\nសូមឲ្យគេមានសមត្ថភាព ស្មោះត្រង់ ត្រង់ចិត្ត និងទន់ភ្លន់ក្នុងវាចា\nរាបសា និងមិនអួតអាង។",
+      "audio_id": "audio_metta_sutta"
+    },
+    {
+      "id": "mangala_sutta",
+      "title": "មង្គលសូត្រ (ពរជ័យ)",
+      "category": "paritta",
+      "text_pali": "Bāhuṃ sahassaṃ abhinimmita vo,\nDvādasakaraṃ saṭṭhi ca vālam-ajjhuṃ;\nEkena saccena suvatthi hotu.",
+      "text_english": "ទោះបីជាបង្កើតដៃមួយពាន់ និងក្បាលដប់មួយក៏ដោយ\nសូមឲ្យសេចក្តីសួស្តីមានដល់អ្នក ដោយសារពាក្យសច្ចៈមួយ។",
+      "audio_id": "audio_mangala_sutta"
+    },
+    {
+      "id": "ratana_sutta",
+      "title": "រតនសូត្រ (រតនៈ)",
+      "category": "paritta",
+      "text_pali": "Yānīdha bhūtāni samāgatāni,\nBhummāni vā yāni va antalikkhe;\nSabbeva bhūtā sumanā bhavantu,\nAthopi sakkacca suṇantu bhāsitaṃ.",
+      "text_english": "សត្វលោកទាំងឡាយដែលបានមកជួបជុំគ្នានៅទីនេះ\nទោះនៅលើផែនដី ឬនៅលើអាកាស\nសូមឲ្យសត្វលោកទាំងអស់មានความសុខ\nហើយសូមស្តាប់ដោយយកចិត្តទុកដាក់នូវពាក្យដែលបានពោល។",
+      "audio_id": "audio_ratana_sutta"
+    }
+  ]
+}

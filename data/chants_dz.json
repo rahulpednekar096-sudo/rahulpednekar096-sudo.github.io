@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "chants": [
+    {
+      "id": "triple_gem",
+      "title": "དཀོན་མཆོག་གསུམ (ཏི་རཏྣ)",
+      "category": "refuge",
+      "text_pali": "Buddhaṃ saraṇaṃ gacchāmi.\nDhammaṃ saraṇaṃ gacchāmi.\nSaṅghaṃ saraṇaṃ gacchāmi.\n\nDutiyampi Buddhaṃ saraṇaṃ gacchāmi.\nDutiyampi Dhammaṃ saraṇaṃ gacchāmi.\nDutiyampi Saṅghaṃ saraṇaṃ gacchāmi.\n\nTatiyampi Buddhaṃ saraṇaṃ gacchāmi.\nTatiyampi Dhammaṃ saraṇaṃ gacchāmi.\nTatiyampi Saṅghaṃ saraṇaṃ gacchāmi.",
+      "text_english": "ང་སངས་རྒྱས་ལ་སྐྱབས་སུ་མཆི།\nང་ཆོས་ལ་སྐྱབས་སུ་མཆི།\nང་དགེ་འདུན་ལ་སྐྱབས་སུ་མཆི།\n\nལན་གཉིས་པར་ཡང་ང་སངས་རྒྱས་ལ་སྐྱབས་སུ་མཆི།\nལན་གཉིས་པར་ཡང་ང་ཆོས་ལ་སྐྱབས་སུ་མཆི།\nལན་གཉིས་པར་ཡང་ང་དགེ་འདུན་ལ་སྐྱབས་སུ་མཆི།\n\nལན་གསུམ་པར་ཡང་ང་སངས་རྒྱས་ལ་སྐྱབས་སུ་མཆི།\nལན་གསུམ་པར་ཡང་ང་ཆོས་ལ་སྐྱབས་སུ་མཆི།\nལན་གསུམ་པར་ཡང་ང་དགེ་འདུན་ལ་སྐྱབས་སུ་མཆི།",
+      "audio_id": "audio_triple_gem"
+    },
+    {
+      "id": "five_precepts",
+      "title": "བསླབ་པ་ལྔ (པཉྩ་ཤཱི་ལ)",
+      "category": "precepts",
+      "text_pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi.\nAdinnādānā veramaṇī sikkhāpadaṃ samādiyāmi.\nKāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi.\nMusāvādā veramaṇī sikkhāpadaṃ samādiyāmi.\nSurāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi.",
+      "text_english": "སྲོག་གཅོད་པ་ལས་ལྡོག་པའི་བསླབ་པ་ང་གིས་བཟུང་བར་བྱ།\nམ་བྱིན་པར་ལེན་པ་ལས་ལྡོག་པའི་བསླབ་པ་ང་གིས་བཟུང་བར་བྱ།\nའདོད་པ་ལོག་པར་སྤྱོད་པ་ལས་ལྡོག་པའི་བསླབ་པ་ང་གིས་བཟུང་བར་བྱ།\nརྫུན་སྨྲ་བ་ལས་ལྡོག་པའི་བསླབ་པ་ང་གིས་བཟུང་བར་བྱ།\nབག་མེད་ཀྱི་རྒྱུ་ཆང་རིགས་ལས་ལྡོག་པའི་བསླབ་པ་ང་གིས་བཟུང་བར་བྱ།",
+      "audio_id": "audio_five_precepts"
+    },
+    {
+      "id": "metta_sutta",
+      "title": "བྱམས་པའི་མདོ (མེཏྟཱ)",
+      "category": "paritta",
+      "text_pali": "Karaṇīyam-atthakusalena\nYanta santaṃ padaṃ abhisamecca:\nSakko ujū ca suhujū ca,\nSūvaco cassa mudu anatimānī.",
+      "text_english": "དགེ་བ་ལ་མཁས་པས་བྱ་དགོས་པ་འདི་ཡིན།\nཞི་བའི་ལམ་རྟོགས་པ་དེ་གིས:\nནུས་ལྡན་དང་དྲང་པོ། གཟུ་བོ་དང་ངག་འཇམ་པ།\nཁེངས་མེད་དང་ང་རྒྱལ་མེད་པ་ཞིག་ཡིན་དགོས།",
+      "audio_id": "audio_metta_sutta"
+    },
+    {
+      "id": "mangala_sutta",
+      "title": "བཀྲ་ཤིས་ཀྱི་མདོ (བྱིན་རླབས)",
+      "category": "paritta",
+      "text_pali": "Bāhuṃ sahassaṃ abhinimmita vo,\nDvādasakaraṃ saṭṭhi ca vālam-ajjhuṃ;\nEkena saccena suvatthi hotu.",
+      "text_english": "ལག་པ་སྟོང་དང་མགོ་བཅུ་གཅིག་སྤྲུལ་རུང་།\nབདེན་པའི་ཚིག་གཅིག་གིས་ཁྱོད་ལ་བཀྲ་ཤིས་ཤོག",
+      "audio_id": "audio_mangala_sutta"
+    },
+    {
+      "id": "ratana_sutta",
+      "title": "རིན་ཆེན་གྱི་མདོ (རཏྣ)",
+      "category": "paritta",
+      "text_pali": "Yānīdha bhūtāni samāgatāni,\nBhummāni vā yāni va antalikkhe;\nSabbeva bhūtā sumanā bhavantu,\nAthopi sakkacca suṇantu bhāsitaṃ.",
+      "text_english": "འདིར་འཛོམས་པའི་སེམས་ཅན་ཐམས་ཅད།\nས་སྟེང་ངམ་ནམ་མཁའ་ལ་གནས་པ།\nསེམས་ཅན་ཐམས་ཅད་བདེ་སྐྱིད་ལྡན་པར་ཤོག\nདེ་བཞིན་གསུངས་པའི་ཚིག་ལ་གུས་པས་ཉོན།",
+      "audio_id": "audio_ratana_sutta"
+    }
+  ]
+}

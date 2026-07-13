@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "festivals": [
+    { "month": 1, "day": 1, "title": "新年 2026", "description": "新しい年の始まり…", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 12, "title": "スワミ・ヴィヴェーカーナンダ生誕記念日", "description": "スワミ・ヴィヴェーカーナンダの生誕記念日で、全国青年の日として祝われます。", "category": "festival", "year": "1863", "isSymbolic": false },
+    { "month": 1, "day": 14, "title": "マカル・サンクランティ", "description": "太陽が山羊座へ移行することを示す祭り…", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 1, "day": 15, "title": "インド陸軍記念日", "description": "K.M.カリアッパ中将が総司令官に就任した日を記念します。", "category": "festival", "year": "1949", "isSymbolic": false },
+    { "month": 1, "day": 24, "title": "全国女児の日", "description": "女児の権利についての意識を高める日。", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 25, "title": "全国有権者の日", "description": "より多くの若い有権者が政治過程に参加することを促すために制定されました。", "category": "festival", "year": "2011", "isSymbolic": false },
+    { "month": 1, "day": 26, "title": "共和国記念日", "description": "インドが憲法を採択し共和国となりました。", "category": "festival", "year": "1950", "isSymbolic": false },
+    { "month": 2, "day": 1, "title": "サント・ラヴィダース生誕記念日", "description": "伝説的な聖者であり社会改革者の生誕記念日で、マーガ・プルニマに祝われます。", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 2, "day": 14, "title": "マイトリー・ディワス / バレンタインデー", "description": "普遍的な愛と慈しみを祝う日。", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 3, "day": 3, "title": "マーガ・プージャー", "description": "1,250人の弟子が自発的に集まったことを記念する重要な仏教の祭り。", "category": "festival", "year": null, "isSymbolic": true }
+  ]
+}

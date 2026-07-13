@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "festivals": [
+    { "month": 1, "day": 1, "title": "ປີໃໝ່ 2026", "description": "ການເລີ່ມຕົ້ນຂອງປີໃໝ່...", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 12, "title": "ວັນຄ້າຍວັນເກີດ Swami Vivekananda", "description": "ວັນຄ້າຍວັນເກີດຂອງ Swami Vivekananda ສະຫຼອງເປັນວັນຊາວໜຸ່ມແຫ່ງຊາດ.", "category": "festival", "year": "1863", "isSymbolic": false },
+    { "month": 1, "day": 14, "title": "Makar Sankranti", "description": "ບຸນທີ່ໝາຍເຖິງການເຄື່ອນຍ້າຍຂອງດວງອາທິດເຂົ້າສູ່ລາສີມັງກອນ...", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 1, "day": 15, "title": "ວັນກອງທັບອິນເດຍ", "description": "ໝາຍເຖິງມື້ທີ່ພົນໂທ K.M. Cariappa ຮັບຕຳແໜ່ງຜູ້ບັນຊາການສູງສຸດ.", "category": "festival", "year": "1949", "isSymbolic": false },
+    { "month": 1, "day": 24, "title": "ວັນເດັກຍິງແຫ່ງຊາດ", "description": "ມື້ເພື່ອສ້າງຄວາມຮັບຮູ້ກ່ຽວກັບສິດທິຂອງເດັກຍິງ.", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 25, "title": "ວັນຜູ້ມີສິດເລືອກຕັ້ງແຫ່ງຊາດ", "description": "ສ້າງຂຶ້ນເພື່ອຊຸກຍູ້ໃຫ້ຜູ້ມີສິດເລືອກຕັ້ງໄວໜຸ່ມມີສ່ວນຮ່ວມໃນຂະບວນການການເມືອງ.", "category": "festival", "year": "2011", "isSymbolic": false },
+    { "month": 1, "day": 26, "title": "ວັນສາທາລະນະລັດ", "description": "ອິນເດຍໄດ້ຮັບຮອງລັດຖະທຳມະນູນ ແລະ ກາຍເປັນສາທາລະນະລັດ.", "category": "festival", "year": "1950", "isSymbolic": false },
+    { "month": 2, "day": 1, "title": "ວັນຄ້າຍວັນເກີດ Sant Ravidas", "description": "ວັນຄ້າຍວັນເກີດຂອງນັກບຸນ ແລະ ນັກປະຕິຮູບສັງຄົມໃນຕຳນານ ສະຫຼອງໃນວັນ Magha Purnima.", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 2, "day": 14, "title": "Maitri Diwas / ວັນ Valentine", "description": "ມື້ເພື່ອສະຫຼອງຄວາມຮັກ ແລະ ຄວາມເມດຕາສາກົນ.", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 3, "day": 3, "title": "ມາຄະບູຊາ", "description": "ບຸນສຳຄັນທາງພຸດທະສາສະໜາ ທີ່ລະນຶກເຖິງການຊຸມນຸມໂດຍບໍ່ໄດ້ນັດໝາຍຂອງສາວົກ 1,250 ອົງ.", "category": "festival", "year": null, "isSymbolic": true }
+  ]
+}

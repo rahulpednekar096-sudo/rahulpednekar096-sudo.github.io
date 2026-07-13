@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "chants": [
+    {
+      "id": "triple_gem",
+      "title": "Tam Bảo (Ti-Ratana)",
+      "category": "refuge",
+      "text_pali": "Buddhaṃ saraṇaṃ gacchāmi.\nDhammaṃ saraṇaṃ gacchāmi.\nSaṅghaṃ saraṇaṃ gacchāmi.\n\nDutiyampi Buddhaṃ saraṇaṃ gacchāmi.\nDutiyampi Dhammaṃ saraṇaṃ gacchāmi.\nDutiyampi Saṅghaṃ saraṇaṃ gacchāmi.\n\nTatiyampi Buddhaṃ saraṇaṃ gacchāmi.\nTatiyampi Dhammaṃ saraṇaṃ gacchāmi.\nTatiyampi Saṅghaṃ saraṇaṃ gacchāmi.",
+      "text_english": "Con xin quy y Phật.\nCon xin quy y Pháp.\nCon xin quy y Tăng.\n\nLần thứ hai, con xin quy y Phật.\nLần thứ hai, con xin quy y Pháp.\nLần thứ hai, con xin quy y Tăng.\n\nLần thứ ba, con xin quy y Phật.\nLần thứ ba, con xin quy y Pháp.\nLần thứ ba, con xin quy y Tăng.",
+      "audio_id": "audio_triple_gem"
+    },
+    {
+      "id": "five_precepts",
+      "title": "Ngũ Giới (Pañca Sīla)",
+      "category": "precepts",
+      "text_pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi.\nAdinnādānā veramaṇī sikkhāpadaṃ samādiyāmi.\nKāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi.\nMusāvādā veramaṇī sikkhāpadaṃ samādiyāmi.\nSurāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi.",
+      "text_english": "Con xin thọ trì học giới tránh xa sự sát sinh.\nCon xin thọ trì học giới tránh xa việc lấy của không cho.\nCon xin thọ trì học giới tránh xa tà dâm.\nCon xin thọ trì học giới tránh xa lời nói dối.\nCon xin thọ trì học giới tránh xa các chất gây nghiện dẫn đến buông lung.",
+      "audio_id": "audio_five_precepts"
+    },
+    {
+      "id": "metta_sutta",
+      "title": "Kinh Từ Bi (Metta)",
+      "category": "paritta",
+      "text_pali": "Karaṇīyam-atthakusalena\nYanta santaṃ padaṃ abhisamecca:\nSakko ujū ca suhujū ca,\nSūvaco cassa mudu anatimānī.",
+      "text_english": "Đây là điều nên làm bởi người khéo léo trong điều thiện,\nNgười đã thấu hiểu con đường an tịnh:\nHãy để họ có năng lực và ngay thẳng, chính trực và lời nói dịu dàng,\nKhiêm tốn và không kiêu mạn.",
+      "audio_id": "audio_metta_sutta"
+    },
+    {
+      "id": "mangala_sutta",
+      "title": "Kinh Cát Tường (Phước lành)",
+      "category": "paritta",
+      "text_pali": "Bāhuṃ sahassaṃ abhinimmita vo,\nDvādasakaraṃ saṭṭhi ca vālam-ajjhuṃ;\nEkena saccena suvatthi hotu.",
+      "text_english": "Dù có hóa hiện ngàn cánh tay và mười một cái đầu,\nNguyện sự an lành đến với bạn qua một lời chân thật.",
+      "audio_id": "audio_mangala_sutta"
+    },
+    {
+      "id": "ratana_sutta",
+      "title": "Kinh Châu Báu (Ratana)",
+      "category": "paritta",
+      "text_pali": "Yānīdha bhūtāni samāgatāni,\nBhummāni vā yāni va antalikkhe;\nSabbeva bhūtā sumanā bhavantu,\nAthopi sakkacca suṇantu bhāsitaṃ.",
+      "text_english": "Bất cứ chúng sinh nào tụ hội nơi đây,\nTrên mặt đất hay trên bầu trời,\nNguyện tất cả chúng sinh được an vui,\nVà lắng nghe kỹ lời được nói ra.",
+      "audio_id": "audio_ratana_sutta"
+    }
+  ]
+}

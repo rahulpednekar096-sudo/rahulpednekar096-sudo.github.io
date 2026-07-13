@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "precepts": [
+    { "number": 1, "pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "Con xin thọ trì học giới tránh xa sự sát sinh.", "explanation": "Tránh giết hại bất kỳ chúng sinh nào." },
+    { "number": 2, "pali": "Adinnādānā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "Con xin thọ trì học giới tránh xa việc lấy của không cho.", "explanation": "Tránh trộm cắp hoặc lấy của người khác khi chưa được phép." },
+    { "number": 3, "pali": "Kāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "Con xin thọ trì học giới tránh xa tà dâm.", "explanation": "Tránh hành vi tình dục gây hại hoặc lợi dụng." },
+    { "number": 4, "pali": "Musāvādā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "Con xin thọ trì học giới tránh xa lời nói dối.", "explanation": "Tránh nói dối, lừa gạt hoặc lời nói gây hại." },
+    { "number": 5, "pali": "Surāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "Con xin thọ trì học giới tránh xa các chất gây nghiện dẫn đến buông lung.", "explanation": "Tránh rượu và các chất làm mờ tâm trí." }
+  ]
+}

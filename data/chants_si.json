@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "chants": [
+    {
+      "id": "triple_gem",
+      "title": "තෙරුවන (ති-රතන)",
+      "category": "refuge",
+      "text_pali": "Buddhaṃ saraṇaṃ gacchāmi.\nDhammaṃ saraṇaṃ gacchāmi.\nSaṅghaṃ saraṇaṃ gacchāmi.\n\nDutiyampi Buddhaṃ saraṇaṃ gacchāmi.\nDutiyampi Dhammaṃ saraṇaṃ gacchāmi.\nDutiyampi Saṅghaṃ saraṇaṃ gacchāmi.\n\nTatiyampi Buddhaṃ saraṇaṃ gacchāmi.\nTatiyampi Dhammaṃ saraṇaṃ gacchāmi.\nTatiyampi Saṅghaṃ saraṇaṃ gacchāmi.",
+      "text_english": "මම බුදුන් සරණ යමි.\nමම දහම සරණ යමි.\nමම සඟුන් සරණ යමි.\n\nදෙවන වරටත් මම බුදුන් සරණ යමි.\nදෙවන වරටත් මම දහම සරණ යමි.\nදෙවන වරටත් මම සඟුන් සරණ යමි.\n\nතෙවන වරටත් මම බුදුන් සරණ යමි.\nතෙවන වරටත් මම දහම සරණ යමි.\nතෙවන වරටත් මම සඟුන් සරණ යමි.",
+      "audio_id": "audio_triple_gem"
+    },
+    {
+      "id": "five_precepts",
+      "title": "පන්සිල් (පඤ්ච සීල)",
+      "category": "precepts",
+      "text_pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi.\nAdinnādānā veramaṇī sikkhāpadaṃ samādiyāmi.\nKāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi.\nMusāvādā veramaṇī sikkhāpadaṃ samādiyāmi.\nSurāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi.",
+      "text_english": "සතුන් මැරීමෙන් වැළකී සිටීමේ ශික්ෂාපදය මම සමාදන් වෙමි.\nනොදුන් දෙය ගැනීමෙන් වැළකී සිටීමේ ශික්ෂාපදය මම සමාදන් වෙමි.\nකාමයෙහි වරදවා හැසිරීමෙන් වැළකී සිටීමේ ශික්ෂාපදය මම සමාදන් වෙමි.\nබොරු කීමෙන් වැළකී සිටීමේ ශික්ෂාපදය මම සමාදන් වෙමි.\nප්‍රමාදයට හේතුවන මත්ද්‍රව්‍යවලින් වැළකී සිටීමේ ශික්ෂාපදය මම සමාදන් වෙමි.",
+      "audio_id": "audio_five_precepts"
+    },
+    {
+      "id": "metta_sutta",
+      "title": "මෛත්‍රී සූත්‍රය (මෙත්තා)",
+      "category": "paritta",
+      "text_pali": "Karaṇīyam-atthakusalena\nYanta santaṃ padaṃ abhisamecca:\nSakko ujū ca suhujū ca,\nSūvaco cassa mudu anatimānī.",
+      "text_english": "යහපතෙහි දක්ෂ අය විසින් කළ යුත්ත මෙයයි,\nසාමයේ මාර්ගය අවබෝධ කළ අය:\nඔවුන් හැකියාව ඇති, අවංක, ඍජු හා වචනයෙන් මෘදු,\nනිහතමානී හා උඩඟු නොවන අය වේවා.",
+      "audio_id": "audio_metta_sutta"
+    },
+    {
+      "id": "mangala_sutta",
+      "title": "මංගල සූත්‍රය (ආශිර්වාද)",
+      "category": "paritta",
+      "text_pali": "Bāhuṃ sahassaṃ abhinimmita vo,\nDvādasakaraṃ saṭṭhi ca vālam-ajjhuṃ;\nEkena saccena suvatthi hotu.",
+      "text_english": "අත් දහසක් හා හිස් එකොළහක් මවා ගත්තද,\nඑක් සත්‍ය වචනයකින් ඔබට සෙත සැලසේවා.",
+      "audio_id": "audio_mangala_sutta"
+    },
+    {
+      "id": "ratana_sutta",
+      "title": "රතන සූත්‍රය (රත්නය)",
+      "category": "paritta",
+      "text_pali": "Yānīdha bhūtāni samāgatāni,\nBhummāni vā yāni va antalikkhe;\nSabbeva bhūtā sumanā bhavantu,\nAthopi sakkacca suṇantu bhāsitaṃ.",
+      "text_english": "මෙහි රැස් වූ සියලු සත්ත්වයෝ,\nපොළොවෙහි හෝ අහසෙහි සිටින,\nසියලු සත්ත්වයෝ සතුටු වෙත්වා,\nතවද කියනු ලබන වචනයට හොඳින් සවන් දෙත්වා.",
+      "audio_id": "audio_ratana_sutta"
+    }
+  ]
+}

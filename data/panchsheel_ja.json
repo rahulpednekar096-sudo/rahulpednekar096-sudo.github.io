@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "precepts": [
+    { "number": 1, "pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "私は生き物を殺すことを慎む戒を受持します。", "explanation": "いかなる生き物も殺さないようにする。" },
+    { "number": 2, "pali": "Adinnādānā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "私は与えられていないものを取ることを慎む戒を受持します。", "explanation": "盗んだり、許可なく他人のものを取ったりしないようにする。" },
+    { "number": 3, "pali": "Kāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "私は邪淫を慎む戒を受持します。", "explanation": "有害または搾取的な性的行為を控える。" },
+    { "number": 4, "pali": "Musāvādā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "私は偽りの言葉を慎む戒を受持します。", "explanation": "嘘、欺き、有害な言葉を控える。" },
+    { "number": 5, "pali": "Surāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "私は放逸の原因となる酔わせるものを慎む戒を受持します。", "explanation": "心を曇らせる酒や物質を控える。" }
+  ]
+}

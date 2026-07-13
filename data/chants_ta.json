@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "chants": [
+    {
+      "id": "triple_gem",
+      "title": "திரிரத்தினம் (தி-ரத்தன)",
+      "category": "refuge",
+      "text_pali": "Buddhaṃ saraṇaṃ gacchāmi.\nDhammaṃ saraṇaṃ gacchāmi.\nSaṅghaṃ saraṇaṃ gacchāmi.\n\nDutiyampi Buddhaṃ saraṇaṃ gacchāmi.\nDutiyampi Dhammaṃ saraṇaṃ gacchāmi.\nDutiyampi Saṅghaṃ saraṇaṃ gacchāmi.\n\nTatiyampi Buddhaṃ saraṇaṃ gacchāmi.\nTatiyampi Dhammaṃ saraṇaṃ gacchāmi.\nTatiyampi Saṅghaṃ saraṇaṃ gacchāmi.",
+      "text_english": "நான் புத்தரிடம் சரணடைகிறேன்.\nநான் தர்மத்திடம் சரணடைகிறேன்.\nநான் சங்கத்திடம் சரணடைகிறேன்.\n\nஇரண்டாம் முறையும், நான் புத்தரிடம் சரணடைகிறேன்.\nஇரண்டாம் முறையும், நான் தர்மத்திடம் சரணடைகிறேன்.\nஇரண்டாம் முறையும், நான் சங்கத்திடம் சரணடைகிறேன்.\n\nமூன்றாம் முறையும், நான் புத்தரிடம் சரணடைகிறேன்.\nமூன்றாம் முறையும், நான் தர்மத்திடம் சரணடைகிறேன்.\nமூன்றாம் முறையும், நான் சங்கத்திடம் சரணடைகிறேன்.",
+      "audio_id": "audio_triple_gem"
+    },
+    {
+      "id": "five_precepts",
+      "title": "ஐந்து சீலங்கள் (பஞ்ச சீல)",
+      "category": "precepts",
+      "text_pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi.\nAdinnādānā veramaṇī sikkhāpadaṃ samādiyāmi.\nKāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi.\nMusāvādā veramaṇī sikkhāpadaṃ samādiyāmi.\nSurāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi.",
+      "text_english": "உயிர்க்கொலையிலிருந்து விலகி இருக்கும் பயிற்சி சீலத்தை நான் ஏற்கிறேன்.\nகொடுக்கப்படாததை எடுப்பதிலிருந்து விலகி இருக்கும் பயிற்சி சீலத்தை நான் ஏற்கிறேன்.\nதவறான காம நடத்தையிலிருந்து விலகி இருக்கும் பயிற்சி சீலத்தை நான் ஏற்கிறேன்.\nபொய் பேசுவதிலிருந்து விலகி இருக்கும் பயிற்சி சீலத்தை நான் ஏற்கிறேன்.\nகவனக்குறைவை ஏற்படுத்தும் போதைப் பொருட்களிலிருந்து விலகி இருக்கும் பயிற்சி சீலத்தை நான் ஏற்கிறேன்.",
+      "audio_id": "audio_five_precepts"
+    },
+    {
+      "id": "metta_sutta",
+      "title": "மெத்தா சூத்திரம் (மெத்தா)",
+      "category": "paritta",
+      "text_pali": "Karaṇīyam-atthakusalena\nYanta santaṃ padaṃ abhisamecca:\nSakko ujū ca suhujū ca,\nSūvaco cassa mudu anatimānī.",
+      "text_english": "நன்மையில் திறமையானவர் செய்ய வேண்டியது இதுவே,\nஅமைதியின் பாதையை உணர்ந்தவர்:\nஅவர் திறமையுள்ளவராகவும், நேர்மையானவராகவும், நேரானவராகவும், மென்மையான பேச்சுடையவராகவும்,\nபணிவுள்ளவராகவும், அகந்தையற்றவராகவும் இருக்கட்டும்.",
+      "audio_id": "audio_metta_sutta"
+    },
+    {
+      "id": "mangala_sutta",
+      "title": "மங்கல சூத்திரம் (ஆசீர்வாதம்)",
+      "category": "paritta",
+      "text_pali": "Bāhuṃ sahassaṃ abhinimmita vo,\nDvādasakaraṃ saṭṭhi ca vālam-ajjhuṃ;\nEkena saccena suvatthi hotu.",
+      "text_english": "ஆயிரம் கைகளையும் பதினொரு தலைகளையும் படைத்தாலும்,\nஒரு உண்மை வார்த்தையால் உமக்கு நலம் உண்டாகட்டும்.",
+      "audio_id": "audio_mangala_sutta"
+    },
+    {
+      "id": "ratana_sutta",
+      "title": "ரதன சூத்திரம் (ரத்தினம்)",
+      "category": "paritta",
+      "text_pali": "Yānīdha bhūtāni samāgatāni,\nBhummāni vā yāni va antalikkhe;\nSabbeva bhūtā sumanā bhavantu,\nAthopi sakkacca suṇantu bhāsitaṃ.",
+      "text_english": "இங்கு கூடியுள்ள அனைத்து உயிரினங்களே,\nபூமியில் இருப்பவையோ வானில் இருப்பவையோ,\nஅனைத்து உயிரினங்களும் மகிழ்ச்சியாக இருக்கட்டும்,\nமேலும் சொல்லப்படுவதை கவனமாகக் கேட்கட்டும்.",
+      "audio_id": "audio_ratana_sutta"
+    }
+  ]
+}

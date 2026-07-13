@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "festivals": [
+    { "month": 1, "day": 1, "title": "Năm mới 2026", "description": "Sự khởi đầu của một năm mới...", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 12, "title": "Lễ sinh nhật Swami Vivekananda", "description": "Kỷ niệm ngày sinh của Swami Vivekananda, được tổ chức như Ngày Thanh niên Quốc gia.", "category": "festival", "year": "1863", "isSymbolic": false },
+    { "month": 1, "day": 14, "title": "Makar Sankranti", "description": "Lễ hội đánh dấu sự chuyển dịch của mặt trời vào cung Ma Kết...", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 1, "day": 15, "title": "Ngày Quân đội Ấn Độ", "description": "Đánh dấu ngày Trung tướng K.M. Cariappa nhậm chức Tổng Tư lệnh.", "category": "festival", "year": "1949", "isSymbolic": false },
+    { "month": 1, "day": 24, "title": "Ngày Bé gái Quốc gia", "description": "Ngày nâng cao nhận thức về quyền của bé gái.", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 25, "title": "Ngày Cử tri Quốc gia", "description": "Được thành lập để khuyến khích nhiều cử tri trẻ tham gia vào tiến trình chính trị.", "category": "festival", "year": "2011", "isSymbolic": false },
+    { "month": 1, "day": 26, "title": "Ngày Cộng hòa", "description": "Ấn Độ thông qua Hiến pháp và trở thành một nước Cộng hòa.", "category": "festival", "year": "1950", "isSymbolic": false },
+    { "month": 2, "day": 1, "title": "Lễ sinh nhật Sant Ravidas", "description": "Kỷ niệm ngày sinh của vị thánh và nhà cải cách xã hội huyền thoại, được tổ chức vào Magha Purnima.", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 2, "day": 14, "title": "Maitri Diwas / Ngày Valentine", "description": "Ngày tôn vinh tình yêu và lòng thương yêu phổ quát.", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 3, "day": 3, "title": "Magha Puja", "description": "Một lễ hội Phật giáo quan trọng kỷ niệm sự tụ hội tự phát của 1.250 vị đệ tử.", "category": "festival", "year": null, "isSymbolic": true }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "chants": [
+    {
+      "id": "triple_gem",
+      "title": "ພະໄຕຣະຕະນະ (ຕິຣະຕະນະ)",
+      "category": "refuge",
+      "text_pali": "Buddhaṃ saraṇaṃ gacchāmi.\nDhammaṃ saraṇaṃ gacchāmi.\nSaṅghaṃ saraṇaṃ gacchāmi.\n\nDutiyampi Buddhaṃ saraṇaṃ gacchāmi.\nDutiyampi Dhammaṃ saraṇaṃ gacchāmi.\nDutiyampi Saṅghaṃ saraṇaṃ gacchāmi.\n\nTatiyampi Buddhaṃ saraṇaṃ gacchāmi.\nTatiyampi Dhammaṃ saraṇaṃ gacchāmi.\nTatiyampi Saṅghaṃ saraṇaṃ gacchāmi.",
+      "text_english": "ຂ້ານ້ອຍຂໍເຖິງພະພຸດທະເຈົ້າເປັນທີ່ເພິ່ງ\nຂ້ານ້ອຍຂໍເຖິງພະທຳເປັນທີ່ເພິ່ງ\nຂ້ານ້ອຍຂໍເຖິງພະສົງເປັນທີ່ເພິ່ງ\n\nແມ່ນຄັ້ງທີສອງ ຂ້ານ້ອຍຂໍເຖິງພະພຸດທະເຈົ້າເປັນທີ່ເພິ່ງ\nແມ່ນຄັ້ງທີສອງ ຂ້ານ້ອຍຂໍເຖິງພະທຳເປັນທີ່ເພິ່ງ\nແມ່ນຄັ້ງທີສອງ ຂ້ານ້ອຍຂໍເຖິງພະສົງເປັນທີ່ເພິ່ງ\n\nແມ່ນຄັ້ງທີສາມ ຂ້ານ້ອຍຂໍເຖິງພະພຸດທະເຈົ້າເປັນທີ່ເພິ່ງ\nແມ່ນຄັ້ງທີສາມ ຂ້ານ້ອຍຂໍເຖິງພະທຳເປັນທີ່ເພິ່ງ\nແມ່ນຄັ້ງທີສາມ ຂ້ານ້ອຍຂໍເຖິງພະສົງເປັນທີ່ເພິ່ງ",
+      "audio_id": "audio_triple_gem"
+    },
+    {
+      "id": "five_precepts",
+      "title": "ສິນຫ້າ (ປັນຈະສິນ)",
+      "category": "precepts",
+      "text_pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi.\nAdinnādānā veramaṇī sikkhāpadaṃ samādiyāmi.\nKāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi.\nMusāvādā veramaṇī sikkhāpadaṃ samādiyāmi.\nSurāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi.",
+      "text_english": "ຂ້ານ້ອຍຂໍສະມາທານສິກຂາບົດ ເພື່ອງົດເວັ້ນຈາກການຂ້າສັດ.\nຂ້ານ້ອຍຂໍສະມາທານສິກຂາບົດ ເພື່ອງົດເວັ້ນຈາກການເອົາສິ່ງທີ່ເຂົາບໍ່ໄດ້ໃຫ້.\nຂ້ານ້ອຍຂໍສະມາທານສິກຂາບົດ ເພື່ອງົດເວັ້ນຈາກການປະພຶດຜິດໃນກາມ.\nຂ້ານ້ອຍຂໍສະມາທານສິກຂາບົດ ເພື່ອງົດເວັ້ນຈາກการเว้าຕົວະ.\nຂ້ານ້ອຍຂໍສະມາທານສິກຂາບົດ ເພື່ອງົດເວັ້ນຈາກຂອງມຶນເມົາອັນເປັນທີ່ຕັ້ງແຫ່ງຄວາມປະໝາດ.",
+      "audio_id": "audio_five_precepts"
+    },
+    {
+      "id": "metta_sutta",
+      "title": "ເມດຕາສູດ (ເມດຕາ)",
+      "category": "paritta",
+      "text_pali": "Karaṇīyam-atthakusalena\nYanta santaṃ padaṃ abhisamecca:\nSakko ujū ca suhujū ca,\nSūvaco cassa mudu anatimānī.",
+      "text_english": "ນີ້ແມ່ນສິ່ງທີ່ຜູ້ສະຫຼາດໃນຄວາມດີຄວນເຮັດ\nຜູ້ທີ່ເຂົ້າໃຈຫົນທາງແຫ່ງຄວາມສະຫງົບ:\nຂໍໃຫ້ເຂົາເປັນຜູ້ມີຄວາມສາມາດ ຊື່ຕົງ ຊື່ສັດ ແລະ ອ່ອນໂຍນໃນຄຳເວົ້າ\nຖ່ອມຕົນ ແລະ ບໍ່ທະນົງຕົນ.",
+      "audio_id": "audio_metta_sutta"
+    },
+    {
+      "id": "mangala_sutta",
+      "title": "ມົງຄົນສູດ (ພອນ)",
+      "category": "paritta",
+      "text_pali": "Bāhuṃ sahassaṃ abhinimmita vo,\nDvādasakaraṃ saṭṭhi ca vālam-ajjhuṃ;\nEkena saccena suvatthi hotu.",
+      "text_english": "ເຖິງແມ່ນຜູ້ໜຶ່ງຈະເນລະມິດແຂນພັນແຂນ ແລະ ສິບເອັດຫົວ\nຂໍໃຫ້ຄວາມສະຫວັດດີຈົ່ງມີແກ່ທ່ານ ດ້ວຍຄຳສັດຈະໜຶ່ງຄຳ.",
+      "audio_id": "audio_mangala_sutta"
+    },
+    {
+      "id": "ratana_sutta",
+      "title": "ຣະຕະນະສູດ (ຣະຕະນະ)",
+      "category": "paritta",
+      "text_pali": "Yānīdha bhūtāni samāgatāni,\nBhummāni vā yāni va antalikkhe;\nSabbeva bhūtā sumanā bhavantu,\nAthopi sakkacca suṇantu bhāsitaṃ.",
+      "text_english": "ບັນດາສັດທັງຫຼາຍທີ່ມາຊຸມນຸມກັນ ณ ທີ່ນີ້\nບໍ່ວ່າຢູ່ເທິງແຜ່ນດິນ ຫຼື ໃນອາກາດ\nຂໍໃຫ້ສັບພະສັດທັງປວງຈົ່ງມີຄວາມສຸກ\nແລະ ຈົ່ງຕັ້ງໃຈຟັງຄຳທີ່ກ່າວ.",
+      "audio_id": "audio_ratana_sutta"
+    }
+  ]
+}

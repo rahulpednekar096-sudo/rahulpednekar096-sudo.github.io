@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "festivals": [
+    { "month": 1, "day": 1, "title": "ལོ་གསར 2026", "description": "ལོ་གསར་པ་ཞིག་གི་འགོ་འཛུགས...", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 12, "title": "Swami Vivekananda གི་སྐྱེས་སྐར", "description": "Swami Vivekananda གི་སྐྱེས་སྐར་ཡིན་ཞིང་ རྒྱལ་ཡོངས་ན་གཞོན་གྱི་ཉིན་མོ་སྦེ་སྲུང་བརྩི་འབད།", "category": "festival", "year": "1863", "isSymbolic": false },
+    { "month": 1, "day": 14, "title": "Makar Sankranti", "description": "ཉི་མ་ཆུ་སྲིན་ཁྱིམ་ནང་འཕོ་བ་མཚོན་པའི་དུས་སྟོན...", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 1, "day": 15, "title": "རྒྱ་གར་དམག་མིའི་ཉིན་མོ", "description": "དམག་སྤྱི་ K.M. Cariappa དམག་སྤྱི་ཁྱབ་ཁོངས་སུ་འགན་ཁུར་བཞེས་པའི་ཉིན་མཚོན།", "category": "festival", "year": "1949", "isSymbolic": false },
+    { "month": 1, "day": 24, "title": "རྒྱལ་ཡོངས་བུ་མོའི་ཉིན་མོ", "description": "བུ་མོའི་ཐོབ་ཐང་སྐོར་ཧ་གོ་བ་སྤེལ་བའི་ཉིན་མོ།", "category": "festival", "year": null, "isSymbolic": false },
+    { "month": 1, "day": 25, "title": "རྒྱལ་ཡོངས་འོས་བསྡུ་བའི་ཉིན་མོ", "description": "ན་གཞོན་འོས་བསྡུ་བ་མང་ཤོས་ཆབ་སྲིད་ཀྱི་བྱ་རིམ་ནང་བཅའ་མར་གཞུག་ནི་ལུ་གཞི་བཙུགས་འབད་ཡོད།", "category": "festival", "year": "2011", "isSymbolic": false },
+    { "month": 1, "day": 26, "title": "སྤྱི་མཐུན་རྒྱལ་ཁབ་ཀྱི་ཉིན་མོ", "description": "རྒྱ་གར་གྱིས་རྩ་ཁྲིམས་ལག་ལེན་བསྟར་ཏེ་སྤྱི་མཐུན་རྒྱལ་ཁབ་ཏུ་གྱུར།", "category": "festival", "year": "1950", "isSymbolic": false },
+    { "month": 2, "day": 1, "title": "Sant Ravidas གི་སྐྱེས་སྐར", "description": "སྒྲུང་གཏམ་ཅན་གྱི་དམ་པ་དང་སྤྱི་ཚོགས་བཅོས་སྒྱུར་བའི་སྐྱེས་སྐར་ཡིན་ཞིང་ Magha Purnima ལུ་སྲུང་བརྩི་འབད།", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 2, "day": 14, "title": "Maitri Diwas / Valentine ཉིན་མོ", "description": "ཡོངས་ཁྱབ་ཀྱི་བྱམས་བརྩེ་དང་གཅེས་སྐྱོང་སྲུང་བརྩི་འབད་བའི་ཉིན་མོ།", "category": "festival", "year": null, "isSymbolic": true },
+    { "month": 3, "day": 3, "title": "མཱ་གྷ་པཱུ་ཛཱ", "description": "སློབ་མ་ 1,250 རང་བཞིན་གྱིས་འཛོམས་པ་དྲན་གསོ་བྱེད་པའི་གལ་ཅན་གྱི་ནང་པའི་དུས་སྟོན།", "category": "festival", "year": null, "isSymbolic": true }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "holidays": [
+    { "id": "magha_puja_2026", "name": "マーガ・プージャー", "country_code": "ALL", "year": 2026, "month": 2, "day": 12, "type": "major", "category": "festival", "description": "仏陀の御前に1,250人の阿羅漢が集まったことを記念します。マーガ月の満月に行われます。", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2026", "name": "ヴェーサーカ（仏誕節）", "country_code": "ALL", "year": 2026, "month": 5, "day": 12, "type": "major", "category": "festival", "description": "仏陀の誕生、成道、そして般涅槃。仏教暦で最も神聖な日です。", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "asalha_puja_2026", "name": "アーサーラハ・プージャー（法の日）", "country_code": "ALL", "year": 2026, "month": 7, "day": 10, "type": "major", "category": "festival", "description": "仏陀の初転法輪と僧伽の始まりを記念します。", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "kathina_2026", "name": "カティナ", "country_code": "ALL", "year": 2026, "month": 11, "day": 5, "type": "major", "category": "festival", "description": "雨安居（ヴァッサ）の終わりに行う袈裟の供養の儀式。", "is_movable": true, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2026_th", "name": "ウィサーカ・ブーチャ", "country_code": "TH", "year": 2026, "month": 5, "day": 12, "type": "major", "category": "festival", "description": "タイのヴェーサーカ — 寺院参拝、蝋燭の行列、そして功徳を積む行い。", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2026_lk", "name": "ウェサック満月ポーヤ", "country_code": "LK", "year": 2026, "month": 5, "day": 12, "type": "major", "category": "festival", "description": "スリランカのヴェーサーカ — 提灯、無料接待所（ダンサル）、持戒の実践。", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2026_mm", "name": "カソン満月", "country_code": "MM", "year": 2026, "month": 5, "day": 12, "type": "major", "category": "festival", "description": "ミャンマーのヴェーサーカ — 菩提樹への灌水の儀式とパゴダ参拝。", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "magha_puja_2027", "name": "マーガ・プージャー", "country_code": "ALL", "year": 2027, "month": 2, "day": 21, "type": "major", "category": "festival", "description": "仏陀の御前に1,250人の阿羅漢が集まったことを記念します。マーガ月の満月に行われます。", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2027", "name": "ヴェーサーカ（仏誕節）", "country_code": "ALL", "year": 2027, "month": 5, "day": 20, "type": "major", "category": "festival", "description": "仏陀の誕生、成道、そして般涅槃。仏教暦で最も神聖な日です。", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "asalha_puja_2027", "name": "アーサーラハ・プージャー（法の日）", "country_code": "ALL", "year": 2027, "month": 7, "day": 1, "type": "major", "category": "festival", "description": "仏陀の初転法輪と僧伽の始まりを記念します。", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "kathina_2027", "name": "カティナ", "country_code": "ALL", "year": 2027, "month": 11, "day": 12, "type": "major", "category": "festival", "description": "雨安居（ヴァッサ）の終わりに行う袈裟の供養の儀式。", "is_movable": true, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2027_th", "name": "ウィサーカ・ブーチャ", "country_code": "TH", "year": 2027, "month": 5, "day": 20, "type": "major", "category": "festival", "description": "タイのヴェーサーカ — 寺院参拝、蝋燭の行列、そして功徳を積む行い。", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2027_lk", "name": "ウェサック満月ポーヤ", "country_code": "LK", "year": 2027, "month": 5, "day": 20, "type": "major", "category": "festival", "description": "スリランカのヴェーサーカ — 提灯、無料接待所（ダンサル）、持戒の実践。", "is_movable": false, "related_moon": "FULL_MOON" },
+    { "id": "vesak_2027_mm", "name": "カソン満月", "country_code": "MM", "year": 2027, "month": 5, "day": 20, "type": "major", "category": "festival", "description": "ミャンマーのヴェーサーカ — 菩提樹への灌水の儀式とパゴダ参拝。", "is_movable": false, "related_moon": "FULL_MOON" }
+  ]
+}

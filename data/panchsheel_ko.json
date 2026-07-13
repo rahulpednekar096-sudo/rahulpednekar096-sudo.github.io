@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "precepts": [
+    { "number": 1, "pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "나는 살생을 삼가는 학습 계율을 受持합니다.", "explanation": "어떤 생명도 죽이지 않는다." },
+    { "number": 2, "pali": "Adinnādānā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "나는 주지 않은 것을 취하는 것을 삼가는 학습 계율을 受持합니다.", "explanation": "훔치거나 허락 없이 남의 것을 취하지 않는다." },
+    { "number": 3, "pali": "Kāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "나는 삿된 음행을 삼가는 학습 계율을 受持합니다.", "explanation": "해롭거나 착취적인 성적 행위를 삼간다." },
+    { "number": 4, "pali": "Musāvādā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "나는 거짓말을 삼가는 학습 계율을 受持합니다.", "explanation": "거짓말, 속임, 해로운 말을 삼간다." },
+    { "number": 5, "pali": "Surāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "나는 방일의 원인이 되는 취하게 하는 것을 삼가는 학습 계율을 受持합니다.", "explanation": "마음을 흐리게 하는 술과 물질을 삼간다." }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "precepts": [
+    { "number": 1, "pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "ข้าพเจ้าขอสมาทานสิกขาบทที่จะงดเว้นจากการฆ่าสัตว์", "explanation": "งดเว้นจากการฆ่าสิ่งมีชีวิตใดๆ" },
+    { "number": 2, "pali": "Adinnādānā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "ข้าพเจ้าขอสมาทานสิกขาบทที่จะงดเว้นจากการถือเอาสิ่งที่เจ้าของไม่ได้ให้", "explanation": "งดเว้นจากการลักขโมยหรือถือเอาของผู้อื่นโดยไม่ได้รับอนุญาต" },
+    { "number": 3, "pali": "Kāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "ข้าพเจ้าขอสมาทานสิกขาบทที่จะงดเว้นจากการประพฤติผิดในกาม", "explanation": "งดเว้นจากพฤติกรรมทางเพศที่เป็นอันตรายหรือเอารัดเอาเปรียบ" },
+    { "number": 4, "pali": "Musāvādā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "ข้าพเจ้าขอสมาทานสิกขาบทที่จะงดเว้นจากการพูดเท็จ", "explanation": "งดเว้นจากการโกหก หลอกลวง หรือคำพูดที่เป็นอันตราย" },
+    { "number": 5, "pali": "Surāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "ข้าพเจ้าขอสมาทานสิกขาบทที่จะงดเว้นจากของมึนเมาอันเป็นที่ตั้งแห่งความประมาท", "explanation": "งดเว้นจากสุราและสิ่งเสพติดที่ทำให้จิตใจขุ่นมัว" }
+  ]
+}

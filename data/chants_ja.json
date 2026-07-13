@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "chants": [
+    {
+      "id": "triple_gem",
+      "title": "三宝 (ティ・ラタナ)",
+      "category": "refuge",
+      "text_pali": "Buddhaṃ saraṇaṃ gacchāmi.\nDhammaṃ saraṇaṃ gacchāmi.\nSaṅghaṃ saraṇaṃ gacchāmi.\n\nDutiyampi Buddhaṃ saraṇaṃ gacchāmi.\nDutiyampi Dhammaṃ saraṇaṃ gacchāmi.\nDutiyampi Saṅghaṃ saraṇaṃ gacchāmi.\n\nTatiyampi Buddhaṃ saraṇaṃ gacchāmi.\nTatiyampi Dhammaṃ saraṇaṃ gacchāmi.\nTatiyampi Saṅghaṃ saraṇaṃ gacchāmi.",
+      "text_english": "私は仏に帰依します。\n私は法に帰依します。\n私は僧に帰依します。\n\n二度目も、私は仏に帰依します。\n二度目も、私は法に帰依します。\n二度目も、私は僧に帰依します。\n\n三度目も、私は仏に帰依します。\n三度目も、私は法に帰依します。\n三度目も、私は僧に帰依します。",
+      "audio_id": "audio_triple_gem"
+    },
+    {
+      "id": "five_precepts",
+      "title": "五戒 (パンチャ・シーラ)",
+      "category": "precepts",
+      "text_pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi.\nAdinnādānā veramaṇī sikkhāpadaṃ samādiyāmi.\nKāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi.\nMusāvādā veramaṇī sikkhāpadaṃ samādiyāmi.\nSurāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi.",
+      "text_english": "私は生き物を殺すことを慎む戒を受持します。\n私は与えられていないものを取ることを慎む戒を受持します。\n私は邪淫を慎む戒を受持します。\n私は偽りの言葉を慎む戒を受持します。\n私は放逸の原因となる酔わせるものを慎む戒を受持します。",
+      "audio_id": "audio_five_precepts"
+    },
+    {
+      "id": "metta_sutta",
+      "title": "慈経 (慈しみ)",
+      "category": "paritta",
+      "text_pali": "Karaṇīyam-atthakusalena\nYanta santaṃ padaṃ abhisamecca:\nSakko ujū ca suhujū ca,\nSūvaco cassa mudu anatimānī.",
+      "text_english": "善に巧みな者がなすべきこと、\n寂静の境地を悟った者は:\n能力があり、正直で、まっすぐで、言葉優しく、\n謙虚で高ぶらない者であれ。",
+      "audio_id": "audio_metta_sutta"
+    },
+    {
+      "id": "mangala_sutta",
+      "title": "吉祥経 (祝福)",
+      "category": "paritta",
+      "text_pali": "Bāhuṃ sahassaṃ abhinimmita vo,\nDvādasakaraṃ saṭṭhi ca vālam-ajjhuṃ;\nEkena saccena suvatthi hotu.",
+      "text_english": "たとえ千の腕と十一の頭を化作しようとも、\n一つの真実の言葉によって、あなたに繁栄がありますように。",
+      "audio_id": "audio_mangala_sutta"
+    },
+    {
+      "id": "ratana_sutta",
+      "title": "宝経 (宝)",
+      "category": "paritta",
+      "text_pali": "Yānīdha bhūtāni samāgatāni,\nBhummāni vā yāni va antalikkhe;\nSabbeva bhūtā sumanā bhavantu,\nAthopi sakkacca suṇantu bhāsitaṃ.",
+      "text_english": "ここに集うすべての生きとし生けるもの、\n地上にあるものも、空にあるものも、\nすべての生き物が幸せでありますように、\nそして語られる言葉を心して聞きますように。",
+      "audio_id": "audio_ratana_sutta"
+    }
+  ]
+}

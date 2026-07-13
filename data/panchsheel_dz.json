@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "precepts": [
+    { "number": 1, "pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "སྲོག་གཅོད་པ་ལས་ལྡོག་པའི་བསླབ་པ་ང་གིས་བཟུང་བར་བྱ།", "explanation": "སེམས་ཅན་གང་ཡང་སྲོག་མི་གཅོད་པར་ལྡོག" },
+    { "number": 2, "pali": "Adinnādānā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "མ་བྱིན་པར་ལེན་པ་ལས་ལྡོག་པའི་བསླབ་པ་ང་གིས་བཟུང་བར་བྱ།", "explanation": "རྐུ་འཕྲོག་གམ་གཞན་གྱི་དངོས་པོ་གནང་བ་མེད་པར་ལེན་པ་ལས་ལྡོག" },
+    { "number": 3, "pali": "Kāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "འདོད་པ་ལོག་པར་སྤྱོད་པ་ལས་ལྡོག་པའི་བསླབ་པ་ང་གིས་བཟུང་བར་བྱ།", "explanation": "གནོད་པ་ཅན་ནམ་གཞན་ལ་ཕན་མེད་ཀྱི་འདོད་སྤྱོད་ལས་ལྡོག" },
+    { "number": 4, "pali": "Musāvādā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "རྫུན་སྨྲ་བ་ལས་ལྡོག་པའི་བསླབ་པ་ང་གིས་བཟུང་བར་བྱ།", "explanation": "རྫུན་སྨྲ་བ། མགོ་སྐོར། ཡང་ན་གནོད་པ་ཅན་གྱི་ཚིག་ལས་ལྡོག" },
+    { "number": 5, "pali": "Surāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi", "english": "བག་མེད་ཀྱི་རྒྱུ་ཆང་རིགས་ལས་ལྡོག་པའི་བསླབ་པ་ང་གིས་བཟུང་བར་བྱ།", "explanation": "སེམས་རྙོག་པར་བྱེད་པའི་ཆང་དང་བཟི་བྱེད་ཀྱི་རྫས་ལས་ལྡོག" }
+  ]
+}

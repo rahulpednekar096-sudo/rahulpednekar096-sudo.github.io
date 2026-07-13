@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "chants": [
+    {
+      "id": "triple_gem",
+      "title": "삼보 (띠라따나)",
+      "category": "refuge",
+      "text_pali": "Buddhaṃ saraṇaṃ gacchāmi.\nDhammaṃ saraṇaṃ gacchāmi.\nSaṅghaṃ saraṇaṃ gacchāmi.\n\nDutiyampi Buddhaṃ saraṇaṃ gacchāmi.\nDutiyampi Dhammaṃ saraṇaṃ gacchāmi.\nDutiyampi Saṅghaṃ saraṇaṃ gacchāmi.\n\nTatiyampi Buddhaṃ saraṇaṃ gacchāmi.\nTatiyampi Dhammaṃ saraṇaṃ gacchāmi.\nTatiyampi Saṅghaṃ saraṇaṃ gacchāmi.",
+      "text_english": "저는 부처님께 귀의합니다.\n저는 법에 귀의합니다.\n저는 승가에 귀의합니다.\n\n두 번째로, 저는 부처님께 귀의합니다.\n두 번째로, 저는 법에 귀의합니다.\n두 번째로, 저는 승가에 귀의합니다.\n\n세 번째로, 저는 부처님께 귀의합니다.\n세 번째로, 저는 법에 귀의합니다.\n세 번째로, 저는 승가에 귀의합니다.",
+      "audio_id": "audio_triple_gem"
+    },
+    {
+      "id": "five_precepts",
+      "title": "오계 (판차 실라)",
+      "category": "precepts",
+      "text_pali": "Pāṇātipātā veramaṇī sikkhāpadaṃ samādiyāmi.\nAdinnādānā veramaṇī sikkhāpadaṃ samādiyāmi.\nKāmesumicchācārā veramaṇī sikkhāpadaṃ samādiyāmi.\nMusāvādā veramaṇī sikkhāpadaṃ samādiyāmi.\nSurāmerayamajjapamādaṭṭhānā veramaṇī sikkhāpadaṃ samādiyāmi.",
+      "text_english": "저는 살생을 삼가는 계를 받아 지닙니다.\n저는 주지 않은 것을 취함을 삼가는 계를 받아 지닙니다.\n저는 삿된 음행을 삼가는 계를 받아 지닙니다.\n저는 거짓말을 삼가는 계를 받아 지닙니다.\n저는 방일의 원인이 되는 취하게 하는 것을 삼가는 계를 받아 지닙니다.",
+      "audio_id": "audio_five_precepts"
+    },
+    {
+      "id": "metta_sutta",
+      "title": "자애경 (자애)",
+      "category": "paritta",
+      "text_pali": "Karaṇīyam-atthakusalena\nYanta santaṃ padaṃ abhisamecca:\nSakko ujū ca suhujū ca,\nSūvaco cassa mudu anatimānī.",
+      "text_english": "선에 능숙한 이가 해야 할 일,\n고요의 경지를 깨달은 이는:\n유능하고 정직하며 곧고 말이 부드럽고,\n겸손하며 교만하지 않아야 합니다.",
+      "audio_id": "audio_metta_sutta"
+    },
+    {
+      "id": "mangala_sutta",
+      "title": "길상경 (축복)",
+      "category": "paritta",
+      "text_pali": "Bāhuṃ sahassaṃ abhinimmita vo,\nDvādasakaraṃ saṭṭhi ca vālam-ajjhuṃ;\nEkena saccena suvatthi hotu.",
+      "text_english": "천 개의 팔과 열한 개의 머리를 만들어낸다 해도,\n한마디 진실의 말로 그대에게 번영이 있기를.",
+      "audio_id": "audio_mangala_sutta"
+    },
+    {
+      "id": "ratana_sutta",
+      "title": "보배경 (보배)",
+      "category": "paritta",
+      "text_pali": "Yānīdha bhūtāni samāgatāni,\nBhummāni vā yāni va antalikkhe;\nSabbeva bhūtā sumanā bhavantu,\nAthopi sakkacca suṇantu bhāsitaṃ.",
+      "text_english": "여기 모인 모든 존재들이여,\n땅에 있든 하늘에 있든,\n모든 존재가 행복하기를,\n그리고 설해지는 말씀을 귀 기울여 듣기를.",
+      "audio_id": "audio_ratana_sutta"
+    }
+  ]
+}
