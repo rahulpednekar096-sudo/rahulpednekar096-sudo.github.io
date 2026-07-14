@@ -1,0 +1,746 @@
+[
+  {
+    "date": "01",
+    "title": "Ngày thầy thuốc quốc gia",
+    "description": "Vinh danh ngày sinh của Tiến sĩ B.C. Roy, bác sĩ huyền thoại và cựu CM của Tây Bengal. Đức Phật so sánh mình với một thầy thuốc chẩn đoán và chữa trị căn bệnh đau khổ.",
+    "category": "event",
+    "year": "1882",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Trận Gettysburg bắt đầu",
+    "description": "Vào ngày 1 tháng 7 năm 1863, Trận Gettysburg bắt đầu ở Pennsylvania, trở thành trận giao tranh đẫm máu nhất trong Nội chiến Hoa Kỳ. Trong ba ngày, lực lượng Liên minh đã đẩy lùi cuộc xâm lược miền Bắc của Tướng Lee miền Nam, đánh dấu một bước ngoặt quyết định chuyển động lực hướng tới việc xóa bỏ chế độ nô lệ và bảo tồn Liên minh.",
+    "category": "event",
+    "year": "1863",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Somalia giành được độc lập",
+    "description": "Vào ngày 1 tháng 7 năm 1960, Lãnh thổ ủy thác Somaliland hợp nhất với Somaliland thuộc Anh cũ để thành lập Cộng hòa Somali độc lập. Điều này đánh dấu sự kết thúc hàng thập kỷ cai trị của thực dân châu Âu ở vùng Sừng châu Phi và là một phần của làn sóng phi thực dân hóa châu Phi rộng lớn hơn trong những năm 1960.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Dhamma: Asalha Puja/Ngày Pháp",
+    "description": "Asalha Puja kỷ niệm bài giảng đầu tiên của Đức Phật - Kinh Chuyển Pháp Luân - được thuyết cho năm nhà tu khổ hạnh tại Vườn Nai ở Sarnath. Bánh xe Pháp đã bắt đầu chuyển động.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "02",
+    "title": "Đạo luật Dân quyền năm 1964 đã ký",
+    "description": "Vào ngày 2 tháng 7 năm 1964, Tổng thống Lyndon B. Johnson đã ký Đạo luật Dân quyền thành luật, cấm phân biệt đối xử dựa trên chủng tộc, màu da, tôn giáo, giới tính hoặc nguồn gốc quốc gia. Đạo luật mang tính bước ngoặt đã chấm dứt sự phân biệt chủng tộc ở những nơi công cộng và cấm phân biệt đối xử trong việc làm, thể hiện một chiến thắng hoành tráng của phong trào dân quyền Mỹ do những nhân vật như Martin Luther King Jr.",
+    "category": "event",
+    "year": "1964",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Chuyến bay Zeppelin đầu tiên",
+    "description": "Vào ngày 2 tháng 7 năm 1900, Luftschiff Zeppelin LZ 1 thực hiện chuyến bay đầu tiên qua Hồ Constance ở Đức, do Bá tước Ferdinand von Zeppelin lái. Chiếc khinh khí cầu cứng cáp đã bay trong khoảng 18 phút, mở ra kỷ nguyên du hành nhẹ hơn không khí và cách mạng hóa công nghệ hàng không thời kỳ đầu.",
+    "category": "event",
+    "year": "1900",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Dhamma: Bắt đầu mùa Vassa (Kỳ an cư mùa mưa)",
+    "description": "Vassa bắt đầu vào ngày sau Asalha Puja. Trong ba tháng, các nhà sư định cư trong các tu viện để thiền định và nghiên cứu chuyên sâu, theo truyền thống do Đức Phật thiết lập.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "03",
+    "title": "George Washington nắm quyền chỉ huy quân đội lục địa",
+    "description": "Vào ngày 3 tháng 7 năm 1775, George Washington chính thức nắm quyền chỉ huy Quân đội Lục địa ở Cambridge, Massachusetts, biến một tập hợp dân quân thuộc địa nghèo nàn thành một lực lượng chiến đấu thống nhất. Thời điểm then chốt này trong Cách mạng Mỹ đã tạo tiền đề cho chiến thắng cuối cùng của các thuộc địa trước sự cai trị của đế quốc Anh.",
+    "category": "event",
+    "year": "1775",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Phí của Pickett tại Gettysburg",
+    "description": "Vào ngày 3 tháng 7 năm 1863, Tướng Liên minh miền Nam George Pickett chỉ huy một cuộc tấn công bộ binh thảm khốc nhằm vào các vị trí của Liên minh trên Nghĩa trang Ridge trong Trận Gettysburg. Cuộc tấn công đã dẫn đến thương vong nặng nề cho quân miền Nam và được nhiều người coi là 'dấu ấn cao độ của quân miền Nam', chấm dứt hiệu quả cuộc tấn công lớn cuối cùng của miền Nam vào miền Bắc.",
+    "category": "event",
+    "year": "1863",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Bài phát biểu của Swami Vivekananda Chicago",
+    "description": "Vào ngày 4 tháng 7 năm 1902, Swami Vivekananda qua đời. Bài diễn văn lịch sử ở Chicago năm 1893 của ông bắt đầu từ 'Sisters and Brothers of America' đã giới thiệu tư tưởng tâm linh của Ấn Độ đến thế giới phương Tây.",
+    "category": "event",
+    "year": "1902",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Tuyên ngôn Độc lập Hoa Kỳ",
+    "description": "Vào ngày 4 tháng 7 năm 1776, Quốc hội Lục địa đã thông qua Tuyên ngôn Độc lập, chính thức cắt đứt 13 thuộc địa của Mỹ khỏi sự cai trị của Anh. Được soạn thảo chủ yếu bởi Thomas Jefferson, tài liệu tuyên bố rằng 'tất cả mọi người sinh ra đều bình đẳng' và khẳng định quyền của người dân trong việc lật đổ chính quyền chuyên chế.",
+    "category": "event",
+    "year": "1776",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Công bố khám phá về Higgs Boson",
+    "description": "Vào ngày 4 tháng 7 năm 2012, các nhà khoa học tại CERN công bố phát hiện boson Higgs bằng Máy Va chạm Hadron Lớn, xác nhận sự tồn tại của trường Higgs được lý thuyết hóa gần 50 năm trước đó. Bước đột phá này đã hoàn thiện Mô hình Chuẩn của vật lý hạt và mang về cho Peter Higgs và François Englert giải Nobel Vật lý năm 2013.",
+    "category": "event",
+    "year": "2012",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Dhamma: Upāli - Bậc thầy của Luật tạng",
+    "description": "Upāli, vốn là một thợ cắt tóc, đã trở thành đệ tử xuất sắc nhất của Đức Phật về Luật tạng (giới luật tu viện). Câu chuyện của ông chứng minh rằng sự đạt được tâm linh vượt qua đẳng cấp và địa vị xã hội.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "05",
+    "title": "Algeria giành được độc lập",
+    "description": "Vào ngày 5 tháng 7 năm 1962, Algeria tuyên bố độc lập khỏi Pháp sau cuộc chiến tranh giải phóng tàn khốc kéo dài 8 năm cướp đi sinh mạng của hơn một triệu người Algeria. Cách mạng Algeria đã trở thành biểu tượng của cuộc kháng chiến chống thực dân trên toàn thế giới và truyền cảm hứng cho các phong trào giải phóng trên khắp Châu Phi, Trung Đông và hơn thế nữa.",
+    "category": "event",
+    "year": "1962",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Cừu Dolly Sinh Ra",
+    "description": "Vào ngày 5 tháng 7 năm 1996, cừu Dolly được sinh ra tại Viện Roslin ở Scotland, trở thành động vật có vú đầu tiên được nhân bản thành công từ tế bào soma trưởng thành. Được tạo ra bởi các nhà khoa học Ian Wilmut và Keith Campbell, sự ra đời của Dolly đã cách mạng hóa lĩnh vực di truyền và làm dấy lên cuộc tranh luận trên toàn thế giới về đạo đức và khả năng của công nghệ nhân bản.",
+    "category": "event",
+    "year": "1996",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Dhamma: Mahapajapati Gotami",
+    "description": "Mahāpajāpatī Gotamī, mẹ nuôi của Đức Phật, trở thành nữ tu sĩ Phật giáo đầu tiên. Lễ xuất gia của cô đã thành lập Tăng đoàn Tỳ kheo ni - trật tự của các nữ tu sĩ.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "06",
+    "title": "Louis Pasteur thử nghiệm vắc xin bệnh dại",
+    "description": "Vào ngày 6 tháng 7 năm 1885, Louis Pasteur đã tiêm vắc-xin bệnh dại thử nghiệm của mình cho Joseph Meister, một cậu bé chín tuổi bị chó dại cắn nặng. Việc điều trị đã thành công vang dội, cứu sống cậu bé và đưa vắc xin trở thành một phương pháp khả thi để ngăn ngừa các bệnh truyền nhiễm, một thành tựu mang tính bước ngoặt trong khoa học y tế.",
+    "category": "event",
+    "year": "1885",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Comoros giành được độc lập",
+    "description": "Ngày 6/7/1975, quần đảo Comoros ở Ấn Độ Dương tuyên bố độc lập khỏi Pháp sau nhiều thập kỷ bị cai trị bởi thuộc địa. Phong trào độc lập được thúc đẩy bởi tình cảm dân tộc chủ nghĩa ngày càng tăng và mong muốn tự quyết của người dân Comorian, khiến nước này trở thành một trong những quốc gia châu Phi cuối cùng giành được chủ quyền.",
+    "category": "event",
+    "year": "1975",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Dhamma: Ven. Tầm nhìn Phật giáo của Ambedkar",
+    "description": "Tiến sĩ Ambedkar đã nghiên cứu Phật giáo trong nhiều thập kỷ trước khi theo đuổi nó. Cuốn sách 'Đức Phật và Giáo pháp của Ngài' trình bày Phật giáo như một triết lý mang tính cách mạng, đạo đức và xã hội hợp lý.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "07",
+    "title": "Sự cố cầu Marco Polo",
+    "description": "Vào ngày 7 tháng 7 năm 1937, một cuộc giao tranh giữa quân đội Trung Quốc và Nhật Bản tại cầu Marco Polo gần Bắc Kinh đã leo thang thành Chiến tranh Trung-Nhật lần thứ hai, một trong những cuộc xung đột lớn nhất ở châu Á trong thế kỷ 20. Vụ việc đánh dấu sự khởi đầu của cuộc xâm lược quân sự toàn diện của Nhật Bản tại Trung Quốc, dẫn đến đau khổ to lớn và cái chết của hàng triệu thường dân Trung Quốc.",
+    "category": "event",
+    "year": "1937",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Quần đảo Solomon giành được độc lập",
+    "description": "Ngày 7 tháng 7 năm 1978, Quần đảo Solomon giành được độc lập khỏi ách thống trị của thực dân Anh sau gần một thế kỷ cai trị của nước ngoài. Con đường đi tới chủ quyền của quốc đảo Thái Bình Dương này là một phần của phong trào phi thực dân hóa rộng lớn hơn ở Châu Đại Dương, khôi phục quyền tự quản cho người dân Melanesian bản địa.",
+    "category": "event",
+    "year": "1978",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Dhamma: Pháp & Bình đẳng xã hội",
+    "description": "Đức Phật dạy: ‘Không phải do sinh ra mà là Bà-la-môn, không phải do sinh ra mà là hạng hạ tiện. Chỉ bằng hành động mà người ta trở thành Bà-la-môn, chỉ bằng hành động mà người ta trở thành kẻ hạ đẳng.' – Kinh Vasala.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "08",
+    "title": "Hội Giáo dục Nhân dân được thành lập",
+    "description": "Vào ngày 8 tháng 7 năm 1945, Tiến sĩ B.R. Ambedkar thành lập Hiệp hội Giáo dục Nhân dân (PES) để mang lại nền giáo dục đại học chất lượng cho người Dalit và các cộng đồng bị thiệt thòi. PES đã thành lập Cao đẳng Siddharth ở Bombay và sau đó là Cao đẳng Milind ở Aurangabad - những học viện đã trở thành động lực thúc đẩy trao quyền trí tuệ và di chuyển xã hội của người Bahujan.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Buổi đọc Tuyên ngôn Độc lập lần đầu tiên trước công chúng",
+    "description": "Vào ngày 8 tháng 7 năm 1776, Tuyên ngôn Độc lập được đọc to lần đầu tiên tại Quảng trường Độc lập của Philadelphia, kèm theo tiếng rung của Chuông Tự do. Đám đông công dân tụ tập để nghe lời tuyên bố mang tính cách mạng rằng các thuộc địa của Mỹ đã thoát khỏi chế độ chuyên chế của Anh, khơi dậy những lễ kỷ niệm và quyết tâm sâu sắc hơn vì sự nghiệp độc lập.",
+    "category": "event",
+    "year": "1776",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Dhamma: Ambapālī - Đệ tử lịch sự",
+    "description": "Ambapālī, một kỹ nữ ở Vesāli, đã mời Đức Phật dùng bữa và cúng dường vườn xoài của mình cho Tăng đoàn. Câu chuyện của cô cho thấy rằng Giáo pháp được mở ra cho tất cả mọi người bất kể hoàn cảnh.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "09",
+    "title": "Argentina tuyên bố độc lập",
+    "description": "Vào ngày 9 tháng 7 năm 1816, Quốc hội Tucumán chính thức tuyên bố độc lập của Argentina khỏi Tây Ban Nha, đỉnh điểm là nhiều năm đấu tranh cách mạng bắt đầu vào năm 1810. Được lãnh đạo bởi những nhân vật như José de San Martín, Chiến tranh giành độc lập của Argentina là một phần của làn sóng cách mạng chống thực dân rộng lớn hơn nhằm giải phóng phần lớn Nam Mỹ khỏi sự kiểm soát của đế quốc Tây Ban Nha.",
+    "category": "event",
+    "year": "1816",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Tu chính án thứ 14 đã được phê chuẩn",
+    "description": "Vào ngày 9 tháng 7 năm 1868, Tu chính án thứ 14 của Hiến pháp Hoa Kỳ đã được phê chuẩn, trao quyền công dân cho tất cả những người sinh ra hoặc nhập tịch tại Hoa Kỳ, bao gồm cả những người trước đây là nô lệ. Điều khoản Bảo vệ Bình đẳng của tu chính án đã trở thành nền tảng của luật dân quyền và sau đó được sử dụng để thách thức sự phân biệt, phân biệt đối xử và bất bình đẳng trong các vụ kiện mang tính bước ngoặt như vụ Brown kiện Hội đồng Giáo dục.",
+    "category": "event",
+    "year": "1868",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Dhamma: Tương tự hoa sen",
+    "description": "Đức Phật so sánh chúng sinh với hoa sen: một số chìm trong nước, một số nổi trên mặt nước, một số nổi lên trên mặt nước. Giống như hoa sen nở không bị bùn làm bẩn, người trí không bị thế gian chạm tới.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "10",
+    "title": "Phóng vệ tinh Telstar",
+    "description": "Vào ngày 10 tháng 7 năm 1962, Telstar 1 được phóng từ Cape Canaveral, trở thành vệ tinh liên lạc tích cực đầu tiên chuyển tiếp tín hiệu truyền hình, cuộc gọi điện thoại và dữ liệu qua Đại Tây Dương. Được phát triển bởi Phòng thí nghiệm Điện thoại Bell, Telstar đã mở ra kỷ nguyên truyền thông vệ tinh toàn cầu và thay đổi căn bản cách thế giới chia sẻ thông tin.",
+    "category": "event",
+    "year": "1962",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Bahamas giành được độc lập",
+    "description": "Ngày 10/7/1973, Bahamas giành được độc lập từ Vương quốc Anh sau gần 250 năm thuộc địa của Anh. Được lãnh đạo bởi Thủ tướng Lynden Pindling, phong trào độc lập của quốc gia chủ yếu là người da đen đã vượt qua hàng thập kỷ phân biệt chủng tộc và sự cai trị của người thiểu số da trắng để thành lập một quốc gia dân chủ có chủ quyền ở Caribe.",
+    "category": "event",
+    "year": "1973",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Ngày Dân số Thế giới",
+    "description": "Ngày LHQ nâng cao nhận thức về các vấn đề dân số Phân phối nguồn lực một cách công bằng, tiếp cận giáo dục và chăm sóc sức khỏe cho tất cả mọi người là những mục tiêu phù hợp với Pháp và công lý.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Trận đấu Hamilton-Burr",
+    "description": "Vào ngày 11 tháng 7 năm 1804, Phó Tổng thống Aaron Burr đã làm trọng thương cựu Bộ trưởng Tài chính Alexander Hamilton trong một cuộc đấu tay đôi tại Weehawken, New Jersey. Sự kiện này đã gây sốc cho nền cộng hòa non trẻ của Mỹ, vạch trần dòng chảy bạo lực của sự cạnh tranh chính trị thời kỳ đầu, và cuối cùng chấm dứt sự nghiệp chính trị của Burr trong khi nâng cao di sản của Hamilton với tư cách là một chính khách sáng lập.",
+    "category": "event",
+    "year": "1804",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Trạm vũ trụ Skylab tái nhập khí quyển",
+    "description": "Vào ngày 11 tháng 7 năm 1979, trạm vũ trụ Skylab của NASA đã quay trở lại bầu khí quyển Trái đất và tan rã, rải rác khắp Ấn Độ Dương và một phần Tây Úc. Skylab đã từng là trạm vũ trụ đầu tiên của Mỹ từ năm 1973, tổ chức ba sứ mệnh phi hành đoàn tiến hành các thí nghiệm đột phá về thiên văn học mặt trời, quan sát Trái đất và tác động của vi trọng lực lên cơ thể con người.",
+    "category": "event",
+    "year": "1979",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Dhamma: Milindapanha",
+    "description": "Milindapañha ghi lại cuộc đối thoại nổi tiếng giữa vua Hy Lạp Milinda (Menander) và tu sĩ Nāgasena. Những cuộc tranh luận triết học này làm sáng tỏ các khái niệm cốt lõi của Phật giáo một cách rõ ràng đáng chú ý.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "12",
+    "title": "Malala Yousafzai Sinh",
+    "description": "Vào ngày 12 tháng 7 năm 1997, Malala Yousafzai sinh ra ở Mingora, Pakistan. Cô trở thành người đoạt giải Nobel Hòa bình trẻ nhất thế giới vào năm 2014 vì sự ủng hộ can đảm cho việc giáo dục trẻ em gái trước các mối đe dọa của Taliban, sống sót sau một vụ ám sát vào năm 2012 và tiếp tục chiến dịch toàn cầu của mình vì quyền được đến trường của mọi trẻ em.",
+    "category": "event",
+    "year": "1997",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Trục xuất Bisbee",
+    "description": "Vào ngày 12 tháng 7 năm 1917, khoảng 1.300 thợ khai thác đồng đình công và những người ủng hộ họ đã bị cảnh sát vây bắt bất hợp pháp và những người đại diện của công ty ở Bisbee, Arizona, và bị trục xuất trên xe chở gia súc đến sa mạc New Mexico. Các công nhân, nhiều người trong số họ là người Mỹ gốc Mexico và lao động nhập cư, đã đình công đòi mức lương tốt hơn và điều kiện an toàn hơn, khiến Vụ trục xuất Bisbee trở thành một trong những vụ vi phạm quyền lao động nghiêm trọng nhất trong lịch sử Hoa Kỳ.",
+    "category": "event",
+    "year": "1917",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Dhamma: Aṅgulimāla — Sự chuyển hóa",
+    "description": "Aṅgulimāla, một kẻ giết người hàng loạt đáng sợ, đã được Đức Phật từ bi biến thành một tu sĩ giác ngộ. Câu chuyện của ông là minh chứng cuối cùng cho sức mạnh cứu chuộc thông qua Pháp.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "13",
+    "title": "Vụ ám sát Jean-Paul Marat",
+    "description": "Vào ngày 13 tháng 7 năm 1793, nhà báo và chính trị gia cách mạng Pháp Jean-Paul Marat bị Charlotte Corday, một người đồng tình với Girondin, ám sát trong bồn tắm, người đã đổ lỗi cho ông về tình trạng bạo lực leo thang của Triều đại Khủng bố. Cái chết của Marat đã trở thành một biểu tượng mạnh mẽ cho những xung đột nội bộ của Cách mạng Pháp và được bất tử hóa trong bức tranh nổi tiếng của Jacques-Louis David.",
+    "category": "event",
+    "year": "1793",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Cuộc bạo loạn dự thảo ở thành phố New York bắt đầu",
+    "description": "Vào ngày 13 tháng 7 năm 1863, Cuộc nổi loạn Dự thảo ở Thành phố New York nổ ra để phản đối luật bắt buộc trong Nội chiến, cho phép những người đàn ông giàu có mua chuộc nghĩa vụ quân sự với giá 300 đô la. Cuộc bạo loạn kéo dài bốn ngày đã trở thành cuộc nổi dậy dân sự lớn nhất trong lịch sử Hoa Kỳ ngoại trừ chính Nội chiến, với đám đông nhắm vào cư dân và tổ chức của người da đen bằng bạo lực có động cơ chủng tộc.",
+    "category": "event",
+    "year": "1863",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Ngày Bastille/Suy ngẫm về tự do",
+    "description": "Cơn bão Bastille năm 1789 đã phát động cuộc Cách mạng Pháp. Những lý tưởng của nó - tự do, bình đẳng, tình huynh đệ - phản ánh tầm nhìn của Phật giáo và Ambedkarite về một xã hội công bằng.",
+    "category": "event",
+    "year": "1789",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Cách mạng Iraq năm 1958",
+    "description": "Vào ngày 14 tháng 7 năm 1958, các sĩ quan quân đội Iraq do Chuẩn tướng Abd al-Karim Qasim lãnh đạo đã lật đổ chế độ quân chủ Hashemite trong một cuộc đảo chính nhanh chóng, chấm dứt sự cai trị của hoàng gia do Anh hậu thuẫn và thành lập Cộng hòa Iraq. Cuộc cách mạng được thúc đẩy bởi sự phẫn nộ của người dân đối với ảnh hưởng của nước ngoài, bất bình đẳng kinh tế và sự liên kết của chế độ quân chủ với các cường quốc phương Tây thông qua Hiệp ước Baghdad.",
+    "category": "event",
+    "year": "1958",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Mariner 4 hoàn thành chuyến bay qua sao Hỏa đầu tiên",
+    "description": "Vào ngày 14 tháng 7 năm 1965, tàu vũ trụ Mariner 4 của NASA đã hoàn thành chuyến bay ngang qua sao Hỏa thành công đầu tiên, chụp được 22 bức ảnh cận cảnh về bề mặt sao Hỏa. Những hình ảnh này tiết lộ một khung cảnh cằn cỗi, đầy miệng núi lửa, làm thay đổi căn bản hiểu biết khoa học về Sao Hỏa và đánh dấu một cột mốc quan trọng trong khám phá hành tinh và khoa học vũ trụ.",
+    "category": "event",
+    "year": "1965",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Dhamma: Khema - Trí tuệ hàng đầu",
+    "description": "Bhikkhunī Khema được tuyên bố là người đứng đầu trong số các ni cô về trí tuệ. Từng là hoàng hậu, bà đã đạt được quả vị A-la-hán và trở nên nổi tiếng nhờ cái nhìn sâu sắc về bản chất của thực tại.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "15",
+    "title": "Đá Rosetta được phát hiện",
+    "description": "Ngày 15/7/1799, trong chiến dịch Ai Cập của Napoléon, lính Pháp đã phát hiện ra Đá Rosetta tại thị trấn Rashid (Rosetta) thuộc đồng bằng sông Nile. Tảng đá có ba dòng chữ - chữ tượng hình, tiếng bình dân và tiếng Hy Lạp - và cuối cùng đã giúp Jean-François Champollion giải mã chữ tượng hình Ai Cập cổ đại vào năm 1822, mở ra hàng thiên niên kỷ lịch sử đã bị thất lạc.",
+    "category": "event",
+    "year": "1799",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Công ty Boeing được thành lập",
+    "description": "Vào ngày 15 tháng 7 năm 1916, William Edward Boeing đã thành lập Công ty Sản phẩm Hàng không Thái Bình Dương tại Seattle, Washington, sau này được đổi tên thành Công ty Máy bay Boeing. Công ty đã phát triển để trở thành một trong những nhà sản xuất hàng không vũ trụ lớn nhất thế giới, cách mạng hóa cả ngành hàng không dân dụng và thám hiểm không gian trong thế kỷ tiếp theo.",
+    "category": "event",
+    "year": "1916",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Dhamma: Patācārā - Đứng đầu trong Luật tạng",
+    "description": "Patācārā, sau khi mất cả gia đình, đã tìm được nơi nương tựa vào Pháp. Cô trở thành người đứng đầu trong số các ni cô trong Luật tạng và là ánh sáng dẫn đường cho hàng trăm phụ nữ đi theo con đường này.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "16",
+    "title": "Thử nghiệm hạt nhân Trinity",
+    "description": "Ngày 16/7/1945, Mỹ tiến hành vụ thử Trinity ở sa mạc Jornada del Muerto thuộc bang New Mexico, cho nổ quả vũ khí hạt nhân đầu tiên trên thế giới. Cuộc thử nghiệm thành công thiết bị nổ plutonium, một phần của Dự án Manhattan, đã mở ra thời đại nguyên tử và dẫn đến các vụ đánh bom ở Hiroshima và Nagasaki vài tuần sau đó, làm thay đổi mãi mãi tiến trình chiến tranh và địa chính trị.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Apollo 11 phóng lên mặt trăng",
+    "description": "Vào ngày 16 tháng 7 năm 1969, Apollo 11 được phóng từ Trung tâm vũ trụ Kennedy mang theo các phi hành gia Neil Armstrong, Buzz Aldrin và Michael Collins trong sứ mệnh đầu tiên của loài người là đáp xuống Mặt trăng. Tên lửa Saturn V đã đưa tàu vũ trụ vào cuộc hành trình kéo dài 4 ngày và đạt đến đỉnh cao là một trong những thành tựu khoa học và khám phá vĩ đại nhất trong lịch sử loài người.",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Dhamma: Therīgāthā — Những bài kệ của các ni cô trưởng lão",
+    "description": "Therīgāthā là tuyển tập thơ ca tâm linh của phụ nữ được biết đến sớm nhất. Những câu kệ mạnh mẽ này của các ni cô đã giác ngộ thể hiện niềm vui giải thoát khỏi đau khổ và ràng buộc xã hội.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "17",
+    "title": "Hành quyết gia đình Romanov",
+    "description": "Vào ngày 17 tháng 7 năm 1918, lực lượng Bolshevik đã hành quyết Sa hoàng Nicholas II, vợ ông là Alexandra và năm người con của họ tại Yekaterinburg, Nga, trong Nội chiến Nga. Vụ hành quyết đánh dấu sự kết thúc dứt khoát của triều đại Romanov 300 năm và hệ thống đế quốc Nga, củng cố sự đoạn tuyệt không thể đảo ngược của Cách mạng Bolshevik với trật tự cũ.",
+    "category": "event",
+    "year": "1918",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Dự án thử nghiệm Apollo-Soyuz",
+    "description": "Vào ngày 17 tháng 7 năm 1975, tàu vũ trụ Apollo của Mỹ và tàu Soyuz của Liên Xô đã cập bến quỹ đạo, đánh dấu sứ mệnh không gian có phi hành đoàn quốc tế đầu tiên và là sự kết thúc mang tính biểu tượng cho Cuộc đua vào vũ trụ. Cái bắt tay lịch sử giữa phi hành gia Thomas Stafford và nhà du hành vũ trụ Alexei Leonov trong môi trường không trọng lực đã chứng minh rằng các đối thủ trong Chiến tranh Lạnh có thể hợp tác để theo đuổi tiến bộ khoa học.",
+    "category": "event",
+    "year": "1975",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Ngày Quốc tế Nelson Mandela",
+    "description": "Tôn vinh cuộc chiến suốt đời của Nelson Mandela chống lại chủ nghĩa phân biệt chủng tộc. Thông điệp của ông - 'Giáo dục là vũ khí mạnh nhất để thay đổi thế giới' - phản ánh tầm nhìn của Tiến sĩ Ambedkar.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Nội chiến Tây Ban Nha bắt đầu",
+    "description": "Vào ngày 18 tháng 7 năm 1936, một cuộc nổi dậy quân sự do Tướng Francisco Franco lãnh đạo chống lại Cộng hòa Tây Ban Nha đã châm ngòi cho Nội chiến Tây Ban Nha, một cuộc xung đột tàn khốc kéo dài ba năm. Cuộc chiến đã trở thành một chiến trường ý thức hệ quốc tế giữa chủ nghĩa phát xít và dân chủ, thu hút những người tình nguyện từ khắp nơi trên thế giới và báo trước cuộc đấu tranh toàn cầu lớn hơn trong Thế chiến thứ hai.",
+    "category": "event",
+    "year": "1936",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Vắc-xin BCG đầu tiên được tiêm cho người",
+    "description": "Vào ngày 18 tháng 7 năm 1921, các nhà vi khuẩn học người Pháp Albert Calmette và Camille Guérin đã tiêm vắc-xin Bacillus Calmette-Guérin (BCG) cho một trẻ sơ sinh ở Paris, đánh dấu việc sử dụng vắc-xin bệnh lao đầu tiên ở người. BCG tiếp tục trở thành một trong những loại vắc xin được sử dụng rộng rãi nhất trong lịch sử, cứu sống hàng triệu người trên toàn thế giới, đặc biệt là ở các quốc gia đang phát triển bị bệnh lao tàn phá.",
+    "category": "event",
+    "year": "1921",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Ngày sinh Mangal Pandey",
+    "description": "Kỷ niệm ngày sinh của Mangal Pandey, người lính Ấn Độ nổi dậy chống lại người Anh vào năm 1857 đã châm ngòi cho Chiến tranh giành độc lập lần thứ nhất. Biểu tượng của lòng dũng cảm chống lại áp bức.",
+    "category": "event",
+    "year": "1827",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Hội nghị Thác Seneca bắt đầu",
+    "description": "Vào ngày 19 tháng 7 năm 1848, hội nghị về quyền phụ nữ đầu tiên ở Hoa Kỳ khai mạc tại Seneca Falls, New York, do Elizabeth Cady Stanton và Lucretia Mott tổ chức. Công ước đã đưa ra Tuyên bố về Tình cảm, mô phỏng theo Tuyên ngôn Độc lập, trong đó tuyên bố rằng 'tất cả đàn ông và phụ nữ đều sinh ra bình đẳng' và phát động phong trào bầu cử có tổ chức của phụ nữ ở Mỹ.",
+    "category": "event",
+    "year": "1848",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Cách mạng Sandinista thắng lợi ở Nicaragua",
+    "description": "Vào ngày 19 tháng 7 năm 1979, Mặt trận Giải phóng Quốc gia Sandinista (FSLN) đã lật đổ chế độ độc tài Somoza ở Nicaragua sau nhiều năm chiến tranh du kích và nổi dậy của quần chúng. Cuộc cách mạng đã chấm dứt hơn bốn thập kỷ cai trị độc tài của gia đình Somoza, vốn được hỗ trợ bởi Hoa Kỳ, và truyền cảm hứng cho các phong trào cánh tả trên khắp châu Mỹ Latinh.",
+    "category": "event",
+    "year": "1979",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Dhamma: Nāgārjuna - Nhà triết học vĩ đại",
+    "description": "Nāgārjuna (khoảng 150–250 CN) là người sáng lập trường phái Mādhyamaka. Mūlamadhyamakakārikā về Tánh Không (Śūnyatā) của ông là một trong những tác phẩm sâu sắc nhất trong triết học Phật giáo.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "20",
+    "title": "Bahishkrit Hitakarini Sabha được thành lập",
+    "description": "Vào ngày 20 tháng 7 năm 1924, Tiến sĩ B.R. Ambedkar thành lập Bahishkrit Hitakarini Sabha (Hiệp hội phúc lợi của những người bị loại trừ) ở Mumbai - tổ chức xã hội đầu tiên của ông. Phương châm của nó là 'Giáo dục, Vận động, Tổ chức'. Sabha làm việc để thúc đẩy giáo dục, cải thiện điều kiện kinh tế và khẳng định quyền công dân của các cộng đồng không thể chạm tới.",
+    "category": "event",
+    "year": "1924",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Cuộc đổ bộ lên mặt trăng của Apollo 11",
+    "description": "Vào ngày 20 tháng 7 năm 1969, mô-đun mặt trăng Apollo 11 của NASA đã hạ cánh xuống Biển yên bình của Mặt trăng và phi hành gia Neil Armstrong trở thành người đầu tiên đặt chân lên bề mặt mặt trăng với dòng chữ: 'Đó là một bước đi nhỏ bé của con người, nhưng là một bước nhảy vọt khổng lồ của nhân loại.' Cuộc đổ bộ lên Mặt trăng, được khoảng 600 triệu người trên toàn thế giới theo dõi, được coi là một trong những thành tựu khoa học và công nghệ vĩ đại nhất của nhân loại.",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Dhamma: Vasubandhu – Đạo sư Yogācāra",
+    "description": "Vasubandhu (thế kỷ thứ 4 đến thế kỷ thứ 5 CN) là một bậc thầy của trường phái Yogācāra, người đã viết Abhidharmakośa - một chuyên luận toàn diện về tâm lý học Phật giáo và siêu hình học.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "21",
+    "title": "Trận Bull Run đầu tiên",
+    "description": "Vào ngày 21 tháng 7 năm 1861, các lực lượng Liên minh và Liên minh đụng độ trong Trận Bull Run đầu tiên (Manassas) ở Virginia, trận chiến trên bộ lớn đầu tiên của Nội chiến Hoa Kỳ. Chiến thắng bất ngờ của quân miền Nam đã làm tan vỡ hy vọng nhanh chóng kết thúc chiến tranh của miền Bắc và cho thấy rõ rằng cuộc đấu tranh giành chế độ nô lệ và liên minh sẽ kéo dài và đẫm máu.",
+    "category": "event",
+    "year": "1861",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Phán quyết xét xử phạm vi",
+    "description": "Vào ngày 21 tháng 7 năm 1925, giáo viên trung học John T. Scopes bị kết tội vi phạm Đạo luật Quản gia của Tennessee khi dạy thuyết tiến hóa ở các trường công lập. 'Phiên tòa khỉ' đã trở thành cuộc đối đầu mang tính bước ngoặt giữa khoa học và chủ nghĩa tôn giáo chính thống, kể về cuộc đụng độ huyền thoại trong phòng xử án giữa Clarence Darrow và William Jennings Bryan, khơi dậy cuộc tranh luận công khai về tự do học thuật và giáo dục khoa học.",
+    "category": "event",
+    "year": "1925",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Ngày nhận quốc kỳ",
+    "description": "Quốc kỳ của Ấn Độ với Luân xa Ashoka được thông qua vào ngày 22 tháng 7 năm 1947. Luân xa Pháp 24 nan ở trung tâm tượng trưng cho Pháp - luật vĩnh cửu của sự công bình.",
+    "category": "event",
+    "year": "1947",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Gregor Mendel Sinh",
+    "description": "Vào ngày 22 tháng 7 năm 1822, Gregor Johann Mendel sinh ra ở Heinzendorf, Đế quốc Áo. Thông qua các thí nghiệm tiên phong của mình với cây đậu vào những năm 1850 và 1860, Mendel đã khám phá ra các quy luật cơ bản về di truyền, khiến ông được công nhận là 'cha đẻ của di truyền học hiện đại' khi công trình của ông được khám phá lại vào đầu thế kỷ 20.",
+    "category": "event",
+    "year": "1822",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Lincoln Trình bày Dự thảo Tuyên bố Giải phóng",
+    "description": "Vào ngày 22 tháng 7 năm 1862, Tổng thống Abraham Lincoln trình bày bản dự thảo đầu tiên của Tuyên ngôn Giải phóng Nô lệ cho nội các của ông, đề xuất giải phóng tất cả những người bị bắt làm nô lệ ở các bang thuộc Liên minh miền Nam. Mặc dù các cố vấn thúc giục ông chờ đợi một chiến thắng quân sự của Liên minh trước khi công bố thông báo, nhưng thời điểm này đánh dấu sự khởi đầu của quá trình chính thức dẫn đến việc giải phóng gần 4 triệu người Mỹ gốc Phi bị bắt làm nô lệ.",
+    "category": "event",
+    "year": "1862",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Ngày sinh Bal Gangadhar Tilak",
+    "description": "Kỷ niệm ngày sinh của Lokmanya Tilak, người đã tuyên bố 'Swaraj là quyền thừa kế của tôi và tôi sẽ có nó.' Một nhà lãnh đạo xuất sắc của phong trào độc lập Ấn Độ.",
+    "category": "event",
+    "year": "1856",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Cách mạng Ai Cập năm 1952",
+    "description": "Vào ngày 23 tháng 7 năm 1952, Phong trào Sĩ quan Tự do do Muhammad Naguib và Gamal Abdel Nasser lãnh đạo đã lật đổ Vua Farouk trong một cuộc đảo chính quân sự không đổ máu, chấm dứt chế độ quân chủ Ai Cập và sự cai trị của hoàng gia do Anh hậu thuẫn. Cuộc cách mạng đã thiết lập Ai Cập thành một nước cộng hòa và truyền cảm hứng cho các phong trào dân tộc chủ nghĩa chống thực dân và toàn Ả Rập trên khắp Trung Đông và Bắc Phi.",
+    "category": "event",
+    "year": "1952",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Công ty Ford Motor bán chiếc xe đầu tiên của mình",
+    "description": "Vào ngày 23 tháng 7 năm 1903, Công ty Ford Motor đã bán chiếc ô tô đầu tiên của mình, Model A, cho Tiến sĩ Ernst Pfennig ở Chicago với giá 850 đô la. Được thành lập chỉ vài tuần trước đó bởi Henry Ford, công ty sẽ tiếp tục cách mạng hóa việc sản xuất bằng dây chuyền lắp ráp, làm cho ô tô có giá cả phải chăng cho người lao động bình thường và chuyển đổi nền sản xuất công nghiệp hiện đại.",
+    "category": "event",
+    "year": "1903",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Dhamma: Buddhaghosa - Nhà bình luận vĩ đại",
+    "description": "Buddhaghosa (thế kỷ thứ 5 CN) là tác giả của Visuddhimagga (Con đường thanh lọc), hướng dẫn dứt khoát về thiền định và triết học Nguyên thủy. Những lời bình luận của ông làm sáng tỏ Kinh điển Pali.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "24",
+    "title": "Machu Picchu được khám phá lại",
+    "description": "Vào ngày 24 tháng 7 năm 1911, nhà sử học người Mỹ Hiram Bingham III đã đến tàn tích Machu Picchu trên dãy Andes thuộc Peru, khiến toàn thế giới chú ý đến thành cổ Inca ngoạn mục từ thế kỷ 15. Mặc dù nông dân địa phương biết đến địa điểm này, nhưng chuyến thám hiểm của Bingham đã tiết lộ ý nghĩa khảo cổ của nó và Machu Picchu từ đó đã trở thành biểu tượng của thiên tài kỹ thuật Inca và thành tựu văn minh bản địa.",
+    "category": "event",
+    "year": "1911",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Apollo 11 trở lại Trái đất",
+    "description": "Vào ngày 24 tháng 7 năm 1969, mô-đun chỉ huy Apollo 11 Columbia đã hạ cánh an toàn xuống Thái Bình Dương, hoàn thành chuyến đi khứ hồi thành công đầu tiên của loài người tới Mặt trăng. Các phi hành gia Neil Armstrong, Buzz Aldrin và Michael Collins đã được USS Hornet trục vớt, kết thúc sứ mệnh kéo dài 8 ngày chứng tỏ khả năng phi thường của khoa học và quyết tâm của con người.",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Dhamma: Suy Niệm Pháp Cú",
+    "description": "'Hận thù không bao giờ được xoa dịu bởi hận thù trong thế giới này. Chỉ nhờ không sân hận mà sân hận mới được xoa dịu. Đây là một luật vĩnh cửu.' – Pháp Cú, câu 5.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "25",
+    "title": "Em bé sinh ra trong ống nghiệm đầu tiên",
+    "description": "Ngày 25/7/1978, Louise Joy Brown chào đời tại Bệnh viện Đa khoa Oldham ở Anh, trở thành em bé đầu tiên trên thế giới được thụ thai bằng phương pháp thụ tinh trong ống nghiệm (IVF). Quy trình đột phá này được phát triển bởi nhà sinh lý học Robert Edwards và bác sĩ phụ khoa Patrick Steptoe, đã cách mạng hóa y học sinh sản và từ đó đã giúp hàng triệu gia đình trên toàn thế giới có con.",
+    "category": "event",
+    "year": "1978",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Sự sụp đổ của Mussolini",
+    "description": "Vào ngày 25 tháng 7 năm 1943, Đại hội đồng Chủ nghĩa Phát xít Ý đã bỏ phiếu loại bỏ Benito Mussolini khỏi quyền lực và Vua Victor Emmanuel III đã ra lệnh bắt giữ ông, chấm dứt hơn hai thập kỷ chế độ độc tài phát xít ở Ý. Sự sụp đổ của Mussolini đánh dấu sự khởi đầu của việc Ý rút khỏi Thế chiến thứ hai và sự sụp đổ của một trong những chế độ độc tài nổi bật nhất châu Âu.",
+    "category": "event",
+    "year": "1943",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Ngày Kargil Vijay Diwas",
+    "description": "Kỷ niệm chiến thắng của Ấn Độ trong Chiến tranh Kargil năm 1999. Tôn vinh lòng dũng cảm và sự hy sinh của những người lính Ấn Độ đã chiếm lại các đỉnh núi ở Jammu & Kashmir.",
+    "category": "festival",
+    "year": "1999",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Cách mạng Cuba bắt đầu - Cuộc tấn công vào doanh trại Moncada",
+    "description": "Vào ngày 26 tháng 7 năm 1953, Fidel Castro lãnh đạo một cuộc tấn công vũ trang vào Doanh trại Moncada ở Santiago de Cuba, cố gắng lật đổ nhà độc tài Fulgencio Batista được Mỹ hậu thuẫn. Mặc dù cuộc tấn công thất bại và Castro bị bắt và bỏ tù, ngày này đã trở thành biểu tượng tập hợp của Cách mạng Cuba và tên gọi 'Phong trào 26 tháng 7' cách mạng của Castro mà cuối cùng đã lật đổ Batista vào năm 1959.",
+    "category": "event",
+    "year": "1953",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Đạo luật Người khuyết tật Hoa Kỳ đã được ký",
+    "description": "Vào ngày 26 tháng 7 năm 1990, Tổng thống George H.W. Bush đã ký Đạo luật Người khuyết tật Hoa Kỳ (ADA) thành luật, đạo luật dân quyền toàn diện nhất dành cho người khuyết tật trong lịch sử Hoa Kỳ. ADA cấm phân biệt đối xử trong việc làm, chỗ ở công cộng, giao thông và viễn thông, trao quyền cho hàng triệu người Mỹ khuyết tật tham gia đầy đủ vào xã hội.",
+    "category": "event",
+    "year": "1990",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Dhamma: Asvaghosa - Nhà thơ Phật giáo",
+    "description": "Aśvaghoṣa (khoảng 80–150 CN) đã viết Buddhacarita, một trong những tiểu sử sớm nhất về Đức Phật bằng câu tiếng Phạn tao nhã. Ông là một nhà thơ bậc thầy và triết gia Phật giáo.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "27",
+    "title": "Hiệp định đình chiến chiến tranh Triều Tiên đã được ký kết",
+    "description": "Vào ngày 27 tháng 7 năm 1953, Hiệp định đình chiến chiến tranh Triều Tiên được ký kết tại Bàn Môn Điếm, chấm dứt ba năm xung đột tàn khốc cướp đi sinh mạng của hàng triệu người trên Bán đảo Triều Tiên. Cuộc đình chiến đã thiết lập Khu phi quân sự Triều Tiên dọc theo vĩ tuyến 38 nhưng về mặt kỹ thuật đã khiến hai miền Triều Tiên rơi vào tình trạng chiến tranh, sự chia cắt vẫn tồn tại cho đến ngày nay.",
+    "category": "event",
+    "year": "1953",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Cáp điện báo xuyên Đại Tây Dương vĩnh viễn đầu tiên đã hoàn thành",
+    "description": "Vào ngày 27 tháng 7 năm 1866, tàu hơi nước Great Eastern đã đặt thành công cáp điện báo cố định xuyên qua đáy Đại Tây Dương, kết nối Đảo Valentia ở Ireland với Heart's Content ở Newfoundland. Sau nhiều nỗ lực thất bại trong thập kỷ trước, chiến thắng công nghệ này đã cách mạng hóa truyền thông toàn cầu bằng cách cho phép gửi tin nhắn gần như tức thời giữa Châu Âu và Bắc Mỹ.",
+    "category": "event",
+    "year": "1866",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Ngày viêm gan thế giới",
+    "description": "Ngày nhận thức về sức khỏe toàn cầu. Đức Phật nhấn mạnh tầm quan trọng của việc chăm sóc người bệnh và coi sức khỏe là điều kiện tiên quyết để chuyên tâm theo đuổi việc thực hành Pháp.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Thế chiến thứ nhất bắt đầu",
+    "description": "Vào ngày 28 tháng 7 năm 1914, Áo-Hungary tuyên chiến với Serbia sau vụ ám sát Thái tử Franz Ferdinand, gây ra một chuỗi nghĩa vụ liên minh đẩy châu Âu vào Thế chiến thứ nhất. Cuộc xung đột tàn khốc kéo dài 4 năm đã giết chết hơn 17 triệu người, phá hủy bốn đế chế, vẽ lại bản đồ thế giới và gieo mầm mống cho những cuộc cách mạng và biến động trong tương lai.",
+    "category": "event",
+    "year": "1914",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Peru tuyên bố độc lập",
+    "description": "Vào ngày 28 tháng 7 năm 1821, tướng Argentina José de San Martín tuyên bố độc lập của Peru khỏi Tây Ban Nha tại Plaza de Armas ở Lima, tuyên bố 'Kể từ thời điểm này trở đi, Peru tự do và độc lập.' Tuyên bố này là một thời điểm then chốt trong các cuộc chiến tranh giải phóng Nam Mỹ chống lại sự cai trị của thực dân Tây Ban Nha, làm thay đổi cục diện chính trị của lục địa này.",
+    "category": "event",
+    "year": "1821",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Ngày Quốc tế Hổ",
+    "description": "Một ngày nâng cao nhận thức về bảo tồn hổ. Di sản Phật giáo của Ấn Độ bao gồm sự tôn kính sâu sắc đối với động vật hoang dã - các câu chuyện Jātaka kể về động vật như những vị thầy về đức hạnh.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "NASA thành lập",
+    "description": "Vào ngày 29 tháng 7 năm 1958, Tổng thống Dwight D. Eisenhower đã ký Đạo luật Hàng không và Vũ trụ Quốc gia, thành lập NASA là cơ quan vũ trụ dân sự của Hoa Kỳ. Ra đời từ Cuộc chạy đua không gian trong Chiến tranh Lạnh với Liên Xô, NASA tiếp tục dẫn đầu cuộc thám hiểm không gian của nhân loại, từ các chương trình Sao Thủy và Apollo đến Tàu con thoi, Trạm vũ trụ quốc tế và tàu thám hiểm sao Hỏa.",
+    "category": "event",
+    "year": "1958",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Cơ quan Năng lượng Nguyên tử Quốc tế được thành lập",
+    "description": "Vào ngày 29 tháng 7 năm 1957, Cơ quan Năng lượng Nguyên tử Quốc tế (IAEA) chính thức được thành lập như một tổ chức tự trị trong hệ thống Liên Hợp Quốc nhằm thúc đẩy việc sử dụng năng lượng hạt nhân vì mục đích hòa bình. IAEA được thành lập để đáp lại những lo ngại ngày càng tăng về phổ biến hạt nhân và từ đó đóng vai trò là cơ quan giám sát hạt nhân của thế giới, hoạt động để đảm bảo khoa học nguyên tử được sử dụng cho sức khỏe, năng lượng và phát triển thay vì vũ khí.",
+    "category": "event",
+    "year": "1957",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Ngày Quốc tế Hữu nghị",
+    "description": "Ngày Liên hợp quốc kỷ niệm tình hữu nghị giữa các nền văn hóa Đức Phật bảo Ānanda: 'Tình bạn đáng ngưỡng mộ, tình bạn đáng ngưỡng mộ, tình bạn đáng ngưỡng mộ thực sự là toàn bộ cuộc sống thánh thiện.'",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Hội đồng đại diện đầu tiên ở Mỹ",
+    "description": "Vào ngày 30 tháng 7 năm 1619, Hạ viện đã triệu tập tại Jamestown, Virginia, trở thành hội đồng lập pháp được bầu cử đầu tiên ở các thuộc địa của Mỹ. Thử nghiệm ban đầu về quyền tự quản này đã gieo mầm mống cho sự đại diện dân chủ ở Bắc Mỹ, mặc dù nó cũng trùng hợp với sự xuất hiện của những người châu Phi nô lệ đầu tiên đến Virginia cùng năm đó.",
+    "category": "event",
+    "year": "1619",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Medicare đã được đăng ký thành luật",
+    "description": "Vào ngày 30 tháng 7 năm 1965, Tổng thống Lyndon B. Johnson đã ký thành luật các chương trình Medicare và Medicaid dưới dạng sửa đổi Đạo luật An sinh Xã hội, cung cấp dịch vụ chăm sóc sức khỏe do chính phủ tài trợ cho người Mỹ trên 65 tuổi và các gia đình có thu nhập thấp. Đạo luật này thể hiện một chiến thắng mang tính bước ngoặt đối với những người ủng hộ công bằng xã hội, những người đã đấu tranh trong nhiều thập kỷ để đảm bảo rằng người già và người nghèo sẽ không bị từ chối chăm sóc y tế do không có khả năng chi trả.",
+    "category": "event",
+    "year": "1965",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Ngày sinh Munshi Premchand",
+    "description": "Kỷ niệm ngày sinh của Munshi Premchand, một trong những nhà văn Hindi-Urdu vĩ đại nhất có tiểu thuyết và truyện miêu tả cuộc đấu tranh của người nghèo, nông dân và các cộng đồng bị thiệt thòi.",
+    "category": "event",
+    "year": "1880",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Bằng sáng chế đầu tiên của Hoa Kỳ được cấp",
+    "description": "Vào ngày 31 tháng 7 năm 1790, bằng sáng chế đầu tiên trong lịch sử Hoa Kỳ được cấp cho Samuel Hopkins ở Philadelphia về quy trình cải tiến sản xuất kali, một thành phần được sử dụng trong phân bón và xà phòng. Được ký bởi Tổng thống George Washington, hệ thống bằng sáng chế đã được ghi trong Hiến pháp nhằm thúc đẩy đổi mới và từ đó đã bảo vệ hàng triệu phát minh đã làm thay đổi khoa học và công nghiệp.",
+    "category": "event",
+    "year": "1790",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Hầu tước de Lafayette ủy nhiệm trong cuộc cách mạng Mỹ",
+    "description": "Vào ngày 31 tháng 7 năm 1777, Marquis de Lafayette mười chín tuổi được Quốc hội Lục địa phong làm Thiếu tướng trong Quân đội Lục địa. Chàng quý tộc trẻ người Pháp tình nguyện chiến đấu không công cho nền độc lập của nước Mỹ, trở thành một trong những sĩ quan đáng tin cậy nhất của Tướng Washington và là biểu tượng sống của tình đoàn kết quốc tế đã thúc đẩy Cách mạng Mỹ.",
+    "category": "event",
+    "year": "1777",
+    "isSymbolic": false
+  }
+]
