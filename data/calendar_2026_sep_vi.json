@@ -1,0 +1,722 @@
+[
+  {
+    "date": "01",
+    "title": "Dhamma: Ven. Tỳ Kheo Bồ Đề",
+    "description": "Bhikkhu Bodhi là một tu sĩ Nguyên thủy người Mỹ nổi tiếng, người đã dịch Kinh điển Pali sang tiếng Anh, giúp cho thế giới hiện đại có thể tiếp cận giáo lý của Đức Phật.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "01",
+    "title": "Đức xâm lược Ba Lan - Thế chiến thứ hai bắt đầu",
+    "description": "Vào ngày 1 tháng 9 năm 1939, Đức Quốc xã xâm chiếm Ba Lan mà không tuyên chiến, gây ra cuộc xung đột đẫm máu nhất trong lịch sử loài người. Anh và Pháp tuyên chiến với Đức hai ngày sau đó, đánh dấu sự khởi đầu chính thức của Thế chiến II, cướp đi sinh mạng của hơn 70 triệu người trên toàn thế giới.",
+    "category": "event",
+    "year": "1939",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Cách mạng Libya - Gaddafi nắm quyền",
+    "description": "Vào ngày 1 tháng 9 năm 1969, một nhóm sĩ quan quân đội trẻ do Muammar Gaddafi, 27 tuổi, lãnh đạo đã lật đổ Vua Idris I trong một cuộc đảo chính không đổ máu. Cuộc cách mạng đã bãi bỏ chế độ quân chủ Libya và thành lập Cộng hòa Ả Rập Libya, định hình lại nền chính trị Bắc Phi trong nhiều thập kỷ.",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Dhamma: Ngày dừa / Tặng",
+    "description": "Ngày dừa quốc gia ở Ấn Độ Quả dừa tượng trưng cho sự cúng dường và sự hào phóng trong văn hóa Ấn Độ - tinh thần bố thí mà Đức Phật ca ngợi là sự hoàn hảo đầu tiên.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "02",
+    "title": "Trận đại hỏa hoạn ở London bắt đầu",
+    "description": "Vào ngày 2 tháng 9 năm 1666, một trận hỏa hoạn bùng phát tại tiệm bánh của Thomas Farriner trên Pudding Lane ở London và hoành hành trong bốn ngày, phá hủy hơn 13.000 ngôi nhà, 87 nhà thờ và Nhà thờ St. Paul. Thảm họa đã dẫn đến những nỗ lực xây dựng lại lớn và các công ty bảo hiểm hỏa hoạn cũng như quy định xây dựng đầu tiên ở Anh.",
+    "category": "event",
+    "year": "1666",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Nhật Bản chính thức đầu hàng - Thế chiến thứ hai kết thúc",
+    "description": "Vào ngày 2 tháng 9 năm 1945, các quan chức Nhật Bản đã ký văn kiện đầu hàng trên tàu USS Missouri ở Vịnh Tokyo, chính thức kết thúc Thế chiến thứ hai. Buổi lễ do Tướng Douglas MacArthur chủ trì, đã kết thúc sáu năm xung đột toàn cầu và mở ra kỷ nguyên tái thiết sau chiến tranh và Liên Hợp Quốc.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Dhamma: Tỳ kheo Buddhadāsa",
+    "description": "Tỳ kheo Buddhadāsa (1906–1993) là một tu sĩ Thái Lan đã hồi sinh việc thực hành Phật giáo ở Thái Lan. Sự nhấn mạnh của ông về Giáo pháp tự nhiên và sự gắn kết xã hội đã truyền cảm hứng cho hàng triệu người trên khắp Đông Nam Á.",
+    "category": "event",
+    "year": "1906",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Frederick Douglass thoát khỏi chế độ nô lệ",
+    "description": "Vào ngày 3 tháng 9 năm 1838, Frederick Douglass trốn thoát khỏi chế độ nô lệ ở Baltimore, Maryland, cải trang thành một thủy thủ da đen tự do và mang theo giấy tờ tùy thân mượn. Anh đi bằng tàu hỏa và phà đến Thành phố New York, nơi anh bắt đầu cuộc sống mới với tư cách là một người tự do và cuối cùng trở thành một trong những tiếng nói mạnh mẽ nhất chống lại chế độ nô lệ trong lịch sử nước Mỹ.",
+    "category": "event",
+    "year": "1838",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Hiệp ước Paris kết thúc cuộc cách mạng Mỹ",
+    "description": "Vào ngày 3 tháng 9 năm 1783, Hiệp ước Paris được ký kết bởi đại diện của Vua George III và Hoa Kỳ, chính thức kết thúc Chiến tranh Cách mạng Hoa Kỳ. Hiệp ước công nhận nền độc lập của Mỹ và thiết lập các ranh giới hào phóng cho quốc gia mới, trải dài từ bờ biển Đại Tây Dương đến sông Mississippi.",
+    "category": "event",
+    "year": "1783",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Dhamma: Suy Nghĩ Kinh Sutta Nipāta",
+    "description": "Sutta Nipāta là một trong những bộ sưu tập lâu đời nhất trong Kinh điển Pali. Nó chứa Kinh Metta, Kinh Ratana và Kinh Mangala - những văn bản nền tảng về lòng sùng mộ và đạo đức của Phật giáo.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "04",
+    "title": "Geronimo đầu hàng sau nhiều thập kỷ kháng chiến của người Apache",
+    "description": "Vào ngày 4 tháng 9 năm 1886, thủ lĩnh Apache Geronimo đã đầu hàng Tướng Hoa Kỳ Nelson Miles tại Skeleton Canyon, Arizona, chấm dứt cuộc kháng chiến vũ trang lớn cuối cùng của người Mỹ bản địa chống lại chính phủ Hoa Kỳ. Geronimo và nhóm 38 người theo ông đã trốn tránh 5.000 lính Mỹ và 3.000 lính Mexico trong hơn một năm trong chiến dịch cuối cùng của họ.",
+    "category": "event",
+    "year": "1886",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Google Được thành lập bởi Page và Brin",
+    "description": "Vào ngày 4 tháng 9 năm 1998, sinh viên tốt nghiệp Đại học Stanford là Larry Page và Sergey Brin chính thức thành lập Google Inc. trong một gara ở Menlo Park, California. Thuật toán PageRank của họ đã cách mạng hóa việc tìm kiếm trên Internet và công ty đã phát triển trở thành một trong những tập đoàn công nghệ có ảnh hưởng nhất trong lịch sử, thay đổi cách nhân loại truy cập thông tin.",
+    "category": "event",
+    "year": "1998",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "ngày nhà giáo",
+    "description": "Kỷ niệm ngày sinh của Tiến sĩ Sarvepalli Radhakrishnan, triết gia và Tổng thống thứ hai của Ấn Độ. Đức Phật là vị thầy tối cao - 'Satthā deva-manussānaṃ' (Thầy của trời và người).",
+    "category": "festival",
+    "year": "1888",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Đại hội lục địa lần thứ nhất triệu tập",
+    "description": "Vào ngày 5 tháng 9 năm 1774, các đại biểu từ 12 trong số 13 thuộc địa của Mỹ đã tập trung tại Carpenter's Hall ở Philadelphia để tham dự Đại hội Lục địa lần thứ nhất. Cuộc họp được triệu tập để đáp trả các Đạo luật không thể chấp nhận được của Anh và đánh dấu một bước quyết định hướng tới nền độc lập của Mỹ, khi những người dân thuộc địa đoàn kết để phối hợp chống lại sự cai trị của Anh.",
+    "category": "event",
+    "year": "1774",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Thảm sát Thế vận hội Munich",
+    "description": "Vào ngày 5 tháng 9 năm 1972, các thành viên của nhóm chiến binh Palestine Tháng Chín Đen đã xâm nhập vào Làng Olympic ở Munich, Tây Đức, bắt 11 vận động viên và huấn luyện viên Israel làm con tin. Cuộc khủng hoảng kết thúc trong bi kịch khi tất cả 11 con tin, 5 trong số 8 chiến binh và một sĩ quan cảnh sát Tây Đức đều thiệt mạng trong nỗ lực giải cứu thất bại.",
+    "category": "event",
+    "year": "1972",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Dhamma: Ajahn Chah (Thiền sư)",
+    "description": "Ajahn Chah (1918–1992) là một thiền sư người Thái Lan trong rừng với những lời dạy đơn giản, trực tiếp đã thu hút các học trò phương Tây. Ajahn Sumedho và truyền thống sống trong rừng được truyền từ dòng truyền thừa của ông.",
+    "category": "event",
+    "year": "1918",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Người hành hương khởi hành trên Mayflower",
+    "description": "Vào ngày 6 tháng 9 năm 1620, tàu Mayflower khởi hành từ Plymouth, Anh, chở 102 hành khách tìm kiếm tự do tôn giáo và những cơ hội mới ở châu Mỹ. Sau chuyến vượt Đại Tây Dương kéo dài 66 ngày đầy mệt mỏi, họ đã thành lập Thuộc địa Plymouth ở Massachusetts ngày nay, một trong những khu định cư châu Âu thành công sớm nhất ở Bắc Mỹ.",
+    "category": "event",
+    "year": "1620",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Hendrik Verwoerd, Kiến trúc sư của Apartheid, bị ám sát",
+    "description": "Vào ngày 6 tháng 9 năm 1966, Thủ tướng Nam Phi Hendrik Verwoerd, kiến ​​trúc sư trưởng của hệ thống phân biệt chủng tộc, đã bị Dimitri Tsafendas đâm chết tại Quốc hội. Verwoerd đã thiết kế và thực thi các chính sách phân biệt chủng tộc cứng nhắc nhằm áp bức hàng triệu người Nam Phi da đen, và vụ ám sát ông đã gây ra làn sóng chấn động khắp chế độ phân biệt chủng tộc.",
+    "category": "event",
+    "year": "1966",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Dhamma: Ven. Thích Nhất Hạnh",
+    "description": "Thích Nhất Hạnh (1926–2022) là một thiền sư, nhà hoạt động vì hòa bình và tác giả sách bán chạy nhất người Việt Nam. 'Phật giáo dấn thân' của ông đã áp dụng chánh niệm vào công bằng xã hội và chăm sóc môi trường.",
+    "category": "event",
+    "year": "1926",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Brazil tuyên bố độc lập khỏi Bồ Đào Nha",
+    "description": "Vào ngày 7 tháng 9 năm 1822, Hoàng tử Pedro của Brazil tuyên bố độc lập khỏi Bồ Đào Nha trên bờ sông Ipiranga ở São Paulo, với tuyên bố nổi tiếng 'Independência ou Morte!' (Độc lập hay cái chết!). Đạo luật này đã chấm dứt ba thế kỷ cai trị của thực dân Bồ Đào Nha và thành lập Đế quốc Brazil như một quốc gia có chủ quyền.",
+    "category": "event",
+    "year": "1822",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Cuộc tấn công chớp nhoáng bắt đầu — Đức ném bom London",
+    "description": "Vào ngày 7 tháng 9 năm 1940, Đức Quốc xã phát động cuộc tấn công ném bom quy mô lớn đầu tiên vào London, bắt đầu cuộc Blitz - một chiến dịch không kích kéo dài nhằm vào các thành phố của Anh kéo dài cho đến tháng 5 năm 1941. Hơn 43.000 thường dân đã thiệt mạng trong trận Blitz, nhưng sự kiên cường của người dân Anh trước các cuộc bắn phá liên tục đã trở thành biểu tượng tiêu biểu cho lòng dũng cảm thời chiến.",
+    "category": "event",
+    "year": "1940",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Ngày Quốc tế xóa mù chữ",
+    "description": "Ngày UNESCO thúc đẩy giáo dục cho tất cả mọi người Tiến sĩ Ambedkar nói: 'Tu dưỡng tâm trí phải là mục đích cuối cùng của sự tồn tại của con người.' Giáo dục giải phóng - cũng như Pháp giải phóng.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Cuộc vây hãm Leningrad bắt đầu",
+    "description": "Vào ngày 8 tháng 9 năm 1941, các lực lượng Đức và Phần Lan đã hoàn thành việc bao vây Leningrad (nay là St. Petersburg), bắt đầu cuộc vây hãm tàn khốc kéo dài 872 ngày - dài nhất trong lịch sử hiện đại. Hơn một triệu thường dân Liên Xô đã thiệt mạng vì đói, bệnh tật và bắn phá, khiến đây trở thành một trong những cuộc bao vây đẫm máu nhất trong lịch sử chiến tranh.",
+    "category": "event",
+    "year": "1941",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Cuộc tấn công nho Delano bắt đầu",
+    "description": "Vào ngày 8 tháng 9 năm 1965, những người nông dân người Mỹ gốc Philippines do Larry Itliong thuộc Ban tổ chức Công nhân Nông nghiệp dẫn đầu đã rời khỏi cánh đồng nho ở Delano, California, yêu cầu mức lương công bằng và điều kiện làm việc nhân đạo. Cuộc đình công sau đó có sự tham gia của Hiệp hội Công nhân Nông trại Quốc gia của Cesar Chavez và trở thành một cuộc đấu tranh mang tính bước ngoặt trong các phong trào lao động và dân quyền ở Mỹ.",
+    "category": "event",
+    "year": "1965",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Dhamma: Walpola Rahula (Học giả)",
+    "description": "Ven. Walpola Rahula (1907–1997) là tác giả cuốn 'Những gì Đức Phật dạy', một trong những tác phẩm giới thiệu về Phật giáo được đọc nhiều nhất. Sự giải thích rõ ràng của ông đã hướng dẫn vô số người tìm kiếm.",
+    "category": "event",
+    "year": "1907",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Quốc hội Lục địa đặt tên cho quốc gia là 'Hợp chủng quốc Hoa Kỳ'",
+    "description": "Vào ngày 9 tháng 9 năm 1776, Quốc hội Lục địa lần thứ hai chính thức đổi tên quốc gia mới từ 'Các thuộc địa thống nhất' thành 'Hợp chủng quốc Hoa Kỳ'. Hành động mang tính biểu tượng này, diễn ra hai tháng sau Tuyên ngôn Độc lập, đã khẳng định bản sắc chung của các thuộc địa là một quốc gia thống nhất, có chủ quyền.",
+    "category": "event",
+    "year": "1776",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "California được thừa nhận là một tiểu bang tự do",
+    "description": "Vào ngày 9 tháng 9 năm 1850, California được kết nạp vào Liên bang với tư cách là tiểu bang thứ 31 và là một tiểu bang tự do nơi chế độ nô lệ bị cấm, như một phần của Thỏa hiệp năm 1850. Điều này làm gia tăng cuộc tranh luận toàn quốc về chế độ nô lệ và làm đảo lộn cán cân quyền lực giữa các quốc gia tự do và có chế độ nô lệ, góp phần gây căng thẳng dẫn đến Nội chiến.",
+    "category": "event",
+    "year": "1850",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Ngày phòng chống tự tử thế giới",
+    "description": "Một ngày để nâng cao nhận thức về sức khỏe tâm thần. Lời dạy của Đức Phật về chánh niệm và từ bi cung cấp những công cụ mạnh mẽ để vượt qua nỗi tuyệt vọng và nuôi dưỡng sự bình an nội tâm.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Vụ thảm sát Lattimer nhằm tấn công những người khai thác nhập cư",
+    "description": "Vào ngày 10 tháng 9 năm 1897, đội cảnh sát trưởng đã nổ súng vào cuộc tuần hành ôn hòa của những người khai thác than nhập cư không vũ trang gần Lattimer, Pennsylvania, khiến 19 người thiệt mạng và hàng chục người khác bị thương. Các thợ mỏ, chủ yếu là người nhập cư Slovakia và Ba Lan, đã đình công đòi mức lương công bằng và được đối xử bình đẳng. Vụ thảm sát đã kích động phong trào lao động và dẫn đến sự gia tăng số lượng thành viên công đoàn của công nhân mỏ.",
+    "category": "event",
+    "year": "1897",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Elias Howe cấp bằng sáng chế cho máy may",
+    "description": "Vào ngày 10 tháng 9 năm 1846, nhà phát minh người Mỹ Elias Howe đã nhận được Bằng sáng chế Hoa Kỳ số 4.750 cho chiếc máy may lockstitch của mình, một thiết bị sẽ cách mạng hóa ngành dệt may. Máy may đã tăng tốc đáng kể tốc độ sản xuất quần áo và chuyển đổi ngành sản xuất, trở thành một trong những phát minh quan trọng nhất của Cách mạng Công nghiệp.",
+    "category": "event",
+    "year": "1846",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Dhamma: Kinh Digha Nikāya",
+    "description": "Dīgha Nikāya (Những bài kinh dài) chứa 34 bài giảng dài nhất của Đức Phật, bao gồm Kinh Mahāparinibbāna và Kinh Sigālovāda - những kinh điển Phật giáo thiết yếu.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "11",
+    "title": "Cuộc đảo chính ở Chile - Pinochet lật đổ Allende",
+    "description": "Vào ngày 11 tháng 9 năm 1973, quân đội Chile do Tướng Augusto Pinochet lãnh đạo đã phát động một cuộc đảo chính bạo lực chống lại chính phủ được bầu cử dân chủ của Tổng thống Salvador Allende. Allende chết trong cuộc tấn công vào dinh tổng thống, và Pinochet đã thiết lập một chế độ độc tài quân sự tàn bạo kéo dài 17 năm, trong đó hàng nghìn người đã bị giết, bị tra tấn hoặc mất tích.",
+    "category": "event",
+    "year": "1973",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Trận Brandywine - Cách mạng Mỹ",
+    "description": "Vào ngày 11 tháng 9 năm 1777, lực lượng Anh dưới sự chỉ huy của Tướng William Howe đã đánh bại Quân đội Lục địa của George Washington trong Trận Brandywine ở Pennsylvania, trận chiến trên bộ kéo dài một ngày lớn nhất trong Cách mạng Hoa Kỳ. Bất chấp thất bại, quân đội của Washington vẫn sống sót để chiến đấu vào một ngày khác, và kinh nghiệm đã củng cố quyết tâm của các lực lượng cách mạng.",
+    "category": "event",
+    "year": "1777",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Dhamma: Majjhima Nikaya",
+    "description": "Majjhima Nikāya (Bài kinh trung bình) bao gồm 152 bài kinh về thiền định, đạo đức và triết học. Nó được coi là nguồn giáo lý phong phú nhất của Đức Phật.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "12",
+    "title": "Steve Biko chết trong sự giam giữ của cảnh sát Nam Phi",
+    "description": "Vào ngày 12 tháng 9 năm 1977, nhà hoạt động chống phân biệt chủng tộc Nam Phi Steve Biko chết vì chấn thương sọ não nặng trong cuộc thẩm vấn của cảnh sát ở Port Elizabeth. Biko, người sáng lập Phong trào Ý thức Đen, đã bị đánh đập và tra tấn khi bị giam giữ. Cái chết của ông ở tuổi 30 đã làm dấy lên sự phẫn nộ của cộng đồng quốc tế và gia tăng áp lực toàn cầu nhằm chấm dứt chế độ phân biệt chủng tộc.",
+    "category": "event",
+    "year": "1977",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "JFK thực hiện 'Bài phát biểu về mặt trăng' tại Đại học Rice",
+    "description": "Vào ngày 12 tháng 9 năm 1962, Tổng thống John F. Kennedy có bài phát biểu lịch sử tại Đại học Rice ở Houston, Texas, tuyên bố 'Chúng tôi chọn lên Mặt trăng trong thập kỷ này'. Bài phát biểu đã củng cố cam kết của Mỹ đối với chương trình không gian và các sứ mệnh Apollo, mà đỉnh điểm là cuộc đổ bộ lên Mặt trăng vào ngày 20 tháng 7 năm 1969.",
+    "category": "event",
+    "year": "1962",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Dhamma: Tương Ưng Bộ Kinh",
+    "description": "Tương ưng bộ kinh (Saṃyutta Nikāya) nhóm các lời dạy của Đức Phật theo chủ đề - bao gồm các uẩn, giác quan, duyên khởi và Bát chánh đạo.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "13",
+    "title": "Trận Chapultepec - Những anh hùng Niños",
+    "description": "Vào ngày 13 tháng 9 năm 1847, trong Chiến tranh Mỹ-Mexico, lực lượng Hoa Kỳ đã tấn công pháo đài Chapultepec ở ngoại ô Thành phố Mexico. Theo truyền thống Mexico, sáu học viên quân sự trẻ tuổi - Niños Héroes - đã chiến đấu đến chết chứ không đầu hàng, trở thành biểu tượng lâu dài của lòng yêu nước và cuộc kháng chiến chống lại sự xâm lược của nước ngoài của Mexico.",
+    "category": "event",
+    "year": "1847",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Cuộc bắn phá pháo đài McHenry của Anh bắt đầu",
+    "description": "Vào ngày 13 tháng 9 năm 1814, các tàu chiến của Anh bắt đầu bắn phá Pháo đài McHenry ở cảng Baltimore trong Chiến tranh năm 1812. Những người bảo vệ pháo đài đã trụ vững trước cuộc tấn công và hình ảnh lá cờ Mỹ vẫn bay vào lúc bình minh đã truyền cảm hứng cho Francis Scott Key, người đang ở trên một con tàu của Anh, viết bài thơ trở thành 'The Star-Spangled Banner'.",
+    "category": "event",
+    "year": "1814",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Ngày Hindi",
+    "description": "Kỷ niệm việc Quốc hội lập hiến chấp nhận tiếng Hindi bằng chữ Devanagari làm ngôn ngữ chính thức của Ấn Độ vào năm 1949. Ngôn ngữ đoàn kết mọi người và mang di sản văn hóa.",
+    "category": "festival",
+    "year": "1949",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Liên Xô Luna 2 chạm tới mặt trăng",
+    "description": "Vào ngày 14 tháng 9 năm 1959, tàu vũ trụ Luna 2 của Liên Xô đã trở thành vật thể nhân tạo đầu tiên chạm tới bề mặt của một thiên thể khác khi nó va chạm với Mặt trăng gần Biển thanh bình. Thành tựu lịch sử này khẳng định tàu vũ trụ có thể di chuyển giữa các thế giới và đánh dấu một cột mốc quan trọng trong Cuộc chạy đua vào không gian giữa Liên Xô và Hoa Kỳ.",
+    "category": "event",
+    "year": "1959",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Tổng thống McKinley chết vì bị ám sát",
+    "description": "Vào ngày 14 tháng 9 năm 1901, Tổng thống Hoa Kỳ William McKinley chết vì vết thương do đạn bắn tám ngày trước đó khi kẻ theo chủ nghĩa vô chính phủ Leon Czolgosz bắn ông tại Triển lãm Liên Mỹ ở Buffalo, New York. Cái chết của McKinley đã nâng Theodore Roosevelt lên chức tổng thống và đưa ra các biện pháp mới để đảm bảo an ninh cho tổng thống, dẫn đến việc mở rộng phạm vi bảo vệ của Sở Mật vụ.",
+    "category": "event",
+    "year": "1901",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Ngày kỹ sư",
+    "description": "Kỷ niệm ngày sinh của M. Visvesvaraya, kỹ sư và chính khách huyền thoại. Phương châm “công nghiệp hóa hoặc diệt vong” của ông đã thúc đẩy quá trình hiện đại hóa. Kỹ thuật phục vụ nhân loại thông qua lòng trắc ẩn thực tế.",
+    "category": "event",
+    "year": "1861",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Các quốc gia Trung Mỹ tuyên bố độc lập",
+    "description": "Vào ngày 15 tháng 9 năm 1821, Đại tướng Guatemala tuyên bố độc lập khỏi Tây Ban Nha, giải phóng các lãnh thổ của Costa Rica, El Salvador, Guatemala, Honduras và Nicaragua ngày nay. Tuyên bố hòa bình này đã chấm dứt ba thế kỷ cai trị của thực dân Tây Ban Nha ở Trung Mỹ và ngày nay được kỷ niệm là Ngày Độc lập trên khắp năm quốc gia.",
+    "category": "event",
+    "year": "1821",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Luật Nuremberg được ban hành ở Đức Quốc xã",
+    "description": "Vào ngày 15 tháng 9 năm 1935, chế độ Đức Quốc xã ban hành Luật Nuremberg tại Cuộc biểu tình Nuremberg hàng năm, tước bỏ quyền công dân của người Do Thái ở Đức và cấm kết hôn giữa người Do Thái và người Đức không phải Do Thái. Những luật này đã thể chế hóa sự đàn áp chủng tộc, đặt nền tảng pháp lý cho sự đàn áp có hệ thống và cuối cùng là nạn diệt chủng sáu triệu người Do Thái trong Holocaust.",
+    "category": "event",
+    "year": "1935",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Ngày Ozone thế giới",
+    "description": "Ngày Liên Hợp Quốc kỷ niệm thành công của Nghị định thư Montreal trong việc chữa lành tầng ozone. Quản lý môi trường là một biểu hiện hiện đại của giáo lý về sự kết nối của Phật giáo.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Chiến tranh giành độc lập Mexico bắt đầu - Grito de Dolores",
+    "description": "Vào ngày 16 tháng 9 năm 1810, linh mục Công giáo Miguel Hidalgo y Costilla đã rung chuông nhà thờ ở thị trấn Dolores và đưa ra lời kêu gọi nhiệt thành gọi là 'Grito de Dolores', kêu gọi người dân đứng lên chống lại sự thống trị của thực dân Tây Ban Nha. Thời điểm này đã châm ngòi cho Chiến tranh giành độc lập của Mexico, sau 11 năm đấu tranh đã dẫn đến việc Mexico được tự do khỏi Tây Ban Nha vào năm 1821.",
+    "category": "event",
+    "year": "1810",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Malaysia thành lập",
+    "description": "Ngày 16 tháng 9 năm 1963, Liên bang Malaysia được thành lập thông qua việc sáp nhập Liên bang Malaya, Singapore, Bắc Borneo (Sabah) và Sarawak. Hành động phi thực dân hóa này đã tạo ra một quốc gia đa sắc tộc, đa tôn giáo mới ở Đông Nam Á, mặc dù Singapore sẽ tách ra và trở nên độc lập hai năm sau đó vào năm 1965.",
+    "category": "event",
+    "year": "1963",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Ngày sinh Periyar E.V. Ramasamy",
+    "description": "Kỷ niệm ngày sinh của Periyar, nhà cải cách xã hội vĩ đại của Tamil Nadu, người ủng hộ chủ nghĩa duy lý, lòng tự trọng, quyền phụ nữ và xóa bỏ phân biệt đẳng cấp.",
+    "category": "event",
+    "year": "1879",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Hiến pháp Hoa Kỳ được ký ở Philadelphia",
+    "description": "Vào ngày 17 tháng 9 năm 1787, các đại biểu tham dự Hội nghị Lập hiến ở Philadelphia đã ký Hiến pháp Hoa Kỳ, thiết lập khuôn khổ chính phủ Hoa Kỳ tồn tại cho đến ngày nay. Văn kiện này được soạn thảo trong hơn 4 tháng tranh luận căng thẳng, đã tạo ra một hệ thống kiểm tra và cân bằng và trở thành hình mẫu cho các hiến pháp dân chủ trên toàn thế giới.",
+    "category": "event",
+    "year": "1787",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Trận Antietam - Ngày đẫm máu nhất trong lịch sử nước Mỹ",
+    "description": "Vào ngày 17 tháng 9 năm 1862, các lực lượng Liên minh và Liên minh đụng độ trong Trận Antietam gần Sharpsburg, Maryland, trong ngày chiến đấu đẫm máu nhất trong lịch sử Hoa Kỳ, với gần 23.000 người thương vong. Mặc dù không có kết quả thuyết phục về mặt chiến thuật, chiến thắng chiến lược của Liên minh đã mang lại cho Tổng thống Lincoln động lực chính trị để ban hành Tuyên bố Giải phóng Nô lệ sơ bộ năm ngày sau đó.",
+    "category": "event",
+    "year": "1862",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Dhamma: Tăng Chi Bộ Kinh",
+    "description": "Aṅguttara Nikāya (Bài giảng bằng số) tổ chức các bài giảng theo số lượng - từ một đến mười một. Nó chứa đựng những hướng dẫn thực tế về đạo đức, thiền định và cuộc sống hàng ngày.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "18",
+    "title": "Chile tuyên bố độc lập khỏi Tây Ban Nha",
+    "description": "Vào ngày 18 tháng 9 năm 1810, những người yêu nước Chile đã thành lập chính quyền quân sự quốc gia ở Santiago, thực hiện bước chính thức đầu tiên hướng tới độc lập khỏi Tây Ban Nha. Ngày này, được gọi là 'Fiestas Patrias', được tổ chức là ngày quốc khánh của Chile. Sự độc lập hoàn toàn của Chile đã đạt được vào năm 1818 sau nhiều năm đấu tranh vũ trang do Bernardo O'Higgins và José de San Martín lãnh đạo.",
+    "category": "event",
+    "year": "1810",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Đạo luật nô lệ bỏ trốn năm 1850 được ban hành",
+    "description": "Vào ngày 18 tháng 9 năm 1850, Quốc hội Hoa Kỳ đã thông qua Đạo luật Nô lệ bỏ trốn, yêu cầu công dân của các bang tự do hỗ trợ bắt giữ và trao trả những nô lệ bỏ trốn. Đạo luật này đã khiến những người theo chủ nghĩa bãi nô phẫn nộ, kích động Đường sắt ngầm và làm sâu sắc thêm sự chia rẽ quốc gia về chế độ nô lệ, khiến xung đột vũ trang giữa miền Bắc và miền Nam ngày càng không thể tránh khỏi.",
+    "category": "event",
+    "year": "1850",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Dhamma: Khuddaka Nikaya",
+    "description": "Khuddaka Nikāya là một bộ sưu tập đa dạng bao gồm Dharmapada, Jātaka Tales, Therīgāthā và Theragāthā. Đó là một kho tàng thơ ca, truyện cổ và trí tuệ Phật giáo.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "19",
+    "title": "New Zealand cấp cho phụ nữ quyền bầu cử",
+    "description": "Vào ngày 19 tháng 9 năm 1893, New Zealand trở thành quốc gia tự trị đầu tiên trên thế giới trao cho tất cả phụ nữ quyền bầu cử trong các cuộc bầu cử quốc gia. Thành tựu này là đỉnh cao của nhiều năm vận động do Kate Sheppard và Hiệp hội Phụ nữ Cơ đốc giáo điều hành, tạo tiền lệ mạnh mẽ cho các phong trào bầu cử của phụ nữ trên toàn thế giới.",
+    "category": "event",
+    "year": "1893",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Anh em nhà Montgolfier thả khinh khí cầu tại Versailles",
+    "description": "Vào ngày 19 tháng 9 năm 1783, anh em nhà Montgolfier đã phóng một khinh khí cầu chở một con cừu, một con vịt và một con gà trống trước mặt vua Louis XVI tại Cung điện Versailles. Chuyến bay kéo dài khoảng 8 phút và chứng minh rằng các sinh vật sống có thể sống sót ở độ cao, mở đường cho chuyến bay khinh khí cầu có người lái đầu tiên hai tháng sau đó.",
+    "category": "event",
+    "year": "1783",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Ngày tưởng niệm Narayana Guru",
+    "description": "Tưởng nhớ Narayana Guru, nhà cải cách vĩ đại ở Kerala qua đời năm 1928. Thông điệp của ông 'Một đẳng cấp, Một tôn giáo, Một Chúa cho tất cả' đã thách thức tận gốc rễ hệ thống đẳng cấp của nó.",
+    "category": "event",
+    "year": "1928",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Magellan khởi hành chuyến đi vòng quanh địa cầu đầu tiên",
+    "description": "Vào ngày 20 tháng 9 năm 1519, nhà thám hiểm người Bồ Đào Nha Ferdinand Magellan rời Sanlúcar de Barrameda, Tây Ban Nha, với một hạm đội gồm 5 tàu và khoảng 270 người, bắt đầu chuyến thám hiểm đầu tiên vòng quanh Trái đất. Mặc dù Magellan bị giết ở Philippines vào năm 1521, con tàu Victoria của ông đã hoàn thành chuyến hành trình vào năm 1522, chứng minh một cách thuyết phục rằng Trái đất có hình tròn.",
+    "category": "event",
+    "year": "1519",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Trận chiến giới tính - Billie Jean King đánh bại Bobby Riggs",
+    "description": "Vào ngày 20 tháng 9 năm 1973, nhà vô địch quần vợt Billie Jean King đã đánh bại Bobby Riggs trong các set đấu liên tiếp trước gần 30.000 khán giả tại Houston Astrodome và ước tính khoảng 90 triệu khán giả truyền hình trên toàn thế giới. Trận đấu 'Trận chiến giới tính' đã trở thành thời điểm mang tính bước ngoặt về bình đẳng giới, thể hiện năng lực thể thao của phụ nữ và thúc đẩy sự nghiệp đấu tranh vì quyền của phụ nữ trong thể thao.",
+    "category": "event",
+    "year": "1973",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Ngày Quốc tế Hòa bình",
+    "description": "Một ngày của Liên hợp quốc dành cho hòa bình thế giới. Đức Phật dạy: 'Hòa bình đến từ bên trong. Đừng tìm kiếm nó mà không có nó.' Sự chuyển hóa nội tâm là nền tảng của một xã hội hòa bình.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Nền cộng hòa thứ nhất của Pháp được tuyên bố",
+    "description": "Vào ngày 21 tháng 9 năm 1792, Đại hội toàn quốc Pháp đã bãi bỏ chế độ quân chủ và tuyên bố Đệ nhất Cộng hòa Pháp, chấm dứt hơn một nghìn năm cai trị của hoàng gia ở Pháp. Hành động mang tính cách mạng này, xuất phát từ lý tưởng tự do, bình đẳng và tình huynh đệ, đã đánh dấu một trong những biến động chính trị mang tính biến đổi nhất trong lịch sử thế giới và truyền cảm hứng cho các phong trào dân chủ trên toàn cầu.",
+    "category": "event",
+    "year": "1792",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Belize giành được độc lập",
+    "description": "Vào ngày 21 tháng 9 năm 1981, Belize giành được độc lập hoàn toàn khỏi Vương quốc Anh sau nhiều thế kỷ cai trị của thực dân Anh. Quốc gia mới, trước đây gọi là Honduras thuộc Anh, đã trở thành một quốc gia có chủ quyền với George Cadle Price là Thủ tướng đầu tiên, đánh dấu sự kết thúc của chủ nghĩa thực dân trên lục địa Trung Mỹ.",
+    "category": "event",
+    "year": "1981",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Dhamma: Kinh Āyācana",
+    "description": "Sau khi giác ngộ, Đức Phật ban đầu miễn cưỡng giảng dạy. Brahmā Sahampati yêu cầu ngài chia sẻ Giáo pháp và nói rằng: 'Có những chúng sinh có rất ít bụi trong mắt.'",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "22",
+    "title": "Tuyên bố giải phóng do Lincoln ban hành",
+    "description": "Vào ngày 22 tháng 9 năm 1862, Tổng thống Abraham Lincoln đã ban hành Tuyên bố Giải phóng Nô lệ sơ bộ, tuyên bố rằng tất cả những người nô lệ ở các bang thuộc Liên minh miền Nam sẽ được giải phóng có hiệu lực từ ngày 1 tháng 1 năm 1863. Sắc lệnh quan trọng này đã biến Nội chiến từ một cuộc đấu tranh bảo vệ Liên bang thành một cuộc đấu tranh cho tự do của con người, và cuối cùng dẫn đến việc giải phóng gần bốn triệu người Mỹ bị nô lệ.",
+    "category": "event",
+    "year": "1862",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Chiến tranh Iran-Iraq bắt đầu",
+    "description": "Vào ngày 22 tháng 9 năm 1980, các lực lượng Iraq dưới sự chỉ huy của Saddam Hussein đã phát động một cuộc xâm lược toàn diện vào Iran, bắt đầu một trong những cuộc chiến tranh thông thường dài nhất và nguy hiểm nhất trong thế kỷ XX. Cuộc xung đột kéo dài 8 năm, gây ra khoảng một triệu thương vong cho cả hai bên và tàn phá nền kinh tế cũng như cơ sở hạ tầng của cả hai quốc gia trước khi kết thúc trong bế tắc vào năm 1988.",
+    "category": "event",
+    "year": "1980",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Dhamma: Bhadda Kundalakesa",
+    "description": "Bhaddā Kuṇḍalakesā là một tu sĩ khổ hạnh theo đạo Jain đã chuyển sang Phật giáo và nhanh chóng đạt được quả vị A-la-hán. Cô đã trở thành người xuất sắc nhất trong số các tu nữ trong việc nhanh chóng chứng ngộ Giáo Pháp.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "23",
+    "title": "Hành tinh Neptune được phát hiện",
+    "description": "Vào ngày 23 tháng 9 năm 1846, nhà thiên văn học người Đức Johann Gottfried Galle, sử dụng tính toán của Urbain Le Verrier, đã phát hiện ra hành tinh Sao Hải Vương qua kính viễn vọng tại Đài thiên văn Berlin. Sao Hải Vương là hành tinh đầu tiên được tìm thấy thông qua dự đoán toán học thay vì quan sát trực tiếp, một thắng lợi của cơ học thiên thể đã xác nhận định luật vạn vật hấp dẫn của Newton.",
+    "category": "event",
+    "year": "1846",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Cuộc thám hiểm của Lewis và Clark trở lại St. Louis",
+    "description": "Vào ngày 23 tháng 9 năm 1806, đoàn thám hiểm Lewis và Clark đã quay trở lại St. Louis, Missouri, hoàn thành cuộc hành trình kéo dài hai năm rưỡi trên 8.000 dặm tới Thái Bình Dương và quay trở lại. Chuyến thám hiểm do Tổng thống Thomas Jefferson ủy quyền đã tạo ra những kiến ​​thức khoa học, địa lý và dân tộc học vô giá về miền Tây nước Mỹ và các dân tộc bản địa ở đó.",
+    "category": "event",
+    "year": "1806",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Dhamma: Ngôn ngữ Pali",
+    "description": "Pāli là ngôn ngữ của kinh điển Phật giáo Nguyên thủy. Được lưu truyền qua nhiều thế kỷ trước khi được viết ra ở Sri Lanka, đây là ngôn ngữ gần gũi nhất với những gì Đức Phật đã nói.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "24",
+    "title": "Satya Shodhak Samaj được thành lập",
+    "description": "Vào ngày 24 tháng 9 năm 1873, Mahatma Jyotirao Phule thành lập Satya Shodhak Samaj (Hiệp hội những người tìm kiếm sự thật) để giải phóng Shudras và Ati-Shudras khỏi sự thống trị tôn giáo và xã hội của Bà La Môn giáo. Samaj thúc đẩy tư tưởng hợp lý, phản đối sự độc quyền của linh mục trong các nghi lễ và tổ chức các đám cưới thuộc đẳng cấp thấp mà không có linh mục Bà la môn - một hành động thách thức xã hội mang tính cách mạng.",
+    "category": "event",
+    "year": "1873",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Hiệp ước Poona đã được ký",
+    "description": "Vào ngày 24 tháng 9 năm 1932, Hiệp ước Poona được ký kết giữa Tiến sĩ B.R. Ambedkar và Mahatma Gandhi. Ambedkar đã từ bỏ yêu cầu về các khu vực bầu cử riêng biệt dành cho người Dalit để đổi lấy các ghế dành riêng trong cơ quan lập pháp, nhằm cứu mạng Gandhi trong thời gian ông nhịn ăn. Sự thỏa hiệp lịch sử này đã định hình tương lai chính trị của các tầng lớp chán nản ở Ấn Độ độc lập.",
+    "category": "event",
+    "year": "1932",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Ngày sinh Pandit Deendayal Upadhyaya",
+    "description": "Kỷ niệm ngày sinh của Pandit Deendayal Upadhyaya, một nhà tư tưởng chính trị ủng hộ Chủ nghĩa Nhân văn Toàn diện - một triết lý phát triển cân bằng tập trung vào phẩm giá con người.",
+    "category": "event",
+    "year": "1916",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Little Rock Nine được hộ tống vào trường trung học Central",
+    "description": "Vào ngày 25 tháng 9 năm 1957, chín học sinh da đen được hộ tống vào trường trung học Little Rock Central ở Arkansas bởi các binh sĩ thuộc Sư đoàn Dù 101 của Quân đội Hoa Kỳ, theo lệnh của Tổng thống Eisenhower. Các sinh viên đã bị Lực lượng Vệ binh Quốc gia Arkansas và đám đông thù địch chặn lại, và lập trường dũng cảm của họ đã trở thành thời điểm quyết định của phong trào dân quyền Hoa Kỳ.",
+    "category": "event",
+    "year": "1957",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Vasco Núñez de Balboa vươn tới Thái Bình Dương",
+    "description": "Vào ngày 25 tháng 9 năm 1513, nhà thám hiểm người Tây Ban Nha Vasco Núñez de Balboa trở thành người châu Âu đầu tiên nhìn thấy bờ phía đông của Thái Bình Dương, sau khi dẫn đầu một đoàn thám hiểm qua eo đất Panama. Ông tuyên bố chủ quyền đại dương và tất cả các vùng đất chạm vào nó cho Vương miện Tây Ban Nha, một sự kiện đã định hình lại sự hiểu biết của người châu Âu về địa lý thế giới và thúc đẩy việc khám phá sâu hơn.",
+    "category": "event",
+    "year": "1513",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Dhamma: Bánh xe Pháp (Luân xa Ashoka)",
+    "description": "Luân xa Ashoka trên quốc kỳ Ấn Độ là Bánh xe Pháp Phật giáo với 24 nan hoa. Nó tượng trưng cho sự công bằng, công bằng và luật pháp vĩnh cửu do Hoàng đế Ashoka ban hành.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "26",
+    "title": "Cuộc tranh luận Tổng thống Hoa Kỳ được truyền hình đầu tiên",
+    "description": "Ngày 26 tháng 9 năm 1960, Thượng nghị sĩ John F. Kennedy và Phó Tổng thống Richard Nixon đối đầu nhau trong cuộc tranh luận tổng thống trên truyền hình đầu tiên trong lịch sử Hoa Kỳ, được phát sóng từ Chicago. Ước tính có khoảng 70 triệu khán giả đã xem Kennedy truyền hình vượt trội hơn Nixon có vẻ khó chịu trên màn ảnh, chứng tỏ sức mạnh biến đổi của truyền hình trong nền chính trị dân chủ.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Ngài Francis Drake hoàn thành chuyến đi vòng quanh địa cầu",
+    "description": "Vào ngày 26 tháng 9 năm 1580, nhà thám hiểm người Anh Sir Francis Drake đã đi thuyền vào cảng Plymouth trên con tàu Golden Hind, hoàn thành chuyến đi vòng quanh Trái đất lần thứ hai và là chuyến đi đầu tiên của một người Anh. Chuyến đi kéo dài gần ba năm đã mang về kho báu khổng lồ từ các con tàu và bến cảng của Tây Ban Nha, và Nữ hoàng Elizabeth I đã phong tước hiệp sĩ cho Drake trên con tàu của ông.",
+    "category": "event",
+    "year": "1580",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Ngày Du lịch Thế giới",
+    "description": "Kỷ niệm du lịch toàn cầu và trao đổi văn hóa. Tuyến đường Phật giáo của Ấn Độ - Bodh Gaya, Sarnath, Kushinagar, Lumbini - thu hút hàng triệu người hành hương và tìm kiếm từ khắp nơi trên thế giới.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Einstein xuất bản bài báo E=mc²",
+    "description": "Vào ngày 27 tháng 9 năm 1905, bài báo của Albert Einstein 'Liệu quán tính của một vật có phụ thuộc vào hàm lượng năng lượng của nó không?' được xuất bản trên tạp chí Annalen der Physik, giới thiệu phương trình E=mc2. Cái nhìn sâu sắc mang tính cách mạng này đã thiết lập sự tương đương giữa khối lượng và năng lượng, làm biến đổi căn bản vật lý và cuối cùng dẫn đến cả năng lượng hạt nhân và vũ khí nguyên tử.",
+    "category": "event",
+    "year": "1905",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Đường sắt Stockton và Darlington mở cửa",
+    "description": "Vào ngày 27 tháng 9 năm 1825, Đường sắt Stockton và Darlington ở đông bắc nước Anh bắt đầu hoạt động với tư cách là tuyến đường sắt công cộng đầu tiên trên thế giới sử dụng đầu máy hơi nước để vận chuyển hành khách và hàng hóa. Được thiết kế bởi George Stephenson, tuyến đường sắt này đã chứng tỏ khả năng tồn tại của phương tiện vận tải chạy bằng hơi nước và khởi động Thời đại Đường sắt sẽ biến đổi xã hội và thương mại toàn cầu.",
+    "category": "event",
+    "year": "1825",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Ngày sinh Bhagat Singh",
+    "description": "Kỷ niệm ngày sinh của Shaheed Bhagat Singh, nhà tư tưởng và chiến sĩ tự do cách mạng bị treo cổ ở tuổi 23. Các bài viết của ông về chủ nghĩa xã hội, chủ nghĩa vô thần và cách mạng tiếp tục truyền cảm hứng cho giới trẻ.",
+    "category": "event",
+    "year": "1907",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Alexander Fleming khám phá ra Penicillin",
+    "description": "Vào ngày 28 tháng 9 năm 1928, nhà vi khuẩn học người Scotland Alexander Fleming quay trở lại phòng thí nghiệm của mình tại Bệnh viện St. Mary ở London và nhận thấy rằng một loại nấm mốc (Penicillium notatum) đã làm ô nhiễm đĩa petri và giết chết vi khuẩn xung quanh. Phát hiện tình cờ này đã dẫn đến sự phát triển của penicillin, loại kháng sinh được sử dụng rộng rãi đầu tiên trên thế giới, đã cứu sống hàng trăm triệu người.",
+    "category": "event",
+    "year": "1928",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Brazil thông qua luật sinh tự do",
+    "description": "Vào ngày 28 tháng 9 năm 1871, Đế quốc Brazil ban hành Luật Rio Branco (Lei do Ventre Livre), tuyên bố rằng tất cả trẻ em sinh ra từ những bà mẹ nô lệ từ đó sẽ được tự do. Mặc dù luật này là một sự thỏa hiệp chưa đến mức bãi bỏ hoàn toàn nhưng nó đánh dấu một bước quan trọng trong việc xóa bỏ dần dần chế độ nô lệ ở Brazil, quốc gia cuối cùng ở châu Mỹ bãi bỏ chế độ này.",
+    "category": "event",
+    "year": "1871",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Ngày Trái tim Thế giới",
+    "description": "Một ngày toàn cầu thúc đẩy sức khỏe tim mạch. Một tâm hồn bình tĩnh, từ bi được trau dồi thông qua thực hành Pháp sẽ mang lại lợi ích trực tiếp cho cơ thể - giảm căng thẳng, tức giận và lo lắng.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Vụ thảm sát Babi Yar bắt đầu",
+    "description": "Vào ngày 29 tháng 9 năm 1941, lực lượng Đức Quốc xã và những người cộng tác địa phương bắt đầu vụ xả súng hàng loạt thường dân Do Thái tại khe núi Babi Yar gần Kyiv, Ukraine. Trong hai ngày, 33.771 đàn ông, phụ nữ và trẻ em đã bị sát hại một cách có hệ thống tại một trong những vụ thảm sát lớn nhất của Holocaust, một bằng chứng kinh hoàng về mức độ tàn ác của con người.",
+    "category": "event",
+    "year": "1941",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Cảnh sát thủ đô London được thành lập",
+    "description": "Vào ngày 29 tháng 9 năm 1829, Sở Cảnh sát Thủ đô bắt đầu hoạt động ở Luân Đôn dưới sự chỉ đạo của Ngài Robert Peel, thành lập lực lượng cảnh sát chuyên nghiệp hiện đại đầu tiên trên thế giới. Các sĩ quan, có biệt danh là 'Bobbies' theo tên Peel, được tổ chức dựa trên các nguyên tắc phòng chống tội phạm và trách nhiệm giải trình trước công chúng đã trở thành hình mẫu cho lực lượng cảnh sát trên toàn thế giới.",
+    "category": "event",
+    "year": "1829",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Dhamma: Lời cầu nguyện Tam Bảo",
+    "description": "'Đức Phật saraṇaṃ gacchāmi. Dharmaṃ saraṇaṃ gacchāmi. Saṅghaṃ saraṇaṃ gacchāmi.' – Con xin quy y Phật, Pháp và Tăng. Nơi nương tựa ba phần của tất cả Phật tử.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "30",
+    "title": "Botswana giành được độc lập",
+    "description": "Vào ngày 30 tháng 9 năm 1966, Botswana giành được độc lập từ Vương quốc Anh với Seretse Khama là tổng thống đầu tiên. Từng là một trong những quốc gia nghèo nhất châu Phi, Botswana đã sử dụng sự giàu có về kim cương và nền quản trị dân chủ để đạt được tốc độ tăng trưởng kinh tế vượt trội, trở thành một trong những quốc gia ổn định và thịnh vượng nhất lục địa.",
+    "category": "event",
+    "year": "1966",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Vận tải hàng không Berlin chính thức kết thúc",
+    "description": "Ngày 30 tháng 9 năm 1949, cuộc Không vận Berlin chính thức kết thúc sau 15 tháng bay liên tục của máy bay Mỹ và Anh để vận chuyển lương thực, nhiên liệu và vật tư cho người dân Tây Berlin. Cuộc không vận đã thực hiện hơn 278.000 chuyến bay chở 2,3 triệu tấn hàng hóa, đã phá vỡ vòng phong tỏa của Liên Xô mà không cần bắn một phát súng nào và trở thành một thắng lợi mang tính biểu tượng của thời kỳ đầu Chiến tranh Lạnh.",
+    "category": "event",
+    "year": "1949",
+    "isSymbolic": false
+  }
+]
