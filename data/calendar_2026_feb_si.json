@@ -1,0 +1,674 @@
+[
+  {
+    "date": "01",
+    "title": "ධර්ම: සත්‍ය (සත්‍යවාදිත්වය)",
+    "description": "සත්‍ය — සත්‍යවාදිත්වය — දස පාරමිතාවන්ගෙන් එකකි. බුදුරජාණන් වහන්සේ සත්‍යයෙන් ජීවත් වූ අතර සත්‍යය කතා කළ අතර, දුක්, එහි හේතුව, එහි නැවතීම සහ නිර්වාණ මාර්ගයේ සත්‍යය උගන්වා ඇත.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "01",
+    "title": "Greensboro හි ආසන විරෝධය ආරම්භ විය",
+    "description": "1960 පෙබරවාරි 1 වන දින, Ezell Blair Jr., David Richmond, Franklin McCain සහ Joseph McNeil යන අප්‍රිකානු-ඇමරිකානු විශ්වවිද්‍යාල ශිෂ්‍යයන් හතර දෙනෙක් North Carolina, Greensboro හි සුදු ජාතිකයන්ට පමණක් වූ Woolworth's ආහාර කවුන්ටරයේ වාඩි වී නොනැගිටින ලෙස ප්‍රතික්ෂේප කළහ. ඔවුන්ගේ අහිංසක විරෝධය අමෙරිකාවේ දකුණු පළාත්වල ආසන විරෝධ තරංගයක් ඇති කළ අතර සිවිල් අයිතිවාසිකම් ව්‍යාපාරයේ නිර්ණායක මොහොතක් බවට පත් විය.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "ඇමරිකානු වන විටුළා මහාධිකරණයේ පළමු සැසිය",
+    "description": "1790 පෙබරවාරි 1 වන දින, එක්සත් ජනපද Supreme Court New York City හි Royal Exchange ගොඩනැගිල්ලේ Chief Justice John Jay ප්‍රධානත්වයෙන් පළමු වරට රැස් විය. ජාතියේ උසස්ම අධිකරණය පිහිටුවීම ඇමරිකානු ආණ්ඩුක්‍රම ව්‍යවස්ථා පාලනය සහ බලයන් වෙแยก කිරීමේ පදනමක් විය.",
+    "category": "event",
+    "year": "1790",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "ලෝක තෙණගිජ්‍ය දිනය",
+    "description": "මිනිසුන් සහ ග්‍රහලොව සඳහා තෙණගිජ්‍යවල වැදගත් භූමිකාව ගැන දැනුවත්භාවය ඉහළ නංවන දිනයකි. පරිසරය රැකවරණය කිරීම — සියලු ජීවීන්ට ගරු කිරීම — ධර්ම මාර්ගයේ ප්‍රකාශනයකි.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "ස්ටාලින්ග්‍රෑඩ් සටන අවසන් විය",
+    "description": "1943 පෙබරවාරි 2 වන දින, Field Marshal Friedrich Paulus යටතේ ජර්මානු 6 වන සේනාවේ ඉතිරි කොටස Stalingrad හි සෝවියට් බලකායන් වෙත ඉඩම් දුන්නේය. මෙම තීරණාත්මක සෝවියට් ජයග්‍රහණය දෙවන ලෝක යුද්ධයේ ප්‍රධාන හැරවුම් ලක්ෂ්‍යයක් වූ අතර නාසි නොපරාජයට පත් කළ නොහැකි යැයි සිතූ මිථ්‍යාව බිඳ දැමූ අතර යුද්ධයේ තලය මිත්‍රපක්ෂයන් වෙතට මාරු කළේය.",
+    "category": "event",
+    "year": "1943",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Guadalupe Hidalgo සන්ධියට අත්සන්",
+    "description": "1848 පෙබරවාරි 2 වන දින, Guadalupe Hidalgo සන්ධිය අත්සන් කරන ලද අතර මෙක්සිකෝ-ඇමරිකානු යුද්ධය අවසන් විය. මෙක්සිකෝව වර්තමාන California, Nevada, Utah, Arizona සහ වෙනත් ප්‍රාන්තවල කොටස් ඇතුළු විශාල ප්‍රදේශයක් එක්සත් ජනපදයට අත්හිටුවූ අතර උතුරු ඇමරිකාවේ සිතියම නැවත හැඩගැස්වීය.",
+    "category": "event",
+    "year": "1848",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "ධර්ම: චතුරාර්‍ය සත්‍ය",
+    "description": "බුදුරජාණන් වහන්සේගේ ඉගැන්වීමේ අත්තිවාරම: දුක් (දුක් පවතී), සමුදය (හේතුවක් ඇත), නිරෝධ (එය නැවතීමට හැක), මග්ග (අරිය අෂ්ටාංගික මග එහි නැවතීමට යොමු කරයි).",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "03",
+    "title": "15 වන සංශෝධනය සනාථ විය",
+    "description": "1870 පෙබරවාරි 3 වන දින, එක්සත් ජනපද ආණ්ඩුක්‍රම ව්‍යවස්ථාවේ 15 වන සංශෝධනය සනාථ කරන ලද අතර, ජාතිය, වර්ණය හෝ පෙර දාසත්වය නිසා ඡන්ද බලය ප්‍රතික්ෂේප නොකරන බව ප්‍රකාශ කළේය. මෙය පෙර දාසයින් සහ දාසත්වය නිෂේධන ව්‍යාපාරයට නිර්ණායක ජයග්‍රහණයක් වූ අතර, Jim Crow නීති දශක ගණනක් තිස්සේ එහි පොරොන්දුව අවම කළේය.",
+    "category": "event",
+    "year": "1870",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Luna 9 සඳ මත මෘදු ගොඩබෑම",
+    "description": "1966 පෙබරවාරි 3 වන දින, සෝවියට් Luna 9 අභ්‍යවකාශ යානාව මිනිසා නිර්මාණය කළ පළමු වස්තුව බවට පත් වූ අතර සඳ මත මෘදු ගොඩබෑමක් සිදු කර ඡායාරූප පෘථිවියට යැව්වේය. මෙම ඓතිහාසික ජයග්‍රහණය සඳ මතුපිට ගොඩබෑම් යානාවක් දරා සිටිය හැකි බව තහවුරු කළ අතර අනාගත මිනිස් මෙහෙයුම් සඳහා මග පෑදීය.",
+    "category": "event",
+    "year": "1966",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "ලෝක පිළිකා දිනය",
+    "description": "පිළිකා වැළැක්වීම සහ ප්‍රතිකාරය පිළිබඳ දැනුවත්භාවය ඉහළ නංවන ගෝලීය වැඩසටහනකි. රෝගීන්ට සහ දුක් විඳින්නන්ට කරුණාව බෞද්ධ ආගමේ මූලික වටිනාකමකි.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Rosa Parks උපත",
+    "description": "Rosa Louise McCauley Parks 1913 පෙබරවාරි 4 වන දින Alabama, Tuskegee හි උපත ලැබීය. 'සිවිල් අයිතිවාසිකම් ව්‍යාපාරයේ මව' ලෙස හඳුන්වන ඇය 1955 දී Montgomery හි සුදු ජාතික මගීයෙකුට බස් ආසනය අත්හරින තරමට ප්‍රතික්ෂේප කළ අතර Montgomery බස් බහිළු බහිරුම ඇති කළ අතර ජාතිවාදී වෙන්කිරීමට එරෙහි ප්‍රතිරෝධයේ සංකේතයක් බවට පත් විය.",
+    "category": "event",
+    "year": "1913",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Facebook නිර්මාණය",
+    "description": "2004 පෙබරවාරි 4 වන දින, Mark Zuckerberg Harvard University ශිෂ්‍ය නිවාස කාමරයෙන් 'TheFacebook' දියත් කළේය. විශ්වවිද්‍යාල සමාජ ජාලයක් ලෙස ආරම්භ වූ එය ලොව විශාලතම සමාජ මාධ්‍ය වේදිකාව බවට වේගයෙන් වර්ධනය වූ අතර බිලියන ගණනක මිනිසුන් සන්නිවේදනය, තොරතුරු බෙදාගැනීම සහ ව්‍යාපාර සංවිධානය කරන ආකාරය මූලිකවම වෙනස් කළේය.",
+    "category": "event",
+    "year": "2004",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Kashmir දිනය / ධර්ම පිළිබිඹුව",
+    "description": "සාමය සහ මානව අයිතිවාසිකම් පිළිබඳව නිර්වචනය කිරීමට දිනයකි. බුදුරජාණන් වහන්සේ උගන්වා ඇත — 'ද්වේෂය ද්වේෂයෙන් නොනවතී, ආදරයෙන් පමණක් නවතී; මෙය සදාකාලික නියමයකි.'",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "05",
+    "title": "මෙක්සිකෝ ආණ්ඩුක්‍රම ව්‍යවස්ථාව අනුමත විය",
+    "description": "1917 පෙබරවාරි 5 වන දින, Porfirio Díaz අධිරාජ්‍යවාදයට එරෙහි සන්නද්ධ අරගල වසර ගණනකට පසු මෙක්සිකෝව එහි නව විප්ලවවාදී ආණ්ඩුක්‍රම ව්‍යවස්ථාව අනුමත කළේය. 1917 ආණ්ඩුක්‍රම ව්‍යවස්ථාව එකල ලොව තුළ වඩාත් ප්‍රගතිශීලී ඒවායින් එකක් වූ අතර, වැටුප් අයිතිවාසිකම්, ඉඩම් ප්‍රතිසංස්කරණය සහ ආගමික-රාජ්‍ය වෙන්කිරීම ස්ථිර කළේය.",
+    "category": "event",
+    "year": "1917",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Apollo 14 සඳ මත ගොඩබෑම",
+    "description": "1971 පෙබරවාරි 5 වන දින, Apollo 14 හි සඳ ගොඩබෑම් මොඩියුලය Antares අභ්‍යවකාශයානිකයන් Alan Shepard සහ Edgar Mitchell රැගෙන සඳේ Fra Mauro උසස්බිම් ප්‍රදේශයේ ගොඩබැඳිණි. Shepard සඳ මත හයින් පියා ගිය පස්වැනියා වූ අතර සඳ මත ගොල්ෆ් පන්දු දෙකක් පහත හැලූ අතර, Apollo 13 ආසන්න විපත්තියෙන් පසු NASA විශ්වාසය ප්‍රතිසාධනය කළේය.",
+    "category": "event",
+    "year": "1971",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "මහාපරිනිර්වාණ දිවස",
+    "description": "1956 දෙසැම්බර් 6 වන දින Dr. B.R. Ambedkar ගේ මහාපරිනිර්වාණය සිහිපත් කිරීම. සමාජීය යුක්තිය, ආණ්ඩුක්‍රමික අයිතිවාසිකම් සහ ඉන්දියාවේ බුද්ධාගම නැවත ජීවමාන කිරීමට ඔහුගේ අසාමාන්‍ය දායකත්වය නිර්වචනය කිරීමට මෙම දිනය නිරීක්ෂණය කෙරේ.",
+    "category": "event",
+    "year": "1956",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "ප්‍රංශ-ඇමරිකානු සන්ධි සන්ධිය",
+    "description": "1778 පෙබරවාරි 6 වන දින, ප්‍රංශය සහ එක්සත් ජනපදය Paris හි සන්ධි සහ වාණිජ සන්ධි සන්ධියට අත්සන් කර ඇමරිකානු ස්වාධීනත්වය නිල වශයෙන් පිළිගත්තේය. ප්‍රංශ සහාය ඇමරිකානු විප්ලවවාදයේ තීරණාත්මක වූ අතර 1781 දී Yorktown හි බ්‍රිතාන්‍ය ඉඩම් දීමෙන් අවසන් විය.",
+    "category": "event",
+    "year": "1778",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "SpaceX Falcon Heavy පළමු දියත් කිරීම",
+    "description": "2018 පෙබරවාරි 6 වන දින, SpaceX Kennedy Space Center හි එකල ලොව බලවතම මෙහෙයුම් රොකට් Falcon Heavy සාර්ථකව දියත් කළේය. මෙහෙයුමට පැති බුස්ටර දෙකේ සමමුහුර්ත ගොඩබෑම සහ Elon Musk ගේ Tesla Roadster හිරියොසෙන්ට්‍රික් කක්ෂයට යැවීම ඇතුළත් විය.",
+    "category": "event",
+    "year": "2018",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "ධර්ම: සම්මා කම්මන්ත (නිවැරදි ක්‍රියාව)",
+    "description": "නිවැරදි ක්‍රියාව යනු ඝාතනය, සොරකම සහ ලිංගික අනීතික ක්‍රියා වලින් වැළකී සිටීමයි. එය සියලු සතුන්ට කරුණාව සහ ගෞරවය මත පදනම් වූ සදාචාර චර්යාවකි.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "07",
+    "title": "Charles Dickens උපත",
+    "description": "Charles John Huffam Dickens 1812 පෙබරවාරි 7 වන දින Portsmouth, එංගලන්තයේ උපත ලැබීය. Oliver Twist, A Tale of Two Cities සහ David Copperfield ඇතුළු ඔහුගේ නවකතා Victorian එංගලන්තයේ දරිද්‍රතාව, ළමා ශ්‍රමය සහ සමාජ අසමානතාවේ කෲරු යථාර්ථයන් හෙළි කළ අතර පොදු හැඟීම අවදි කර ප්‍රතිසංස්කරණයට ප්‍රේරණය කළේය.",
+    "category": "event",
+    "year": "1812",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Grenada ස්වාධීනත්වය ලබයි",
+    "description": "1974 පෙබරවාරි 7 වන දින, Grenada බ්‍රිතාන්‍ය යටත් විජිත පාලනයෙන් ස්වාධීනත්වය ලබා ගත් අතර, දෙශයකට ආසන්න කාලයක් පාලනයෙන් පසු කැරිබියානු දූපත් ජාතිය ස්වාධීන රාජ්‍යයක් බවට පත් විය. අගමැති Eric Gairy ප්‍රමුඛත්වයෙන්, යුද්ධෝත්තර යුගයේ යටත් විජිත විමුක්ති තරංගයට එක් විය.",
+    "category": "event",
+    "year": "1974",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "ධර්ම: අධිට්ඨාන (දැඩි අධිෂ්ඨානය)",
+    "description": "අධිට්ඨාන යනු දැඩි අධිෂ්ඨානයේ පාරමිතාවයි. සියලු සත්වයන්ගේ යහපත සඳහා බුදුත්වය සාක්ෂාත් කිරීමේ බෝධිසත්ත්වයාගේ නොසැලකිලිමත් අධිෂ්ඨානය සියලු අනුයායීන්ට ආදර්ශයකි.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "08",
+    "title": "ස්කොට්ලන්ත Mary රැජින මරණ දඬුවම",
+    "description": "1587 පෙබරවාරි 8 වන දින, ස්කොට්ලන්ත Mary Stuart රැජින Elizabeth Iට එරෙහි කුමන්ත්‍රණයකට වරදකර එංගලන්තයේ Fotheringhay Castle හි මරණ දඬුවම ක්‍රියාත්මක කරන ලදී. ඇගේ මරණය බ්‍රිතාන්‍යයේ සහ යුරෝපයේ කතෝලික සහ ප්‍රොටෙස්ටන්ට් කණ්ඩායම් අතර ආගමික සහ දේශපාලන ගැටුම්වල නාටක අවසානය විය.",
+    "category": "event",
+    "year": "1587",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Jules Verne උපත",
+    "description": "Jules Gabriel Verne 1828 පෙබරවාරි 8 වන දින Nantes, ප්‍රංශයේ උපත ලැබීය. 'විද්‍යා ප්‍රබන්ධ පියා' ලෙස හඳුන්වන ඔහුගේ දර්ශනාත්මක නවකතා — Twenty Thousand Leagues Under the Sea, Around the World in Eighty Days සහ From the Earth to the Moon — යටිමුහුදු නාවික, අභ්‍යවකාශ සහ ගුවන් ගමන් දශක ගණනකට පෙර අනාවැකි කළේය.",
+    "category": "event",
+    "year": "1828",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "ධර්ම: සංඝ — සමාජය",
+    "description": "සංඝ යනු මාර්ගයේ එකට ඇවිදින උතුම් ශිෂ්‍ය සමූහයයි. බුදුරජාණන් වහන්සේ ආනන්ද මහරහතන් වහන්සේට උගන්වා ඇත — 'කුසල් මිත්‍රත්වය ශුද්ධ ජීවිතයේ සම්පූර්ණයයි.'",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "09",
+    "title": "Boeing 747 පළමු ගුවන් ගමන",
+    "description": "1969 පෙබරවාරි 9 වන දින, Boeing 747 ලෝකයේ පළමු පුළුල් බඳුනු ගුවන් යානය Everett, Washington හි Paine Field හි පළමු ගුවන් ගමන ගියේය. 'Jumbo Jet' ලෙස හඳුන්වන 747 ජාත්‍යන්තර ගුවන් ගමන් විප්ලවීය වෙනස් කර මිලියන ගණනකට දිගු දුර ගුවන් ගමන් ප්‍රවේශ විය.",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Guadalcanal සටන අවසන් විය",
+    "description": "1943 පෙබරවාරි 9 වන දින, එක්සත් ජනපදය Solomon Islands හි Guadalcanal ජපන් බලකායන්ට එරෙහි මාස හයක දරුණු සටනෙන් පසු ආරක්ෂිත බව ප්‍රකාශ කළේය. මෙම ව්‍යාපාරය දෙවන ලෝක යුද්ධයේ ශාන්තිකාන්දයේ මිත්‍රපක්ෂ පළමු ප්‍රධාන ප්‍රහාරය වූ අතර ජපන් විස්තාරණය නවතා දෙවන ලෝක යුද්ධයේ තලය මාරු කළේය.",
+    "category": "event",
+    "year": "1943",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "ලෝක පලතුරු වර්ග දිනය",
+    "description": "පෝෂණය සහ තිරසාර ආහාර ප්‍රවර්ධනය කරන එක්සත් ජාතීන්ගේ දිනයකි. ශාකාශී ආහාර සහ සත්ව හිංසනයෙන් වැළකීම (අහිංසාවාදය) බෞද්ධ ධර්මයේ සිල් පදනමට අනුකූල වේ.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "1763 පැරිස් සන්ධිය අත්සන්",
+    "description": "1763 පෙබරවාරි 10 වන දින, පැරිස් සන්ධිය අත්සන් කරන ලද අතර යුද්ධ හත් අවුරුද්ද (උතුරු ඇමරිකාවේ French and Indian War) අවසන් විය. ප්‍රංශය Canada සහ Mississippi නැගෙනහිර ප්‍රදේශ බ්‍රිතාන්‍යයට අත්හිටුවූ අතර ඇමරිකානු යටත් විජිත සිතියම නැවත හැඩගැස්වීය.",
+    "category": "event",
+    "year": "1763",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Deep Blue Kasparov පරාජයට පත් කළේය",
+    "description": "1996 පෙබරවාරි 10 වන දින, IBM හි Deep Blue පරිගණකය ලෝක ශූරතා Garry Kasparov එරෙහි ඓතිහාසික තරගයේ පළමු ක්‍රීඩාව ජය ගත්තේය — සම්මත තරඟ කොන්දේසි යටතේ පරිගණකයක් ලෝක ශූරයෙකු පරාජයට පත් කළ පළමු අවස්ථාව. මෙය කෘතිම බුද්ධියේ නව යුගයට සංඥා කළේය.",
+    "category": "event",
+    "year": "1996",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "මාඝ පූජා",
+    "description": "Veluvana හි බුදුරජාණන් වහන්සේ ඉදිරියේ 1,250 අරහත්වන්තයින් ස්වයංක්‍රීයව රැස් වූ අවස්ථාව සිහිපත් කරන වැදගත් බෞද්ධ උත්සවයකි. බුදුරජාණන් වහන්සේ Ovadapatimokkha — බුද්ධාගමේ මූලික මූලධර්ම — උගන්වා ඇත.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "11",
+    "title": "Nelson Mandela නිදහස් විය",
+    "description": "1990 පෙබරවාරි 11 වන දින, Nelson Mandela දකුණු අප්‍රිකාවේ apartheid පාලනය යටතේ වසර 27ක සිරගත කිරීමෙන් පසු Cape Town අසල Victor Verster බන්ධනාගාරයෙන් නිදහස් විය. ඔහුගේ නිදහස් වීම ගෝලීය anti-apartheid අරගලයේ නිර්ණායක මොහොතක් වූ අතර ආයතමික ජාතිවාදී වෙන්කිරීම බිඳ දැමීමට මග පෑදීය.",
+    "category": "event",
+    "year": "1990",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "ඉරාන විප්ලවය ජය ගනී",
+    "description": "1979 පෙබරවාරි 11 වන දින, ඉරාන රාජධානිය බිඳ වැටුණු අතර Ayatollah Ruhollah Khomeini ගේ විප්ලවකාරී බලකායන් Shah Mohammad Reza Pahlavi ගේ සහායකයින් පරාජය කළහ. විප්ලවය පර්සියානු රාජධානි වසර 2,500ක් අවසන් කර ඉරාන ඉස්ලාම් සමූහාණ්ඩුව පිහිටුවීය.",
+    "category": "event",
+    "year": "1979",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Abraham Lincoln ජයන්ති",
+    "description": "දාසත්වය නිෂේධනය කළ එක්සත් ජනපදයේ 16 වන ජනාධිපති Abraham Lincoln ගේ උපතේ සංවත්සරය. මානව සමානාත්මතාව සඳහා ඔහුගේ අරගලය ලොව පුරා ධර්ම සහ සමාජීය යුක්තියේ වටිනාකම් සමඟ සම්බන්ධ වේ.",
+    "category": "event",
+    "year": "1809",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Sant Ravidas ජයන්ති",
+    "description": "Sant Ravidas (ආ. 1377–1527) භක්ති ශ්‍රේෂ්ඨයා, කවියා සහ ජාතිවාද වෙනස්කම් ප්‍රතික්ෂේප කළ සමාජ ප්‍රතිසංස්කාරකයාගේ උපතේ සංවත්සරය. Guru Granth Sahib හි ඔහුගේ ගීත 'Begumpura — ශෝකය නැති නගරය' ප්‍රකාශ කරයි.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "12",
+    "title": "NAACP පිහිටුවීම",
+    "description": "1909 පෙබරවාරි 12 වන දින, National Association for the Advancement of Colored People (NAACP) W.E.B. Du Bois, Ida B. Wells සහ Mary White Ovington ඇතුළු ක්‍රියාකාරීන් විසින් New York City හි පිහිටුවන ලදී. Abraham Lincoln ගේ ශතවර්ෂයේ දිනයක් හැදින්වීමෙන් එක්සත් ජනපදයේ බලවතම සිවිල් අයිතිවාසිකම් සංවිධානය බවට පත් විය.",
+    "category": "event",
+    "year": "1909",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "සරොජිනි නායිඩු ජයන්ති",
+    "description": "ඉන්දියාවේ 'රාත්‍රීගීතය' කවියා, ස්වාධීනතා අරගලකරු සහ පළමු ඉන්දියානු කාන්තා පළාත් ආණ්ඩුකාරවරිය වූ සරොජිනි නායිඩුගේ උපතේ සංවත්සරය.",
+    "category": "event",
+    "year": "1879",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "William සහ Mary ප්‍රකාශ කෙරිණි",
+    "description": "1689 පෙබරවාරි 13 වන දින, William of Orange සහ Mary Stuart එංගලන්තයේ සහකාර ස්වාධීනයන් ලෙස ප්‍රකාශ කරන ලදී. Catholic James II ඉවත් කළ රුධිරරහිත විප්ලවය පාර්ලිමේන්තුවේ ආධිපත්‍යය ස්ථාපනය කර ඉංග්‍රීසි අයිතිවාසිකම් බිල්පතට මග පෑදීය.",
+    "category": "event",
+    "year": "1689",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Galileo රෝමයට Inquiry සඳහා",
+    "description": "1633 පෙබරවාරි 13 වන දින, Galileo Galilei හෙලියොසෙන්ට්‍රික් ආකෘතියට උද්ඝෝෂණය කළ බවට රෝමානු විමර්ශනය ඉදිරියේ නඩු විභාගයට රෝමයට පැමිණිය. ඔහුගේ විභාගය විද්‍යාත්මක විමර්ශනය සහ ආගමික අධිකාරිත්වය අතර ඉතිහාසයේ ප්‍රසිද්ධම ගැටුම්වලින් එකකි.",
+    "category": "event",
+    "year": "1633",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "මෛත්‍රි දිවස",
+    "description": "සියලු සත්වයන්ට මෛත්‍රී (ආදරය), කරුණාව සහ මෛත්‍රි යන බුද්ධ ධර්මයේ මූලික ඉගැන්වීම සැමරීමට දිනයකි. හිතවාචාරය පතුරවා කරුණාව පුරුදු කරන්න.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "14",
+    "title": "Alexander Graham Bell දුරකථන පේටන්ට් ගොනු කළේය",
+    "description": "1876 පෙබරවාරි 14 වන දින, Alexander Graham Bell එක්සත් ජනපද පේටන්ට් කාර්යාලයේ දුරකථන පේටන්ට් අයදුම්පත ගොනු කළේය. 1876 මාර්තු 7 වන දින පේටන්ට් අංක 174,465 ලබා ගත් අතර සන්නිවේදනය විප්ලවීය වෙනස් කළේය.",
+    "category": "event",
+    "year": "1876",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Frederick Douglass උපත",
+    "description": "Maryland හි දාසයෙකු ලෙස උපත ලැබූ Frederick Douglass පෙබරවාරි 14 ඔහුගේ උපතේ දිනය ලෙස තෝරා ගත්තේය. බන්ධනයෙන් පලා ගොස් 19 වන සියවසේ ප්‍රකට අප්‍රිකානු-ඇමරිකානු දාසත්වය නිෂේධනවාදියා, වාග් විශාරදයා සහ ලේඛකයා බවට පත් විය.",
+    "category": "event",
+    "year": "1818",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "ධර්ම: ප්‍රඥා (ප්‍රඥාව)",
+    "description": "ප්‍රඥා යනු ප්‍රඥාවේ පාරමිතාවයි — දේවල් ඇත්තෙන්ම ඇති පරිදි දැකීම. ප්‍රඥාව ධර්මය අසා, නිර්වචනය කර, යථාර්ථ ස්වභාවය මෙනෙහි කිරීමෙන් උපත ලැබේ.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "15",
+    "title": "Galileo Galilei උපත",
+    "description": "Galileo Galilei 1564 පෙබරවාරි 15 වන දින Pisa, ඉතාලියේ උපත ලැබීය. 'නවීන විද්‍යාවේ පියා' ලෙස හඳුන්වන ඔහු තාරකා විද්‍යාව, භෞතික විද්‍යාව සහ විද්‍යාත්මක ක්‍රමවේදයට නවීන දායකත්වයන් ලබා දුන්නේය.",
+    "category": "event",
+    "year": "1564",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "USS Maine Havana වරායේ පිපිරීම",
+    "description": "1898 පෙබරවාරි 15 වන දින, USS Maine යුධ නැව කියුබාවේ Havana වරායේ පිපිරී පැණුණු අතර නාවිකයින් 266 දෙනෙක් මිය ගියහ. 'Remember the Maine!' යනුවෙන් Spanish-American යුද්ධයට මග පෑදීය.",
+    "category": "event",
+    "year": "1898",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "ධර්ම: සම්මා ආජීව (නිවැරදි ජීවනෝපාය)",
+    "description": "නිවැරදි ජීවනෝපාය යනු හානියක් නොකරන ආකාරයෙන් ජීවිකොපාය සොයා ගැනීමයි. බුදුරජාණන් වහන්සේ ආයුධ, සතුන්, මස්, මත්පැන් සහ විෂ යන වෙළඳාම තහනම් කළහ.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "16",
+    "title": "Howard Carter Tutankhamun සොහොන් කුටිය විවෘත කළේය",
+    "description": "1923 පෙබරවාරි 16 වන දින, බ්‍රිතාන්‍ය පුරාවිද්‍යාඥ Howard Carter ඊජිප්තුවේ Kings නිම්නයේ Pharaoh Tutankhamun ගේ සොහොන් කුටිය විවෘත කර රන් සොහොන් බඳුන සහ නිධි අනාවරණය කළේය.",
+    "category": "event",
+    "year": "1923",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "පළමු 911 හදිසි ඇමතුම",
+    "description": "1968 පෙබරවාරි 16 වන දින, එක්සත් ජනපදයේ පළමු 911 හදිසි දුරකථන ඇමතුම Alabama, Haleyville හි Rankin Fite විසින් සිදු කරන ලදී. ඒකාබද්ධ හදිසි අංකය මගින් මහජන ආරක්ෂාව වෙනස් කරන ලදී.",
+    "category": "event",
+    "year": "1968",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "ධර්ම: මධ්‍යම ප්‍රතිපදාව",
+    "description": "බුදුරජාණන් වහන්සේ මධ්‍යම ප්‍රතිපදාව සොයා ගත්හ — අතිරේක රසවාදය සහ අතිරේක තපස් දෙකම වළක්වා ගැනීම. මෙම සමබර ප්‍රවේශය උතුම් අෂ්ටාංගික මාර්ගයේ පදනමයි.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "17",
+    "title": "Giordano Bruno මරණ දඬුවම",
+    "description": "1600 පෙබරවාරි 17 වන දින, ඉතාලි දාර්ශනික Giordano Bruno රෝමයේ Campo de' Fiori හි රෝමානු විමර්ශනය විසින් මරණ දඬුවම ක්‍රියාත්මක කරන ලදී. අසීමිත විශ්වය සහ බහු ලෝක යෝජනා කළ ඔහු නිදහස් සිතුවිල්ල සඳහා සංකේතයක් බවට පත් විය.",
+    "category": "event",
+    "year": "1600",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Thomas Jefferson නිවේදනය විය",
+    "description": "1801 පෙබරවාරි 17 වන දින, එක්සත් ජනපද නියෝජිත මණ්ඩලය Aaron Burr සමඟ ඡන්ද මණ්ඩල සම බැඳීම බිඳ දමා ඡන්ද 36 ක් පසු Thomas Jefferson තෙවන ජනාධිපති ලෙස තෝරා ගත්තේය.",
+    "category": "event",
+    "year": "1801",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Ramakrishna Paramahamsa ජයන්ති",
+    "description": "Swami Vivekananda සහ Ramakrishna Mission ආශ්වාදය දුන් ශ්‍රී Ramakrishna ගේ උපතේ සංවත්සරය. සියලු ආගම්වල සාමජ්ජය සහ අභ්‍යන්තර දිව්‍යත්වය ඔහු උගන්වා ඇත.",
+    "category": "event",
+    "year": "1836",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Pluto සොයා ගැනීම",
+    "description": "1930 පෙබරවාරි 18 වන දින, ඇමරිකානු තාරකා විද්‍යාඥ Clyde Tombaugh Arizona, Flagstaff හි Lowell Observatory හි Pluto සොයා ගත්තේය. වසර 75කට වඩා සූර්ය කණ්ඩායමේ නවවන ග්‍රහලොව ලෙස වර්ගීකරණය විය.",
+    "category": "event",
+    "year": "1930",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "White Rose සාමාජිකයින් අත්අඩංගුවට",
+    "description": "1943 පෙබරවාරි 18 වන දින, Hans සහ Sophie Scholl Munich විශ්වවිද්‍යාලයේ නාසි විරෝධී White Rose කණ්ඩායමේ සාමාජිකයින් ලෙස Gestapo විසින් අත්අඩංගුවට ගන්නා ලදී. දින හතරකින් මරණ දඬුවම ක්‍රියාත්මක කරන ලදී.",
+    "category": "event",
+    "year": "1943",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Chhatrapati Shivaji ජයන්ති",
+    "description": "Swarajya, යුක්තිය, ආගමික සහනය සහ සාමාන්‍ය ජනයාගේ යහපත උදෙසා සටන් වූ මරාතා රණශූර රජ Chhatrapati Shivaji Maharaj ගේ උපතේ සංවත්සරය.",
+    "category": "event",
+    "year": "1630",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Nicolaus Copernicus උපත",
+    "description": "Nicolaus Copernicus 1473 පෙබරවාරි 19 වන දින Toruń හි උපත ලැබීය. De revolutionibus orbium coelestium (1543) හි හෙලියොසෙන්ට්‍රික් ආකෘතිය යෝජනා කර 'Copernican විප්ලවය' මගින් විද්‍යා දෘෂ්ටිය මූලිකවම වෙනස් කළේය.",
+    "category": "event",
+    "year": "1473",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Executive Order 9066 ජපන්-ඇමරිකානු අධිකාරිත්වය",
+    "description": "1942 පෙබරවාරි 19 වන දින, ජනාධිපති Franklin D. Roosevelt Executive Order 9066 අත්සන් කර බටහිර වෙරළේ ජපන්-ඇමරිකානුවන් ආසන්න 120,000ක් සංයුක්ත කඳවුරුවලට මාරු කිරීමට අනුමත කළේය. ජාතිවාදී අයිතිවාසිකම් උල්ලංඝනයකි.",
+    "category": "event",
+    "year": "1942",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "ලෝක සමාජීය යුක්ති දිනය",
+    "description": "දරිද්‍රතාව, බැහැර කිරීම සහ අසමානතාවට මුහුණ දීම සඳහා සමාජීය යුක්තිය ප්‍රවර්ධනය කරන එක්සත් ජාතීන්ගේ දිනයකි. Dr. Ambedkar තම ජීවිතය මෙම කාරණයට කැප කළහ.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "John Glenn පෘථිවිය වටා ගියේය",
+    "description": "1962 පෙබරවාරි 20 වන දින, John Glenn Friendship 7 හි පළමු ඇමරිකානුවා ලෙස පෘථිවිය වටා තුන් වතාවක් ගියේය. ඉතිහාසික ගමන අභ්‍යවකාශ තරඟයේ ඇමරිකානු මනෝභාවය ඉහළ නංවීය.",
+    "category": "event",
+    "year": "1962",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Lord Mountbatten අවසාන වයිසරායි",
+    "description": "1947 පෙබරවාරි 20 වන දින, බ්‍රිතාන්‍ය අගමැති Clement Attlee Lord Louis Mountbatten ඉන්දියාවේ අවසාන වයිසරායි ලෙස නියමිත බව ප්‍රකාශ කළේය. බලය මාරු කිරීමේ අවසාන අදියර ආරම්භ විය.",
+    "category": "event",
+    "year": "1947",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "ජාත්‍යන්තර මව් භාෂා දිනය",
+    "description": "UNESCO දිනය භාෂා සහ සංස්කෘතික විවිධත්වය ප්‍රවර්ධනය කරයි. භාෂාව සංස්කෘතිය, අනන්‍යතාව සහ ධර්මය සැතැස්මකින් ප්‍රවාහනය වන මූලික මාර්ගයකි.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Malcolm X ඝාතනය විය",
+    "description": "1965 පෙබරවාරි 21 වන දින, Malcolm X New York City හි Audubon Ballroom හි කතා කරමින් සිටියදී ඝාතනය කරන ලදී. 20 වන සියවසේ බලවත්ම අප්‍රිකානු-ඇමරිකානු නායකයින්ගෙන් එක් අයෙක් විය.",
+    "category": "event",
+    "year": "1965",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Communist Manifesto ප්‍රකාශනය",
+    "description": "1848 පෙබරවාරි 21 වන දින, Karl Marx සහ Friedrich Engels London හි The Communist Manifesto ප්‍රකාශයට පත් කළහ. වර්ග ප්‍රතිසංස්කරණය විශ්ලේෂණය කර කම්කරු පන්තිය එක්වන ලෙස ඉල්ලා සිටි බවට ප්‍රසිද්ධ විය.",
+    "category": "event",
+    "year": "1848",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "ධර්ම: අනත්ත (අනාත්මභාවය)",
+    "description": "අනත්ත යනු ස්ථිර, නොවෙනස් වන ආත්මයක් නැත යන බෞද්ධ ඉගැන්වීමයි. මෙය අහංකාර ජනිත දුකෙන් මුදා හැර සැබෑ නිදහසට මග පාදයි.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "22",
+    "title": "George Washington උපත",
+    "description": "George Washington 1732 පෙබරවාරි 22 වන දින Virginia, Westmoreland County හි උපත ලැබීය. ඇමරිකානු විප්ලවයේ සේනාපති සහ පළමු ජනාධිපති ලෙස ජනරජය පිහිටුවීමේ අත්යවශ්‍ය භූමිකාවක් ඉටු කළේය.",
+    "category": "event",
+    "year": "1732",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Dolly බැටළුව ක්ලෝන කිරීම නිවේදනය",
+    "description": "1997 පෙබරවාරි 22 වන දින, Edinburgh, Scotland හි Roslin Institute විද්‍යාඥයින් වැඩිහිටි සෛලයකින් ක්ලෝන කළ පළමු සතෙකු වූ Dolly බැටළුව නිවේදනය කළහ. ජාන විද්‍යාවේ විප්ලවයක් සහ සදාචාර විවාද ඇති කළේය.",
+    "category": "event",
+    "year": "1997",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "ධර්ම: පටිච්චසමුප්පාද (ආදේශ්‍ය උත්පත්තිය)",
+    "description": "පටිච්චසමුප්පාද — ආදේශ්‍ය උත්පත්තිය — කොන්දේසි දාමයකින් දුක් උපත ලබන ආකාරය පෙන්වයි. මෙම දාමය අවබෝධ කිරීම උපපත්ති චක්‍රයෙන් මිදීමේ යතුරකි.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "23",
+    "title": "Sant Gadge Baba ජයන්ති",
+    "description": "Sant Gadge Baba (Debuji Zhingraji Janorkar, 1876–1956) මහාරාෂ්ට්‍රයේ සංචාරක ශ්‍රද්ධාලුයාගේ උපතේ සංවත්සරය. පිරිසිදුකම, අධ්‍යාපනය සහ පීඩිතයින් උසස් කිරීමට ජීවිතය කැප කළහ.",
+    "category": "event",
+    "year": "1876",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "W.E.B. Du Bois උපත",
+    "description": "William Edward Burghardt Du Bois 1868 පෙබරවාරි 23 වන දින Massachusetts, Great Barrington හි උපත ලැබීය. ශ්‍රීමත් ශාස්ත්‍රඥයා, ඉතිහාසඥයා සහ සිවිල් අයිතිවාසිකම් ක්‍රියාකාරියෙක් වූ ඔහු Harvard වලින් උපාධිය ලබා ගත් පළමු අප්‍රිකානු-ඇමරිකානුවා වූ අතර NAACP සමඟ සහයෝගී විය.",
+    "category": "event",
+    "year": "1868",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "මධ්‍යම අබිබව් දිනය",
+    "description": "1944 දී ස්ථාපිත කළ ඉන්දියාවේ මධ්‍යම අබිබව් දෙපාර්තමේන්තුව සමරයි. හොඳ පාලනය සහ සාධාරණ බදු යුක්ත සමාජයක කුළුණකි.",
+    "category": "event",
+    "year": "1944",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Marbury v. Madison තීන්දුව",
+    "description": "1803 පෙබරවාරි 24 වන දින, Chief Justice John Marshall ප්‍රමුඛ උසස් නීති මහ පෙර tribunalය judicial review — නීති ආණ්ඩුක්‍රම ව්‍යවස්ථාවට පටහැනි බව ප්‍රකාශ කිරීමේ බලය — ස්ථාපනය කළේය.",
+    "category": "event",
+    "year": "1803",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "ජනාධිපති Andrew Johnson නඩු විභාගය",
+    "description": "1868 පෙබරවාරි 24 වන දින, නියෝජිත මණ්ඩලය ජනාධිපති Andrew Johnson නඩු විභාගයට ලක් කළ අතර, ධුරයේ සිටින පළමු ජනාධිපති වූයේය. Tenure of Office Act උල්ලංඝනය කළ බවට චෝදනා විය.",
+    "category": "event",
+    "year": "1868",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "ධර්ම: විරිය (ශක්තිය)",
+    "description": "විරිය යනු ශක්තිය සහ උත්සාහයේ පාරමිතාවයි. බුදුරජාණන් වහන්සේ සමතුලිත, අඛණ්ඩ උත්සාහය අවශ්‍ය බව උගන්වා ඇත — නැතිනම් තද නැතිනම් ලිහිල්.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "25",
+    "title": "Hiram Revels පළමු කළු සෙනටර්",
+    "description": "1870 පෙබරවාරි 25 වන දින, Mississippi හි Hiram Rhodes Revels පළමු අප්‍රිකානු-ඇමරිකානු එක්සත් ජනපද සෙනට් සාමාජිකයා ලෙස සාමුහිකයි. කොන්ෆෙඩරේට් ජනාධිපති Jefferson Davis ගේ ආසනය පිරීම සංකේතවත් විය.",
+    "category": "event",
+    "year": "1870",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "People Power විප්ලවය ජය ගනී",
+    "description": "1986 පෙබරවාරි 25 වන දින, Philippines හි People Power විප්ලවය Ferdinand Marcos පලා යෑමෙන් අවසන් වූ අතර Corazon Aquino ජනාධිපති ලෙස පත් විය. මිලියන ගණනක් EDSA මාර්ගයේ සාමකාමීව රැස් විය.",
+    "category": "event",
+    "year": "1986",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Veer Savarkar ජයන්ති",
+    "description": "Andaman Cellular Jail හි සිරගත වූ ස්වාධීනතා අරගලකරු Vinayak Damodar Savarkar ගේ උපතේ සංවත්සරය.",
+    "category": "event",
+    "year": "1883",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Robert Watson-Watt Radar පෙන්වයි",
+    "description": "1935 පෙබරවාරි 26 වන දින, Robert Watson-Watt Daventry, එංගලන්තයේ radar හි පළමු ප්‍රායෝගික සාක්ෂාත්කරණය සිදු කළ අතර Handley Page Heyford ගුවන්යානය මයිල් අටක් දුරින් හඳුනා ගත්තේය. Battle of Britain හි තීරණාත්මක වූ තාක්ෂණය විය.",
+    "category": "event",
+    "year": "1935",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Grand Canyon ජාතික උද්‍යානය පිහිටුවයි",
+    "description": "1919 පෙබරවාරි 26 වන දින, Woodrow Wilson Grand Canyon එක්සත් ජනපද ජාතික උද්‍යානයක් ලෙස පිහිටුවීය. Colorado ගඟ මිලියන වසර ගණනක් තිස්සේ මෙම පුදුමාකාර ස්වාභාවික අරුත නිර්මාණය කළේය.",
+    "category": "event",
+    "year": "1919",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Chandrashekhar Azad පුණ්‍යතිථිය",
+    "description": "ඉන්දියානු ස්වාධීනතාව සඳහා Allahabad, Alfred Park හි අත්දැවීමට වඩා මරණය තෝරා ගත් විප්ලවකාර Chandrashekhar Azad සිහිපත් කිරීම.",
+    "category": "event",
+    "year": "1931",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "ඩොමිනිකන් ජනරජ ස්වාධීනත්ව දිනය",
+    "description": "1844 පෙබරවාරි 27 වන දින, ඩොමිනිකන් ජනරජය Haiti වසර 22ක පාලනයෙන් පසු ස්වාධීනත්වය ප්‍රකාශ කළේය. Juan Pablo Duarte සහ La Trinitaria නායකත්වයෙන් රුධිරරහිත විප්ලවයක් විය.",
+    "category": "event",
+    "year": "1844",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Reichstag ගිනි",
+    "description": "1933 පෙබරවාරි 27 වන දින, Berlin හි German Reichstag ගොඩනැගිල්ල ගිනි තැබිණි. නාසි පාලනය හදිසි තත්ත්වය ප්‍රකාශයට පත් කිරීමට සහ සිවිල් නිදහස්වීම් අත්හිටුවීමට මෙය පාඩුවක් කර ගත්තේය.",
+    "category": "event",
+    "year": "1933",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "ජාතික විද්‍යා දිනය",
+    "description": "1928 දී C.V. Raman විසින් Raman Effect සොයා ගැනීම සමරයි. විද්‍යාව සහ යථාර්ථ අත්දැකීමට බෞද්ධ අවධාරණයට අනුකූල වේ.",
+    "category": "festival",
+    "year": "1928",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Watson සහ Crick DNA සොයා ගනී",
+    "description": "1953 පෙබරවාරි 28 වන දින, James Watson සහ Francis Crick Cambridge හි Cavendish Laboratory හි DNA ද්විත්ව හෙලික්ස් ආකෘතිය සම්පූර්ණ කළහ. ජානික තොරතුරු ගබඩා කිරීමේ රහස අගුළු හැර මොලිකියුලර් ජීව විද්‍යා යුගය ආරම්භ විය.",
+    "category": "event",
+    "year": "1953",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Republican Party පිහිටුවීම",
+    "description": "1854 පෙබරවාරි 28 වන දින, දාසත්වයට එරෙහි ක්‍රියාකාරීන් Wisconsin, Ripon හි පාසල් ගොඩනැගිල්ලක Republican Party පිහිටුවළහ. නව ප්‍රදේශවල දාසත්වය පුළුල් කිරීමට එරෙහිව පිහිටුවන ලදී.",
+    "category": "event",
+    "year": "1854",
+    "isSymbolic": false
+  }
+]

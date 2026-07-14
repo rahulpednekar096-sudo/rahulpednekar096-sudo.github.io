@@ -1,0 +1,746 @@
+[
+  {
+    "date": "01",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": false,
+    "title": "Năm mới 2026",
+    "description": "Khởi đầu của một năm mới. Thời điểm để suy ngẫm về con đường Pháp và đặt ý nguyện cho trí tuệ, từ bi và công lý xã hội."
+  },
+  {
+    "date": "01",
+    "category": "event",
+    "year": "1818",
+    "isSymbolic": false,
+    "title": "Ngày Chiến thắng Bhima Koregaon",
+    "description": "Ngày 1 tháng 1 năm 1818, binh lính Mahar của Công ty Đông Ấn thuộc Anh đã đánh bại quân Peshwa trong trận Bhima Koregaon. Chiến thắng lịch sử này trở thành biểu tượng mạnh mẽ của lòng dũng cảm, can đảm của người Dalit và sự kháng cự chống áp bức đẳng cấp. Hàng triệu người tụ họp hàng năm tại Jaystambh (Cột Chiến thắng) để tôn vinh di sản lòng dũng cảm Bahujan."
+  },
+  {
+    "date": "01",
+    "category": "event",
+    "year": "1863",
+    "isSymbolic": false,
+    "title": "Tuyên ngôn Giải phóng nô lệ có hiệu lực",
+    "description": "Ngày 1 tháng 1 năm 1863, Tuyên ngôn Giải phóng nô lệ của Tổng thống Abraham Lincoln có hiệu lực, tuyên bố mọi người bị nô lệ ở các bang Liên minh được tự do mãi mãi. Dù chưa giải phóng ngay tất cả nô lệ, nó đã biến Nội chiến thành cuộc đấu tranh cho tự do con người và mở đường cho Tu chính án thứ Mười ba bãi bỏ hoàn toàn chế độ nô lệ."
+  },
+  {
+    "date": "02",
+    "category": "event",
+    "year": "1831",
+    "isSymbolic": false,
+    "title": "Ngày sinh Savitribai Phule",
+    "description": "Kỷ niệm ngày sinh Savitribai Phule, giáo viên nữ đầu tiên của Ấn Độ và nhà cải cách xã hội tiên phong đấu tranh cho giáo dục phụ nữ và chống phân biệt đẳng cấp."
+  },
+  {
+    "date": "02",
+    "category": "event",
+    "year": "1492",
+    "isSymbolic": false,
+    "title": "Granada đầu hàng – Kết thúc quyền thống trị của người Moor ở Tây Ban Nha",
+    "description": "Ngày 2 tháng 1 năm 1492, Muhammad XII của Granada đầu hàng Emirate Granada trước Ferdinand và Isabella của Castile, chấm dứt gần 800 năm cai trị của người Moor Hồi giáo trên bán đảo Iberia. Cuộc biến động chính trị to lớn này định hình lại cảnh quan tôn giáo và văn hóa châu Âu, mở đường cho sự mở rộng thuộc địa của Tây Ban Nha."
+  },
+  {
+    "date": "02",
+    "category": "event",
+    "year": "1959",
+    "isSymbolic": false,
+    "title": "Liên Xô phóng Luna 1",
+    "description": "Ngày 2 tháng 1 năm 1959, Liên Xô phóng Luna 1, tàu vũ trụ đầu tiên đến gần Mặt Trăng và đầu tiên được đưa vào quỹ đạo quanh Mặt Trời. Dù lệch Mặt Trăng khoảng 6.000 km, nó xác nhận không có từ trường trên Mặt Trăng và phát hiện gió mặt trời, đánh dấu cột mốc tiên phong trong khám phá vũ trụ."
+  },
+  {
+    "date": "03",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true,
+    "title": "Pháp: Bố thí (Dāna)",
+    "description": "Bố thí là đầu tiên trong Mười Ba-la-mật. Đức Phật dạy rằng lòng bố thí thanh tịnh tâm, giảm chấp trước và tạo điều kiện cho sự phát triển tinh thần."
+  },
+  {
+    "date": "03",
+    "category": "event",
+    "year": "1848",
+    "isSymbolic": false,
+    "title": "Savitribai Phule mở trường nữ đầu tiên",
+    "description": "Ngày 3 tháng 1 năm 1848, Savitribai và Jyotirao Phule mở trường nữ đầu tiên ở Ấn Độ tại Bhidewada, Pune. Bất chấp sự phản đối dữ dội của xã hội bảo thủ, Savitribai vẫn đi học mỗi ngày dù bị ném đá và phân — đặt nền móng cho giáo dục phụ nữ và sự thức tỉnh Bahujan ở Ấn Độ."
+  },
+  {
+    "date": "03",
+    "category": "event",
+    "year": "1793",
+    "isSymbolic": false,
+    "title": "Sinh Lucretia Mott, tiên phong quyền phụ nữ",
+    "description": "Ngày 3 tháng 1 năm 1793, Lucretia Mott sinh tại Nantucket, Massachusetts. Người theo Quaker chống nô lệ và nhà bảo vệ quyền bầu cử của phụ nữ không mệt mỏi, bà đồng tổ chức Hội nghị Seneca Falls năm 1848 — hội nghị quyền phụ nữ đầu tiên ở Hoa Kỳ. Hoạt động suốt đời chống nô lệ và bất bình đẳng giới khiến bà trở thành một trong những nhà cải cách có ảnh hưởng nhất thế kỷ 19."
+  },
+  {
+    "date": "04",
+    "category": "event",
+    "year": "1809",
+    "isSymbolic": false,
+    "title": "Ngày Braille Thế giới",
+    "description": "Kỷ niệm ngày sinh Louis Braille, người phát minh chữ Braille. Nhắc nhở rằng tiếp cận tri thức là quyền cơ bản của mọi người, kể cả người khiếm thị."
+  },
+  {
+    "date": "04",
+    "category": "event",
+    "year": "1643",
+    "isSymbolic": false,
+    "title": "Sinh Isaac Newton",
+    "description": "Ngày 4 tháng 1 năm 1643 (lịch mới), Isaac Newton sinh tại Woolsthorpe, Anh. Công trình đột phá về định luật chuyển động, lực hấp dẫn vạn vật và giải tích đặt nền móng cho vật lý và toán học hiện đại. Kiệt tác Principia Mathematica vẫn là một trong những tác phẩm khoa học có ảnh hưởng nhất trong lịch sử nhân loại."
+  },
+  {
+    "date": "04",
+    "category": "event",
+    "year": "1948",
+    "isSymbolic": false,
+    "title": "Ngày Độc lập Myanmar",
+    "description": "Ngày 4 tháng 1 năm 1948, Miến Điện (nay là Myanmar) giành độc lập khỏi Đế quốc Anh sau hàng thập kỷ thuộc địa và cuộc đấu tranh chống thực dân do các nhân vật như Aung San lãnh đạo. Quốc gia trở thành cộng hòa chủ quyền, chấm dứt hơn một thế kỷ thống trị của Anh ở Đông Nam Á."
+  },
+  {
+    "date": "05",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true,
+    "title": "Pháp: Chánh kiến (Sammā Diṭṭhi)",
+    "description": "Chánh kiến là yếu tố đầu tiên của Bát Chánh Đạo. Nghĩa là hiểu Tứ Diệu Đế và thấy thực tại đúng như nó là — vô thường, khổ và vô ngã."
+  },
+  {
+    "date": "05",
+    "category": "event",
+    "year": "1895",
+    "isSymbolic": false,
+    "title": "Hạ chức công khai Alfred Dreyfus",
+    "description": "Ngày 5 tháng 1 năm 1895, Đại úy Alfred Dreyfus của Quân đội Pháp bị hạ chức công khai trong lễ nhục nhã tại École Militaire ở Paris, sau khi bị kết tội phản quốc oan bằng chứng giả mạo mang tính bài Do Thái. Vụ Dreyfus trở thành một trong những sai lầm tư pháp khét tiếng nhất lịch sử hiện đại và thúc đẩy phong trào tự do dân sự và nhân quyền khắp châu Âu."
+  },
+  {
+    "date": "05",
+    "category": "event",
+    "year": "1896",
+    "isSymbolic": false,
+    "title": "Công bố phát hiện tia X",
+    "description": "Ngày 5 tháng 1 năm 1896, báo Áo Die Presse đăng tin đầu tiên về phát hiện tia X của Wilhelm Conrad Röntgen, làm chấn động giới khoa học và công chúng. Röntgen đã phát hiện tia bí ẩn vào 8 tháng 11 năm 1895, và thông báo công khai đã cách mạng hóa y học bằng cách cho phép bác sĩ nhìn bên trong cơ thể người mà không cần phẫu thuật."
+  },
+  {
+    "date": "06",
+    "category": "event",
+    "year": "1666",
+    "isSymbolic": false,
+    "title": "Ngày sinh Guru Gobind Singh",
+    "description": "Kỷ niệm ngày sinh Guru Gobind Singh Ji, Guru Sikh thứ mười đã đứng vì công lý, bình đẳng và quyền lợi của người bị áp bức."
+  },
+  {
+    "date": "06",
+    "category": "event",
+    "year": "1838",
+    "isSymbolic": false,
+    "title": "Samuel Morse trình diễn điện báo",
+    "description": "Ngày 6 tháng 1 năm 1838, Samuel Morse trình diễn điện báo công khai lần đầu tại Speedwell Ironworks ở Morristown, New Jersey. Phát minh này cách mạng hóa liên lạc đường dài, cho phép tin nhắn đi qua lục địa trong vài giây thay vì nhiều ngày. Điện báo biến đổi thương mại, báo chí và ngoại giao, đặt nền móng cho thế giới kết nối hiện đại."
+  },
+  {
+    "date": "06",
+    "category": "event",
+    "year": "1941",
+    "isSymbolic": false,
+    "title": "Bài diễn văn Bốn tự do của FDR",
+    "description": "Ngày 6 tháng 1 năm 1941, Tổng thống Franklin D. Roosevelt đọc bài Thông điệp Liên bang lịch sử trước Quốc hội Mỹ, nêu Bốn tự do thiết yếu cho phẩm giá con người: tự do ngôn luận, tự do tín ngưỡng, tự do khỏi thiếu thốn và tự do khỏi nỗi sợ hãi. Bài diễn văn trở thành tuyên ngôn giá trị dân chủ và sau này truyền cảm hứng cho Tuyên ngôn Nhân quyền Phổ quát."
+  },
+  {
+    "date": "07",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true,
+    "title": "Pháp: Giới (Sīla)",
+    "description": "Giới — đạo đức — là nền tảng của con đường Phật giáo. Ngũ giới hướng dẫn tín đồ tại gia tránh sát sinh, trộm cắp, tà dâm, nói dối và chất say."
+  },
+  {
+    "date": "07",
+    "category": "event",
+    "year": "1610",
+    "isSymbolic": false,
+    "title": "Galileo phát hiện các mặt trăng của Sao Mộc",
+    "description": "Ngày 7 tháng 1 năm 1610, Galileo Galilei hướng kính thiên văn cải tiến về Sao Mộc và quan sát ba điểm sáng gần hành tinh, ban đầu nhầm là sao cố định. Qua các đêm sau, ông nhận ra chúng là các mặt trăng quay quanh Sao Mộc — quan sát đầu tiên về thiên thể quay quanh hành tinh khác, cung cấp bằng chứng mạnh mẽ cho mô hình nhật tâm."
+  },
+  {
+    "date": "07",
+    "category": "event",
+    "year": "1979",
+    "isSymbolic": false,
+    "title": "Phnom Penh sụp đổ – Kết thúc Khmer Đỏ",
+    "description": "Ngày 7 tháng 1 năm 1979, lực lượng Việt Nam chiếm Phnom Penh, lật đổ chế độ Khmer Đỏ tàn bạo của Pol Pot. Khmer Đỏ đã giết khoảng 1,5 đến 2 triệu người Campuchia qua hành quyết, lao động cưỡng bức và đói khát trong gần bốn năm cầm quyền. Ngày này được Campuchia tưởng niệm là Ngày Chiến thắng Diệt chủng."
+  },
+  {
+    "date": "08",
+    "category": "event",
+    "year": "1912",
+    "isSymbolic": false,
+    "title": "Thành lập Đại hội Dân tộc Châu Phi",
+    "description": "ANC được thành lập năm 1912 để chống phân biệt chủng tộc ở Nam Phi. Lời nhắc toàn cầu rằng đấu tranh cho bình đẳng và phẩm giá con người vượt qua biên giới."
+  },
+  {
+    "date": "08",
+    "category": "event",
+    "year": "1642",
+    "isSymbolic": false,
+    "title": "Qua đời Galileo Galilei",
+    "description": "Ngày 8 tháng 1 năm 1642, Galileo Galilei qua đời tại Arcetri, Ý, khi bị quản thúc tại gia vì ủng hộ nhật tâm. Thường được gọi là 'cha đẻ thiên văn quan sát hiện đại' và 'cha đẻ vật lý hiện đại', việc dùng kính thiên văn tiên phong, phát hiện mặt trăng Sao Mộc và bảo vệ hệ Copernicus đã thay đổi hiểu biết của nhân loại về vũ trụ."
+  },
+  {
+    "date": "08",
+    "category": "event",
+    "year": "1942",
+    "isSymbolic": false,
+    "title": "Sinh Stephen Hawking",
+    "description": "Ngày 8 tháng 1 năm 1942, Stephen William Hawking sinh tại Oxford, Anh — đúng 300 năm sau cái chết của Galileo. Dù được chẩn đoán bệnh thần kinh cơ tại tuổi 21, Hawking trở thành một trong những nhà vật lý nổi tiếng nhất thế kỷ 20, đóng góp đột phá cho vũ trụ học, bức xạ hố đen và hiểu biết về nguồn gốc vũ trụ."
+  },
+  {
+    "date": "09",
+    "category": "event",
+    "year": "1893",
+    "isSymbolic": false,
+    "title": "Ngày sinh Rahul Sankrityayan",
+    "description": "Kỷ niệm ngày sinh Mahapandit Rahul Sankrityayan, học giả đa ngôn ngữ, sử gia, nhà văn du ký và chiến sĩ độc lập ủng hộ tư duy lý trí và cải cách xã hội."
+  },
+  {
+    "date": "09",
+    "category": "event",
+    "year": "1905",
+    "isSymbolic": false,
+    "title": "Chủ nhật đẫm máu tại Saint Petersburg",
+    "description": "Ngày 9 tháng 1 năm 1905, cuộc tuần hành hòa bình của công nhân do Cha Georgy Gapon dẫn đầu tiến tới Cung điện Mùa đông ở Saint Petersburg để kiến nghị Sa hoàng Nicholas II về điều kiện lao động và cải cách chính trị. Lính đế quốc bắn vào đám đông không vũ trang, giết và làm bị thương hàng trăm người. Cuộc thảm sát này phá vỡ niềm tin công chúng vào Sa hoàng và châm ngòi Cách mạng Nga 1905."
+  },
+  {
+    "date": "09",
+    "category": "event",
+    "year": "1839",
+    "isSymbolic": false,
+    "title": "Công bố nhiếp ảnh Daguerreotype",
+    "description": "Ngày 9 tháng 1 năm 1839, Viện Hàn lâm Khoa học Pháp chính thức công bố quy trình daguerreotype do Louis Daguerre phát minh. Đây là quy trình nhiếp ảnh thực tiễn đầu tiên, tạo hình ảnh sắc nét trên tấm đồng mạ bạc. Thông báo đã cách mạng hóa ghi hình và đặt nền móng cho nhiếp ảnh hiện đại."
+  },
+  {
+    "date": "10",
+    "category": "event",
+    "year": "1975",
+    "isSymbolic": false,
+    "title": "Ngày Tiếng Hindi Thế giới",
+    "description": "Kỷ niệm Hội nghị Tiếng Hindi Thế giới đầu tiên tại Nagpur năm 1975. Tiếng Hindi kết nối hàng triệu người khắp Ấn Độ và là phương tiện cho văn học, cải cách và bản sắc văn hóa."
+  },
+  {
+    "date": "10",
+    "category": "event",
+    "year": "1776",
+    "isSymbolic": false,
+    "title": "Thomas Paine xuất bản 'Common Sense'",
+    "description": "Ngày 10 tháng 1 năm 1776, Thomas Paine xuất bản tập sách 'Common Sense', lập luận mạnh mẽ và rõ ràng cho độc lập Mỹ khỏi Anh. Bán hơn 500.000 bản trong năm đầu, đây là tập sách được đọc rộng nhất trong Cách mạng Mỹ và được cho là đã chuyển dư luận quyết định sang ủng hộ độc lập."
+  },
+  {
+    "date": "10",
+    "category": "event",
+    "year": "1920",
+    "isSymbolic": false,
+    "title": "Thành lập Hội Quốc Liên",
+    "description": "Ngày 10 tháng 1 năm 1920, Hội Quốc Liên chính thức có hiệu lực khi Hiệp ước Versailles được phê chuẩn. Đây là tổ chức liên chính phủ toàn cầu đầu tiên nhằm duy trì hòa bình thế giới qua an ninh tập thể, giảm vũ khí và giải quyết tranh chấp. Dù thất bại ngăn Thế chiến II, nó đặt nền móng cho Liên Hợp Quốc."
+  },
+  {
+    "date": "11",
+    "category": "event",
+    "year": "1966",
+    "isSymbolic": false,
+    "title": "Ngày giỗ Lal Bahadur Shastri",
+    "description": "Tưởng nhớ cựu Thủ tướng Lal Bahadur Shastri, người đưa ra khẩu hiệu 'Jai Jawan Jai Kisan'. Ông đại diện cho sự giản dị, chính trực và phúc lợi của nông dân và binh lính."
+  },
+  {
+    "date": "11",
+    "category": "event",
+    "year": "1922",
+    "isSymbolic": false,
+    "title": "Điều trị tiểu đường bằng insulin đầu tiên",
+    "description": "Ngày 11 tháng 1 năm 1922, tại Bệnh viện Đa khoa Toronto, Leonard Thompson 14 tuổi trở thành người đầu tiên được tiêm insulin điều trị tiểu đường. Do Banting, Best, Collip và Macleod phát triển, insulin biến tiểu đường từ án tử thành bệnh có thể kiểm soát, cứu hàng triệu người trên toàn thế giới."
+  },
+  {
+    "date": "11",
+    "category": "event",
+    "year": "1964",
+    "isSymbolic": false,
+    "title": "Báo cáo của Bộ trưởng Y tế Mỹ về hút thuốc",
+    "description": "Ngày 11 tháng 1 năm 1964, Bộ trưởng Y tế Mỹ Luther Terry công bố báo cáo lịch sử chính thức liên kết hút thuốc với ung thư phổi, viêm phế quản mãn và các bệnh khác. Báo cáo y tế công cộng này dẫn đến quy định thuốc lá rộng rãi, nhãn cảnh báo bắt buộc và thay đổi căn bản cách chính phủ toàn cầu đối phó bệnh có thể phòng ngừa."
+  },
+  {
+    "date": "12",
+    "category": "festival",
+    "year": "1863",
+    "isSymbolic": false,
+    "title": "Ngày sinh Swami Vivekananda",
+    "description": "Kỷ niệm ngày sinh Swami Vivekananda, được tôn vinh là Ngày Thanh niên Quốc gia. Bài diễn văn Chicago năm 1893 giới thiệu di sản tinh thần Ấn Độ ra thế giới và truyền cảm hứng cho một thế hệ."
+  },
+  {
+    "date": "12",
+    "category": "event",
+    "year": "1964",
+    "isSymbolic": false,
+    "title": "Cách mạng Zanzibar",
+    "description": "Ngày 12 tháng 1 năm 1964, Đảng Afro-Shirazi chủ yếu gồm người châu Phi lãnh đạo cuộc nổi dậy lật đổ Sultan Zanzibar và chính phủ Ả Rập thống trị. Cách mạng chấm dứt hàng thế kỷ thống trị của người Ả Rập và áp bức đa số người châu Phi. Zanzibar sau đó sáp nhập với Tanganyika thành Cộng hòa Liên bang Tanzania."
+  },
+  {
+    "date": "12",
+    "category": "event",
+    "year": "1932",
+    "isSymbolic": false,
+    "title": "Hattie Caraway – Phụ nữ đầu tiên được bầu vào Thượng viện Mỹ",
+    "description": "Ngày 12 tháng 1 năm 1932, Hattie Wyatt Caraway của Arkansas trở thành phụ nữ đầu tiên được bầu vào Thượng viện Hoa Kỳ, thắng bầu cử đặc biệt lấp ghế chồng quá cố. Bà tái đắc cử và phục vụ đến 1945, phá vỡ rào cản cho phụ nữ trong chính trị Mỹ."
+  },
+  {
+    "date": "13",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true,
+    "title": "Pháp: Từ bi (Mettā)",
+    "description": "Từ bi là thực hành lan tỏa thiện ý vô điều kiện đến mọi chúng sinh. Kinh Từ bi (Karaniya Metta Sutta) dạy: 'Nguyện cho tất cả chúng sinh được hạnh phúc, nguyện cho tất cả chúng sinh được an toàn.'"
+  },
+  {
+    "date": "13",
+    "category": "event",
+    "year": "1898",
+    "isSymbolic": false,
+    "title": "Émile Zola xuất bản 'J'Accuse...!'",
+    "description": "Ngày 13 tháng 1 năm 1898, nhà văn Pháp Émile Zola đăng thư mở 'J'Accuse...!' trên trang nhất báo L'Aurore, lên án quân đội Pháp kết tội oan Đại úy Alfred Dreyfus về tội gián điệp bằng chứng giả mạo mang tính bài Do Thái. Thư khiến nước Pháp chấn động, chia rẽ và trở thành một trong những hành động phản kháng trí tuệ mạnh mẽ nhất chống bất công thể chế trong lịch sử hiện đại."
+  },
+  {
+    "date": "13",
+    "category": "event",
+    "year": "1610",
+    "isSymbolic": false,
+    "title": "Galileo phát hiện Callisto, mặt trăng thứ tư của Sao Mộc",
+    "description": "Ngày 13 tháng 1 năm 1610, Galileo Galilei quan sát và xác định Callisto, mặt trăng thứ tư và ngoài cùng trong bốn mặt trăng lớn của Sao Mộc, hoàn tất việc phát hiện cả bốn. Những phát hiện này là bằng chứng trực tiếp đầu tiên rằng không phải mọi thiên thể đều quay quanh Trái Đất, thách thức mô hình địa tâm đã thống trị thiên văn hơn một thiên niên kỷ."
+  },
+  {
+    "date": "14",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true,
+    "title": "Lễ Makar Sankranti",
+    "description": "Lễ hội đánh dấu Mặt Trời chuyển vào cung Ma Kết. Được kỷ niệm khắp Ấn Độ với truyền thống đa dạng, tượng trưng cho mùa gặt, lòng biết ơn và chiến thắng của ánh sáng."
+  },
+  {
+    "date": "14",
+    "category": "event",
+    "year": "1784",
+    "isSymbolic": false,
+    "title": "Hiệp ước Paris được phê chuẩn – Kết thúc Cách mạng Mỹ",
+    "description": "Ngày 14 tháng 1 năm 1784, Quốc hội Mỹ phê chuẩn Hiệp ước Paris, chính thức kết thúc Cách mạng Mỹ với Anh. Hiệp ước công nhận độc lập Mỹ và xác lập biên giới quốc gia mới. Đánh dấu chiến thắng của cuộc nổi dậy thuộc địa chống cai trị đế quốc và truyền cảm hứng cho phong trào cách mạng toàn cầu."
+  },
+  {
+    "date": "14",
+    "category": "event",
+    "year": "2005",
+    "isSymbolic": false,
+    "title": "Tàu Huygens hạ cánh trên Titan",
+    "description": "Ngày 14 tháng 1 năm 2005, tàu Huygens của ESA hạ cánh thành công trên Titan, mặt trăng lớn nhất của Sao Thổ, sau hành trình bảy năm trên tàu Cassini của NASA. Đây là hạ cánh đầu tiên ở hệ Mặt Trời ngoài và hé lộ thế giới có hồ metan, cảnh băng và khí quyển dày — mở rộng hiểu biết khoa học hành tinh của nhân loại."
+  },
+  {
+    "date": "15",
+    "category": "festival",
+    "year": "1949",
+    "isSymbolic": false,
+    "title": "Ngày Quân đội Ấn Độ",
+    "description": "Kỷ niệm ngày Trung tướng K.M. Cariappa trở thành Tổng tư lệnh Quân đội Ấn Độ đầu tiên năm 1949. Tôn vinh lòng dũng cảm và hy sinh của quân đội Ấn Độ."
+  },
+  {
+    "date": "15",
+    "category": "event",
+    "year": "1929",
+    "isSymbolic": false,
+    "title": "Ngày sinh Martin Luther King Jr.",
+    "description": "Kỷ niệm ngày sinh Tiến sĩ Martin Luther King Jr. (1929–1968), lãnh đạo phong trào dân quyền Mỹ chống phân biệt chủng tộc bằng kháng cự bất bạo động. Giấc mơ bình đẳng, công lý và anh em của ông phản chiếu tầm nhìn Ambedkar về xã hội không đẳng cấp, không phân biệt. Di sản ông nhắc rằng đấu tranh cho phẩm giá con người là phổ quát."
+  },
+  {
+    "date": "15",
+    "category": "event",
+    "year": "2001",
+    "isSymbolic": false,
+    "title": "Wikipedia ra mắt",
+    "description": "Ngày 15 tháng 1 năm 2001, Jimmy Wales và Larry Sanger ra mắt Wikipedia, bách khoa toàn thư nội dung mở miễn phí mà ai cũng có thể chỉnh sửa. Nó phát triển thành tác phẩm tham khảo lớn nhất và được dùng rộng nhất trong lịch sử nhân loại, có hơn 300 ngôn ngữ. Wikipedia đại diện cho dân chủ hóa tri thức cách mạng, làm thông tin miễn phí cho mọi người trên toàn cầu."
+  },
+  {
+    "date": "16",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true,
+    "title": "Pháp: Chánh tư duy (Sammā Saṅkappa)",
+    "description": "Chánh tư duy nghĩa là nuôi dưỡng tư tưởng xả ly, thiện ý và vô hại. Đó là quyết tâm tinh thần bước trên con đường giải thoát và từ bi."
+  },
+  {
+    "date": "16",
+    "category": "event",
+    "year": "1920",
+    "isSymbolic": false,
+    "title": "Cấm rượu bắt đầu tại Hoa Kỳ",
+    "description": "Ngày 16 tháng 1 năm 1920, Tu sửa đổi Thứ mười tám Hiến pháp Mỹ có hiệu lực, cấm sản xuất, bán và vận chuyển đồ uống có cồn trên toàn quốc. Sinh ra từ phong trào cấm rượu — chủ yếu do phụ nữ và nhà cải cách xã hội thúc đẩy — đây là một trong những thí nghiệm xã hội rộng nhất trong lịch sử Mỹ, dù sau bị bãi bỏ năm 1933."
+  },
+  {
+    "date": "16",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false,
+    "title": "Jan Palach tự thiêu tại Praha",
+    "description": "Ngày 16 tháng 1 năm 1969, sinh viên Séc Jan Palach tự thiêu tại Quảng trường Wenceslas, Praha, phản đối cuộc xâm lược Tiệp Khắc do Liên Xô dẫn đầu và đàn áp cải cách Mùa xuân Praha. Ông qua đời ba ngày sau, trở thành biểu tượng kháng cự chế độ độc tài. Hy sinh của ông truyền cảm hứng cho nhiều thế hệ người Séc và Slovakia trong đấu tranh tự do và dân chủ."
+  },
+  {
+    "date": "17",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true,
+    "title": "Pháp: Nhẫn nhục (Khanti)",
+    "description": "Nhẫn nhục — kiên nhẫn và khoan dung — là một trong Mười Ba-la-mật. Đức Phật chịu đựng sỉ nhục và khó khăn bằng tâm bình an, dạy rằng nhẫn nhục là khổ hạnh cao nhất."
+  },
+  {
+    "date": "17",
+    "category": "event",
+    "year": "2016",
+    "isSymbolic": false,
+    "title": "Ngày giỗ Rohith Vemula",
+    "description": "Tưởng nhớ Rohith Vemula (1989–2016), học giả tiến sĩ Dalit tại Đại học Hyderabad. Sự bức hại thể chế và cái chết bi thảm ngày 17/1/2016 phơi bày phân biệt đẳng cấp sâu xa trong giới học thuật Ấn Độ. Thư cuối — 'Sự ra đời của tôi là tai nạn chết người' — châm ngòi phong trào toàn quốc đòi công lý giáo dục và trở thành khẩu hiệu chống áp bức đẳng cấp."
+  },
+  {
+    "date": "17",
+    "category": "event",
+    "year": "1706",
+    "isSymbolic": false,
+    "title": "Sinh Benjamin Franklin",
+    "description": "Ngày 17 tháng 1 năm 1706, Benjamin Franklin sinh tại Boston, Massachusetts. Đa tài, nhà khoa học, phát minh, nhà văn và chính khách, thí nghiệm điện, phát minh cột thu lôi và kính hai tiêu cự, vai trò then chốt soạn Tuyên ngôn Độc lập và Hiến pháp Mỹ khiến ông trở thành một trong những nhân vật quan trọng nhất thời Khai sáng."
+  },
+  {
+    "date": "18",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true,
+    "title": "Pháp: Vô thường (Anicca)",
+    "description": "Mọi pháp hữu vi đều vô thường. Hiểu vô thường giải phóng tâm khỏi chấp trước và dẫn đến giác ngộ trực tiếp Niết-bàn. 'Sabbe saṅkhārā aniccā.'"
+  },
+  {
+    "date": "18",
+    "category": "event",
+    "year": "1943",
+    "isSymbolic": false,
+    "title": "Khởi đầu Khởi nghĩa Ghetto Warsaw",
+    "description": "Ngày 18 tháng 1 năm 1943, chiến binh kháng chiến Do Thái trong Ghetto Warsaw tiến hành kháng cự vũ trang đầu tiên chống cuộc trục xuất của phát xít. Khi quân Đức vào ghetto tiếp tục trục xuất hàng loạt đến trại tử thần Treblinka, họ bị bắn từ Tổ chức Chiến đấu Do Thái (ŻOB). Cuộc đứng lên dũng cảm này trì hoãn trục xuất và truyền cảm hứng cho Khởi nghĩa Ghetto Warsaw lớn tháng 4/1943."
+  },
+  {
+    "date": "18",
+    "category": "event",
+    "year": "1919",
+    "isSymbolic": false,
+    "title": "Hội nghị Hòa bình Paris khai mạc tại Versailles",
+    "description": "Ngày 18 tháng 1 năm 1919, Hội nghị Hòa bình Paris khai mạc tại Cung điện Versailles để đàm phán điều kiện hòa bình sau Thế chiến I. Đại diện hơn 30 quốc gia vẽ lại bản đồ châu Âu và thế giới, dẫn đến Hiệp ước Versailles và thành lập Hội Quốc Liên. Hội nghị định hình lại căn bản trật tự chính trị toàn cầu thế kỷ 20."
+  },
+  {
+    "date": "19",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true,
+    "title": "Pháp: Chánh ngữ (Sammā Vācā)",
+    "description": "Chánh ngữ nghĩa là tránh lời nói dối, lời chia rẽ, lời thô lỗ và lời vô bổ. Lời nói có sức chữa lành hoặc gây hại — hãy chọn một cách khôn ngoan."
+  },
+  {
+    "date": "19",
+    "category": "event",
+    "year": "1736",
+    "isSymbolic": false,
+    "title": "Sinh James Watt",
+    "description": "Ngày 19 tháng 1 năm 1736, James Watt sinh tại Greenock, Scotland. Cải tiến cách mạng động cơ hơi nước — gồm bộ ngưng tụ riêng — tăng hiệu suất đáng kể và thúc đẩy Cách mạng Công nghiệp. Thiên tài kỹ thuật của Watt biến đổi sản xuất, vận tải và khai thác mỏ; tên ông còn là đơn vị công suất SI."
+  },
+  {
+    "date": "19",
+    "category": "event",
+    "year": "1966",
+    "isSymbolic": false,
+    "title": "Indira Gandhi trở thành Thủ tướng Ấn Độ",
+    "description": "Ngày 19 tháng 1 năm 1966, Indira Gandhi tuyên thệ làm Thủ tướng Ấn Độ, phụ nữ đầu tiên giữ chức vụ này. Là con gái Jawaharlal Nehru, bà làm Thủ tướng tổng cộng 15 năm, định hình chính sách trong và ngoài nước trong thời kỳ biến đổi. Sự lên quyền của bà là cột mốc lãnh đạo chính trị phụ nữ trong nền dân chủ lớn nhất thế giới."
+  },
+  {
+    "date": "20",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true,
+    "title": "Pháp: Xuất gia (Nekkhamma)",
+    "description": "Xuất gia là sự hoàn thiện buông bỏ dục vọng và chấp trước thế tục. Tự do thật sự không đến từ có thêm mà từ cần ít hơn."
+  },
+  {
+    "date": "20",
+    "category": "event",
+    "year": "2009",
+    "isSymbolic": false,
+    "title": "Barack Obama nhậm chức Tổng thống Mỹ gốc Phi đầu tiên",
+    "description": "Ngày 20 tháng 1 năm 2009, Barack Hussein Obama nhậm chức Tổng thống thứ 44 Hoa Kỳ, người Mỹ gốc Phi đầu tiên giữ chức cao nhất. Cuộc bầu cử là cột mốc lịch sử trong cuộc đấu tranh bình đẳng chủng tộc ở Mỹ, chỉ vài thập kỷ sau phong trào dân quyền chống phân biệt và bảo vệ quyền bầu cử của người da đen."
+  },
+  {
+    "date": "20",
+    "category": "event",
+    "year": "1265",
+    "isSymbolic": false,
+    "title": "Nghị viện Anh đầu tiên họp",
+    "description": "Ngày 20 tháng 1 năm 1265, Simon de Montfort triệu tập cái được coi là Nghị viện Anh đại diện đầu tiên tại Westminster. Khác với các hội nghị trước chỉ gồm quý tộc và giáo sĩ, Nghị viện de Montfort có đại biểu bầu từ thị trấn và kỵ sĩ từ quận, thiết lập nguyên tắc đại diện nhân dân làm nền tảng dân chủ nghị viện toàn cầu."
+  },
+  {
+    "date": "21",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true,
+    "title": "Ngày Tam tạng",
+    "description": "Ngày tưởng niệm tượng trưng tôn vinh Tam tạng — ba giỏ kinh điển Phật giáo: Luật tạng, Kinh tạng và Luận tạng — toàn bộ lời dạy của Đức Phật."
+  },
+  {
+    "date": "21",
+    "category": "event",
+    "year": "1793",
+    "isSymbolic": false,
+    "title": "Xử tử Louis XVI – Cách mạng Pháp",
+    "description": "Ngày 21 tháng 1 năm 1793, Vua Louis XVI của Pháp bị guillotine tại Place de la Révolution ở Paris, một trong những khoảnh khắc kịch tính nhất của Cách mạng Pháp. Việc xử tử tượng trưng cho sự chấm dứt quyết định chế độ quân chủ tuyệt đối ở Pháp và gây chấn động khắp châu Âu, khơi dậy cả nhiệt huyết cách mạng lẫn phản ứng quân chủ trên lục địa."
+  },
+  {
+    "date": "21",
+    "category": "event",
+    "year": "1954",
+    "isSymbolic": false,
+    "title": "USS Nautilus – Tàu ngầm hạt nhân đầu tiên hạ thủy",
+    "description": "Ngày 21 tháng 1 năm 1954, USS Nautilus (SSN-571) hạ thủy tại Groton, Connecticut, trở thành tàu ngầm hạt nhân đầu tiên thế giới. Được đẩy bởi lò phản ứng hạt nhân, có thể lặn hàng tháng không cần nạp nhiên liệu. Năm 1958 hoàn thành hành trình tàu ngầm đầu tiên dưới Bắc Cực, chứng minh tiềm năng cách mạng của đẩy hạt nhân cho khám phá hải quân."
+  },
+  {
+    "date": "22",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true,
+    "title": "Pháp: Xả (Upekkhā)",
+    "description": "Xả là nhận thức cân bằng trong mọi hoàn cảnh. Không mừng khi được, không buồn khi mất — tâm an trong thăng bằng hoàn hảo."
+  },
+  {
+    "date": "22",
+    "category": "event",
+    "year": "1879",
+    "isSymbolic": false,
+    "title": "Trận Isandlwana – Kháng cự của người Zulu",
+    "description": "Ngày 22 tháng 1 năm 1879, quân Zulu 20.000 dưới Vua Cetshwayo đánh bại quân đế quốc Anh tại Isandlwana, Nam Phi. Hơn 1.300 binh lính Anh và đồng minh bị giết — một trong những thất bại tồi tệ nhất của Anh trước lực lượng bản địa. Trận đánh là biểu tượng mạnh mẽ của kháng cự châu Phi chống chủ nghĩa thực dân châu Âu."
+  },
+  {
+    "date": "22",
+    "category": "event",
+    "year": "1973",
+    "isSymbolic": false,
+    "title": "Roe v. Wade – Phán quyết quyền sinh sản",
+    "description": "Ngày 22 tháng 1 năm 1973, Tòa Tối cao Mỹ phán quyết 7-2 trong Roe v. Wade rằng Hiến pháp bảo vệ quyền phụ nữ phá thai, bãi bỏ nhiều luật tiểu bang hạn chế thủ tục. Phán quyết là bước ngoặt cho quyền sinh sản và quyền tự chủ cơ thể của phụ nữ, châm ngòi tranh luận pháp lý, chính trị và xã hội kéo dài hàng thập kỷ vẫn định hình chính trị Mỹ."
+  },
+  {
+    "date": "23",
+    "category": "event",
+    "year": "1897",
+    "isSymbolic": false,
+    "title": "Ngày sinh Netaji",
+    "description": "Kỷ niệm ngày sinh Subhas Chandra Bose, chiến sĩ độc lập dũng cảm thành lập Quân đội Quốc gia Ấn Độ và kêu gọi 'Hãy cho ta máu, ta sẽ cho ngươi tự do.'"
+  },
+  {
+    "date": "23",
+    "category": "event",
+    "year": "1849",
+    "isSymbolic": false,
+    "title": "Elizabeth Blackwell – Phụ nữ đầu tiên nhận bằng Y khoa ở Mỹ",
+    "description": "Ngày 23 tháng 1 năm 1849, Elizabeth Blackwell tốt nghiệp Geneva Medical College, New York, trở thành phụ nữ đầu tiên ở Hoa Kỳ nhận bằng Bác sĩ Y khoa. Dù bị từ chối nhiều trường y và phân biệt rộng rãi, bà kiên trì và thành lập Bệnh viện Phụ nữ và Trẻ em New York, mở đường cho nhiều thế hệ phụ nữ trong y học."
+  },
+  {
+    "date": "23",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false,
+    "title": "Trieste đến điểm sâu nhất đại dương",
+    "description": "Ngày 23 tháng 1 năm 1960, nhà hải dương học Thụy Sĩ Jacques Piccard và Trung úy Hải quân Mỹ Don Walsh hạ sâu đến Challenger Deep ở Rãnh Mariana trên tàu bathyscaphe Trieste, đạt độ sâu 10.916 m — điểm sâu nhất đại dương Trái Đất. Thành tựu khoa học chưa từng có này cho thấy sự sống tồn tại ngay cả ở độ sâu cực đoan và không ai vượt qua hơn 50 năm."
+  },
+  {
+    "date": "24",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": false,
+    "title": "Ngày Quốc gia về Bé gái",
+    "description": "Ngày nâng cao nhận thức về quyền bé gái, thúc đẩy giáo dục cho nữ và chống phân biệt. Lấy cảm hứng từ giá trị bình đẳng mà Tiến sĩ Ambedkar ủng hộ."
+  },
+  {
+    "date": "24",
+    "category": "event",
+    "year": "1848",
+    "isSymbolic": false,
+    "title": "Bắt đầu Cơn sốt vàng California",
+    "description": "Ngày 24 tháng 1 năm 1848, James W. Marshall phát hiện cục vàng tại Sutter's Mill, Coloma, California, châm ngòi Cơn sốt vàng California. Phát hiện thu hút hơn 300.000 người từ khắp nơi, biến California từ vùng đất thưa dân thành bang phồn vinh, đồng thời gây di dời và bạo lực tàn khốc đối với người Mỹ bản địa và cộng đồng Mexico."
+  },
+  {
+    "date": "24",
+    "category": "event",
+    "year": "1986",
+    "isSymbolic": false,
+    "title": "Voyager 2 tiếp cận gần nhất Sao Thiên vương",
+    "description": "Ngày 24 tháng 1 năm 1986, tàu Voyager 2 của NASA tiếp cận gần nhất Sao Thiên vương, đi qua trong vòng 81.500 km đỉnh mây. Đây là tàu đầu tiên và cho đến nay duy nhất ghé Sao Thiên vương, phát hiện 10 mặt trăng mới, hai vành đai mới và hé lộ từ trường nghiêng bất thường. Dữ liệu thay đổi hiểu biết về hành tinh khổng lồ băng."
+  },
+  {
+    "date": "25",
+    "category": "festival",
+    "year": "2011",
+    "isSymbolic": false,
+    "title": "Ngày Cử tri Quốc gia",
+    "description": "Thành lập năm 2011 để khuyến khích cử tri trẻ tham gia dân chủ. Tiến sĩ Ambedkar nói: 'Dân chủ chính trị không thể tồn tại lâu trừ khi có dân chủ xã hội làm nền tảng.'"
+  },
+  {
+    "date": "25",
+    "category": "event",
+    "year": "2011",
+    "isSymbolic": false,
+    "title": "Cách mạng Ai Cập bắt đầu – Mùa xuân Ả Rập",
+    "description": "Ngày 25 tháng 1 năm 2011, hàng trăm nghìn người Ai Cập biểu tình phản đối chế độ độc tài của Tổng thống Hosni Mubarak, bạo lực cảnh sát và bất bình đẳng kinh tế. Bắt đầu tại Quảng trường Tahrir ở Cairo, cuộc nổi dậy — phần của Mùa xuân Ả Rập — dẫn đến Mubarak từ chức ngày 11/2 sau 18 ngày kháng cự nhân dân chống ba thập kỷ độc tài."
+  },
+  {
+    "date": "25",
+    "category": "event",
+    "year": "1915",
+    "isSymbolic": false,
+    "title": "Cuộc gọi điện thoại xuyên lục địa đầu tiên",
+    "description": "Ngày 25 tháng 1 năm 1915, Alexander Graham Bell ở New York thực hiện cuộc gọi điện thoại xuyên lục địa đầu tiên tới cựu trợ lý Thomas Watson ở San Francisco. Bell lặp lại câu nổi tiếng 'Ông Watson, đến đây, tôi cần ông', nhưng lần này qua 3.400 dặm dây đồng. Thành tựu kỹ thuật này chứng minh sức mạnh liên lạc đường dài và mở kỷ nguyên mới viễn thông."
+  },
+  {
+    "date": "26",
+    "category": "festival",
+    "year": "1950",
+    "isSymbolic": false,
+    "title": "Ngày Cộng hòa",
+    "description": "Ấn Độ thông qua Hiến pháp ngày này năm 1950, soạn dưới chủ tịch Tiến sĩ B.R. Ambedkar. Kỷ niệm dân chủ, bình đẳng và cộng hòa chủ quyền."
+  },
+  {
+    "date": "26",
+    "category": "event",
+    "year": "1930",
+    "isSymbolic": false,
+    "title": "Purna Swaraj – Tuyên bố Độc lập Ấn Độ",
+    "description": "Ngày 26 tháng 1 năm 1930, Quốc hội Ấn Độ dưới chủ tịch Jawaharlal Nehru tuyên bố 'Purna Swaraj' (độc lập hoàn toàn) khỏi cai trị thuộc địa Anh tại phiên Lahore. Tuyên bố chủ quyền lịch sử này trở thành cơ sở đấu tranh tự do Ấn Độ và lý do chọn 26/1 làm Ngày Cộng hòa khi Hiến pháp có hiệu lực năm 1950."
+  },
+  {
+    "date": "26",
+    "category": "event",
+    "year": "1885",
+    "isSymbolic": false,
+    "title": "Lực lượng Mahdist chiếm Khartoum",
+    "description": "Ngày 26 tháng 1 năm 1885, lực lượng Sudan Mahdist dưới Muhammad Ahmad đột kích và chiếm Khartoum, giết Tướng Charles Gordon và chấm dứt vây hãm Anh-Ai Cập. Sự sụp đổ của Khartoum là đòn choáng váng với quyền lực đế quốc Anh ở châu Phi và khẳng định mạnh mẽ kháng cự Sudan chống thống trị nước ngoài. Nhà nước Mahdist sau đó cai trị Sudan đến khi Anh tái chiếm năm 1898."
+  },
+  {
+    "date": "27",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false,
+    "title": "Ngày Tưởng niệm Holocaust",
+    "description": "Ngày quốc tế tưởng niệm nạn nhân Holocaust. Lời nhắc trang nghiêm rằng thù hận và định kiến phải được chống lại ở mọi nơi, mọi hình thức."
+  },
+  {
+    "date": "27",
+    "category": "event",
+    "year": "1880",
+    "isSymbolic": false,
+    "title": "Thomas Edison được cấp bằng sáng chế đèn điện",
+    "description": "Ngày 27 tháng 1 năm 1880, Thomas Alva Edison được cấp Bằng sáng chế Mỹ số 223,898 cho đèn điện dây tóc carbon. Sau khi thử hàng nghìn vật liệu, bóng đèn thực tiễn và bền của Edison làm chiếu sáng điện khả thi cho nhà và doanh nghiệp, thay đổi căn bản đời sống và mở thời đại điện."
+  },
+  {
+    "date": "27",
+    "category": "event",
+    "year": "1973",
+    "isSymbolic": false,
+    "title": "Hiệp định Paris – Kết thúc tham chiến Mỹ ở Việt Nam",
+    "description": "Ngày 27 tháng 1 năm 1973, Hiệp định Paris được ký bởi Mỹ, Bắc Việt Nam, Nam Việt Nam và Việt Cộng, chính thức chấm dứt can thiệp quân sự trực tiếp của Mỹ trong chiến tranh Việt Nam. Hiệp định kêu gọi ngừng bắn, rút quân Mỹ và thả tù binh. Chiến tranh đã cướp đi hàng triệu mạng người và định hình sâu sắc phong trào chống chiến tranh toàn cầu."
+  },
+  {
+    "date": "28",
+    "category": "event",
+    "year": "1865",
+    "isSymbolic": false,
+    "title": "Ngày sinh Lala Lajpat Rai",
+    "description": "Kỷ niệm ngày sinh Lala Lajpat Rai, 'Sư tử Punjab', chiến sĩ độc lập dũng cảm và nhà cải cách xã hội bị thương nặng trong cuộc biểu tình hòa bình chống Ủy ban Simon."
+  },
+  {
+    "date": "28",
+    "category": "event",
+    "year": "1986",
+    "isSymbolic": false,
+    "title": "Thảm họa Tàu con thoi Challenger",
+    "description": "Ngày 28 tháng 1 năm 1986, Tàu con thoi Challenger vỡ tan 73 giây sau phóng từ Cape Canaveral, giết cả bảy phi hành đoàn, gồm giáo viên Christa McAuliffe. Thảm họa do hỏng phốt O-ring trên tên lửa đẩy rắn. Dẫn đến tạm dừng chương trình con thoi 32 tháng và đại tu quy trình an toàn và văn hóa tổ chức NASA."
+  },
+  {
+    "date": "28",
+    "category": "event",
+    "year": "1878",
+    "isSymbolic": false,
+    "title": "Tổng đài điện thoại thương mại đầu tiên khai trương",
+    "description": "Ngày 28 tháng 1 năm 1878, tổng đài điện thoại thương mại đầu tiên thế giới bắt đầu hoạt động tại New Haven, Connecticut, với chỉ 21 thuê bao. Do District Telephone Company vận hành, đánh dấu chuyển đổi điện thoại từ phát minh mới lạ sang công cụ liên lạc thực tiễn cho doanh nghiệp và hộ gia đình, khởi đầu ngành viễn thông kết nối thế giới hiện đại."
+  },
+  {
+    "date": "29",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true,
+    "title": "Pháp: Bi (Karuṇā)",
+    "description": "Bi là ước nguyện mọi chúng sinh được giải thoát khổ đau. Toàn bộ sứ mệnh của Đức Phật được thúc đẩy bởi từ bi — thấy khổ của thế gian và chỉ ra con đường giải thoát."
+  },
+  {
+    "date": "29",
+    "category": "event",
+    "year": "1886",
+    "isSymbolic": false,
+    "title": "Karl Benz được cấp bằng sáng chế ô tô đầu tiên",
+    "description": "Ngày 29 tháng 1 năm 1886, Karl Benz ở Mannheim, Đức, nộp bằng sáng chế Benz Patent-Motorwagen, được coi là ô tô đầu tiên chạy bằng động cơ đốt trong. Xe ba bánh đạt 16 km/h này đánh dấu sự ra đời ngành ô tô và châm ngòi cách mạng giao thông biến đổi xã hội toàn cầu."
+  },
+  {
+    "date": "29",
+    "category": "event",
+    "year": "1861",
+    "isSymbolic": false,
+    "title": "Kansas được nhận làm bang tự do",
+    "description": "Ngày 29 tháng 1 năm 1861, Kansas được nhận vào Liên bang Mỹ là bang thứ 34 và, quan trọng hơn, là bang tự do cấm nô lệ. Điều này theo sau nhiều năm xung đột dữ dội gọi là 'Kansas chảy máu', tiền thân Nội chiến. Kansas gia nhập bang tự do là chiến thắng khó khăn của phong trào bãi nô."
+  },
+  {
+    "date": "30",
+    "category": "event",
+    "year": "1948",
+    "isSymbolic": false,
+    "title": "Ngày các Vị tử đạo",
+    "description": "Tưởng niệm vụ ám sát Mahatma Gandhi năm 1948. Ngày suy ngẫm về bất bạo động, chân lý và theo đuổi hòa bình, hài hòa."
+  },
+  {
+    "date": "30",
+    "category": "event",
+    "year": "1649",
+    "isSymbolic": false,
+    "title": "Xử tử Charles I – Cách mạng Anh",
+    "description": "Ngày 30 tháng 1 năm 1649, Vua Charles I của Anh bị chém đầu tại Whitehall, London sau khi bị tòa Nghị viện kết tội phản quốc. Sau nhiều năm Nội chiến giữa Hoàng gia và Nghị viện, việc xử tử chấm dứt quyền thần thánh của vua và dẫn đến thành lập Khối thịnh vượng chung dưới Oliver Cromwell — bước ngoặt trong lịch sử dân chủ."
+  },
+  {
+    "date": "30",
+    "category": "event",
+    "year": "1972",
+    "isSymbolic": false,
+    "title": "Chủ nhật đẫm máu Derry, Bắc Ireland",
+    "description": "Ngày 30 tháng 1 năm 1972, lính Anh thuộc Trung đoàn Dù bắn vào người tuần hành dân quyền không vũ trang ở Bogside, Derry, Bắc Ireland, giết 13 người và làm một người chết sau. Người tuần hành phản đối giam giữ không xét xử. Chủ nhật đẫm máu trở thành một trong những sự kiện quan trọng nhất của Troubles và thúc đẩy phong trào dân quyền Bắc Ireland."
+  },
+  {
+    "date": "31",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true,
+    "title": "Pháp: Chánh niệm (Sati)",
+    "description": "Chánh niệm — sati — là trái tim của thiền Phật giáo. Có chánh niệm là hiện diện đầy đủ, nhận biết thân, thọ, tâm và pháp mà không phán xét."
+  },
+  {
+    "date": "31",
+    "category": "event",
+    "year": "1920",
+    "isSymbolic": false,
+    "title": "Mooknayak: Tiếng nói của người câm lặng",
+    "description": "Ngày 31 tháng 1 năm 1920, Tiến sĩ B.R. Ambedkar ra mắt 'Mooknayak' (Người lãnh đạo kẻ câm), tờ báo đầu tiên của ông. Qua Mooknayak, ông trao tiếng nói mạnh mẽ cho cộng đồng bị áp bức và bị bỏ rơi, phơi bày bất công đẳng cấp và đòi bình đẳng xã hội — đánh dấu sự ra đời báo chí Dalit ở Ấn Độ."
+  },
+  {
+    "date": "31",
+    "category": "event",
+    "year": "1865",
+    "isSymbolic": false,
+    "title": "Hạ viện Mỹ thông qua Tu sửa đổi Thứ mười ba bãi nô",
+    "description": "Ngày 31 tháng 1 năm 1865, Hạ viện Hoa Kỳ thông qua Tu sửa đổi Thứ mười ba Hiến pháp, bãi bỏ nô lệ và lao động cưỡng bức trên toàn quốc. Sau cuộc đấu tranh lập pháp gay gắt, tu sửa đổi thông qua 119-56 — vừa đủ hai phần ba. Các bang phê chuẩn ngày 6/12/1865, chấm dứt nô lệ được thể chế hóa hàng thế kỷ ở Mỹ."
+  }
+]
