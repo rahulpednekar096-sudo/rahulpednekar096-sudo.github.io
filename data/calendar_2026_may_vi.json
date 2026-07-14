@@ -1,0 +1,746 @@
+[
+  {
+    "date": "01",
+    "title": "Ngày Quốc tế Lao động",
+    "description": "Ngày May Day kỷ niệm phong trào lao động toàn cầu. Tiến sĩ Ambedkar bảo vệ quyền người lao động — đưa ra cải cách lao động, luật an toàn nhà máy và trợ cấp thai sản ở Ấn Độ.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Tổng đình công vụ Haymarket",
+    "description": "Ngày 1 tháng 5 năm 1886, hơn 300.000 công nhân Mỹ tổng đình công đòi ngày làm 8 giờ. Tâm điểm ở Chicago, xung đột với cảnh sát dẫn tới bi kịch Haymarket vài ngày sau. Đây là nguồn gốc Ngày Quốc tế Lao động.",
+    "category": "event",
+    "year": "1886",
+    "isSymbolic": false
+  },
+  {
+    "date": "01",
+    "title": "Sự kiện máy bay do thám U-2",
+    "description": "Ngày 1 tháng 5 năm 1960, máy bay do thám U-2 Mỹ do Francis Gary Powers lái bị bắn hạ trên không phận Liên Xô. Khủng hoảng ngoại giao Mỹ–Xô khiến thượng đỉnh Paris Eisenhower–Khrushchev đổ vỡ — một trong những chương kịch tính nhất của Chiến tranh Lạnh.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Dhamma: Bodh Gaya — Nơi Giác Ngộ",
+    "description": "Bodh Gaya ở Bihar là nơi Siddhartha Gautama chứng ngộ dưới cây Bồ-đề. Chùa Mahabodhi là Di sản Thế giới UNESCO và thánh địa hành hương Phật giáo linh thiêng nhất.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "02",
+    "title": "Khởi nghĩa Dos de Mayo ở Madrid",
+    "description": "Ngày 2 tháng 5 năm 1808, dân Madrid nổi dậy chống quân chiếm đóng Pháp của Napoléon. Dân thường Tây Ban Nha dùng dao và vũ khí tạm chiến trên phố, khơi mào Chiến tranh Bán đảo — biểu tượng kháng cự chủ nghĩa đế quốc ngoại bang.",
+    "category": "event",
+    "year": "1808",
+    "isSymbolic": false
+  },
+  {
+    "date": "02",
+    "title": "Chuyến bay thương mại phản lực đầu tiên",
+    "description": "Ngày 2 tháng 5 năm 1952, de Havilland Comet trở thành máy bay phản lực thương mại đầu tiên thế giới vào dịch vụ định kỳ London–Johannesburg của BOAC. Rút ngắn thời gian bay một nửa, mở kỷ nguyên hàng không phản lực.",
+    "category": "event",
+    "year": "1952",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Ngày Tự do Báo chí Thế giới",
+    "description": "Ngày của UNESCO bảo vệ tự do báo chí. Tiến sĩ Ambedkar sáng lập báo như Mooknayak và Bahishkrit Bharat để trao tiếng nói cho người vô thanh và thách thức bất công.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Hiến pháp Ba Lan 3 tháng 5",
+    "description": "Ngày 3 tháng 5 năm 1791, Ba Lan thông qua Hiến pháp 3 tháng 5 — hiến pháp hiện đại đầu tiên ở châu Âu và thứ hai thế giới sau Mỹ. Hướng tới chủ quyền nhân dân, phân quyền và bình đẳng chính trị; các đế quốc láng giềng coi là đe dọa cách mạng.",
+    "category": "event",
+    "year": "1791",
+    "isSymbolic": false
+  },
+  {
+    "date": "03",
+    "title": "Hiến pháp hậu chiến Nhật Bản có hiệu lực",
+    "description": "Ngày 3 tháng 5 năm 1947, Hiến pháp Nhật Bản mới thay Hiến pháp Minh Trị, biến Nhật thành dân chủ hòa bình. Điều 9 từ bỏ chiến tranh và duy trì lực lượng vũ trang vì xâm lược; bảo đảm nhân quyền, chủ quyền nhân dân và bình đẳng giới.",
+    "category": "event",
+    "year": "1947",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Dhamma: Kushinagar — Đại Bát Niết-bàn",
+    "description": "Kushinagar là nơi Đức Phật nhập Đại Bát Niết-bàn. Lời cuối: ‘Mọi pháp hữu vi đều suy diệt. Hãy tinh tấn không giải đãi.’ (Vayadhammā saṅkhārā, appamādena sampādetha.)",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "04",
+    "title": "Phong trào Ngũ Tứ Trung Quốc",
+    "description": "Ngày 4 tháng 5 năm 1919, hàng nghìn sinh viên Trung Quốc tuần hành ở Bắc Kinh phản đối Hòa ước Versailles chuyển tô giới Đức ở Shandong cho Nhật. Phong trào mở rộng thành cải cách chính trị–văn hóa toàn quốc — khởi nguồn chủ nghĩa dân tộc Trung Quốc hiện đại.",
+    "category": "event",
+    "year": "1919",
+    "isSymbolic": false
+  },
+  {
+    "date": "04",
+    "title": "Thảm sát Kent State",
+    "description": "Ngày 4 tháng 5 năm 1970, Vệ binh Quốc gia Ohio nổ súng vào sinh viên tay không phản đối chiến tranh Việt Nam tại Đại học Kent State, giết 4 và làm bị thương 9 người. Họ phản đối Nixon mở rộng chiến tranh sang Campuchia — khoảnh khắc định hình phản chiến Mỹ.",
+    "category": "event",
+    "year": "1970",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Đêm Phật Đản Eve / Đêm Vesak",
+    "description": "Đêm trước lễ Phật giáo linh thiêng nhất. Cộng đồng khắp thế giới chuẩn bị kỷ niệm ngày sinh, giác ngộ và nhập diệt của Đức Phật Gotama vào trăng tròn Vesak.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "05",
+    "title": "Sinh nhật Karl Marx",
+    "description": "Kỷ niệm sinh Karl Marx (1818–1883), triết gia cách mạng phân tích đấu tranh giai cấp, bóc lột và bất bình đẳng kinh tế. Tiến sĩ Ambedkar đối thoại sâu với tư tưởng Marx nhưng cho rằng đơn vị cơ bản của áp bức Ấn Độ là đẳng cấp chứ không chỉ giai cấp.",
+    "category": "event",
+    "year": "1818",
+    "isSymbolic": false
+  },
+  {
+    "date": "05",
+    "title": "Alan Shepard — Người Mỹ đầu tiên vào vũ trụ",
+    "description": "Ngày 5 tháng 5 năm 1961, phi hành gia Alan Shepard trở thành người Mỹ đầu tiên bay vào vũ trụ trên Freedom 7 trong chuyến cận quỹ đạo 15 phút 28 giây. Thuộc Dự án Mercury, 23 ngày sau bay quỹ đạo của Gagarin — mở đường cho cam kết đưa người lên Mặt Trăng của Kennedy.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Rabindranath Tagore Jayanti",
+    "description": "Kỷ niệm sinh Rabindranath Tagore, Nobel văn chương, nhà thơ và tác giả quốc ca Ấn Độ. Tầm nhìn nhân bản phổ quát của ông hòa với tinh thần Dhamma.",
+    "category": "event",
+    "year": "1861",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Chhatrapati Shahu Maharaj Punyatithi",
+    "description": "Tưởng niệm Chhatrapati Shahu Maharaj của Kolhapur (1874–1922), mất ngày 6 tháng 5 năm 1922. Ông thuộc những nhà cai trị Ấn đầu tiên áp dụng bảo lưu cho tầng lớp lạc hậu, bảo trợ giáo dục Dalit (gồm Bhimrao Ambedkar trẻ) và cấm bất khả xúc. Di sản ân nhân Bahujan không ai sánh kịp.",
+    "category": "event",
+    "year": "1922",
+    "isSymbolic": false
+  },
+  {
+    "date": "06",
+    "title": "Đạo luật Loại trừ người Hoa ký kết",
+    "description": "Ngày 6 tháng 5 năm 1882, Tổng thống Chester A. Arthur ký Đạo luật Loại trừ người Hoa — luật lớn đầu tiên hạn chế nhập cư cả một dân tộc vào Mỹ. Cấm lao động Hoa nhập cảnh mười năm và từ chối quốc tịch người đã ở. Biểu tượng phân biệt chủng tộc thể chế, đến 1943 mới bãi bỏ hoàn toàn.",
+    "category": "event",
+    "year": "1882",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Dhamma: Lumbini — Nơi Đức Phật Đản Sinh",
+    "description": "Lumbini ở Nepal là nơi Hoàng tử Siddhartha chào đời. Cột Ashoka dựng năm 249 TCN xác nhận địa điểm. Di sản Thế giới UNESCO và nơi hành hương.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "07",
+    "title": "Đắm tàu RMS Lusitania",
+    "description": "Ngày 7 tháng 5 năm 1915, U-boat Đức phóng ngư lôi đánh chìm tàu biển Anh RMS Lusitania ngoài khơi Ireland, 1.198 hành khách và thủy thủ thiệt mạng (gồm 128 người Mỹ). Dư luận Mỹ chống Đức và trở thành yếu tố then chốt đưa Mỹ vào Thế chiến I năm 1917.",
+    "category": "event",
+    "year": "1915",
+    "isSymbolic": false
+  },
+  {
+    "date": "07",
+    "title": "Đức đầu hàng vô điều kiện Đồng minh",
+    "description": "Ngày 7 tháng 5 năm 1945, Tướng Alfred Jodl ký đầu hàng vô điều kiện mọi lực lượng Đức tại tổng hành dinh Đồng minh ở Reims, Pháp, kết thúc thực sự Thế chiến II ở châu Âu. Ngày hôm sau được tuyên bố là Ngày Chiến thắng châu Âu (V-E Day).",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Ngày Chữ thập Đỏ Thế giới",
+    "description": "Tôn vinh công tác nhân đạo của Chữ thập Đỏ. Phụng sự từ bi với người khổ đau — bất kể bản sắc — hiện thân giáo lý Mettā phổ quát của đạo Phật.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "Ngày Chiến thắng châu Âu (V-E Day)",
+    "description": "Ngày 8 tháng 5 năm 1945, các nước Đồng minh chính thức kỷ niệm Đức Quốc xã đầu hàng vô điều kiện, đánh dấu kết thúc Thế chiến II ở châu Âu. Hàng triệu người vui mừng trước thất bại của phát xít — nhắc nhớ hy sinh để bảo vệ tự do và nhân phẩm.",
+    "category": "event",
+    "year": "1945",
+    "isSymbolic": false
+  },
+  {
+    "date": "08",
+    "title": "WHO tuyên bố thanh toán bệnh đậu mùa",
+    "description": "Ngày 8 tháng 5 năm 1980, Tổ chức Y tế Thế giới chính thức tuyên bố đậu mùa đã bị thanh toán toàn cầu — bệnh ở người đầu tiên và duy nhất bị loại trừ hẳn nhờ chiến dịch tiêm chủng có chủ đích. Chỉ thế kỷ 20 đã có khoảng 300 triệu người chết. Thành tựu khoa học và y tế công cộng vĩ đại nhất của nhân loại.",
+    "category": "event",
+    "year": "1980",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Dhamma: Tam Bảo (Tiratana)",
+    "description": "Người Phật tử quy y Tam Bảo: Phật (bậc thầy), Dhamma (giáo pháp) và Tăng (cộng đồng). ‘Buddhaṃ saraṇaṃ gacchāmi.’",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "09",
+    "title": "Romania tuyên bố độc lập",
+    "description": "Ngày 9 tháng 5 năm 1877, Romania tuyên bố độc lập khỏi Đế quốc Ottoman sau nhiều thế kỷ phụ thuộc. Trong chiến tranh Nga–Thổ, quân Romania chiến đấu bên Nga. Hiệp ước Berlin 1878 chính thức công nhận chủ quyền.",
+    "category": "event",
+    "year": "1877",
+    "isSymbolic": false
+  },
+  {
+    "date": "09",
+    "title": "Phiên điều trần luận tội Watergate bắt đầu",
+    "description": "Ngày 9 tháng 5 năm 1974, Ủy ban Tư pháp Hạ viện mở phiên luận tội chính thức Tổng thống Richard Nixon vì bê bối Watergate. Xét các cáo buộc cản trở công lý, lạm quyền và khinh thị Quốc hội. Nixon từ chức ngày 9 tháng 8 năm 1974 — tổng thống Mỹ đầu tiên làm vậy.",
+    "category": "event",
+    "year": "1974",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Cuộc khởi nghĩa Ấn Độ lần thứ nhất",
+    "description": "Ngày này năm 1857, binh sĩ Ấn nổi dậy chống Anh tại Meerut, khởi nguồn Chiến tranh Độc lập lần thứ nhất. Bước ngoặt trong cuộc đấu tranh tự do của Ấn Độ.",
+    "category": "event",
+    "year": "1857",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Hoàn thành đường sắt xuyên lục địa đầu tiên",
+    "description": "Ngày 10 tháng 5 năm 1869, Central Pacific và Union Pacific gặp nhau tại Promontory Summit, Utah; đóng đinh vàng hoàn thành đường sắt xuyên lục địa đầu tiên của Mỹ. Chủ yếu nhờ lao động Hoa kiều và Ireland trong điều kiện khắc nghiệt — nối Đại Tây Dương với Thái Bình Dương.",
+    "category": "event",
+    "year": "1869",
+    "isSymbolic": false
+  },
+  {
+    "date": "10",
+    "title": "Nelson Mandela nhậm chức Tổng thống",
+    "description": "Ngày 10 tháng 5 năm 1994, Nelson Mandela nhậm chức tổng thống da đen đầu tiên của Nam Phi, kết thúc thắng lợi hàng thập kỷ apartheid. Sau 27 năm tù, ông dẫn ANC thắng cuộc bầu cử dân chủ toàn diện đầu tiên — biểu tượng hòa giải và quốc gia đa chủng mới.",
+    "category": "event",
+    "year": "1994",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Ngày Công nghệ Quốc gia",
+    "description": "Kỷ niệm các vụ thử hạt nhân thành công của Ấn tại Pokhran năm 1998. Tiến bộ khoa học dưới ánh sáng đạo đức và từ bi có thể nâng cao nhân loại — nguyên tắc gắn với Dhamma.",
+    "category": "event",
+    "year": "1998",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Đình công Pullman bắt đầu",
+    "description": "Ngày 11 tháng 5 năm 1894, công nhân Pullman Palace Car gần Chicago đình công phản đối cắt lương nặng và tiền thuê cao ở thị trấn công ty, trong khi công ty vẫn chia cổ tức. Dưới Eugene V. Debs và Liên đoàn Đường sắt Mỹ, lan thành tẩy chay đường sắt toàn quốc hơn 250.000 người — một trong những cuộc nổi dậy lao động quan trọng nhất Mỹ, dẫn tới ngày Lao động liên bang.",
+    "category": "event",
+    "year": "1894",
+    "isSymbolic": false
+  },
+  {
+    "date": "11",
+    "title": "Deep Blue đánh bại nhà vô địch cờ vua thế giới",
+    "description": "Ngày 11 tháng 5 năm 1997, siêu máy tính Deep Blue của IBM đánh bại Garry Kasparov trong sáu ván, trở thành hệ thống máy tính đầu tiên thắng nhà vô địch đương nhiệm theo điều kiện giải đấu chuẩn. Bước ngoặt AI và khoa học máy tính.",
+    "category": "event",
+    "year": "1997",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Phật Đản / Vesak",
+    "description": "Ngày linh thiêng nhất trong Phật giáo — kỷ niệm ngày sinh, giác ngộ và Đại Bát Niết-bàn của Đức Phật Gotama. Ngày thiền định, bố thí (Dana), giữ giới (Sila) và lan tỏa từ bi.",
+    "category": "festival",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "12",
+    "title": "Florence Nightingale sinh — Ngày Điều dưỡng Quốc tế",
+    "description": "Ngày 12 tháng 5 năm 1820, Florence Nightingale sinh tại Florence, Ý. Bà cách mạng điều dưỡng trong Chiến tranh Crimea bằng vệ sinh làm giảm mạnh tỷ lệ tử vong thương binh. Phân tích thống kê y tế và đào tạo điều dưỡng chuyên nghiệp tại Bệnh viện St Thomas London lập nghề điều dưỡng được kính trọng.",
+    "category": "event",
+    "year": "1820",
+    "isSymbolic": false
+  },
+  {
+    "date": "12",
+    "title": "Liên Xô dỡ bỏ phong tỏa Berlin",
+    "description": "Ngày 12 tháng 5 năm 1949, Liên Xô dỡ phong tỏa Tây Berlin sau 318 ngày, kết thúc một trong những khủng hoảng đầu Chiến tranh Lạnh. Đồng minh Tây duy trì 2,5 triệu dân bằng cầu không vận Berlin, hơn 2,3 triệu tấn lương thực và nhiên liệu. Thất bại phong tỏa dẫn tới thành lập NATO.",
+    "category": "event",
+    "year": "1949",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Dhamma: Kapilavastu — Quê hương Đức Phật",
+    "description": "Kapilavastu là thành nơi Hoàng tử Siddhartha lớn lên là người thừa kế. Gặp già, bệnh, chết và vị khổ hạnh khiến ngài từ bỏ cung điện tìm chân lý.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "13",
+    "title": "Brazil bãi bỏ chế độ nô lệ — Lei Áurea",
+    "description": "Ngày 13 tháng 5 năm 1888, Công chúa Isabel của Brazil ký Lei Áurea (Luật Vàng), bãi bỏ nô lệ trong toàn Đế quốc Brazil. Quốc gia cuối cùng ở Tây bán cầu chấm dứt nô lệ hợp pháp, giải phóng khoảng 700.000 người — đỉnh cao thập kỷ kháng cự, nhưng người được giải phóng không nhận bồi thường hay đất.",
+    "category": "event",
+    "year": "1888",
+    "isSymbolic": false
+  },
+  {
+    "date": "13",
+    "title": "Diễn văn ‘Máu, lao khổ, nước mắt và mồ hôi’ của Churchill",
+    "description": "Ngày 13 tháng 5 năm 1940, Thủ tướng mới Winston Churchill lần đầu phát biểu trước Hạ viện, tuyên bố chỉ có ‘máu, lao khổ, nước mắt và mồ hôi’. Với Đức Quốc xã đang chinh phục Tây Âu, ông kêu gọi kháng cự toàn trị — cổ vũ một dân tộc trước khủng hoảng tồn vong lớn nhất.",
+    "category": "event",
+    "year": "1940",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Dhamma: Cuộc Xuất gia Vĩ đại",
+    "description": "Hoàng tử Siddhartha ở tuổi 29 bỏ cung điện, vợ và con mới sinh để tìm chân lý khổ đau. Cuộc Xuất gia Vĩ đại mở đầu con đường thành Phật.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "14",
+    "title": "Edward Jenner thực hiện tiêm chủng đậu mùa đầu tiên",
+    "description": "Ngày 14 tháng 5 năm 1796, thầy thuốc Anh Edward Jenner tiêm vật liệu từ thương tổn đậu bò cho James Phipps tám tuổi, chứng minh đậu bò bảo vệ khỏi đậu mùa. Nền tảng miễn dịch học và vaccine, cuối cùng dẫn tới thanh toán đậu mùa, cứu hàng trăm triệu mạng sống.",
+    "category": "event",
+    "year": "1796",
+    "isSymbolic": false
+  },
+  {
+    "date": "14",
+    "title": "Công bố Nhà nước Israel",
+    "description": "Ngày 14 tháng 5 năm 1948, David Ben-Gurion tuyên bố thành lập Nhà nước Israel vài giờ trước khi ủy trị Anh tại Palestine hết hạn. Sau nghị quyết Liên Hợp Quốc phân chia Palestine. Ngay lập tức nổ ra Chiến tranh Ả Rập–Israel lần thứ nhất.",
+    "category": "event",
+    "year": "1948",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Sukhdev Thapar Jayanti",
+    "description": "Kỷ niệm sinh Sukhdev Thapar, chiến sĩ cách mạng độc lập bị treo cổ cùng Bhagat Singh và Rajguru năm 1931 vì vai trò trong cuộc đấu tranh độc lập.",
+    "category": "event",
+    "year": "1907",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Tiêu diệt Đẳng cấp — Tiến sĩ Ambedkar",
+    "description": "Tháng 5 năm 1936, Tiến sĩ B.R. Ambedkar viết ‘Annihilation of Caste’ — luận văn mạnh mẽ và cách mạng nhất — cho hội nghị cuối cùng hủy bài phát biểu của ông. Ông tự xuất bản, lập luận đẳng cấp không thể cải cách mà phải tiêu diệt. Văn bản phê phán hệ thống đẳng cấp sắc bén nhất từng được viết.",
+    "category": "event",
+    "year": "1936",
+    "isSymbolic": false
+  },
+  {
+    "date": "15",
+    "title": "Nghị quyết Độc lập Virginia",
+    "description": "Ngày 15 tháng 5 năm 1776, Hội nghị Virginia nhất trí thông qua nghị quyết chỉ thị đại biểu Quốc hội Lục địa đề xuất độc lập khỏi Anh. Hành động chính thức đầu tiên của thuộc địa kêu gọi đoạn tuyệt với Vương quyền. Dẫn tới động nghị của Richard Henry Lee và Tuyên ngôn Độc lập ngày 4 tháng 7 năm 1776.",
+    "category": "event",
+    "year": "1776",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Dhamma: Hang động Ajanta",
+    "description": "Hang Ajanta ở Maharashtra chứa tranh và điêu khắc Phật giáo đá tuyệt đẹp từ thế kỷ 2 TCN đến thế kỷ 6 CN — kiệt tác nghệ thuật Phật giáo.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "16",
+    "title": "Cách mạng Văn hóa Trung Quốc bắt đầu",
+    "description": "Ngày 16 tháng 5 năm 1966, Đảng Cộng sản Trung Quốc ban hành ‘Thông báo 16 tháng 5’, chính thức mở Cách mạng Văn hóa của Mao Trạch Đông. Chiến dịch mười năm thanh lọc yếu tố tư bản và truyền thống qua Hồng vệ binh — đàn áp rộng, phá hủy di sản và chấn động chính trị sâu.",
+    "category": "event",
+    "year": "1966",
+    "isSymbolic": false
+  },
+  {
+    "date": "16",
+    "title": "Laser hoạt động đầu tiên được trình diễn",
+    "description": "Ngày 16 tháng 5 năm 1960, nhà vật lý Theodore Maiman vận hành laser làm việc đầu tiên tại Phòng thí nghiệm Hughes ở Malibu, California, dùng tinh thể ruby tổng hợp. Dựa trên lý thuyết Einstein và Charles Townes — cách mạng y học, truyền thông, sản xuất và nghiên cứu.",
+    "category": "event",
+    "year": "1960",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Ngày Viễn thông Thế giới",
+    "description": "Kỷ niệm kết nối toàn cầu. Như Đức Phật gửi đệ tử truyền Dhamma khắp phương, công nghệ hiện đại có thể mang thông điệp hòa bình và trí tuệ đi khắp thế giới.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "Brown kiện Board of Education",
+    "description": "Ngày 17 tháng 5 năm 1954, Tối cao Pháp viện Mỹ nhất trí phán quyết Brown kiện Board of Education rằng phân biệt chủng tộc ở trường công là vi hiến, lật đổ học thuyết ‘tách biệt nhưng bình đẳng’ của Plessy v. Ferguson (1896). Thẩm phán Earl Warren tuyên bố cơ sở giáo dục tách biệt vốn ‘bất bình đẳng’. Nền tảng pháp lý phong trào dân quyền Mỹ.",
+    "category": "event",
+    "year": "1954",
+    "isSymbolic": false
+  },
+  {
+    "date": "17",
+    "title": "WHO loại đồng tính khỏi phân loại bệnh",
+    "description": "Ngày 17 tháng 5 năm 1990, WHO loại đồng tính khỏi Phân loại Bệnh Quốc tế (ICD), chính thức thôi coi là rối loạn tâm thần. Quyết định lịch sử phản ánh khoa học và vận động LGBTQ+. Ngày nay được kỷ niệm là Ngày Quốc tế Chống Homophobia, Biphobia và Transphobia (IDAHOBIT).",
+    "category": "event",
+    "year": "1990",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Dhamma: Hang động Ellora",
+    "description": "Hang Ellora gần Aurangabad gồm đền đá Phật, Hindu và Jain — minh chứng đa nguyên tôn giáo Ấn Độ và di sản nghệ thuật Phật giáo phong phú.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "18",
+    "title": "Khởi nghĩa Gwangju bắt đầu",
+    "description": "Ngày 18 tháng 5 năm 1980, người dân Gwangju, Hàn Quốc nổi dậy chống chính quyền thiết quân luật của tướng Chun Doo-hwan. Mười ngày sinh viên và dân thường kiểm soát thành phố trước khi quân đội đàn áp đẫm máu, giết hàng trăm người. Khoảnh khắc định hình dân chủ hóa Hàn Quốc, được tưởng niệm quốc gia.",
+    "category": "event",
+    "year": "1980",
+    "isSymbolic": false
+  },
+  {
+    "date": "18",
+    "title": "Napoléon được tuyên bố Hoàng đế Pháp",
+    "description": "Ngày 18 tháng 5 năm 1804, Viện Nguyên lão Pháp tuyên bố Napoléon Bonaparte là Hoàng đế người Pháp, biến Cộng hòa Cách mạng thành đế chế. Từ sĩ quan pháo binh Corsica lên tuyệt đối cai trị — vẽ lại bản đồ châu Âu và lan truyền cải cách pháp–hành chính cách mạng.",
+    "category": "event",
+    "year": "1804",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "Dhamma: Vườn Nai — Tăng đoàn đầu tiên",
+    "description": "Tại Vườn Nai Sarnath, năm đệ tử đầu tiên giác ngộ sau bài pháp đầu của Đức Phật, hình thành Tăng đoàn Phật giáo đầu tiên trong lịch sử.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "19",
+    "title": "Chiến tranh Độc lập Thổ Nhĩ Kỳ bắt đầu",
+    "description": "Ngày 19 tháng 5 năm 1919, Mustafa Kemal Atatürk đổ bộ Samsun ven Biển Đen, mở đầu Chiến tranh Độc lập Thổ chống chiếm đóng Đồng minh sau Thế chiến I. Ông tổ chức kháng chiến quốc gia, lật đổ sultanate Ottoman. Năm 1923 lập Cộng hòa Thổ và cải cách thế tục sâu rộng.",
+    "category": "event",
+    "year": "1919",
+    "isSymbolic": false
+  },
+  {
+    "date": "19",
+    "title": "José Martí hy sinh trong đấu tranh độc lập Cuba",
+    "description": "Ngày 19 tháng 5 năm 1895, nhà thơ–cách mạng Cuba José Martí chết tại trận Dos Ríos trong Chiến tranh Độc lập Cuba chống Tây Ban Nha. Ông tổ chức phong trào từ lưu vong và thành lập Đảng Cách mạng Cuba. Được tôn kính là ‘Tông đồ Độc lập Cuba’.",
+    "category": "event",
+    "year": "1895",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Dhamma: Mahākassapa — Người gìn giữ Dhamma",
+    "description": "Mahākassapa là trưởng lão vĩ đại triệu tập Kết tập Phật điển lần thứ nhất tại Rājagaha sau khi Đức Phật nhập diệt, bảo đảm Dhamma và Vinaya được bảo tồn chính xác.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "20",
+    "title": "Iyothee Thass Pandithar Jayanti",
+    "description": "Kỷ niệm sinh Pandit C. Iyothee Thass (1845–1914), người tiên phong phục hưng Phật giáo Tamil, sáng lập Hội Phật giáo Sakya năm 1898. Ông cho rằng Dalit Tamil vốn là Phật tử bị tước đoạt bởi thế lực Bà-la-môn, và nỗ lực phục hồi bản sắc Phật giáo cho cộng đồng bị áp bức ở Nam Ấn.",
+    "category": "event",
+    "year": "1845",
+    "isSymbolic": false
+  },
+  {
+    "date": "20",
+    "title": "Amelia Earhart bắt đầu bay solo vượt Đại Tây Dương",
+    "description": "Ngày 20 tháng 5 năm 1932, Amelia Earhart xuất phát từ Harbour Grace, Newfoundland trên Lockheed Vega một động cơ để trở thành phụ nữ đầu tiên bay solo vượt Đại Tây Dương. Hạ cánh gần Londonderry, Bắc Ireland sau khoảng 15 giờ, hơn 2.000 dặm — phá rào cản giới trong hàng không.",
+    "category": "event",
+    "year": "1932",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Ngày Chống Khủng bố",
+    "description": "Kỷ niệm ngày mất của Rajiv Gandhi. Ngày tái khẳng định cam kết bất bạo động và từ chối khủng bố cùng mọi hình thức cực đoan bạo lực.",
+    "category": "event",
+    "year": "1991",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Lindbergh hoàn thành chuyến bay solo vượt Đại Tây Dương đầu tiên",
+    "description": "Ngày 21 tháng 5 năm 1927, Charles Lindbergh hạ cánh Spirit of St. Louis tại sân bay Le Bourget gần Paris, hoàn thành chuyến bay solo không dừng vượt Đại Tây Dương đầu tiên từ New York. 33,5 giờ, 3.600 dặm — chứng tỏ tiềm năng hàng không đường dài và thúc đẩy hàng không thương mại.",
+    "category": "event",
+    "year": "1927",
+    "isSymbolic": false
+  },
+  {
+    "date": "21",
+    "title": "Thành lập Hội Chữ thập Đỏ Mỹ",
+    "description": "Ngày 21 tháng 5 năm 1881, Clara Barton và bạn hữu thành lập Hội Chữ thập Đỏ Mỹ tại Washington, D.C., theo mẫu Chữ thập Đỏ Quốc tế ở Geneva. Barton, y tá nội chiến Mỹ, lãnh đạo hơn hai thập kỷ. Tổ chức trở thành một trong những cơ quan nhân đạo hàng đầu Mỹ.",
+    "category": "event",
+    "year": "1881",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Ngày Quốc tế Đa dạng Sinh học",
+    "description": "Ngày Liên Hợp Quốc kỷ niệm đa dạng sinh học. Giáo lý Phật giáo về tương tức nhắc rằng mọi loài đóng vai trò thiết yếu trong mạng sống.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Anh em Wright được cấp bằng sáng chế máy bay",
+    "description": "Ngày 22 tháng 5 năm 1906, Orville và Wilbur Wright được cấp Bằng sáng chế Mỹ số 821.393 cho ‘Máy Bay’, gồm phương pháp điều khiển ba trục tiên phong. Chính thức hóa phát minh bay có động lực, duy trì và kiểm soát đầu tiên tại Kitty Hawk năm 1903. Kiểm soát ngang bằng uốn cánh là nền tảng thiết kế máy bay sau này.",
+    "category": "event",
+    "year": "1906",
+    "isSymbolic": false
+  },
+  {
+    "date": "22",
+    "title": "Apollo 10 tiếp cận Mặt Trăng",
+    "description": "Ngày 22 tháng 5 năm 1969, module mặt trăng Apollo 10 ‘Snoopy’ (Thomas Stafford và Eugene Cernan) hạ còn cách bề mặt Mặt Trăng 8,4 hải lý (15,6 km) — gần nhất trước hạ cánh thật. Diễn tập đầy đủ cho Apollo 11, trừ việc hạ cánh.",
+    "category": "event",
+    "year": "1969",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Dhamma: Suy niệm Ngày Tăng đoàn",
+    "description": "Tăng đoàn — cộng đồng thánh thiện của tỷ-kheo, tỷ-kheo-ni và cư sĩ — là hiện thân sống động của Dhamma. Hỗ trợ và tôn kính Tăng là nguồn công đức lớn.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "23",
+    "title": "Vụ ném người qua cửa sổ Praha",
+    "description": "Ngày 23 tháng 5 năm 1618, quý tộc Bohemia Tin Lành ném hai tổng đốc đế quốc Công giáo và thư ký từ cửa sổ Lâu đài Praha phản đối đàn áp tôn giáo Habsburg. Ba người sống sót sau cú rơi khoảng 70 feet, nhưng sự kiện khơi mào khởi nghĩa Bohemia và Chiến tranh Ba Mươi Năm.",
+    "category": "event",
+    "year": "1618",
+    "isSymbolic": false
+  },
+  {
+    "date": "23",
+    "title": "Thành lập Cộng hòa Liên bang Đức",
+    "description": "Ngày 23 tháng 5 năm 1949, Luật Cơ bản (Grundgesetz) được ban bố, lập Cộng hòa Liên bang Đức (Tây Đức) dân chủ từ đổ nát độc tài Nazi. Hiến pháp khẳng định quyền cơ bản, pháp trị và nhân phẩm bất khả xâm phạm — nền tảng dân chủ thịnh vượng và thống nhất Đức năm 1990.",
+    "category": "event",
+    "year": "1949",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Dhamma: Bảo tháp Sanchi",
+    "description": "Đại bảo tháp Sanchi do Hoàng đế Ashoka xây là một trong những công trình đá cổ nhất Ấn Độ. Cổng khắc tinh xảo mô tả cuộc đời Đức Phật và truyện Jātaka.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "24",
+    "title": "Samuel Morse gửi thông điệp điện tín đầu tiên",
+    "description": "Ngày 24 tháng 5 năm 1844, Samuel F.B. Morse truyền ‘What hath God wrought’ từ Quốc hội Mỹ ở Washington, D.C. tới phụ tá ở Baltimore bằng điện tín điện từ. Liên lạc điện tử đường dài đầu tiên cách mạng tốc độ trao đổi thông tin — nền tảng viễn thông hiện đại.",
+    "category": "event",
+    "year": "1844",
+    "isSymbolic": false
+  },
+  {
+    "date": "24",
+    "title": "Cầu Brooklyn mở cửa",
+    "description": "Ngày 24 tháng 5 năm 1883, Cầu Brooklyn mở cửa công chúng, nối Manhattan và Brooklyn qua sông East River ở New York. John Augustus Roebling thiết kế, con trai Washington Roebling hoàn thành — cầu treo dài nhất thế giới lúc đó (1.595 feet), 14 năm xây dựng.",
+    "category": "event",
+    "year": "1883",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "Dhamma: Rājagaha — Kết tập lần thứ nhất",
+    "description": "Rājagaha (Rajgir ngày nay) là nơi Kết tập Phật điển lần thứ nhất. Cũng là kinh đô vua Bimbisāra, một trong những hộ trì vương thất sớm nhất của Đức Phật.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "25",
+    "title": "Thành lập Tổ chức Thống nhất châu Phi — Ngày châu Phi",
+    "description": "Ngày 25 tháng 5 năm 1963, lãnh đạo 32 quốc gia châu Phi mới độc lập họp tại Addis Ababa, Ethiopia, lập Tổ chức Thống nhất châu Phi (OAU) thúc đẩy đoàn kết, chấm dứt thực dân và bảo vệ chủ quyền. Ngày này là Ngày châu Phi. Năm 2002 được Liên minh châu Phi kế thừa.",
+    "category": "event",
+    "year": "1963",
+    "isSymbolic": false
+  },
+  {
+    "date": "25",
+    "title": "JFK công bố mục tiêu đổ bộ Mặt Trăng",
+    "description": "Ngày 25 tháng 5 năm 1961, Tổng thống John F. Kennedy gửi thông điệp đặc biệt tới Quốc hội Mỹ, tuyên bố mục tiêu ‘đưa người lên Mặt Trăng và đưa về Trái Đất an toàn’ trước cuối thập niên. Khởi động chương trình Apollo; ngày 20 tháng 7 năm 1969 Apollo 11 hoàn thành.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Dhamma: Vesāli — Kết tập lần thứ hai",
+    "description": "Kết tập lần thứ hai họp tại Vesāli (Vaishali) khoảng 100 năm sau Đức Phật nhập diệt để giải quyết tranh chấp giới luật Tăng và quy tắc Vinaya.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "26",
+    "title": "Guyana giành độc lập",
+    "description": "Ngày 26 tháng 5 năm 1966, Guyana độc lập khỏi thực dân Anh, trở thành quốc gia Nam Mỹ nói tiếng Anh đầu tiên có chủ quyền. Phong trào do Cheddi Jagan và Forbes Burnham lãnh đạo chống hệ thống đồn điền thực dân. Cột mốc phi thực dân hóa Caribe và Nam Mỹ.",
+    "category": "event",
+    "year": "1966",
+    "isSymbolic": false
+  },
+  {
+    "date": "26",
+    "title": "Quân Liên bang miền Nam cuối cùng đầu hàng",
+    "description": "Ngày 26 tháng 5 năm 1865, Bộ Tư lệnh Trans-Mississippi dưới tướng Edmund Kirby Smith trở thành đội quân miền Nam lớn cuối cùng đầu hàng, kết thúc thực sự Nội chiến Mỹ. Hơn sáu tuần sau Appomattox của Robert E. Lee. Kết thúc chiến tranh mở đường bãi bỏ nô lệ qua Tu chính án 13 và cuộc đấu tranh dân quyền dài.",
+    "category": "event",
+    "year": "1865",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Jawaharlal Nehru Punyatithi",
+    "description": "Tưởng niệm Thủ tướng đầu tiên Ấn Độ Jawaharlal Nehru, người dẫn dắt quốc gia những năm hình thành. Ngày Thiếu nhi (14/11) kỷ niệm sinh nhật ông.",
+    "category": "event",
+    "year": "1964",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Cầu Cổng Vàng mở cửa",
+    "description": "Ngày 27 tháng 5 năm 1937, Cầu Cổng Vàng mở cho người đi bộ ở San Francisco, California; ước khoảng 200.000 người qua ngày đầu. Kỹ sư trưởng Joseph Strauss và kiến trúc sư Irving Morrow tạo kiệt tác Art Deco — lúc hoàn thành là cầu treo dài nhất và cao nhất thế giới.",
+    "category": "event",
+    "year": "1937",
+    "isSymbolic": false
+  },
+  {
+    "date": "27",
+    "title": "Rachel Carson sinh — Tiên phong khoa học môi trường",
+    "description": "Ngày 27 tháng 5 năm 1907, nhà sinh học biển và nhà văn Rachel Carson sinh tại Springdale, Pennsylvania. Cuốn ‘Silent Spring’ (1962) phơi bày tác hại môi trường của thuốc trừ sâu như DDT, thách thức công nghiệp hóa chất. Khơi mào phong trào môi trường hiện đại và EPA Mỹ.",
+    "category": "event",
+    "year": "1907",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Dhamma: Veer Savarkar & Cải cách xã hội",
+    "description": "Suy niệm về tầm quan trọng phong trào cải cách xã hội Ấn Độ hiện đại. Phá bỏ hàng rào đẳng cấp thiết yếu cho xã hội công bằng gốc rễ ở Dhamma và giá trị hiến pháp.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": true
+  },
+  {
+    "date": "28",
+    "title": "Thành lập Ân xá Quốc tế",
+    "description": "Ngày 28 tháng 5 năm 1961, luật sư Anh Peter Benenson đăng ‘The Forgotten Prisoners’ trên The Observer, khởi động tổ chức trở thành Ân xá Quốc tế. Kêu gọi hành động toàn cầu bảo vệ tù chính trị và nhân quyền. Giải Nobel Hòa bình năm 1977.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "28",
+    "title": "Linh trưởng đầu tiên sống sót bay vũ trụ",
+    "description": "Ngày 28 tháng 5 năm 1959, hai linh trưởng — khỉ rhesus Able và khỉ sóc Miss Baker — phóng trên tên lửa Jupiter, trở thành sinh vật sống đầu tiên sống sót bay vũ trụ và về Trái Đất an toàn. Cao khoảng 300 dặm, 9 phút không trọng lực trong chuyến 16 phút — mở đường bay vũ trụ có người.",
+    "category": "event",
+    "year": "1959",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Ngày Quốc tế Lực lượng Gìn giữ Hòa bình LHQ",
+    "description": "Tôn vinh lực lượng gìn giữ hòa bình LHQ phục vụ vùng xung đột. Hòa bình là mục tiêu cao nhất của Dhamma — ‘Sukho viveko tuṭṭhassa’ (Hạnh phúc thay vị đã học Dhamma và sống siêu thoát).",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Edmund Hillary và Tenzing Norgay lên đỉnh Everest",
+    "description": "Ngày 29 tháng 5 năm 1953, nhà leo núi New Zealand Sir Edmund Hillary và sherpa Nepal Tenzing Norgay trở thành người leo núi được xác nhận đầu tiên lên đỉnh Everest, đỉnh cao nhất thế giới (29.032 feet). 11 giờ 30 sáng trong đoàn Anh do John Hunt dẫn — kỳ công sức bền và thám hiểm.",
+    "category": "event",
+    "year": "1953",
+    "isSymbolic": false
+  },
+  {
+    "date": "29",
+    "title": "Thất thủ Constantinople",
+    "description": "Ngày 29 tháng 5 năm 1453, Sultan Ottoman Mehmed II chiếm Constantinople sau vây hãm 53 ngày, kết thúc Đế quốc Byzantine 1.100 năm. Sự sụp đổ thành chiến lược giao cắt Âu–Á đánh dấu hết di sản đế chế La Mã phương Đông và vẽ lại Đông Địa Trung Hải — bước ngoặt lịch sử thế giới.",
+    "category": "event",
+    "year": "1453",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Ngày Bang Goa",
+    "description": "Kỷ niệm Goa trở thành bang đầy đủ của Ấn Độ năm 1987. Quá khứ Phật giáo phong phú gồm hang đá cổ và liên hệ thời Maurya Phật giáo.",
+    "category": "event",
+    "year": "1987",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Jeanne d'Arc bị hành quyết",
+    "description": "Ngày 30 tháng 5 năm 1431, Jeanne d'Arc mười chín tuổi bị thiêu ở Rouen, Pháp sau khi tòa án giáo hội thân Anh kết án dị giáo. Cô gái nông thôn tự xưng được thiên sứ dẫn đường đã dẫn quân Pháp thắng trận then chốt và giúp Charles VII lên ngôi. Phong thánh năm 1920 — biểu tượng dũng cảm và kháng áp bức.",
+    "category": "event",
+    "year": "1431",
+    "isSymbolic": false
+  },
+  {
+    "date": "30",
+    "title": "Đạo luật Kansas–Nebraska ký kết",
+    "description": "Ngày 30 tháng 5 năm 1854, Tổng thống Franklin Pierce ký Đạo luật Kansas–Nebraska, bãi bỏ Thỏa hiệp Missouri và để định cư lãnh thổ mới quyết định nô lệ qua ‘chủ quyền nhân dân’. Làm nóng căng thẳng Bắc–Nam, dẫn tới ‘Bleeding Kansas’ và thành lập Đảng Cộng hòa — đường không thể đảo ngược tới Nội chiến.",
+    "category": "event",
+    "year": "1854",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Ngày Thế giới Không Thuốc lá",
+    "description": "Ngày của WHO chống sử dụng thuốc lá. Giới thứ năm — tránh chất say — dạy rằng chất làm mờ tâm che lấp đường trí tuệ.",
+    "category": "event",
+    "year": null,
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Nam Phi trở thành cộng hòa",
+    "description": "Ngày 31 tháng 5 năm 1961, Nam Phi rút khỏi Khối Thịnh vượng chung Anh và trở thành cộng hòa dưới chính phủ apartheid của Thủ tướng Hendrik Verwoerd. Do chỉ trích quốc tế ngày càng tăng và muốn duy trì phân biệt chủng tộc không bị can thiệp. Cô lập sâu hơn và làm gay gắt đấu tranh chống apartheid của Mandela và ANC.",
+    "category": "event",
+    "year": "1961",
+    "isSymbolic": false
+  },
+  {
+    "date": "31",
+    "title": "Hiệp ước Vereeniging kết thúc Chiến tranh Boer thứ hai",
+    "description": "Ngày 31 tháng 5 năm 1902, Hiệp ước Vereeniging được ký, kết thúc Chiến tranh Boer thứ hai giữa Đế quốc Anh và các cộng hòa Boer Transvaal và Orange Free State ở Nam Phi. Chiến tranh với chiến thuật đốt đất và trại tập trung giết hơn 26.000 dân thường Boer và hàng nghìn người Phi da đen — chương tranh cãi của lịch sử thực dân. Hiệp ước đặt lãnh thổ Boer dưới chủ quyền Anh nhưng đặt nền cho Liên bang Nam Phi sau này.",
+    "category": "event",
+    "year": "1902",
+    "isSymbolic": false
+  }
+]
