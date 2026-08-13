@@ -2,180 +2,65 @@
   "version": 1,
   "year": 2026,
   "phases": [
-    {
-      "month": 1,
-      "day": 3,
-      "phase": "FULL_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — Full Moon"
-    },
-    {
-      "month": 1,
-      "day": 18,
-      "phase": "NEW_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — New Moon"
-    },
-    {
-      "month": 2,
-      "day": 2,
-      "phase": "FULL_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — Full Moon"
-    },
-    {
-      "month": 2,
-      "day": 16,
-      "phase": "NEW_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — New Moon"
-    },
-    {
-      "month": 3,
-      "day": 3,
-      "phase": "FULL_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — Magha Puja Full Moon"
-    },
-    {
-      "month": 3,
-      "day": 18,
-      "phase": "NEW_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — New Moon"
-    },
-    {
-      "month": 4,
-      "day": 2,
-      "phase": "FULL_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — Full Moon"
-    },
-    {
-      "month": 4,
-      "day": 16,
-      "phase": "NEW_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — New Moon"
-    },
-    {
-      "month": 5,
-      "day": 1,
-      "phase": "FULL_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — Full Moon"
-    },
-    {
-      "month": 5,
-      "day": 16,
-      "phase": "NEW_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — New Moon"
-    },
-    {
-      "month": 5,
-      "day": 31,
-      "phase": "FULL_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — Visakha Puja (Vesak) Full Moon"
-    },
-    {
-      "month": 6,
-      "day": 14,
-      "phase": "NEW_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — New Moon"
-    },
-    {
-      "month": 6,
-      "day": 29,
-      "phase": "FULL_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — Full Moon"
-    },
-    {
-      "month": 7,
-      "day": 14,
-      "phase": "NEW_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — New Moon"
-    },
-    {
-      "month": 7,
-      "day": 29,
-      "phase": "FULL_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — Asalha Puja Full Moon"
-    },
-    {
-      "month": 8,
-      "day": 12,
-      "phase": "NEW_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — New Moon"
-    },
-    {
-      "month": 8,
-      "day": 28,
-      "phase": "FULL_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — Full Moon"
-    },
-    {
-      "month": 9,
-      "day": 11,
-      "phase": "NEW_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — New Moon"
-    },
-    {
-      "month": 9,
-      "day": 26,
-      "phase": "FULL_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — Full Moon"
-    },
-    {
-      "month": 10,
-      "day": 11,
-      "phase": "NEW_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — New Moon"
-    },
-    {
-      "month": 10,
-      "day": 26,
-      "phase": "FULL_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — Pavarana (Kathina) Full Moon"
-    },
-    {
-      "month": 11,
-      "day": 9,
-      "phase": "NEW_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — New Moon"
-    },
-    {
-      "month": 11,
-      "day": 24,
-      "phase": "FULL_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — Full Moon"
-    },
-    {
-      "month": 12,
-      "day": 9,
-      "phase": "NEW_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — New Moon"
-    },
-    {
-      "month": 12,
-      "day": 24,
-      "phase": "FULL_MOON",
-      "is_uposatha": true,
-      "label": "Uposatha — Full Moon"
-    }
+    { "month": 1, "day": 3, "phase": "FULL_MOON", "is_uposatha": true, "label": "Uposatha — Paush Purnima (Full Moon). A day of charity and spiritual merit." },
+    { "month": 1, "day": 11, "phase": "KRISHNA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Kāḷa Aṭṭhamī (Half Moon). Day for fasting and deep Dhamma reflection." },
+    { "month": 1, "day": 18, "phase": "NEW_MOON", "is_uposatha": true, "label": "Uposatha — Mauni Amavasya (New Moon). Observed with silence and meditation." },
+    { "month": 1, "day": 26, "phase": "SHUKLA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Sukka Aṭṭhamī (Half Moon). Devotional observances in the waxing phase." },
+
+    { "month": 2, "day": 2, "phase": "FULL_MOON", "is_uposatha": true, "label": "Uposatha — Magh Purnima (Full Moon). Associated with spiritual resolution." },
+    { "month": 2, "day": 10, "phase": "KRISHNA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Kāḷa Aṭṭhamī of Magh month." },
+    { "month": 2, "day": 16, "phase": "NEW_MOON", "is_uposatha": true, "label": "Uposatha — Phalguna Amavasya (New Moon)." },
+    { "month": 2, "day": 24, "phase": "SHUKLA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Sukka Aṭṭhamī of Phalguna month." },
+
+    { "month": 3, "day": 3, "phase": "FULL_MOON", "is_uposatha": true, "label": "Uposatha — Magha Puja Full Moon. Commemorating the spontaneous gathering of 1,250 Arahats (Total Lunar Eclipse)." },
+    { "month": 3, "day": 11, "phase": "KRISHNA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Kāḷa Aṭṭhamī of Phalguna month." },
+    { "month": 3, "day": 18, "phase": "NEW_MOON", "is_uposatha": true, "label": "Uposatha — Chaitra Amavasya (New Moon)." },
+    { "month": 3, "day": 26, "phase": "SHUKLA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Sukka Aṭṭhamī of Chaitra month." },
+
+    { "month": 4, "day": 2, "phase": "FULL_MOON", "is_uposatha": true, "label": "Uposatha — Chaitra Purnima (Full Moon)." },
+    { "month": 4, "day": 10, "phase": "KRISHNA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Kāḷa Aṭṭhamī of Chaitra month." },
+    { "month": 4, "day": 17, "phase": "NEW_MOON", "is_uposatha": true, "label": "Uposatha — Vaishakha Amavasya (New Moon)." },
+    { "month": 4, "day": 25, "phase": "SHUKLA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Sukka Aṭṭhamī of Vaishakha month." },
+
+    { "month": 5, "day": 1, "phase": "FULL_MOON", "is_uposatha": true, "label": "Uposatha — Buddha Purnima / Visakha Puja (Vesak) Full Moon. Celebrating the Birth, Enlightenment, and Parinibbana of Lord Buddha." },
+    { "month": 5, "day": 10, "phase": "KRISHNA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Kāḷa Aṭṭhamī of Vaishakha month." },
+    { "month": 5, "day": 16, "phase": "NEW_MOON", "is_uposatha": true, "label": "Uposatha — Jyeshtha Amavasya (New Moon)." },
+    { "month": 5, "day": 24, "phase": "SHUKLA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Sukka Aṭṭhamī of Jyeshtha month." },
+    { "month": 5, "day": 31, "phase": "FULL_MOON", "is_uposatha": true, "label": "Uposatha — Adhika Jyeshtha Purnima (Additional Meritorious Full Moon)." },
+
+    { "month": 6, "day": 9, "phase": "KRISHNA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Kāḷa Aṭṭhamī of Jyeshtha month." },
+    { "month": 6, "day": 14, "phase": "NEW_MOON", "is_uposatha": true, "label": "Uposatha — Ashadha Amavasya (New Moon)." },
+    { "month": 6, "day": 22, "phase": "SHUKLA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Sukka Aṭṭhamī of Ashadha month." },
+    { "month": 6, "day": 29, "phase": "FULL_MOON", "is_uposatha": true, "label": "Uposatha — Ashadha Purnima / Guru Purnima (Full Moon)." },
+
+    { "month": 7, "day": 8, "phase": "KRISHNA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Kāḷa Aṭṭhamī of Ashadha month." },
+    { "month": 7, "day": 14, "phase": "NEW_MOON", "is_uposatha": true, "label": "Uposatha — Shravana Amavasya (New Moon)." },
+    { "month": 7, "day": 21, "phase": "SHUKLA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Sukka Aṭṭhamī of Shravana month." },
+    { "month": 7, "day": 29, "phase": "FULL_MOON", "is_uposatha": true, "label": "Uposatha — Asalha Puja Full Moon. Commemorating the First Sermon (Dhammacakkappavattana Sutta) and Start of Vassa." },
+
+    { "month": 8, "day": 6, "phase": "KRISHNA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Kāḷa Aṭṭhamī of Shravana month." },
+    { "month": 8, "day": 12, "phase": "NEW_MOON", "is_uposatha": true, "label": "Uposatha — Bhadrapada Amavasya (Total Solar Eclipse)." },
+    { "month": 8, "day": 20, "phase": "SHUKLA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Sukka Aṭṭhamī of Bhadrapada month." },
+    { "month": 8, "day": 28, "phase": "FULL_MOON", "is_uposatha": true, "label": "Uposatha — Nikini Full Moon Poya / Bhadrapada Purnima (Partial Lunar Eclipse)." },
+
+    { "month": 9, "day": 5, "phase": "KRISHNA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Kāḷa Aṭṭhamī of Bhadrapada month." },
+    { "month": 9, "day": 11, "phase": "NEW_MOON", "is_uposatha": true, "label": "Uposatha — Ashwin Amavasya (New Moon)." },
+    { "month": 9, "day": 19, "phase": "SHUKLA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Sukka Aṭṭhamī of Ashwin month." },
+    { "month": 9, "day": 26, "phase": "FULL_MOON", "is_uposatha": true, "label": "Uposatha — Ashwin Purnima (Full Moon)." },
+
+    { "month": 10, "day": 4, "phase": "KRISHNA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Kāḷa Aṭṭhamī of Ashwin month." },
+    { "month": 10, "day": 10, "phase": "NEW_MOON", "is_uposatha": true, "label": "Uposatha — Kartik Amavasya (New Moon)." },
+    { "month": 10, "day": 19, "phase": "SHUKLA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Sukka Aṭṭhamī of Kartik month." },
+    { "month": 10, "day": 26, "phase": "FULL_MOON", "is_uposatha": true, "label": "Uposatha — Pavarana (Kathina) Full Moon. Marking the end of Vassa rains retreat." },
+
+    { "month": 11, "day": 2, "phase": "KRISHNA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Kāḷa Aṭṭhamī of Kartik month." },
+    { "month": 11, "day": 9, "phase": "NEW_MOON", "is_uposatha": true, "label": "Uposatha — Margashirsha Amavasya (New Moon)." },
+    { "month": 11, "day": 17, "phase": "SHUKLA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Sukka Aṭṭhamī of Margashirsha month." },
+    { "month": 11, "day": 24, "phase": "FULL_MOON", "is_uposatha": true, "label": "Uposatha — Margashirsha Purnima (Full Moon)." },
+
+    { "month": 12, "day": 2, "phase": "KRISHNA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Kāḷa Aṭṭhamī of Margashirsha month." },
+    { "month": 12, "day": 9, "phase": "NEW_MOON", "is_uposatha": true, "label": "Uposatha — Paush Amavasya (New Moon)." },
+    { "month": 12, "day": 17, "phase": "SHUKLA_ASHTAMI", "is_uposatha": true, "label": "Uposatha — Sukka Aṭṭhamī of Paush month." },
+    { "month": 12, "day": 24, "phase": "FULL_MOON", "is_uposatha": true, "label": "Uposatha — Year-end Super Full Moon." }
   ]
 }
