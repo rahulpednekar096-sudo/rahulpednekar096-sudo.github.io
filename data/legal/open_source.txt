@@ -1,19 +1,22 @@
 OPEN SOURCE LICENSES
 
-Last Updated: June 2026
+Last Updated: August 2026
 
 Buddhist Calendar uses open-source software, libraries, and components. The respective copyright holders retain ownership of their software.
 
 Major third-party components include:
 
 AndroidX Libraries
-(including Core KTX, AppCompat, Activity, Lifecycle, RecyclerView, DrawerLayout, WorkManager, and Room)
+(including Core KTX, AppCompat, Activity, Compose, Lifecycle, RecyclerView, DrawerLayout, WorkManager, ConstraintLayout, and Room)
 License: Apache License 2.0
 
-Google Material Components for Android
+Google Material Components for Android (Material 3)
 License: Apache License 2.0
 
 Kotlin and Kotlin Coroutines
+License: Apache License 2.0
+
+Dagger Hilt (Dependency Injection)
 License: Apache License 2.0
 
 Gson (Google)
@@ -22,7 +25,7 @@ License: Apache License 2.0
 OkHttp (Square)
 License: Apache License 2.0
 
-Coil
+Coil (Image Loading)
 License: Apache License 2.0
 
 PhotoView (Chris Banes)
@@ -32,11 +35,11 @@ Android Desugar JDK Libraries
 License: Apache License 2.0
 
 Google Play services libraries
-(including Play services Ads and Play In-App Update libraries)
+(including Play services Ads, User Messaging Platform (UMP), and Play In-App Update libraries)
 License: Google terms and applicable open-source notices bundled with the SDK
 
 Firebase Android SDK
-(including Firebase Analytics via Firebase BOM)
+(including Firebase Analytics and Crashlytics via Firebase BOM)
 License: Apache License 2.0 (subject to Firebase/Google SDK terms and notices)
 
 Additional open-source components may be included as transitive dependencies of the libraries above.
