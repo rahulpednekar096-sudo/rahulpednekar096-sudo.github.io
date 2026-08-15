@@ -123,6 +123,15 @@ AdMob may use cookies, device identifiers, and similar technologies to serve, me
 
 You can manage ad personalization through your Google account and device settings where available.
 
+For users in regions where consent is required, the App uses Google's
+User Messaging Platform (UMP) to present privacy and advertising consent
+choices. The availability and type of consent options may depend on your
+location and applicable privacy requirements.
+
+Where applicable, you can review or change your advertising privacy choices
+through the privacy options provided in the App. Your choices may affect
+whether personalized or non-personalized advertising is shown.
+
 7. Remote Content and Internet Use
 
 The App can work offline for many core calendar and reference features after content has been cached on your device.
