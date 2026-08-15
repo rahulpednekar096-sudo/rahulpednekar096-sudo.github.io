@@ -34,9 +34,6 @@ Legal Documents
 Privacy Policy:
 https://www.rdroidapps.com/data/legal/privacy.txt
 
-Data Safety Information:
-https://www.rdroidapps.com/data/legal/data_safety.txt
-
 Disclaimer:
 https://www.rdroidapps.com/data/legal/disclaimer.txt
 
