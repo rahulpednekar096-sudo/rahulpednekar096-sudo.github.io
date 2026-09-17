@@ -132,6 +132,13 @@ Where applicable, you can review or change your advertising privacy choices
 through the privacy options provided in the App. Your choices may affect
 whether personalized or non-personalized advertising is shown.
 
+In-App Purchases, Subscriptions, and Billing
+Our app offers premium subscription features processed securely through Google Play In-App Billing.
+
+Financial Data & Payments: We do NOT collect, store, or process your payment card numbers, bank details, or sensitive financial information on our servers. All financial transactions are handled entirely and securely by Google Play. We only receive purchase confirmation tokens from Google Play to activate your Premium subscription, remove advertisements, and grant full offline access to app features.
+Subscription Management: You can manage, pause, or cancel your active subscriptions at any time through your Google Play Store Account settings (Google Play Store > Profile > Payments & subscriptions).
+Analytics & Usage: We use Firebase Analytics to track aggregated purchase events (such as subscription activations, renewals, cancellations, or billing errors) to improve app performance and user experience. No personally identifiable financial information is tracked or stored by us.
+
 7. Remote Content and Internet Use
 
 The App can work offline for many core calendar and reference features after content has been cached on your device.
