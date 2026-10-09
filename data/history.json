@@ -20,20 +20,20 @@
       "order": 2
     },
     {
-      "id": "great_renunciation",
-      "title": "Great Renunciation",
-      "year_be": -594,
-      "year_ce": -534,
-      "description": "At age 29, Prince Siddhartha left the palace, his family, and royal life to seek liberation from suffering.",
-      "category": "life_of_buddha",
-      "order": 3
-    },
-    {
       "id": "buddha_marriage_yasodhara",
       "title": "Marriage to Princess Yasodhara",
       "year_be": -593,
       "year_ce": -533,
       "description": "At age 16, Siddhartha married Yasodhara, daughter of King Suppabuddha, and lived the life of a royal prince.",
+      "category": "life_of_buddha",
+      "order": 3
+    },
+    {
+      "id": "great_renunciation",
+      "title": "Great Renunciation",
+      "year_be": -594,
+      "year_ce": -534,
+      "description": "At age 29, Prince Siddhartha left the palace, his family, and royal life to seek liberation from suffering.",
       "category": "life_of_buddha",
       "order": 4
     },
