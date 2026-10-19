@@ -22,11 +22,11 @@ body.dark-theme::before {
   inset: 0;
   z-index: -2;
   pointer-events: none;
-  background:
+  /*background:
     radial-gradient(ellipse 100% 60% at 50% -15%, rgba(34, 197, 94, 0.35), transparent 55%),
     radial-gradient(ellipse 80% 50% at 100% 30%, rgba(16, 185, 129, 0.2), transparent 50%),
     radial-gradient(ellipse 70% 40% at 0% 80%, rgba(52, 211, 153, 0.18), transparent 45%),
-    linear-gradient(165deg, #ecfdf5 0%, #d1fae5 35%, #a7f3d0 70%, #6ee7b7 100%);
+    linear-gradient(165deg, #ecfdf5 0%, #d1fae5 35%, #a7f3d0 70%, #6ee7b7 100%);*/
 }
 
 body.dark-theme::after {
