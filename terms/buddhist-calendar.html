@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="/js/script.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Terms of Service for Buddhist Calendar & Festivals by RDroid Apps.">
@@ -11,7 +12,20 @@
   <link rel="stylesheet" href="/css/light-theme.css">
 </head>
 <body>
-  <div id="header"></div>
+  <!-- HEADER -->
+  <div id="header-container"></div>
+
+  <!-- MENU DRAWER -->
+  <div id="menu-drawer-container"></div>
+
+  <!-- Load Components -->
+  <script>
+    $(function () {
+      $("#header-container").load("/components/header.html");
+      $("#menu-drawer-container").load("/components/menu-drawer.html");
+      $("#footer-container").load("/components/footer.html");
+    });
+  </script>
 
   <main class="legal-page">
     <article class="legal-content">
@@ -213,29 +227,43 @@
     </article>
   </main>
 
-  <div id="footer"></div>
+  <!-- FOOTER -->
+  <div id="footer-container"></div>
 
-  <button id="backToTop" type="button" aria-label="Back to top" title="Back to top">↑</button>
+  <div>
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up">Back to Top</i>
+    </button>
+  </div>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="/js/script.js"></script>
   <script>
-    // Load shared website header and footer, if these include files exist.
-    $(function () {
-      $("#header").load("/includes/header.html");
-      $("#footer").load("/includes/footer.html");
+    function toggleMenu() {
+      document.getElementById('drawer').classList.toggle('open');
+    }
+
+    // Back to top functionality
+    document.getElementById('backToTop').addEventListener('click', function () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
 
-    // Back-to-top control.
-    const backToTopButton = document.getElementById("backToTop");
-    if (backToTopButton) {
-      window.addEventListener("scroll", function () {
-        backToTopButton.style.display = window.scrollY > 300 ? "block" : "none";
-      });
-      backToTopButton.addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    }
+    // Show/hide back to top button
+    window.addEventListener('scroll', function () {
+      const backToTopBtn = document.getElementById('backToTop');
+
+      if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'flex';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+
+    // Initially hide button
+    document.getElementById('backToTop').style.display = 'none';
   </script>
+
+  <script type="module" src="/js/firebase-config.js"></script>
 </body>
 </html>
